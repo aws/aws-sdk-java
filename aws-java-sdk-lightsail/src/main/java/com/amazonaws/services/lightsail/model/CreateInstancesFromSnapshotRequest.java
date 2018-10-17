@@ -40,9 +40,9 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The Availability Zone where you want to create your instances. Use the following formatting:
-     * <code>us-east-2a</code> (case sensitive). You can get a list of availability zones by using the <a
+     * <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
-     * operation. Be sure to add the <code>include availability zones</code> parameter to your request.
+     * operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      * </p>
      */
     private String availabilityZone;
@@ -69,8 +69,9 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and
      * CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
-     * complete list, see the <a
-     * href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev Guide</a>.
+     * complete list, see the <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
+     * >Dev Guide</a>.
      * </p>
      * </note>
      */
@@ -216,16 +217,16 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The Availability Zone where you want to create your instances. Use the following formatting:
-     * <code>us-east-2a</code> (case sensitive). You can get a list of availability zones by using the <a
+     * <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
-     * operation. Be sure to add the <code>include availability zones</code> parameter to your request.
+     * operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone where you want to create your instances. Use the following formatting:
-     *        <code>us-east-2a</code> (case sensitive). You can get a list of availability zones by using the <a
+     *        <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a
      *        href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
-     *        operation. Be sure to add the <code>include availability zones</code> parameter to your request.
+     *        operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -235,15 +236,15 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The Availability Zone where you want to create your instances. Use the following formatting:
-     * <code>us-east-2a</code> (case sensitive). You can get a list of availability zones by using the <a
+     * <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
-     * operation. Be sure to add the <code>include availability zones</code> parameter to your request.
+     * operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      * </p>
      * 
      * @return The Availability Zone where you want to create your instances. Use the following formatting:
-     *         <code>us-east-2a</code> (case sensitive). You can get a list of availability zones by using the <a
+     *         <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a
      *         href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
-     *         operation. Be sure to add the <code>include availability zones</code> parameter to your request.
+     *         operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      */
 
     public String getAvailabilityZone() {
@@ -253,16 +254,16 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The Availability Zone where you want to create your instances. Use the following formatting:
-     * <code>us-east-2a</code> (case sensitive). You can get a list of availability zones by using the <a
+     * <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
-     * operation. Be sure to add the <code>include availability zones</code> parameter to your request.
+     * operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone where you want to create your instances. Use the following formatting:
-     *        <code>us-east-2a</code> (case sensitive). You can get a list of availability zones by using the <a
+     *        <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a
      *        href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
-     *        operation. Be sure to add the <code>include availability zones</code> parameter to your request.
+     *        operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -372,8 +373,9 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and
      * CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
-     * complete list, see the <a
-     * href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev Guide</a>.
+     * complete list, see the <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
+     * >Dev Guide</a>.
      * </p>
      * </note>
      * 
@@ -383,8 +385,9 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      *        <p>
      *        Depending on the machine image you choose, the command to get software on your instance varies. Amazon
      *        Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses
-     *        <code>pkg</code>. For a complete list, see the <a
-     *        href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev Guide</a>.
+     *        <code>pkg</code>. For a complete list, see the <a href=
+     *        "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
+     *        >Dev Guide</a>.
      *        </p>
      */
 
@@ -401,8 +404,9 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and
      * CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
-     * complete list, see the <a
-     * href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev Guide</a>.
+     * complete list, see the <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
+     * >Dev Guide</a>.
      * </p>
      * </note>
      * 
@@ -411,8 +415,9 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      *         <p>
      *         Depending on the machine image you choose, the command to get software on your instance varies. Amazon
      *         Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses
-     *         <code>pkg</code>. For a complete list, see the <a
-     *         href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev Guide</a>.
+     *         <code>pkg</code>. For a complete list, see the <a href=
+     *         "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
+     *         >Dev Guide</a>.
      *         </p>
      */
 
@@ -429,8 +434,9 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and
      * CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
-     * complete list, see the <a
-     * href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev Guide</a>.
+     * complete list, see the <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
+     * >Dev Guide</a>.
      * </p>
      * </note>
      * 
@@ -440,8 +446,9 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      *        <p>
      *        Depending on the machine image you choose, the command to get software on your instance varies. Amazon
      *        Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses
-     *        <code>pkg</code>. For a complete list, see the <a
-     *        href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev Guide</a>.
+     *        <code>pkg</code>. For a complete list, see the <a href=
+     *        "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
+     *        >Dev Guide</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

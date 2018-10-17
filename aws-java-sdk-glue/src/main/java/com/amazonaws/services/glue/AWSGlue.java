@@ -653,6 +653,29 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * Deletes a specified policy.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return Result of the DeleteResourcePolicy operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws ConditionCheckFailureException
+     *         A specified condition was not satisfied.
+     * @sample AWSGlue.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
+
+    /**
+     * <p>
      * Deletes a specified security configuration.
      * </p>
      * 
@@ -992,6 +1015,13 @@ public interface AWSGlue {
      * <p>
      * Retrieves information about a specified DevEndpoint.
      * </p>
+     * <note>
+     * <p>
+     * When you create a development endpoint in a virtual private cloud (VPC), AWS Glue returns only a private IP
+     * address, and the public IP address field is not populated. When you create a non-VPC development endpoint, AWS
+     * Glue returns only a public IP address.
+     * </p>
+     * </note>
      * 
      * @param getDevEndpointRequest
      * @return Result of the GetDevEndpoint operation returned by the service.
@@ -1013,6 +1043,13 @@ public interface AWSGlue {
      * <p>
      * Retrieves all the DevEndpoints in this AWS account.
      * </p>
+     * <note>
+     * <p>
+     * When you create a development endpoint in a virtual private cloud (VPC), AWS Glue returns only a private IP
+     * address and the public IP address field is not populated. When you create a non-VPC development endpoint, AWS
+     * Glue returns only a public IP address.
+     * </p>
+     * </note>
      * 
      * @param getDevEndpointsRequest
      * @return Result of the GetDevEndpoints operation returned by the service.
@@ -1199,6 +1236,27 @@ public interface AWSGlue {
      *      Documentation</a>
      */
     GetPlanResult getPlan(GetPlanRequest getPlanRequest);
+
+    /**
+     * <p>
+     * Retrieves a specified resource policy.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @return Result of the GetResourcePolicy operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @sample AWSGlue.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest getResourcePolicyRequest);
 
     /**
      * <p>
@@ -1458,6 +1516,29 @@ public interface AWSGlue {
      *      target="_top">AWS API Documentation</a>
      */
     PutDataCatalogEncryptionSettingsResult putDataCatalogEncryptionSettings(PutDataCatalogEncryptionSettingsRequest putDataCatalogEncryptionSettingsRequest);
+
+    /**
+     * <p>
+     * Sets the Data Catalog resource policy for access control.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @return Result of the PutResourcePolicy operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws ConditionCheckFailureException
+     *         A specified condition was not satisfied.
+     * @sample AWSGlue.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest putResourcePolicyRequest);
 
     /**
      * <p>

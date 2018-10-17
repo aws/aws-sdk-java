@@ -48,6 +48,143 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An expression filtering the partitions to be returned.
      * </p>
+     * <p>
+     * The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a
+     * href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression.
+     * </p>
+     * <p>
+     * <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:
+     * </p>
+     * <dl>
+     * <dt>=</dt>
+     * <dd>
+     * <p>
+     * Checks if the values of the two operands are equal or not; if yes, then the condition becomes true.
+     * </p>
+     * <p>
+     * Example: Assume 'variable a' holds 10 and 'variable b' holds 20.
+     * </p>
+     * <p>
+     * (a = b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt; &gt;</dt>
+     * <dd>
+     * <p>
+     * Checks if the values of two operands are equal or not; if the values are not equal, then the condition becomes
+     * true.
+     * </p>
+     * <p>
+     * Example: (a &lt; &gt; b) is true.
+     * </p>
+     * </dd>
+     * <dt>&gt;</dt>
+     * <dd>
+     * <p>
+     * Checks if the value of the left operand is greater than the value of the right operand; if yes, then the
+     * condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &gt; b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt;</dt>
+     * <dd>
+     * <p>
+     * Checks if the value of the left operand is less than the value of the right operand; if yes, then the condition
+     * becomes true.
+     * </p>
+     * <p>
+     * Example: (a &lt; b) is true.
+     * </p>
+     * </dd>
+     * <dt>&gt;=</dt>
+     * <dd>
+     * <p>
+     * Checks if the value of the left operand is greater than or equal to the value of the right operand; if yes, then
+     * the condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &gt;= b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt;=</dt>
+     * <dd>
+     * <p>
+     * Checks if the value of the left operand is less than or equal to the value of the right operand; if yes, then the
+     * condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &lt;= b) is true.
+     * </p>
+     * </dd>
+     * <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+     * <dd>
+     * <p>
+     * Logical operators.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * <i>Supported Partition Key Types</i>: The following are the the supported partition keys.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>string</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>date</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>timestamp</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>int</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bigint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>long</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tinyint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>smallint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>decimal</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If an invalid type is encountered, an exception is thrown.
+     * </p>
+     * <p>
+     * The following list shows the valid operators on each type. When you define a crawler, the
+     * <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions.
+     * </p>
+     * <p>
+     * <i>Sample API Call</i>:
+     * </p>
      */
     private String expression;
     /**
@@ -199,9 +336,284 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An expression filtering the partitions to be returned.
      * </p>
+     * <p>
+     * The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a
+     * href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression.
+     * </p>
+     * <p>
+     * <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:
+     * </p>
+     * <dl>
+     * <dt>=</dt>
+     * <dd>
+     * <p>
+     * Checks if the values of the two operands are equal or not; if yes, then the condition becomes true.
+     * </p>
+     * <p>
+     * Example: Assume 'variable a' holds 10 and 'variable b' holds 20.
+     * </p>
+     * <p>
+     * (a = b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt; &gt;</dt>
+     * <dd>
+     * <p>
+     * Checks if the values of two operands are equal or not; if the values are not equal, then the condition becomes
+     * true.
+     * </p>
+     * <p>
+     * Example: (a &lt; &gt; b) is true.
+     * </p>
+     * </dd>
+     * <dt>&gt;</dt>
+     * <dd>
+     * <p>
+     * Checks if the value of the left operand is greater than the value of the right operand; if yes, then the
+     * condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &gt; b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt;</dt>
+     * <dd>
+     * <p>
+     * Checks if the value of the left operand is less than the value of the right operand; if yes, then the condition
+     * becomes true.
+     * </p>
+     * <p>
+     * Example: (a &lt; b) is true.
+     * </p>
+     * </dd>
+     * <dt>&gt;=</dt>
+     * <dd>
+     * <p>
+     * Checks if the value of the left operand is greater than or equal to the value of the right operand; if yes, then
+     * the condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &gt;= b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt;=</dt>
+     * <dd>
+     * <p>
+     * Checks if the value of the left operand is less than or equal to the value of the right operand; if yes, then the
+     * condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &lt;= b) is true.
+     * </p>
+     * </dd>
+     * <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+     * <dd>
+     * <p>
+     * Logical operators.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * <i>Supported Partition Key Types</i>: The following are the the supported partition keys.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>string</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>date</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>timestamp</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>int</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bigint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>long</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tinyint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>smallint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>decimal</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If an invalid type is encountered, an exception is thrown.
+     * </p>
+     * <p>
+     * The following list shows the valid operators on each type. When you define a crawler, the
+     * <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions.
+     * </p>
+     * <p>
+     * <i>Sample API Call</i>:
+     * </p>
      * 
      * @param expression
-     *        An expression filtering the partitions to be returned.
+     *        An expression filtering the partitions to be returned.</p>
+     *        <p>
+     *        The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement
+     *        parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression.
+     *        </p>
+     *        <p>
+     *        <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API
+     *        call:
+     *        </p>
+     *        <dl>
+     *        <dt>=</dt>
+     *        <dd>
+     *        <p>
+     *        Checks if the values of the two operands are equal or not; if yes, then the condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: Assume 'variable a' holds 10 and 'variable b' holds 20.
+     *        </p>
+     *        <p>
+     *        (a = b) is not true.
+     *        </p>
+     *        </dd>
+     *        <dt>&lt; &gt;</dt>
+     *        <dd>
+     *        <p>
+     *        Checks if the values of two operands are equal or not; if the values are not equal, then the condition
+     *        becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &lt; &gt; b) is true.
+     *        </p>
+     *        </dd>
+     *        <dt>&gt;</dt>
+     *        <dd>
+     *        <p>
+     *        Checks if the value of the left operand is greater than the value of the right operand; if yes, then the
+     *        condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &gt; b) is not true.
+     *        </p>
+     *        </dd>
+     *        <dt>&lt;</dt>
+     *        <dd>
+     *        <p>
+     *        Checks if the value of the left operand is less than the value of the right operand; if yes, then the
+     *        condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &lt; b) is true.
+     *        </p>
+     *        </dd>
+     *        <dt>&gt;=</dt>
+     *        <dd>
+     *        <p>
+     *        Checks if the value of the left operand is greater than or equal to the value of the right operand; if
+     *        yes, then the condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &gt;= b) is not true.
+     *        </p>
+     *        </dd>
+     *        <dt>&lt;=</dt>
+     *        <dd>
+     *        <p>
+     *        Checks if the value of the left operand is less than or equal to the value of the right operand; if yes,
+     *        then the condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &lt;= b) is true.
+     *        </p>
+     *        </dd>
+     *        <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+     *        <dd>
+     *        <p>
+     *        Logical operators.
+     *        </p>
+     *        </dd>
+     *        </dl>
+     *        <p>
+     *        <i>Supported Partition Key Types</i>: The following are the the supported partition keys.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>string</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>date</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>timestamp</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>int</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>bigint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>long</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tinyint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>smallint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>decimal</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If an invalid type is encountered, an exception is thrown.
+     *        </p>
+     *        <p>
+     *        The following list shows the valid operators on each type. When you define a crawler, the
+     *        <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog
+     *        partitions.
+     *        </p>
+     *        <p>
+     *        <i>Sample API Call</i>:
      */
 
     public void setExpression(String expression) {
@@ -212,8 +624,283 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An expression filtering the partitions to be returned.
      * </p>
+     * <p>
+     * The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a
+     * href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression.
+     * </p>
+     * <p>
+     * <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:
+     * </p>
+     * <dl>
+     * <dt>=</dt>
+     * <dd>
+     * <p>
+     * Checks if the values of the two operands are equal or not; if yes, then the condition becomes true.
+     * </p>
+     * <p>
+     * Example: Assume 'variable a' holds 10 and 'variable b' holds 20.
+     * </p>
+     * <p>
+     * (a = b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt; &gt;</dt>
+     * <dd>
+     * <p>
+     * Checks if the values of two operands are equal or not; if the values are not equal, then the condition becomes
+     * true.
+     * </p>
+     * <p>
+     * Example: (a &lt; &gt; b) is true.
+     * </p>
+     * </dd>
+     * <dt>&gt;</dt>
+     * <dd>
+     * <p>
+     * Checks if the value of the left operand is greater than the value of the right operand; if yes, then the
+     * condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &gt; b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt;</dt>
+     * <dd>
+     * <p>
+     * Checks if the value of the left operand is less than the value of the right operand; if yes, then the condition
+     * becomes true.
+     * </p>
+     * <p>
+     * Example: (a &lt; b) is true.
+     * </p>
+     * </dd>
+     * <dt>&gt;=</dt>
+     * <dd>
+     * <p>
+     * Checks if the value of the left operand is greater than or equal to the value of the right operand; if yes, then
+     * the condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &gt;= b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt;=</dt>
+     * <dd>
+     * <p>
+     * Checks if the value of the left operand is less than or equal to the value of the right operand; if yes, then the
+     * condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &lt;= b) is true.
+     * </p>
+     * </dd>
+     * <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+     * <dd>
+     * <p>
+     * Logical operators.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * <i>Supported Partition Key Types</i>: The following are the the supported partition keys.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>string</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>date</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>timestamp</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>int</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bigint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>long</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tinyint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>smallint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>decimal</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If an invalid type is encountered, an exception is thrown.
+     * </p>
+     * <p>
+     * The following list shows the valid operators on each type. When you define a crawler, the
+     * <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions.
+     * </p>
+     * <p>
+     * <i>Sample API Call</i>:
+     * </p>
      * 
-     * @return An expression filtering the partitions to be returned.
+     * @return An expression filtering the partitions to be returned.</p>
+     *         <p>
+     *         The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement
+     *         parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression.
+     *         </p>
+     *         <p>
+     *         <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API
+     *         call:
+     *         </p>
+     *         <dl>
+     *         <dt>=</dt>
+     *         <dd>
+     *         <p>
+     *         Checks if the values of the two operands are equal or not; if yes, then the condition becomes true.
+     *         </p>
+     *         <p>
+     *         Example: Assume 'variable a' holds 10 and 'variable b' holds 20.
+     *         </p>
+     *         <p>
+     *         (a = b) is not true.
+     *         </p>
+     *         </dd>
+     *         <dt>&lt; &gt;</dt>
+     *         <dd>
+     *         <p>
+     *         Checks if the values of two operands are equal or not; if the values are not equal, then the condition
+     *         becomes true.
+     *         </p>
+     *         <p>
+     *         Example: (a &lt; &gt; b) is true.
+     *         </p>
+     *         </dd>
+     *         <dt>&gt;</dt>
+     *         <dd>
+     *         <p>
+     *         Checks if the value of the left operand is greater than the value of the right operand; if yes, then the
+     *         condition becomes true.
+     *         </p>
+     *         <p>
+     *         Example: (a &gt; b) is not true.
+     *         </p>
+     *         </dd>
+     *         <dt>&lt;</dt>
+     *         <dd>
+     *         <p>
+     *         Checks if the value of the left operand is less than the value of the right operand; if yes, then the
+     *         condition becomes true.
+     *         </p>
+     *         <p>
+     *         Example: (a &lt; b) is true.
+     *         </p>
+     *         </dd>
+     *         <dt>&gt;=</dt>
+     *         <dd>
+     *         <p>
+     *         Checks if the value of the left operand is greater than or equal to the value of the right operand; if
+     *         yes, then the condition becomes true.
+     *         </p>
+     *         <p>
+     *         Example: (a &gt;= b) is not true.
+     *         </p>
+     *         </dd>
+     *         <dt>&lt;=</dt>
+     *         <dd>
+     *         <p>
+     *         Checks if the value of the left operand is less than or equal to the value of the right operand; if yes,
+     *         then the condition becomes true.
+     *         </p>
+     *         <p>
+     *         Example: (a &lt;= b) is true.
+     *         </p>
+     *         </dd>
+     *         <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+     *         <dd>
+     *         <p>
+     *         Logical operators.
+     *         </p>
+     *         </dd>
+     *         </dl>
+     *         <p>
+     *         <i>Supported Partition Key Types</i>: The following are the the supported partition keys.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>string</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>date</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>timestamp</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>int</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>bigint</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>long</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tinyint</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>smallint</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>decimal</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If an invalid type is encountered, an exception is thrown.
+     *         </p>
+     *         <p>
+     *         The following list shows the valid operators on each type. When you define a crawler, the
+     *         <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog
+     *         partitions.
+     *         </p>
+     *         <p>
+     *         <i>Sample API Call</i>:
      */
 
     public String getExpression() {
@@ -224,9 +911,284 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An expression filtering the partitions to be returned.
      * </p>
+     * <p>
+     * The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a
+     * href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression.
+     * </p>
+     * <p>
+     * <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:
+     * </p>
+     * <dl>
+     * <dt>=</dt>
+     * <dd>
+     * <p>
+     * Checks if the values of the two operands are equal or not; if yes, then the condition becomes true.
+     * </p>
+     * <p>
+     * Example: Assume 'variable a' holds 10 and 'variable b' holds 20.
+     * </p>
+     * <p>
+     * (a = b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt; &gt;</dt>
+     * <dd>
+     * <p>
+     * Checks if the values of two operands are equal or not; if the values are not equal, then the condition becomes
+     * true.
+     * </p>
+     * <p>
+     * Example: (a &lt; &gt; b) is true.
+     * </p>
+     * </dd>
+     * <dt>&gt;</dt>
+     * <dd>
+     * <p>
+     * Checks if the value of the left operand is greater than the value of the right operand; if yes, then the
+     * condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &gt; b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt;</dt>
+     * <dd>
+     * <p>
+     * Checks if the value of the left operand is less than the value of the right operand; if yes, then the condition
+     * becomes true.
+     * </p>
+     * <p>
+     * Example: (a &lt; b) is true.
+     * </p>
+     * </dd>
+     * <dt>&gt;=</dt>
+     * <dd>
+     * <p>
+     * Checks if the value of the left operand is greater than or equal to the value of the right operand; if yes, then
+     * the condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &gt;= b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt;=</dt>
+     * <dd>
+     * <p>
+     * Checks if the value of the left operand is less than or equal to the value of the right operand; if yes, then the
+     * condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &lt;= b) is true.
+     * </p>
+     * </dd>
+     * <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+     * <dd>
+     * <p>
+     * Logical operators.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * <i>Supported Partition Key Types</i>: The following are the the supported partition keys.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>string</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>date</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>timestamp</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>int</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bigint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>long</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tinyint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>smallint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>decimal</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If an invalid type is encountered, an exception is thrown.
+     * </p>
+     * <p>
+     * The following list shows the valid operators on each type. When you define a crawler, the
+     * <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions.
+     * </p>
+     * <p>
+     * <i>Sample API Call</i>:
+     * </p>
      * 
      * @param expression
-     *        An expression filtering the partitions to be returned.
+     *        An expression filtering the partitions to be returned.</p>
+     *        <p>
+     *        The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement
+     *        parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression.
+     *        </p>
+     *        <p>
+     *        <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API
+     *        call:
+     *        </p>
+     *        <dl>
+     *        <dt>=</dt>
+     *        <dd>
+     *        <p>
+     *        Checks if the values of the two operands are equal or not; if yes, then the condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: Assume 'variable a' holds 10 and 'variable b' holds 20.
+     *        </p>
+     *        <p>
+     *        (a = b) is not true.
+     *        </p>
+     *        </dd>
+     *        <dt>&lt; &gt;</dt>
+     *        <dd>
+     *        <p>
+     *        Checks if the values of two operands are equal or not; if the values are not equal, then the condition
+     *        becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &lt; &gt; b) is true.
+     *        </p>
+     *        </dd>
+     *        <dt>&gt;</dt>
+     *        <dd>
+     *        <p>
+     *        Checks if the value of the left operand is greater than the value of the right operand; if yes, then the
+     *        condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &gt; b) is not true.
+     *        </p>
+     *        </dd>
+     *        <dt>&lt;</dt>
+     *        <dd>
+     *        <p>
+     *        Checks if the value of the left operand is less than the value of the right operand; if yes, then the
+     *        condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &lt; b) is true.
+     *        </p>
+     *        </dd>
+     *        <dt>&gt;=</dt>
+     *        <dd>
+     *        <p>
+     *        Checks if the value of the left operand is greater than or equal to the value of the right operand; if
+     *        yes, then the condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &gt;= b) is not true.
+     *        </p>
+     *        </dd>
+     *        <dt>&lt;=</dt>
+     *        <dd>
+     *        <p>
+     *        Checks if the value of the left operand is less than or equal to the value of the right operand; if yes,
+     *        then the condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &lt;= b) is true.
+     *        </p>
+     *        </dd>
+     *        <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+     *        <dd>
+     *        <p>
+     *        Logical operators.
+     *        </p>
+     *        </dd>
+     *        </dl>
+     *        <p>
+     *        <i>Supported Partition Key Types</i>: The following are the the supported partition keys.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>string</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>date</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>timestamp</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>int</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>bigint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>long</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tinyint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>smallint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>decimal</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If an invalid type is encountered, an exception is thrown.
+     *        </p>
+     *        <p>
+     *        The following list shows the valid operators on each type. When you define a crawler, the
+     *        <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog
+     *        partitions.
+     *        </p>
+     *        <p>
+     *        <i>Sample API Call</i>:
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

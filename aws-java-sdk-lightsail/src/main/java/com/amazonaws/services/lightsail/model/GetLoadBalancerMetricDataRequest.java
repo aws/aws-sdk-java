@@ -160,7 +160,7 @@ public class GetLoadBalancerMetricDataRequest extends com.amazonaws.AmazonWebSer
     private String metricName;
     /**
      * <p>
-     * The time period duration for your health data request.
+     * The granularity, in seconds, of the returned data points.
      * </p>
      */
     private Integer period;
@@ -1291,11 +1291,11 @@ public class GetLoadBalancerMetricDataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The time period duration for your health data request.
+     * The granularity, in seconds, of the returned data points.
      * </p>
      * 
      * @param period
-     *        The time period duration for your health data request.
+     *        The granularity, in seconds, of the returned data points.
      */
 
     public void setPeriod(Integer period) {
@@ -1304,10 +1304,10 @@ public class GetLoadBalancerMetricDataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The time period duration for your health data request.
+     * The granularity, in seconds, of the returned data points.
      * </p>
      * 
-     * @return The time period duration for your health data request.
+     * @return The granularity, in seconds, of the returned data points.
      */
 
     public Integer getPeriod() {
@@ -1316,11 +1316,11 @@ public class GetLoadBalancerMetricDataRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The time period duration for your health data request.
+     * The granularity, in seconds, of the returned data points.
      * </p>
      * 
      * @param period
-     *        The time period duration for your health data request.
+     *        The granularity, in seconds, of the returned data points.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

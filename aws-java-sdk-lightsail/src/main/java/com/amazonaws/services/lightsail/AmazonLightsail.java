@@ -535,7 +535,11 @@ public interface AmazonLightsail {
 
     /**
      * <p>
-     * Creates one or more Amazon Lightsail virtual private servers, or <i>instances</i>.
+     * Creates one or more Amazon Lightsail virtual private servers, or <i>instances</i>. Create instances using active
+     * blueprints. Inactive blueprints are listed to support customers with existing instances but are not necessarily
+     * available for launch of new instances. Blueprints are marked inactive when they become outdated due to operating
+     * system updates or new application releases. Use the get blueprints operation to return a list of available
+     * blueprints.
      * </p>
      * 
      * @param createInstancesRequest
@@ -602,7 +606,7 @@ public interface AmazonLightsail {
 
     /**
      * <p>
-     * Creates sn SSH key pair.
+     * Creates an SSH key pair.
      * </p>
      * 
      * @param createKeyPairRequest
@@ -708,6 +712,111 @@ public interface AmazonLightsail {
      *      target="_top">AWS API Documentation</a>
      */
     CreateLoadBalancerTlsCertificateResult createLoadBalancerTlsCertificate(CreateLoadBalancerTlsCertificateRequest createLoadBalancerTlsCertificateRequest);
+
+    /**
+     * <p>
+     * Creates a new database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param createRelationalDatabaseRequest
+     * @return Result of the CreateRelationalDatabase operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateRelationalDatabaseResult createRelationalDatabase(CreateRelationalDatabaseRequest createRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Creates a new database from an existing database snapshot in Amazon Lightsail.
+     * </p>
+     * <p>
+     * You can create a new database from a snapshot in if something goes wrong with your original database, or to
+     * change it to a different plan, such as a high availability or standard plan.
+     * </p>
+     * 
+     * @param createRelationalDatabaseFromSnapshotRequest
+     * @return Result of the CreateRelationalDatabaseFromSnapshot operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateRelationalDatabaseFromSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseFromSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateRelationalDatabaseFromSnapshotResult createRelationalDatabaseFromSnapshot(
+            CreateRelationalDatabaseFromSnapshotRequest createRelationalDatabaseFromSnapshotRequest);
+
+    /**
+     * <p>
+     * Creates a snapshot of your database in Amazon Lightsail. You can use snapshots for backups, to make copies of a
+     * database, and to save data before deleting a database.
+     * </p>
+     * 
+     * @param createRelationalDatabaseSnapshotRequest
+     * @return Result of the CreateRelationalDatabaseSnapshot operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateRelationalDatabaseSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateRelationalDatabaseSnapshotResult createRelationalDatabaseSnapshot(CreateRelationalDatabaseSnapshotRequest createRelationalDatabaseSnapshotRequest);
 
     /**
      * <p>
@@ -1018,6 +1127,72 @@ public interface AmazonLightsail {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteLoadBalancerTlsCertificateResult deleteLoadBalancerTlsCertificate(DeleteLoadBalancerTlsCertificateRequest deleteLoadBalancerTlsCertificateRequest);
+
+    /**
+     * <p>
+     * Deletes a database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param deleteRelationalDatabaseRequest
+     * @return Result of the DeleteRelationalDatabase operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DeleteRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRelationalDatabaseResult deleteRelationalDatabase(DeleteRelationalDatabaseRequest deleteRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Deletes a database snapshot in Amazon Lightsail.
+     * </p>
+     * 
+     * @param deleteRelationalDatabaseSnapshotRequest
+     * @return Result of the DeleteRelationalDatabaseSnapshot operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DeleteRelationalDatabaseSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabaseSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRelationalDatabaseSnapshotResult deleteRelationalDatabaseSnapshot(DeleteRelationalDatabaseSnapshotRequest deleteRelationalDatabaseSnapshotRequest);
 
     /**
      * <p>
@@ -2044,7 +2219,7 @@ public interface AmazonLightsail {
     /**
      * <p>
      * Returns a list of all valid regions for Amazon Lightsail. Use the <code>include availability zones</code>
-     * parameter to also return the availability zones in a region.
+     * parameter to also return the Availability Zones in a region.
      * </p>
      * 
      * @param getRegionsRequest
@@ -2074,6 +2249,418 @@ public interface AmazonLightsail {
      *      Documentation</a>
      */
     GetRegionsResult getRegions(GetRegionsRequest getRegionsRequest);
+
+    /**
+     * <p>
+     * Returns information about a specific database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseRequest
+     * @return Result of the GetRelationalDatabase operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRelationalDatabaseResult getRelationalDatabase(GetRelationalDatabaseRequest getRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Returns a list of available database blueprints in Amazon Lightsail. A blueprint describes the major engine
+     * version of a database.
+     * </p>
+     * <p>
+     * You can use a blueprint ID to create a new database that runs a specific database engine.
+     * </p>
+     * 
+     * @param getRelationalDatabaseBlueprintsRequest
+     * @return Result of the GetRelationalDatabaseBlueprints operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetRelationalDatabaseBlueprints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseBlueprints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRelationalDatabaseBlueprintsResult getRelationalDatabaseBlueprints(GetRelationalDatabaseBlueprintsRequest getRelationalDatabaseBlueprintsRequest);
+
+    /**
+     * <p>
+     * Returns the list of bundles that are available in Amazon Lightsail. A bundle describes the performance
+     * specifications for a database.
+     * </p>
+     * <p>
+     * You can use a bundle ID to create a new database with explicit performance specifications.
+     * </p>
+     * 
+     * @param getRelationalDatabaseBundlesRequest
+     * @return Result of the GetRelationalDatabaseBundles operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetRelationalDatabaseBundles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseBundles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRelationalDatabaseBundlesResult getRelationalDatabaseBundles(GetRelationalDatabaseBundlesRequest getRelationalDatabaseBundlesRequest);
+
+    /**
+     * <p>
+     * Returns a list of events for a specific database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseEventsRequest
+     * @return Result of the GetRelationalDatabaseEvents operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetRelationalDatabaseEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRelationalDatabaseEventsResult getRelationalDatabaseEvents(GetRelationalDatabaseEventsRequest getRelationalDatabaseEventsRequest);
+
+    /**
+     * <p>
+     * Returns a list of log events for a database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseLogEventsRequest
+     * @return Result of the GetRelationalDatabaseLogEvents operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetRelationalDatabaseLogEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseLogEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRelationalDatabaseLogEventsResult getRelationalDatabaseLogEvents(GetRelationalDatabaseLogEventsRequest getRelationalDatabaseLogEventsRequest);
+
+    /**
+     * <p>
+     * Returns a list of available log streams for a specific database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseLogStreamsRequest
+     * @return Result of the GetRelationalDatabaseLogStreams operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetRelationalDatabaseLogStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseLogStreams"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRelationalDatabaseLogStreamsResult getRelationalDatabaseLogStreams(GetRelationalDatabaseLogStreamsRequest getRelationalDatabaseLogStreamsRequest);
+
+    /**
+     * <p>
+     * Returns the current, previous, or pending versions of the master user password for a Lightsail database.
+     * </p>
+     * 
+     * @param getRelationalDatabaseMasterUserPasswordRequest
+     * @return Result of the GetRelationalDatabaseMasterUserPassword operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetRelationalDatabaseMasterUserPassword
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMasterUserPassword"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRelationalDatabaseMasterUserPasswordResult getRelationalDatabaseMasterUserPassword(
+            GetRelationalDatabaseMasterUserPasswordRequest getRelationalDatabaseMasterUserPasswordRequest);
+
+    /**
+     * <p>
+     * Returns the data points of the specified metric for a database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseMetricDataRequest
+     * @return Result of the GetRelationalDatabaseMetricData operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetRelationalDatabaseMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMetricData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRelationalDatabaseMetricDataResult getRelationalDatabaseMetricData(GetRelationalDatabaseMetricDataRequest getRelationalDatabaseMetricDataRequest);
+
+    /**
+     * <p>
+     * Returns all of the runtime parameters offered by the underlying database software, or engine, for a specific
+     * database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * In addition to the parameter names and values, this operation returns other information about each parameter.
+     * This information includes whether changes require a reboot, whether the parameter is modifiable, the allowed
+     * values, and the data types.
+     * </p>
+     * 
+     * @param getRelationalDatabaseParametersRequest
+     * @return Result of the GetRelationalDatabaseParameters operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetRelationalDatabaseParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseParameters"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRelationalDatabaseParametersResult getRelationalDatabaseParameters(GetRelationalDatabaseParametersRequest getRelationalDatabaseParametersRequest);
+
+    /**
+     * <p>
+     * Returns information about a specific database snapshot in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseSnapshotRequest
+     * @return Result of the GetRelationalDatabaseSnapshot operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetRelationalDatabaseSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRelationalDatabaseSnapshotResult getRelationalDatabaseSnapshot(GetRelationalDatabaseSnapshotRequest getRelationalDatabaseSnapshotRequest);
+
+    /**
+     * <p>
+     * Returns information about all of your database snapshots in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseSnapshotsRequest
+     * @return Result of the GetRelationalDatabaseSnapshots operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetRelationalDatabaseSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRelationalDatabaseSnapshotsResult getRelationalDatabaseSnapshots(GetRelationalDatabaseSnapshotsRequest getRelationalDatabaseSnapshotsRequest);
+
+    /**
+     * <p>
+     * Returns information about all of your databases in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabasesRequest
+     * @return Result of the GetRelationalDatabases operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetRelationalDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRelationalDatabasesResult getRelationalDatabases(GetRelationalDatabasesRequest getRelationalDatabasesRequest);
 
     /**
      * <p>
@@ -2344,6 +2931,39 @@ public interface AmazonLightsail {
 
     /**
      * <p>
+     * Restarts a specific database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param rebootRelationalDatabaseRequest
+     * @return Result of the RebootRelationalDatabase operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.RebootRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RebootRelationalDatabaseResult rebootRelationalDatabase(RebootRelationalDatabaseRequest rebootRelationalDatabaseRequest);
+
+    /**
+     * <p>
      * Deletes a specific static IP from your account.
      * </p>
      * 
@@ -2411,6 +3031,40 @@ public interface AmazonLightsail {
 
     /**
      * <p>
+     * Starts a specific database from a stopped state in Amazon Lightsail. To restart a database, use the
+     * <code>reboot relational database</code> operation.
+     * </p>
+     * 
+     * @param startRelationalDatabaseRequest
+     * @return Result of the StartRelationalDatabase operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.StartRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartRelationalDatabaseResult startRelationalDatabase(StartRelationalDatabaseRequest startRelationalDatabaseRequest);
+
+    /**
+     * <p>
      * Stops a specific Amazon Lightsail instance that is currently running.
      * </p>
      * 
@@ -2441,6 +3095,39 @@ public interface AmazonLightsail {
      *      Documentation</a>
      */
     StopInstanceResult stopInstance(StopInstanceRequest stopInstanceRequest);
+
+    /**
+     * <p>
+     * Stops a specific database that is currently running in Amazon Lightsail.
+     * </p>
+     * 
+     * @param stopRelationalDatabaseRequest
+     * @return Result of the StopRelationalDatabase operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.StopRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopRelationalDatabaseResult stopRelationalDatabase(StopRelationalDatabaseRequest stopRelationalDatabaseRequest);
 
     /**
      * <p>
@@ -2540,6 +3227,84 @@ public interface AmazonLightsail {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateLoadBalancerAttributeResult updateLoadBalancerAttribute(UpdateLoadBalancerAttributeRequest updateLoadBalancerAttributeRequest);
+
+    /**
+     * <p>
+     * Allows the update of one or more attributes of a database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * Updates are applied immediately, or in cases where the updates could result in an outage, are applied during the
+     * database's predefined maintenance window.
+     * </p>
+     * 
+     * @param updateRelationalDatabaseRequest
+     * @return Result of the UpdateRelationalDatabase operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.UpdateRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateRelationalDatabaseResult updateRelationalDatabase(UpdateRelationalDatabaseRequest updateRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Allows the update of one or more parameters of a database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * Parameter updates don't cause outages; therefore, their application is not subject to the preferred maintenance
+     * window. However, there are two ways in which paramater updates are applied: <code>dynamic</code> or
+     * <code>pending-reboot</code>. Parameters marked with a <code>dynamic</code> apply type are applied immediately.
+     * Parameters marked with a <code>pending-reboot</code> apply type are applied only after the database is rebooted
+     * using the <code>reboot relational database</code> operation.
+     * </p>
+     * 
+     * @param updateRelationalDatabaseParametersRequest
+     * @return Result of the UpdateRelationalDatabaseParameters operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.UpdateRelationalDatabaseParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabaseParameters"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateRelationalDatabaseParametersResult updateRelationalDatabaseParameters(
+            UpdateRelationalDatabaseParametersRequest updateRelationalDatabaseParametersRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

@@ -48,6 +48,11 @@ public class ListGroupsResultJsonUnmarshaller implements Unmarshaller<ListGroups
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("GroupIdentifiers", targetDepth)) {
+                    context.nextToken();
+                    listGroupsResult.setGroupIdentifiers(new ListUnmarshaller<GroupIdentifier>(GroupIdentifierJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
                 if (context.testExpression("Groups", targetDepth)) {
                     context.nextToken();
                     listGroupsResult.setGroups(new ListUnmarshaller<Group>(GroupJsonUnmarshaller.getInstance()).unmarshall(context));

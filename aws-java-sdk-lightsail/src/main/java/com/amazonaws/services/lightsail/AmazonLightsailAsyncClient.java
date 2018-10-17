@@ -824,6 +824,109 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRelationalDatabaseResult> createRelationalDatabaseAsync(CreateRelationalDatabaseRequest request) {
+
+        return createRelationalDatabaseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRelationalDatabaseResult> createRelationalDatabaseAsync(final CreateRelationalDatabaseRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRelationalDatabaseRequest, CreateRelationalDatabaseResult> asyncHandler) {
+        final CreateRelationalDatabaseRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRelationalDatabaseResult>() {
+            @Override
+            public CreateRelationalDatabaseResult call() throws Exception {
+                CreateRelationalDatabaseResult result = null;
+
+                try {
+                    result = executeCreateRelationalDatabase(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRelationalDatabaseFromSnapshotResult> createRelationalDatabaseFromSnapshotAsync(
+            CreateRelationalDatabaseFromSnapshotRequest request) {
+
+        return createRelationalDatabaseFromSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRelationalDatabaseFromSnapshotResult> createRelationalDatabaseFromSnapshotAsync(
+            final CreateRelationalDatabaseFromSnapshotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRelationalDatabaseFromSnapshotRequest, CreateRelationalDatabaseFromSnapshotResult> asyncHandler) {
+        final CreateRelationalDatabaseFromSnapshotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRelationalDatabaseFromSnapshotResult>() {
+            @Override
+            public CreateRelationalDatabaseFromSnapshotResult call() throws Exception {
+                CreateRelationalDatabaseFromSnapshotResult result = null;
+
+                try {
+                    result = executeCreateRelationalDatabaseFromSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRelationalDatabaseSnapshotResult> createRelationalDatabaseSnapshotAsync(
+            CreateRelationalDatabaseSnapshotRequest request) {
+
+        return createRelationalDatabaseSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRelationalDatabaseSnapshotResult> createRelationalDatabaseSnapshotAsync(
+            final CreateRelationalDatabaseSnapshotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRelationalDatabaseSnapshotRequest, CreateRelationalDatabaseSnapshotResult> asyncHandler) {
+        final CreateRelationalDatabaseSnapshotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRelationalDatabaseSnapshotResult>() {
+            @Override
+            public CreateRelationalDatabaseSnapshotResult call() throws Exception {
+                CreateRelationalDatabaseSnapshotResult result = null;
+
+                try {
+                    result = executeCreateRelationalDatabaseSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDiskResult> deleteDiskAsync(DeleteDiskRequest request) {
 
         return deleteDiskAsync(request, null);
@@ -1107,6 +1210,74 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeDeleteLoadBalancerTlsCertificate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRelationalDatabaseResult> deleteRelationalDatabaseAsync(DeleteRelationalDatabaseRequest request) {
+
+        return deleteRelationalDatabaseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRelationalDatabaseResult> deleteRelationalDatabaseAsync(final DeleteRelationalDatabaseRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRelationalDatabaseRequest, DeleteRelationalDatabaseResult> asyncHandler) {
+        final DeleteRelationalDatabaseRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRelationalDatabaseResult>() {
+            @Override
+            public DeleteRelationalDatabaseResult call() throws Exception {
+                DeleteRelationalDatabaseResult result = null;
+
+                try {
+                    result = executeDeleteRelationalDatabase(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRelationalDatabaseSnapshotResult> deleteRelationalDatabaseSnapshotAsync(
+            DeleteRelationalDatabaseSnapshotRequest request) {
+
+        return deleteRelationalDatabaseSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRelationalDatabaseSnapshotResult> deleteRelationalDatabaseSnapshotAsync(
+            final DeleteRelationalDatabaseSnapshotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRelationalDatabaseSnapshotRequest, DeleteRelationalDatabaseSnapshotResult> asyncHandler) {
+        final DeleteRelationalDatabaseSnapshotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRelationalDatabaseSnapshotResult>() {
+            @Override
+            public DeleteRelationalDatabaseSnapshotResult call() throws Exception {
+                DeleteRelationalDatabaseSnapshotResult result = null;
+
+                try {
+                    result = executeDeleteRelationalDatabaseSnapshot(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2149,6 +2320,415 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseResult> getRelationalDatabaseAsync(GetRelationalDatabaseRequest request) {
+
+        return getRelationalDatabaseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseResult> getRelationalDatabaseAsync(final GetRelationalDatabaseRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseRequest, GetRelationalDatabaseResult> asyncHandler) {
+        final GetRelationalDatabaseRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRelationalDatabaseResult>() {
+            @Override
+            public GetRelationalDatabaseResult call() throws Exception {
+                GetRelationalDatabaseResult result = null;
+
+                try {
+                    result = executeGetRelationalDatabase(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseBlueprintsResult> getRelationalDatabaseBlueprintsAsync(
+            GetRelationalDatabaseBlueprintsRequest request) {
+
+        return getRelationalDatabaseBlueprintsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseBlueprintsResult> getRelationalDatabaseBlueprintsAsync(
+            final GetRelationalDatabaseBlueprintsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseBlueprintsRequest, GetRelationalDatabaseBlueprintsResult> asyncHandler) {
+        final GetRelationalDatabaseBlueprintsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRelationalDatabaseBlueprintsResult>() {
+            @Override
+            public GetRelationalDatabaseBlueprintsResult call() throws Exception {
+                GetRelationalDatabaseBlueprintsResult result = null;
+
+                try {
+                    result = executeGetRelationalDatabaseBlueprints(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseBundlesResult> getRelationalDatabaseBundlesAsync(GetRelationalDatabaseBundlesRequest request) {
+
+        return getRelationalDatabaseBundlesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseBundlesResult> getRelationalDatabaseBundlesAsync(final GetRelationalDatabaseBundlesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseBundlesRequest, GetRelationalDatabaseBundlesResult> asyncHandler) {
+        final GetRelationalDatabaseBundlesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRelationalDatabaseBundlesResult>() {
+            @Override
+            public GetRelationalDatabaseBundlesResult call() throws Exception {
+                GetRelationalDatabaseBundlesResult result = null;
+
+                try {
+                    result = executeGetRelationalDatabaseBundles(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseEventsResult> getRelationalDatabaseEventsAsync(GetRelationalDatabaseEventsRequest request) {
+
+        return getRelationalDatabaseEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseEventsResult> getRelationalDatabaseEventsAsync(final GetRelationalDatabaseEventsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseEventsRequest, GetRelationalDatabaseEventsResult> asyncHandler) {
+        final GetRelationalDatabaseEventsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRelationalDatabaseEventsResult>() {
+            @Override
+            public GetRelationalDatabaseEventsResult call() throws Exception {
+                GetRelationalDatabaseEventsResult result = null;
+
+                try {
+                    result = executeGetRelationalDatabaseEvents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseLogEventsResult> getRelationalDatabaseLogEventsAsync(GetRelationalDatabaseLogEventsRequest request) {
+
+        return getRelationalDatabaseLogEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseLogEventsResult> getRelationalDatabaseLogEventsAsync(
+            final GetRelationalDatabaseLogEventsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseLogEventsRequest, GetRelationalDatabaseLogEventsResult> asyncHandler) {
+        final GetRelationalDatabaseLogEventsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRelationalDatabaseLogEventsResult>() {
+            @Override
+            public GetRelationalDatabaseLogEventsResult call() throws Exception {
+                GetRelationalDatabaseLogEventsResult result = null;
+
+                try {
+                    result = executeGetRelationalDatabaseLogEvents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseLogStreamsResult> getRelationalDatabaseLogStreamsAsync(
+            GetRelationalDatabaseLogStreamsRequest request) {
+
+        return getRelationalDatabaseLogStreamsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseLogStreamsResult> getRelationalDatabaseLogStreamsAsync(
+            final GetRelationalDatabaseLogStreamsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseLogStreamsRequest, GetRelationalDatabaseLogStreamsResult> asyncHandler) {
+        final GetRelationalDatabaseLogStreamsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRelationalDatabaseLogStreamsResult>() {
+            @Override
+            public GetRelationalDatabaseLogStreamsResult call() throws Exception {
+                GetRelationalDatabaseLogStreamsResult result = null;
+
+                try {
+                    result = executeGetRelationalDatabaseLogStreams(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseMasterUserPasswordResult> getRelationalDatabaseMasterUserPasswordAsync(
+            GetRelationalDatabaseMasterUserPasswordRequest request) {
+
+        return getRelationalDatabaseMasterUserPasswordAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseMasterUserPasswordResult> getRelationalDatabaseMasterUserPasswordAsync(
+            final GetRelationalDatabaseMasterUserPasswordRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseMasterUserPasswordRequest, GetRelationalDatabaseMasterUserPasswordResult> asyncHandler) {
+        final GetRelationalDatabaseMasterUserPasswordRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRelationalDatabaseMasterUserPasswordResult>() {
+            @Override
+            public GetRelationalDatabaseMasterUserPasswordResult call() throws Exception {
+                GetRelationalDatabaseMasterUserPasswordResult result = null;
+
+                try {
+                    result = executeGetRelationalDatabaseMasterUserPassword(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseMetricDataResult> getRelationalDatabaseMetricDataAsync(
+            GetRelationalDatabaseMetricDataRequest request) {
+
+        return getRelationalDatabaseMetricDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseMetricDataResult> getRelationalDatabaseMetricDataAsync(
+            final GetRelationalDatabaseMetricDataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseMetricDataRequest, GetRelationalDatabaseMetricDataResult> asyncHandler) {
+        final GetRelationalDatabaseMetricDataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRelationalDatabaseMetricDataResult>() {
+            @Override
+            public GetRelationalDatabaseMetricDataResult call() throws Exception {
+                GetRelationalDatabaseMetricDataResult result = null;
+
+                try {
+                    result = executeGetRelationalDatabaseMetricData(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseParametersResult> getRelationalDatabaseParametersAsync(
+            GetRelationalDatabaseParametersRequest request) {
+
+        return getRelationalDatabaseParametersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseParametersResult> getRelationalDatabaseParametersAsync(
+            final GetRelationalDatabaseParametersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseParametersRequest, GetRelationalDatabaseParametersResult> asyncHandler) {
+        final GetRelationalDatabaseParametersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRelationalDatabaseParametersResult>() {
+            @Override
+            public GetRelationalDatabaseParametersResult call() throws Exception {
+                GetRelationalDatabaseParametersResult result = null;
+
+                try {
+                    result = executeGetRelationalDatabaseParameters(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseSnapshotResult> getRelationalDatabaseSnapshotAsync(GetRelationalDatabaseSnapshotRequest request) {
+
+        return getRelationalDatabaseSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseSnapshotResult> getRelationalDatabaseSnapshotAsync(
+            final GetRelationalDatabaseSnapshotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseSnapshotRequest, GetRelationalDatabaseSnapshotResult> asyncHandler) {
+        final GetRelationalDatabaseSnapshotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRelationalDatabaseSnapshotResult>() {
+            @Override
+            public GetRelationalDatabaseSnapshotResult call() throws Exception {
+                GetRelationalDatabaseSnapshotResult result = null;
+
+                try {
+                    result = executeGetRelationalDatabaseSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseSnapshotsResult> getRelationalDatabaseSnapshotsAsync(GetRelationalDatabaseSnapshotsRequest request) {
+
+        return getRelationalDatabaseSnapshotsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabaseSnapshotsResult> getRelationalDatabaseSnapshotsAsync(
+            final GetRelationalDatabaseSnapshotsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseSnapshotsRequest, GetRelationalDatabaseSnapshotsResult> asyncHandler) {
+        final GetRelationalDatabaseSnapshotsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRelationalDatabaseSnapshotsResult>() {
+            @Override
+            public GetRelationalDatabaseSnapshotsResult call() throws Exception {
+                GetRelationalDatabaseSnapshotsResult result = null;
+
+                try {
+                    result = executeGetRelationalDatabaseSnapshots(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabasesResult> getRelationalDatabasesAsync(GetRelationalDatabasesRequest request) {
+
+        return getRelationalDatabasesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRelationalDatabasesResult> getRelationalDatabasesAsync(final GetRelationalDatabasesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRelationalDatabasesRequest, GetRelationalDatabasesResult> asyncHandler) {
+        final GetRelationalDatabasesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRelationalDatabasesResult>() {
+            @Override
+            public GetRelationalDatabasesResult call() throws Exception {
+                GetRelationalDatabasesResult result = null;
+
+                try {
+                    result = executeGetRelationalDatabases(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetStaticIpResult> getStaticIpAsync(GetStaticIpRequest request) {
 
         return getStaticIpAsync(request, null);
@@ -2413,6 +2993,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<RebootRelationalDatabaseResult> rebootRelationalDatabaseAsync(RebootRelationalDatabaseRequest request) {
+
+        return rebootRelationalDatabaseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RebootRelationalDatabaseResult> rebootRelationalDatabaseAsync(final RebootRelationalDatabaseRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RebootRelationalDatabaseRequest, RebootRelationalDatabaseResult> asyncHandler) {
+        final RebootRelationalDatabaseRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RebootRelationalDatabaseResult>() {
+            @Override
+            public RebootRelationalDatabaseResult call() throws Exception {
+                RebootRelationalDatabaseResult result = null;
+
+                try {
+                    result = executeRebootRelationalDatabase(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ReleaseStaticIpResult> releaseStaticIpAsync(ReleaseStaticIpRequest request) {
 
         return releaseStaticIpAsync(request, null);
@@ -2479,6 +3092,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<StartRelationalDatabaseResult> startRelationalDatabaseAsync(StartRelationalDatabaseRequest request) {
+
+        return startRelationalDatabaseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartRelationalDatabaseResult> startRelationalDatabaseAsync(final StartRelationalDatabaseRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartRelationalDatabaseRequest, StartRelationalDatabaseResult> asyncHandler) {
+        final StartRelationalDatabaseRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartRelationalDatabaseResult>() {
+            @Override
+            public StartRelationalDatabaseResult call() throws Exception {
+                StartRelationalDatabaseResult result = null;
+
+                try {
+                    result = executeStartRelationalDatabase(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StopInstanceResult> stopInstanceAsync(StopInstanceRequest request) {
 
         return stopInstanceAsync(request, null);
@@ -2496,6 +3142,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeStopInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopRelationalDatabaseResult> stopRelationalDatabaseAsync(StopRelationalDatabaseRequest request) {
+
+        return stopRelationalDatabaseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopRelationalDatabaseResult> stopRelationalDatabaseAsync(final StopRelationalDatabaseRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopRelationalDatabaseRequest, StopRelationalDatabaseResult> asyncHandler) {
+        final StopRelationalDatabaseRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopRelationalDatabaseResult>() {
+            @Override
+            public StopRelationalDatabaseResult call() throws Exception {
+                StopRelationalDatabaseResult result = null;
+
+                try {
+                    result = executeStopRelationalDatabase(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2595,6 +3274,74 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeUpdateLoadBalancerAttribute(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRelationalDatabaseResult> updateRelationalDatabaseAsync(UpdateRelationalDatabaseRequest request) {
+
+        return updateRelationalDatabaseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRelationalDatabaseResult> updateRelationalDatabaseAsync(final UpdateRelationalDatabaseRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRelationalDatabaseRequest, UpdateRelationalDatabaseResult> asyncHandler) {
+        final UpdateRelationalDatabaseRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRelationalDatabaseResult>() {
+            @Override
+            public UpdateRelationalDatabaseResult call() throws Exception {
+                UpdateRelationalDatabaseResult result = null;
+
+                try {
+                    result = executeUpdateRelationalDatabase(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRelationalDatabaseParametersResult> updateRelationalDatabaseParametersAsync(
+            UpdateRelationalDatabaseParametersRequest request) {
+
+        return updateRelationalDatabaseParametersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRelationalDatabaseParametersResult> updateRelationalDatabaseParametersAsync(
+            final UpdateRelationalDatabaseParametersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRelationalDatabaseParametersRequest, UpdateRelationalDatabaseParametersResult> asyncHandler) {
+        final UpdateRelationalDatabaseParametersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRelationalDatabaseParametersResult>() {
+            @Override
+            public UpdateRelationalDatabaseParametersResult call() throws Exception {
+                UpdateRelationalDatabaseParametersResult result = null;
+
+                try {
+                    result = executeUpdateRelationalDatabaseParameters(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

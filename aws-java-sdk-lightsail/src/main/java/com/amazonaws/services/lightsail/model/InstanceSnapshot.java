@@ -56,7 +56,7 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
     private java.util.Date createdAt;
     /**
      * <p>
-     * The region name and availability zone where you created the snapshot.
+     * The region name and Availability Zone where you created the snapshot.
      * </p>
      */
     private ResourceLocation location;
@@ -297,11 +297,11 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The region name and availability zone where you created the snapshot.
+     * The region name and Availability Zone where you created the snapshot.
      * </p>
      * 
      * @param location
-     *        The region name and availability zone where you created the snapshot.
+     *        The region name and Availability Zone where you created the snapshot.
      */
 
     public void setLocation(ResourceLocation location) {
@@ -310,10 +310,10 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The region name and availability zone where you created the snapshot.
+     * The region name and Availability Zone where you created the snapshot.
      * </p>
      * 
-     * @return The region name and availability zone where you created the snapshot.
+     * @return The region name and Availability Zone where you created the snapshot.
      */
 
     public ResourceLocation getLocation() {
@@ -322,11 +322,11 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The region name and availability zone where you created the snapshot.
+     * The region name and Availability Zone where you created the snapshot.
      * </p>
      * 
      * @param location
-     *        The region name and availability zone where you created the snapshot.
+     *        The region name and Availability Zone where you created the snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

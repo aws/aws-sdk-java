@@ -71,7 +71,8 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>USER_NAME</code> - The name under which to log in to the database.
+     * <code>USER_NAME</code> - The name under which to log in to the database. The value string for
+     * <code>USER_NAME</code> is "<code>USERNAME</code>".
      * </p>
      * </li>
      * <li>
@@ -377,7 +378,8 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>USER_NAME</code> - The name under which to log in to the database.
+     * <code>USER_NAME</code> - The name under which to log in to the database. The value string for
+     * <code>USER_NAME</code> is "<code>USERNAME</code>".
      * </p>
      * </li>
      * <li>
@@ -444,7 +446,8 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>USER_NAME</code> - The name under which to log in to the database.
+     *         <code>USER_NAME</code> - The name under which to log in to the database. The value string for
+     *         <code>USER_NAME</code> is "<code>USERNAME</code>".
      *         </p>
      *         </li>
      *         <li>
@@ -518,7 +521,8 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>USER_NAME</code> - The name under which to log in to the database.
+     * <code>USER_NAME</code> - The name under which to log in to the database. The value string for
+     * <code>USER_NAME</code> is "<code>USERNAME</code>".
      * </p>
      * </li>
      * <li>
@@ -586,7 +590,8 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_NAME</code> - The name under which to log in to the database.
+     *        <code>USER_NAME</code> - The name under which to log in to the database. The value string for
+     *        <code>USER_NAME</code> is "<code>USERNAME</code>".
      *        </p>
      *        </li>
      *        <li>
@@ -660,7 +665,8 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>USER_NAME</code> - The name under which to log in to the database.
+     * <code>USER_NAME</code> - The name under which to log in to the database. The value string for
+     * <code>USER_NAME</code> is "<code>USERNAME</code>".
      * </p>
      * </li>
      * <li>
@@ -728,7 +734,8 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_NAME</code> - The name under which to log in to the database.
+     *        <code>USER_NAME</code> - The name under which to log in to the database. The value string for
+     *        <code>USER_NAME</code> is "<code>USERNAME</code>".
      *        </p>
      *        </li>
      *        <li>

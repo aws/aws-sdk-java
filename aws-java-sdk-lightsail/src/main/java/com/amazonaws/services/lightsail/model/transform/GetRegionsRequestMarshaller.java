@@ -29,6 +29,8 @@ public class GetRegionsRequestMarshaller {
 
     private static final MarshallingInfo<Boolean> INCLUDEAVAILABILITYZONES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeAvailabilityZones").build();
+    private static final MarshallingInfo<Boolean> INCLUDERELATIONALDATABASEAVAILABILITYZONES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeRelationalDatabaseAvailabilityZones").build();
 
     private static final GetRegionsRequestMarshaller instance = new GetRegionsRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class GetRegionsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(getRegionsRequest.getIncludeAvailabilityZones(), INCLUDEAVAILABILITYZONES_BINDING);
+            protocolMarshaller.marshall(getRegionsRequest.getIncludeRelationalDatabaseAvailabilityZones(), INCLUDERELATIONALDATABASEAVAILABILITYZONES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

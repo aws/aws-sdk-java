@@ -1,3 +1,16 @@
+# __1.11.430__ __2018-10-16__
+## __AWS Glue__
+  - ### Features
+    - New Glue APIs for creating, updating, reading and deleting Data Catalog resource-based policies.
+
+## __AWS Resource Groups__
+  - ### Features
+    - AWS Resource Groups service added a new feature to filter resource groups by resource-type when using the ListGroups operation.
+
+## __Amazon Lightsail__
+  - ### Features
+    - Adds support for Lightsail managed databases.
+
 # __1.11.429__ __2018-10-15__
 ## __AWS Lambda__
   - ### Features

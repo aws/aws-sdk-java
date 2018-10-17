@@ -60,7 +60,8 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
     private String yarnEndpointAddress;
     /**
      * <p>
-     * A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is created within one.
+     * A private IP address to access the DevEndpoint within a VPC, if the DevEndpoint is created within one. The
+     * PrivateAddress field is present only when you create the DevEndpoint within your virtual private cloud (VPC).
      * </p>
      */
     private String privateAddress;
@@ -72,7 +73,8 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
     private Integer zeppelinRemoteSparkInterpreterPort;
     /**
      * <p>
-     * The public VPC address used by this DevEndpoint.
+     * The public IP address used by this DevEndpoint. The PublicAddress field is present only when you create a non-VPC
+     * (virtual private cloud) DevEndpoint.
      * </p>
      */
     private String publicAddress;
@@ -405,11 +407,14 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is created within one.
+     * A private IP address to access the DevEndpoint within a VPC, if the DevEndpoint is created within one. The
+     * PrivateAddress field is present only when you create the DevEndpoint within your virtual private cloud (VPC).
      * </p>
      * 
      * @param privateAddress
-     *        A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is created within one.
+     *        A private IP address to access the DevEndpoint within a VPC, if the DevEndpoint is created within one. The
+     *        PrivateAddress field is present only when you create the DevEndpoint within your virtual private cloud
+     *        (VPC).
      */
 
     public void setPrivateAddress(String privateAddress) {
@@ -418,10 +423,13 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is created within one.
+     * A private IP address to access the DevEndpoint within a VPC, if the DevEndpoint is created within one. The
+     * PrivateAddress field is present only when you create the DevEndpoint within your virtual private cloud (VPC).
      * </p>
      * 
-     * @return A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is created within one.
+     * @return A private IP address to access the DevEndpoint within a VPC, if the DevEndpoint is created within one.
+     *         The PrivateAddress field is present only when you create the DevEndpoint within your virtual private
+     *         cloud (VPC).
      */
 
     public String getPrivateAddress() {
@@ -430,11 +438,14 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is created within one.
+     * A private IP address to access the DevEndpoint within a VPC, if the DevEndpoint is created within one. The
+     * PrivateAddress field is present only when you create the DevEndpoint within your virtual private cloud (VPC).
      * </p>
      * 
      * @param privateAddress
-     *        A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is created within one.
+     *        A private IP address to access the DevEndpoint within a VPC, if the DevEndpoint is created within one. The
+     *        PrivateAddress field is present only when you create the DevEndpoint within your virtual private cloud
+     *        (VPC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -485,11 +496,13 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The public VPC address used by this DevEndpoint.
+     * The public IP address used by this DevEndpoint. The PublicAddress field is present only when you create a non-VPC
+     * (virtual private cloud) DevEndpoint.
      * </p>
      * 
      * @param publicAddress
-     *        The public VPC address used by this DevEndpoint.
+     *        The public IP address used by this DevEndpoint. The PublicAddress field is present only when you create a
+     *        non-VPC (virtual private cloud) DevEndpoint.
      */
 
     public void setPublicAddress(String publicAddress) {
@@ -498,10 +511,12 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The public VPC address used by this DevEndpoint.
+     * The public IP address used by this DevEndpoint. The PublicAddress field is present only when you create a non-VPC
+     * (virtual private cloud) DevEndpoint.
      * </p>
      * 
-     * @return The public VPC address used by this DevEndpoint.
+     * @return The public IP address used by this DevEndpoint. The PublicAddress field is present only when you create a
+     *         non-VPC (virtual private cloud) DevEndpoint.
      */
 
     public String getPublicAddress() {
@@ -510,11 +525,13 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The public VPC address used by this DevEndpoint.
+     * The public IP address used by this DevEndpoint. The PublicAddress field is present only when you create a non-VPC
+     * (virtual private cloud) DevEndpoint.
      * </p>
      * 
      * @param publicAddress
-     *        The public VPC address used by this DevEndpoint.
+     *        The public IP address used by this DevEndpoint. The PublicAddress field is present only when you create a
+     *        non-VPC (virtual private cloud) DevEndpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

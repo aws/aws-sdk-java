@@ -45,7 +45,8 @@ public class BatchDeleteTableVersionRequest extends com.amazonaws.AmazonWebServi
     private String tableName;
     /**
      * <p>
-     * A list of the IDs of versions to be deleted.
+     * A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer.
+     * Each version is incremented by 1.
      * </p>
      */
     private java.util.List<String> versionIds;
@@ -178,10 +179,12 @@ public class BatchDeleteTableVersionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of the IDs of versions to be deleted.
+     * A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer.
+     * Each version is incremented by 1.
      * </p>
      * 
-     * @return A list of the IDs of versions to be deleted.
+     * @return A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an
+     *         integer. Each version is incremented by 1.
      */
 
     public java.util.List<String> getVersionIds() {
@@ -190,11 +193,13 @@ public class BatchDeleteTableVersionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of the IDs of versions to be deleted.
+     * A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer.
+     * Each version is incremented by 1.
      * </p>
      * 
      * @param versionIds
-     *        A list of the IDs of versions to be deleted.
+     *        A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an
+     *        integer. Each version is incremented by 1.
      */
 
     public void setVersionIds(java.util.Collection<String> versionIds) {
@@ -208,7 +213,8 @@ public class BatchDeleteTableVersionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of the IDs of versions to be deleted.
+     * A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer.
+     * Each version is incremented by 1.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -217,7 +223,8 @@ public class BatchDeleteTableVersionRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param versionIds
-     *        A list of the IDs of versions to be deleted.
+     *        A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an
+     *        integer. Each version is incremented by 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,11 +240,13 @@ public class BatchDeleteTableVersionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of the IDs of versions to be deleted.
+     * A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer.
+     * Each version is incremented by 1.
      * </p>
      * 
      * @param versionIds
-     *        A list of the IDs of versions to be deleted.
+     *        A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an
+     *        integer. Each version is incremented by 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

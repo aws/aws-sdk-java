@@ -56,7 +56,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date createdAt;
     /**
      * <p>
-     * The region name and availability zone where the instance is located.
+     * The region name and Availability Zone where the instance is located.
      * </p>
      */
     private ResourceLocation location;
@@ -316,11 +316,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region name and availability zone where the instance is located.
+     * The region name and Availability Zone where the instance is located.
      * </p>
      * 
      * @param location
-     *        The region name and availability zone where the instance is located.
+     *        The region name and Availability Zone where the instance is located.
      */
 
     public void setLocation(ResourceLocation location) {
@@ -329,10 +329,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region name and availability zone where the instance is located.
+     * The region name and Availability Zone where the instance is located.
      * </p>
      * 
-     * @return The region name and availability zone where the instance is located.
+     * @return The region name and Availability Zone where the instance is located.
      */
 
     public ResourceLocation getLocation() {
@@ -341,11 +341,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region name and availability zone where the instance is located.
+     * The region name and Availability Zone where the instance is located.
      * </p>
      * 
      * @param location
-     *        The region name and availability zone where the instance is located.
+     *        The region name and Availability Zone where the instance is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

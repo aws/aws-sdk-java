@@ -487,7 +487,11 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates one or more Amazon Lightsail virtual private servers, or <i>instances</i>.
+     * Creates one or more Amazon Lightsail virtual private servers, or <i>instances</i>. Create instances using active
+     * blueprints. Inactive blueprints are listed to support customers with existing instances but are not necessarily
+     * available for launch of new instances. Blueprints are marked inactive when they become outdated due to operating
+     * system updates or new application releases. Use the get blueprints operation to return a list of available
+     * blueprints.
      * </p>
      * 
      * @param createInstancesRequest
@@ -500,7 +504,11 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates one or more Amazon Lightsail virtual private servers, or <i>instances</i>.
+     * Creates one or more Amazon Lightsail virtual private servers, or <i>instances</i>. Create instances using active
+     * blueprints. Inactive blueprints are listed to support customers with existing instances but are not necessarily
+     * available for launch of new instances. Blueprints are marked inactive when they become outdated due to operating
+     * system updates or new application releases. Use the get blueprints operation to return a list of available
+     * blueprints.
      * </p>
      * 
      * @param createInstancesRequest
@@ -553,7 +561,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates sn SSH key pair.
+     * Creates an SSH key pair.
      * </p>
      * 
      * @param createKeyPairRequest
@@ -566,7 +574,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates sn SSH key pair.
+     * Creates an SSH key pair.
      * </p>
      * 
      * @param createKeyPairRequest
@@ -667,6 +675,117 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     java.util.concurrent.Future<CreateLoadBalancerTlsCertificateResult> createLoadBalancerTlsCertificateAsync(
             CreateLoadBalancerTlsCertificateRequest createLoadBalancerTlsCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<CreateLoadBalancerTlsCertificateRequest, CreateLoadBalancerTlsCertificateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param createRelationalDatabaseRequest
+     * @return A Java Future containing the result of the CreateRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsync.CreateRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRelationalDatabaseResult> createRelationalDatabaseAsync(CreateRelationalDatabaseRequest createRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Creates a new database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param createRelationalDatabaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.CreateRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRelationalDatabaseResult> createRelationalDatabaseAsync(CreateRelationalDatabaseRequest createRelationalDatabaseRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRelationalDatabaseRequest, CreateRelationalDatabaseResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new database from an existing database snapshot in Amazon Lightsail.
+     * </p>
+     * <p>
+     * You can create a new database from a snapshot in if something goes wrong with your original database, or to
+     * change it to a different plan, such as a high availability or standard plan.
+     * </p>
+     * 
+     * @param createRelationalDatabaseFromSnapshotRequest
+     * @return A Java Future containing the result of the CreateRelationalDatabaseFromSnapshot operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.CreateRelationalDatabaseFromSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseFromSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRelationalDatabaseFromSnapshotResult> createRelationalDatabaseFromSnapshotAsync(
+            CreateRelationalDatabaseFromSnapshotRequest createRelationalDatabaseFromSnapshotRequest);
+
+    /**
+     * <p>
+     * Creates a new database from an existing database snapshot in Amazon Lightsail.
+     * </p>
+     * <p>
+     * You can create a new database from a snapshot in if something goes wrong with your original database, or to
+     * change it to a different plan, such as a high availability or standard plan.
+     * </p>
+     * 
+     * @param createRelationalDatabaseFromSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRelationalDatabaseFromSnapshot operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.CreateRelationalDatabaseFromSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseFromSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRelationalDatabaseFromSnapshotResult> createRelationalDatabaseFromSnapshotAsync(
+            CreateRelationalDatabaseFromSnapshotRequest createRelationalDatabaseFromSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRelationalDatabaseFromSnapshotRequest, CreateRelationalDatabaseFromSnapshotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a snapshot of your database in Amazon Lightsail. You can use snapshots for backups, to make copies of a
+     * database, and to save data before deleting a database.
+     * </p>
+     * 
+     * @param createRelationalDatabaseSnapshotRequest
+     * @return A Java Future containing the result of the CreateRelationalDatabaseSnapshot operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.CreateRelationalDatabaseSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRelationalDatabaseSnapshotResult> createRelationalDatabaseSnapshotAsync(
+            CreateRelationalDatabaseSnapshotRequest createRelationalDatabaseSnapshotRequest);
+
+    /**
+     * <p>
+     * Creates a snapshot of your database in Amazon Lightsail. You can use snapshots for backups, to make copies of a
+     * database, and to save data before deleting a database.
+     * </p>
+     * 
+     * @param createRelationalDatabaseSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRelationalDatabaseSnapshot operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.CreateRelationalDatabaseSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRelationalDatabaseSnapshotResult> createRelationalDatabaseSnapshotAsync(
+            CreateRelationalDatabaseSnapshotRequest createRelationalDatabaseSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRelationalDatabaseSnapshotRequest, CreateRelationalDatabaseSnapshotResult> asyncHandler);
 
     /**
      * <p>
@@ -976,6 +1095,72 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     java.util.concurrent.Future<DeleteLoadBalancerTlsCertificateResult> deleteLoadBalancerTlsCertificateAsync(
             DeleteLoadBalancerTlsCertificateRequest deleteLoadBalancerTlsCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteLoadBalancerTlsCertificateRequest, DeleteLoadBalancerTlsCertificateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param deleteRelationalDatabaseRequest
+     * @return A Java Future containing the result of the DeleteRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsync.DeleteRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRelationalDatabaseResult> deleteRelationalDatabaseAsync(DeleteRelationalDatabaseRequest deleteRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Deletes a database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param deleteRelationalDatabaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.DeleteRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRelationalDatabaseResult> deleteRelationalDatabaseAsync(DeleteRelationalDatabaseRequest deleteRelationalDatabaseRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRelationalDatabaseRequest, DeleteRelationalDatabaseResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a database snapshot in Amazon Lightsail.
+     * </p>
+     * 
+     * @param deleteRelationalDatabaseSnapshotRequest
+     * @return A Java Future containing the result of the DeleteRelationalDatabaseSnapshot operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.DeleteRelationalDatabaseSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabaseSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRelationalDatabaseSnapshotResult> deleteRelationalDatabaseSnapshotAsync(
+            DeleteRelationalDatabaseSnapshotRequest deleteRelationalDatabaseSnapshotRequest);
+
+    /**
+     * <p>
+     * Deletes a database snapshot in Amazon Lightsail.
+     * </p>
+     * 
+     * @param deleteRelationalDatabaseSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRelationalDatabaseSnapshot operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.DeleteRelationalDatabaseSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabaseSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRelationalDatabaseSnapshotResult> deleteRelationalDatabaseSnapshotAsync(
+            DeleteRelationalDatabaseSnapshotRequest deleteRelationalDatabaseSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRelationalDatabaseSnapshotRequest, DeleteRelationalDatabaseSnapshotResult> asyncHandler);
 
     /**
      * <p>
@@ -1984,7 +2169,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Returns a list of all valid regions for Amazon Lightsail. Use the <code>include availability zones</code>
-     * parameter to also return the availability zones in a region.
+     * parameter to also return the Availability Zones in a region.
      * </p>
      * 
      * @param getRegionsRequest
@@ -1998,7 +2183,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Returns a list of all valid regions for Amazon Lightsail. Use the <code>include availability zones</code>
-     * parameter to also return the availability zones in a region.
+     * parameter to also return the Availability Zones in a region.
      * </p>
      * 
      * @param getRegionsRequest
@@ -2013,6 +2198,446 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<GetRegionsResult> getRegionsAsync(GetRegionsRequest getRegionsRequest,
             com.amazonaws.handlers.AsyncHandler<GetRegionsRequest, GetRegionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a specific database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseRequest
+     * @return A Java Future containing the result of the GetRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseResult> getRelationalDatabaseAsync(GetRelationalDatabaseRequest getRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Returns information about a specific database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseResult> getRelationalDatabaseAsync(GetRelationalDatabaseRequest getRelationalDatabaseRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseRequest, GetRelationalDatabaseResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of available database blueprints in Amazon Lightsail. A blueprint describes the major engine
+     * version of a database.
+     * </p>
+     * <p>
+     * You can use a blueprint ID to create a new database that runs a specific database engine.
+     * </p>
+     * 
+     * @param getRelationalDatabaseBlueprintsRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseBlueprints operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseBlueprints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseBlueprints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseBlueprintsResult> getRelationalDatabaseBlueprintsAsync(
+            GetRelationalDatabaseBlueprintsRequest getRelationalDatabaseBlueprintsRequest);
+
+    /**
+     * <p>
+     * Returns a list of available database blueprints in Amazon Lightsail. A blueprint describes the major engine
+     * version of a database.
+     * </p>
+     * <p>
+     * You can use a blueprint ID to create a new database that runs a specific database engine.
+     * </p>
+     * 
+     * @param getRelationalDatabaseBlueprintsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseBlueprints operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseBlueprints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseBlueprints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseBlueprintsResult> getRelationalDatabaseBlueprintsAsync(
+            GetRelationalDatabaseBlueprintsRequest getRelationalDatabaseBlueprintsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseBlueprintsRequest, GetRelationalDatabaseBlueprintsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the list of bundles that are available in Amazon Lightsail. A bundle describes the performance
+     * specifications for a database.
+     * </p>
+     * <p>
+     * You can use a bundle ID to create a new database with explicit performance specifications.
+     * </p>
+     * 
+     * @param getRelationalDatabaseBundlesRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseBundles operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseBundles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseBundles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseBundlesResult> getRelationalDatabaseBundlesAsync(
+            GetRelationalDatabaseBundlesRequest getRelationalDatabaseBundlesRequest);
+
+    /**
+     * <p>
+     * Returns the list of bundles that are available in Amazon Lightsail. A bundle describes the performance
+     * specifications for a database.
+     * </p>
+     * <p>
+     * You can use a bundle ID to create a new database with explicit performance specifications.
+     * </p>
+     * 
+     * @param getRelationalDatabaseBundlesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseBundles operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseBundles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseBundles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseBundlesResult> getRelationalDatabaseBundlesAsync(
+            GetRelationalDatabaseBundlesRequest getRelationalDatabaseBundlesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseBundlesRequest, GetRelationalDatabaseBundlesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of events for a specific database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseEventsRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseEvents operation returned by the service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseEventsResult> getRelationalDatabaseEventsAsync(
+            GetRelationalDatabaseEventsRequest getRelationalDatabaseEventsRequest);
+
+    /**
+     * <p>
+     * Returns a list of events for a specific database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseEventsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseEvents operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseEventsResult> getRelationalDatabaseEventsAsync(
+            GetRelationalDatabaseEventsRequest getRelationalDatabaseEventsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseEventsRequest, GetRelationalDatabaseEventsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of log events for a database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseLogEventsRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseLogEvents operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseLogEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseLogEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseLogEventsResult> getRelationalDatabaseLogEventsAsync(
+            GetRelationalDatabaseLogEventsRequest getRelationalDatabaseLogEventsRequest);
+
+    /**
+     * <p>
+     * Returns a list of log events for a database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseLogEventsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseLogEvents operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseLogEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseLogEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseLogEventsResult> getRelationalDatabaseLogEventsAsync(
+            GetRelationalDatabaseLogEventsRequest getRelationalDatabaseLogEventsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseLogEventsRequest, GetRelationalDatabaseLogEventsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of available log streams for a specific database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseLogStreamsRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseLogStreams operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseLogStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseLogStreams"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseLogStreamsResult> getRelationalDatabaseLogStreamsAsync(
+            GetRelationalDatabaseLogStreamsRequest getRelationalDatabaseLogStreamsRequest);
+
+    /**
+     * <p>
+     * Returns a list of available log streams for a specific database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseLogStreamsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseLogStreams operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseLogStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseLogStreams"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseLogStreamsResult> getRelationalDatabaseLogStreamsAsync(
+            GetRelationalDatabaseLogStreamsRequest getRelationalDatabaseLogStreamsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseLogStreamsRequest, GetRelationalDatabaseLogStreamsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the current, previous, or pending versions of the master user password for a Lightsail database.
+     * </p>
+     * 
+     * @param getRelationalDatabaseMasterUserPasswordRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseMasterUserPassword operation returned by
+     *         the service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseMasterUserPassword
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMasterUserPassword"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseMasterUserPasswordResult> getRelationalDatabaseMasterUserPasswordAsync(
+            GetRelationalDatabaseMasterUserPasswordRequest getRelationalDatabaseMasterUserPasswordRequest);
+
+    /**
+     * <p>
+     * Returns the current, previous, or pending versions of the master user password for a Lightsail database.
+     * </p>
+     * 
+     * @param getRelationalDatabaseMasterUserPasswordRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseMasterUserPassword operation returned by
+     *         the service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseMasterUserPassword
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMasterUserPassword"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseMasterUserPasswordResult> getRelationalDatabaseMasterUserPasswordAsync(
+            GetRelationalDatabaseMasterUserPasswordRequest getRelationalDatabaseMasterUserPasswordRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseMasterUserPasswordRequest, GetRelationalDatabaseMasterUserPasswordResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the data points of the specified metric for a database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseMetricDataRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseMetricData operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMetricData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseMetricDataResult> getRelationalDatabaseMetricDataAsync(
+            GetRelationalDatabaseMetricDataRequest getRelationalDatabaseMetricDataRequest);
+
+    /**
+     * <p>
+     * Returns the data points of the specified metric for a database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseMetricDataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseMetricData operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMetricData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseMetricDataResult> getRelationalDatabaseMetricDataAsync(
+            GetRelationalDatabaseMetricDataRequest getRelationalDatabaseMetricDataRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseMetricDataRequest, GetRelationalDatabaseMetricDataResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns all of the runtime parameters offered by the underlying database software, or engine, for a specific
+     * database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * In addition to the parameter names and values, this operation returns other information about each parameter.
+     * This information includes whether changes require a reboot, whether the parameter is modifiable, the allowed
+     * values, and the data types.
+     * </p>
+     * 
+     * @param getRelationalDatabaseParametersRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseParameters operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseParameters"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseParametersResult> getRelationalDatabaseParametersAsync(
+            GetRelationalDatabaseParametersRequest getRelationalDatabaseParametersRequest);
+
+    /**
+     * <p>
+     * Returns all of the runtime parameters offered by the underlying database software, or engine, for a specific
+     * database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * In addition to the parameter names and values, this operation returns other information about each parameter.
+     * This information includes whether changes require a reboot, whether the parameter is modifiable, the allowed
+     * values, and the data types.
+     * </p>
+     * 
+     * @param getRelationalDatabaseParametersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseParameters operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseParameters"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseParametersResult> getRelationalDatabaseParametersAsync(
+            GetRelationalDatabaseParametersRequest getRelationalDatabaseParametersRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseParametersRequest, GetRelationalDatabaseParametersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a specific database snapshot in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseSnapshotRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseSnapshot operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseSnapshotResult> getRelationalDatabaseSnapshotAsync(
+            GetRelationalDatabaseSnapshotRequest getRelationalDatabaseSnapshotRequest);
+
+    /**
+     * <p>
+     * Returns information about a specific database snapshot in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseSnapshot operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseSnapshotResult> getRelationalDatabaseSnapshotAsync(
+            GetRelationalDatabaseSnapshotRequest getRelationalDatabaseSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseSnapshotRequest, GetRelationalDatabaseSnapshotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about all of your database snapshots in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseSnapshotsRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseSnapshots operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseSnapshotsResult> getRelationalDatabaseSnapshotsAsync(
+            GetRelationalDatabaseSnapshotsRequest getRelationalDatabaseSnapshotsRequest);
+
+    /**
+     * <p>
+     * Returns information about all of your database snapshots in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseSnapshotsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseSnapshots operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseSnapshotsResult> getRelationalDatabaseSnapshotsAsync(
+            GetRelationalDatabaseSnapshotsRequest getRelationalDatabaseSnapshotsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseSnapshotsRequest, GetRelationalDatabaseSnapshotsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about all of your databases in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabasesRequest
+     * @return A Java Future containing the result of the GetRelationalDatabases operation returned by the service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabasesResult> getRelationalDatabasesAsync(GetRelationalDatabasesRequest getRelationalDatabasesRequest);
+
+    /**
+     * <p>
+     * Returns information about all of your databases in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabasesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabases operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabasesResult> getRelationalDatabasesAsync(GetRelationalDatabasesRequest getRelationalDatabasesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabasesRequest, GetRelationalDatabasesResult> asyncHandler);
 
     /**
      * <p>
@@ -2270,6 +2895,37 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Restarts a specific database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param rebootRelationalDatabaseRequest
+     * @return A Java Future containing the result of the RebootRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsync.RebootRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RebootRelationalDatabaseResult> rebootRelationalDatabaseAsync(RebootRelationalDatabaseRequest rebootRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Restarts a specific database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param rebootRelationalDatabaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RebootRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.RebootRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RebootRelationalDatabaseResult> rebootRelationalDatabaseAsync(RebootRelationalDatabaseRequest rebootRelationalDatabaseRequest,
+            com.amazonaws.handlers.AsyncHandler<RebootRelationalDatabaseRequest, RebootRelationalDatabaseResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a specific static IP from your account.
      * </p>
      * 
@@ -2334,6 +2990,39 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Starts a specific database from a stopped state in Amazon Lightsail. To restart a database, use the
+     * <code>reboot relational database</code> operation.
+     * </p>
+     * 
+     * @param startRelationalDatabaseRequest
+     * @return A Java Future containing the result of the StartRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsync.StartRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartRelationalDatabaseResult> startRelationalDatabaseAsync(StartRelationalDatabaseRequest startRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Starts a specific database from a stopped state in Amazon Lightsail. To restart a database, use the
+     * <code>reboot relational database</code> operation.
+     * </p>
+     * 
+     * @param startRelationalDatabaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.StartRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartRelationalDatabaseResult> startRelationalDatabaseAsync(StartRelationalDatabaseRequest startRelationalDatabaseRequest,
+            com.amazonaws.handlers.AsyncHandler<StartRelationalDatabaseRequest, StartRelationalDatabaseResult> asyncHandler);
+
+    /**
+     * <p>
      * Stops a specific Amazon Lightsail instance that is currently running.
      * </p>
      * 
@@ -2362,6 +3051,37 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<StopInstanceResult> stopInstanceAsync(StopInstanceRequest stopInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<StopInstanceRequest, StopInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops a specific database that is currently running in Amazon Lightsail.
+     * </p>
+     * 
+     * @param stopRelationalDatabaseRequest
+     * @return A Java Future containing the result of the StopRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsync.StopRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopRelationalDatabaseResult> stopRelationalDatabaseAsync(StopRelationalDatabaseRequest stopRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Stops a specific database that is currently running in Amazon Lightsail.
+     * </p>
+     * 
+     * @param stopRelationalDatabaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.StopRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopRelationalDatabaseResult> stopRelationalDatabaseAsync(StopRelationalDatabaseRequest stopRelationalDatabaseRequest,
+            com.amazonaws.handlers.AsyncHandler<StopRelationalDatabaseRequest, StopRelationalDatabaseResult> asyncHandler);
 
     /**
      * <p>
@@ -2457,5 +3177,93 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     java.util.concurrent.Future<UpdateLoadBalancerAttributeResult> updateLoadBalancerAttributeAsync(
             UpdateLoadBalancerAttributeRequest updateLoadBalancerAttributeRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateLoadBalancerAttributeRequest, UpdateLoadBalancerAttributeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows the update of one or more attributes of a database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * Updates are applied immediately, or in cases where the updates could result in an outage, are applied during the
+     * database's predefined maintenance window.
+     * </p>
+     * 
+     * @param updateRelationalDatabaseRequest
+     * @return A Java Future containing the result of the UpdateRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsync.UpdateRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRelationalDatabaseResult> updateRelationalDatabaseAsync(UpdateRelationalDatabaseRequest updateRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Allows the update of one or more attributes of a database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * Updates are applied immediately, or in cases where the updates could result in an outage, are applied during the
+     * database's predefined maintenance window.
+     * </p>
+     * 
+     * @param updateRelationalDatabaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.UpdateRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRelationalDatabaseResult> updateRelationalDatabaseAsync(UpdateRelationalDatabaseRequest updateRelationalDatabaseRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRelationalDatabaseRequest, UpdateRelationalDatabaseResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows the update of one or more parameters of a database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * Parameter updates don't cause outages; therefore, their application is not subject to the preferred maintenance
+     * window. However, there are two ways in which paramater updates are applied: <code>dynamic</code> or
+     * <code>pending-reboot</code>. Parameters marked with a <code>dynamic</code> apply type are applied immediately.
+     * Parameters marked with a <code>pending-reboot</code> apply type are applied only after the database is rebooted
+     * using the <code>reboot relational database</code> operation.
+     * </p>
+     * 
+     * @param updateRelationalDatabaseParametersRequest
+     * @return A Java Future containing the result of the UpdateRelationalDatabaseParameters operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.UpdateRelationalDatabaseParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabaseParameters"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRelationalDatabaseParametersResult> updateRelationalDatabaseParametersAsync(
+            UpdateRelationalDatabaseParametersRequest updateRelationalDatabaseParametersRequest);
+
+    /**
+     * <p>
+     * Allows the update of one or more parameters of a database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * Parameter updates don't cause outages; therefore, their application is not subject to the preferred maintenance
+     * window. However, there are two ways in which paramater updates are applied: <code>dynamic</code> or
+     * <code>pending-reboot</code>. Parameters marked with a <code>dynamic</code> apply type are applied immediately.
+     * Parameters marked with a <code>pending-reboot</code> apply type are applied only after the database is rebooted
+     * using the <code>reboot relational database</code> operation.
+     * </p>
+     * 
+     * @param updateRelationalDatabaseParametersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRelationalDatabaseParameters operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.UpdateRelationalDatabaseParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabaseParameters"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRelationalDatabaseParametersResult> updateRelationalDatabaseParametersAsync(
+            UpdateRelationalDatabaseParametersRequest updateRelationalDatabaseParametersRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRelationalDatabaseParametersRequest, UpdateRelationalDatabaseParametersResult> asyncHandler);
 
 }

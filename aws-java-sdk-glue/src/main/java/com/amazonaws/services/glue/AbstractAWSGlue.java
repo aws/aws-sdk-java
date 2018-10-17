@@ -158,6 +158,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteSecurityConfigurationResult deleteSecurityConfiguration(DeleteSecurityConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -293,6 +298,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetSecurityConfigurationResult getSecurityConfiguration(GetSecurityConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -349,6 +359,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public PutDataCatalogEncryptionSettingsResult putDataCatalogEncryptionSettings(PutDataCatalogEncryptionSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
