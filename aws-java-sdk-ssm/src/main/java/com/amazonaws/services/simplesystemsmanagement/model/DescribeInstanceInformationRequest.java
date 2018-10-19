@@ -39,7 +39,8 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
     private com.amazonaws.internal.SdkInternalList<InstanceInformationFilter> instanceInformationFilterList;
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of instances.
+     * One or more filters. Use a filter to return a more specific list of instances. You can filter on Amazon EC2 tag.
+     * Specify tags by using a key-value mapping.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceInformationStringFilter> filters;
@@ -176,10 +177,12 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of instances.
+     * One or more filters. Use a filter to return a more specific list of instances. You can filter on Amazon EC2 tag.
+     * Specify tags by using a key-value mapping.
      * </p>
      * 
-     * @return One or more filters. Use a filter to return a more specific list of instances.
+     * @return One or more filters. Use a filter to return a more specific list of instances. You can filter on Amazon
+     *         EC2 tag. Specify tags by using a key-value mapping.
      */
 
     public java.util.List<InstanceInformationStringFilter> getFilters() {
@@ -191,11 +194,13 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of instances.
+     * One or more filters. Use a filter to return a more specific list of instances. You can filter on Amazon EC2 tag.
+     * Specify tags by using a key-value mapping.
      * </p>
      * 
      * @param filters
-     *        One or more filters. Use a filter to return a more specific list of instances.
+     *        One or more filters. Use a filter to return a more specific list of instances. You can filter on Amazon
+     *        EC2 tag. Specify tags by using a key-value mapping.
      */
 
     public void setFilters(java.util.Collection<InstanceInformationStringFilter> filters) {
@@ -209,7 +214,8 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of instances.
+     * One or more filters. Use a filter to return a more specific list of instances. You can filter on Amazon EC2 tag.
+     * Specify tags by using a key-value mapping.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -218,7 +224,8 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param filters
-     *        One or more filters. Use a filter to return a more specific list of instances.
+     *        One or more filters. Use a filter to return a more specific list of instances. You can filter on Amazon
+     *        EC2 tag. Specify tags by using a key-value mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,11 +241,13 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of instances.
+     * One or more filters. Use a filter to return a more specific list of instances. You can filter on Amazon EC2 tag.
+     * Specify tags by using a key-value mapping.
      * </p>
      * 
      * @param filters
-     *        One or more filters. Use a filter to return a more specific list of instances.
+     *        One or more filters. Use a filter to return a more specific list of instances. You can filter on Amazon
+     *        EC2 tag. Specify tags by using a key-value mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -47,6 +47,10 @@ public class UpdateAssociationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationName").build();
     private static final MarshallingInfo<String> ASSOCIATIONVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationVersion").build();
+    private static final MarshallingInfo<String> MAXERRORS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MaxErrors").build();
+    private static final MarshallingInfo<String> MAXCONCURRENCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxConcurrency").build();
 
     private static final UpdateAssociationRequestMarshaller instance = new UpdateAssociationRequestMarshaller();
 
@@ -73,6 +77,8 @@ public class UpdateAssociationRequestMarshaller {
             protocolMarshaller.marshall(updateAssociationRequest.getTargets(), TARGETS_BINDING);
             protocolMarshaller.marshall(updateAssociationRequest.getAssociationName(), ASSOCIATIONNAME_BINDING);
             protocolMarshaller.marshall(updateAssociationRequest.getAssociationVersion(), ASSOCIATIONVERSION_BINDING);
+            protocolMarshaller.marshall(updateAssociationRequest.getMaxErrors(), MAXERRORS_BINDING);
+            protocolMarshaller.marshall(updateAssociationRequest.getMaxConcurrency(), MAXCONCURRENCY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

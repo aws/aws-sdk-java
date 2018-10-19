@@ -1,3 +1,12 @@
+# __1.11.433__ __2018-10-19__
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Rate Control feature release for State Manager. Users now have the ability to apply rate control parameters similar to run command to their association in state manager console or CLI.
+
+## __Amazon WorkSpaces__
+  - ### Features
+    - Added support for PowerPro and GraphicsPro WorkSpaces bundles.
+
 # __1.11.432__ __2018-10-18__
 ## __AWS Elemental MediaLive__
   - ### Features

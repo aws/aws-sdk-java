@@ -2102,6 +2102,12 @@
       }, {
         "name" : "GRAPHICS",
         "value" : "GRAPHICS"
+      }, {
+        "name" : "POWERPRO",
+        "value" : "POWERPRO"
+      }, {
+        "name" : "GRAPHICSPRO",
+        "value" : "GRAPHICSPRO"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

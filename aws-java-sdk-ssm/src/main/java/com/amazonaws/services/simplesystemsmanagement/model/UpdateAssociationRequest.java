@@ -82,6 +82,35 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String associationVersion;
+    /**
+     * <p>
+     * The number of errors that are allowed before the system stops sending requests to run the association on
+     * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
+     * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
+     * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
+     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
+     * the sixth error is received.
+     * </p>
+     * <p>
+     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
+     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
+     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * </p>
+     */
+    private String maxErrors;
+    /**
+     * <p>
+     * The maximum number of targets allowed to run the association at the same time. You can specify a number, for
+     * example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all
+     * targets run the association at the same time.
+     * </p>
+     * <p>
+     * If a new instance starts and attempts to execute an association while Systems Manager is executing MaxConcurrency
+     * associations, the association is allowed to run. During the next association interval, the new instance will
+     * process its association within the limit specified for MaxConcurrency.
+     * </p>
+     */
+    private String maxConcurrency;
 
     /**
      * <p>
@@ -516,6 +545,182 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The number of errors that are allowed before the system stops sending requests to run the association on
+     * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
+     * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
+     * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
+     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
+     * the sixth error is received.
+     * </p>
+     * <p>
+     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
+     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
+     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * </p>
+     * 
+     * @param maxErrors
+     *        The number of errors that are allowed before the system stops sending requests to run the association on
+     *        additional targets. You can specify either an absolute number of errors, for example 10, or a percentage
+     *        of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when
+     *        the fourth error is received. If you specify 0, then the system stops sending requests after the first
+     *        error is returned. If you run an association on 50 instances and set MaxError to 10%, then the system
+     *        stops sending the request when the sixth error is received.</p>
+     *        <p>
+     *        Executions that are already running an association when MaxErrors is reached are allowed to complete, but
+     *        some of these executions may fail as well. If you need to ensure that there won't be more than max-errors
+     *        failed executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     */
+
+    public void setMaxErrors(String maxErrors) {
+        this.maxErrors = maxErrors;
+    }
+
+    /**
+     * <p>
+     * The number of errors that are allowed before the system stops sending requests to run the association on
+     * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
+     * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
+     * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
+     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
+     * the sixth error is received.
+     * </p>
+     * <p>
+     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
+     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
+     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * </p>
+     * 
+     * @return The number of errors that are allowed before the system stops sending requests to run the association on
+     *         additional targets. You can specify either an absolute number of errors, for example 10, or a percentage
+     *         of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when
+     *         the fourth error is received. If you specify 0, then the system stops sending requests after the first
+     *         error is returned. If you run an association on 50 instances and set MaxError to 10%, then the system
+     *         stops sending the request when the sixth error is received.</p>
+     *         <p>
+     *         Executions that are already running an association when MaxErrors is reached are allowed to complete, but
+     *         some of these executions may fail as well. If you need to ensure that there won't be more than max-errors
+     *         failed executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     */
+
+    public String getMaxErrors() {
+        return this.maxErrors;
+    }
+
+    /**
+     * <p>
+     * The number of errors that are allowed before the system stops sending requests to run the association on
+     * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
+     * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
+     * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
+     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
+     * the sixth error is received.
+     * </p>
+     * <p>
+     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
+     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
+     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * </p>
+     * 
+     * @param maxErrors
+     *        The number of errors that are allowed before the system stops sending requests to run the association on
+     *        additional targets. You can specify either an absolute number of errors, for example 10, or a percentage
+     *        of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when
+     *        the fourth error is received. If you specify 0, then the system stops sending requests after the first
+     *        error is returned. If you run an association on 50 instances and set MaxError to 10%, then the system
+     *        stops sending the request when the sixth error is received.</p>
+     *        <p>
+     *        Executions that are already running an association when MaxErrors is reached are allowed to complete, but
+     *        some of these executions may fail as well. If you need to ensure that there won't be more than max-errors
+     *        failed executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAssociationRequest withMaxErrors(String maxErrors) {
+        setMaxErrors(maxErrors);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of targets allowed to run the association at the same time. You can specify a number, for
+     * example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all
+     * targets run the association at the same time.
+     * </p>
+     * <p>
+     * If a new instance starts and attempts to execute an association while Systems Manager is executing MaxConcurrency
+     * associations, the association is allowed to run. During the next association interval, the new instance will
+     * process its association within the limit specified for MaxConcurrency.
+     * </p>
+     * 
+     * @param maxConcurrency
+     *        The maximum number of targets allowed to run the association at the same time. You can specify a number,
+     *        for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means
+     *        all targets run the association at the same time.</p>
+     *        <p>
+     *        If a new instance starts and attempts to execute an association while Systems Manager is executing
+     *        MaxConcurrency associations, the association is allowed to run. During the next association interval, the
+     *        new instance will process its association within the limit specified for MaxConcurrency.
+     */
+
+    public void setMaxConcurrency(String maxConcurrency) {
+        this.maxConcurrency = maxConcurrency;
+    }
+
+    /**
+     * <p>
+     * The maximum number of targets allowed to run the association at the same time. You can specify a number, for
+     * example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all
+     * targets run the association at the same time.
+     * </p>
+     * <p>
+     * If a new instance starts and attempts to execute an association while Systems Manager is executing MaxConcurrency
+     * associations, the association is allowed to run. During the next association interval, the new instance will
+     * process its association within the limit specified for MaxConcurrency.
+     * </p>
+     * 
+     * @return The maximum number of targets allowed to run the association at the same time. You can specify a number,
+     *         for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which
+     *         means all targets run the association at the same time.</p>
+     *         <p>
+     *         If a new instance starts and attempts to execute an association while Systems Manager is executing
+     *         MaxConcurrency associations, the association is allowed to run. During the next association interval, the
+     *         new instance will process its association within the limit specified for MaxConcurrency.
+     */
+
+    public String getMaxConcurrency() {
+        return this.maxConcurrency;
+    }
+
+    /**
+     * <p>
+     * The maximum number of targets allowed to run the association at the same time. You can specify a number, for
+     * example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all
+     * targets run the association at the same time.
+     * </p>
+     * <p>
+     * If a new instance starts and attempts to execute an association while Systems Manager is executing MaxConcurrency
+     * associations, the association is allowed to run. During the next association interval, the new instance will
+     * process its association within the limit specified for MaxConcurrency.
+     * </p>
+     * 
+     * @param maxConcurrency
+     *        The maximum number of targets allowed to run the association at the same time. You can specify a number,
+     *        for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means
+     *        all targets run the association at the same time.</p>
+     *        <p>
+     *        If a new instance starts and attempts to execute an association while Systems Manager is executing
+     *        MaxConcurrency associations, the association is allowed to run. During the next association interval, the
+     *        new instance will process its association within the limit specified for MaxConcurrency.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAssociationRequest withMaxConcurrency(String maxConcurrency) {
+        setMaxConcurrency(maxConcurrency);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -543,7 +748,11 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getAssociationName() != null)
             sb.append("AssociationName: ").append(getAssociationName()).append(",");
         if (getAssociationVersion() != null)
-            sb.append("AssociationVersion: ").append(getAssociationVersion());
+            sb.append("AssociationVersion: ").append(getAssociationVersion()).append(",");
+        if (getMaxErrors() != null)
+            sb.append("MaxErrors: ").append(getMaxErrors()).append(",");
+        if (getMaxConcurrency() != null)
+            sb.append("MaxConcurrency: ").append(getMaxConcurrency());
         sb.append("}");
         return sb.toString();
     }
@@ -594,6 +803,14 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getAssociationVersion() != null && other.getAssociationVersion().equals(this.getAssociationVersion()) == false)
             return false;
+        if (other.getMaxErrors() == null ^ this.getMaxErrors() == null)
+            return false;
+        if (other.getMaxErrors() != null && other.getMaxErrors().equals(this.getMaxErrors()) == false)
+            return false;
+        if (other.getMaxConcurrency() == null ^ this.getMaxConcurrency() == null)
+            return false;
+        if (other.getMaxConcurrency() != null && other.getMaxConcurrency().equals(this.getMaxConcurrency()) == false)
+            return false;
         return true;
     }
 
@@ -611,6 +828,8 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
         hashCode = prime * hashCode + ((getAssociationName() == null) ? 0 : getAssociationName().hashCode());
         hashCode = prime * hashCode + ((getAssociationVersion() == null) ? 0 : getAssociationVersion().hashCode());
+        hashCode = prime * hashCode + ((getMaxErrors() == null) ? 0 : getMaxErrors().hashCode());
+        hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
         return hashCode;
     }
 

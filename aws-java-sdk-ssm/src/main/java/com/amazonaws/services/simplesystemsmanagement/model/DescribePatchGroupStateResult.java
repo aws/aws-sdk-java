@@ -44,7 +44,7 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
-     * status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches list.
+     * status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a RejectedPatches list.
      * </p>
      * <note>
      * <p>
@@ -196,7 +196,7 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
-     * status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches list.
+     * status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a RejectedPatches list.
      * </p>
      * <note>
      * <p>
@@ -207,7 +207,7 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
      * 
      * @param instancesWithInstalledRejectedPatches
      *        The number of instances with patches installed that are specified in a RejectedPatches list. Patches with
-     *        a status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches
+     *        a status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a RejectedPatches
      *        list.</p> <note>
      *        <p>
      *        If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
@@ -222,7 +222,7 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
-     * status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches list.
+     * status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a RejectedPatches list.
      * </p>
      * <note>
      * <p>
@@ -232,8 +232,8 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
      * </note>
      * 
      * @return The number of instances with patches installed that are specified in a RejectedPatches list. Patches with
-     *         a status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches
-     *         list.</p> <note>
+     *         a status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a
+     *         RejectedPatches list.</p> <note>
      *         <p>
      *         If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
      *         InstancesWithInstalledRejectedPatches will always be 0 (zero).
@@ -247,7 +247,7 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
-     * status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches list.
+     * status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a RejectedPatches list.
      * </p>
      * <note>
      * <p>
@@ -258,7 +258,7 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
      * 
      * @param instancesWithInstalledRejectedPatches
      *        The number of instances with patches installed that are specified in a RejectedPatches list. Patches with
-     *        a status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches
+     *        a status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a RejectedPatches
      *        list.</p> <note>
      *        <p>
      *        If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of

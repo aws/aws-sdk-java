@@ -26,18 +26,18 @@ public class RegisterTaskWithMaintenanceWindowResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The id of the task in the Maintenance Window.
+     * The ID of the task in the Maintenance Window.
      * </p>
      */
     private String windowTaskId;
 
     /**
      * <p>
-     * The id of the task in the Maintenance Window.
+     * The ID of the task in the Maintenance Window.
      * </p>
      * 
      * @param windowTaskId
-     *        The id of the task in the Maintenance Window.
+     *        The ID of the task in the Maintenance Window.
      */
 
     public void setWindowTaskId(String windowTaskId) {
@@ -46,10 +46,10 @@ public class RegisterTaskWithMaintenanceWindowResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The id of the task in the Maintenance Window.
+     * The ID of the task in the Maintenance Window.
      * </p>
      * 
-     * @return The id of the task in the Maintenance Window.
+     * @return The ID of the task in the Maintenance Window.
      */
 
     public String getWindowTaskId() {
@@ -58,11 +58,11 @@ public class RegisterTaskWithMaintenanceWindowResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The id of the task in the Maintenance Window.
+     * The ID of the task in the Maintenance Window.
      * </p>
      * 
      * @param windowTaskId
-     *        The id of the task in the Maintenance Window.
+     *        The ID of the task in the Maintenance Window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

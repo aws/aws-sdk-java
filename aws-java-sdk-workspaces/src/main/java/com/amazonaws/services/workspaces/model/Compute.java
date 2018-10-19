@@ -24,7 +24,9 @@ public enum Compute {
     STANDARD("STANDARD"),
     PERFORMANCE("PERFORMANCE"),
     POWER("POWER"),
-    GRAPHICS("GRAPHICS");
+    GRAPHICS("GRAPHICS"),
+    POWERPRO("POWERPRO"),
+    GRAPHICSPRO("GRAPHICSPRO");
 
     private String value;
 

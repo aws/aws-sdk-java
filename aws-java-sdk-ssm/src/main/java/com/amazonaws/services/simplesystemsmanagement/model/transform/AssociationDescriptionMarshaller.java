@@ -61,6 +61,10 @@ public class AssociationDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSuccessfulExecutionDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ASSOCIATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationName").build();
+    private static final MarshallingInfo<String> MAXERRORS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MaxErrors").build();
+    private static final MarshallingInfo<String> MAXCONCURRENCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxConcurrency").build();
 
     private static final AssociationDescriptionMarshaller instance = new AssociationDescriptionMarshaller();
 
@@ -94,6 +98,8 @@ public class AssociationDescriptionMarshaller {
             protocolMarshaller.marshall(associationDescription.getLastExecutionDate(), LASTEXECUTIONDATE_BINDING);
             protocolMarshaller.marshall(associationDescription.getLastSuccessfulExecutionDate(), LASTSUCCESSFULEXECUTIONDATE_BINDING);
             protocolMarshaller.marshall(associationDescription.getAssociationName(), ASSOCIATIONNAME_BINDING);
+            protocolMarshaller.marshall(associationDescription.getMaxErrors(), MAXERRORS_BINDING);
+            protocolMarshaller.marshall(associationDescription.getMaxConcurrency(), MAXCONCURRENCY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
