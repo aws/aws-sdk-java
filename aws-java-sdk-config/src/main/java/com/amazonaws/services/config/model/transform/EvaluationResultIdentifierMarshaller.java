@@ -30,7 +30,7 @@ public class EvaluationResultIdentifierMarshaller {
     private static final MarshallingInfo<StructuredPojo> EVALUATIONRESULTQUALIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EvaluationResultQualifier").build();
     private static final MarshallingInfo<java.util.Date> ORDERINGTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrderingTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrderingTimestamp").timestampFormat("unixTimestamp").build();
 
     private static final EvaluationResultIdentifierMarshaller instance = new EvaluationResultIdentifierMarshaller();
 

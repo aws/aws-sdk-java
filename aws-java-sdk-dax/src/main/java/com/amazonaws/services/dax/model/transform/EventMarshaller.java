@@ -34,7 +34,7 @@ public class EventMarshaller {
     private static final MarshallingInfo<String> MESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Message").build();
     private static final MarshallingInfo<java.util.Date> DATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Date").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Date").timestampFormat("unixTimestamp").build();
 
     private static final EventMarshaller instance = new EventMarshaller();
 

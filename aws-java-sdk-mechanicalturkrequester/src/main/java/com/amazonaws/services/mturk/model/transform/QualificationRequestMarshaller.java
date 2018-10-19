@@ -38,7 +38,7 @@ public class QualificationRequestMarshaller {
     private static final MarshallingInfo<String> ANSWER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Answer").build();
     private static final MarshallingInfo<java.util.Date> SUBMITTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubmitTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubmitTime").timestampFormat("unixTimestamp").build();
 
     private static final QualificationRequestMarshaller instance = new QualificationRequestMarshaller();
 

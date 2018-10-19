@@ -34,6 +34,11 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
     private String offeringId;
     /** Unique request ID to be specified. This is needed to prevent retries from creating multiple resources. */
     private String requestId;
+    /**
+     * Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of
+     * the current month and one year from now. If no value is given, the default is now.
+     */
+    private String start;
 
     /**
      * Number of resources
@@ -172,6 +177,46 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of
+     * the current month and one year from now. If no value is given, the default is now.
+     * 
+     * @param start
+     *        Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first
+     *        day of the current month and one year from now. If no value is given, the default is now.
+     */
+
+    public void setStart(String start) {
+        this.start = start;
+    }
+
+    /**
+     * Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of
+     * the current month and one year from now. If no value is given, the default is now.
+     * 
+     * @return Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first
+     *         day of the current month and one year from now. If no value is given, the default is now.
+     */
+
+    public String getStart() {
+        return this.start;
+    }
+
+    /**
+     * Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of
+     * the current month and one year from now. If no value is given, the default is now.
+     * 
+     * @param start
+     *        Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first
+     *        day of the current month and one year from now. If no value is given, the default is now.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PurchaseOfferingRequest withStart(String start) {
+        setStart(start);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -189,7 +234,9 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
         if (getOfferingId() != null)
             sb.append("OfferingId: ").append(getOfferingId()).append(",");
         if (getRequestId() != null)
-            sb.append("RequestId: ").append(getRequestId());
+            sb.append("RequestId: ").append(getRequestId()).append(",");
+        if (getStart() != null)
+            sb.append("Start: ").append(getStart());
         sb.append("}");
         return sb.toString();
     }
@@ -220,6 +267,10 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getRequestId() != null && other.getRequestId().equals(this.getRequestId()) == false)
             return false;
+        if (other.getStart() == null ^ this.getStart() == null)
+            return false;
+        if (other.getStart() != null && other.getStart().equals(this.getStart()) == false)
+            return false;
         return true;
     }
 
@@ -232,6 +283,7 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
         hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
+        hashCode = prime * hashCode + ((getStart() == null) ? 0 : getStart().hashCode());
         return hashCode;
     }
 

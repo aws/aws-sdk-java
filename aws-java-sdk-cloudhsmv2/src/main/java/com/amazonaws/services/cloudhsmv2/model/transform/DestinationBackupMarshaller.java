@@ -28,7 +28,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DestinationBackupMarshaller {
 
     private static final MarshallingInfo<java.util.Date> CREATETIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> SOURCEREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceRegion").build();
     private static final MarshallingInfo<String> SOURCEBACKUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

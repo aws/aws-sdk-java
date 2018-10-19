@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * SCTE-35 Return to Network Settings.
+ * Settings for a SCTE-35 return_to_network message.
  * 
  * @see <a
  *      href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35ReturnToNetworkScheduleActionSettings"

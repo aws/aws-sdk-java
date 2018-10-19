@@ -23,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateHealthCheckResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A complex type that contains the response to an <code>UpdateHealthCheck</code> request.
+     * </p>
+     */
     private HealthCheck healthCheck;
 
     /**
+     * <p>
+     * A complex type that contains the response to an <code>UpdateHealthCheck</code> request.
+     * </p>
+     * 
      * @param healthCheck
+     *        A complex type that contains the response to an <code>UpdateHealthCheck</code> request.
      */
 
     public void setHealthCheck(HealthCheck healthCheck) {
@@ -34,7 +44,11 @@ public class UpdateHealthCheckResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * @return
+     * <p>
+     * A complex type that contains the response to an <code>UpdateHealthCheck</code> request.
+     * </p>
+     * 
+     * @return A complex type that contains the response to an <code>UpdateHealthCheck</code> request.
      */
 
     public HealthCheck getHealthCheck() {
@@ -42,7 +56,12 @@ public class UpdateHealthCheckResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * A complex type that contains the response to an <code>UpdateHealthCheck</code> request.
+     * </p>
+     * 
      * @param healthCheck
+     *        A complex type that contains the response to an <code>UpdateHealthCheck</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

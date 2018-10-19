@@ -28,9 +28,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class ExecutionTimeFilterMarshaller {
 
     private static final MarshallingInfo<java.util.Date> OLDESTDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("oldestDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("oldestDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LATESTDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("latestDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("latestDate").timestampFormat("unixTimestamp").build();
 
     private static final ExecutionTimeFilterMarshaller instance = new ExecutionTimeFilterMarshaller();
 

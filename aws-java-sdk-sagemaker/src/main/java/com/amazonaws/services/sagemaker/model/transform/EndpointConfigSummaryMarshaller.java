@@ -32,7 +32,7 @@ public class EndpointConfigSummaryMarshaller {
     private static final MarshallingInfo<String> ENDPOINTCONFIGARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointConfigArn").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
 
     private static final EndpointConfigSummaryMarshaller instance = new EndpointConfigSummaryMarshaller();
 

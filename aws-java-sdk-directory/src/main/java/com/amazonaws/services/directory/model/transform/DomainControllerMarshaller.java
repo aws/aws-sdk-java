@@ -44,9 +44,9 @@ public class DomainControllerMarshaller {
     private static final MarshallingInfo<String> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusReason").build();
     private static final MarshallingInfo<java.util.Date> LAUNCHTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LaunchTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LaunchTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> STATUSLASTUPDATEDDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusLastUpdatedDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusLastUpdatedDateTime").timestampFormat("unixTimestamp").build();
 
     private static final DomainControllerMarshaller instance = new DomainControllerMarshaller();
 

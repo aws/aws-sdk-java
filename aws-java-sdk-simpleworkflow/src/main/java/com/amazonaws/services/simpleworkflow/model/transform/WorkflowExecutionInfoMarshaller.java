@@ -33,9 +33,9 @@ public class WorkflowExecutionInfoMarshaller {
     private static final MarshallingInfo<StructuredPojo> WORKFLOWTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workflowType").build();
     private static final MarshallingInfo<java.util.Date> STARTTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> CLOSETIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("closeTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("closeTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> EXECUTIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionStatus").build();
     private static final MarshallingInfo<String> CLOSESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

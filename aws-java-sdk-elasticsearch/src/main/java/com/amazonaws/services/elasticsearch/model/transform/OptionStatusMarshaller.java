@@ -28,9 +28,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class OptionStatusMarshaller {
 
     private static final MarshallingInfo<java.util.Date> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Integer> UPDATEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateVersion").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)

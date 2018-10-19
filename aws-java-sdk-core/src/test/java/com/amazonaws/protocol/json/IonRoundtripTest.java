@@ -57,7 +57,7 @@ public class IonRoundtripTest {
                 generator.writeValue((String)null);
                 generator.writeValue((BigInteger)null);
                 generator.writeValue((BigDecimal)null);
-                generator.writeValue((Date)null);
+                generator.writeValue((Date)null, null);
                 generator.writeValue((ByteBuffer)null);
             }
 
@@ -244,10 +244,10 @@ public class IonRoundtripTest {
         TIMESTAMP {
             @Override
             public void generate(SdkIonGenerator generator) {
-                generator.writeValue(new Date(0));
+                generator.writeValue(new Date(0), null);
                 // Note: dates too far in the future are rejected by Ion
-                generator.writeValue(new Date(Integer.MAX_VALUE));
-                generator.writeValue(new Date(Integer.MIN_VALUE));
+                generator.writeValue(new Date(Integer.MAX_VALUE), null);
+                generator.writeValue(new Date(Integer.MIN_VALUE), null);
             }
 
             @Override

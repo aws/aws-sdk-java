@@ -272,6 +272,16 @@ public class DateUtils {
                 .toPlainString();
     }
 
+    /**
+     * Formats the give date object into unit timestamp in milli seconds.
+     */
+    public static String formatUnixTimestampInMills(Date date) {
+        if (date == null)
+            return null;
+        BigDecimal dateValue = BigDecimal.valueOf(date.getTime());
+        return dateValue.toPlainString();
+    }
+
     public static Date cloneDate(Date date) {
         return date == null ? null : new Date(date.getTime());
     }

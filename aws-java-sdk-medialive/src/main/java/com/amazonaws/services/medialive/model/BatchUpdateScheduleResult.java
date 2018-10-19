@@ -16,7 +16,7 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * Response to a batch update schedule call.
+ * Placeholder documentation for BatchUpdateScheduleResponse
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchUpdateSchedule" target="_top">AWS API
  *      Documentation</a>

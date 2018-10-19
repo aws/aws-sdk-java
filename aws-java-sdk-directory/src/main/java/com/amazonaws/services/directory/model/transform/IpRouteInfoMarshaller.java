@@ -34,7 +34,7 @@ public class IpRouteInfoMarshaller {
     private static final MarshallingInfo<String> IPROUTESTATUSMSG_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IpRouteStatusMsg").build();
     private static final MarshallingInfo<java.util.Date> ADDEDDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AddedDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AddedDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> IPROUTESTATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IpRouteStatusReason").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

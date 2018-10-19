@@ -30,9 +30,9 @@ public class ThingTypeMetadataMarshaller {
     private static final MarshallingInfo<Boolean> DEPRECATED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deprecated").build();
     private static final MarshallingInfo<java.util.Date> DEPRECATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deprecationDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deprecationDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").timestampFormat("unixTimestamp").build();
 
     private static final ThingTypeMetadataMarshaller instance = new ThingTypeMetadataMarshaller();
 

@@ -34,7 +34,7 @@ public class ConfigStreamDeliveryInfoMarshaller {
     private static final MarshallingInfo<String> LASTERRORMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastErrorMessage").build();
     private static final MarshallingInfo<java.util.Date> LASTSTATUSCHANGETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastStatusChangeTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastStatusChangeTime").timestampFormat("unixTimestamp").build();
 
     private static final ConfigStreamDeliveryInfoMarshaller instance = new ConfigStreamDeliveryInfoMarshaller();
 

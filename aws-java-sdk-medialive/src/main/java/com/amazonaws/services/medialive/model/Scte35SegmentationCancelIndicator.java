@@ -15,7 +15,10 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * SCTE-35 segmentation_descriptor segmentation_event_cancel_indicator.
+ * Corresponds to SCTE-35 segmentation_event_cancel_indicator. SEGMENTATION_EVENT_NOT_CANCELED corresponds to 0 in the
+ * SCTE-35 specification and indicates that this is an insertion request. SEGMENTATION_EVENT_CANCELED corresponds to 1
+ * in the SCTE-35 specification and indicates that this is a cancelation request, in which case complete this field and
+ * the existing event ID to cancel.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Scte35SegmentationCancelIndicator {

@@ -91,6 +91,10 @@ public class UpdateHealthCheckRequestMarshaller implements Marshaller<Request<Up
                     xmlWriter.startElement("Inverted").value(updateHealthCheckRequest.getInverted()).endElement();
                 }
 
+                if (updateHealthCheckRequest.getDisabled() != null) {
+                    xmlWriter.startElement("Disabled").value(updateHealthCheckRequest.getDisabled()).endElement();
+                }
+
                 if (updateHealthCheckRequest.getHealthThreshold() != null) {
                     xmlWriter.startElement("HealthThreshold").value(updateHealthCheckRequest.getHealthThreshold()).endElement();
                 }

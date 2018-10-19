@@ -32,7 +32,7 @@ public class StartSupportDataExportRequestMarshaller {
     private static final MarshallingInfo<String> DATASETTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSetType").build();
     private static final MarshallingInfo<java.util.Date> FROMDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fromDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fromDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ROLENAMEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("roleNameArn").build();
     private static final MarshallingInfo<String> DESTINATIONS3BUCKETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

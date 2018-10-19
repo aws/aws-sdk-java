@@ -28,6 +28,8 @@ import io.netty.handler.codec.ByteToMessageDecoder;
 import io.netty.handler.codec.http.HttpContent;
 import io.netty.handler.codec.http.HttpResponse;
 import io.netty.handler.codec.http.LastHttpContent;
+import io.netty.util.ReferenceCountUtil;
+
 import java.io.ByteArrayInputStream;
 import java.util.Map;
 
@@ -96,6 +98,7 @@ public class ErrorUnmarshallingHandler extends ChannelInboundHandlerAdapter {
                 responseHandler.onFailure(new SdkClientException("Unable to unmarshall error response.", e));
             } finally {
                 notifiedOnFailure = true;
+                ReferenceCountUtil.release(cumulation);
                 ctx.close();
             }
         }

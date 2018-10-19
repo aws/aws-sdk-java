@@ -28,7 +28,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class AssessmentRunNotificationMarshaller {
 
     private static final MarshallingInfo<java.util.Date> DATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("date").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("date").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> EVENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("event").build();
     private static final MarshallingInfo<String> MESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)

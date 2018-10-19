@@ -14,6 +14,7 @@
  */
 package com.amazonaws.protocol.json;
 
+import com.amazonaws.util.TimestampFormat;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -176,7 +177,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
     }
 
     @Override
-    public StructuredJsonGenerator writeValue(Date date) {
+    public StructuredJsonGenerator writeValue(Date date, TimestampFormat timestampFormat) {
         try {
             writer.writeTimestamp(Timestamp.forDateZ(date));
         } catch (IOException e) {

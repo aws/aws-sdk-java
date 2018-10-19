@@ -26,10 +26,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateHostedZoneCommentResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.
+     * </p>
+     */
     private HostedZone hostedZone;
 
     /**
+     * <p>
+     * A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.
+     * </p>
+     * 
      * @param hostedZone
+     *        A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.
      */
 
     public void setHostedZone(HostedZone hostedZone) {
@@ -37,7 +47,11 @@ public class UpdateHostedZoneCommentResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.
+     * </p>
+     * 
+     * @return A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.
      */
 
     public HostedZone getHostedZone() {
@@ -45,7 +59,12 @@ public class UpdateHostedZoneCommentResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.
+     * </p>
+     * 
      * @param hostedZone
+     *        A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

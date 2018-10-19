@@ -225,7 +225,7 @@ abstract class AddShapes {
      * query: iso8601
      * ec2: iso8601
      */
-    private String getDefaultTimeFormatIfNull(Member c2jMemberDefinition, Map<String, Shape> allC2jShapes, String protocolString) {
+    protected String getDefaultTimeFormatIfNull(Member c2jMemberDefinition, Map<String, Shape> allC2jShapes, String protocolString) {
         String timestampFormat = c2jMemberDefinition.getTimestampFormat();
 
         if (!StringUtils.isNullOrEmpty(timestampFormat)) {
@@ -241,7 +241,7 @@ abstract class AddShapes {
 
         String location = c2jMemberDefinition.getLocation();
         if (Location.HEADER.toString().equals(location)) {
-            return TimestampFormat.RFC_822.getFormat();
+            return defaultHeaderTimestamp();
         }
 
         if (Location.QUERY_STRING.toString().equals(location)) {
@@ -265,6 +265,10 @@ abstract class AddShapes {
         }
 
         throw new RuntimeException("Cannot determine timestamp format for protocol " + protocol);
+    }
+
+    protected String defaultHeaderTimestamp() {
+        return TimestampFormat.RFC_822.getFormat();
     }
 
     private ParameterHttpMapping generateParameterHttpMapping(Shape parentShape,

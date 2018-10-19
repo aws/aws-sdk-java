@@ -34,9 +34,9 @@ public class ClientCertificateMarshaller {
     private static final MarshallingInfo<String> PEMENCODEDCERTIFICATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pemEncodedCertificate").build();
     private static final MarshallingInfo<java.util.Date> CREATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> EXPIRATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("expirationDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("expirationDate").timestampFormat("unixTimestamp").build();
 
     private static final ClientCertificateMarshaller instance = new ClientCertificateMarshaller();
 

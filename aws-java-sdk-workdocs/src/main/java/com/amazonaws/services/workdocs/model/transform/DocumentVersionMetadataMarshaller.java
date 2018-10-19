@@ -42,13 +42,13 @@ public class DocumentVersionMetadataMarshaller {
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<java.util.Date> CREATEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> MODIFIEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModifiedTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModifiedTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> CONTENTCREATEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentCreatedTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentCreatedTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> CONTENTMODIFIEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentModifiedTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentModifiedTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> CREATORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("CreatorId").build();
     private static final MarshallingInfo<Map> THUMBNAIL_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)

@@ -34,7 +34,7 @@ public class DomainSummaryMarshaller {
     private static final MarshallingInfo<Boolean> TRANSFERLOCK_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransferLock").build();
     private static final MarshallingInfo<java.util.Date> EXPIRY_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Expiry").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Expiry").timestampFormat("unixTimestamp").build();
 
     private static final DomainSummaryMarshaller instance = new DomainSummaryMarshaller();
 

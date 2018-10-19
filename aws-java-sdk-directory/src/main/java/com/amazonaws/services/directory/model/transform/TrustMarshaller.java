@@ -40,11 +40,11 @@ public class TrustMarshaller {
     private static final MarshallingInfo<String> TRUSTSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrustState").build();
     private static final MarshallingInfo<java.util.Date> CREATEDDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> STATELASTUPDATEDDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StateLastUpdatedDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StateLastUpdatedDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> TRUSTSTATEREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrustStateReason").build();
     private static final MarshallingInfo<String> SELECTIVEAUTH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

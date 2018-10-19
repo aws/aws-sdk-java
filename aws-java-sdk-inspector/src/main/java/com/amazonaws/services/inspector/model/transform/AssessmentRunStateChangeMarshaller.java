@@ -28,7 +28,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class AssessmentRunStateChangeMarshaller {
 
     private static final MarshallingInfo<java.util.Date> STATECHANGEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stateChangedAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stateChangedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("state").build();
 

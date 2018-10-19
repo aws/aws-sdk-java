@@ -39,7 +39,7 @@ public class ImageDetailMarshaller {
     private static final MarshallingInfo<Long> IMAGESIZEINBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageSizeInBytes").build();
     private static final MarshallingInfo<java.util.Date> IMAGEPUSHEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imagePushedAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imagePushedAt").timestampFormat("unixTimestamp").build();
 
     private static final ImageDetailMarshaller instance = new ImageDetailMarshaller();
 

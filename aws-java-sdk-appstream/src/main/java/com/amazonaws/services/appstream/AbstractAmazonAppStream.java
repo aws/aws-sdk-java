@@ -44,6 +44,16 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
     }
 
     @Override
+    public BatchAssociateUserStackResult batchAssociateUserStack(BatchAssociateUserStackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchDisassociateUserStackResult batchDisassociateUserStack(BatchDisassociateUserStackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CopyImageResult copyImage(CopyImageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +89,11 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
     }
 
     @Override
+    public CreateUserResult createUser(CreateUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDirectoryConfigResult deleteDirectoryConfig(DeleteDirectoryConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -105,6 +120,11 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
 
     @Override
     public DeleteStackResult deleteStack(DeleteStackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteUserResult deleteUser(DeleteUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -144,7 +164,27 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
     }
 
     @Override
+    public DescribeUserStackAssociationsResult describeUserStackAssociations(DescribeUserStackAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeUsersResult describeUsers(DescribeUsersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisableUserResult disableUser(DisableUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateFleetResult disassociateFleet(DisassociateFleetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableUserResult enableUser(EnableUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

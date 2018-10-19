@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * When the schedule action starts.
+ * Settings to specify the start time for an action.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ScheduleActionStartSettings"
  *      target="_top">AWS API Documentation</a>
@@ -26,14 +26,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ScheduleActionStartSettings implements Serializable, Cloneable, StructuredPojo {
 
-    /** Fixed timestamp action start. Conforms to ISO-8601. */
+    /** Holds the start time for the action. */
     private FixedModeScheduleActionStartSettings fixedModeScheduleActionStartSettings;
 
     /**
-     * Fixed timestamp action start. Conforms to ISO-8601.
+     * Holds the start time for the action.
      * 
      * @param fixedModeScheduleActionStartSettings
-     *        Fixed timestamp action start. Conforms to ISO-8601.
+     *        Holds the start time for the action.
      */
 
     public void setFixedModeScheduleActionStartSettings(FixedModeScheduleActionStartSettings fixedModeScheduleActionStartSettings) {
@@ -41,9 +41,9 @@ public class ScheduleActionStartSettings implements Serializable, Cloneable, Str
     }
 
     /**
-     * Fixed timestamp action start. Conforms to ISO-8601.
+     * Holds the start time for the action.
      * 
-     * @return Fixed timestamp action start. Conforms to ISO-8601.
+     * @return Holds the start time for the action.
      */
 
     public FixedModeScheduleActionStartSettings getFixedModeScheduleActionStartSettings() {
@@ -51,10 +51,10 @@ public class ScheduleActionStartSettings implements Serializable, Cloneable, Str
     }
 
     /**
-     * Fixed timestamp action start. Conforms to ISO-8601.
+     * Holds the start time for the action.
      * 
      * @param fixedModeScheduleActionStartSettings
-     *        Fixed timestamp action start. Conforms to ISO-8601.
+     *        Holds the start time for the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

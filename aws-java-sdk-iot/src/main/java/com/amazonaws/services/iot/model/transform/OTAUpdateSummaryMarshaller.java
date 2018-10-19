@@ -32,7 +32,7 @@ public class OTAUpdateSummaryMarshaller {
     private static final MarshallingInfo<String> OTAUPDATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("otaUpdateArn").build();
     private static final MarshallingInfo<java.util.Date> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").timestampFormat("unixTimestamp").build();
 
     private static final OTAUpdateSummaryMarshaller instance = new OTAUpdateSummaryMarshaller();
 

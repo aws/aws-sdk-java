@@ -40,7 +40,7 @@ public class ViolationEventMarshaller {
     private static final MarshallingInfo<String> VIOLATIONEVENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("violationEventType").build();
     private static final MarshallingInfo<java.util.Date> VIOLATIONEVENTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("violationEventTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("violationEventTime").timestampFormat("unixTimestamp").build();
 
     private static final ViolationEventMarshaller instance = new ViolationEventMarshaller();
 

@@ -34,7 +34,7 @@ public class DomainNameMarshaller {
     private static final MarshallingInfo<String> CERTIFICATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateArn").build();
     private static final MarshallingInfo<java.util.Date> CERTIFICATEUPLOADDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateUploadDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateUploadDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> REGIONALDOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("regionalDomainName").build();
     private static final MarshallingInfo<String> REGIONALHOSTEDZONEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

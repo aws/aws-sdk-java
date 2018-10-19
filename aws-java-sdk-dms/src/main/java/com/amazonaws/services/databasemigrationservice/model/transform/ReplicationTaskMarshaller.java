@@ -48,9 +48,9 @@ public class ReplicationTaskMarshaller {
     private static final MarshallingInfo<String> STOPREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StopReason").build();
     private static final MarshallingInfo<java.util.Date> REPLICATIONTASKCREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationTaskCreationDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationTaskCreationDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> REPLICATIONTASKSTARTDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationTaskStartDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationTaskStartDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> CDCSTARTPOSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CdcStartPosition").build();
     private static final MarshallingInfo<String> CDCSTOPPOSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

@@ -30,7 +30,7 @@ public class EventSubscriptionMarshaller {
     private static final MarshallingInfo<String> EVENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("event").build();
     private static final MarshallingInfo<java.util.Date> SUBSCRIBEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subscribedAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subscribedAt").timestampFormat("unixTimestamp").build();
 
     private static final EventSubscriptionMarshaller instance = new EventSubscriptionMarshaller();
 

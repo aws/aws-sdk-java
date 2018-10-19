@@ -32,7 +32,7 @@ public class ActionRevisionMarshaller {
     private static final MarshallingInfo<String> REVISIONCHANGEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("revisionChangeId").build();
     private static final MarshallingInfo<java.util.Date> CREATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("created").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("created").timestampFormat("unixTimestamp").build();
 
     private static final ActionRevisionMarshaller instance = new ActionRevisionMarshaller();
 

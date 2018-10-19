@@ -41,11 +41,11 @@ public class SubmitTaskStateChangeRequestMarshaller {
     private static final MarshallingInfo<List> ATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("attachments").build();
     private static final MarshallingInfo<java.util.Date> PULLSTARTEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pullStartedAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pullStartedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> PULLSTOPPEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pullStoppedAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pullStoppedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> EXECUTIONSTOPPEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionStoppedAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionStoppedAt").timestampFormat("unixTimestamp").build();
 
     private static final SubmitTaskStateChangeRequestMarshaller instance = new SubmitTaskStateChangeRequestMarshaller();
 

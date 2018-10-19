@@ -34,11 +34,11 @@ public class HyperParameterTrainingJobSummaryMarshaller {
     private static final MarshallingInfo<String> TRAININGJOBARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingJobArn").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> TRAININGSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingStartTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingStartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> TRAININGENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingEndTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingEndTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> TRAININGJOBSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingJobStatus").build();
     private static final MarshallingInfo<Map> TUNEDHYPERPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)

@@ -30,13 +30,13 @@ public class ListDeviceEventsRequestMarshaller {
     private static final MarshallingInfo<String> DEVICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("deviceId").build();
     private static final MarshallingInfo<java.util.Date> FROMTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("fromTimeStamp").build();
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("fromTimeStamp").timestampFormat("iso8601").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
     private static final MarshallingInfo<java.util.Date> TOTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("toTimeStamp").build();
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("toTimeStamp").timestampFormat("iso8601").build();
 
     private static final ListDeviceEventsRequestMarshaller instance = new ListDeviceEventsRequestMarshaller();
 

@@ -33,7 +33,7 @@ public class ActivatePipelineRequestMarshaller {
     private static final MarshallingInfo<List> PARAMETERVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("parameterValues").build();
     private static final MarshallingInfo<java.util.Date> STARTTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTimestamp").timestampFormat("unixTimestamp").build();
 
     private static final ActivatePipelineRequestMarshaller instance = new ActivatePipelineRequestMarshaller();
 

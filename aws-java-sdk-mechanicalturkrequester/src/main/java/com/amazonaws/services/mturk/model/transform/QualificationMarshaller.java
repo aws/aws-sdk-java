@@ -32,7 +32,7 @@ public class QualificationMarshaller {
     private static final MarshallingInfo<String> WORKERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("WorkerId").build();
     private static final MarshallingInfo<java.util.Date> GRANTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GrantTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GrantTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Integer> INTEGERVALUE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IntegerValue").build();
     private static final MarshallingInfo<StructuredPojo> LOCALEVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)

@@ -34,9 +34,9 @@ public class CreateAccountStatusMarshaller {
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("State").build();
     private static final MarshallingInfo<java.util.Date> REQUESTEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequestedTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequestedTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> COMPLETEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompletedTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompletedTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AccountId").build();
     private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

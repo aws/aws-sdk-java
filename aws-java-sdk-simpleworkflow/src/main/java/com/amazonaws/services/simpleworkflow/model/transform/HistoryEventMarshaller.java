@@ -28,7 +28,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class HistoryEventMarshaller {
 
     private static final MarshallingInfo<java.util.Date> EVENTTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eventTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eventTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> EVENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("eventType").build();
     private static final MarshallingInfo<Long> EVENTID_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)

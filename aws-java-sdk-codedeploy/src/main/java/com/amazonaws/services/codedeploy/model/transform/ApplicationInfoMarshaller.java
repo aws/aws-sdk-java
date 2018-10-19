@@ -32,7 +32,7 @@ public class ApplicationInfoMarshaller {
     private static final MarshallingInfo<String> APPLICATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationName").build();
     private static final MarshallingInfo<java.util.Date> CREATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Boolean> LINKEDTOGITHUB_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("linkedToGitHub").build();
     private static final MarshallingInfo<String> GITHUBACCOUNTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

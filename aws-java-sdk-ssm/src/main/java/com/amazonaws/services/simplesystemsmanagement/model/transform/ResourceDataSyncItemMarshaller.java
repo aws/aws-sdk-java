@@ -32,13 +32,13 @@ public class ResourceDataSyncItemMarshaller {
     private static final MarshallingInfo<StructuredPojo> S3DESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3Destination").build();
     private static final MarshallingInfo<java.util.Date> LASTSYNCTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSyncTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSyncTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTSUCCESSFULSYNCTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSuccessfulSyncTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSuccessfulSyncTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> LASTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastStatus").build();
     private static final MarshallingInfo<java.util.Date> SYNCCREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SyncCreatedTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SyncCreatedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> LASTSYNCSTATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSyncStatusMessage").build();
 

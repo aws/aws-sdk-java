@@ -33,7 +33,7 @@ public class DescribeImagePermissionsRequest extends com.amazonaws.AmazonWebServ
     private String name;
     /**
      * <p>
-     * The maximum size of each results page.
+     * The maximum size of each page of results.
      * </p>
      */
     private Integer maxResults;
@@ -45,8 +45,8 @@ public class DescribeImagePermissionsRequest extends com.amazonaws.AmazonWebServ
     private java.util.List<String> sharedAwsAccountIds;
     /**
      * <p>
-     * The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is
-     * retrieved.
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
      * </p>
      */
     private String nextToken;
@@ -93,11 +93,11 @@ public class DescribeImagePermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum size of each results page.
+     * The maximum size of each page of results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum size of each results page.
+     *        The maximum size of each page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -106,10 +106,10 @@ public class DescribeImagePermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum size of each results page.
+     * The maximum size of each page of results.
      * </p>
      * 
-     * @return The maximum size of each results page.
+     * @return The maximum size of each page of results.
      */
 
     public Integer getMaxResults() {
@@ -118,11 +118,11 @@ public class DescribeImagePermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum size of each results page.
+     * The maximum size of each page of results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum size of each results page.
+     *        The maximum size of each page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,13 +203,13 @@ public class DescribeImagePermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is
-     * retrieved.
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token to use to retrieve the next page of results. If this value is empty, only the first
-     *        page is retrieved.
+     *        The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *        null, it retrieves the first page.
      */
 
     public void setNextToken(String nextToken) {
@@ -218,12 +218,12 @@ public class DescribeImagePermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is
-     * retrieved.
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
      * </p>
      * 
-     * @return The pagination token to use to retrieve the next page of results. If this value is empty, only the first
-     *         page is retrieved.
+     * @return The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *         null, it retrieves the first page.
      */
 
     public String getNextToken() {
@@ -232,13 +232,13 @@ public class DescribeImagePermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is
-     * retrieved.
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token to use to retrieve the next page of results. If this value is empty, only the first
-     *        page is retrieved.
+     *        The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *        null, it retrieves the first page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

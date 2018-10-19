@@ -32,7 +32,7 @@ public class LogSubscriptionMarshaller {
     private static final MarshallingInfo<String> LOGGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogGroupName").build();
     private static final MarshallingInfo<java.util.Date> SUBSCRIPTIONCREATEDDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubscriptionCreatedDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubscriptionCreatedDateTime").timestampFormat("unixTimestamp").build();
 
     private static final LogSubscriptionMarshaller instance = new LogSubscriptionMarshaller();
 

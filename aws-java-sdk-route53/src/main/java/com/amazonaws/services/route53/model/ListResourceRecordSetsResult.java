@@ -59,9 +59,14 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
     private String nextRecordType;
     /**
      * <p>
-     * <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated for a
-     * given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the
-     * current DNS name and type.
+     * <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given
+     * DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current
+     * DNS name and type.
+     * </p>
+     * <p>
+     * For information about routing policies, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a>
+     * in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      */
     private String nextRecordIdentifier;
@@ -360,15 +365,24 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated for a
-     * given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the
-     * current DNS name and type.
+     * <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given
+     * DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current
+     * DNS name and type.
+     * </p>
+     * <p>
+     * For information about routing policies, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a>
+     * in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param nextRecordIdentifier
-     *        <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated
-     *        for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set
-     *        that has the current DNS name and type.
+     *        <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a
+     *        given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has
+     *        the current DNS name and type.</p>
+     *        <p>
+     *        For information about routing policies, see <a
+     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     *        Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      */
 
     public void setNextRecordIdentifier(String nextRecordIdentifier) {
@@ -377,14 +391,23 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated for a
-     * given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the
-     * current DNS name and type.
+     * <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given
+     * DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current
+     * DNS name and type.
+     * </p>
+     * <p>
+     * For information about routing policies, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a>
+     * in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
-     * @return <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated
-     *         for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set
-     *         that has the current DNS name and type.
+     * @return <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a
+     *         given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that
+     *         has the current DNS name and type.</p>
+     *         <p>
+     *         For information about routing policies, see <a
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     *         Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      */
 
     public String getNextRecordIdentifier() {
@@ -393,15 +416,24 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated for a
-     * given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the
-     * current DNS name and type.
+     * <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given
+     * DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current
+     * DNS name and type.
+     * </p>
+     * <p>
+     * For information about routing policies, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a>
+     * in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param nextRecordIdentifier
-     *        <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated
-     *        for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set
-     *        that has the current DNS name and type.
+     *        <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a
+     *        given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has
+     *        the current DNS name and type.</p>
+     *        <p>
+     *        For information about routing policies, see <a
+     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     *        Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

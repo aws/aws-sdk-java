@@ -32,7 +32,7 @@ public class KinesisStreamSourceDescriptionMarshaller {
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RoleARN").build();
     private static final MarshallingInfo<java.util.Date> DELIVERYSTARTTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStartTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStartTimestamp").timestampFormat("unixTimestamp").build();
 
     private static final KinesisStreamSourceDescriptionMarshaller instance = new KinesisStreamSourceDescriptionMarshaller();
 

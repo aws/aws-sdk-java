@@ -36,9 +36,9 @@ public class CommandPluginMarshaller {
     private static final MarshallingInfo<Integer> RESPONSECODE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResponseCode").build();
     private static final MarshallingInfo<java.util.Date> RESPONSESTARTDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResponseStartDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResponseStartDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> RESPONSEFINISHDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResponseFinishDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResponseFinishDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> OUTPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Output").build();
     private static final MarshallingInfo<String> STANDARDOUTPUTURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

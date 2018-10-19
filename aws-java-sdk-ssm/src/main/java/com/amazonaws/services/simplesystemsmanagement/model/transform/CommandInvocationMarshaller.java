@@ -41,7 +41,7 @@ public class CommandInvocationMarshaller {
     private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentVersion").build();
     private static final MarshallingInfo<java.util.Date> REQUESTEDDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequestedDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequestedDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<String> STATUSDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

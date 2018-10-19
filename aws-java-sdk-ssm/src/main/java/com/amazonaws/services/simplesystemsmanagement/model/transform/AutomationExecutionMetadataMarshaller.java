@@ -38,9 +38,9 @@ public class AutomationExecutionMetadataMarshaller {
     private static final MarshallingInfo<String> AUTOMATIONEXECUTIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomationExecutionStatus").build();
     private static final MarshallingInfo<java.util.Date> EXECUTIONSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionStartTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionStartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> EXECUTIONENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionEndTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionEndTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> EXECUTEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutedBy").build();
     private static final MarshallingInfo<String> LOGFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)

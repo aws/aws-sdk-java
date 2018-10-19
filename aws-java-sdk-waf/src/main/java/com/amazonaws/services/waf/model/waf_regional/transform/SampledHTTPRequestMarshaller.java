@@ -32,7 +32,7 @@ public class SampledHTTPRequestMarshaller {
     private static final MarshallingInfo<Long> WEIGHT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Weight").build();
     private static final MarshallingInfo<java.util.Date> TIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Timestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Timestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Action").build();
     private static final MarshallingInfo<String> RULEWITHINRULEGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

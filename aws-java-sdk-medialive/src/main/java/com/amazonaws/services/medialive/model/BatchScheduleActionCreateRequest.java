@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * A list of schedule actions to create.
+ * A list of schedule actions to create (in a request) or that have been created (in a response).
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchScheduleActionCreateRequest"
  *      target="_top">AWS API Documentation</a>

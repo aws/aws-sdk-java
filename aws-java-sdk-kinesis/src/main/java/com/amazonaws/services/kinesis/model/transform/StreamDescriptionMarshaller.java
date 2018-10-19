@@ -41,7 +41,7 @@ public class StreamDescriptionMarshaller {
     private static final MarshallingInfo<Integer> RETENTIONPERIODHOURS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RetentionPeriodHours").build();
     private static final MarshallingInfo<java.util.Date> STREAMCREATIONTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamCreationTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamCreationTimestamp").timestampFormat("unixTimestampInMillis").build();
     private static final MarshallingInfo<List> ENHANCEDMONITORING_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnhancedMonitoring").build();
     private static final MarshallingInfo<String> ENCRYPTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

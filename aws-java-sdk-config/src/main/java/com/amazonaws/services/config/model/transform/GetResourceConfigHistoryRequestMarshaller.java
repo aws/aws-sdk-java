@@ -32,9 +32,9 @@ public class GetResourceConfigHistoryRequestMarshaller {
     private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceId").build();
     private static final MarshallingInfo<java.util.Date> LATERTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("laterTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("laterTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> EARLIERTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("earlierTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("earlierTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> CHRONOLOGICALORDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("chronologicalOrder").build();
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)

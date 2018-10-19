@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings for a single schedule action.
+ * Holds the settings for a single schedule action.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ScheduleActionSettings" target="_top">AWS
  *      API Documentation</a>
@@ -26,22 +26,22 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ScheduleActionSettings implements Serializable, Cloneable, StructuredPojo {
 
-    /** SCTE-35 Return to Network Settings */
+    /** Settings for SCTE-35 return_to_network message */
     private Scte35ReturnToNetworkScheduleActionSettings scte35ReturnToNetworkSettings;
-    /** SCTE-35 Splice Insert Settings */
+    /** Settings for SCTE-35 splice_insert message */
     private Scte35SpliceInsertScheduleActionSettings scte35SpliceInsertSettings;
-    /** SCTE-35 Time Signal Settings */
+    /** Settings for SCTE-35 time_signal message */
     private Scte35TimeSignalScheduleActionSettings scte35TimeSignalSettings;
-    /** Static Image Activate */
+    /** Settings to activate a static image overlay */
     private StaticImageActivateScheduleActionSettings staticImageActivateSettings;
-    /** Static Image Deactivate */
+    /** Settings to deactivate a static image overlay */
     private StaticImageDeactivateScheduleActionSettings staticImageDeactivateSettings;
 
     /**
-     * SCTE-35 Return to Network Settings
+     * Settings for SCTE-35 return_to_network message
      * 
      * @param scte35ReturnToNetworkSettings
-     *        SCTE-35 Return to Network Settings
+     *        Settings for SCTE-35 return_to_network message
      */
 
     public void setScte35ReturnToNetworkSettings(Scte35ReturnToNetworkScheduleActionSettings scte35ReturnToNetworkSettings) {
@@ -49,9 +49,9 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * SCTE-35 Return to Network Settings
+     * Settings for SCTE-35 return_to_network message
      * 
-     * @return SCTE-35 Return to Network Settings
+     * @return Settings for SCTE-35 return_to_network message
      */
 
     public Scte35ReturnToNetworkScheduleActionSettings getScte35ReturnToNetworkSettings() {
@@ -59,10 +59,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * SCTE-35 Return to Network Settings
+     * Settings for SCTE-35 return_to_network message
      * 
      * @param scte35ReturnToNetworkSettings
-     *        SCTE-35 Return to Network Settings
+     *        Settings for SCTE-35 return_to_network message
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -72,10 +72,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * SCTE-35 Splice Insert Settings
+     * Settings for SCTE-35 splice_insert message
      * 
      * @param scte35SpliceInsertSettings
-     *        SCTE-35 Splice Insert Settings
+     *        Settings for SCTE-35 splice_insert message
      */
 
     public void setScte35SpliceInsertSettings(Scte35SpliceInsertScheduleActionSettings scte35SpliceInsertSettings) {
@@ -83,9 +83,9 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * SCTE-35 Splice Insert Settings
+     * Settings for SCTE-35 splice_insert message
      * 
-     * @return SCTE-35 Splice Insert Settings
+     * @return Settings for SCTE-35 splice_insert message
      */
 
     public Scte35SpliceInsertScheduleActionSettings getScte35SpliceInsertSettings() {
@@ -93,10 +93,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * SCTE-35 Splice Insert Settings
+     * Settings for SCTE-35 splice_insert message
      * 
      * @param scte35SpliceInsertSettings
-     *        SCTE-35 Splice Insert Settings
+     *        Settings for SCTE-35 splice_insert message
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,10 +106,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * SCTE-35 Time Signal Settings
+     * Settings for SCTE-35 time_signal message
      * 
      * @param scte35TimeSignalSettings
-     *        SCTE-35 Time Signal Settings
+     *        Settings for SCTE-35 time_signal message
      */
 
     public void setScte35TimeSignalSettings(Scte35TimeSignalScheduleActionSettings scte35TimeSignalSettings) {
@@ -117,9 +117,9 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * SCTE-35 Time Signal Settings
+     * Settings for SCTE-35 time_signal message
      * 
-     * @return SCTE-35 Time Signal Settings
+     * @return Settings for SCTE-35 time_signal message
      */
 
     public Scte35TimeSignalScheduleActionSettings getScte35TimeSignalSettings() {
@@ -127,10 +127,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * SCTE-35 Time Signal Settings
+     * Settings for SCTE-35 time_signal message
      * 
      * @param scte35TimeSignalSettings
-     *        SCTE-35 Time Signal Settings
+     *        Settings for SCTE-35 time_signal message
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,10 +140,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Static Image Activate
+     * Settings to activate a static image overlay
      * 
      * @param staticImageActivateSettings
-     *        Static Image Activate
+     *        Settings to activate a static image overlay
      */
 
     public void setStaticImageActivateSettings(StaticImageActivateScheduleActionSettings staticImageActivateSettings) {
@@ -151,9 +151,9 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Static Image Activate
+     * Settings to activate a static image overlay
      * 
-     * @return Static Image Activate
+     * @return Settings to activate a static image overlay
      */
 
     public StaticImageActivateScheduleActionSettings getStaticImageActivateSettings() {
@@ -161,10 +161,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Static Image Activate
+     * Settings to activate a static image overlay
      * 
      * @param staticImageActivateSettings
-     *        Static Image Activate
+     *        Settings to activate a static image overlay
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,10 +174,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Static Image Deactivate
+     * Settings to deactivate a static image overlay
      * 
      * @param staticImageDeactivateSettings
-     *        Static Image Deactivate
+     *        Settings to deactivate a static image overlay
      */
 
     public void setStaticImageDeactivateSettings(StaticImageDeactivateScheduleActionSettings staticImageDeactivateSettings) {
@@ -185,9 +185,9 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Static Image Deactivate
+     * Settings to deactivate a static image overlay
      * 
-     * @return Static Image Deactivate
+     * @return Settings to deactivate a static image overlay
      */
 
     public StaticImageDeactivateScheduleActionSettings getStaticImageDeactivateSettings() {
@@ -195,10 +195,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Static Image Deactivate
+     * Settings to deactivate a static image overlay
      * 
      * @param staticImageDeactivateSettings
-     *        Static Image Deactivate
+     *        Settings to deactivate a static image overlay
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

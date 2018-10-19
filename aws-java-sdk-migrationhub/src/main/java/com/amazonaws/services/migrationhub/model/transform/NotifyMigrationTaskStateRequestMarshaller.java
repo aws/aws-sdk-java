@@ -34,7 +34,7 @@ public class NotifyMigrationTaskStateRequestMarshaller {
     private static final MarshallingInfo<StructuredPojo> TASK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Task").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Integer> NEXTUPDATESECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NextUpdateSeconds").build();
     private static final MarshallingInfo<Boolean> DRYRUN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)

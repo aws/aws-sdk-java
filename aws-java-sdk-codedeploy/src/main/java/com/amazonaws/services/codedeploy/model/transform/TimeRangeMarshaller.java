@@ -28,9 +28,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class TimeRangeMarshaller {
 
     private static final MarshallingInfo<java.util.Date> START_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("start").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("start").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> END_BINDING = MarshallingInfo.builder(MarshallingType.DATE).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("end").build();
+            .marshallLocationName("end").timestampFormat("unixTimestamp").build();
 
     private static final TimeRangeMarshaller instance = new TimeRangeMarshaller();
 

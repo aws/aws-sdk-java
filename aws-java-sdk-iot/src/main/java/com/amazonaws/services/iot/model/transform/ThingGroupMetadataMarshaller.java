@@ -33,7 +33,7 @@ public class ThingGroupMetadataMarshaller {
     private static final MarshallingInfo<List> ROOTTOPARENTTHINGGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rootToParentThingGroups").build();
     private static final MarshallingInfo<java.util.Date> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").timestampFormat("unixTimestamp").build();
 
     private static final ThingGroupMetadataMarshaller instance = new ThingGroupMetadataMarshaller();
 

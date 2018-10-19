@@ -15,12 +15,16 @@
 
 package com.amazonaws.util;
 
+import com.amazonaws.annotation.SdkInternalApi;
+
+@SdkInternalApi
 public enum TimestampFormat {
 
     ISO_8601("iso8601"),
     UNIX_TIMESTAMP("unixTimestamp"),
     UNIX_TIMESTAMP_IN_MILLIS("unixTimestampInMillis"),
-    RFC_822("rfc822");
+    RFC_822("rfc822"),
+    UNKNOWN("unknown");
 
     private final String format;
 

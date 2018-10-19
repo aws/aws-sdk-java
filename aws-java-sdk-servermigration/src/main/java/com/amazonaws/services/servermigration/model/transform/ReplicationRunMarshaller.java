@@ -38,9 +38,9 @@ public class ReplicationRunMarshaller {
     private static final MarshallingInfo<String> AMIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("amiId").build();
     private static final MarshallingInfo<java.util.Date> SCHEDULEDSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scheduledStartTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scheduledStartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> COMPLETEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("completedTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("completedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
 

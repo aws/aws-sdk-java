@@ -32,7 +32,7 @@ public class DeployedImageMarshaller {
     private static final MarshallingInfo<String> RESOLVEDIMAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResolvedImage").build();
     private static final MarshallingInfo<java.util.Date> RESOLUTIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResolutionTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResolutionTime").timestampFormat("unixTimestamp").build();
 
     private static final DeployedImageMarshaller instance = new DeployedImageMarshaller();
 

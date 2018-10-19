@@ -34,7 +34,7 @@ public class CredentialsMarshaller {
     private static final MarshallingInfo<String> SESSIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SessionToken").build();
     private static final MarshallingInfo<java.util.Date> EXPIRATION_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Expiration").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Expiration").timestampFormat("unixTimestamp").build();
 
     private static final CredentialsMarshaller instance = new CredentialsMarshaller();
 

@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * SCTE-35 Descriptor.
+ * Holds one set of SCTE-35 Descriptor Settings.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35Descriptor" target="_top">AWS API
  *      Documentation</a>

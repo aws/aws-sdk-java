@@ -34,7 +34,7 @@ public class IdentityPoolUsageMarshaller {
     private static final MarshallingInfo<Long> DATASTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("DataStorage").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedDate").timestampFormat("unixTimestamp").build();
 
     private static final IdentityPoolUsageMarshaller instance = new IdentityPoolUsageMarshaller();
 

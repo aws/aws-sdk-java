@@ -32,7 +32,7 @@ public class ComplianceSummaryMarshaller {
     private static final MarshallingInfo<StructuredPojo> NONCOMPLIANTRESOURCECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NonCompliantResourceCount").build();
     private static final MarshallingInfo<java.util.Date> COMPLIANCESUMMARYTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComplianceSummaryTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComplianceSummaryTimestamp").timestampFormat("unixTimestamp").build();
 
     private static final ComplianceSummaryMarshaller instance = new ComplianceSummaryMarshaller();
 

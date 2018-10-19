@@ -30,7 +30,7 @@ public class SamplingStatisticSummaryMarshaller {
     private static final MarshallingInfo<String> RULENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RuleName").build();
     private static final MarshallingInfo<java.util.Date> TIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Timestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Timestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Integer> REQUESTCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequestCount").build();
     private static final MarshallingInfo<Integer> BORROWCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)

@@ -34,7 +34,7 @@ public class OfferingTransactionMarshaller {
     private static final MarshallingInfo<String> OFFERINGPROMOTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("offeringPromotionId").build();
     private static final MarshallingInfo<java.util.Date> CREATEDON_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdOn").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdOn").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> COST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cost").build();
 

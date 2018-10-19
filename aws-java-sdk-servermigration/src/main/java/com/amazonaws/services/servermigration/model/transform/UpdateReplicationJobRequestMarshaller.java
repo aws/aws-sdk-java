@@ -32,7 +32,7 @@ public class UpdateReplicationJobRequestMarshaller {
     private static final MarshallingInfo<Integer> FREQUENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("frequency").build();
     private static final MarshallingInfo<java.util.Date> NEXTREPLICATIONRUNSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nextReplicationRunStartTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nextReplicationRunStartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> LICENSETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("licenseType").build();
     private static final MarshallingInfo<String> ROLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)

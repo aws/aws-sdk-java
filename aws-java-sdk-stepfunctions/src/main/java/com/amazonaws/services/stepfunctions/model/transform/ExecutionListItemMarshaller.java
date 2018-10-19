@@ -36,9 +36,9 @@ public class ExecutionListItemMarshaller {
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<java.util.Date> STARTDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> STOPDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stopDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stopDate").timestampFormat("unixTimestamp").build();
 
     private static final ExecutionListItemMarshaller instance = new ExecutionListItemMarshaller();
 

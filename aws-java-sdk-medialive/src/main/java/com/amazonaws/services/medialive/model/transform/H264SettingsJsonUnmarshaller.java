@@ -152,6 +152,10 @@ public class H264SettingsJsonUnmarshaller implements Unmarshaller<H264Settings, 
                     context.nextToken();
                     h264Settings.setProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("qvbrQualityLevel", targetDepth)) {
+                    context.nextToken();
+                    h264Settings.setQvbrQualityLevel(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("rateControlMode", targetDepth)) {
                     context.nextToken();
                     h264Settings.setRateControlMode(context.getUnmarshaller(String.class).unmarshall(context));

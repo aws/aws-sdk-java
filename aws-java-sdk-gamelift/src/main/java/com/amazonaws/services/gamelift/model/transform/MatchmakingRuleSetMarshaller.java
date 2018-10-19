@@ -32,7 +32,7 @@ public class MatchmakingRuleSetMarshaller {
     private static final MarshallingInfo<String> RULESETBODY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuleSetBody").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
 
     private static final MatchmakingRuleSetMarshaller instance = new MatchmakingRuleSetMarshaller();
 

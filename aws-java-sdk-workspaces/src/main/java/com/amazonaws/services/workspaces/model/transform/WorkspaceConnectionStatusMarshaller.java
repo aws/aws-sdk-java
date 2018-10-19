@@ -32,9 +32,9 @@ public class WorkspaceConnectionStatusMarshaller {
     private static final MarshallingInfo<String> CONNECTIONSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionState").build();
     private static final MarshallingInfo<java.util.Date> CONNECTIONSTATECHECKTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionStateCheckTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionStateCheckTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTKNOWNUSERCONNECTIONTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastKnownUserConnectionTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastKnownUserConnectionTimestamp").timestampFormat("unixTimestamp").build();
 
     private static final WorkspaceConnectionStatusMarshaller instance = new WorkspaceConnectionStatusMarshaller();
 

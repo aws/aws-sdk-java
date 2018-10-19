@@ -34,7 +34,7 @@ public class DeploymentConfigInfoMarshaller {
     private static final MarshallingInfo<StructuredPojo> MINIMUMHEALTHYHOSTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minimumHealthyHosts").build();
     private static final MarshallingInfo<java.util.Date> CREATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> COMPUTEPLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computePlatform").build();
     private static final MarshallingInfo<StructuredPojo> TRAFFICROUTINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)

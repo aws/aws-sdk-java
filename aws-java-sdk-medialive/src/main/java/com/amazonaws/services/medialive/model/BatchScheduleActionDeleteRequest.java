@@ -26,13 +26,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BatchScheduleActionDeleteRequest implements Serializable, Cloneable, StructuredPojo {
 
-    /** A list of schedule actions to delete, identified by unique name. */
+    /** A list of schedule actions to delete. */
     private java.util.List<String> actionNames;
 
     /**
-     * A list of schedule actions to delete, identified by unique name.
+     * A list of schedule actions to delete.
      * 
-     * @return A list of schedule actions to delete, identified by unique name.
+     * @return A list of schedule actions to delete.
      */
 
     public java.util.List<String> getActionNames() {
@@ -40,10 +40,10 @@ public class BatchScheduleActionDeleteRequest implements Serializable, Cloneable
     }
 
     /**
-     * A list of schedule actions to delete, identified by unique name.
+     * A list of schedule actions to delete.
      * 
      * @param actionNames
-     *        A list of schedule actions to delete, identified by unique name.
+     *        A list of schedule actions to delete.
      */
 
     public void setActionNames(java.util.Collection<String> actionNames) {
@@ -56,7 +56,7 @@ public class BatchScheduleActionDeleteRequest implements Serializable, Cloneable
     }
 
     /**
-     * A list of schedule actions to delete, identified by unique name.
+     * A list of schedule actions to delete.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setActionNames(java.util.Collection)} or {@link #withActionNames(java.util.Collection)} if you want to
@@ -64,7 +64,7 @@ public class BatchScheduleActionDeleteRequest implements Serializable, Cloneable
      * </p>
      * 
      * @param actionNames
-     *        A list of schedule actions to delete, identified by unique name.
+     *        A list of schedule actions to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,10 +79,10 @@ public class BatchScheduleActionDeleteRequest implements Serializable, Cloneable
     }
 
     /**
-     * A list of schedule actions to delete, identified by unique name.
+     * A list of schedule actions to delete.
      * 
      * @param actionNames
-     *        A list of schedule actions to delete, identified by unique name.
+     *        A list of schedule actions to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

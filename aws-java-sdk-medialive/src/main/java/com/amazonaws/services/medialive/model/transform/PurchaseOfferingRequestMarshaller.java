@@ -37,6 +37,8 @@ public class PurchaseOfferingRequestMarshaller {
             .marshallLocationName("offeringId").build();
     private static final MarshallingInfo<String> REQUESTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("requestId").defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<String> START_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("start").build();
 
     private static final PurchaseOfferingRequestMarshaller instance = new PurchaseOfferingRequestMarshaller();
 
@@ -58,6 +60,7 @@ public class PurchaseOfferingRequestMarshaller {
             protocolMarshaller.marshall(purchaseOfferingRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(purchaseOfferingRequest.getOfferingId(), OFFERINGID_BINDING);
             protocolMarshaller.marshall(purchaseOfferingRequest.getRequestId(), REQUESTID_BINDING);
+            protocolMarshaller.marshall(purchaseOfferingRequest.getStart(), START_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

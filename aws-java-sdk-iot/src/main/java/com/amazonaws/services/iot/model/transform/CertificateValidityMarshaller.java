@@ -28,9 +28,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class CertificateValidityMarshaller {
 
     private static final MarshallingInfo<java.util.Date> NOTBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("notBefore").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("notBefore").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> NOTAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("notAfter").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("notAfter").timestampFormat("unixTimestamp").build();
 
     private static final CertificateValidityMarshaller instance = new CertificateValidityMarshaller();
 

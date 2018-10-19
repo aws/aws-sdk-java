@@ -34,7 +34,7 @@ public class RefreshSchemasStatusMarshaller {
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<java.util.Date> LASTREFRESHDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastRefreshDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastRefreshDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> LASTFAILUREMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastFailureMessage").build();
 

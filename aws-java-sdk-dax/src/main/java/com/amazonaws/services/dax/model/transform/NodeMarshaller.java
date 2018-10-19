@@ -32,7 +32,7 @@ public class NodeMarshaller {
     private static final MarshallingInfo<StructuredPojo> ENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Endpoint").build();
     private static final MarshallingInfo<java.util.Date> NODECREATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NodeCreateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NodeCreateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> AVAILABILITYZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailabilityZone").build();
     private static final MarshallingInfo<String> NODESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Amazon Route 53 doesn't support the specified geolocation.
+ * Amazon Route 53 doesn't support the specified geographic location.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

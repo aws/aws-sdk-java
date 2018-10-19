@@ -34,7 +34,7 @@ public class ResourceIdentifierMarshaller {
     private static final MarshallingInfo<String> RESOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceName").build();
     private static final MarshallingInfo<java.util.Date> RESOURCEDELETIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceDeletionTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceDeletionTime").timestampFormat("unixTimestamp").build();
 
     private static final ResourceIdentifierMarshaller instance = new ResourceIdentifierMarshaller();
 

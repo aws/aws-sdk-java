@@ -44,13 +44,13 @@ public class SecretListEntryMarshaller {
     private static final MarshallingInfo<StructuredPojo> ROTATIONRULES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RotationRules").build();
     private static final MarshallingInfo<java.util.Date> LASTROTATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastRotatedDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastRotatedDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTCHANGEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastChangedDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastChangedDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTACCESSEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastAccessedDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastAccessedDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> DELETEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeletedDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeletedDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<Map> SECRETVERSIONSTOSTAGES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)

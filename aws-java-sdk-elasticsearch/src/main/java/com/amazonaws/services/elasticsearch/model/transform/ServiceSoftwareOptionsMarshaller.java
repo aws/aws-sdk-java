@@ -40,7 +40,7 @@ public class ServiceSoftwareOptionsMarshaller {
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<java.util.Date> AUTOMATEDUPDATEDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomatedUpdateDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomatedUpdateDate").timestampFormat("unixTimestamp").build();
 
     private static final ServiceSoftwareOptionsMarshaller instance = new ServiceSoftwareOptionsMarshaller();
 

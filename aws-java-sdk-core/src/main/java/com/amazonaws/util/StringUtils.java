@@ -111,6 +111,26 @@ public class StringUtils {
         return DateUtils.formatISO8601Date(value);
     }
 
+    public static String fromDate(Date date, String timestampFormat) {
+        if ("unixTimestamp".equalsIgnoreCase(timestampFormat)) {
+            return DateUtils.formatServiceSpecificDate(date);
+        }
+
+        if ("iso8601".equalsIgnoreCase(timestampFormat)) {
+            return DateUtils.formatISO8601Date(date);
+        }
+
+        if ("rfc822".equalsIgnoreCase(timestampFormat)) {
+            return DateUtils.formatRFC822Date(date);
+        }
+
+        if ("unixTimestampInMillis".equalsIgnoreCase(timestampFormat)) {
+            return DateUtils.formatUnixTimestampInMills(date);
+        }
+
+        throw new IllegalArgumentException("unsupported timestamp format");
+    }
+
     /**
      * Returns the string representation of the specified double.
      *

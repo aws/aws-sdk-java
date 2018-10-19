@@ -33,11 +33,11 @@ public class DeviceTypeMarshaller {
     private static final MarshallingInfo<List> DEVICEATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceAttributes").build();
     private static final MarshallingInfo<java.util.Date> DEVICECREATEDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceCreateDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceCreateDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> DEVICELASTMODIFIEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceLastModifiedDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceLastModifiedDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> DEVICELASTAUTHENTICATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceLastAuthenticatedDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceLastAuthenticatedDate").timestampFormat("unixTimestamp").build();
 
     private static final DeviceTypeMarshaller instance = new DeviceTypeMarshaller();
 

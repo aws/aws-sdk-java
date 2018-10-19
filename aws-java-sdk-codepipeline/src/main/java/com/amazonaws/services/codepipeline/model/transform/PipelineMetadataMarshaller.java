@@ -30,9 +30,9 @@ public class PipelineMetadataMarshaller {
     private static final MarshallingInfo<String> PIPELINEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelineArn").build();
     private static final MarshallingInfo<java.util.Date> CREATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("created").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("created").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> UPDATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updated").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updated").timestampFormat("unixTimestamp").build();
 
     private static final PipelineMetadataMarshaller instance = new PipelineMetadataMarshaller();
 

@@ -32,7 +32,7 @@ public class ReplicationTaskAssessmentResultMarshaller {
     private static final MarshallingInfo<String> REPLICATIONTASKARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationTaskArn").build();
     private static final MarshallingInfo<java.util.Date> REPLICATIONTASKLASTASSESSMENTDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationTaskLastAssessmentDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationTaskLastAssessmentDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ASSESSMENTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssessmentStatus").build();
     private static final MarshallingInfo<String> ASSESSMENTRESULTSFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

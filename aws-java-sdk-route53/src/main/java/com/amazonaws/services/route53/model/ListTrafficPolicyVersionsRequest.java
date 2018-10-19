@@ -53,8 +53,8 @@ public class ListTrafficPolicyVersionsRequest extends com.amazonaws.AmazonWebSer
      * The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response body for
      * this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the value of
      * <code>IsTruncated</code> in the response is <code>true</code>, and the value of the
-     * <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Amazon Route 53 will return
-     * if you submit another request.
+     * <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return if you
+     * submit another request.
      * </p>
      */
     private String maxItems;
@@ -189,16 +189,16 @@ public class ListTrafficPolicyVersionsRequest extends com.amazonaws.AmazonWebSer
      * The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response body for
      * this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the value of
      * <code>IsTruncated</code> in the response is <code>true</code>, and the value of the
-     * <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Amazon Route 53 will return
-     * if you submit another request.
+     * <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return if you
+     * submit another request.
      * </p>
      * 
      * @param maxItems
      *        The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response
      *        body for this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the
      *        value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of the
-     *        <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Amazon Route 53 will
-     *        return if you submit another request.
+     *        <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return
+     *        if you submit another request.
      */
 
     public void setMaxItems(String maxItems) {
@@ -210,15 +210,15 @@ public class ListTrafficPolicyVersionsRequest extends com.amazonaws.AmazonWebSer
      * The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response body for
      * this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the value of
      * <code>IsTruncated</code> in the response is <code>true</code>, and the value of the
-     * <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Amazon Route 53 will return
-     * if you submit another request.
+     * <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return if you
+     * submit another request.
      * </p>
      * 
      * @return The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response
      *         body for this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the
      *         value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of the
-     *         <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Amazon Route 53 will
-     *         return if you submit another request.
+     *         <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return
+     *         if you submit another request.
      */
 
     public String getMaxItems() {
@@ -230,16 +230,16 @@ public class ListTrafficPolicyVersionsRequest extends com.amazonaws.AmazonWebSer
      * The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response body for
      * this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the value of
      * <code>IsTruncated</code> in the response is <code>true</code>, and the value of the
-     * <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Amazon Route 53 will return
-     * if you submit another request.
+     * <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return if you
+     * submit another request.
      * </p>
      * 
      * @param maxItems
      *        The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response
      *        body for this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the
      *        value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of the
-     *        <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Amazon Route 53 will
-     *        return if you submit another request.
+     *        <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return
+     *        if you submit another request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,9 +33,9 @@ public class AuditFindingMarshaller {
     private static final MarshallingInfo<String> CHECKNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("checkName").build();
     private static final MarshallingInfo<java.util.Date> TASKSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskStartTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskStartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> FINDINGTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("findingTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("findingTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> SEVERITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("severity").build();
     private static final MarshallingInfo<StructuredPojo> NONCOMPLIANTRESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)

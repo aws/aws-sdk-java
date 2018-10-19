@@ -32,7 +32,7 @@ public class PatchStatusMarshaller {
     private static final MarshallingInfo<String> COMPLIANCELEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComplianceLevel").build();
     private static final MarshallingInfo<java.util.Date> APPROVALDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovalDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovalDate").timestampFormat("unixTimestamp").build();
 
     private static final PatchStatusMarshaller instance = new PatchStatusMarshaller();
 

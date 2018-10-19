@@ -34,7 +34,7 @@ public class ConfigurationItemMarshaller {
     private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("accountId").build();
     private static final MarshallingInfo<java.util.Date> CONFIGURATIONITEMCAPTURETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configurationItemCaptureTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configurationItemCaptureTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> CONFIGURATIONITEMSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configurationItemStatus").build();
     private static final MarshallingInfo<String> CONFIGURATIONSTATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,7 +54,7 @@ public class ConfigurationItemMarshaller {
     private static final MarshallingInfo<String> AVAILABILITYZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("availabilityZone").build();
     private static final MarshallingInfo<java.util.Date> RESOURCECREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceCreationTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceCreationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<List> RELATEDEVENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)

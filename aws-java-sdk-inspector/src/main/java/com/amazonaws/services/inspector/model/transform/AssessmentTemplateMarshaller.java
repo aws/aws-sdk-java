@@ -45,7 +45,7 @@ public class AssessmentTemplateMarshaller {
     private static final MarshallingInfo<Integer> ASSESSMENTRUNCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentRunCount").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
 
     private static final AssessmentTemplateMarshaller instance = new AssessmentTemplateMarshaller();
 

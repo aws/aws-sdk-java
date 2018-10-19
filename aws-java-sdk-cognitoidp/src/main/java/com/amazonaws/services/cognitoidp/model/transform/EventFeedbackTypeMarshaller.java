@@ -32,7 +32,7 @@ public class EventFeedbackTypeMarshaller {
     private static final MarshallingInfo<String> PROVIDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Provider").build();
     private static final MarshallingInfo<java.util.Date> FEEDBACKDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeedbackDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeedbackDate").timestampFormat("unixTimestamp").build();
 
     private static final EventFeedbackTypeMarshaller instance = new EventFeedbackTypeMarshaller();
 

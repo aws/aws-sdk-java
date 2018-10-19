@@ -79,6 +79,8 @@ public class H264SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("parNumerator").build();
     private static final MarshallingInfo<String> PROFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("profile").build();
+    private static final MarshallingInfo<Integer> QVBRQUALITYLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("qvbrQualityLevel").build();
     private static final MarshallingInfo<String> RATECONTROLMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rateControlMode").build();
     private static final MarshallingInfo<String> SCANTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -140,6 +142,7 @@ public class H264SettingsMarshaller {
             protocolMarshaller.marshall(h264Settings.getParDenominator(), PARDENOMINATOR_BINDING);
             protocolMarshaller.marshall(h264Settings.getParNumerator(), PARNUMERATOR_BINDING);
             protocolMarshaller.marshall(h264Settings.getProfile(), PROFILE_BINDING);
+            protocolMarshaller.marshall(h264Settings.getQvbrQualityLevel(), QVBRQUALITYLEVEL_BINDING);
             protocolMarshaller.marshall(h264Settings.getRateControlMode(), RATECONTROLMODE_BINDING);
             protocolMarshaller.marshall(h264Settings.getScanType(), SCANTYPE_BINDING);
             protocolMarshaller.marshall(h264Settings.getSceneChangeDetect(), SCENECHANGEDETECT_BINDING);

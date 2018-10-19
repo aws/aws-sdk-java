@@ -163,7 +163,7 @@ public class JsonProtocolMarshaller<OrigRequest> implements ProtocolRequestMarsh
             marshallBinaryPayload(val);
         } else {
             marshallerRegistry.getMarshaller(marshallingInfo.marshallLocation(), marshallingInfo.marshallingType(), val)
-                              .marshall(val, marshallerContext, marshallingInfo.marshallLocationName());
+                              .marshall(val, marshallerContext, marshallingInfo);
         }
     }
 

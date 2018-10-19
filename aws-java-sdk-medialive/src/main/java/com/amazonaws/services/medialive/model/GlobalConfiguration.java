@@ -29,11 +29,9 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
     /** Value to set the initial audio gain for the Live Event. */
     private Integer initialAudioGain;
     /**
-     * Indicates the action to take when an input completes (e.g. end-of-file.) Options include immediately switching to
-     * the next sequential input (via "switchInput"), switching to the next input and looping back to the first input
-     * when last input ends (via "switchAndLoopInputs") or not switching inputs and instead transcoding black / color /
-     * slate images per the "Input Loss Behavior" configuration until an activateInput REST command is received (via
-     * "none").
+     * Indicates the action to take when the input completes (e.g. end-of-file). Options include looping on the input
+     * (via "switchAndLoopInputs") or transcoding black / color / slate images per the "Input Loss Behavior"
+     * configuration (via "none").
      */
     private String inputEndAction;
     /** Settings for system actions when input is lost. */
@@ -85,18 +83,14 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Indicates the action to take when an input completes (e.g. end-of-file.) Options include immediately switching to
-     * the next sequential input (via "switchInput"), switching to the next input and looping back to the first input
-     * when last input ends (via "switchAndLoopInputs") or not switching inputs and instead transcoding black / color /
-     * slate images per the "Input Loss Behavior" configuration until an activateInput REST command is received (via
-     * "none").
+     * Indicates the action to take when the input completes (e.g. end-of-file). Options include looping on the input
+     * (via "switchAndLoopInputs") or transcoding black / color / slate images per the "Input Loss Behavior"
+     * configuration (via "none").
      * 
      * @param inputEndAction
-     *        Indicates the action to take when an input completes (e.g. end-of-file.) Options include immediately
-     *        switching to the next sequential input (via "switchInput"), switching to the next input and looping back
-     *        to the first input when last input ends (via "switchAndLoopInputs") or not switching inputs and instead
-     *        transcoding black / color / slate images per the "Input Loss Behavior" configuration until an
-     *        activateInput REST command is received (via "none").
+     *        Indicates the action to take when the input completes (e.g. end-of-file). Options include looping on the
+     *        input (via "switchAndLoopInputs") or transcoding black / color / slate images per the
+     *        "Input Loss Behavior" configuration (via "none").
      * @see GlobalConfigurationInputEndAction
      */
 
@@ -105,17 +99,13 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Indicates the action to take when an input completes (e.g. end-of-file.) Options include immediately switching to
-     * the next sequential input (via "switchInput"), switching to the next input and looping back to the first input
-     * when last input ends (via "switchAndLoopInputs") or not switching inputs and instead transcoding black / color /
-     * slate images per the "Input Loss Behavior" configuration until an activateInput REST command is received (via
-     * "none").
+     * Indicates the action to take when the input completes (e.g. end-of-file). Options include looping on the input
+     * (via "switchAndLoopInputs") or transcoding black / color / slate images per the "Input Loss Behavior"
+     * configuration (via "none").
      * 
-     * @return Indicates the action to take when an input completes (e.g. end-of-file.) Options include immediately
-     *         switching to the next sequential input (via "switchInput"), switching to the next input and looping back
-     *         to the first input when last input ends (via "switchAndLoopInputs") or not switching inputs and instead
-     *         transcoding black / color / slate images per the "Input Loss Behavior" configuration until an
-     *         activateInput REST command is received (via "none").
+     * @return Indicates the action to take when the input completes (e.g. end-of-file). Options include looping on the
+     *         input (via "switchAndLoopInputs") or transcoding black / color / slate images per the
+     *         "Input Loss Behavior" configuration (via "none").
      * @see GlobalConfigurationInputEndAction
      */
 
@@ -124,18 +114,14 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Indicates the action to take when an input completes (e.g. end-of-file.) Options include immediately switching to
-     * the next sequential input (via "switchInput"), switching to the next input and looping back to the first input
-     * when last input ends (via "switchAndLoopInputs") or not switching inputs and instead transcoding black / color /
-     * slate images per the "Input Loss Behavior" configuration until an activateInput REST command is received (via
-     * "none").
+     * Indicates the action to take when the input completes (e.g. end-of-file). Options include looping on the input
+     * (via "switchAndLoopInputs") or transcoding black / color / slate images per the "Input Loss Behavior"
+     * configuration (via "none").
      * 
      * @param inputEndAction
-     *        Indicates the action to take when an input completes (e.g. end-of-file.) Options include immediately
-     *        switching to the next sequential input (via "switchInput"), switching to the next input and looping back
-     *        to the first input when last input ends (via "switchAndLoopInputs") or not switching inputs and instead
-     *        transcoding black / color / slate images per the "Input Loss Behavior" configuration until an
-     *        activateInput REST command is received (via "none").
+     *        Indicates the action to take when the input completes (e.g. end-of-file). Options include looping on the
+     *        input (via "switchAndLoopInputs") or transcoding black / color / slate images per the
+     *        "Input Loss Behavior" configuration (via "none").
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GlobalConfigurationInputEndAction
      */
@@ -146,18 +132,14 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Indicates the action to take when an input completes (e.g. end-of-file.) Options include immediately switching to
-     * the next sequential input (via "switchInput"), switching to the next input and looping back to the first input
-     * when last input ends (via "switchAndLoopInputs") or not switching inputs and instead transcoding black / color /
-     * slate images per the "Input Loss Behavior" configuration until an activateInput REST command is received (via
-     * "none").
+     * Indicates the action to take when the input completes (e.g. end-of-file). Options include looping on the input
+     * (via "switchAndLoopInputs") or transcoding black / color / slate images per the "Input Loss Behavior"
+     * configuration (via "none").
      * 
      * @param inputEndAction
-     *        Indicates the action to take when an input completes (e.g. end-of-file.) Options include immediately
-     *        switching to the next sequential input (via "switchInput"), switching to the next input and looping back
-     *        to the first input when last input ends (via "switchAndLoopInputs") or not switching inputs and instead
-     *        transcoding black / color / slate images per the "Input Loss Behavior" configuration until an
-     *        activateInput REST command is received (via "none").
+     *        Indicates the action to take when the input completes (e.g. end-of-file). Options include looping on the
+     *        input (via "switchAndLoopInputs") or transcoding black / color / slate images per the
+     *        "Input Loss Behavior" configuration (via "none").
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GlobalConfigurationInputEndAction
      */

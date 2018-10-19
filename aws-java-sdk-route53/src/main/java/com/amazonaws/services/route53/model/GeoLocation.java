@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that contains information about a geo location.
+ * A complex type that contains information about a geographic location.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GeoLocation" target="_top">AWS API
@@ -48,7 +48,7 @@ public class GeoLocation implements Serializable, Cloneable {
     private String countryCode;
     /**
      * <p>
-     * The code for the subdivision, for example, a state in the United States or a province in Canada.
+     * The code for the subdivision. Route 53 currently supports only states in the United States.
      * </p>
      */
     private String subdivisionCode;
@@ -180,11 +180,11 @@ public class GeoLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for the subdivision, for example, a state in the United States or a province in Canada.
+     * The code for the subdivision. Route 53 currently supports only states in the United States.
      * </p>
      * 
      * @param subdivisionCode
-     *        The code for the subdivision, for example, a state in the United States or a province in Canada.
+     *        The code for the subdivision. Route 53 currently supports only states in the United States.
      */
 
     public void setSubdivisionCode(String subdivisionCode) {
@@ -193,10 +193,10 @@ public class GeoLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for the subdivision, for example, a state in the United States or a province in Canada.
+     * The code for the subdivision. Route 53 currently supports only states in the United States.
      * </p>
      * 
-     * @return The code for the subdivision, for example, a state in the United States or a province in Canada.
+     * @return The code for the subdivision. Route 53 currently supports only states in the United States.
      */
 
     public String getSubdivisionCode() {
@@ -205,11 +205,11 @@ public class GeoLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The code for the subdivision, for example, a state in the United States or a province in Canada.
+     * The code for the subdivision. Route 53 currently supports only states in the United States.
      * </p>
      * 
      * @param subdivisionCode
-     *        The code for the subdivision, for example, a state in the United States or a province in Canada.
+     *        The code for the subdivision. Route 53 currently supports only states in the United States.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

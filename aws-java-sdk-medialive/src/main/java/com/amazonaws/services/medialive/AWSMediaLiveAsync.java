@@ -413,7 +413,7 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      * Get a channel schedule
      * 
      * @param describeScheduleRequest
-     *        Request for a describe schedule call.
+     *        Placeholder documentation for DescribeScheduleRequest
      * @return A Java Future containing the result of the DescribeSchedule operation returned by the service.
      * @sample AWSMediaLiveAsync.DescribeSchedule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSchedule" target="_top">AWS API
@@ -425,7 +425,7 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      * Get a channel schedule
      * 
      * @param describeScheduleRequest
-     *        Request for a describe schedule call.
+     *        Placeholder documentation for DescribeScheduleRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

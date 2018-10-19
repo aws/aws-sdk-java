@@ -28,9 +28,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class ProvisionedThroughputDescriptionMarshaller {
 
     private static final MarshallingInfo<java.util.Date> LASTINCREASEDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastIncreaseDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastIncreaseDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTDECREASEDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastDecreaseDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastDecreaseDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Long> NUMBEROFDECREASESTODAY_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NumberOfDecreasesToday").build();
     private static final MarshallingInfo<Long> READCAPACITYUNITS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)

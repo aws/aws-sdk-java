@@ -30,7 +30,7 @@ public class MeterUsageRequestMarshaller {
     private static final MarshallingInfo<String> PRODUCTCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductCode").build();
     private static final MarshallingInfo<java.util.Date> TIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Timestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Timestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> USAGEDIMENSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UsageDimension").build();
     private static final MarshallingInfo<Integer> USAGEQUANTITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)

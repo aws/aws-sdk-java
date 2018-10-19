@@ -30,7 +30,7 @@ public class CreateReplicationJobRequestMarshaller {
     private static final MarshallingInfo<String> SERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("serverId").build();
     private static final MarshallingInfo<java.util.Date> SEEDREPLICATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("seedReplicationTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("seedReplicationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Integer> FREQUENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("frequency").build();
     private static final MarshallingInfo<String> LICENSETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

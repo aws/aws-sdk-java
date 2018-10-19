@@ -36,7 +36,7 @@ public class RecordPatchMarshaller {
     private static final MarshallingInfo<Long> SYNCCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SyncCount").build();
     private static final MarshallingInfo<java.util.Date> DEVICELASTMODIFIEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceLastModifiedDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceLastModifiedDate").timestampFormat("unixTimestamp").build();
 
     private static final RecordPatchMarshaller instance = new RecordPatchMarshaller();
 

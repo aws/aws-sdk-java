@@ -36,9 +36,9 @@ public class GroupMarshaller {
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("State").build();
     private static final MarshallingInfo<java.util.Date> ENABLEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnabledDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnabledDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> DISABLEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisabledDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisabledDate").timestampFormat("unixTimestamp").build();
 
     private static final GroupMarshaller instance = new GroupMarshaller();
 

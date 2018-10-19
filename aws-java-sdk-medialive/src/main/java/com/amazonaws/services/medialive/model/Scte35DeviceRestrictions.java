@@ -15,7 +15,8 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * SCTE-35 Device Restrictions.
+ * Corresponds to the device_restrictions parameter in a segmentation_descriptor. If you include one of the
+ * "restriction" flags then you must include all four of them.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Scte35DeviceRestrictions {

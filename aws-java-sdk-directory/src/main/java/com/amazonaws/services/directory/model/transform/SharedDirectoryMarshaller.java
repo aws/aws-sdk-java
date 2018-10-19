@@ -42,9 +42,9 @@ public class SharedDirectoryMarshaller {
     private static final MarshallingInfo<String> SHARENOTES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShareNotes").build();
     private static final MarshallingInfo<java.util.Date> CREATEDDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedDateTime").timestampFormat("unixTimestamp").build();
 
     private static final SharedDirectoryMarshaller instance = new SharedDirectoryMarshaller();
 

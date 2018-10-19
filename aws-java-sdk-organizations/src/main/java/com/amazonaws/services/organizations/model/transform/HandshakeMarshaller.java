@@ -37,9 +37,9 @@ public class HandshakeMarshaller {
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("State").build();
     private static final MarshallingInfo<java.util.Date> REQUESTEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequestedTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequestedTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> EXPIRATIONTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpirationTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpirationTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Action").build();
     private static final MarshallingInfo<List> RESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)

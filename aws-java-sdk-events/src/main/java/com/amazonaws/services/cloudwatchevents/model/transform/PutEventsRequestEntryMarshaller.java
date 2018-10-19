@@ -29,7 +29,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class PutEventsRequestEntryMarshaller {
 
     private static final MarshallingInfo<java.util.Date> TIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Time").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Time").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> SOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Source").build();
     private static final MarshallingInfo<List> RESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)

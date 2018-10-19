@@ -38,7 +38,7 @@ public class MigrationTaskSummaryMarshaller {
     private static final MarshallingInfo<String> STATUSDETAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusDetail").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateDateTime").timestampFormat("unixTimestamp").build();
 
     private static final MigrationTaskSummaryMarshaller instance = new MigrationTaskSummaryMarshaller();
 

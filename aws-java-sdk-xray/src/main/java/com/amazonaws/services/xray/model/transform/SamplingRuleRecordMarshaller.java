@@ -30,9 +30,9 @@ public class SamplingRuleRecordMarshaller {
     private static final MarshallingInfo<StructuredPojo> SAMPLINGRULE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SamplingRule").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> MODIFIEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModifiedAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModifiedAt").timestampFormat("unixTimestamp").build();
 
     private static final SamplingRuleRecordMarshaller instance = new SamplingRuleRecordMarshaller();
 

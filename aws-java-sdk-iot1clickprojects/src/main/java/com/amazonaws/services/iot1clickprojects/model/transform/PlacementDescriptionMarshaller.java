@@ -36,9 +36,9 @@ public class PlacementDescriptionMarshaller {
     private static final MarshallingInfo<Map> ATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("attributes").build();
     private static final MarshallingInfo<java.util.Date> CREATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updatedDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updatedDate").timestampFormat("unixTimestamp").build();
 
     private static final PlacementDescriptionMarshaller instance = new PlacementDescriptionMarshaller();
 

@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Fixed mode schedule action start settings
+ * Start time for the action.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/FixedModeScheduleActionStartSettings"
  *      target="_top">AWS API Documentation</a>
@@ -26,14 +26,23 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FixedModeScheduleActionStartSettings implements Serializable, Cloneable, StructuredPojo {
 
-    /** Fixed timestamp action start. Conforms to ISO-8601. */
+    /**
+     * Start time for the action to start in the channel. (Not the time for the action to be added to the schedule:
+     * actions are always added to the schedule immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters are
+     * digits (for example, mm might be 01) except for the two constants "T" for time and "Z" for "UTC format".
+     */
     private String time;
 
     /**
-     * Fixed timestamp action start. Conforms to ISO-8601.
+     * Start time for the action to start in the channel. (Not the time for the action to be added to the schedule:
+     * actions are always added to the schedule immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters are
+     * digits (for example, mm might be 01) except for the two constants "T" for time and "Z" for "UTC format".
      * 
      * @param time
-     *        Fixed timestamp action start. Conforms to ISO-8601.
+     *        Start time for the action to start in the channel. (Not the time for the action to be added to the
+     *        schedule: actions are always added to the schedule immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All
+     *        the letters are digits (for example, mm might be 01) except for the two constants "T" for time and "Z" for
+     *        "UTC format".
      */
 
     public void setTime(String time) {
@@ -41,9 +50,14 @@ public class FixedModeScheduleActionStartSettings implements Serializable, Clone
     }
 
     /**
-     * Fixed timestamp action start. Conforms to ISO-8601.
+     * Start time for the action to start in the channel. (Not the time for the action to be added to the schedule:
+     * actions are always added to the schedule immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters are
+     * digits (for example, mm might be 01) except for the two constants "T" for time and "Z" for "UTC format".
      * 
-     * @return Fixed timestamp action start. Conforms to ISO-8601.
+     * @return Start time for the action to start in the channel. (Not the time for the action to be added to the
+     *         schedule: actions are always added to the schedule immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ.
+     *         All the letters are digits (for example, mm might be 01) except for the two constants "T" for time and
+     *         "Z" for "UTC format".
      */
 
     public String getTime() {
@@ -51,10 +65,15 @@ public class FixedModeScheduleActionStartSettings implements Serializable, Clone
     }
 
     /**
-     * Fixed timestamp action start. Conforms to ISO-8601.
+     * Start time for the action to start in the channel. (Not the time for the action to be added to the schedule:
+     * actions are always added to the schedule immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters are
+     * digits (for example, mm might be 01) except for the two constants "T" for time and "Z" for "UTC format".
      * 
      * @param time
-     *        Fixed timestamp action start. Conforms to ISO-8601.
+     *        Start time for the action to start in the channel. (Not the time for the action to be added to the
+     *        schedule: actions are always added to the schedule immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All
+     *        the letters are digits (for example, mm might be 01) except for the two constants "T" for time and "Z" for
+     *        "UTC format".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,7 +27,7 @@ public class VPC implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Private hosted zones only) The region in which you created an Amazon VPC.
+     * (Private hosted zones only) The region that an Amazon VPC was created in.
      * </p>
      */
     private String vPCRegion;
@@ -36,11 +36,11 @@ public class VPC implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Private hosted zones only) The region in which you created an Amazon VPC.
+     * (Private hosted zones only) The region that an Amazon VPC was created in.
      * </p>
      * 
      * @param vPCRegion
-     *        (Private hosted zones only) The region in which you created an Amazon VPC.
+     *        (Private hosted zones only) The region that an Amazon VPC was created in.
      * @see VPCRegion
      */
 
@@ -50,10 +50,10 @@ public class VPC implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Private hosted zones only) The region in which you created an Amazon VPC.
+     * (Private hosted zones only) The region that an Amazon VPC was created in.
      * </p>
      * 
-     * @return (Private hosted zones only) The region in which you created an Amazon VPC.
+     * @return (Private hosted zones only) The region that an Amazon VPC was created in.
      * @see VPCRegion
      */
 
@@ -63,11 +63,11 @@ public class VPC implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Private hosted zones only) The region in which you created an Amazon VPC.
+     * (Private hosted zones only) The region that an Amazon VPC was created in.
      * </p>
      * 
      * @param vPCRegion
-     *        (Private hosted zones only) The region in which you created an Amazon VPC.
+     *        (Private hosted zones only) The region that an Amazon VPC was created in.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VPCRegion
      */
@@ -79,11 +79,11 @@ public class VPC implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Private hosted zones only) The region in which you created an Amazon VPC.
+     * (Private hosted zones only) The region that an Amazon VPC was created in.
      * </p>
      * 
      * @param vPCRegion
-     *        (Private hosted zones only) The region in which you created an Amazon VPC.
+     *        (Private hosted zones only) The region that an Amazon VPC was created in.
      * @see VPCRegion
      */
 
@@ -93,11 +93,11 @@ public class VPC implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Private hosted zones only) The region in which you created an Amazon VPC.
+     * (Private hosted zones only) The region that an Amazon VPC was created in.
      * </p>
      * 
      * @param vPCRegion
-     *        (Private hosted zones only) The region in which you created an Amazon VPC.
+     *        (Private hosted zones only) The region that an Amazon VPC was created in.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VPCRegion
      */

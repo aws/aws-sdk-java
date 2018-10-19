@@ -36,7 +36,7 @@ public class CreateActivationRequestMarshaller {
     private static final MarshallingInfo<Integer> REGISTRATIONLIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RegistrationLimit").build();
     private static final MarshallingInfo<java.util.Date> EXPIRATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpirationDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpirationDate").timestampFormat("unixTimestamp").build();
 
     private static final CreateActivationRequestMarshaller instance = new CreateActivationRequestMarshaller();
 

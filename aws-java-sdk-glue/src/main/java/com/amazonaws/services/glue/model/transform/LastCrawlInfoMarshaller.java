@@ -38,7 +38,7 @@ public class LastCrawlInfoMarshaller {
     private static final MarshallingInfo<String> MESSAGEPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessagePrefix").build();
     private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTime").timestampFormat("unixTimestamp").build();
 
     private static final LastCrawlInfoMarshaller instance = new LastCrawlInfoMarshaller();
 

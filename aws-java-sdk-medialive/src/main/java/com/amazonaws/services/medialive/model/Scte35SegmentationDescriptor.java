@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * SCTE-35 Segmentation Descriptor.
+ * Corresponds to SCTE-35 segmentation_descriptor.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35SegmentationDescriptor"
  *      target="_top">AWS API Documentation</a>
@@ -26,34 +26,52 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Scte35SegmentationDescriptor implements Serializable, Cloneable, StructuredPojo {
 
-    /** SCTE-35 delivery restrictions. */
+    /** Holds the four SCTE-35 delivery restriction parameters. */
     private Scte35DeliveryRestrictions deliveryRestrictions;
-    /** SCTE-35 segmentation_descriptor segment_num. */
+    /** Corresponds to SCTE-35 segment_num. A value that is valid for the specified segmentation_type_id. */
     private Integer segmentNum;
-    /** SCTE-35 segmentation_descriptor segmentation_event_cancel_indicator. */
+    /** Corresponds to SCTE-35 segmentation_event_cancel_indicator. */
     private String segmentationCancelIndicator;
-    /** SCTE-35 segmentation_descriptor segmentation_duration specified in 90 KHz clock ticks. */
+    /**
+     * Corresponds to SCTE-35 segmentation_duration. Optional. The duration for the time_signal, in 90 KHz ticks. To
+     * convert seconds to ticks, multiple the seconds by 90,000. Enter time in 90 KHz clock ticks. If you do not enter a
+     * duration, the time_signal will continue until you insert a cancellation message.
+     */
     private Long segmentationDuration;
-    /** SCTE-35 segmentation_descriptor segmentation_event_id. */
+    /** Corresponds to SCTE-35 segmentation_event_id. */
     private Long segmentationEventId;
-    /** SCTE-35 segmentation_descriptor segmentation_type_id. */
+    /**
+     * Corresponds to SCTE-35 segmentation_type_id. One of the segmentation_type_id values listed in the SCTE-35
+     * specification. On the console, enter the ID in decimal (for example, "52"). In the CLI, API, or an SDK, enter the
+     * ID in hex (for example, "0x34") or decimal (for example, "52").
+     */
     private Integer segmentationTypeId;
-    /** SCTE-35 segmentation_descriptor segmentation_upid as a hex string. */
+    /**
+     * Corresponds to SCTE-35 segmentation_upid. Enter a string containing the hexadecimal representation of the
+     * characters that make up the SCTE-35 segmentation_upid value. Must contain an even number of hex characters. Do
+     * not include spaces between each hex pair. For example, the ASCII "ADS Information" becomes hex
+     * "41445320496e666f726d6174696f6e.
+     */
     private String segmentationUpid;
-    /** SCTE-35 segmentation_descriptor segmentation_upid_type. */
+    /**
+     * Corresponds to SCTE-35 segmentation_upid_type. On the console, enter one of the types listed in the SCTE-35
+     * specification, converted to a decimal. For example, "0x0C" hex from the specification is "12" in decimal. In the
+     * CLI, API, or an SDK, enter one of the types listed in the SCTE-35 specification, in either hex (for example,
+     * "0x0C" ) or in decimal (for example, "12").
+     */
     private Integer segmentationUpidType;
-    /** SCTE-35 segmentation_descriptor segments_expected. */
+    /** Corresponds to SCTE-35 segments_expected. A value that is valid for the specified segmentation_type_id. */
     private Integer segmentsExpected;
-    /** SCTE-35 segmentation_descriptor sub_segment_num. */
+    /** Corresponds to SCTE-35 sub_segment_num. A value that is valid for the specified segmentation_type_id. */
     private Integer subSegmentNum;
-    /** SCTE-35 segmentation_descriptor sub_segments_expected. */
+    /** Corresponds to SCTE-35 sub_segments_expected. A value that is valid for the specified segmentation_type_id. */
     private Integer subSegmentsExpected;
 
     /**
-     * SCTE-35 delivery restrictions.
+     * Holds the four SCTE-35 delivery restriction parameters.
      * 
      * @param deliveryRestrictions
-     *        SCTE-35 delivery restrictions.
+     *        Holds the four SCTE-35 delivery restriction parameters.
      */
 
     public void setDeliveryRestrictions(Scte35DeliveryRestrictions deliveryRestrictions) {
@@ -61,9 +79,9 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 delivery restrictions.
+     * Holds the four SCTE-35 delivery restriction parameters.
      * 
-     * @return SCTE-35 delivery restrictions.
+     * @return Holds the four SCTE-35 delivery restriction parameters.
      */
 
     public Scte35DeliveryRestrictions getDeliveryRestrictions() {
@@ -71,10 +89,10 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 delivery restrictions.
+     * Holds the four SCTE-35 delivery restriction parameters.
      * 
      * @param deliveryRestrictions
-     *        SCTE-35 delivery restrictions.
+     *        Holds the four SCTE-35 delivery restriction parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,10 +102,10 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segment_num.
+     * Corresponds to SCTE-35 segment_num. A value that is valid for the specified segmentation_type_id.
      * 
      * @param segmentNum
-     *        SCTE-35 segmentation_descriptor segment_num.
+     *        Corresponds to SCTE-35 segment_num. A value that is valid for the specified segmentation_type_id.
      */
 
     public void setSegmentNum(Integer segmentNum) {
@@ -95,9 +113,9 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segment_num.
+     * Corresponds to SCTE-35 segment_num. A value that is valid for the specified segmentation_type_id.
      * 
-     * @return SCTE-35 segmentation_descriptor segment_num.
+     * @return Corresponds to SCTE-35 segment_num. A value that is valid for the specified segmentation_type_id.
      */
 
     public Integer getSegmentNum() {
@@ -105,10 +123,10 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segment_num.
+     * Corresponds to SCTE-35 segment_num. A value that is valid for the specified segmentation_type_id.
      * 
      * @param segmentNum
-     *        SCTE-35 segmentation_descriptor segment_num.
+     *        Corresponds to SCTE-35 segment_num. A value that is valid for the specified segmentation_type_id.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,10 +136,10 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segmentation_event_cancel_indicator.
+     * Corresponds to SCTE-35 segmentation_event_cancel_indicator.
      * 
      * @param segmentationCancelIndicator
-     *        SCTE-35 segmentation_descriptor segmentation_event_cancel_indicator.
+     *        Corresponds to SCTE-35 segmentation_event_cancel_indicator.
      * @see Scte35SegmentationCancelIndicator
      */
 
@@ -130,9 +148,9 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segmentation_event_cancel_indicator.
+     * Corresponds to SCTE-35 segmentation_event_cancel_indicator.
      * 
-     * @return SCTE-35 segmentation_descriptor segmentation_event_cancel_indicator.
+     * @return Corresponds to SCTE-35 segmentation_event_cancel_indicator.
      * @see Scte35SegmentationCancelIndicator
      */
 
@@ -141,10 +159,10 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segmentation_event_cancel_indicator.
+     * Corresponds to SCTE-35 segmentation_event_cancel_indicator.
      * 
      * @param segmentationCancelIndicator
-     *        SCTE-35 segmentation_descriptor segmentation_event_cancel_indicator.
+     *        Corresponds to SCTE-35 segmentation_event_cancel_indicator.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Scte35SegmentationCancelIndicator
      */
@@ -155,10 +173,10 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segmentation_event_cancel_indicator.
+     * Corresponds to SCTE-35 segmentation_event_cancel_indicator.
      * 
      * @param segmentationCancelIndicator
-     *        SCTE-35 segmentation_descriptor segmentation_event_cancel_indicator.
+     *        Corresponds to SCTE-35 segmentation_event_cancel_indicator.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Scte35SegmentationCancelIndicator
      */
@@ -169,10 +187,14 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segmentation_duration specified in 90 KHz clock ticks.
+     * Corresponds to SCTE-35 segmentation_duration. Optional. The duration for the time_signal, in 90 KHz ticks. To
+     * convert seconds to ticks, multiple the seconds by 90,000. Enter time in 90 KHz clock ticks. If you do not enter a
+     * duration, the time_signal will continue until you insert a cancellation message.
      * 
      * @param segmentationDuration
-     *        SCTE-35 segmentation_descriptor segmentation_duration specified in 90 KHz clock ticks.
+     *        Corresponds to SCTE-35 segmentation_duration. Optional. The duration for the time_signal, in 90 KHz ticks.
+     *        To convert seconds to ticks, multiple the seconds by 90,000. Enter time in 90 KHz clock ticks. If you do
+     *        not enter a duration, the time_signal will continue until you insert a cancellation message.
      */
 
     public void setSegmentationDuration(Long segmentationDuration) {
@@ -180,9 +202,13 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segmentation_duration specified in 90 KHz clock ticks.
+     * Corresponds to SCTE-35 segmentation_duration. Optional. The duration for the time_signal, in 90 KHz ticks. To
+     * convert seconds to ticks, multiple the seconds by 90,000. Enter time in 90 KHz clock ticks. If you do not enter a
+     * duration, the time_signal will continue until you insert a cancellation message.
      * 
-     * @return SCTE-35 segmentation_descriptor segmentation_duration specified in 90 KHz clock ticks.
+     * @return Corresponds to SCTE-35 segmentation_duration. Optional. The duration for the time_signal, in 90 KHz
+     *         ticks. To convert seconds to ticks, multiple the seconds by 90,000. Enter time in 90 KHz clock ticks. If
+     *         you do not enter a duration, the time_signal will continue until you insert a cancellation message.
      */
 
     public Long getSegmentationDuration() {
@@ -190,10 +216,14 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segmentation_duration specified in 90 KHz clock ticks.
+     * Corresponds to SCTE-35 segmentation_duration. Optional. The duration for the time_signal, in 90 KHz ticks. To
+     * convert seconds to ticks, multiple the seconds by 90,000. Enter time in 90 KHz clock ticks. If you do not enter a
+     * duration, the time_signal will continue until you insert a cancellation message.
      * 
      * @param segmentationDuration
-     *        SCTE-35 segmentation_descriptor segmentation_duration specified in 90 KHz clock ticks.
+     *        Corresponds to SCTE-35 segmentation_duration. Optional. The duration for the time_signal, in 90 KHz ticks.
+     *        To convert seconds to ticks, multiple the seconds by 90,000. Enter time in 90 KHz clock ticks. If you do
+     *        not enter a duration, the time_signal will continue until you insert a cancellation message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,10 +233,10 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segmentation_event_id.
+     * Corresponds to SCTE-35 segmentation_event_id.
      * 
      * @param segmentationEventId
-     *        SCTE-35 segmentation_descriptor segmentation_event_id.
+     *        Corresponds to SCTE-35 segmentation_event_id.
      */
 
     public void setSegmentationEventId(Long segmentationEventId) {
@@ -214,9 +244,9 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segmentation_event_id.
+     * Corresponds to SCTE-35 segmentation_event_id.
      * 
-     * @return SCTE-35 segmentation_descriptor segmentation_event_id.
+     * @return Corresponds to SCTE-35 segmentation_event_id.
      */
 
     public Long getSegmentationEventId() {
@@ -224,10 +254,10 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segmentation_event_id.
+     * Corresponds to SCTE-35 segmentation_event_id.
      * 
      * @param segmentationEventId
-     *        SCTE-35 segmentation_descriptor segmentation_event_id.
+     *        Corresponds to SCTE-35 segmentation_event_id.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,10 +267,14 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segmentation_type_id.
+     * Corresponds to SCTE-35 segmentation_type_id. One of the segmentation_type_id values listed in the SCTE-35
+     * specification. On the console, enter the ID in decimal (for example, "52"). In the CLI, API, or an SDK, enter the
+     * ID in hex (for example, "0x34") or decimal (for example, "52").
      * 
      * @param segmentationTypeId
-     *        SCTE-35 segmentation_descriptor segmentation_type_id.
+     *        Corresponds to SCTE-35 segmentation_type_id. One of the segmentation_type_id values listed in the SCTE-35
+     *        specification. On the console, enter the ID in decimal (for example, "52"). In the CLI, API, or an SDK,
+     *        enter the ID in hex (for example, "0x34") or decimal (for example, "52").
      */
 
     public void setSegmentationTypeId(Integer segmentationTypeId) {
@@ -248,9 +282,13 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segmentation_type_id.
+     * Corresponds to SCTE-35 segmentation_type_id. One of the segmentation_type_id values listed in the SCTE-35
+     * specification. On the console, enter the ID in decimal (for example, "52"). In the CLI, API, or an SDK, enter the
+     * ID in hex (for example, "0x34") or decimal (for example, "52").
      * 
-     * @return SCTE-35 segmentation_descriptor segmentation_type_id.
+     * @return Corresponds to SCTE-35 segmentation_type_id. One of the segmentation_type_id values listed in the SCTE-35
+     *         specification. On the console, enter the ID in decimal (for example, "52"). In the CLI, API, or an SDK,
+     *         enter the ID in hex (for example, "0x34") or decimal (for example, "52").
      */
 
     public Integer getSegmentationTypeId() {
@@ -258,10 +296,14 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segmentation_type_id.
+     * Corresponds to SCTE-35 segmentation_type_id. One of the segmentation_type_id values listed in the SCTE-35
+     * specification. On the console, enter the ID in decimal (for example, "52"). In the CLI, API, or an SDK, enter the
+     * ID in hex (for example, "0x34") or decimal (for example, "52").
      * 
      * @param segmentationTypeId
-     *        SCTE-35 segmentation_descriptor segmentation_type_id.
+     *        Corresponds to SCTE-35 segmentation_type_id. One of the segmentation_type_id values listed in the SCTE-35
+     *        specification. On the console, enter the ID in decimal (for example, "52"). In the CLI, API, or an SDK,
+     *        enter the ID in hex (for example, "0x34") or decimal (for example, "52").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,10 +313,16 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segmentation_upid as a hex string.
+     * Corresponds to SCTE-35 segmentation_upid. Enter a string containing the hexadecimal representation of the
+     * characters that make up the SCTE-35 segmentation_upid value. Must contain an even number of hex characters. Do
+     * not include spaces between each hex pair. For example, the ASCII "ADS Information" becomes hex
+     * "41445320496e666f726d6174696f6e.
      * 
      * @param segmentationUpid
-     *        SCTE-35 segmentation_descriptor segmentation_upid as a hex string.
+     *        Corresponds to SCTE-35 segmentation_upid. Enter a string containing the hexadecimal representation of the
+     *        characters that make up the SCTE-35 segmentation_upid value. Must contain an even number of hex
+     *        characters. Do not include spaces between each hex pair. For example, the ASCII "ADS Information" becomes
+     *        hex "41445320496e666f726d6174696f6e.
      */
 
     public void setSegmentationUpid(String segmentationUpid) {
@@ -282,9 +330,15 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segmentation_upid as a hex string.
+     * Corresponds to SCTE-35 segmentation_upid. Enter a string containing the hexadecimal representation of the
+     * characters that make up the SCTE-35 segmentation_upid value. Must contain an even number of hex characters. Do
+     * not include spaces between each hex pair. For example, the ASCII "ADS Information" becomes hex
+     * "41445320496e666f726d6174696f6e.
      * 
-     * @return SCTE-35 segmentation_descriptor segmentation_upid as a hex string.
+     * @return Corresponds to SCTE-35 segmentation_upid. Enter a string containing the hexadecimal representation of the
+     *         characters that make up the SCTE-35 segmentation_upid value. Must contain an even number of hex
+     *         characters. Do not include spaces between each hex pair. For example, the ASCII "ADS Information" becomes
+     *         hex "41445320496e666f726d6174696f6e.
      */
 
     public String getSegmentationUpid() {
@@ -292,10 +346,16 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segmentation_upid as a hex string.
+     * Corresponds to SCTE-35 segmentation_upid. Enter a string containing the hexadecimal representation of the
+     * characters that make up the SCTE-35 segmentation_upid value. Must contain an even number of hex characters. Do
+     * not include spaces between each hex pair. For example, the ASCII "ADS Information" becomes hex
+     * "41445320496e666f726d6174696f6e.
      * 
      * @param segmentationUpid
-     *        SCTE-35 segmentation_descriptor segmentation_upid as a hex string.
+     *        Corresponds to SCTE-35 segmentation_upid. Enter a string containing the hexadecimal representation of the
+     *        characters that make up the SCTE-35 segmentation_upid value. Must contain an even number of hex
+     *        characters. Do not include spaces between each hex pair. For example, the ASCII "ADS Information" becomes
+     *        hex "41445320496e666f726d6174696f6e.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,10 +365,16 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segmentation_upid_type.
+     * Corresponds to SCTE-35 segmentation_upid_type. On the console, enter one of the types listed in the SCTE-35
+     * specification, converted to a decimal. For example, "0x0C" hex from the specification is "12" in decimal. In the
+     * CLI, API, or an SDK, enter one of the types listed in the SCTE-35 specification, in either hex (for example,
+     * "0x0C" ) or in decimal (for example, "12").
      * 
      * @param segmentationUpidType
-     *        SCTE-35 segmentation_descriptor segmentation_upid_type.
+     *        Corresponds to SCTE-35 segmentation_upid_type. On the console, enter one of the types listed in the
+     *        SCTE-35 specification, converted to a decimal. For example, "0x0C" hex from the specification is "12" in
+     *        decimal. In the CLI, API, or an SDK, enter one of the types listed in the SCTE-35 specification, in either
+     *        hex (for example, "0x0C" ) or in decimal (for example, "12").
      */
 
     public void setSegmentationUpidType(Integer segmentationUpidType) {
@@ -316,9 +382,15 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segmentation_upid_type.
+     * Corresponds to SCTE-35 segmentation_upid_type. On the console, enter one of the types listed in the SCTE-35
+     * specification, converted to a decimal. For example, "0x0C" hex from the specification is "12" in decimal. In the
+     * CLI, API, or an SDK, enter one of the types listed in the SCTE-35 specification, in either hex (for example,
+     * "0x0C" ) or in decimal (for example, "12").
      * 
-     * @return SCTE-35 segmentation_descriptor segmentation_upid_type.
+     * @return Corresponds to SCTE-35 segmentation_upid_type. On the console, enter one of the types listed in the
+     *         SCTE-35 specification, converted to a decimal. For example, "0x0C" hex from the specification is "12" in
+     *         decimal. In the CLI, API, or an SDK, enter one of the types listed in the SCTE-35 specification, in
+     *         either hex (for example, "0x0C" ) or in decimal (for example, "12").
      */
 
     public Integer getSegmentationUpidType() {
@@ -326,10 +398,16 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segmentation_upid_type.
+     * Corresponds to SCTE-35 segmentation_upid_type. On the console, enter one of the types listed in the SCTE-35
+     * specification, converted to a decimal. For example, "0x0C" hex from the specification is "12" in decimal. In the
+     * CLI, API, or an SDK, enter one of the types listed in the SCTE-35 specification, in either hex (for example,
+     * "0x0C" ) or in decimal (for example, "12").
      * 
      * @param segmentationUpidType
-     *        SCTE-35 segmentation_descriptor segmentation_upid_type.
+     *        Corresponds to SCTE-35 segmentation_upid_type. On the console, enter one of the types listed in the
+     *        SCTE-35 specification, converted to a decimal. For example, "0x0C" hex from the specification is "12" in
+     *        decimal. In the CLI, API, or an SDK, enter one of the types listed in the SCTE-35 specification, in either
+     *        hex (for example, "0x0C" ) or in decimal (for example, "12").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -339,10 +417,10 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segments_expected.
+     * Corresponds to SCTE-35 segments_expected. A value that is valid for the specified segmentation_type_id.
      * 
      * @param segmentsExpected
-     *        SCTE-35 segmentation_descriptor segments_expected.
+     *        Corresponds to SCTE-35 segments_expected. A value that is valid for the specified segmentation_type_id.
      */
 
     public void setSegmentsExpected(Integer segmentsExpected) {
@@ -350,9 +428,9 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segments_expected.
+     * Corresponds to SCTE-35 segments_expected. A value that is valid for the specified segmentation_type_id.
      * 
-     * @return SCTE-35 segmentation_descriptor segments_expected.
+     * @return Corresponds to SCTE-35 segments_expected. A value that is valid for the specified segmentation_type_id.
      */
 
     public Integer getSegmentsExpected() {
@@ -360,10 +438,10 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor segments_expected.
+     * Corresponds to SCTE-35 segments_expected. A value that is valid for the specified segmentation_type_id.
      * 
      * @param segmentsExpected
-     *        SCTE-35 segmentation_descriptor segments_expected.
+     *        Corresponds to SCTE-35 segments_expected. A value that is valid for the specified segmentation_type_id.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -373,10 +451,10 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor sub_segment_num.
+     * Corresponds to SCTE-35 sub_segment_num. A value that is valid for the specified segmentation_type_id.
      * 
      * @param subSegmentNum
-     *        SCTE-35 segmentation_descriptor sub_segment_num.
+     *        Corresponds to SCTE-35 sub_segment_num. A value that is valid for the specified segmentation_type_id.
      */
 
     public void setSubSegmentNum(Integer subSegmentNum) {
@@ -384,9 +462,9 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor sub_segment_num.
+     * Corresponds to SCTE-35 sub_segment_num. A value that is valid for the specified segmentation_type_id.
      * 
-     * @return SCTE-35 segmentation_descriptor sub_segment_num.
+     * @return Corresponds to SCTE-35 sub_segment_num. A value that is valid for the specified segmentation_type_id.
      */
 
     public Integer getSubSegmentNum() {
@@ -394,10 +472,10 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor sub_segment_num.
+     * Corresponds to SCTE-35 sub_segment_num. A value that is valid for the specified segmentation_type_id.
      * 
      * @param subSegmentNum
-     *        SCTE-35 segmentation_descriptor sub_segment_num.
+     *        Corresponds to SCTE-35 sub_segment_num. A value that is valid for the specified segmentation_type_id.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -407,10 +485,11 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor sub_segments_expected.
+     * Corresponds to SCTE-35 sub_segments_expected. A value that is valid for the specified segmentation_type_id.
      * 
      * @param subSegmentsExpected
-     *        SCTE-35 segmentation_descriptor sub_segments_expected.
+     *        Corresponds to SCTE-35 sub_segments_expected. A value that is valid for the specified
+     *        segmentation_type_id.
      */
 
     public void setSubSegmentsExpected(Integer subSegmentsExpected) {
@@ -418,9 +497,10 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor sub_segments_expected.
+     * Corresponds to SCTE-35 sub_segments_expected. A value that is valid for the specified segmentation_type_id.
      * 
-     * @return SCTE-35 segmentation_descriptor sub_segments_expected.
+     * @return Corresponds to SCTE-35 sub_segments_expected. A value that is valid for the specified
+     *         segmentation_type_id.
      */
 
     public Integer getSubSegmentsExpected() {
@@ -428,10 +508,11 @@ public class Scte35SegmentationDescriptor implements Serializable, Cloneable, St
     }
 
     /**
-     * SCTE-35 segmentation_descriptor sub_segments_expected.
+     * Corresponds to SCTE-35 sub_segments_expected. A value that is valid for the specified segmentation_type_id.
      * 
      * @param subSegmentsExpected
-     *        SCTE-35 segmentation_descriptor sub_segments_expected.
+     *        Corresponds to SCTE-35 sub_segments_expected. A value that is valid for the specified
+     *        segmentation_type_id.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

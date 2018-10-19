@@ -40,7 +40,7 @@ public class AccountMarshaller {
     private static final MarshallingInfo<String> JOINEDMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JoinedMethod").build();
     private static final MarshallingInfo<java.util.Date> JOINEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JoinedTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JoinedTimestamp").timestampFormat("unixTimestamp").build();
 
     private static final AccountMarshaller instance = new AccountMarshaller();
 

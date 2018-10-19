@@ -36,7 +36,7 @@ public class GetShardIteratorRequestMarshaller {
     private static final MarshallingInfo<String> STARTINGSEQUENCENUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartingSequenceNumber").build();
     private static final MarshallingInfo<java.util.Date> TIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Timestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Timestamp").timestampFormat("unixTimestampInMillis").build();
 
     private static final GetShardIteratorRequestMarshaller instance = new GetShardIteratorRequestMarshaller();
 

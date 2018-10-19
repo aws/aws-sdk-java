@@ -32,7 +32,7 @@ public class ResourceErrorMarshaller {
     private static final MarshallingInfo<String> ERRORMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorMessage").build();
     private static final MarshallingInfo<java.util.Date> ERRORTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorTimestamp").timestampFormat("unixTimestamp").build();
 
     private static final ResourceErrorMarshaller instance = new ResourceErrorMarshaller();
 

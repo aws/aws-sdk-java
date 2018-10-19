@@ -33,7 +33,7 @@ public class LifecyclePolicyPreviewResultMarshaller {
     private static final MarshallingInfo<String> IMAGEDIGEST_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageDigest").build();
     private static final MarshallingInfo<java.util.Date> IMAGEPUSHEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imagePushedAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imagePushedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> ACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("action").build();
     private static final MarshallingInfo<Integer> APPLIEDRULEPRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)

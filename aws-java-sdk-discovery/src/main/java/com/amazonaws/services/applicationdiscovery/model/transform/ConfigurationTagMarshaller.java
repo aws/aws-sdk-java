@@ -36,7 +36,7 @@ public class ConfigurationTagMarshaller {
     private static final MarshallingInfo<String> VALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("value").build();
     private static final MarshallingInfo<java.util.Date> TIMEOFCREATION_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeOfCreation").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeOfCreation").timestampFormat("unixTimestamp").build();
 
     private static final ConfigurationTagMarshaller instance = new ConfigurationTagMarshaller();
 

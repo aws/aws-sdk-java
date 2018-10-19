@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Returned list of created schedule actions.
+ * List of actions that have been created in the schedule.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchScheduleActionCreateResult"
  *      target="_top">AWS API Documentation</a>
@@ -26,13 +26,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BatchScheduleActionCreateResult implements Serializable, Cloneable, StructuredPojo {
 
-    /** Returned list of created schedule actions. */
+    /** List of actions that have been created in the schedule. */
     private java.util.List<ScheduleAction> scheduleActions;
 
     /**
-     * Returned list of created schedule actions.
+     * List of actions that have been created in the schedule.
      * 
-     * @return Returned list of created schedule actions.
+     * @return List of actions that have been created in the schedule.
      */
 
     public java.util.List<ScheduleAction> getScheduleActions() {
@@ -40,10 +40,10 @@ public class BatchScheduleActionCreateResult implements Serializable, Cloneable,
     }
 
     /**
-     * Returned list of created schedule actions.
+     * List of actions that have been created in the schedule.
      * 
      * @param scheduleActions
-     *        Returned list of created schedule actions.
+     *        List of actions that have been created in the schedule.
      */
 
     public void setScheduleActions(java.util.Collection<ScheduleAction> scheduleActions) {
@@ -56,7 +56,7 @@ public class BatchScheduleActionCreateResult implements Serializable, Cloneable,
     }
 
     /**
-     * Returned list of created schedule actions.
+     * List of actions that have been created in the schedule.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setScheduleActions(java.util.Collection)} or {@link #withScheduleActions(java.util.Collection)} if you
@@ -64,7 +64,7 @@ public class BatchScheduleActionCreateResult implements Serializable, Cloneable,
      * </p>
      * 
      * @param scheduleActions
-     *        Returned list of created schedule actions.
+     *        List of actions that have been created in the schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,10 +79,10 @@ public class BatchScheduleActionCreateResult implements Serializable, Cloneable,
     }
 
     /**
-     * Returned list of created schedule actions.
+     * List of actions that have been created in the schedule.
      * 
      * @param scheduleActions
-     *        Returned list of created schedule actions.
+     *        List of actions that have been created in the schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

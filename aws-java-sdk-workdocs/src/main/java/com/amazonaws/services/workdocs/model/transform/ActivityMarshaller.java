@@ -30,7 +30,7 @@ public class ActivityMarshaller {
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
     private static final MarshallingInfo<java.util.Date> TIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeStamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeStamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ORGANIZATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrganizationId").build();
     private static final MarshallingInfo<StructuredPojo> INITIATOR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)

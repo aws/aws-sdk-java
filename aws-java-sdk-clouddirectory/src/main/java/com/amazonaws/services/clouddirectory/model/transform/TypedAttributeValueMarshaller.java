@@ -36,7 +36,7 @@ public class TypedAttributeValueMarshaller {
     private static final MarshallingInfo<String> NUMBERVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NumberValue").build();
     private static final MarshallingInfo<java.util.Date> DATETIMEVALUE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatetimeValue").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatetimeValue").timestampFormat("unixTimestamp").build();
 
     private static final TypedAttributeValueMarshaller instance = new TypedAttributeValueMarshaller();
 

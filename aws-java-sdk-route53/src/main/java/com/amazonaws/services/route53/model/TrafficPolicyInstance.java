@@ -60,21 +60,21 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      * <dt>Applied</dt>
      * <dd>
      * <p>
-     * Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Amazon Route 53
-     * edge locations.
+     * Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Route 53 edge
+     * locations.
      * </p>
      * </dd>
      * <dt>Creating</dt>
      * <dd>
      * <p>
-     * Amazon Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that
-     * the <code>CreateTrafficPolicyInstance</code> request completed successfully.
+     * Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that the
+     * <code>CreateTrafficPolicyInstance</code> request completed successfully.
      * </p>
      * </dd>
      * <dt>Failed</dt>
      * <dd>
      * <p>
-     * Amazon Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is
+     * Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is
      * <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.
      * </p>
      * </dd>
@@ -290,21 +290,21 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      * <dt>Applied</dt>
      * <dd>
      * <p>
-     * Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Amazon Route 53
-     * edge locations.
+     * Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Route 53 edge
+     * locations.
      * </p>
      * </dd>
      * <dt>Creating</dt>
      * <dd>
      * <p>
-     * Amazon Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that
-     * the <code>CreateTrafficPolicyInstance</code> request completed successfully.
+     * Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that the
+     * <code>CreateTrafficPolicyInstance</code> request completed successfully.
      * </p>
      * </dd>
      * <dt>Failed</dt>
      * <dd>
      * <p>
-     * Amazon Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is
+     * Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is
      * <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.
      * </p>
      * </dd>
@@ -316,23 +316,22 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      *        <dt>Applied</dt>
      *        <dd>
      *        <p>
-     *        Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Amazon
-     *        Route 53 edge locations.
+     *        Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Route 53
+     *        edge locations.
      *        </p>
      *        </dd>
      *        <dt>Creating</dt>
      *        <dd>
      *        <p>
-     *        Amazon Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm
-     *        that the <code>CreateTrafficPolicyInstance</code> request completed successfully.
+     *        Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that
+     *        the <code>CreateTrafficPolicyInstance</code> request completed successfully.
      *        </p>
      *        </dd>
      *        <dt>Failed</dt>
      *        <dd>
      *        <p>
-     *        Amazon Route 53 wasn't able to create or update the resource record sets. When the value of
-     *        <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the
-     *        request to fail.
+     *        Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is
+     *        <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.
      *        </p>
      *        </dd>
      */
@@ -349,21 +348,21 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      * <dt>Applied</dt>
      * <dd>
      * <p>
-     * Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Amazon Route 53
-     * edge locations.
+     * Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Route 53 edge
+     * locations.
      * </p>
      * </dd>
      * <dt>Creating</dt>
      * <dd>
      * <p>
-     * Amazon Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that
-     * the <code>CreateTrafficPolicyInstance</code> request completed successfully.
+     * Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that the
+     * <code>CreateTrafficPolicyInstance</code> request completed successfully.
      * </p>
      * </dd>
      * <dt>Failed</dt>
      * <dd>
      * <p>
-     * Amazon Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is
+     * Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is
      * <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.
      * </p>
      * </dd>
@@ -374,23 +373,22 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      *         <dt>Applied</dt>
      *         <dd>
      *         <p>
-     *         Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Amazon
-     *         Route 53 edge locations.
+     *         Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Route 53
+     *         edge locations.
      *         </p>
      *         </dd>
      *         <dt>Creating</dt>
      *         <dd>
      *         <p>
-     *         Amazon Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to
-     *         confirm that the <code>CreateTrafficPolicyInstance</code> request completed successfully.
+     *         Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that
+     *         the <code>CreateTrafficPolicyInstance</code> request completed successfully.
      *         </p>
      *         </dd>
      *         <dt>Failed</dt>
      *         <dd>
      *         <p>
-     *         Amazon Route 53 wasn't able to create or update the resource record sets. When the value of
-     *         <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the
-     *         request to fail.
+     *         Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code>
+     *         is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.
      *         </p>
      *         </dd>
      */
@@ -407,21 +405,21 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      * <dt>Applied</dt>
      * <dd>
      * <p>
-     * Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Amazon Route 53
-     * edge locations.
+     * Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Route 53 edge
+     * locations.
      * </p>
      * </dd>
      * <dt>Creating</dt>
      * <dd>
      * <p>
-     * Amazon Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that
-     * the <code>CreateTrafficPolicyInstance</code> request completed successfully.
+     * Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that the
+     * <code>CreateTrafficPolicyInstance</code> request completed successfully.
      * </p>
      * </dd>
      * <dt>Failed</dt>
      * <dd>
      * <p>
-     * Amazon Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is
+     * Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is
      * <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.
      * </p>
      * </dd>
@@ -433,23 +431,22 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      *        <dt>Applied</dt>
      *        <dd>
      *        <p>
-     *        Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Amazon
-     *        Route 53 edge locations.
+     *        Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Route 53
+     *        edge locations.
      *        </p>
      *        </dd>
      *        <dt>Creating</dt>
      *        <dd>
      *        <p>
-     *        Amazon Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm
-     *        that the <code>CreateTrafficPolicyInstance</code> request completed successfully.
+     *        Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that
+     *        the <code>CreateTrafficPolicyInstance</code> request completed successfully.
      *        </p>
      *        </dd>
      *        <dt>Failed</dt>
      *        <dd>
      *        <p>
-     *        Amazon Route 53 wasn't able to create or update the resource record sets. When the value of
-     *        <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the
-     *        request to fail.
+     *        Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is
+     *        <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.

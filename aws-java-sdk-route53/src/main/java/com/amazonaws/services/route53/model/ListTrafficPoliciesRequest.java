@@ -47,7 +47,7 @@ public class ListTrafficPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
      * (Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to this
      * request. If you have more than <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
      * the response is <code>true</code>, and the value of <code>TrafficPolicyIdMarker</code> is the ID of the first
-     * traffic policy that Amazon Route 53 will return if you submit another request.
+     * traffic policy that Route 53 will return if you submit another request.
      * </p>
      */
     private String maxItems;
@@ -139,15 +139,15 @@ public class ListTrafficPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
      * (Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to this
      * request. If you have more than <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
      * the response is <code>true</code>, and the value of <code>TrafficPolicyIdMarker</code> is the ID of the first
-     * traffic policy that Amazon Route 53 will return if you submit another request.
+     * traffic policy that Route 53 will return if you submit another request.
      * </p>
      * 
      * @param maxItems
      *        (Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to
      *        this request. If you have more than <code>MaxItems</code> traffic policies, the value of
      *        <code>IsTruncated</code> in the response is <code>true</code>, and the value of
-     *        <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that Amazon Route 53 will return
-     *        if you submit another request.
+     *        <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that Route 53 will return if you
+     *        submit another request.
      */
 
     public void setMaxItems(String maxItems) {
@@ -159,14 +159,14 @@ public class ListTrafficPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
      * (Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to this
      * request. If you have more than <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
      * the response is <code>true</code>, and the value of <code>TrafficPolicyIdMarker</code> is the ID of the first
-     * traffic policy that Amazon Route 53 will return if you submit another request.
+     * traffic policy that Route 53 will return if you submit another request.
      * </p>
      * 
      * @return (Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to
      *         this request. If you have more than <code>MaxItems</code> traffic policies, the value of
      *         <code>IsTruncated</code> in the response is <code>true</code>, and the value of
-     *         <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that Amazon Route 53 will return
-     *         if you submit another request.
+     *         <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that Route 53 will return if you
+     *         submit another request.
      */
 
     public String getMaxItems() {
@@ -178,15 +178,15 @@ public class ListTrafficPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
      * (Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to this
      * request. If you have more than <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
      * the response is <code>true</code>, and the value of <code>TrafficPolicyIdMarker</code> is the ID of the first
-     * traffic policy that Amazon Route 53 will return if you submit another request.
+     * traffic policy that Route 53 will return if you submit another request.
      * </p>
      * 
      * @param maxItems
      *        (Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to
      *        this request. If you have more than <code>MaxItems</code> traffic policies, the value of
      *        <code>IsTruncated</code> in the response is <code>true</code>, and the value of
-     *        <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that Amazon Route 53 will return
-     *        if you submit another request.
+     *        <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that Route 53 will return if you
+     *        submit another request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

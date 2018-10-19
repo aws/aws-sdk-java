@@ -31,7 +31,8 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
     private java.util.List<Image> images;
     /**
      * <p>
-     * The pagination token to use to retrieve the next page of results. If there are no more pages, this value is null.
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
      * </p>
      */
     private String nextToken;
@@ -108,12 +109,13 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The pagination token to use to retrieve the next page of results. If there are no more pages, this value is null.
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token to use to retrieve the next page of results. If there are no more pages, this value
-     *        is null.
+     *        The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *        pages, this value is null.
      */
 
     public void setNextToken(String nextToken) {
@@ -122,11 +124,12 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The pagination token to use to retrieve the next page of results. If there are no more pages, this value is null.
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
      * </p>
      * 
-     * @return The pagination token to use to retrieve the next page of results. If there are no more pages, this value
-     *         is null.
+     * @return The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *         pages, this value is null.
      */
 
     public String getNextToken() {
@@ -135,12 +138,13 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The pagination token to use to retrieve the next page of results. If there are no more pages, this value is null.
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token to use to retrieve the next page of results. If there are no more pages, this value
-     *        is null.
+     *        The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *        pages, this value is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

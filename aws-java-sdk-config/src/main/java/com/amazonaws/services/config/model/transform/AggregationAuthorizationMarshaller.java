@@ -34,7 +34,7 @@ public class AggregationAuthorizationMarshaller {
     private static final MarshallingInfo<String> AUTHORIZEDAWSREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuthorizedAwsRegion").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
 
     private static final AggregationAuthorizationMarshaller instance = new AggregationAuthorizationMarshaller();
 

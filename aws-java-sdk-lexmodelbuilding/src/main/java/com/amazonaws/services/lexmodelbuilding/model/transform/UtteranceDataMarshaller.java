@@ -34,9 +34,9 @@ public class UtteranceDataMarshaller {
     private static final MarshallingInfo<Integer> DISTINCTUSERS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("distinctUsers").build();
     private static final MarshallingInfo<java.util.Date> FIRSTUTTEREDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("firstUtteredDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("firstUtteredDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUTTEREDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUtteredDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUtteredDate").timestampFormat("unixTimestamp").build();
 
     private static final UtteranceDataMarshaller instance = new UtteranceDataMarshaller();
 

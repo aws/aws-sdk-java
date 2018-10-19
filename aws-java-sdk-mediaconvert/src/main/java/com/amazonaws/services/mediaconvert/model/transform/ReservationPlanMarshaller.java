@@ -30,9 +30,9 @@ public class ReservationPlanMarshaller {
     private static final MarshallingInfo<String> COMMITMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("commitment").build();
     private static final MarshallingInfo<java.util.Date> EXPIRESAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("expiresAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("expiresAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> PURCHASEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("purchasedAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("purchasedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> RENEWALTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("renewalType").build();
     private static final MarshallingInfo<Integer> RESERVEDSLOTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)

@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * SCTE-35 Splice Insert Settings.
+ * Settings for a SCTE-35 splice_insert message.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35SpliceInsertScheduleActionSettings"
  *      target="_top">AWS API Documentation</a>
@@ -27,20 +27,27 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class Scte35SpliceInsertScheduleActionSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * The duration for the SCTE-35 splice_insert specified in 90KHz clock ticks. When duration is not specified the
-     * expectation is that a Scte35ReturnToNetwork action will be scheduled.
+     * Optional, the duration for the splice_insert, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds
+     * by 90,000. If you enter a duration, there is an expectation that the downstream system can read the duration and
+     * cue in at that time. If you do not enter a duration, the splice_insert will continue indefinitely and there is an
+     * expectation that you will enter a return_to_network to end the splice_insert at the appropriate time.
      */
     private Long duration;
     /** The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35. */
     private Long spliceEventId;
 
     /**
-     * The duration for the SCTE-35 splice_insert specified in 90KHz clock ticks. When duration is not specified the
-     * expectation is that a Scte35ReturnToNetwork action will be scheduled.
+     * Optional, the duration for the splice_insert, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds
+     * by 90,000. If you enter a duration, there is an expectation that the downstream system can read the duration and
+     * cue in at that time. If you do not enter a duration, the splice_insert will continue indefinitely and there is an
+     * expectation that you will enter a return_to_network to end the splice_insert at the appropriate time.
      * 
      * @param duration
-     *        The duration for the SCTE-35 splice_insert specified in 90KHz clock ticks. When duration is not specified
-     *        the expectation is that a Scte35ReturnToNetwork action will be scheduled.
+     *        Optional, the duration for the splice_insert, in 90 KHz ticks. To convert seconds to ticks, multiple the
+     *        seconds by 90,000. If you enter a duration, there is an expectation that the downstream system can read
+     *        the duration and cue in at that time. If you do not enter a duration, the splice_insert will continue
+     *        indefinitely and there is an expectation that you will enter a return_to_network to end the splice_insert
+     *        at the appropriate time.
      */
 
     public void setDuration(Long duration) {
@@ -48,11 +55,16 @@ public class Scte35SpliceInsertScheduleActionSettings implements Serializable, C
     }
 
     /**
-     * The duration for the SCTE-35 splice_insert specified in 90KHz clock ticks. When duration is not specified the
-     * expectation is that a Scte35ReturnToNetwork action will be scheduled.
+     * Optional, the duration for the splice_insert, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds
+     * by 90,000. If you enter a duration, there is an expectation that the downstream system can read the duration and
+     * cue in at that time. If you do not enter a duration, the splice_insert will continue indefinitely and there is an
+     * expectation that you will enter a return_to_network to end the splice_insert at the appropriate time.
      * 
-     * @return The duration for the SCTE-35 splice_insert specified in 90KHz clock ticks. When duration is not specified
-     *         the expectation is that a Scte35ReturnToNetwork action will be scheduled.
+     * @return Optional, the duration for the splice_insert, in 90 KHz ticks. To convert seconds to ticks, multiple the
+     *         seconds by 90,000. If you enter a duration, there is an expectation that the downstream system can read
+     *         the duration and cue in at that time. If you do not enter a duration, the splice_insert will continue
+     *         indefinitely and there is an expectation that you will enter a return_to_network to end the splice_insert
+     *         at the appropriate time.
      */
 
     public Long getDuration() {
@@ -60,12 +72,17 @@ public class Scte35SpliceInsertScheduleActionSettings implements Serializable, C
     }
 
     /**
-     * The duration for the SCTE-35 splice_insert specified in 90KHz clock ticks. When duration is not specified the
-     * expectation is that a Scte35ReturnToNetwork action will be scheduled.
+     * Optional, the duration for the splice_insert, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds
+     * by 90,000. If you enter a duration, there is an expectation that the downstream system can read the duration and
+     * cue in at that time. If you do not enter a duration, the splice_insert will continue indefinitely and there is an
+     * expectation that you will enter a return_to_network to end the splice_insert at the appropriate time.
      * 
      * @param duration
-     *        The duration for the SCTE-35 splice_insert specified in 90KHz clock ticks. When duration is not specified
-     *        the expectation is that a Scte35ReturnToNetwork action will be scheduled.
+     *        Optional, the duration for the splice_insert, in 90 KHz ticks. To convert seconds to ticks, multiple the
+     *        seconds by 90,000. If you enter a duration, there is an expectation that the downstream system can read
+     *        the duration and cue in at that time. If you do not enter a duration, the splice_insert will continue
+     *        indefinitely and there is an expectation that you will enter a return_to_network to end the splice_insert
+     *        at the appropriate time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -38,9 +38,9 @@ public class ContinuousExportDescriptionMarshaller {
     private static final MarshallingInfo<String> S3BUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("s3Bucket").build();
     private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> STOPTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stopTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stopTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> DATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSource").build();
     private static final MarshallingInfo<Map> SCHEMASTORAGECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.MAP)

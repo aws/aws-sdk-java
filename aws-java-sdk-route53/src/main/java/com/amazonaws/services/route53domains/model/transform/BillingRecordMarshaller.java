@@ -34,7 +34,7 @@ public class BillingRecordMarshaller {
     private static final MarshallingInfo<String> INVOICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("InvoiceId").build();
     private static final MarshallingInfo<java.util.Date> BILLDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BillDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BillDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Double> PRICE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Price").build();
 

@@ -37,11 +37,11 @@ public class ReplicationJobMarshaller {
     private static final MarshallingInfo<StructuredPojo> VMSERVER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vmServer").build();
     private static final MarshallingInfo<java.util.Date> SEEDREPLICATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("seedReplicationTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("seedReplicationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Integer> FREQUENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("frequency").build();
     private static final MarshallingInfo<java.util.Date> NEXTREPLICATIONRUNSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nextReplicationRunStartTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nextReplicationRunStartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> LICENSETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("licenseType").build();
     private static final MarshallingInfo<String> ROLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)

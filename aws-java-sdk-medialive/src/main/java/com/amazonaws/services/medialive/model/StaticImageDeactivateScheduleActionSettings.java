@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Static image deactivate.
+ * Settings for the action to deactivate the image in a specific layer.
  * 
  * @see <a
  *      href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StaticImageDeactivateScheduleActionSettings"
@@ -27,19 +27,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StaticImageDeactivateScheduleActionSettings implements Serializable, Cloneable, StructuredPojo {
 
-    /** The time in milliseconds for the image to fade out. Defaults to 0. */
+    /** The time in milliseconds for the image to fade out. Default is 0 (no fade-out). */
     private Integer fadeOut;
-    /**
-     * The Z order of the inserted image. Images with higher layer values will be inserted on top of images with lower
-     * layer values. Permitted values are 0-7 inclusive. Defaults to 0.
-     */
+    /** The image overlay layer to deactivate, 0 to 7. Default is 0. */
     private Integer layer;
 
     /**
-     * The time in milliseconds for the image to fade out. Defaults to 0.
+     * The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
      * 
      * @param fadeOut
-     *        The time in milliseconds for the image to fade out. Defaults to 0.
+     *        The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
      */
 
     public void setFadeOut(Integer fadeOut) {
@@ -47,9 +44,9 @@ public class StaticImageDeactivateScheduleActionSettings implements Serializable
     }
 
     /**
-     * The time in milliseconds for the image to fade out. Defaults to 0.
+     * The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
      * 
-     * @return The time in milliseconds for the image to fade out. Defaults to 0.
+     * @return The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
      */
 
     public Integer getFadeOut() {
@@ -57,10 +54,10 @@ public class StaticImageDeactivateScheduleActionSettings implements Serializable
     }
 
     /**
-     * The time in milliseconds for the image to fade out. Defaults to 0.
+     * The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
      * 
      * @param fadeOut
-     *        The time in milliseconds for the image to fade out. Defaults to 0.
+     *        The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,12 +67,10 @@ public class StaticImageDeactivateScheduleActionSettings implements Serializable
     }
 
     /**
-     * The Z order of the inserted image. Images with higher layer values will be inserted on top of images with lower
-     * layer values. Permitted values are 0-7 inclusive. Defaults to 0.
+     * The image overlay layer to deactivate, 0 to 7. Default is 0.
      * 
      * @param layer
-     *        The Z order of the inserted image. Images with higher layer values will be inserted on top of images with
-     *        lower layer values. Permitted values are 0-7 inclusive. Defaults to 0.
+     *        The image overlay layer to deactivate, 0 to 7. Default is 0.
      */
 
     public void setLayer(Integer layer) {
@@ -83,11 +78,9 @@ public class StaticImageDeactivateScheduleActionSettings implements Serializable
     }
 
     /**
-     * The Z order of the inserted image. Images with higher layer values will be inserted on top of images with lower
-     * layer values. Permitted values are 0-7 inclusive. Defaults to 0.
+     * The image overlay layer to deactivate, 0 to 7. Default is 0.
      * 
-     * @return The Z order of the inserted image. Images with higher layer values will be inserted on top of images with
-     *         lower layer values. Permitted values are 0-7 inclusive. Defaults to 0.
+     * @return The image overlay layer to deactivate, 0 to 7. Default is 0.
      */
 
     public Integer getLayer() {
@@ -95,12 +88,10 @@ public class StaticImageDeactivateScheduleActionSettings implements Serializable
     }
 
     /**
-     * The Z order of the inserted image. Images with higher layer values will be inserted on top of images with lower
-     * layer values. Permitted values are 0-7 inclusive. Defaults to 0.
+     * The image overlay layer to deactivate, 0 to 7. Default is 0.
      * 
      * @param layer
-     *        The Z order of the inserted image. Images with higher layer values will be inserted on top of images with
-     *        lower layer values. Permitted values are 0-7 inclusive. Defaults to 0.
+     *        The image overlay layer to deactivate, 0 to 7. Default is 0.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

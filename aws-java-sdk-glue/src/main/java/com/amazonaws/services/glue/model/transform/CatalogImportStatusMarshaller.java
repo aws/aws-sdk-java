@@ -30,7 +30,7 @@ public class CatalogImportStatusMarshaller {
     private static final MarshallingInfo<Boolean> IMPORTCOMPLETED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportCompleted").build();
     private static final MarshallingInfo<java.util.Date> IMPORTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> IMPORTEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportedBy").build();
 

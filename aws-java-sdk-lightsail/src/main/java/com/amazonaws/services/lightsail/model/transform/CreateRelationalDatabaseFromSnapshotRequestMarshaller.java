@@ -40,7 +40,7 @@ public class CreateRelationalDatabaseFromSnapshotRequestMarshaller {
     private static final MarshallingInfo<String> SOURCERELATIONALDATABASENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceRelationalDatabaseName").build();
     private static final MarshallingInfo<java.util.Date> RESTORETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("restoreTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("restoreTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Boolean> USELATESTRESTORABLETIME_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("useLatestRestorableTime").build();
 

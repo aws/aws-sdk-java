@@ -32,7 +32,7 @@ public class PendingMaintenanceActionMarshaller {
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<java.util.Date> CURRENTAPPLYDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("currentApplyDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("currentApplyDate").timestampFormat("unixTimestamp").build();
 
     private static final PendingMaintenanceActionMarshaller instance = new PendingMaintenanceActionMarshaller();
 

@@ -67,6 +67,72 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
 
     /**
      * <p>
+     * Associates the specified users with the specified stacks. Users in a user pool cannot be assigned to stacks with
+     * fleets that are joined to an Active Directory domain.
+     * </p>
+     * 
+     * @param batchAssociateUserStackRequest
+     * @return A Java Future containing the result of the BatchAssociateUserStack operation returned by the service.
+     * @sample AmazonAppStreamAsync.BatchAssociateUserStack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/BatchAssociateUserStack"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchAssociateUserStackResult> batchAssociateUserStackAsync(BatchAssociateUserStackRequest batchAssociateUserStackRequest);
+
+    /**
+     * <p>
+     * Associates the specified users with the specified stacks. Users in a user pool cannot be assigned to stacks with
+     * fleets that are joined to an Active Directory domain.
+     * </p>
+     * 
+     * @param batchAssociateUserStackRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchAssociateUserStack operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.BatchAssociateUserStack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/BatchAssociateUserStack"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchAssociateUserStackResult> batchAssociateUserStackAsync(BatchAssociateUserStackRequest batchAssociateUserStackRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchAssociateUserStackRequest, BatchAssociateUserStackResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates the specified users from the specified stacks.
+     * </p>
+     * 
+     * @param batchDisassociateUserStackRequest
+     * @return A Java Future containing the result of the BatchDisassociateUserStack operation returned by the service.
+     * @sample AmazonAppStreamAsync.BatchDisassociateUserStack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/BatchDisassociateUserStack"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDisassociateUserStackResult> batchDisassociateUserStackAsync(
+            BatchDisassociateUserStackRequest batchDisassociateUserStackRequest);
+
+    /**
+     * <p>
+     * Disassociates the specified users from the specified stacks.
+     * </p>
+     * 
+     * @param batchDisassociateUserStackRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDisassociateUserStack operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.BatchDisassociateUserStack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/BatchDisassociateUserStack"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDisassociateUserStackResult> batchDisassociateUserStackAsync(
+            BatchDisassociateUserStackRequest batchDisassociateUserStackRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDisassociateUserStackRequest, BatchDisassociateUserStackResult> asyncHandler);
+
+    /**
+     * <p>
      * Copies the image within the same region or to a new region within the same AWS account. Note that any tags you
      * added to the image will not be copied.
      * </p>
@@ -302,6 +368,37 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
 
     /**
      * <p>
+     * Creates a new user in the user pool.
+     * </p>
+     * 
+     * @param createUserRequest
+     * @return A Java Future containing the result of the CreateUser operation returned by the service.
+     * @sample AmazonAppStreamAsync.CreateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest createUserRequest);
+
+    /**
+     * <p>
+     * Creates a new user in the user pool.
+     * </p>
+     * 
+     * @param createUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateUser operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.CreateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest createUserRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateUserRequest, CreateUserResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified Directory Config object from AppStream 2.0. This object includes the information required
      * to join streaming instances to an Active Directory domain.
      * </p>
@@ -495,6 +592,37 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      */
     java.util.concurrent.Future<DeleteStackResult> deleteStackAsync(DeleteStackRequest deleteStackRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, DeleteStackResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a user from the user pool.
+     * </p>
+     * 
+     * @param deleteUserRequest
+     * @return A Java Future containing the result of the DeleteUser operation returned by the service.
+     * @sample AmazonAppStreamAsync.DeleteUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest deleteUserRequest);
+
+    /**
+     * <p>
+     * Deletes a user from the user pool.
+     * </p>
+     * 
+     * @param deleteUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteUser operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.DeleteUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest deleteUserRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler);
 
     /**
      * <p>
@@ -739,6 +867,133 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
 
     /**
      * <p>
+     * Retrieves a list that describes the UserStackAssociation objects. You must specify either or both of the
+     * following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The stack name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The user name (email address of the user associated with the stack) and the authentication type for the user
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeUserStackAssociationsRequest
+     * @return A Java Future containing the result of the DescribeUserStackAssociations operation returned by the
+     *         service.
+     * @sample AmazonAppStreamAsync.DescribeUserStackAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUserStackAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeUserStackAssociationsResult> describeUserStackAssociationsAsync(
+            DescribeUserStackAssociationsRequest describeUserStackAssociationsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list that describes the UserStackAssociation objects. You must specify either or both of the
+     * following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The stack name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The user name (email address of the user associated with the stack) and the authentication type for the user
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeUserStackAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeUserStackAssociations operation returned by the
+     *         service.
+     * @sample AmazonAppStreamAsyncHandler.DescribeUserStackAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUserStackAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeUserStackAssociationsResult> describeUserStackAssociationsAsync(
+            DescribeUserStackAssociationsRequest describeUserStackAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeUserStackAssociationsRequest, DescribeUserStackAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more specified users in the user pool, if user names are provided.
+     * Otherwise, all users in the user pool are described.
+     * </p>
+     * 
+     * @param describeUsersRequest
+     * @return A Java Future containing the result of the DescribeUsers operation returned by the service.
+     * @sample AmazonAppStreamAsync.DescribeUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeUsersResult> describeUsersAsync(DescribeUsersRequest describeUsersRequest);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more specified users in the user pool, if user names are provided.
+     * Otherwise, all users in the user pool are described.
+     * </p>
+     * 
+     * @param describeUsersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeUsers operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.DescribeUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeUsersResult> describeUsersAsync(DescribeUsersRequest describeUsersRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeUsersRequest, DescribeUsersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disables the specified user in the user pool. Users can't sign in to AppStream 2.0 until they are re-enabled.
+     * This action does not delete the user.
+     * </p>
+     * 
+     * @param disableUserRequest
+     * @return A Java Future containing the result of the DisableUser operation returned by the service.
+     * @sample AmazonAppStreamAsync.DisableUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisableUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DisableUserResult> disableUserAsync(DisableUserRequest disableUserRequest);
+
+    /**
+     * <p>
+     * Disables the specified user in the user pool. Users can't sign in to AppStream 2.0 until they are re-enabled.
+     * This action does not delete the user.
+     * </p>
+     * 
+     * @param disableUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableUser operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.DisableUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisableUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DisableUserResult> disableUserAsync(DisableUserRequest disableUserRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableUserRequest, DisableUserResult> asyncHandler);
+
+    /**
+     * <p>
      * Disassociates the specified fleet from the specified stack.
      * </p>
      * 
@@ -767,6 +1022,39 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      */
     java.util.concurrent.Future<DisassociateFleetResult> disassociateFleetAsync(DisassociateFleetRequest disassociateFleetRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateFleetRequest, DisassociateFleetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables a user in the user pool. After being enabled, users can sign in to AppStream 2.0 and open applications
+     * from the stacks to which they are assigned.
+     * </p>
+     * 
+     * @param enableUserRequest
+     * @return A Java Future containing the result of the EnableUser operation returned by the service.
+     * @sample AmazonAppStreamAsync.EnableUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/EnableUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<EnableUserResult> enableUserAsync(EnableUserRequest enableUserRequest);
+
+    /**
+     * <p>
+     * Enables a user in the user pool. After being enabled, users can sign in to AppStream 2.0 and open applications
+     * from the stacks to which they are assigned.
+     * </p>
+     * 
+     * @param enableUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableUser operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.EnableUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/EnableUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<EnableUserResult> enableUserAsync(EnableUserRequest enableUserRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableUserRequest, EnableUserResult> asyncHandler);
 
     /**
      * <p>

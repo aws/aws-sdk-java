@@ -32,9 +32,9 @@ public class ListBackupsRequestMarshaller {
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Limit").build();
     private static final MarshallingInfo<java.util.Date> TIMERANGELOWERBOUND_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeRangeLowerBound").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeRangeLowerBound").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> TIMERANGEUPPERBOUND_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeRangeUpperBound").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeRangeUpperBound").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> EXCLUSIVESTARTBACKUPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExclusiveStartBackupArn").build();
     private static final MarshallingInfo<String> BACKUPTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

@@ -28,11 +28,11 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class TimingMarshaller {
 
     private static final MarshallingInfo<java.util.Date> FINISHTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("finishTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("finishTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> SUBMITTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("submitTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("submitTime").timestampFormat("unixTimestamp").build();
 
     private static final TimingMarshaller instance = new TimingMarshaller();
 

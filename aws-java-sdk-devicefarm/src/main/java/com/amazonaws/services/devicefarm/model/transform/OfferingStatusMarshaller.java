@@ -34,7 +34,7 @@ public class OfferingStatusMarshaller {
     private static final MarshallingInfo<Integer> QUANTITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("quantity").build();
     private static final MarshallingInfo<java.util.Date> EFFECTIVEON_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("effectiveOn").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("effectiveOn").timestampFormat("unixTimestamp").build();
 
     private static final OfferingStatusMarshaller instance = new OfferingStatusMarshaller();
 

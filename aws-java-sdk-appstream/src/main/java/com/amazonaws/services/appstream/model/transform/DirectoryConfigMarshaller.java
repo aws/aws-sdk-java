@@ -35,7 +35,7 @@ public class DirectoryConfigMarshaller {
     private static final MarshallingInfo<StructuredPojo> SERVICEACCOUNTCREDENTIALS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceAccountCredentials").build();
     private static final MarshallingInfo<java.util.Date> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTime").timestampFormat("unixTimestamp").build();
 
     private static final DirectoryConfigMarshaller instance = new DirectoryConfigMarshaller();
 

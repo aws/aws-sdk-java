@@ -32,9 +32,9 @@ public class PipelineSummaryMarshaller {
     private static final MarshallingInfo<Integer> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("version").build();
     private static final MarshallingInfo<java.util.Date> CREATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("created").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("created").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> UPDATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updated").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updated").timestampFormat("unixTimestamp").build();
 
     private static final PipelineSummaryMarshaller instance = new PipelineSummaryMarshaller();
 

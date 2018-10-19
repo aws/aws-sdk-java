@@ -34,7 +34,7 @@ public class ConsumerDescriptionMarshaller {
     private static final MarshallingInfo<String> CONSUMERSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConsumerStatus").build();
     private static final MarshallingInfo<java.util.Date> CONSUMERCREATIONTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConsumerCreationTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConsumerCreationTimestamp").timestampFormat("unixTimestampInMillis").build();
     private static final MarshallingInfo<String> STREAMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("StreamARN").build();
 

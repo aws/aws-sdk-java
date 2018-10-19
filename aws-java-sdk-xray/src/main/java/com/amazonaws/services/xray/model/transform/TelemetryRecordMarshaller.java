@@ -28,7 +28,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class TelemetryRecordMarshaller {
 
     private static final MarshallingInfo<java.util.Date> TIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Timestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Timestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Integer> SEGMENTSRECEIVEDCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SegmentsReceivedCount").build();
     private static final MarshallingInfo<Integer> SEGMENTSSENTCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)

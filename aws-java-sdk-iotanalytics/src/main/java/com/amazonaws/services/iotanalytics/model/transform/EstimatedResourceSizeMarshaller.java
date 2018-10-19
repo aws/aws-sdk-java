@@ -30,7 +30,7 @@ public class EstimatedResourceSizeMarshaller {
     private static final MarshallingInfo<Double> ESTIMATEDSIZEINBYTES_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("estimatedSizeInBytes").build();
     private static final MarshallingInfo<java.util.Date> ESTIMATEDON_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("estimatedOn").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("estimatedOn").timestampFormat("unixTimestamp").build();
 
     private static final EstimatedResourceSizeMarshaller instance = new EstimatedResourceSizeMarshaller();
 

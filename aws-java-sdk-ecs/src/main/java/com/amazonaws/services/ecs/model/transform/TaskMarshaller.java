@@ -57,21 +57,21 @@ public class TaskMarshaller {
     private static final MarshallingInfo<String> CONNECTIVITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectivity").build();
     private static final MarshallingInfo<java.util.Date> CONNECTIVITYAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectivityAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectivityAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> PULLSTARTEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pullStartedAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pullStartedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> PULLSTOPPEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pullStoppedAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pullStoppedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> EXECUTIONSTOPPEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionStoppedAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionStoppedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> STARTEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startedAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> STOPPINGAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stoppingAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stoppingAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> STOPPEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stoppedAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stoppedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> GROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("group").build();
     private static final MarshallingInfo<String> LAUNCHTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

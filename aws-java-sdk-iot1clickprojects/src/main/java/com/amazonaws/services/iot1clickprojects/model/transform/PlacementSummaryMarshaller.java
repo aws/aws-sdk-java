@@ -32,9 +32,9 @@ public class PlacementSummaryMarshaller {
     private static final MarshallingInfo<String> PLACEMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("placementName").build();
     private static final MarshallingInfo<java.util.Date> CREATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updatedDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updatedDate").timestampFormat("unixTimestamp").build();
 
     private static final PlacementSummaryMarshaller instance = new PlacementSummaryMarshaller();
 

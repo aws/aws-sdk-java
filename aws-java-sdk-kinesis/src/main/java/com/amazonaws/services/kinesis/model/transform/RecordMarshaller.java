@@ -30,7 +30,7 @@ public class RecordMarshaller {
     private static final MarshallingInfo<String> SEQUENCENUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SequenceNumber").build();
     private static final MarshallingInfo<java.util.Date> APPROXIMATEARRIVALTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApproximateArrivalTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApproximateArrivalTimestamp").timestampFormat("unixTimestampInMillis").build();
     private static final MarshallingInfo<java.nio.ByteBuffer> DATA_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Data").build();
     private static final MarshallingInfo<String> PARTITIONKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

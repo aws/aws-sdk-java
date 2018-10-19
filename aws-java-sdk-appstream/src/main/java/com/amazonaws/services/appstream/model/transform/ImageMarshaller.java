@@ -51,9 +51,9 @@ public class ImageMarshaller {
     private static final MarshallingInfo<List> APPLICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Applications").build();
     private static final MarshallingInfo<java.util.Date> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> PUBLICBASEIMAGERELEASEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PublicBaseImageReleasedDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PublicBaseImageReleasedDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> APPSTREAMAGENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppstreamAgentVersion").build();
     private static final MarshallingInfo<StructuredPojo> IMAGEPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)

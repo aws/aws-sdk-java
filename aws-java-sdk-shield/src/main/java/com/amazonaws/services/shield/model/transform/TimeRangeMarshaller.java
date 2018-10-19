@@ -28,9 +28,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class TimeRangeMarshaller {
 
     private static final MarshallingInfo<java.util.Date> FROMINCLUSIVE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FromInclusive").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FromInclusive").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> TOEXCLUSIVE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ToExclusive").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ToExclusive").timestampFormat("unixTimestamp").build();
 
     private static final TimeRangeMarshaller instance = new TimeRangeMarshaller();
 

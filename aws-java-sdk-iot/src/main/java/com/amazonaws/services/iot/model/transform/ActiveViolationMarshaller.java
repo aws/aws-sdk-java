@@ -38,9 +38,9 @@ public class ActiveViolationMarshaller {
     private static final MarshallingInfo<StructuredPojo> LASTVIOLATIONVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastViolationValue").build();
     private static final MarshallingInfo<java.util.Date> LASTVIOLATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastViolationTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastViolationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> VIOLATIONSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("violationStartTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("violationStartTime").timestampFormat("unixTimestamp").build();
 
     private static final ActiveViolationMarshaller instance = new ActiveViolationMarshaller();
 

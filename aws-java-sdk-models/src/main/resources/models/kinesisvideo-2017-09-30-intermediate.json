@@ -1440,7 +1440,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>You pass this value as the <code>x-amzn-producer-start-timestamp</code> HTTP header.</p> <p>This is the producer time stamp at which the producer started recording the media (not the time stamp of the specific fragments in the request).</p>\n@param producerStartTimestamp You pass this value as the <code>x-amzn-producer-start-timestamp</code> HTTP header.</p> <p>This is the producer time stamp at which the producer started recording the media (not the time stamp of the specific fragments in the request).\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "rfc822",
+          "timestampFormat" : "unknown",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "producerStartTimestamp",
           "variableType" : "java.util.Date",
@@ -1704,7 +1704,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>You pass this value as the <code>x-amzn-producer-start-timestamp</code> HTTP header.</p> <p>This is the producer time stamp at which the producer started recording the media (not the time stamp of the specific fragments in the request).</p>\n@param producerStartTimestamp You pass this value as the <code>x-amzn-producer-start-timestamp</code> HTTP header.</p> <p>This is the producer time stamp at which the producer started recording the media (not the time stamp of the specific fragments in the request).\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "rfc822",
+            "timestampFormat" : "unknown",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "producerStartTimestamp",
             "variableType" : "java.util.Date",

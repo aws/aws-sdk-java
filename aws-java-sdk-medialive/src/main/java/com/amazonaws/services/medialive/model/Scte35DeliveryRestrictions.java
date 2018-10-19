@@ -18,7 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * SCTE-35 Delivery Restrictions.
+ * Corresponds to SCTE-35 delivery_not_restricted_flag parameter. To declare delivery restrictions, include this element
+ * and its four "restriction" flags. To declare that there are no restrictions, omit this element.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35DeliveryRestrictions"
  *      target="_top">AWS API Documentation</a>
@@ -26,20 +27,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Scte35DeliveryRestrictions implements Serializable, Cloneable, StructuredPojo {
 
-    /** SCTE-35 segmentation_descriptor archive_allowed_flag. */
+    /** Corresponds to SCTE-35 archive_allowed_flag. */
     private String archiveAllowedFlag;
-    /** SCTE-35 segmentation_descriptor web_delivery_allowed_flag. */
+    /** Corresponds to SCTE-35 device_restrictions parameter. */
     private String deviceRestrictions;
-    /** SCTE-35 segmentation_descriptor no_regional_blackout_flag. */
+    /** Corresponds to SCTE-35 no_regional_blackout_flag parameter. */
     private String noRegionalBlackoutFlag;
-    /** SCTE-35 segmentation_descriptor web_delivery_allowed_flag. */
+    /** Corresponds to SCTE-35 web_delivery_allowed_flag parameter. */
     private String webDeliveryAllowedFlag;
 
     /**
-     * SCTE-35 segmentation_descriptor archive_allowed_flag.
+     * Corresponds to SCTE-35 archive_allowed_flag.
      * 
      * @param archiveAllowedFlag
-     *        SCTE-35 segmentation_descriptor archive_allowed_flag.
+     *        Corresponds to SCTE-35 archive_allowed_flag.
      * @see Scte35ArchiveAllowedFlag
      */
 
@@ -48,9 +49,9 @@ public class Scte35DeliveryRestrictions implements Serializable, Cloneable, Stru
     }
 
     /**
-     * SCTE-35 segmentation_descriptor archive_allowed_flag.
+     * Corresponds to SCTE-35 archive_allowed_flag.
      * 
-     * @return SCTE-35 segmentation_descriptor archive_allowed_flag.
+     * @return Corresponds to SCTE-35 archive_allowed_flag.
      * @see Scte35ArchiveAllowedFlag
      */
 
@@ -59,10 +60,10 @@ public class Scte35DeliveryRestrictions implements Serializable, Cloneable, Stru
     }
 
     /**
-     * SCTE-35 segmentation_descriptor archive_allowed_flag.
+     * Corresponds to SCTE-35 archive_allowed_flag.
      * 
      * @param archiveAllowedFlag
-     *        SCTE-35 segmentation_descriptor archive_allowed_flag.
+     *        Corresponds to SCTE-35 archive_allowed_flag.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Scte35ArchiveAllowedFlag
      */
@@ -73,10 +74,10 @@ public class Scte35DeliveryRestrictions implements Serializable, Cloneable, Stru
     }
 
     /**
-     * SCTE-35 segmentation_descriptor archive_allowed_flag.
+     * Corresponds to SCTE-35 archive_allowed_flag.
      * 
      * @param archiveAllowedFlag
-     *        SCTE-35 segmentation_descriptor archive_allowed_flag.
+     *        Corresponds to SCTE-35 archive_allowed_flag.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Scte35ArchiveAllowedFlag
      */
@@ -87,10 +88,10 @@ public class Scte35DeliveryRestrictions implements Serializable, Cloneable, Stru
     }
 
     /**
-     * SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * Corresponds to SCTE-35 device_restrictions parameter.
      * 
      * @param deviceRestrictions
-     *        SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     *        Corresponds to SCTE-35 device_restrictions parameter.
      * @see Scte35DeviceRestrictions
      */
 
@@ -99,9 +100,9 @@ public class Scte35DeliveryRestrictions implements Serializable, Cloneable, Stru
     }
 
     /**
-     * SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * Corresponds to SCTE-35 device_restrictions parameter.
      * 
-     * @return SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * @return Corresponds to SCTE-35 device_restrictions parameter.
      * @see Scte35DeviceRestrictions
      */
 
@@ -110,10 +111,10 @@ public class Scte35DeliveryRestrictions implements Serializable, Cloneable, Stru
     }
 
     /**
-     * SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * Corresponds to SCTE-35 device_restrictions parameter.
      * 
      * @param deviceRestrictions
-     *        SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     *        Corresponds to SCTE-35 device_restrictions parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Scte35DeviceRestrictions
      */
@@ -124,10 +125,10 @@ public class Scte35DeliveryRestrictions implements Serializable, Cloneable, Stru
     }
 
     /**
-     * SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * Corresponds to SCTE-35 device_restrictions parameter.
      * 
      * @param deviceRestrictions
-     *        SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     *        Corresponds to SCTE-35 device_restrictions parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Scte35DeviceRestrictions
      */
@@ -138,10 +139,10 @@ public class Scte35DeliveryRestrictions implements Serializable, Cloneable, Stru
     }
 
     /**
-     * SCTE-35 segmentation_descriptor no_regional_blackout_flag.
+     * Corresponds to SCTE-35 no_regional_blackout_flag parameter.
      * 
      * @param noRegionalBlackoutFlag
-     *        SCTE-35 segmentation_descriptor no_regional_blackout_flag.
+     *        Corresponds to SCTE-35 no_regional_blackout_flag parameter.
      * @see Scte35NoRegionalBlackoutFlag
      */
 
@@ -150,9 +151,9 @@ public class Scte35DeliveryRestrictions implements Serializable, Cloneable, Stru
     }
 
     /**
-     * SCTE-35 segmentation_descriptor no_regional_blackout_flag.
+     * Corresponds to SCTE-35 no_regional_blackout_flag parameter.
      * 
-     * @return SCTE-35 segmentation_descriptor no_regional_blackout_flag.
+     * @return Corresponds to SCTE-35 no_regional_blackout_flag parameter.
      * @see Scte35NoRegionalBlackoutFlag
      */
 
@@ -161,10 +162,10 @@ public class Scte35DeliveryRestrictions implements Serializable, Cloneable, Stru
     }
 
     /**
-     * SCTE-35 segmentation_descriptor no_regional_blackout_flag.
+     * Corresponds to SCTE-35 no_regional_blackout_flag parameter.
      * 
      * @param noRegionalBlackoutFlag
-     *        SCTE-35 segmentation_descriptor no_regional_blackout_flag.
+     *        Corresponds to SCTE-35 no_regional_blackout_flag parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Scte35NoRegionalBlackoutFlag
      */
@@ -175,10 +176,10 @@ public class Scte35DeliveryRestrictions implements Serializable, Cloneable, Stru
     }
 
     /**
-     * SCTE-35 segmentation_descriptor no_regional_blackout_flag.
+     * Corresponds to SCTE-35 no_regional_blackout_flag parameter.
      * 
      * @param noRegionalBlackoutFlag
-     *        SCTE-35 segmentation_descriptor no_regional_blackout_flag.
+     *        Corresponds to SCTE-35 no_regional_blackout_flag parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Scte35NoRegionalBlackoutFlag
      */
@@ -189,10 +190,10 @@ public class Scte35DeliveryRestrictions implements Serializable, Cloneable, Stru
     }
 
     /**
-     * SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
      * 
      * @param webDeliveryAllowedFlag
-     *        SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     *        Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
      * @see Scte35WebDeliveryAllowedFlag
      */
 
@@ -201,9 +202,9 @@ public class Scte35DeliveryRestrictions implements Serializable, Cloneable, Stru
     }
 
     /**
-     * SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
      * 
-     * @return SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * @return Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
      * @see Scte35WebDeliveryAllowedFlag
      */
 
@@ -212,10 +213,10 @@ public class Scte35DeliveryRestrictions implements Serializable, Cloneable, Stru
     }
 
     /**
-     * SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
      * 
      * @param webDeliveryAllowedFlag
-     *        SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     *        Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Scte35WebDeliveryAllowedFlag
      */
@@ -226,10 +227,10 @@ public class Scte35DeliveryRestrictions implements Serializable, Cloneable, Stru
     }
 
     /**
-     * SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
      * 
      * @param webDeliveryAllowedFlag
-     *        SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     *        Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Scte35WebDeliveryAllowedFlag
      */

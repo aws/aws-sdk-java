@@ -34,7 +34,7 @@ public class OperationSummaryMarshaller {
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
     private static final MarshallingInfo<java.util.Date> SUBMITTEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubmittedDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubmittedDate").timestampFormat("unixTimestamp").build();
 
     private static final OperationSummaryMarshaller instance = new OperationSummaryMarshaller();
 

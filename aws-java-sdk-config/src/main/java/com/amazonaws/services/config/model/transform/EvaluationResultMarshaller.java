@@ -32,9 +32,9 @@ public class EvaluationResultMarshaller {
     private static final MarshallingInfo<String> COMPLIANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComplianceType").build();
     private static final MarshallingInfo<java.util.Date> RESULTRECORDEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResultRecordedTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResultRecordedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> CONFIGRULEINVOKEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigRuleInvokedTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigRuleInvokedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ANNOTATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Annotation").build();
     private static final MarshallingInfo<String> RESULTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

@@ -40,7 +40,7 @@ public class PolicyComplianceDetailMarshaller {
     private static final MarshallingInfo<Boolean> EVALUATIONLIMITEXCEEDED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EvaluationLimitExceeded").build();
     private static final MarshallingInfo<java.util.Date> EXPIREDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpiredAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpiredAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Map> ISSUEINFOMAP_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("IssueInfoMap").build();
 

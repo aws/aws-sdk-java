@@ -36,13 +36,13 @@ public class ExportInfoMarshaller {
     private static final MarshallingInfo<String> CONFIGURATIONSDOWNLOADURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configurationsDownloadUrl").build();
     private static final MarshallingInfo<java.util.Date> EXPORTREQUESTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exportRequestTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exportRequestTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Boolean> ISTRUNCATED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isTruncated").build();
     private static final MarshallingInfo<java.util.Date> REQUESTEDSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestedStartTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestedStartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> REQUESTEDENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestedEndTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestedEndTime").timestampFormat("unixTimestamp").build();
 
     private static final ExportInfoMarshaller instance = new ExportInfoMarshaller();
 

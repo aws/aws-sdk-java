@@ -387,7 +387,7 @@ public interface AWSMediaLive {
      * Get a channel schedule
      * 
      * @param describeScheduleRequest
-     *        Request for a describe schedule call.
+     *        Placeholder documentation for DescribeScheduleRequest
      * @return Result of the DescribeSchedule operation returned by the service.
      * @throws BadRequestException
      *         This request was invalid.

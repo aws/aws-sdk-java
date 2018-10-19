@@ -52,9 +52,9 @@ public class InstancePatchStateMarshaller {
     private static final MarshallingInfo<Integer> NOTAPPLICABLECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotApplicableCount").build();
     private static final MarshallingInfo<java.util.Date> OPERATIONSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OperationStartTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OperationStartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> OPERATIONENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OperationEndTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OperationEndTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> OPERATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Operation").build();
 

@@ -50,8 +50,8 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
-     * Values for weighted, latency, geo, and failover resource record sets: <code>A</code> | <code>AAAA</code> |
-     * <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
+     * Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code>
+     * | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
      * <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
@@ -218,8 +218,8 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
-     * Values for weighted, latency, geo, and failover resource record sets: <code>A</code> | <code>AAAA</code> |
-     * <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
+     * Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code>
+     * | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
      * <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
@@ -266,9 +266,9 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
-     *        Values for weighted, latency, geo, and failover resource record sets: <code>A</code> | <code>AAAA</code> |
-     *        <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
-     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
+     *        <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> |
+     *        <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
      *        Values for alias resource record sets:
@@ -321,8 +321,8 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
-     * Values for weighted, latency, geo, and failover resource record sets: <code>A</code> | <code>AAAA</code> |
-     * <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
+     * Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code>
+     * | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
      * <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
@@ -368,9 +368,9 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *         <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *         </p>
      *         <p>
-     *         Values for weighted, latency, geo, and failover resource record sets: <code>A</code> | <code>AAAA</code>
-     *         | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
-     *         <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *         Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
+     *         <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> |
+     *         <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *         </p>
      *         <p>
      *         Values for alias resource record sets:
@@ -423,8 +423,8 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
-     * Values for weighted, latency, geo, and failover resource record sets: <code>A</code> | <code>AAAA</code> |
-     * <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
+     * Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code>
+     * | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
      * <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
@@ -471,9 +471,9 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
-     *        Values for weighted, latency, geo, and failover resource record sets: <code>A</code> | <code>AAAA</code> |
-     *        <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
-     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
+     *        <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> |
+     *        <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
      *        Values for alias resource record sets:
@@ -528,8 +528,8 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
-     * Values for weighted, latency, geo, and failover resource record sets: <code>A</code> | <code>AAAA</code> |
-     * <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
+     * Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code>
+     * | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
      * <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
@@ -576,9 +576,9 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
-     *        Values for weighted, latency, geo, and failover resource record sets: <code>A</code> | <code>AAAA</code> |
-     *        <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
-     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
+     *        <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> |
+     *        <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
      *        Values for alias resource record sets:
@@ -631,8 +631,8 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
-     * Values for weighted, latency, geo, and failover resource record sets: <code>A</code> | <code>AAAA</code> |
-     * <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
+     * Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code>
+     * | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
      * <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
@@ -679,9 +679,9 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
-     *        Values for weighted, latency, geo, and failover resource record sets: <code>A</code> | <code>AAAA</code> |
-     *        <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
-     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
+     *        <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> |
+     *        <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
      *        Values for alias resource record sets:

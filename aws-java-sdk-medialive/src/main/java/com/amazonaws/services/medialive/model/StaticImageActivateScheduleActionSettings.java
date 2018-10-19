@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Static image activate.
+ * Settings for the action to activate a static image.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StaticImageActivateScheduleActionSettings"
  *      target="_top">AWS API Documentation</a>
@@ -27,48 +27,63 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class StaticImageActivateScheduleActionSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * The duration in milliseconds for the image to remain in the video. If omitted or set to 0, duration is infinite
-     * and image will remain until explicitly deactivated.
+     * The duration in milliseconds for the image to remain on the video. If omitted or set to 0 the duration is
+     * unlimited and the image will remain until it is explicitly deactivated.
      */
     private Integer duration;
-    /** The time in milliseconds for the image to fade in. Defaults to 0. */
+    /**
+     * The time in milliseconds for the image to fade in. The fade-in starts at the start time of the overlay. Default
+     * is 0 (no fade-in).
+     */
     private Integer fadeIn;
-    /** The time in milliseconds for the image to fade out. Defaults to 0. */
+    /**
+     * Applies only if a duration is specified. The time in milliseconds for the image to fade out. The fade-out starts
+     * when the duration time is hit, so it effectively extends the duration. Default is 0 (no fade-out).
+     */
     private Integer fadeOut;
-    /** The height of the image when inserted into the video. Defaults to the native height of the image. */
+    /**
+     * The height of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the
+     * specified height. Leave blank to use the native height of the overlay.
+     */
     private Integer height;
     /**
-     * The image to overlay on the video. Must be a 32 bit BMP, PNG, or TGA file. Must not be larger than the input
-     * video.
+     * The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG, or TGA
+     * file, and must not be larger (in pixels) than the input video.
      */
     private InputLocation image;
     /**
-     * Placement of the left edge of the image on the horizontal axis in pixels. 0 is the left edge of the frame.
-     * Defaults to 0.
+     * Placement of the left edge of the overlay relative to the left edge of the video frame, in pixels. 0 (the
+     * default) is the left edge of the frame. If the placement causes the overlay to extend beyond the right edge of
+     * the underlying video, then the overlay is cropped on the right.
      */
     private Integer imageX;
     /**
-     * Placement of the top edge of the image on the vertical axis in pixels. 0 is the top edge of the frame. Defaults
-     * to 0.
+     * Placement of the top edge of the overlay relative to the top edge of the video frame, in pixels. 0 (the default)
+     * is the top edge of the frame. If the placement causes the overlay to extend beyond the bottom edge of the
+     * underlying video, then the overlay is cropped on the bottom.
      */
     private Integer imageY;
     /**
-     * The Z order of the inserted image. Images with higher layer values will be inserted on top of images with lower
-     * layer values. Permitted values are 0-7 inclusive. Defaults to 0.
+     * The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the video, each layer with a
+     * different image. The layers are in Z order, which means that overlays with higher values of layer are inserted on
+     * top of overlays with lower values of layer. Default is 0.
      */
     private Integer layer;
-    /** Opacity of image where 0 is transparent and 100 is fully opaque. Defaults to 100. */
+    /** Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100. */
     private Integer opacity;
-    /** The width of the image when inserted into the video. Defaults to the native width of the image. */
+    /**
+     * The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the
+     * specified width. Leave blank to use the native width of the overlay.
+     */
     private Integer width;
 
     /**
-     * The duration in milliseconds for the image to remain in the video. If omitted or set to 0, duration is infinite
-     * and image will remain until explicitly deactivated.
+     * The duration in milliseconds for the image to remain on the video. If omitted or set to 0 the duration is
+     * unlimited and the image will remain until it is explicitly deactivated.
      * 
      * @param duration
-     *        The duration in milliseconds for the image to remain in the video. If omitted or set to 0, duration is
-     *        infinite and image will remain until explicitly deactivated.
+     *        The duration in milliseconds for the image to remain on the video. If omitted or set to 0 the duration is
+     *        unlimited and the image will remain until it is explicitly deactivated.
      */
 
     public void setDuration(Integer duration) {
@@ -76,11 +91,11 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The duration in milliseconds for the image to remain in the video. If omitted or set to 0, duration is infinite
-     * and image will remain until explicitly deactivated.
+     * The duration in milliseconds for the image to remain on the video. If omitted or set to 0 the duration is
+     * unlimited and the image will remain until it is explicitly deactivated.
      * 
-     * @return The duration in milliseconds for the image to remain in the video. If omitted or set to 0, duration is
-     *         infinite and image will remain until explicitly deactivated.
+     * @return The duration in milliseconds for the image to remain on the video. If omitted or set to 0 the duration is
+     *         unlimited and the image will remain until it is explicitly deactivated.
      */
 
     public Integer getDuration() {
@@ -88,12 +103,12 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The duration in milliseconds for the image to remain in the video. If omitted or set to 0, duration is infinite
-     * and image will remain until explicitly deactivated.
+     * The duration in milliseconds for the image to remain on the video. If omitted or set to 0 the duration is
+     * unlimited and the image will remain until it is explicitly deactivated.
      * 
      * @param duration
-     *        The duration in milliseconds for the image to remain in the video. If omitted or set to 0, duration is
-     *        infinite and image will remain until explicitly deactivated.
+     *        The duration in milliseconds for the image to remain on the video. If omitted or set to 0 the duration is
+     *        unlimited and the image will remain until it is explicitly deactivated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,10 +118,12 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The time in milliseconds for the image to fade in. Defaults to 0.
+     * The time in milliseconds for the image to fade in. The fade-in starts at the start time of the overlay. Default
+     * is 0 (no fade-in).
      * 
      * @param fadeIn
-     *        The time in milliseconds for the image to fade in. Defaults to 0.
+     *        The time in milliseconds for the image to fade in. The fade-in starts at the start time of the overlay.
+     *        Default is 0 (no fade-in).
      */
 
     public void setFadeIn(Integer fadeIn) {
@@ -114,9 +131,11 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The time in milliseconds for the image to fade in. Defaults to 0.
+     * The time in milliseconds for the image to fade in. The fade-in starts at the start time of the overlay. Default
+     * is 0 (no fade-in).
      * 
-     * @return The time in milliseconds for the image to fade in. Defaults to 0.
+     * @return The time in milliseconds for the image to fade in. The fade-in starts at the start time of the overlay.
+     *         Default is 0 (no fade-in).
      */
 
     public Integer getFadeIn() {
@@ -124,10 +143,12 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The time in milliseconds for the image to fade in. Defaults to 0.
+     * The time in milliseconds for the image to fade in. The fade-in starts at the start time of the overlay. Default
+     * is 0 (no fade-in).
      * 
      * @param fadeIn
-     *        The time in milliseconds for the image to fade in. Defaults to 0.
+     *        The time in milliseconds for the image to fade in. The fade-in starts at the start time of the overlay.
+     *        Default is 0 (no fade-in).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,10 +158,12 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The time in milliseconds for the image to fade out. Defaults to 0.
+     * Applies only if a duration is specified. The time in milliseconds for the image to fade out. The fade-out starts
+     * when the duration time is hit, so it effectively extends the duration. Default is 0 (no fade-out).
      * 
      * @param fadeOut
-     *        The time in milliseconds for the image to fade out. Defaults to 0.
+     *        Applies only if a duration is specified. The time in milliseconds for the image to fade out. The fade-out
+     *        starts when the duration time is hit, so it effectively extends the duration. Default is 0 (no fade-out).
      */
 
     public void setFadeOut(Integer fadeOut) {
@@ -148,9 +171,11 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The time in milliseconds for the image to fade out. Defaults to 0.
+     * Applies only if a duration is specified. The time in milliseconds for the image to fade out. The fade-out starts
+     * when the duration time is hit, so it effectively extends the duration. Default is 0 (no fade-out).
      * 
-     * @return The time in milliseconds for the image to fade out. Defaults to 0.
+     * @return Applies only if a duration is specified. The time in milliseconds for the image to fade out. The fade-out
+     *         starts when the duration time is hit, so it effectively extends the duration. Default is 0 (no fade-out).
      */
 
     public Integer getFadeOut() {
@@ -158,10 +183,12 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The time in milliseconds for the image to fade out. Defaults to 0.
+     * Applies only if a duration is specified. The time in milliseconds for the image to fade out. The fade-out starts
+     * when the duration time is hit, so it effectively extends the duration. Default is 0 (no fade-out).
      * 
      * @param fadeOut
-     *        The time in milliseconds for the image to fade out. Defaults to 0.
+     *        Applies only if a duration is specified. The time in milliseconds for the image to fade out. The fade-out
+     *        starts when the duration time is hit, so it effectively extends the duration. Default is 0 (no fade-out).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,10 +198,12 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The height of the image when inserted into the video. Defaults to the native height of the image.
+     * The height of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the
+     * specified height. Leave blank to use the native height of the overlay.
      * 
      * @param height
-     *        The height of the image when inserted into the video. Defaults to the native height of the image.
+     *        The height of the image when inserted into the video, in pixels. The overlay will be scaled up or down to
+     *        the specified height. Leave blank to use the native height of the overlay.
      */
 
     public void setHeight(Integer height) {
@@ -182,9 +211,11 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The height of the image when inserted into the video. Defaults to the native height of the image.
+     * The height of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the
+     * specified height. Leave blank to use the native height of the overlay.
      * 
-     * @return The height of the image when inserted into the video. Defaults to the native height of the image.
+     * @return The height of the image when inserted into the video, in pixels. The overlay will be scaled up or down to
+     *         the specified height. Leave blank to use the native height of the overlay.
      */
 
     public Integer getHeight() {
@@ -192,10 +223,12 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The height of the image when inserted into the video. Defaults to the native height of the image.
+     * The height of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the
+     * specified height. Leave blank to use the native height of the overlay.
      * 
      * @param height
-     *        The height of the image when inserted into the video. Defaults to the native height of the image.
+     *        The height of the image when inserted into the video, in pixels. The overlay will be scaled up or down to
+     *        the specified height. Leave blank to use the native height of the overlay.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,12 +238,12 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The image to overlay on the video. Must be a 32 bit BMP, PNG, or TGA file. Must not be larger than the input
-     * video.
+     * The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG, or TGA
+     * file, and must not be larger (in pixels) than the input video.
      * 
      * @param image
-     *        The image to overlay on the video. Must be a 32 bit BMP, PNG, or TGA file. Must not be larger than the
-     *        input video.
+     *        The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG,
+     *        or TGA file, and must not be larger (in pixels) than the input video.
      */
 
     public void setImage(InputLocation image) {
@@ -218,11 +251,11 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The image to overlay on the video. Must be a 32 bit BMP, PNG, or TGA file. Must not be larger than the input
-     * video.
+     * The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG, or TGA
+     * file, and must not be larger (in pixels) than the input video.
      * 
-     * @return The image to overlay on the video. Must be a 32 bit BMP, PNG, or TGA file. Must not be larger than the
-     *         input video.
+     * @return The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG,
+     *         or TGA file, and must not be larger (in pixels) than the input video.
      */
 
     public InputLocation getImage() {
@@ -230,12 +263,12 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The image to overlay on the video. Must be a 32 bit BMP, PNG, or TGA file. Must not be larger than the input
-     * video.
+     * The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG, or TGA
+     * file, and must not be larger (in pixels) than the input video.
      * 
      * @param image
-     *        The image to overlay on the video. Must be a 32 bit BMP, PNG, or TGA file. Must not be larger than the
-     *        input video.
+     *        The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG,
+     *        or TGA file, and must not be larger (in pixels) than the input video.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,12 +278,14 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * Placement of the left edge of the image on the horizontal axis in pixels. 0 is the left edge of the frame.
-     * Defaults to 0.
+     * Placement of the left edge of the overlay relative to the left edge of the video frame, in pixels. 0 (the
+     * default) is the left edge of the frame. If the placement causes the overlay to extend beyond the right edge of
+     * the underlying video, then the overlay is cropped on the right.
      * 
      * @param imageX
-     *        Placement of the left edge of the image on the horizontal axis in pixels. 0 is the left edge of the frame.
-     *        Defaults to 0.
+     *        Placement of the left edge of the overlay relative to the left edge of the video frame, in pixels. 0 (the
+     *        default) is the left edge of the frame. If the placement causes the overlay to extend beyond the right
+     *        edge of the underlying video, then the overlay is cropped on the right.
      */
 
     public void setImageX(Integer imageX) {
@@ -258,11 +293,13 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * Placement of the left edge of the image on the horizontal axis in pixels. 0 is the left edge of the frame.
-     * Defaults to 0.
+     * Placement of the left edge of the overlay relative to the left edge of the video frame, in pixels. 0 (the
+     * default) is the left edge of the frame. If the placement causes the overlay to extend beyond the right edge of
+     * the underlying video, then the overlay is cropped on the right.
      * 
-     * @return Placement of the left edge of the image on the horizontal axis in pixels. 0 is the left edge of the
-     *         frame. Defaults to 0.
+     * @return Placement of the left edge of the overlay relative to the left edge of the video frame, in pixels. 0 (the
+     *         default) is the left edge of the frame. If the placement causes the overlay to extend beyond the right
+     *         edge of the underlying video, then the overlay is cropped on the right.
      */
 
     public Integer getImageX() {
@@ -270,12 +307,14 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * Placement of the left edge of the image on the horizontal axis in pixels. 0 is the left edge of the frame.
-     * Defaults to 0.
+     * Placement of the left edge of the overlay relative to the left edge of the video frame, in pixels. 0 (the
+     * default) is the left edge of the frame. If the placement causes the overlay to extend beyond the right edge of
+     * the underlying video, then the overlay is cropped on the right.
      * 
      * @param imageX
-     *        Placement of the left edge of the image on the horizontal axis in pixels. 0 is the left edge of the frame.
-     *        Defaults to 0.
+     *        Placement of the left edge of the overlay relative to the left edge of the video frame, in pixels. 0 (the
+     *        default) is the left edge of the frame. If the placement causes the overlay to extend beyond the right
+     *        edge of the underlying video, then the overlay is cropped on the right.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,12 +324,14 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * Placement of the top edge of the image on the vertical axis in pixels. 0 is the top edge of the frame. Defaults
-     * to 0.
+     * Placement of the top edge of the overlay relative to the top edge of the video frame, in pixels. 0 (the default)
+     * is the top edge of the frame. If the placement causes the overlay to extend beyond the bottom edge of the
+     * underlying video, then the overlay is cropped on the bottom.
      * 
      * @param imageY
-     *        Placement of the top edge of the image on the vertical axis in pixels. 0 is the top edge of the frame.
-     *        Defaults to 0.
+     *        Placement of the top edge of the overlay relative to the top edge of the video frame, in pixels. 0 (the
+     *        default) is the top edge of the frame. If the placement causes the overlay to extend beyond the bottom
+     *        edge of the underlying video, then the overlay is cropped on the bottom.
      */
 
     public void setImageY(Integer imageY) {
@@ -298,11 +339,13 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * Placement of the top edge of the image on the vertical axis in pixels. 0 is the top edge of the frame. Defaults
-     * to 0.
+     * Placement of the top edge of the overlay relative to the top edge of the video frame, in pixels. 0 (the default)
+     * is the top edge of the frame. If the placement causes the overlay to extend beyond the bottom edge of the
+     * underlying video, then the overlay is cropped on the bottom.
      * 
-     * @return Placement of the top edge of the image on the vertical axis in pixels. 0 is the top edge of the frame.
-     *         Defaults to 0.
+     * @return Placement of the top edge of the overlay relative to the top edge of the video frame, in pixels. 0 (the
+     *         default) is the top edge of the frame. If the placement causes the overlay to extend beyond the bottom
+     *         edge of the underlying video, then the overlay is cropped on the bottom.
      */
 
     public Integer getImageY() {
@@ -310,12 +353,14 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * Placement of the top edge of the image on the vertical axis in pixels. 0 is the top edge of the frame. Defaults
-     * to 0.
+     * Placement of the top edge of the overlay relative to the top edge of the video frame, in pixels. 0 (the default)
+     * is the top edge of the frame. If the placement causes the overlay to extend beyond the bottom edge of the
+     * underlying video, then the overlay is cropped on the bottom.
      * 
      * @param imageY
-     *        Placement of the top edge of the image on the vertical axis in pixels. 0 is the top edge of the frame.
-     *        Defaults to 0.
+     *        Placement of the top edge of the overlay relative to the top edge of the video frame, in pixels. 0 (the
+     *        default) is the top edge of the frame. If the placement causes the overlay to extend beyond the bottom
+     *        edge of the underlying video, then the overlay is cropped on the bottom.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -325,12 +370,14 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The Z order of the inserted image. Images with higher layer values will be inserted on top of images with lower
-     * layer values. Permitted values are 0-7 inclusive. Defaults to 0.
+     * The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the video, each layer with a
+     * different image. The layers are in Z order, which means that overlays with higher values of layer are inserted on
+     * top of overlays with lower values of layer. Default is 0.
      * 
      * @param layer
-     *        The Z order of the inserted image. Images with higher layer values will be inserted on top of images with
-     *        lower layer values. Permitted values are 0-7 inclusive. Defaults to 0.
+     *        The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the video, each layer with a
+     *        different image. The layers are in Z order, which means that overlays with higher values of layer are
+     *        inserted on top of overlays with lower values of layer. Default is 0.
      */
 
     public void setLayer(Integer layer) {
@@ -338,11 +385,13 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The Z order of the inserted image. Images with higher layer values will be inserted on top of images with lower
-     * layer values. Permitted values are 0-7 inclusive. Defaults to 0.
+     * The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the video, each layer with a
+     * different image. The layers are in Z order, which means that overlays with higher values of layer are inserted on
+     * top of overlays with lower values of layer. Default is 0.
      * 
-     * @return The Z order of the inserted image. Images with higher layer values will be inserted on top of images with
-     *         lower layer values. Permitted values are 0-7 inclusive. Defaults to 0.
+     * @return The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the video, each layer with a
+     *         different image. The layers are in Z order, which means that overlays with higher values of layer are
+     *         inserted on top of overlays with lower values of layer. Default is 0.
      */
 
     public Integer getLayer() {
@@ -350,12 +399,14 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The Z order of the inserted image. Images with higher layer values will be inserted on top of images with lower
-     * layer values. Permitted values are 0-7 inclusive. Defaults to 0.
+     * The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the video, each layer with a
+     * different image. The layers are in Z order, which means that overlays with higher values of layer are inserted on
+     * top of overlays with lower values of layer. Default is 0.
      * 
      * @param layer
-     *        The Z order of the inserted image. Images with higher layer values will be inserted on top of images with
-     *        lower layer values. Permitted values are 0-7 inclusive. Defaults to 0.
+     *        The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the video, each layer with a
+     *        different image. The layers are in Z order, which means that overlays with higher values of layer are
+     *        inserted on top of overlays with lower values of layer. Default is 0.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -365,10 +416,10 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * Opacity of image where 0 is transparent and 100 is fully opaque. Defaults to 100.
+     * Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100.
      * 
      * @param opacity
-     *        Opacity of image where 0 is transparent and 100 is fully opaque. Defaults to 100.
+     *        Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100.
      */
 
     public void setOpacity(Integer opacity) {
@@ -376,9 +427,9 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * Opacity of image where 0 is transparent and 100 is fully opaque. Defaults to 100.
+     * Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100.
      * 
-     * @return Opacity of image where 0 is transparent and 100 is fully opaque. Defaults to 100.
+     * @return Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100.
      */
 
     public Integer getOpacity() {
@@ -386,10 +437,10 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * Opacity of image where 0 is transparent and 100 is fully opaque. Defaults to 100.
+     * Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100.
      * 
      * @param opacity
-     *        Opacity of image where 0 is transparent and 100 is fully opaque. Defaults to 100.
+     *        Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,10 +450,12 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The width of the image when inserted into the video. Defaults to the native width of the image.
+     * The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the
+     * specified width. Leave blank to use the native width of the overlay.
      * 
      * @param width
-     *        The width of the image when inserted into the video. Defaults to the native width of the image.
+     *        The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to
+     *        the specified width. Leave blank to use the native width of the overlay.
      */
 
     public void setWidth(Integer width) {
@@ -410,9 +463,11 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The width of the image when inserted into the video. Defaults to the native width of the image.
+     * The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the
+     * specified width. Leave blank to use the native width of the overlay.
      * 
-     * @return The width of the image when inserted into the video. Defaults to the native width of the image.
+     * @return The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to
+     *         the specified width. Leave blank to use the native width of the overlay.
      */
 
     public Integer getWidth() {
@@ -420,10 +475,12 @@ public class StaticImageActivateScheduleActionSettings implements Serializable, 
     }
 
     /**
-     * The width of the image when inserted into the video. Defaults to the native width of the image.
+     * The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the
+     * specified width. Leave blank to use the native width of the overlay.
      * 
      * @param width
-     *        The width of the image when inserted into the video. Defaults to the native width of the image.
+     *        The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to
+     *        the specified width. Leave blank to use the native width of the overlay.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

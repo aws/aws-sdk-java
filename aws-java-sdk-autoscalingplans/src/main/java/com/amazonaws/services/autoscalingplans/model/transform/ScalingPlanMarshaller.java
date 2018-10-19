@@ -41,9 +41,9 @@ public class ScalingPlanMarshaller {
     private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusMessage").build();
     private static final MarshallingInfo<java.util.Date> STATUSSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusStartTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusStartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
 
     private static final ScalingPlanMarshaller instance = new ScalingPlanMarshaller();
 

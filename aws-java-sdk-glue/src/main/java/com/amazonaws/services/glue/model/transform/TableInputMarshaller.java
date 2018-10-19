@@ -36,9 +36,9 @@ public class TableInputMarshaller {
     private static final MarshallingInfo<String> OWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Owner").build();
     private static final MarshallingInfo<java.util.Date> LASTACCESSTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastAccessTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastAccessTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTANALYZEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastAnalyzedTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastAnalyzedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Integer> RETENTION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Retention").build();
     private static final MarshallingInfo<StructuredPojo> STORAGEDESCRIPTOR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)

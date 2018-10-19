@@ -38,9 +38,9 @@ public class BackupDetailsMarshaller {
     private static final MarshallingInfo<String> BACKUPTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupType").build();
     private static final MarshallingInfo<java.util.Date> BACKUPCREATIONDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupCreationDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupCreationDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> BACKUPEXPIRYDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupExpiryDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupExpiryDateTime").timestampFormat("unixTimestamp").build();
 
     private static final BackupDetailsMarshaller instance = new BackupDetailsMarshaller();
 

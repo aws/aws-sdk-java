@@ -47,7 +47,7 @@ public class ConnectorMarshaller {
     private static final MarshallingInfo<String> MACADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("macAddress").build();
     private static final MarshallingInfo<java.util.Date> ASSOCIATEDON_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("associatedOn").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("associatedOn").timestampFormat("unixTimestamp").build();
 
     private static final ConnectorMarshaller instance = new ConnectorMarshaller();
 

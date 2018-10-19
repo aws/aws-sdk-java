@@ -28,7 +28,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class ListOperationsRequestMarshaller {
 
     private static final MarshallingInfo<java.util.Date> SUBMITTEDSINCE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubmittedSince").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubmittedSince").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Marker").build();
     private static final MarshallingInfo<Integer> MAXITEMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)

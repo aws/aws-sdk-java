@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum H264RateControlMode {
 
     CBR("CBR"),
+    QVBR("QVBR"),
     VBR("VBR");
 
     private String value;

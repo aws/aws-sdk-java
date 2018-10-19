@@ -34,11 +34,11 @@ public class OutgoingCertificateMarshaller {
     private static final MarshallingInfo<String> TRANSFERREDTO_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transferredTo").build();
     private static final MarshallingInfo<java.util.Date> TRANSFERDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transferDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transferDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> TRANSFERMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transferMessage").build();
     private static final MarshallingInfo<java.util.Date> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").timestampFormat("unixTimestamp").build();
 
     private static final OutgoingCertificateMarshaller instance = new OutgoingCertificateMarshaller();
 

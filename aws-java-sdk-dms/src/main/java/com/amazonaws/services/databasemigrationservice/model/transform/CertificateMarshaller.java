@@ -30,7 +30,7 @@ public class CertificateMarshaller {
     private static final MarshallingInfo<String> CERTIFICATEIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateIdentifier").build();
     private static final MarshallingInfo<java.util.Date> CERTIFICATECREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateCreationDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateCreationDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> CERTIFICATEPEM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificatePem").build();
     private static final MarshallingInfo<java.nio.ByteBuffer> CERTIFICATEWALLET_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
@@ -40,9 +40,9 @@ public class CertificateMarshaller {
     private static final MarshallingInfo<String> CERTIFICATEOWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateOwner").build();
     private static final MarshallingInfo<java.util.Date> VALIDFROMDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidFromDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidFromDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> VALIDTODATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidToDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidToDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> SIGNINGALGORITHM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SigningAlgorithm").build();
     private static final MarshallingInfo<Integer> KEYLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)

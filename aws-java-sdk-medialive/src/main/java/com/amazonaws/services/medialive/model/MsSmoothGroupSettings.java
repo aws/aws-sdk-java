@@ -85,14 +85,7 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
      * streams.
      */
     private String segmentationMode;
-    /**
-     * Outputs that are "output locked" can use this delay. Assign a delay to the output that is "secondary". Do not
-     * assign a delay to the "primary" output. The delay means that the primary output will always reach the downstream
-     * system before the secondary, which helps ensure that the downstream system always uses the primary output. (If
-     * there were no delay, the downstream system might flip-flop between whichever output happens to arrive first.) If
-     * the primary fails, the downstream system will switch to the secondary output. When the primary is restarted, the
-     * downstream system will switch back to the primary (because once again it is always arriving first)
-     */
+    /** Number of milliseconds to delay the output from the second pipeline. */
     private Integer sendDelayMs;
     /** If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth outputs. */
     private String sparseTrackType;
@@ -781,21 +774,10 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Outputs that are "output locked" can use this delay. Assign a delay to the output that is "secondary". Do not
-     * assign a delay to the "primary" output. The delay means that the primary output will always reach the downstream
-     * system before the secondary, which helps ensure that the downstream system always uses the primary output. (If
-     * there were no delay, the downstream system might flip-flop between whichever output happens to arrive first.) If
-     * the primary fails, the downstream system will switch to the secondary output. When the primary is restarted, the
-     * downstream system will switch back to the primary (because once again it is always arriving first)
+     * Number of milliseconds to delay the output from the second pipeline.
      * 
      * @param sendDelayMs
-     *        Outputs that are "output locked" can use this delay. Assign a delay to the output that is "secondary". Do
-     *        not assign a delay to the "primary" output. The delay means that the primary output will always reach the
-     *        downstream system before the secondary, which helps ensure that the downstream system always uses the
-     *        primary output. (If there were no delay, the downstream system might flip-flop between whichever output
-     *        happens to arrive first.) If the primary fails, the downstream system will switch to the secondary output.
-     *        When the primary is restarted, the downstream system will switch back to the primary (because once again
-     *        it is always arriving first)
+     *        Number of milliseconds to delay the output from the second pipeline.
      */
 
     public void setSendDelayMs(Integer sendDelayMs) {
@@ -803,20 +785,9 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Outputs that are "output locked" can use this delay. Assign a delay to the output that is "secondary". Do not
-     * assign a delay to the "primary" output. The delay means that the primary output will always reach the downstream
-     * system before the secondary, which helps ensure that the downstream system always uses the primary output. (If
-     * there were no delay, the downstream system might flip-flop between whichever output happens to arrive first.) If
-     * the primary fails, the downstream system will switch to the secondary output. When the primary is restarted, the
-     * downstream system will switch back to the primary (because once again it is always arriving first)
+     * Number of milliseconds to delay the output from the second pipeline.
      * 
-     * @return Outputs that are "output locked" can use this delay. Assign a delay to the output that is "secondary". Do
-     *         not assign a delay to the "primary" output. The delay means that the primary output will always reach the
-     *         downstream system before the secondary, which helps ensure that the downstream system always uses the
-     *         primary output. (If there were no delay, the downstream system might flip-flop between whichever output
-     *         happens to arrive first.) If the primary fails, the downstream system will switch to the secondary
-     *         output. When the primary is restarted, the downstream system will switch back to the primary (because
-     *         once again it is always arriving first)
+     * @return Number of milliseconds to delay the output from the second pipeline.
      */
 
     public Integer getSendDelayMs() {
@@ -824,21 +795,10 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Outputs that are "output locked" can use this delay. Assign a delay to the output that is "secondary". Do not
-     * assign a delay to the "primary" output. The delay means that the primary output will always reach the downstream
-     * system before the secondary, which helps ensure that the downstream system always uses the primary output. (If
-     * there were no delay, the downstream system might flip-flop between whichever output happens to arrive first.) If
-     * the primary fails, the downstream system will switch to the secondary output. When the primary is restarted, the
-     * downstream system will switch back to the primary (because once again it is always arriving first)
+     * Number of milliseconds to delay the output from the second pipeline.
      * 
      * @param sendDelayMs
-     *        Outputs that are "output locked" can use this delay. Assign a delay to the output that is "secondary". Do
-     *        not assign a delay to the "primary" output. The delay means that the primary output will always reach the
-     *        downstream system before the secondary, which helps ensure that the downstream system always uses the
-     *        primary output. (If there were no delay, the downstream system might flip-flop between whichever output
-     *        happens to arrive first.) If the primary fails, the downstream system will switch to the secondary output.
-     *        When the primary is restarted, the downstream system will switch back to the primary (because once again
-     *        it is always arriving first)
+     *        Number of milliseconds to delay the output from the second pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,7 +36,7 @@ public class ListWebhookItemMarshaller {
     private static final MarshallingInfo<String> ERRORCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("errorCode").build();
     private static final MarshallingInfo<java.util.Date> LASTTRIGGERED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastTriggered").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastTriggered").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
 

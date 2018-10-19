@@ -34,9 +34,9 @@ public class InitiateDocumentVersionUploadRequestMarshaller {
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<java.util.Date> CONTENTCREATEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentCreatedTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentCreatedTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> CONTENTMODIFIEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentModifiedTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentModifiedTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> CONTENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentType").build();
     private static final MarshallingInfo<Long> DOCUMENTSIZEINBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)

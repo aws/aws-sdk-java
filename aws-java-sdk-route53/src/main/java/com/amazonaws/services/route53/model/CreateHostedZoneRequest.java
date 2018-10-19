@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type that contains information about the request to create a hosted zone.
+ * A complex type that contains information about the request to create a public or private hosted zone.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone" target="_top">AWS API
@@ -30,15 +30,14 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the domain. For resource record types that include a domain name, specify a fully qualified domain
-     * name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes that the domain
-     * name is fully qualified. This means that Amazon Route 53 treats <i>www.example.com</i> (without a trailing dot)
-     * and <i>www.example.com.</i> (with a trailing dot) as identical.
+     * The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing
+     * dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.
      * </p>
      * <p>
      * If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your
-     * domain name is registered with a registrar other than Amazon Route 53, change the name servers for your domain to
-     * the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.
+     * domain name is registered with a registrar other than Route 53, change the name servers for your domain to the
+     * set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.
      * </p>
      */
     private String name;
@@ -105,14 +104,14 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * to initialize any additional object members.
      * 
      * @param name
-     *        The name of the domain. For resource record types that include a domain name, specify a fully qualified
-     *        domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
-     *        that the domain name is fully qualified. This means that Amazon Route 53 treats <i>www.example.com</i>
-     *        (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
+     *        The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The
+     *        trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that
+     *        Route 53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a
+     *        trailing dot) as identical.</p>
      *        <p>
      *        If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If
-     *        your domain name is registered with a registrar other than Amazon Route 53, change the name servers for
-     *        your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in
+     *        your domain name is registered with a registrar other than Route 53, change the name servers for your
+     *        domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in
      *        <code>DelegationSet</code>.
      * @param callerReference
      *        A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests
@@ -127,26 +126,25 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the domain. For resource record types that include a domain name, specify a fully qualified domain
-     * name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes that the domain
-     * name is fully qualified. This means that Amazon Route 53 treats <i>www.example.com</i> (without a trailing dot)
-     * and <i>www.example.com.</i> (with a trailing dot) as identical.
+     * The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing
+     * dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.
      * </p>
      * <p>
      * If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your
-     * domain name is registered with a registrar other than Amazon Route 53, change the name servers for your domain to
-     * the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.
+     * domain name is registered with a registrar other than Route 53, change the name servers for your domain to the
+     * set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.
      * </p>
      * 
      * @param name
-     *        The name of the domain. For resource record types that include a domain name, specify a fully qualified
-     *        domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
-     *        that the domain name is fully qualified. This means that Amazon Route 53 treats <i>www.example.com</i>
-     *        (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
+     *        The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The
+     *        trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that
+     *        Route 53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a
+     *        trailing dot) as identical.</p>
      *        <p>
      *        If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If
-     *        your domain name is registered with a registrar other than Amazon Route 53, change the name servers for
-     *        your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in
+     *        your domain name is registered with a registrar other than Route 53, change the name servers for your
+     *        domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in
      *        <code>DelegationSet</code>.
      */
 
@@ -156,25 +154,24 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the domain. For resource record types that include a domain name, specify a fully qualified domain
-     * name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes that the domain
-     * name is fully qualified. This means that Amazon Route 53 treats <i>www.example.com</i> (without a trailing dot)
-     * and <i>www.example.com.</i> (with a trailing dot) as identical.
+     * The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing
+     * dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.
      * </p>
      * <p>
      * If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your
-     * domain name is registered with a registrar other than Amazon Route 53, change the name servers for your domain to
-     * the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.
+     * domain name is registered with a registrar other than Route 53, change the name servers for your domain to the
+     * set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.
      * </p>
      * 
-     * @return The name of the domain. For resource record types that include a domain name, specify a fully qualified
-     *         domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
-     *         that the domain name is fully qualified. This means that Amazon Route 53 treats <i>www.example.com</i>
-     *         (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
+     * @return The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The
+     *         trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means
+     *         that Route 53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a
+     *         trailing dot) as identical.</p>
      *         <p>
      *         If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If
-     *         your domain name is registered with a registrar other than Amazon Route 53, change the name servers for
-     *         your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in
+     *         your domain name is registered with a registrar other than Route 53, change the name servers for your
+     *         domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in
      *         <code>DelegationSet</code>.
      */
 
@@ -184,26 +181,25 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the domain. For resource record types that include a domain name, specify a fully qualified domain
-     * name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes that the domain
-     * name is fully qualified. This means that Amazon Route 53 treats <i>www.example.com</i> (without a trailing dot)
-     * and <i>www.example.com.</i> (with a trailing dot) as identical.
+     * The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing
+     * dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.
      * </p>
      * <p>
      * If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your
-     * domain name is registered with a registrar other than Amazon Route 53, change the name servers for your domain to
-     * the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.
+     * domain name is registered with a registrar other than Route 53, change the name servers for your domain to the
+     * set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.
      * </p>
      * 
      * @param name
-     *        The name of the domain. For resource record types that include a domain name, specify a fully qualified
-     *        domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
-     *        that the domain name is fully qualified. This means that Amazon Route 53 treats <i>www.example.com</i>
-     *        (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
+     *        The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The
+     *        trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that
+     *        Route 53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a
+     *        trailing dot) as identical.</p>
      *        <p>
      *        If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If
-     *        your domain name is registered with a registrar other than Amazon Route 53, change the name servers for
-     *        your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in
+     *        your domain name is registered with a registrar other than Route 53, change the name servers for your
+     *        domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in
      *        <code>DelegationSet</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

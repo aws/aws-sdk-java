@@ -36,7 +36,7 @@ public class BonusPaymentMarshaller {
     private static final MarshallingInfo<String> REASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Reason").build();
     private static final MarshallingInfo<java.util.Date> GRANTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GrantTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GrantTime").timestampFormat("unixTimestamp").build();
 
     private static final BonusPaymentMarshaller instance = new BonusPaymentMarshaller();
 

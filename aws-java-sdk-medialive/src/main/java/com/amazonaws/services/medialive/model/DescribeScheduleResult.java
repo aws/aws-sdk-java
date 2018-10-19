@@ -16,7 +16,7 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * Response for a describe schedule call.
+ * Placeholder documentation for DescribeScheduleResponse
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSchedule" target="_top">AWS API
  *      Documentation</a>
@@ -26,7 +26,7 @@ public class DescribeScheduleResult extends com.amazonaws.AmazonWebServiceResult
 
     /** The next token; for use in pagination. */
     private String nextToken;
-    /** The list of schedule actions. */
+    /** The list of actions in the schedule. */
     private java.util.List<ScheduleAction> scheduleActions;
 
     /**
@@ -64,9 +64,9 @@ public class DescribeScheduleResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * The list of schedule actions.
+     * The list of actions in the schedule.
      * 
-     * @return The list of schedule actions.
+     * @return The list of actions in the schedule.
      */
 
     public java.util.List<ScheduleAction> getScheduleActions() {
@@ -74,10 +74,10 @@ public class DescribeScheduleResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * The list of schedule actions.
+     * The list of actions in the schedule.
      * 
      * @param scheduleActions
-     *        The list of schedule actions.
+     *        The list of actions in the schedule.
      */
 
     public void setScheduleActions(java.util.Collection<ScheduleAction> scheduleActions) {
@@ -90,7 +90,7 @@ public class DescribeScheduleResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * The list of schedule actions.
+     * The list of actions in the schedule.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setScheduleActions(java.util.Collection)} or {@link #withScheduleActions(java.util.Collection)} if you
@@ -98,7 +98,7 @@ public class DescribeScheduleResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param scheduleActions
-     *        The list of schedule actions.
+     *        The list of actions in the schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,10 +113,10 @@ public class DescribeScheduleResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * The list of schedule actions.
+     * The list of actions in the schedule.
      * 
      * @param scheduleActions
-     *        The list of schedule actions.
+     *        The list of actions in the schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -46,7 +46,7 @@ public class ConnectionMarshaller {
     private static final MarshallingInfo<String> PARTNERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("partnerName").build();
     private static final MarshallingInfo<java.util.Date> LOAISSUETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("loaIssueTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("loaIssueTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> LAGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("lagId").build();
     private static final MarshallingInfo<String> AWSDEVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)

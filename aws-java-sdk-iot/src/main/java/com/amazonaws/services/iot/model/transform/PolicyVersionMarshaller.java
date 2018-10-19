@@ -32,7 +32,7 @@ public class PolicyVersionMarshaller {
     private static final MarshallingInfo<Boolean> ISDEFAULTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isDefaultVersion").build();
     private static final MarshallingInfo<java.util.Date> CREATEDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createDate").timestampFormat("unixTimestamp").build();
 
     private static final PolicyVersionMarshaller instance = new PolicyVersionMarshaller();
 

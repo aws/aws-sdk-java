@@ -36,7 +36,7 @@ public class EnvironmentMemberMarshaller {
     private static final MarshallingInfo<String> ENVIRONMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environmentId").build();
     private static final MarshallingInfo<java.util.Date> LASTACCESS_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastAccess").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastAccess").timestampFormat("unixTimestamp").build();
 
     private static final EnvironmentMemberMarshaller instance = new EnvironmentMemberMarshaller();
 

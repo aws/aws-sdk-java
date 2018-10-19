@@ -105,6 +105,10 @@ public class CreateHealthCheckRequestMarshaller implements Marshaller<Request<Cr
                         xmlWriter.startElement("Inverted").value(healthCheckConfig.getInverted()).endElement();
                     }
 
+                    if (healthCheckConfig.getDisabled() != null) {
+                        xmlWriter.startElement("Disabled").value(healthCheckConfig.getDisabled()).endElement();
+                    }
+
                     if (healthCheckConfig.getHealthThreshold() != null) {
                         xmlWriter.startElement("HealthThreshold").value(healthCheckConfig.getHealthThreshold()).endElement();
                     }

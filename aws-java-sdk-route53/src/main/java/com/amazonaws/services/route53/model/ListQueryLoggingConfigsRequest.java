@@ -57,7 +57,7 @@ public class ListQueryLoggingConfigsRequest extends com.amazonaws.AmazonWebServi
      * value of <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next page of results.
      * </p>
      * <p>
-     * If you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 100 configurations.
+     * If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configurations.
      * </p>
      */
     private String maxResults;
@@ -221,7 +221,7 @@ public class ListQueryLoggingConfigsRequest extends com.amazonaws.AmazonWebServi
      * value of <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next page of results.
      * </p>
      * <p>
-     * If you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 100 configurations.
+     * If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configurations.
      * </p>
      * 
      * @param maxResults
@@ -230,8 +230,7 @@ public class ListQueryLoggingConfigsRequest extends com.amazonaws.AmazonWebServi
      *        configurations, use the value of <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get
      *        the next page of results.</p>
      *        <p>
-     *        If you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 100
-     *        configurations.
+     *        If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configurations.
      */
 
     public void setMaxResults(String maxResults) {
@@ -245,7 +244,7 @@ public class ListQueryLoggingConfigsRequest extends com.amazonaws.AmazonWebServi
      * value of <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next page of results.
      * </p>
      * <p>
-     * If you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 100 configurations.
+     * If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configurations.
      * </p>
      * 
      * @return (Optional) The maximum number of query logging configurations that you want Amazon Route 53 to return in
@@ -253,8 +252,7 @@ public class ListQueryLoggingConfigsRequest extends com.amazonaws.AmazonWebServi
      *         configurations, use the value of <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get
      *         the next page of results.</p>
      *         <p>
-     *         If you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 100
-     *         configurations.
+     *         If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configurations.
      */
 
     public String getMaxResults() {
@@ -268,7 +266,7 @@ public class ListQueryLoggingConfigsRequest extends com.amazonaws.AmazonWebServi
      * value of <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next page of results.
      * </p>
      * <p>
-     * If you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 100 configurations.
+     * If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configurations.
      * </p>
      * 
      * @param maxResults
@@ -277,8 +275,7 @@ public class ListQueryLoggingConfigsRequest extends com.amazonaws.AmazonWebServi
      *        configurations, use the value of <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get
      *        the next page of results.</p>
      *        <p>
-     *        If you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 100
-     *        configurations.
+     *        If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configurations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

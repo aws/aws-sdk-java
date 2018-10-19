@@ -1,3 +1,16 @@
+# __1.11.432__ __2018-10-18__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - This release allows you to now turn on Quality-Defined Variable Bitrate (QVBR) encoding for your AWS Elemental MediaLive channels. You can now deliver a consistently high-quality video viewing experience while reducing overall distribution bitrates by using Quality-Defined Variable Bitrate (QVBR) encoding with AWS Elemental MediaLive. QVBR is a video compression technique that automatically adjusts output bitrates to the complexity of source content and only use the bits required to maintain a defined level of quality. This means using QVBR encoding, you can save on distribution cost, while maintaining, or increasing video quality for your viewers.
+
+## __Amazon AppStream__
+  - ### Features
+    - This API update adds support for creating, managing, and deleting users in the AppStream 2.0 user pool.
+
+## __Amazon Route 53__
+  - ### Features
+    - This change allows customers to disable health checks.
+
 # __1.11.431__ __2018-10-17__
 ## __Amazon API Gateway__
   - ### Features

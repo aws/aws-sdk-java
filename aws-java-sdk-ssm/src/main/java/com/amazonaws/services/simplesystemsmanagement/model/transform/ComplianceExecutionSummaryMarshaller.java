@@ -28,7 +28,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class ComplianceExecutionSummaryMarshaller {
 
     private static final MarshallingInfo<java.util.Date> EXECUTIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> EXECUTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionId").build();
     private static final MarshallingInfo<String> EXECUTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

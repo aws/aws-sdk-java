@@ -32,7 +32,7 @@ public class GenerateDataSetRequestMarshaller {
     private static final MarshallingInfo<String> DATASETTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSetType").build();
     private static final MarshallingInfo<java.util.Date> DATASETPUBLICATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSetPublicationDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSetPublicationDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ROLENAMEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("roleNameArn").build();
     private static final MarshallingInfo<String> DESTINATIONS3BUCKETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

@@ -30,9 +30,9 @@ public class ConfigurationRecorderStatusMarshaller {
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<java.util.Date> LASTSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastStartTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastStartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTSTOPTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastStopTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastStopTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Boolean> RECORDING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recording").build();
     private static final MarshallingInfo<String> LASTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -42,7 +42,7 @@ public class ConfigurationRecorderStatusMarshaller {
     private static final MarshallingInfo<String> LASTERRORMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastErrorMessage").build();
     private static final MarshallingInfo<java.util.Date> LASTSTATUSCHANGETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastStatusChangeTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastStatusChangeTime").timestampFormat("unixTimestamp").build();
 
     private static final ConfigurationRecorderStatusMarshaller instance = new ConfigurationRecorderStatusMarshaller();
 

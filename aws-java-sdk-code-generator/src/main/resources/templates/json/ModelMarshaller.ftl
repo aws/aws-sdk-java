@@ -41,6 +41,9 @@ public class ${className} {
                  .isBinary(true)
                  </#if>
                  <@DefaultValueSupplierMacro.content member />
+                 <#if member.variable.timestampFormat??>
+                 .timestampFormat("${member.variable.timestampFormat}")
+                 </#if>
                  .build();
         </#list>
     </#if>

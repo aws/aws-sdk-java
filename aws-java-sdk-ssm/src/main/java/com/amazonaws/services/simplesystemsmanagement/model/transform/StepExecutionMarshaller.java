@@ -40,9 +40,9 @@ public class StepExecutionMarshaller {
     private static final MarshallingInfo<Integer> MAXATTEMPTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxAttempts").build();
     private static final MarshallingInfo<java.util.Date> EXECUTIONSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionStartTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionStartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> EXECUTIONENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionEndTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionEndTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> STEPSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StepStatus").build();
     private static final MarshallingInfo<String> RESPONSECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

@@ -95,6 +95,11 @@ public class HealthCheckConfigStaxUnmarshaller implements Unmarshaller<HealthChe
                     continue;
                 }
 
+                if (context.testExpression("Disabled", targetDepth)) {
+                    healthCheckConfig.setDisabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("HealthThreshold", targetDepth)) {
                     healthCheckConfig.setHealthThreshold(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

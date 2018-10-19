@@ -34,9 +34,9 @@ public class BackupMarshaller {
     private static final MarshallingInfo<String> CLUSTERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ClusterId").build();
     private static final MarshallingInfo<java.util.Date> CREATETIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> COPYTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CopyTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CopyTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> SOURCEREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceRegion").build();
     private static final MarshallingInfo<String> SOURCEBACKUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -44,7 +44,7 @@ public class BackupMarshaller {
     private static final MarshallingInfo<String> SOURCECLUSTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceCluster").build();
     private static final MarshallingInfo<java.util.Date> DELETETIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeleteTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeleteTimestamp").timestampFormat("unixTimestamp").build();
 
     private static final BackupMarshaller instance = new BackupMarshaller();
 

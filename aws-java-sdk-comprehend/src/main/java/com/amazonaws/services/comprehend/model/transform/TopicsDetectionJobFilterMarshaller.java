@@ -32,9 +32,9 @@ public class TopicsDetectionJobFilterMarshaller {
     private static final MarshallingInfo<String> JOBSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("JobStatus").build();
     private static final MarshallingInfo<java.util.Date> SUBMITTIMEBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubmitTimeBefore").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubmitTimeBefore").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> SUBMITTIMEAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubmitTimeAfter").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubmitTimeAfter").timestampFormat("unixTimestamp").build();
 
     private static final TopicsDetectionJobFilterMarshaller instance = new TopicsDetectionJobFilterMarshaller();
 

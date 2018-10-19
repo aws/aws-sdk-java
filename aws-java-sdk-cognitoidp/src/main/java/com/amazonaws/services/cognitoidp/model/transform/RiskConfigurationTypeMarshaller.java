@@ -38,7 +38,7 @@ public class RiskConfigurationTypeMarshaller {
     private static final MarshallingInfo<StructuredPojo> RISKEXCEPTIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RiskExceptionConfiguration").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedDate").timestampFormat("unixTimestamp").build();
 
     private static final RiskConfigurationTypeMarshaller instance = new RiskConfigurationTypeMarshaller();
 

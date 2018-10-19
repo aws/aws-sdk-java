@@ -32,9 +32,9 @@ public class QueryExecutionStatusMarshaller {
     private static final MarshallingInfo<String> STATECHANGEREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StateChangeReason").build();
     private static final MarshallingInfo<java.util.Date> SUBMISSIONDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubmissionDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubmissionDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> COMPLETIONDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompletionDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompletionDateTime").timestampFormat("unixTimestamp").build();
 
     private static final QueryExecutionStatusMarshaller instance = new QueryExecutionStatusMarshaller();
 

@@ -32,9 +32,9 @@ public class DatasetContentSummaryMarshaller {
     private static final MarshallingInfo<StructuredPojo> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("status").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> SCHEDULETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scheduleTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scheduleTime").timestampFormat("unixTimestamp").build();
 
     private static final DatasetContentSummaryMarshaller instance = new DatasetContentSummaryMarshaller();
 

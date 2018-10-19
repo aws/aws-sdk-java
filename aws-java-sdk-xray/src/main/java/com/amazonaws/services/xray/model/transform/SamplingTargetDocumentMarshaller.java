@@ -34,7 +34,7 @@ public class SamplingTargetDocumentMarshaller {
     private static final MarshallingInfo<Integer> RESERVOIRQUOTA_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReservoirQuota").build();
     private static final MarshallingInfo<java.util.Date> RESERVOIRQUOTATTL_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReservoirQuotaTTL").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReservoirQuotaTTL").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Integer> INTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Interval").build();
 

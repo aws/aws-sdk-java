@@ -40,9 +40,9 @@ public class UserMarshaller {
     private static final MarshallingInfo<String> USERROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("UserRole").build();
     private static final MarshallingInfo<java.util.Date> ENABLEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnabledDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnabledDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> DISABLEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisabledDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisabledDate").timestampFormat("unixTimestamp").build();
 
     private static final UserMarshaller instance = new UserMarshaller();
 

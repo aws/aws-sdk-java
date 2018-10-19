@@ -30,7 +30,7 @@ public class EnabledServicePrincipalMarshaller {
     private static final MarshallingInfo<String> SERVICEPRINCIPAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServicePrincipal").build();
     private static final MarshallingInfo<java.util.Date> DATEENABLED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DateEnabled").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DateEnabled").timestampFormat("unixTimestamp").build();
 
     private static final EnabledServicePrincipalMarshaller instance = new EnabledServicePrincipalMarshaller();
 

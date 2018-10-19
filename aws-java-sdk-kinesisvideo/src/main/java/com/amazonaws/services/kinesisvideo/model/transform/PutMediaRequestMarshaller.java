@@ -34,7 +34,7 @@ public class PutMediaRequestMarshaller {
     private static final MarshallingInfo<String> FRAGMENTTIMECODETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amzn-fragment-timecode-type").build();
     private static final MarshallingInfo<java.util.Date> PRODUCERSTARTTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amzn-producer-start-timestamp").build();
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amzn-producer-start-timestamp").timestampFormat("unknown").build();
     private static final MarshallingInfo<java.io.InputStream> PAYLOAD_BINDING = MarshallingInfo.builder(MarshallingType.STREAM)
             .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).isBinary(true).build();
 

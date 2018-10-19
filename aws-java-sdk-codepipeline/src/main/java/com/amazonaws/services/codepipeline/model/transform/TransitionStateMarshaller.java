@@ -32,7 +32,7 @@ public class TransitionStateMarshaller {
     private static final MarshallingInfo<String> LASTCHANGEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastChangedBy").build();
     private static final MarshallingInfo<java.util.Date> LASTCHANGEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastChangedAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastChangedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> DISABLEDREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("disabledReason").build();
 
