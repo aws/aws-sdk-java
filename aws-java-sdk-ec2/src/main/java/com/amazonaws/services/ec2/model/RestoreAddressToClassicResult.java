@@ -18,9 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of RestoreAddressToClassic.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RestoreAddressToClassicResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

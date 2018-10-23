@@ -400,6 +400,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<AdvertiseByoipCidrResult> advertiseByoipCidrAsync(AdvertiseByoipCidrRequest request) {
+
+        return advertiseByoipCidrAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdvertiseByoipCidrResult> advertiseByoipCidrAsync(final AdvertiseByoipCidrRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AdvertiseByoipCidrRequest, AdvertiseByoipCidrResult> asyncHandler) {
+        final AdvertiseByoipCidrRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AdvertiseByoipCidrResult>() {
+            @Override
+            public AdvertiseByoipCidrResult call() throws Exception {
+                AdvertiseByoipCidrResult result = null;
+
+                try {
+                    result = executeAdvertiseByoipCidr(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AllocateAddressResult> allocateAddressAsync(AllocateAddressRequest request) {
 
         return allocateAddressAsync(request, null);
@@ -3771,6 +3804,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DeprovisionByoipCidrResult> deprovisionByoipCidrAsync(DeprovisionByoipCidrRequest request) {
+
+        return deprovisionByoipCidrAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeprovisionByoipCidrResult> deprovisionByoipCidrAsync(final DeprovisionByoipCidrRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeprovisionByoipCidrRequest, DeprovisionByoipCidrResult> asyncHandler) {
+        final DeprovisionByoipCidrRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeprovisionByoipCidrResult>() {
+            @Override
+            public DeprovisionByoipCidrResult call() throws Exception {
+                DeprovisionByoipCidrResult result = null;
+
+                try {
+                    result = executeDeprovisionByoipCidr(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeregisterImageResult> deregisterImageAsync(DeregisterImageRequest request) {
 
         return deregisterImageAsync(request, null);
@@ -4058,6 +4124,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
             com.amazonaws.handlers.AsyncHandler<DescribeBundleTasksRequest, DescribeBundleTasksResult> asyncHandler) {
 
         return describeBundleTasksAsync(new DescribeBundleTasksRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeByoipCidrsResult> describeByoipCidrsAsync(DescribeByoipCidrsRequest request) {
+
+        return describeByoipCidrsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeByoipCidrsResult> describeByoipCidrsAsync(final DescribeByoipCidrsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeByoipCidrsRequest, DescribeByoipCidrsResult> asyncHandler) {
+        final DescribeByoipCidrsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeByoipCidrsResult>() {
+            @Override
+            public DescribeByoipCidrsResult call() throws Exception {
+                DescribeByoipCidrsResult result = null;
+
+                try {
+                    result = executeDescribeByoipCidrs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -5838,6 +5937,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeDescribePrincipalIdFormat(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePublicIpv4PoolsResult> describePublicIpv4PoolsAsync(DescribePublicIpv4PoolsRequest request) {
+
+        return describePublicIpv4PoolsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePublicIpv4PoolsResult> describePublicIpv4PoolsAsync(final DescribePublicIpv4PoolsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribePublicIpv4PoolsRequest, DescribePublicIpv4PoolsResult> asyncHandler) {
+        final DescribePublicIpv4PoolsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribePublicIpv4PoolsResult>() {
+            @Override
+            public DescribePublicIpv4PoolsResult call() throws Exception {
+                DescribePublicIpv4PoolsResult result = null;
+
+                try {
+                    result = executeDescribePublicIpv4Pools(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -9514,6 +9646,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<ProvisionByoipCidrResult> provisionByoipCidrAsync(ProvisionByoipCidrRequest request) {
+
+        return provisionByoipCidrAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ProvisionByoipCidrResult> provisionByoipCidrAsync(final ProvisionByoipCidrRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ProvisionByoipCidrRequest, ProvisionByoipCidrResult> asyncHandler) {
+        final ProvisionByoipCidrRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ProvisionByoipCidrResult>() {
+            @Override
+            public ProvisionByoipCidrResult call() throws Exception {
+                ProvisionByoipCidrResult result = null;
+
+                try {
+                    result = executeProvisionByoipCidr(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PurchaseHostReservationResult> purchaseHostReservationAsync(PurchaseHostReservationRequest request) {
 
         return purchaseHostReservationAsync(request, null);
@@ -10687,6 +10852,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeUpdateSecurityGroupRuleDescriptionsIngress(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<WithdrawByoipCidrResult> withdrawByoipCidrAsync(WithdrawByoipCidrRequest request) {
+
+        return withdrawByoipCidrAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<WithdrawByoipCidrResult> withdrawByoipCidrAsync(final WithdrawByoipCidrRequest request,
+            final com.amazonaws.handlers.AsyncHandler<WithdrawByoipCidrRequest, WithdrawByoipCidrResult> asyncHandler) {
+        final WithdrawByoipCidrRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<WithdrawByoipCidrResult>() {
+            @Override
+            public WithdrawByoipCidrResult call() throws Exception {
+                WithdrawByoipCidrResult result = null;
+
+                try {
+                    result = executeWithdrawByoipCidr(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

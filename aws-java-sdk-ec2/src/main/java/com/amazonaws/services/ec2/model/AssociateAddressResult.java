@@ -18,9 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of AssociateAddress.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AssociateAddressResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

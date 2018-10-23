@@ -95,6 +95,10 @@ public class AddressStaxUnmarshaller implements Unmarshaller<Address, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("publicIpv4Pool", targetDepth)) {
+                    address.setPublicIpv4Pool(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return address;

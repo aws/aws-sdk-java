@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ReleaseAddressRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for ReleaseAddress.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ReleaseAddressRequest> {

@@ -18,9 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of AllocateAddress.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -38,6 +36,12 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private String allocationId;
+    /**
+     * <p>
+     * The ID of an address pool.
+     * </p>
+     */
+    private String publicIpv4Pool;
     /**
      * <p>
      * Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or
@@ -129,6 +133,46 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
 
     public AllocateAddressResult withAllocationId(String allocationId) {
         setAllocationId(allocationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of an address pool.
+     * </p>
+     * 
+     * @param publicIpv4Pool
+     *        The ID of an address pool.
+     */
+
+    public void setPublicIpv4Pool(String publicIpv4Pool) {
+        this.publicIpv4Pool = publicIpv4Pool;
+    }
+
+    /**
+     * <p>
+     * The ID of an address pool.
+     * </p>
+     * 
+     * @return The ID of an address pool.
+     */
+
+    public String getPublicIpv4Pool() {
+        return this.publicIpv4Pool;
+    }
+
+    /**
+     * <p>
+     * The ID of an address pool.
+     * </p>
+     * 
+     * @param publicIpv4Pool
+     *        The ID of an address pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocateAddressResult withPublicIpv4Pool(String publicIpv4Pool) {
+        setPublicIpv4Pool(publicIpv4Pool);
         return this;
     }
 
@@ -230,6 +274,8 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
             sb.append("PublicIp: ").append(getPublicIp()).append(",");
         if (getAllocationId() != null)
             sb.append("AllocationId: ").append(getAllocationId()).append(",");
+        if (getPublicIpv4Pool() != null)
+            sb.append("PublicIpv4Pool: ").append(getPublicIpv4Pool()).append(",");
         if (getDomain() != null)
             sb.append("Domain: ").append(getDomain());
         sb.append("}");
@@ -254,6 +300,10 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getAllocationId() != null && other.getAllocationId().equals(this.getAllocationId()) == false)
             return false;
+        if (other.getPublicIpv4Pool() == null ^ this.getPublicIpv4Pool() == null)
+            return false;
+        if (other.getPublicIpv4Pool() != null && other.getPublicIpv4Pool().equals(this.getPublicIpv4Pool()) == false)
+            return false;
         if (other.getDomain() == null ^ this.getDomain() == null)
             return false;
         if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
@@ -268,6 +318,7 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
 
         hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
         hashCode = prime * hashCode + ((getAllocationId() == null) ? 0 : getAllocationId().hashCode());
+        hashCode = prime * hashCode + ((getPublicIpv4Pool() == null) ? 0 : getPublicIpv4Pool().hashCode());
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         return hashCode;
     }

@@ -59,6 +59,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public AdvertiseByoipCidrResult advertiseByoipCidr(AdvertiseByoipCidrRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AllocateAddressResult allocateAddress(AllocateAddressRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -574,6 +579,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DeprovisionByoipCidrResult deprovisionByoipCidr(DeprovisionByoipCidrRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeregisterImageResult deregisterImage(DeregisterImageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -621,6 +631,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     @Override
     public DescribeBundleTasksResult describeBundleTasks() {
         return describeBundleTasks(new DescribeBundleTasksRequest());
+    }
+
+    @Override
+    public DescribeByoipCidrsResult describeByoipCidrs(DescribeByoipCidrsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -920,6 +935,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DescribePrincipalIdFormatResult describePrincipalIdFormat(DescribePrincipalIdFormatRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribePublicIpv4PoolsResult describePublicIpv4Pools(DescribePublicIpv4PoolsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1509,6 +1529,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public ProvisionByoipCidrResult provisionByoipCidr(ProvisionByoipCidrRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PurchaseHostReservationResult purchaseHostReservation(PurchaseHostReservationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1686,6 +1711,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public UpdateSecurityGroupRuleDescriptionsIngressResult updateSecurityGroupRuleDescriptionsIngress(UpdateSecurityGroupRuleDescriptionsIngressRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public WithdrawByoipCidrResult withdrawByoipCidr(WithdrawByoipCidrRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

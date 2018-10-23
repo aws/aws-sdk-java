@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AssociateAddressRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for AssociateAddress.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AssociateAddressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<AssociateAddressRequest> {

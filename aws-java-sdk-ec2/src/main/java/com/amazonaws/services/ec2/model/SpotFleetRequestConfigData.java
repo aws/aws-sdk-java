@@ -61,7 +61,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     private String excessCapacityTerminationPolicy;
     /**
      * <p>
-     * The number of units fulfilled by this request compared to the set target capacity.
+     * The number of units fulfilled by this request compared to the set target capacity. You cannot set this value.
      * </p>
      */
     private Double fulfilledCapacity;
@@ -518,11 +518,12 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of units fulfilled by this request compared to the set target capacity.
+     * The number of units fulfilled by this request compared to the set target capacity. You cannot set this value.
      * </p>
      * 
      * @param fulfilledCapacity
-     *        The number of units fulfilled by this request compared to the set target capacity.
+     *        The number of units fulfilled by this request compared to the set target capacity. You cannot set this
+     *        value.
      */
 
     public void setFulfilledCapacity(Double fulfilledCapacity) {
@@ -531,10 +532,11 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of units fulfilled by this request compared to the set target capacity.
+     * The number of units fulfilled by this request compared to the set target capacity. You cannot set this value.
      * </p>
      * 
-     * @return The number of units fulfilled by this request compared to the set target capacity.
+     * @return The number of units fulfilled by this request compared to the set target capacity. You cannot set this
+     *         value.
      */
 
     public Double getFulfilledCapacity() {
@@ -543,11 +545,12 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of units fulfilled by this request compared to the set target capacity.
+     * The number of units fulfilled by this request compared to the set target capacity. You cannot set this value.
      * </p>
      * 
      * @param fulfilledCapacity
-     *        The number of units fulfilled by this request compared to the set target capacity.
+     *        The number of units fulfilled by this request compared to the set target capacity. You cannot set this
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,7 +27,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * <p>
-     * The IDs of one or more resources.
+     * The IDs of one or more resources, separated by spaces.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resources;
@@ -56,7 +56,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
      * initialize any additional object members.
      * 
      * @param resources
-     *        The IDs of one or more resources.
+     *        The IDs of one or more resources, separated by spaces.
      */
     public DeleteTagsRequest(java.util.List<String> resources) {
         setResources(resources);
@@ -64,10 +64,10 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * <p>
-     * The IDs of one or more resources.
+     * The IDs of one or more resources, separated by spaces.
      * </p>
      * 
-     * @return The IDs of one or more resources.
+     * @return The IDs of one or more resources, separated by spaces.
      */
 
     public java.util.List<String> getResources() {
@@ -79,11 +79,11 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * <p>
-     * The IDs of one or more resources.
+     * The IDs of one or more resources, separated by spaces.
      * </p>
      * 
      * @param resources
-     *        The IDs of one or more resources.
+     *        The IDs of one or more resources, separated by spaces.
      */
 
     public void setResources(java.util.Collection<String> resources) {
@@ -97,7 +97,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * <p>
-     * The IDs of one or more resources.
+     * The IDs of one or more resources, separated by spaces.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -106,7 +106,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
      * </p>
      * 
      * @param resources
-     *        The IDs of one or more resources.
+     *        The IDs of one or more resources, separated by spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,11 +122,11 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * <p>
-     * The IDs of one or more resources.
+     * The IDs of one or more resources, separated by spaces.
      * </p>
      * 
      * @param resources
-     *        The IDs of one or more resources.
+     *        The IDs of one or more resources, separated by spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

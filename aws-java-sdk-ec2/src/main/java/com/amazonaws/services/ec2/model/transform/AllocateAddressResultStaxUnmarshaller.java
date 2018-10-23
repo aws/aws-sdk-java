@@ -53,6 +53,11 @@ public class AllocateAddressResultStaxUnmarshaller implements Unmarshaller<Alloc
                     continue;
                 }
 
+                if (context.testExpression("publicIpv4Pool", targetDepth)) {
+                    allocateAddressResult.setPublicIpv4Pool(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("domain", targetDepth)) {
                     allocateAddressResult.setDomain(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

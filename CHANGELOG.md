@@ -1,3 +1,8 @@
+# __1.11.435__ __2018-10-23__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Provides customers the ability to Bring Your Own IP (BYOIP) prefix.  You can bring part or all of your public IPv4 address range from your on-premises network to your AWS account. You continue to own the address range, but AWS advertises it on the internet.
+
 # __1.11.434__ __2018-10-22__
 ## __AWS Shield__
   - ### Features

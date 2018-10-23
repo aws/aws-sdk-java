@@ -200,9 +200,83 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Advertises an IPv4 address range that is provisioned for use with your AWS resources through bring your own IP
+     * addresses (BYOIP).
+     * </p>
+     * <p>
+     * You can perform this operation at most once every 10 seconds, even if you specify different address ranges each
+     * time.
+     * </p>
+     * <p>
+     * We recommend that you stop advertising the BYOIP CIDR from other locations when you advertise it from AWS. To
+     * minimize down time, you can configure your AWS resources to use an address from a BYOIP CIDR before it is
+     * advertised, and then simultaneously stop advertising it from the current location and start advertising it
+     * through AWS.
+     * </p>
+     * <p>
+     * It can take a few minutes before traffic to the specified addresses starts routing to AWS because of BGP
+     * propagation delays.
+     * </p>
+     * <p>
+     * To stop advertising the BYOIP CIDR, use <a>WithdrawByoipCidr</a>.
+     * </p>
+     * 
+     * @param advertiseByoipCidrRequest
+     * @return A Java Future containing the result of the AdvertiseByoipCidr operation returned by the service.
+     * @sample AmazonEC2Async.AdvertiseByoipCidr
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AdvertiseByoipCidr" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AdvertiseByoipCidrResult> advertiseByoipCidrAsync(AdvertiseByoipCidrRequest advertiseByoipCidrRequest);
+
+    /**
+     * <p>
+     * Advertises an IPv4 address range that is provisioned for use with your AWS resources through bring your own IP
+     * addresses (BYOIP).
+     * </p>
+     * <p>
+     * You can perform this operation at most once every 10 seconds, even if you specify different address ranges each
+     * time.
+     * </p>
+     * <p>
+     * We recommend that you stop advertising the BYOIP CIDR from other locations when you advertise it from AWS. To
+     * minimize down time, you can configure your AWS resources to use an address from a BYOIP CIDR before it is
+     * advertised, and then simultaneously stop advertising it from the current location and start advertising it
+     * through AWS.
+     * </p>
+     * <p>
+     * It can take a few minutes before traffic to the specified addresses starts routing to AWS because of BGP
+     * propagation delays.
+     * </p>
+     * <p>
+     * To stop advertising the BYOIP CIDR, use <a>WithdrawByoipCidr</a>.
+     * </p>
+     * 
+     * @param advertiseByoipCidrRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AdvertiseByoipCidr operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.AdvertiseByoipCidr
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AdvertiseByoipCidr" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AdvertiseByoipCidrResult> advertiseByoipCidrAsync(AdvertiseByoipCidrRequest advertiseByoipCidrRequest,
+            com.amazonaws.handlers.AsyncHandler<AdvertiseByoipCidrRequest, AdvertiseByoipCidrResult> asyncHandler);
+
+    /**
+     * <p>
      * Allocates an Elastic IP address to your AWS account. After you allocate the Elastic IP address you can associate
      * it with an instance or network interface. After you release an Elastic IP address, it is released to the IP
      * address pool and can be allocated to a different AWS account.
+     * </p>
+     * <p>
+     * You can allocate an Elastic IP address from an address pool owned by AWS or from an address pool created from a
+     * public IPv4 address range that you have brought to AWS for use with your AWS resources using bring your own IP
+     * addresses (BYOIP). For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring Your Own IP Addresses (BYOIP)</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You cannot recover an Elastic IP
@@ -220,7 +294,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param allocateAddressRequest
-     *        Contains the parameters for AllocateAddress.
      * @return A Java Future containing the result of the AllocateAddress operation returned by the service.
      * @sample AmazonEC2Async.AllocateAddress
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress" target="_top">AWS API
@@ -235,6 +308,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * address pool and can be allocated to a different AWS account.
      * </p>
      * <p>
+     * You can allocate an Elastic IP address from an address pool owned by AWS or from an address pool created from a
+     * public IPv4 address range that you have brought to AWS for use with your AWS resources using bring your own IP
+     * addresses (BYOIP). For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring Your Own IP Addresses (BYOIP)</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
      * [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You cannot recover an Elastic IP
      * address that you released after it is allocated to another AWS account. You cannot recover an Elastic IP address
      * for EC2-Classic. To attempt to recover an Elastic IP address that you released, specify it in this operation.
@@ -250,7 +330,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param allocateAddressRequest
-     *        Contains the parameters for AllocateAddress.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -354,17 +433,25 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Assigns one or more secondary private IP addresses to the specified network interface. You can specify one or
-     * more specific secondary IP addresses, or you can specify the number of secondary IP addresses to be automatically
-     * assigned within the subnet's CIDR block range. The number of secondary IP addresses that you can assign to an
-     * instance varies by instance type. For information about instance types, see <a
+     * Assigns one or more secondary private IP addresses to the specified network interface.
+     * </p>
+     * <p>
+     * You can specify one or more specific secondary IP addresses, or you can specify the number of secondary IP
+     * addresses to be automatically assigned within the subnet's CIDR block range. The number of secondary IP addresses
+     * that you can assign to an instance varies by instance type. For information about instance types, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the <i>Amazon
      * Elastic Compute Cloud User Guide</i>. For more information about Elastic IP addresses, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * AssignPrivateIpAddresses is available only in EC2-VPC.
+     * When you move a secondary private IP address to another network interface, any Elastic IP address that is
+     * associated with the IP address is also moved.
+     * </p>
+     * <p>
+     * Remapping an IP address is an asynchronous operation. When you move an IP address from one network interface to
+     * another, check <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance metadata to confirm that the
+     * remapping is complete.
      * </p>
      * 
      * @param assignPrivateIpAddressesRequest
@@ -378,17 +465,25 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Assigns one or more secondary private IP addresses to the specified network interface. You can specify one or
-     * more specific secondary IP addresses, or you can specify the number of secondary IP addresses to be automatically
-     * assigned within the subnet's CIDR block range. The number of secondary IP addresses that you can assign to an
-     * instance varies by instance type. For information about instance types, see <a
+     * Assigns one or more secondary private IP addresses to the specified network interface.
+     * </p>
+     * <p>
+     * You can specify one or more specific secondary IP addresses, or you can specify the number of secondary IP
+     * addresses to be automatically assigned within the subnet's CIDR block range. The number of secondary IP addresses
+     * that you can assign to an instance varies by instance type. For information about instance types, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the <i>Amazon
      * Elastic Compute Cloud User Guide</i>. For more information about Elastic IP addresses, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * AssignPrivateIpAddresses is available only in EC2-VPC.
+     * When you move a secondary private IP address to another network interface, any Elastic IP address that is
+     * associated with the IP address is also moved.
+     * </p>
+     * <p>
+     * Remapping an IP address is an asynchronous operation. When you move an IP address from one network interface to
+     * another, check <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance metadata to confirm that the
+     * remapping is complete.
      * </p>
      * 
      * @param assignPrivateIpAddressesRequest
@@ -437,7 +532,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </important>
      * 
      * @param associateAddressRequest
-     *        Contains the parameters for AssociateAddress.
      * @return A Java Future containing the result of the AssociateAddress operation returned by the service.
      * @sample AmazonEC2Async.AssociateAddress
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress" target="_top">AWS API
@@ -477,7 +571,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </important>
      * 
      * @param associateAddressRequest
-     *        Contains the parameters for AssociateAddress.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -5138,6 +5231,47 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Releases the specified address range that you provisioned for use with your AWS resources through bring your own
+     * IP addresses (BYOIP) and deletes the corresponding address pool.
+     * </p>
+     * <p>
+     * Before you can release an address range, you must stop advertising it using <a>WithdrawByoipCidr</a> and you must
+     * not have any IP addresses allocated from its address range.
+     * </p>
+     * 
+     * @param deprovisionByoipCidrRequest
+     * @return A Java Future containing the result of the DeprovisionByoipCidr operation returned by the service.
+     * @sample AmazonEC2Async.DeprovisionByoipCidr
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionByoipCidr" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeprovisionByoipCidrResult> deprovisionByoipCidrAsync(DeprovisionByoipCidrRequest deprovisionByoipCidrRequest);
+
+    /**
+     * <p>
+     * Releases the specified address range that you provisioned for use with your AWS resources through bring your own
+     * IP addresses (BYOIP) and deletes the corresponding address pool.
+     * </p>
+     * <p>
+     * Before you can release an address range, you must stop advertising it using <a>WithdrawByoipCidr</a> and you must
+     * not have any IP addresses allocated from its address range.
+     * </p>
+     * 
+     * @param deprovisionByoipCidrRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeprovisionByoipCidr operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DeprovisionByoipCidr
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionByoipCidr" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeprovisionByoipCidrResult> deprovisionByoipCidrAsync(DeprovisionByoipCidrRequest deprovisionByoipCidrRequest,
+            com.amazonaws.handlers.AsyncHandler<DeprovisionByoipCidrRequest, DeprovisionByoipCidrResult> asyncHandler);
+
+    /**
+     * <p>
      * Deregisters the specified AMI. After you deregister an AMI, it can't be used to launch new instances; however, it
      * doesn't affect any instances that you've already launched from the AMI. You'll continue to incur usage costs for
      * those instances until you terminate them.
@@ -5316,7 +5450,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeAddressesRequest
-     *        Contains the parameters for DescribeAddresses.
      * @return A Java Future containing the result of the DescribeAddresses operation returned by the service.
      * @sample AmazonEC2Async.DescribeAddresses
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses" target="_top">AWS API
@@ -5335,7 +5468,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeAddressesRequest
-     *        Contains the parameters for DescribeAddresses.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -5555,6 +5687,45 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DescribeBundleTasksResult> describeBundleTasksAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeBundleTasksRequest, DescribeBundleTasksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the IP address ranges that were specified in calls to <a>ProvisionByoipCidr</a>.
+     * </p>
+     * <p>
+     * To describe the address pools that were created when you provisioned the address ranges, use
+     * <a>DescribePublicIpv4Pools</a>.
+     * </p>
+     * 
+     * @param describeByoipCidrsRequest
+     * @return A Java Future containing the result of the DescribeByoipCidrs operation returned by the service.
+     * @sample AmazonEC2Async.DescribeByoipCidrs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeByoipCidrs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeByoipCidrsResult> describeByoipCidrsAsync(DescribeByoipCidrsRequest describeByoipCidrsRequest);
+
+    /**
+     * <p>
+     * Describes the IP address ranges that were specified in calls to <a>ProvisionByoipCidr</a>.
+     * </p>
+     * <p>
+     * To describe the address pools that were created when you provisioned the address ranges, use
+     * <a>DescribePublicIpv4Pools</a>.
+     * </p>
+     * 
+     * @param describeByoipCidrsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeByoipCidrs operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeByoipCidrs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeByoipCidrs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeByoipCidrsResult> describeByoipCidrsAsync(DescribeByoipCidrsRequest describeByoipCidrsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeByoipCidrsRequest, DescribeByoipCidrsResult> asyncHandler);
 
     /**
      * <p>
@@ -7130,7 +7301,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeMovingAddressesRequest
-     *        Contains the parameters for DescribeMovingAddresses.
      * @return A Java Future containing the result of the DescribeMovingAddresses operation returned by the service.
      * @sample AmazonEC2Async.DescribeMovingAddresses
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMovingAddresses" target="_top">AWS
@@ -7146,7 +7316,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeMovingAddressesRequest
-     *        Contains the parameters for DescribeMovingAddresses.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -7555,6 +7724,37 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<DescribePrincipalIdFormatResult> describePrincipalIdFormatAsync(
             DescribePrincipalIdFormatRequest describePrincipalIdFormatRequest,
             com.amazonaws.handlers.AsyncHandler<DescribePrincipalIdFormatRequest, DescribePrincipalIdFormatResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the specified IPv4 address pools.
+     * </p>
+     * 
+     * @param describePublicIpv4PoolsRequest
+     * @return A Java Future containing the result of the DescribePublicIpv4Pools operation returned by the service.
+     * @sample AmazonEC2Async.DescribePublicIpv4Pools
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePublicIpv4Pools" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePublicIpv4PoolsResult> describePublicIpv4PoolsAsync(DescribePublicIpv4PoolsRequest describePublicIpv4PoolsRequest);
+
+    /**
+     * <p>
+     * Describes the specified IPv4 address pools.
+     * </p>
+     * 
+     * @param describePublicIpv4PoolsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribePublicIpv4Pools operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribePublicIpv4Pools
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePublicIpv4Pools" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePublicIpv4PoolsResult> describePublicIpv4PoolsAsync(DescribePublicIpv4PoolsRequest describePublicIpv4PoolsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribePublicIpv4PoolsRequest, DescribePublicIpv4PoolsResult> asyncHandler);
 
     /**
      * <p>
@@ -8465,7 +8665,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * Spot Fleet events are delayed by up to 30 seconds before they can be described. This ensures that you can query
-     * by the last evaluated time and not miss a recorded event.
+     * by the last evaluated time and not miss a recorded event. Spot Fleet events are available for 48 hours.
      * </p>
      * 
      * @param describeSpotFleetRequestHistoryRequest
@@ -8485,7 +8685,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * Spot Fleet events are delayed by up to 30 seconds before they can be described. This ensures that you can query
-     * by the last evaluated time and not miss a recorded event.
+     * by the last evaluated time and not miss a recorded event. Spot Fleet events are available for 48 hours.
      * </p>
      * 
      * @param describeSpotFleetRequestHistoryRequest
@@ -10038,7 +10238,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param disassociateAddressRequest
-     *        Contains the parameters for DisassociateAddress.
      * @return A Java Future containing the result of the DisassociateAddress operation returned by the service.
      * @sample AmazonEC2Async.DisassociateAddress
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateAddress" target="_top">AWS API
@@ -10060,7 +10259,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param disassociateAddressRequest
-     *        Contains the parameters for DisassociateAddress.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -12286,7 +12484,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param moveAddressToVpcRequest
-     *        Contains the parameters for MoveAddressToVpc.
      * @return A Java Future containing the result of the MoveAddressToVpc operation returned by the service.
      * @sample AmazonEC2Async.MoveAddressToVpc
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveAddressToVpc" target="_top">AWS API
@@ -12304,7 +12501,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param moveAddressToVpcRequest
-     *        Contains the parameters for MoveAddressToVpc.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -12316,6 +12512,69 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<MoveAddressToVpcResult> moveAddressToVpcAsync(MoveAddressToVpcRequest moveAddressToVpcRequest,
             com.amazonaws.handlers.AsyncHandler<MoveAddressToVpcRequest, MoveAddressToVpcResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provisions an address range for use with your AWS resources through bring your own IP addresses (BYOIP) and
+     * creates a corresponding address pool. After the address range is provisioned, it is ready to be advertised using
+     * <a>AdvertiseByoipCidr</a>.
+     * </p>
+     * <p>
+     * AWS verifies that you own the address range and are authorized to advertise it. You must ensure that the address
+     * range is registered to you and that you created an RPKI ROA to authorize Amazon ASNs 16509 and 14618 to advertise
+     * the address range. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring Your Own IP Addresses (BYOIP)</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Provisioning an address range is an asynchronous operation, so the call returns immediately, but the address
+     * range is not ready to use until its status changes from <code>pending-provision</code> to
+     * <code>provisioned</code>. To monitor the status of an address range, use <a>DescribeByoipCidrs</a>. To allocate
+     * an Elastic IP address from your address pool, use <a>AllocateAddress</a> with either the specific address from
+     * the address pool or the ID of the address pool.
+     * </p>
+     * 
+     * @param provisionByoipCidrRequest
+     * @return A Java Future containing the result of the ProvisionByoipCidr operation returned by the service.
+     * @sample AmazonEC2Async.ProvisionByoipCidr
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionByoipCidr" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ProvisionByoipCidrResult> provisionByoipCidrAsync(ProvisionByoipCidrRequest provisionByoipCidrRequest);
+
+    /**
+     * <p>
+     * Provisions an address range for use with your AWS resources through bring your own IP addresses (BYOIP) and
+     * creates a corresponding address pool. After the address range is provisioned, it is ready to be advertised using
+     * <a>AdvertiseByoipCidr</a>.
+     * </p>
+     * <p>
+     * AWS verifies that you own the address range and are authorized to advertise it. You must ensure that the address
+     * range is registered to you and that you created an RPKI ROA to authorize Amazon ASNs 16509 and 14618 to advertise
+     * the address range. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring Your Own IP Addresses (BYOIP)</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Provisioning an address range is an asynchronous operation, so the call returns immediately, but the address
+     * range is not ready to use until its status changes from <code>pending-provision</code> to
+     * <code>provisioned</code>. To monitor the status of an address range, use <a>DescribeByoipCidrs</a>. To allocate
+     * an Elastic IP address from your address pool, use <a>AllocateAddress</a> with either the specific address from
+     * the address pool or the ID of the address pool.
+     * </p>
+     * 
+     * @param provisionByoipCidrRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ProvisionByoipCidr operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ProvisionByoipCidr
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionByoipCidr" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ProvisionByoipCidrResult> provisionByoipCidrAsync(ProvisionByoipCidrRequest provisionByoipCidrRequest,
+            com.amazonaws.handlers.AsyncHandler<ProvisionByoipCidrRequest, ProvisionByoipCidrResult> asyncHandler);
 
     /**
      * <p>
@@ -12718,7 +12977,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param releaseAddressRequest
-     *        Contains the parameters for ReleaseAddress.
      * @return A Java Future containing the result of the ReleaseAddress operation returned by the service.
      * @sample AmazonEC2Async.ReleaseAddress
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseAddress" target="_top">AWS API
@@ -12750,7 +13008,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param releaseAddressRequest
-     *        Contains the parameters for ReleaseAddress.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -13425,7 +13682,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param restoreAddressToClassicRequest
-     *        Contains the parameters for RestoreAddressToClassic.
      * @return A Java Future containing the result of the RestoreAddressToClassic operation returned by the service.
      * @sample AmazonEC2Async.RestoreAddressToClassic
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreAddressToClassic" target="_top">AWS
@@ -13441,7 +13697,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param restoreAddressToClassicRequest
-     *        Contains the parameters for RestoreAddressToClassic.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -14280,5 +14535,52 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<UpdateSecurityGroupRuleDescriptionsIngressResult> updateSecurityGroupRuleDescriptionsIngressAsync(
             UpdateSecurityGroupRuleDescriptionsIngressRequest updateSecurityGroupRuleDescriptionsIngressRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateSecurityGroupRuleDescriptionsIngressRequest, UpdateSecurityGroupRuleDescriptionsIngressResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops advertising an IPv4 address range that is provisioned as an address pool.
+     * </p>
+     * <p>
+     * You can perform this operation at most once every 10 seconds, even if you specify different address ranges each
+     * time.
+     * </p>
+     * <p>
+     * It can take a few minutes before traffic to the specified addresses stops routing to AWS because of BGP
+     * propagation delays.
+     * </p>
+     * 
+     * @param withdrawByoipCidrRequest
+     * @return A Java Future containing the result of the WithdrawByoipCidr operation returned by the service.
+     * @sample AmazonEC2Async.WithdrawByoipCidr
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/WithdrawByoipCidr" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<WithdrawByoipCidrResult> withdrawByoipCidrAsync(WithdrawByoipCidrRequest withdrawByoipCidrRequest);
+
+    /**
+     * <p>
+     * Stops advertising an IPv4 address range that is provisioned as an address pool.
+     * </p>
+     * <p>
+     * You can perform this operation at most once every 10 seconds, even if you specify different address ranges each
+     * time.
+     * </p>
+     * <p>
+     * It can take a few minutes before traffic to the specified addresses stops routing to AWS because of BGP
+     * propagation delays.
+     * </p>
+     * 
+     * @param withdrawByoipCidrRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the WithdrawByoipCidr operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.WithdrawByoipCidr
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/WithdrawByoipCidr" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<WithdrawByoipCidrResult> withdrawByoipCidrAsync(WithdrawByoipCidrRequest withdrawByoipCidrRequest,
+            com.amazonaws.handlers.AsyncHandler<WithdrawByoipCidrRequest, WithdrawByoipCidrResult> asyncHandler);
 
 }

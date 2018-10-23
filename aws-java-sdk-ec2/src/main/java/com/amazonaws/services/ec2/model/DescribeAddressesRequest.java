@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeAddressesRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeAddresses.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeAddressesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeAddressesRequest> {

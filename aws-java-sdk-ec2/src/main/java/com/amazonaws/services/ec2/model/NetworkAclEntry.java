@@ -58,7 +58,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
     private PortRange portRange;
     /**
      * <p>
-     * The protocol. A value of <code>-1</code> means all protocols.
+     * The protocol number. A value of "-1" means all protocols.
      * </p>
      */
     private String protocol;
@@ -289,11 +289,11 @@ public class NetworkAclEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The protocol. A value of <code>-1</code> means all protocols.
+     * The protocol number. A value of "-1" means all protocols.
      * </p>
      * 
      * @param protocol
-     *        The protocol. A value of <code>-1</code> means all protocols.
+     *        The protocol number. A value of "-1" means all protocols.
      */
 
     public void setProtocol(String protocol) {
@@ -302,10 +302,10 @@ public class NetworkAclEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The protocol. A value of <code>-1</code> means all protocols.
+     * The protocol number. A value of "-1" means all protocols.
      * </p>
      * 
-     * @return The protocol. A value of <code>-1</code> means all protocols.
+     * @return The protocol number. A value of "-1" means all protocols.
      */
 
     public String getProtocol() {
@@ -314,11 +314,11 @@ public class NetworkAclEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The protocol. A value of <code>-1</code> means all protocols.
+     * The protocol number. A value of "-1" means all protocols.
      * </p>
      * 
      * @param protocol
-     *        The protocol. A value of <code>-1</code> means all protocols.
+     *        The protocol number. A value of "-1" means all protocols.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

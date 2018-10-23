@@ -34,7 +34,7 @@ public class TagDescription implements Serializable, Cloneable {
     private String key;
     /**
      * <p>
-     * The ID of the resource. For example, <code>ami-1a2b3c4d</code>.
+     * The ID of the resource.
      * </p>
      */
     private String resourceId;
@@ -93,11 +93,11 @@ public class TagDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the resource. For example, <code>ami-1a2b3c4d</code>.
+     * The ID of the resource.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the resource. For example, <code>ami-1a2b3c4d</code>.
+     *        The ID of the resource.
      */
 
     public void setResourceId(String resourceId) {
@@ -106,10 +106,10 @@ public class TagDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the resource. For example, <code>ami-1a2b3c4d</code>.
+     * The ID of the resource.
      * </p>
      * 
-     * @return The ID of the resource. For example, <code>ami-1a2b3c4d</code>.
+     * @return The ID of the resource.
      */
 
     public String getResourceId() {
@@ -118,11 +118,11 @@ public class TagDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the resource. For example, <code>ami-1a2b3c4d</code>.
+     * The ID of the resource.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the resource. For example, <code>ami-1a2b3c4d</code>.
+     *        The ID of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

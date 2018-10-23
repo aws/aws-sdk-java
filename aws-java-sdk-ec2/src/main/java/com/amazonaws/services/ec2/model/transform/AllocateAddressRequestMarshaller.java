@@ -48,6 +48,10 @@ public class AllocateAddressRequestMarshaller implements Marshaller<Request<Allo
             request.addParameter("Address", StringUtils.fromString(allocateAddressRequest.getAddress()));
         }
 
+        if (allocateAddressRequest.getPublicIpv4Pool() != null) {
+            request.addParameter("PublicIpv4Pool", StringUtils.fromString(allocateAddressRequest.getPublicIpv4Pool()));
+        }
+
         return request;
     }
 
