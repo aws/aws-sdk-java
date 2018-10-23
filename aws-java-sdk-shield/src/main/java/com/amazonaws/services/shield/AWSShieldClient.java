@@ -78,6 +78,9 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
+                                    com.amazonaws.services.shield.model.AccessDeniedException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("OptimisticLockException").withModeledClass(
                                     com.amazonaws.services.shield.model.OptimisticLockException.class))
                     .addErrorMetadata(
@@ -791,8 +794,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws InternalErrorException
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
-     * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     * @throws AccessDeniedException
      * @sample AWSShield.DescribeAttack
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttack" target="_top">AWS API
      *      Documentation</a>

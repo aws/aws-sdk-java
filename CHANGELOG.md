@@ -1,3 +1,12 @@
+# __1.11.434__ __2018-10-22__
+## __AWS Shield__
+  - ### Features
+    - AWS Shield Advanced API introduced a new service-specific AccessDeniedException which will be thrown when accessing individual attack information without sufficient permission.
+
+## __Amazon Inspector__
+  - ### Features
+    - Finding will be decorated with ec2 related metadata
+
 # __1.11.433__ __2018-10-19__
 ## __Amazon Simple Systems Manager (SSM)__
   - ### Features

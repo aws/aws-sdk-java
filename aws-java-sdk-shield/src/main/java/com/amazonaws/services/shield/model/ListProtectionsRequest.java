@@ -37,6 +37,12 @@ public class ListProtectionsRequest extends com.amazonaws.AmazonWebServiceReques
      * The maximum number of <a>Protection</a> objects to be returned. If this is left blank the first 20 results will
      * be returned.
      * </p>
+     * <p>
+     * This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is, the
+     * number of <a>Protection</a> objects returned could be less than <code>MaxResults</code>, even if there are still
+     * more <a>Protection</a> objects yet to return. If there are more <a>Protection</a> objects to return, AWS WAF will
+     * always also return a <code>NextToken</code>.
+     * </p>
      */
     private Integer maxResults;
 
@@ -91,10 +97,21 @@ public class ListProtectionsRequest extends com.amazonaws.AmazonWebServiceReques
      * The maximum number of <a>Protection</a> objects to be returned. If this is left blank the first 20 results will
      * be returned.
      * </p>
+     * <p>
+     * This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is, the
+     * number of <a>Protection</a> objects returned could be less than <code>MaxResults</code>, even if there are still
+     * more <a>Protection</a> objects yet to return. If there are more <a>Protection</a> objects to return, AWS WAF will
+     * always also return a <code>NextToken</code>.
+     * </p>
      * 
      * @param maxResults
      *        The maximum number of <a>Protection</a> objects to be returned. If this is left blank the first 20 results
-     *        will be returned.
+     *        will be returned.</p>
+     *        <p>
+     *        This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is,
+     *        the number of <a>Protection</a> objects returned could be less than <code>MaxResults</code>, even if there
+     *        are still more <a>Protection</a> objects yet to return. If there are more <a>Protection</a> objects to
+     *        return, AWS WAF will always also return a <code>NextToken</code>.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -106,9 +123,20 @@ public class ListProtectionsRequest extends com.amazonaws.AmazonWebServiceReques
      * The maximum number of <a>Protection</a> objects to be returned. If this is left blank the first 20 results will
      * be returned.
      * </p>
+     * <p>
+     * This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is, the
+     * number of <a>Protection</a> objects returned could be less than <code>MaxResults</code>, even if there are still
+     * more <a>Protection</a> objects yet to return. If there are more <a>Protection</a> objects to return, AWS WAF will
+     * always also return a <code>NextToken</code>.
+     * </p>
      * 
      * @return The maximum number of <a>Protection</a> objects to be returned. If this is left blank the first 20
-     *         results will be returned.
+     *         results will be returned.</p>
+     *         <p>
+     *         This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is,
+     *         the number of <a>Protection</a> objects returned could be less than <code>MaxResults</code>, even if
+     *         there are still more <a>Protection</a> objects yet to return. If there are more <a>Protection</a> objects
+     *         to return, AWS WAF will always also return a <code>NextToken</code>.
      */
 
     public Integer getMaxResults() {
@@ -120,10 +148,21 @@ public class ListProtectionsRequest extends com.amazonaws.AmazonWebServiceReques
      * The maximum number of <a>Protection</a> objects to be returned. If this is left blank the first 20 results will
      * be returned.
      * </p>
+     * <p>
+     * This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is, the
+     * number of <a>Protection</a> objects returned could be less than <code>MaxResults</code>, even if there are still
+     * more <a>Protection</a> objects yet to return. If there are more <a>Protection</a> objects to return, AWS WAF will
+     * always also return a <code>NextToken</code>.
+     * </p>
      * 
      * @param maxResults
      *        The maximum number of <a>Protection</a> objects to be returned. If this is left blank the first 20 results
-     *        will be returned.
+     *        will be returned.</p>
+     *        <p>
+     *        This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is,
+     *        the number of <a>Protection</a> objects returned could be less than <code>MaxResults</code>, even if there
+     *        are still more <a>Protection</a> objects yet to return. If there are more <a>Protection</a> objects to
+     *        return, AWS WAF will always also return a <code>NextToken</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
