@@ -54,7 +54,9 @@ import com.amazonaws.services.alexaforbusiness.model.transform.*;
  * you need for managing Alexa devices, enroll your users, and assign skills, at scale. You can build your own
  * context-aware voice skills using the Alexa Skills Kit and the Alexa for Business API operations. You can make also
  * these available as private skills for your organization. Alexa for Business makes it easy to voice-enable your
- * products and services, providing context-aware voice experiences for your customers.
+ * products and services, providing context-aware voice experiences for your customers. In addition, Alexa for Business
+ * enables Alexa Voice Services (AVS) device manufacturers to centrally deploy and manage their devices in Alexa for
+ * Business as shared devices as a part of their existing management flow.
  * </p>
  */
 @ThreadSafe
@@ -78,14 +80,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
-                                    com.amazonaws.services.alexaforbusiness.model.ResourceInUseException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
-                                    com.amazonaws.services.alexaforbusiness.model.NotFoundException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidUserStatusException").withModeledClass(
-                                    com.amazonaws.services.alexaforbusiness.model.InvalidUserStatusException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
+                                    com.amazonaws.services.alexaforbusiness.model.ConcurrentModificationException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
                                     com.amazonaws.services.alexaforbusiness.model.LimitExceededException.class))
@@ -95,6 +91,24 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withModeledClass(
                                     com.amazonaws.services.alexaforbusiness.model.AlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
+                                    com.amazonaws.services.alexaforbusiness.model.ResourceInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
+                                    com.amazonaws.services.alexaforbusiness.model.NotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withModeledClass(
+                                    com.amazonaws.services.alexaforbusiness.model.UnauthorizedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidUserStatusException").withModeledClass(
+                                    com.amazonaws.services.alexaforbusiness.model.InvalidUserStatusException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidCertificateAuthorityException").withModeledClass(
+                                    com.amazonaws.services.alexaforbusiness.model.InvalidCertificateAuthorityException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeviceException").withModeledClass(
+                                    com.amazonaws.services.alexaforbusiness.model.InvalidDeviceException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DeviceNotRegisteredException").withModeledClass(
                                     com.amazonaws.services.alexaforbusiness.model.DeviceNotRegisteredException.class))
@@ -149,13 +163,73 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Associates a skill with the organization under the customer's AWS account. If a skill is private, the user
+     * implicitly accepts access to this skill during enablement.
+     * </p>
+     * 
+     * @param approveSkillRequest
+     * @return Result of the ApproveSkill operation returned by the service.
+     * @throws LimitExceededException
+     *         You are performing an action that would put you beyond your account's limits.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @sample AmazonAlexaForBusiness.ApproveSkill
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ApproveSkill" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ApproveSkillResult approveSkill(ApproveSkillRequest request) {
+        request = beforeClientExecution(request);
+        return executeApproveSkill(request);
+    }
+
+    @SdkInternalApi
+    final ApproveSkillResult executeApproveSkill(ApproveSkillRequest approveSkillRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(approveSkillRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ApproveSkillRequest> request = null;
+        Response<ApproveSkillResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ApproveSkillRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(approveSkillRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ApproveSkill");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<ApproveSkillResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ApproveSkillResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Associates a contact with a given address book.
      * </p>
      * 
      * @param associateContactWithAddressBookRequest
      * @return Result of the AssociateContactWithAddressBook operation returned by the service.
      * @throws LimitExceededException
-     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     *         You are performing an action that would put you beyond your account's limits.
      * @sample AmazonAlexaForBusiness.AssociateContactWithAddressBook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook"
      *      target="_top">AWS API Documentation</a>
@@ -215,7 +289,9 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param associateDeviceWithRoomRequest
      * @return Result of the AssociateDeviceWithRoom operation returned by the service.
      * @throws LimitExceededException
-     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     *         You are performing an action that would put you beyond your account's limits.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @throws DeviceNotRegisteredException
      *         The request failed because this device is no longer registered and therefore no longer managed by this
      *         account.
@@ -275,6 +351,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * 
      * @param associateSkillGroupWithRoomRequest
      * @return Result of the AssociateSkillGroupWithRoom operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.AssociateSkillGroupWithRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom"
      *      target="_top">AWS API Documentation</a>
@@ -325,15 +403,74 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Associates a skill with a skill group.
+     * </p>
+     * 
+     * @param associateSkillWithSkillGroupRequest
+     * @return Result of the AssociateSkillWithSkillGroup operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.AssociateSkillWithSkillGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateSkillWithSkillGroupResult associateSkillWithSkillGroup(AssociateSkillWithSkillGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateSkillWithSkillGroup(request);
+    }
+
+    @SdkInternalApi
+    final AssociateSkillWithSkillGroupResult executeAssociateSkillWithSkillGroup(AssociateSkillWithSkillGroupRequest associateSkillWithSkillGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateSkillWithSkillGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateSkillWithSkillGroupRequest> request = null;
+        Response<AssociateSkillWithSkillGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateSkillWithSkillGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateSkillWithSkillGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateSkillWithSkillGroup");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateSkillWithSkillGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateSkillWithSkillGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an address book with the specified details.
      * </p>
      * 
      * @param createAddressBookRequest
      * @return Result of the CreateAddressBook operation returned by the service.
      * @throws AlreadyExistsException
-     *         The resource being created already exists. HTTP Status Code: 400
+     *         The resource being created already exists.
      * @throws LimitExceededException
-     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     *         You are performing an action that would put you beyond your account's limits.
      * @sample AmazonAlexaForBusiness.CreateAddressBook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook"
      *      target="_top">AWS API Documentation</a>
@@ -382,15 +519,72 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Adds a new conference provider under the user's AWS account.
+     * </p>
+     * 
+     * @param createConferenceProviderRequest
+     * @return Result of the CreateConferenceProvider operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The resource being created already exists.
+     * @sample AmazonAlexaForBusiness.CreateConferenceProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateConferenceProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateConferenceProviderResult createConferenceProvider(CreateConferenceProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateConferenceProvider(request);
+    }
+
+    @SdkInternalApi
+    final CreateConferenceProviderResult executeCreateConferenceProvider(CreateConferenceProviderRequest createConferenceProviderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createConferenceProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateConferenceProviderRequest> request = null;
+        Response<CreateConferenceProviderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateConferenceProviderRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createConferenceProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConferenceProvider");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateConferenceProviderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateConferenceProviderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a contact with the specified details.
      * </p>
      * 
      * @param createContactRequest
      * @return Result of the CreateContact operation returned by the service.
      * @throws AlreadyExistsException
-     *         The resource being created already exists. HTTP Status Code: 400
+     *         The resource being created already exists.
      * @throws LimitExceededException
-     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     *         You are performing an action that would put you beyond your account's limits.
      * @sample AmazonAlexaForBusiness.CreateContact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact" target="_top">AWS
      *      API Documentation</a>
@@ -445,9 +639,11 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param createProfileRequest
      * @return Result of the CreateProfile operation returned by the service.
      * @throws LimitExceededException
-     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     *         You are performing an action that would put you beyond your account's limits.
      * @throws AlreadyExistsException
-     *         The resource being created already exists. HTTP Status Code: 400
+     *         The resource being created already exists.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.CreateProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateProfile" target="_top">AWS
      *      API Documentation</a>
@@ -502,9 +698,9 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param createRoomRequest
      * @return Result of the CreateRoom operation returned by the service.
      * @throws AlreadyExistsException
-     *         The resource being created already exists. HTTP Status Code: 400
+     *         The resource being created already exists.
      * @throws LimitExceededException
-     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     *         You are performing an action that would put you beyond your account's limits.
      * @sample AmazonAlexaForBusiness.CreateRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateRoom" target="_top">AWS
      *      API Documentation</a>
@@ -559,9 +755,11 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param createSkillGroupRequest
      * @return Result of the CreateSkillGroup operation returned by the service.
      * @throws AlreadyExistsException
-     *         The resource being created already exists. HTTP Status Code: 400
+     *         The resource being created already exists.
      * @throws LimitExceededException
-     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     *         You are performing an action that would put you beyond your account's limits.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.CreateSkillGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateSkillGroup"
      *      target="_top">AWS API Documentation</a>
@@ -616,9 +814,11 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param createUserRequest
      * @return Result of the CreateUser operation returned by the service.
      * @throws ResourceInUseException
-     *         The resource in the request is already in use. HTTP Status Code: 400
+     *         The resource in the request is already in use.
      * @throws LimitExceededException
-     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     *         You are performing an action that would put you beyond your account's limits.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.CreateUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateUser" target="_top">AWS
      *      API Documentation</a>
@@ -673,7 +873,9 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param deleteAddressBookRequest
      * @return Result of the DeleteAddressBook operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.DeleteAddressBook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook"
      *      target="_top">AWS API Documentation</a>
@@ -722,13 +924,72 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Deletes a conference provider.
+     * </p>
+     * 
+     * @param deleteConferenceProviderRequest
+     * @return Result of the DeleteConferenceProvider operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.DeleteConferenceProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteConferenceProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteConferenceProviderResult deleteConferenceProvider(DeleteConferenceProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteConferenceProvider(request);
+    }
+
+    @SdkInternalApi
+    final DeleteConferenceProviderResult executeDeleteConferenceProvider(DeleteConferenceProviderRequest deleteConferenceProviderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteConferenceProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteConferenceProviderRequest> request = null;
+        Response<DeleteConferenceProviderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteConferenceProviderRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteConferenceProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConferenceProvider");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteConferenceProviderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteConferenceProviderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a contact by the contact ARN.
      * </p>
      * 
      * @param deleteContactRequest
      * @return Result of the DeleteContact operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.DeleteContact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact" target="_top">AWS
      *      API Documentation</a>
@@ -777,13 +1038,74 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Removes a device from Alexa For Business.
+     * </p>
+     * 
+     * @param deleteDeviceRequest
+     * @return Result of the DeleteDevice operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @throws InvalidCertificateAuthorityException
+     *         The Certificate Authority can't issue or revoke a certificate.
+     * @sample AmazonAlexaForBusiness.DeleteDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteDeviceResult deleteDevice(DeleteDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDevice(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDeviceResult executeDeleteDevice(DeleteDeviceRequest deleteDeviceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDeviceRequest> request = null;
+        Response<DeleteDeviceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDevice");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDeviceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a room profile by the profile ARN.
      * </p>
      * 
      * @param deleteProfileRequest
      * @return Result of the DeleteProfile operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.DeleteProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteProfile" target="_top">AWS
      *      API Documentation</a>
@@ -838,7 +1160,9 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param deleteRoomRequest
      * @return Result of the DeleteRoom operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.DeleteRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoom" target="_top">AWS
      *      API Documentation</a>
@@ -892,6 +1216,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * 
      * @param deleteRoomSkillParameterRequest
      * @return Result of the DeleteRoomSkillParameter operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.DeleteRoomSkillParameter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoomSkillParameter"
      *      target="_top">AWS API Documentation</a>
@@ -942,13 +1268,74 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Unlinks a third-party account from a skill.
+     * </p>
+     * 
+     * @param deleteSkillAuthorizationRequest
+     * @return Result of the DeleteSkillAuthorization operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @sample AmazonAlexaForBusiness.DeleteSkillAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillAuthorization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteSkillAuthorizationResult deleteSkillAuthorization(DeleteSkillAuthorizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSkillAuthorization(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSkillAuthorizationResult executeDeleteSkillAuthorization(DeleteSkillAuthorizationRequest deleteSkillAuthorizationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSkillAuthorizationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSkillAuthorizationRequest> request = null;
+        Response<DeleteSkillAuthorizationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSkillAuthorizationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteSkillAuthorizationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSkillAuthorization");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSkillAuthorizationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteSkillAuthorizationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a skill group by skill group ARN.
      * </p>
      * 
      * @param deleteSkillGroupRequest
      * @return Result of the DeleteSkillGroup operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.DeleteSkillGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillGroup"
      *      target="_top">AWS API Documentation</a>
@@ -1003,7 +1390,9 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param deleteUserRequest
      * @return Result of the DeleteUser operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.DeleteUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteUser" target="_top">AWS
      *      API Documentation</a>
@@ -1115,6 +1504,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * 
      * @param disassociateDeviceFromRoomRequest
      * @return Result of the DisassociateDeviceFromRoom operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @throws DeviceNotRegisteredException
      *         The request failed because this device is no longer registered and therefore no longer managed by this
      *         account.
@@ -1168,12 +1559,74 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Disassociates a skill from a skill group.
+     * </p>
+     * 
+     * @param disassociateSkillFromSkillGroupRequest
+     * @return Result of the DisassociateSkillFromSkillGroup operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.DisassociateSkillFromSkillGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateSkillFromSkillGroupResult disassociateSkillFromSkillGroup(DisassociateSkillFromSkillGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateSkillFromSkillGroup(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateSkillFromSkillGroupResult executeDisassociateSkillFromSkillGroup(
+            DisassociateSkillFromSkillGroupRequest disassociateSkillFromSkillGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateSkillFromSkillGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateSkillFromSkillGroupRequest> request = null;
+        Response<DisassociateSkillFromSkillGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateSkillFromSkillGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateSkillFromSkillGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateSkillFromSkillGroup");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateSkillFromSkillGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateSkillFromSkillGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disassociates a skill group from a specified room. This disables all skills in the skill group on all devices in
      * the room.
      * </p>
      * 
      * @param disassociateSkillGroupFromRoomRequest
      * @return Result of the DisassociateSkillGroupFromRoom operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.DisassociateSkillGroupFromRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillGroupFromRoom"
      *      target="_top">AWS API Documentation</a>
@@ -1224,13 +1677,70 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Forgets smart home appliances associated to a room.
+     * </p>
+     * 
+     * @param forgetSmartHomeAppliancesRequest
+     * @return Result of the ForgetSmartHomeAppliances operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.ForgetSmartHomeAppliances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ForgetSmartHomeAppliances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ForgetSmartHomeAppliancesResult forgetSmartHomeAppliances(ForgetSmartHomeAppliancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeForgetSmartHomeAppliances(request);
+    }
+
+    @SdkInternalApi
+    final ForgetSmartHomeAppliancesResult executeForgetSmartHomeAppliances(ForgetSmartHomeAppliancesRequest forgetSmartHomeAppliancesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(forgetSmartHomeAppliancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ForgetSmartHomeAppliancesRequest> request = null;
+        Response<ForgetSmartHomeAppliancesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ForgetSmartHomeAppliancesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(forgetSmartHomeAppliancesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ForgetSmartHomeAppliances");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<ForgetSmartHomeAppliancesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ForgetSmartHomeAppliancesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets address the book details by the address book ARN.
      * </p>
      * 
      * @param getAddressBookRequest
      * @return Result of the GetAddressBook operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.GetAddressBook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook"
      *      target="_top">AWS API Documentation</a>
@@ -1279,13 +1789,126 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Retrieves the existing conference preferences.
+     * </p>
+     * 
+     * @param getConferencePreferenceRequest
+     * @return Result of the GetConferencePreference operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.GetConferencePreference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferencePreference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetConferencePreferenceResult getConferencePreference(GetConferencePreferenceRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetConferencePreference(request);
+    }
+
+    @SdkInternalApi
+    final GetConferencePreferenceResult executeGetConferencePreference(GetConferencePreferenceRequest getConferencePreferenceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getConferencePreferenceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetConferencePreferenceRequest> request = null;
+        Response<GetConferencePreferenceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetConferencePreferenceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getConferencePreferenceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConferencePreference");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetConferencePreferenceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetConferencePreferenceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets details about a specific conference provider.
+     * </p>
+     * 
+     * @param getConferenceProviderRequest
+     * @return Result of the GetConferenceProvider operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.GetConferenceProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferenceProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetConferenceProviderResult getConferenceProvider(GetConferenceProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetConferenceProvider(request);
+    }
+
+    @SdkInternalApi
+    final GetConferenceProviderResult executeGetConferenceProvider(GetConferenceProviderRequest getConferenceProviderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getConferenceProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetConferenceProviderRequest> request = null;
+        Response<GetConferenceProviderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetConferenceProviderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getConferenceProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConferenceProvider");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetConferenceProviderResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetConferenceProviderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets the contact details by the contact ARN.
      * </p>
      * 
      * @param getContactRequest
      * @return Result of the GetContact operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.GetContact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact" target="_top">AWS
      *      API Documentation</a>
@@ -1340,7 +1963,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param getDeviceRequest
      * @return Result of the GetDevice operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.GetDevice
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetDevice" target="_top">AWS API
      *      Documentation</a>
@@ -1395,7 +2018,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param getProfileRequest
      * @return Result of the GetProfile operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.GetProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetProfile" target="_top">AWS
      *      API Documentation</a>
@@ -1450,7 +2073,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param getRoomRequest
      * @return Result of the GetRoom operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.GetRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoom" target="_top">AWS API
      *      Documentation</a>
@@ -1505,7 +2128,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param getRoomSkillParameterRequest
      * @return Result of the GetRoomSkillParameter operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.GetRoomSkillParameter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoomSkillParameter"
      *      target="_top">AWS API Documentation</a>
@@ -1561,7 +2184,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param getSkillGroupRequest
      * @return Result of the GetSkillGroup operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.GetSkillGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetSkillGroup" target="_top">AWS
      *      API Documentation</a>
@@ -1610,13 +2233,68 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Lists conference providers under a specific AWS account.
+     * </p>
+     * 
+     * @param listConferenceProvidersRequest
+     * @return Result of the ListConferenceProviders operation returned by the service.
+     * @sample AmazonAlexaForBusiness.ListConferenceProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListConferenceProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListConferenceProvidersResult listConferenceProviders(ListConferenceProvidersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListConferenceProviders(request);
+    }
+
+    @SdkInternalApi
+    final ListConferenceProvidersResult executeListConferenceProviders(ListConferenceProvidersRequest listConferenceProvidersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listConferenceProvidersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListConferenceProvidersRequest> request = null;
+        Response<ListConferenceProvidersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListConferenceProvidersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listConferenceProvidersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConferenceProviders");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListConferenceProvidersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListConferenceProvidersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the device event history, including device connection status, for up to 30 days.
      * </p>
      * 
      * @param listDeviceEventsRequest
      * @return Result of the ListDeviceEvents operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.ListDeviceEvents
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents"
      *      target="_top">AWS API Documentation</a>
@@ -1718,13 +2396,181 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Lists all categories in the Alexa skill store.
+     * </p>
+     * 
+     * @param listSkillsStoreCategoriesRequest
+     * @return Result of the ListSkillsStoreCategories operation returned by the service.
+     * @sample AmazonAlexaForBusiness.ListSkillsStoreCategories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreCategories"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSkillsStoreCategoriesResult listSkillsStoreCategories(ListSkillsStoreCategoriesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSkillsStoreCategories(request);
+    }
+
+    @SdkInternalApi
+    final ListSkillsStoreCategoriesResult executeListSkillsStoreCategories(ListSkillsStoreCategoriesRequest listSkillsStoreCategoriesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSkillsStoreCategoriesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSkillsStoreCategoriesRequest> request = null;
+        Response<ListSkillsStoreCategoriesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSkillsStoreCategoriesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listSkillsStoreCategoriesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSkillsStoreCategories");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSkillsStoreCategoriesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListSkillsStoreCategoriesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all skills in the Alexa skill store by category.
+     * </p>
+     * 
+     * @param listSkillsStoreSkillsByCategoryRequest
+     * @return Result of the ListSkillsStoreSkillsByCategory operation returned by the service.
+     * @sample AmazonAlexaForBusiness.ListSkillsStoreSkillsByCategory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreSkillsByCategory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSkillsStoreSkillsByCategoryResult listSkillsStoreSkillsByCategory(ListSkillsStoreSkillsByCategoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSkillsStoreSkillsByCategory(request);
+    }
+
+    @SdkInternalApi
+    final ListSkillsStoreSkillsByCategoryResult executeListSkillsStoreSkillsByCategory(
+            ListSkillsStoreSkillsByCategoryRequest listSkillsStoreSkillsByCategoryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSkillsStoreSkillsByCategoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSkillsStoreSkillsByCategoryRequest> request = null;
+        Response<ListSkillsStoreSkillsByCategoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSkillsStoreSkillsByCategoryRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listSkillsStoreSkillsByCategoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSkillsStoreSkillsByCategory");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSkillsStoreSkillsByCategoryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListSkillsStoreSkillsByCategoryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all of the smart home appliances associated with a room.
+     * </p>
+     * 
+     * @param listSmartHomeAppliancesRequest
+     * @return Result of the ListSmartHomeAppliances operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.ListSmartHomeAppliances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSmartHomeAppliances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSmartHomeAppliancesResult listSmartHomeAppliances(ListSmartHomeAppliancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSmartHomeAppliances(request);
+    }
+
+    @SdkInternalApi
+    final ListSmartHomeAppliancesResult executeListSmartHomeAppliances(ListSmartHomeAppliancesRequest listSmartHomeAppliancesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSmartHomeAppliancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSmartHomeAppliancesRequest> request = null;
+        Response<ListSmartHomeAppliancesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSmartHomeAppliancesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listSmartHomeAppliancesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSmartHomeAppliances");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSmartHomeAppliancesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListSmartHomeAppliancesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all tags for the specified resource.
      * </p>
      * 
      * @param listTagsRequest
      * @return Result of the ListTags operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.ListTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListTags" target="_top">AWS API
      *      Documentation</a>
@@ -1773,12 +2619,71 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Sets the conference preferences on a specific conference provider at the account level.
+     * </p>
+     * 
+     * @param putConferencePreferenceRequest
+     * @return Result of the PutConferencePreference operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.PutConferencePreference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutConferencePreference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutConferencePreferenceResult putConferencePreference(PutConferencePreferenceRequest request) {
+        request = beforeClientExecution(request);
+        return executePutConferencePreference(request);
+    }
+
+    @SdkInternalApi
+    final PutConferencePreferenceResult executePutConferencePreference(PutConferencePreferenceRequest putConferencePreferenceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putConferencePreferenceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutConferencePreferenceRequest> request = null;
+        Response<PutConferencePreferenceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutConferencePreferenceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putConferencePreferenceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConferencePreference");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutConferencePreferenceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutConferencePreferenceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates room skill parameter details by room, skill, and parameter key ID. Not all skills have a room skill
      * parameter.
      * </p>
      * 
      * @param putRoomSkillParameterRequest
      * @return Result of the PutRoomSkillParameter operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.PutRoomSkillParameter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutRoomSkillParameter"
      *      target="_top">AWS API Documentation</a>
@@ -1828,6 +2733,184 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Links a user's account to a third-party skill provider. If this API is called by an assumed IAM role, the skill
+     * being linked must be a private skill, and the skill must be owned by the AWS account that assumed the IAM role.
+     * </p>
+     * 
+     * @param putSkillAuthorizationRequest
+     * @return Result of the PutSkillAuthorization operation returned by the service.
+     * @throws UnauthorizedException
+     *         The caller has no permissions to operate on the resource involved in the API call.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @sample AmazonAlexaForBusiness.PutSkillAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutSkillAuthorization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutSkillAuthorizationResult putSkillAuthorization(PutSkillAuthorizationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutSkillAuthorization(request);
+    }
+
+    @SdkInternalApi
+    final PutSkillAuthorizationResult executePutSkillAuthorization(PutSkillAuthorizationRequest putSkillAuthorizationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putSkillAuthorizationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutSkillAuthorizationRequest> request = null;
+        Response<PutSkillAuthorizationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutSkillAuthorizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putSkillAuthorizationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutSkillAuthorization");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutSkillAuthorizationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new PutSkillAuthorizationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Registers an Alexa-enabled device built by an Original Equipment Manufacturer (OEM) using Alexa Voice Service
+     * (AVS).
+     * </p>
+     * 
+     * @param registerAVSDeviceRequest
+     * @return Result of the RegisterAVSDevice operation returned by the service.
+     * @throws LimitExceededException
+     *         You are performing an action that would put you beyond your account's limits.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @throws InvalidDeviceException
+     *         The device is in an invalid state.
+     * @sample AmazonAlexaForBusiness.RegisterAVSDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RegisterAVSDevice"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RegisterAVSDeviceResult registerAVSDevice(RegisterAVSDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterAVSDevice(request);
+    }
+
+    @SdkInternalApi
+    final RegisterAVSDeviceResult executeRegisterAVSDevice(RegisterAVSDeviceRequest registerAVSDeviceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(registerAVSDeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterAVSDeviceRequest> request = null;
+        Response<RegisterAVSDeviceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterAVSDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerAVSDeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterAVSDevice");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterAVSDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RegisterAVSDeviceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociates a skill from the organization under a user's AWS account. If the skill is a private skill, it moves
+     * to an AcceptStatus of PENDING. Any private or public skill that is rejected can be added later by calling the
+     * ApproveSkill API.
+     * </p>
+     * 
+     * @param rejectSkillRequest
+     * @return Result of the RejectSkill operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.RejectSkill
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RejectSkill" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public RejectSkillResult rejectSkill(RejectSkillRequest request) {
+        request = beforeClientExecution(request);
+        return executeRejectSkill(request);
+    }
+
+    @SdkInternalApi
+    final RejectSkillResult executeRejectSkill(RejectSkillRequest rejectSkillRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(rejectSkillRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RejectSkillRequest> request = null;
+        Response<RejectSkillResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RejectSkillRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rejectSkillRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectSkill");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<RejectSkillResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RejectSkillResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Determines the details for the room from which a skill request was invoked. This operation is used by skill
      * developers.
      * </p>
@@ -1835,7 +2918,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param resolveRoomRequest
      * @return Result of the ResolveRoom operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.ResolveRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ResolveRoom" target="_top">AWS
      *      API Documentation</a>
@@ -1890,7 +2973,9 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param revokeInvitationRequest
      * @return Result of the RevokeInvitation operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.RevokeInvitation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RevokeInvitation"
      *      target="_top">AWS API Documentation</a>
@@ -2317,9 +3402,11 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param sendInvitationRequest
      * @return Result of the SendInvitation operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @throws InvalidUserStatusException
-     *         The attempt to update a user is invalid due to the user's current status. HTTP Status Code: 400
+     *         The attempt to update a user is invalid due to the user's current status.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.SendInvitation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendInvitation"
      *      target="_top">AWS API Documentation</a>
@@ -2425,13 +3512,72 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Initiates the discovery of any smart home appliances associated with the room.
+     * </p>
+     * 
+     * @param startSmartHomeApplianceDiscoveryRequest
+     * @return Result of the StartSmartHomeApplianceDiscovery operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.StartSmartHomeApplianceDiscovery
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartSmartHomeApplianceDiscovery"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartSmartHomeApplianceDiscoveryResult startSmartHomeApplianceDiscovery(StartSmartHomeApplianceDiscoveryRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartSmartHomeApplianceDiscovery(request);
+    }
+
+    @SdkInternalApi
+    final StartSmartHomeApplianceDiscoveryResult executeStartSmartHomeApplianceDiscovery(
+            StartSmartHomeApplianceDiscoveryRequest startSmartHomeApplianceDiscoveryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startSmartHomeApplianceDiscoveryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartSmartHomeApplianceDiscoveryRequest> request = null;
+        Response<StartSmartHomeApplianceDiscoveryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartSmartHomeApplianceDiscoveryRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startSmartHomeApplianceDiscoveryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSmartHomeApplianceDiscovery");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartSmartHomeApplianceDiscoveryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartSmartHomeApplianceDiscoveryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds metadata tags to a specified resource.
      * </p>
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/TagResource" target="_top">AWS
      *      API Documentation</a>
@@ -2486,7 +3632,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UntagResource" target="_top">AWS
      *      API Documentation</a>
@@ -2541,9 +3687,11 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param updateAddressBookRequest
      * @return Result of the UpdateAddressBook operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @throws NameInUseException
-     *         The name sent in the request is already in use. HTTP Status Code: 400
+     *         The name sent in the request is already in use.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.UpdateAddressBook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook"
      *      target="_top">AWS API Documentation</a>
@@ -2592,13 +3740,72 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Updates an existing conference provider's settings.
+     * </p>
+     * 
+     * @param updateConferenceProviderRequest
+     * @return Result of the UpdateConferenceProvider operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.UpdateConferenceProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateConferenceProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateConferenceProviderResult updateConferenceProvider(UpdateConferenceProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateConferenceProvider(request);
+    }
+
+    @SdkInternalApi
+    final UpdateConferenceProviderResult executeUpdateConferenceProvider(UpdateConferenceProviderRequest updateConferenceProviderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateConferenceProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateConferenceProviderRequest> request = null;
+        Response<UpdateConferenceProviderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateConferenceProviderRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateConferenceProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConferenceProvider");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateConferenceProviderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateConferenceProviderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the contact details by the contact ARN.
      * </p>
      * 
      * @param updateContactRequest
      * @return Result of the UpdateContact operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.UpdateContact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact" target="_top">AWS
      *      API Documentation</a>
@@ -2653,7 +3860,9 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param updateDeviceRequest
      * @return Result of the UpdateDevice operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @throws DeviceNotRegisteredException
      *         The request failed because this device is no longer registered and therefore no longer managed by this
      *         account.
@@ -2711,9 +3920,11 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param updateProfileRequest
      * @return Result of the UpdateProfile operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @throws NameInUseException
-     *         The name sent in the request is already in use. HTTP Status Code: 400
+     *         The name sent in the request is already in use.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.UpdateProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateProfile" target="_top">AWS
      *      API Documentation</a>
@@ -2768,9 +3979,9 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param updateRoomRequest
      * @return Result of the UpdateRoom operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @throws NameInUseException
-     *         The name sent in the request is already in use. HTTP Status Code: 400
+     *         The name sent in the request is already in use.
      * @sample AmazonAlexaForBusiness.UpdateRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateRoom" target="_top">AWS
      *      API Documentation</a>
@@ -2825,9 +4036,11 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param updateSkillGroupRequest
      * @return Result of the UpdateSkillGroup operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @throws NameInUseException
-     *         The name sent in the request is already in use. HTTP Status Code: 400
+     *         The name sent in the request is already in use.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.UpdateSkillGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateSkillGroup"
      *      target="_top">AWS API Documentation</a>

@@ -29,6 +29,10 @@ public class ListSkillsRequestMarshaller {
 
     private static final MarshallingInfo<String> SKILLGROUPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SkillGroupArn").build();
+    private static final MarshallingInfo<String> ENABLEMENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnablementType").build();
+    private static final MarshallingInfo<String> SKILLTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SkillType").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -51,6 +55,8 @@ public class ListSkillsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listSkillsRequest.getSkillGroupArn(), SKILLGROUPARN_BINDING);
+            protocolMarshaller.marshall(listSkillsRequest.getEnablementType(), ENABLEMENTTYPE_BINDING);
+            protocolMarshaller.marshall(listSkillsRequest.getSkillType(), SKILLTYPE_BINDING);
             protocolMarshaller.marshall(listSkillsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listSkillsRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {

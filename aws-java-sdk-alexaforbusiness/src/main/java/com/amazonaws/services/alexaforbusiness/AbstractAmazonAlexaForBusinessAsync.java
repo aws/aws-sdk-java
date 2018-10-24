@@ -28,6 +28,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     }
 
     @Override
+    public java.util.concurrent.Future<ApproveSkillResult> approveSkillAsync(ApproveSkillRequest request) {
+
+        return approveSkillAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ApproveSkillResult> approveSkillAsync(ApproveSkillRequest request,
+            com.amazonaws.handlers.AsyncHandler<ApproveSkillRequest, ApproveSkillResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateContactWithAddressBookResult> associateContactWithAddressBookAsync(
             AssociateContactWithAddressBookRequest request) {
 
@@ -69,6 +82,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateSkillWithSkillGroupResult> associateSkillWithSkillGroupAsync(AssociateSkillWithSkillGroupRequest request) {
+
+        return associateSkillWithSkillGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateSkillWithSkillGroupResult> associateSkillWithSkillGroupAsync(AssociateSkillWithSkillGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateSkillWithSkillGroupRequest, AssociateSkillWithSkillGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAddressBookResult> createAddressBookAsync(CreateAddressBookRequest request) {
 
         return createAddressBookAsync(request, null);
@@ -77,6 +103,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     @Override
     public java.util.concurrent.Future<CreateAddressBookResult> createAddressBookAsync(CreateAddressBookRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateAddressBookRequest, CreateAddressBookResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConferenceProviderResult> createConferenceProviderAsync(CreateConferenceProviderRequest request) {
+
+        return createConferenceProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConferenceProviderResult> createConferenceProviderAsync(CreateConferenceProviderRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateConferenceProviderRequest, CreateConferenceProviderResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -160,6 +199,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteConferenceProviderResult> deleteConferenceProviderAsync(DeleteConferenceProviderRequest request) {
+
+        return deleteConferenceProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConferenceProviderResult> deleteConferenceProviderAsync(DeleteConferenceProviderRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteConferenceProviderRequest, DeleteConferenceProviderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteContactResult> deleteContactAsync(DeleteContactRequest request) {
 
         return deleteContactAsync(request, null);
@@ -168,6 +220,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     @Override
     public java.util.concurrent.Future<DeleteContactResult> deleteContactAsync(DeleteContactRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteContactRequest, DeleteContactResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeviceResult> deleteDeviceAsync(DeleteDeviceRequest request) {
+
+        return deleteDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeviceResult> deleteDeviceAsync(DeleteDeviceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDeviceRequest, DeleteDeviceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -207,6 +272,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     @Override
     public java.util.concurrent.Future<DeleteRoomSkillParameterResult> deleteRoomSkillParameterAsync(DeleteRoomSkillParameterRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRoomSkillParameterRequest, DeleteRoomSkillParameterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSkillAuthorizationResult> deleteSkillAuthorizationAsync(DeleteSkillAuthorizationRequest request) {
+
+        return deleteSkillAuthorizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSkillAuthorizationResult> deleteSkillAuthorizationAsync(DeleteSkillAuthorizationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteSkillAuthorizationRequest, DeleteSkillAuthorizationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -266,6 +344,21 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateSkillFromSkillGroupResult> disassociateSkillFromSkillGroupAsync(
+            DisassociateSkillFromSkillGroupRequest request) {
+
+        return disassociateSkillFromSkillGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateSkillFromSkillGroupResult> disassociateSkillFromSkillGroupAsync(
+            DisassociateSkillFromSkillGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateSkillFromSkillGroupRequest, DisassociateSkillFromSkillGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateSkillGroupFromRoomResult> disassociateSkillGroupFromRoomAsync(DisassociateSkillGroupFromRoomRequest request) {
 
         return disassociateSkillGroupFromRoomAsync(request, null);
@@ -279,6 +372,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     }
 
     @Override
+    public java.util.concurrent.Future<ForgetSmartHomeAppliancesResult> forgetSmartHomeAppliancesAsync(ForgetSmartHomeAppliancesRequest request) {
+
+        return forgetSmartHomeAppliancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ForgetSmartHomeAppliancesResult> forgetSmartHomeAppliancesAsync(ForgetSmartHomeAppliancesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ForgetSmartHomeAppliancesRequest, ForgetSmartHomeAppliancesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAddressBookResult> getAddressBookAsync(GetAddressBookRequest request) {
 
         return getAddressBookAsync(request, null);
@@ -287,6 +393,32 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     @Override
     public java.util.concurrent.Future<GetAddressBookResult> getAddressBookAsync(GetAddressBookRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAddressBookRequest, GetAddressBookResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConferencePreferenceResult> getConferencePreferenceAsync(GetConferencePreferenceRequest request) {
+
+        return getConferencePreferenceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConferencePreferenceResult> getConferencePreferenceAsync(GetConferencePreferenceRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetConferencePreferenceRequest, GetConferencePreferenceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConferenceProviderResult> getConferenceProviderAsync(GetConferenceProviderRequest request) {
+
+        return getConferenceProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConferenceProviderResult> getConferenceProviderAsync(GetConferenceProviderRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetConferenceProviderRequest, GetConferenceProviderResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -370,6 +502,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     }
 
     @Override
+    public java.util.concurrent.Future<ListConferenceProvidersResult> listConferenceProvidersAsync(ListConferenceProvidersRequest request) {
+
+        return listConferenceProvidersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConferenceProvidersResult> listConferenceProvidersAsync(ListConferenceProvidersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListConferenceProvidersRequest, ListConferenceProvidersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDeviceEventsResult> listDeviceEventsAsync(ListDeviceEventsRequest request) {
 
         return listDeviceEventsAsync(request, null);
@@ -396,6 +541,47 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     }
 
     @Override
+    public java.util.concurrent.Future<ListSkillsStoreCategoriesResult> listSkillsStoreCategoriesAsync(ListSkillsStoreCategoriesRequest request) {
+
+        return listSkillsStoreCategoriesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSkillsStoreCategoriesResult> listSkillsStoreCategoriesAsync(ListSkillsStoreCategoriesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSkillsStoreCategoriesRequest, ListSkillsStoreCategoriesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSkillsStoreSkillsByCategoryResult> listSkillsStoreSkillsByCategoryAsync(
+            ListSkillsStoreSkillsByCategoryRequest request) {
+
+        return listSkillsStoreSkillsByCategoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSkillsStoreSkillsByCategoryResult> listSkillsStoreSkillsByCategoryAsync(
+            ListSkillsStoreSkillsByCategoryRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSkillsStoreSkillsByCategoryRequest, ListSkillsStoreSkillsByCategoryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSmartHomeAppliancesResult> listSmartHomeAppliancesAsync(ListSmartHomeAppliancesRequest request) {
+
+        return listSmartHomeAppliancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSmartHomeAppliancesResult> listSmartHomeAppliancesAsync(ListSmartHomeAppliancesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSmartHomeAppliancesRequest, ListSmartHomeAppliancesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request) {
 
         return listTagsAsync(request, null);
@@ -409,6 +595,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     }
 
     @Override
+    public java.util.concurrent.Future<PutConferencePreferenceResult> putConferencePreferenceAsync(PutConferencePreferenceRequest request) {
+
+        return putConferencePreferenceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutConferencePreferenceResult> putConferencePreferenceAsync(PutConferencePreferenceRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutConferencePreferenceRequest, PutConferencePreferenceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutRoomSkillParameterResult> putRoomSkillParameterAsync(PutRoomSkillParameterRequest request) {
 
         return putRoomSkillParameterAsync(request, null);
@@ -417,6 +616,45 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     @Override
     public java.util.concurrent.Future<PutRoomSkillParameterResult> putRoomSkillParameterAsync(PutRoomSkillParameterRequest request,
             com.amazonaws.handlers.AsyncHandler<PutRoomSkillParameterRequest, PutRoomSkillParameterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSkillAuthorizationResult> putSkillAuthorizationAsync(PutSkillAuthorizationRequest request) {
+
+        return putSkillAuthorizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSkillAuthorizationResult> putSkillAuthorizationAsync(PutSkillAuthorizationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutSkillAuthorizationRequest, PutSkillAuthorizationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterAVSDeviceResult> registerAVSDeviceAsync(RegisterAVSDeviceRequest request) {
+
+        return registerAVSDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterAVSDeviceResult> registerAVSDeviceAsync(RegisterAVSDeviceRequest request,
+            com.amazonaws.handlers.AsyncHandler<RegisterAVSDeviceRequest, RegisterAVSDeviceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectSkillResult> rejectSkillAsync(RejectSkillRequest request) {
+
+        return rejectSkillAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectSkillResult> rejectSkillAsync(RejectSkillRequest request,
+            com.amazonaws.handlers.AsyncHandler<RejectSkillRequest, RejectSkillResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -565,6 +803,21 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     }
 
     @Override
+    public java.util.concurrent.Future<StartSmartHomeApplianceDiscoveryResult> startSmartHomeApplianceDiscoveryAsync(
+            StartSmartHomeApplianceDiscoveryRequest request) {
+
+        return startSmartHomeApplianceDiscoveryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSmartHomeApplianceDiscoveryResult> startSmartHomeApplianceDiscoveryAsync(
+            StartSmartHomeApplianceDiscoveryRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartSmartHomeApplianceDiscoveryRequest, StartSmartHomeApplianceDiscoveryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -599,6 +852,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     @Override
     public java.util.concurrent.Future<UpdateAddressBookResult> updateAddressBookAsync(UpdateAddressBookRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAddressBookRequest, UpdateAddressBookResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConferenceProviderResult> updateConferenceProviderAsync(UpdateConferenceProviderRequest request) {
+
+        return updateConferenceProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConferenceProviderResult> updateConferenceProviderAsync(UpdateConferenceProviderRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateConferenceProviderRequest, UpdateConferenceProviderResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

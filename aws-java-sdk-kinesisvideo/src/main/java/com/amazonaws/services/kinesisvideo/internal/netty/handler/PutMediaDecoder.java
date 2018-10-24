@@ -77,6 +77,7 @@ public class PutMediaDecoder extends MessageToMessageDecoder<HttpObject> {
                 // Reader and writer index shift after discard. Update them
                 readerIndex = in.readerIndex();
                 writerIndex = in.writerIndex();
+                ReferenceCountUtil.release(json);
             }
         }
     }
@@ -123,6 +124,7 @@ public class PutMediaDecoder extends MessageToMessageDecoder<HttpObject> {
                 // Send a special ack event to acknowledge all events have been received.
                 if (httpObject instanceof LastHttpContent) {
                     decodedOut.add(new FinalAckEvent());
+                    ReferenceCountUtil.release(cumulation);
                 }
             }
         }

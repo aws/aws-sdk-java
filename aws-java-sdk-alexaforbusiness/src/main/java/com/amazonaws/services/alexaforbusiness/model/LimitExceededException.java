@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+ * You are performing an action that would put you beyond your account's limits.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

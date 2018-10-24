@@ -60,6 +60,14 @@ public class SkillSummaryJsonUnmarshaller implements Unmarshaller<SkillSummary, 
                     context.nextToken();
                     skillSummary.setSupportsLinking(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("EnablementType", targetDepth)) {
+                    context.nextToken();
+                    skillSummary.setEnablementType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SkillType", targetDepth)) {
+                    context.nextToken();
+                    skillSummary.setSkillType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

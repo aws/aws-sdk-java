@@ -337,7 +337,9 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
 
     /**
      * <p>
-     * Reserved for future use. To create a project, use the AWS CodeStar console.
+     * Creates a project, including project resources. This action creates a project based on a submitted project
+     * request. A set of source code files and a toolchain template file can be included with the project request. If
+     * these are not provided, an empty project is created.
      * </p>
      * 
      * @param createProjectRequest

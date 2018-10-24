@@ -56,6 +56,10 @@ public class ProfileDataJsonUnmarshaller implements Unmarshaller<ProfileData, Js
                     context.nextToken();
                     profileData.setProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("IsDefault", targetDepth)) {
+                    context.nextToken();
+                    profileData.setIsDefault(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("Address", targetDepth)) {
                     context.nextToken();
                     profileData.setAddress(context.getUnmarshaller(String.class).unmarshall(context));

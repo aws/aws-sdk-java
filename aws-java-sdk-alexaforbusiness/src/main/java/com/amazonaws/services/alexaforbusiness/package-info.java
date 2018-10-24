@@ -17,7 +17,9 @@
  * you need for managing Alexa devices, enroll your users, and assign skills, at scale. You can build your own
  * context-aware voice skills using the Alexa Skills Kit and the Alexa for Business API operations. You can make also
  * these available as private skills for your organization. Alexa for Business makes it easy to voice-enable your
- * products and services, providing context-aware voice experiences for your customers.
+ * products and services, providing context-aware voice experiences for your customers. In addition, Alexa for Business
+ * enables Alexa Voice Services (AVS) device manufacturers to centrally deploy and manage their devices in Alexa for
+ * Business as shared devices as a part of their existing management flow.
  * </p>
  */
 package com.amazonaws.services.alexaforbusiness;

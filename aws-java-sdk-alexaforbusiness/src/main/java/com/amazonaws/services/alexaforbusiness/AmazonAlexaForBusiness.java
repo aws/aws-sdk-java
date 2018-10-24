@@ -31,7 +31,9 @@ import com.amazonaws.services.alexaforbusiness.model.*;
  * you need for managing Alexa devices, enroll your users, and assign skills, at scale. You can build your own
  * context-aware voice skills using the Alexa Skills Kit and the Alexa for Business API operations. You can make also
  * these available as private skills for your organization. Alexa for Business makes it easy to voice-enable your
- * products and services, providing context-aware voice experiences for your customers.
+ * products and services, providing context-aware voice experiences for your customers. In addition, Alexa for Business
+ * enables Alexa Voice Services (AVS) device manufacturers to centrally deploy and manage their devices in Alexa for
+ * Business as shared devices as a part of their existing management flow.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -47,13 +49,33 @@ public interface AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Associates a skill with the organization under the customer's AWS account. If a skill is private, the user
+     * implicitly accepts access to this skill during enablement.
+     * </p>
+     * 
+     * @param approveSkillRequest
+     * @return Result of the ApproveSkill operation returned by the service.
+     * @throws LimitExceededException
+     *         You are performing an action that would put you beyond your account's limits.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @sample AmazonAlexaForBusiness.ApproveSkill
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ApproveSkill" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ApproveSkillResult approveSkill(ApproveSkillRequest approveSkillRequest);
+
+    /**
+     * <p>
      * Associates a contact with a given address book.
      * </p>
      * 
      * @param associateContactWithAddressBookRequest
      * @return Result of the AssociateContactWithAddressBook operation returned by the service.
      * @throws LimitExceededException
-     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     *         You are performing an action that would put you beyond your account's limits.
      * @sample AmazonAlexaForBusiness.AssociateContactWithAddressBook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook"
      *      target="_top">AWS API Documentation</a>
@@ -70,7 +92,9 @@ public interface AmazonAlexaForBusiness {
      * @param associateDeviceWithRoomRequest
      * @return Result of the AssociateDeviceWithRoom operation returned by the service.
      * @throws LimitExceededException
-     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     *         You are performing an action that would put you beyond your account's limits.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @throws DeviceNotRegisteredException
      *         The request failed because this device is no longer registered and therefore no longer managed by this
      *         account.
@@ -88,11 +112,30 @@ public interface AmazonAlexaForBusiness {
      * 
      * @param associateSkillGroupWithRoomRequest
      * @return Result of the AssociateSkillGroupWithRoom operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.AssociateSkillGroupWithRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom"
      *      target="_top">AWS API Documentation</a>
      */
     AssociateSkillGroupWithRoomResult associateSkillGroupWithRoom(AssociateSkillGroupWithRoomRequest associateSkillGroupWithRoomRequest);
+
+    /**
+     * <p>
+     * Associates a skill with a skill group.
+     * </p>
+     * 
+     * @param associateSkillWithSkillGroupRequest
+     * @return Result of the AssociateSkillWithSkillGroup operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.AssociateSkillWithSkillGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateSkillWithSkillGroupResult associateSkillWithSkillGroup(AssociateSkillWithSkillGroupRequest associateSkillWithSkillGroupRequest);
 
     /**
      * <p>
@@ -102,14 +145,29 @@ public interface AmazonAlexaForBusiness {
      * @param createAddressBookRequest
      * @return Result of the CreateAddressBook operation returned by the service.
      * @throws AlreadyExistsException
-     *         The resource being created already exists. HTTP Status Code: 400
+     *         The resource being created already exists.
      * @throws LimitExceededException
-     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     *         You are performing an action that would put you beyond your account's limits.
      * @sample AmazonAlexaForBusiness.CreateAddressBook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
     CreateAddressBookResult createAddressBook(CreateAddressBookRequest createAddressBookRequest);
+
+    /**
+     * <p>
+     * Adds a new conference provider under the user's AWS account.
+     * </p>
+     * 
+     * @param createConferenceProviderRequest
+     * @return Result of the CreateConferenceProvider operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The resource being created already exists.
+     * @sample AmazonAlexaForBusiness.CreateConferenceProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateConferenceProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateConferenceProviderResult createConferenceProvider(CreateConferenceProviderRequest createConferenceProviderRequest);
 
     /**
      * <p>
@@ -119,9 +177,9 @@ public interface AmazonAlexaForBusiness {
      * @param createContactRequest
      * @return Result of the CreateContact operation returned by the service.
      * @throws AlreadyExistsException
-     *         The resource being created already exists. HTTP Status Code: 400
+     *         The resource being created already exists.
      * @throws LimitExceededException
-     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     *         You are performing an action that would put you beyond your account's limits.
      * @sample AmazonAlexaForBusiness.CreateContact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact" target="_top">AWS
      *      API Documentation</a>
@@ -136,9 +194,11 @@ public interface AmazonAlexaForBusiness {
      * @param createProfileRequest
      * @return Result of the CreateProfile operation returned by the service.
      * @throws LimitExceededException
-     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     *         You are performing an action that would put you beyond your account's limits.
      * @throws AlreadyExistsException
-     *         The resource being created already exists. HTTP Status Code: 400
+     *         The resource being created already exists.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.CreateProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateProfile" target="_top">AWS
      *      API Documentation</a>
@@ -153,9 +213,9 @@ public interface AmazonAlexaForBusiness {
      * @param createRoomRequest
      * @return Result of the CreateRoom operation returned by the service.
      * @throws AlreadyExistsException
-     *         The resource being created already exists. HTTP Status Code: 400
+     *         The resource being created already exists.
      * @throws LimitExceededException
-     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     *         You are performing an action that would put you beyond your account's limits.
      * @sample AmazonAlexaForBusiness.CreateRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateRoom" target="_top">AWS
      *      API Documentation</a>
@@ -170,9 +230,11 @@ public interface AmazonAlexaForBusiness {
      * @param createSkillGroupRequest
      * @return Result of the CreateSkillGroup operation returned by the service.
      * @throws AlreadyExistsException
-     *         The resource being created already exists. HTTP Status Code: 400
+     *         The resource being created already exists.
      * @throws LimitExceededException
-     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     *         You are performing an action that would put you beyond your account's limits.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.CreateSkillGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateSkillGroup"
      *      target="_top">AWS API Documentation</a>
@@ -187,9 +249,11 @@ public interface AmazonAlexaForBusiness {
      * @param createUserRequest
      * @return Result of the CreateUser operation returned by the service.
      * @throws ResourceInUseException
-     *         The resource in the request is already in use. HTTP Status Code: 400
+     *         The resource in the request is already in use.
      * @throws LimitExceededException
-     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     *         You are performing an action that would put you beyond your account's limits.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.CreateUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateUser" target="_top">AWS
      *      API Documentation</a>
@@ -204,12 +268,29 @@ public interface AmazonAlexaForBusiness {
      * @param deleteAddressBookRequest
      * @return Result of the DeleteAddressBook operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.DeleteAddressBook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
     DeleteAddressBookResult deleteAddressBook(DeleteAddressBookRequest deleteAddressBookRequest);
+
+    /**
+     * <p>
+     * Deletes a conference provider.
+     * </p>
+     * 
+     * @param deleteConferenceProviderRequest
+     * @return Result of the DeleteConferenceProvider operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.DeleteConferenceProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteConferenceProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteConferenceProviderResult deleteConferenceProvider(DeleteConferenceProviderRequest deleteConferenceProviderRequest);
 
     /**
      * <p>
@@ -219,12 +300,33 @@ public interface AmazonAlexaForBusiness {
      * @param deleteContactRequest
      * @return Result of the DeleteContact operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.DeleteContact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact" target="_top">AWS
      *      API Documentation</a>
      */
     DeleteContactResult deleteContact(DeleteContactRequest deleteContactRequest);
+
+    /**
+     * <p>
+     * Removes a device from Alexa For Business.
+     * </p>
+     * 
+     * @param deleteDeviceRequest
+     * @return Result of the DeleteDevice operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @throws InvalidCertificateAuthorityException
+     *         The Certificate Authority can't issue or revoke a certificate.
+     * @sample AmazonAlexaForBusiness.DeleteDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteDeviceResult deleteDevice(DeleteDeviceRequest deleteDeviceRequest);
 
     /**
      * <p>
@@ -234,7 +336,9 @@ public interface AmazonAlexaForBusiness {
      * @param deleteProfileRequest
      * @return Result of the DeleteProfile operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.DeleteProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteProfile" target="_top">AWS
      *      API Documentation</a>
@@ -249,7 +353,9 @@ public interface AmazonAlexaForBusiness {
      * @param deleteRoomRequest
      * @return Result of the DeleteRoom operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.DeleteRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoom" target="_top">AWS
      *      API Documentation</a>
@@ -263,11 +369,30 @@ public interface AmazonAlexaForBusiness {
      * 
      * @param deleteRoomSkillParameterRequest
      * @return Result of the DeleteRoomSkillParameter operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.DeleteRoomSkillParameter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoomSkillParameter"
      *      target="_top">AWS API Documentation</a>
      */
     DeleteRoomSkillParameterResult deleteRoomSkillParameter(DeleteRoomSkillParameterRequest deleteRoomSkillParameterRequest);
+
+    /**
+     * <p>
+     * Unlinks a third-party account from a skill.
+     * </p>
+     * 
+     * @param deleteSkillAuthorizationRequest
+     * @return Result of the DeleteSkillAuthorization operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @sample AmazonAlexaForBusiness.DeleteSkillAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillAuthorization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteSkillAuthorizationResult deleteSkillAuthorization(DeleteSkillAuthorizationRequest deleteSkillAuthorizationRequest);
 
     /**
      * <p>
@@ -277,7 +402,9 @@ public interface AmazonAlexaForBusiness {
      * @param deleteSkillGroupRequest
      * @return Result of the DeleteSkillGroup operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.DeleteSkillGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillGroup"
      *      target="_top">AWS API Documentation</a>
@@ -292,7 +419,9 @@ public interface AmazonAlexaForBusiness {
      * @param deleteUserRequest
      * @return Result of the DeleteUser operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.DeleteUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteUser" target="_top">AWS
      *      API Documentation</a>
@@ -322,6 +451,8 @@ public interface AmazonAlexaForBusiness {
      * 
      * @param disassociateDeviceFromRoomRequest
      * @return Result of the DisassociateDeviceFromRoom operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @throws DeviceNotRegisteredException
      *         The request failed because this device is no longer registered and therefore no longer managed by this
      *         account.
@@ -333,17 +464,51 @@ public interface AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Disassociates a skill from a skill group.
+     * </p>
+     * 
+     * @param disassociateSkillFromSkillGroupRequest
+     * @return Result of the DisassociateSkillFromSkillGroup operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.DisassociateSkillFromSkillGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateSkillFromSkillGroupResult disassociateSkillFromSkillGroup(DisassociateSkillFromSkillGroupRequest disassociateSkillFromSkillGroupRequest);
+
+    /**
+     * <p>
      * Disassociates a skill group from a specified room. This disables all skills in the skill group on all devices in
      * the room.
      * </p>
      * 
      * @param disassociateSkillGroupFromRoomRequest
      * @return Result of the DisassociateSkillGroupFromRoom operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.DisassociateSkillGroupFromRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillGroupFromRoom"
      *      target="_top">AWS API Documentation</a>
      */
     DisassociateSkillGroupFromRoomResult disassociateSkillGroupFromRoom(DisassociateSkillGroupFromRoomRequest disassociateSkillGroupFromRoomRequest);
+
+    /**
+     * <p>
+     * Forgets smart home appliances associated to a room.
+     * </p>
+     * 
+     * @param forgetSmartHomeAppliancesRequest
+     * @return Result of the ForgetSmartHomeAppliances operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.ForgetSmartHomeAppliances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ForgetSmartHomeAppliances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ForgetSmartHomeAppliancesResult forgetSmartHomeAppliances(ForgetSmartHomeAppliancesRequest forgetSmartHomeAppliancesRequest);
 
     /**
      * <p>
@@ -353,12 +518,42 @@ public interface AmazonAlexaForBusiness {
      * @param getAddressBookRequest
      * @return Result of the GetAddressBook operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.GetAddressBook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
     GetAddressBookResult getAddressBook(GetAddressBookRequest getAddressBookRequest);
+
+    /**
+     * <p>
+     * Retrieves the existing conference preferences.
+     * </p>
+     * 
+     * @param getConferencePreferenceRequest
+     * @return Result of the GetConferencePreference operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.GetConferencePreference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferencePreference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetConferencePreferenceResult getConferencePreference(GetConferencePreferenceRequest getConferencePreferenceRequest);
+
+    /**
+     * <p>
+     * Gets details about a specific conference provider.
+     * </p>
+     * 
+     * @param getConferenceProviderRequest
+     * @return Result of the GetConferenceProvider operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.GetConferenceProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferenceProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetConferenceProviderResult getConferenceProvider(GetConferenceProviderRequest getConferenceProviderRequest);
 
     /**
      * <p>
@@ -368,7 +563,7 @@ public interface AmazonAlexaForBusiness {
      * @param getContactRequest
      * @return Result of the GetContact operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.GetContact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact" target="_top">AWS
      *      API Documentation</a>
@@ -383,7 +578,7 @@ public interface AmazonAlexaForBusiness {
      * @param getDeviceRequest
      * @return Result of the GetDevice operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.GetDevice
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetDevice" target="_top">AWS API
      *      Documentation</a>
@@ -398,7 +593,7 @@ public interface AmazonAlexaForBusiness {
      * @param getProfileRequest
      * @return Result of the GetProfile operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.GetProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetProfile" target="_top">AWS
      *      API Documentation</a>
@@ -413,7 +608,7 @@ public interface AmazonAlexaForBusiness {
      * @param getRoomRequest
      * @return Result of the GetRoom operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.GetRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoom" target="_top">AWS API
      *      Documentation</a>
@@ -428,7 +623,7 @@ public interface AmazonAlexaForBusiness {
      * @param getRoomSkillParameterRequest
      * @return Result of the GetRoomSkillParameter operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.GetRoomSkillParameter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoomSkillParameter"
      *      target="_top">AWS API Documentation</a>
@@ -443,12 +638,25 @@ public interface AmazonAlexaForBusiness {
      * @param getSkillGroupRequest
      * @return Result of the GetSkillGroup operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.GetSkillGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetSkillGroup" target="_top">AWS
      *      API Documentation</a>
      */
     GetSkillGroupResult getSkillGroup(GetSkillGroupRequest getSkillGroupRequest);
+
+    /**
+     * <p>
+     * Lists conference providers under a specific AWS account.
+     * </p>
+     * 
+     * @param listConferenceProvidersRequest
+     * @return Result of the ListConferenceProviders operation returned by the service.
+     * @sample AmazonAlexaForBusiness.ListConferenceProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListConferenceProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListConferenceProvidersResult listConferenceProviders(ListConferenceProvidersRequest listConferenceProvidersRequest);
 
     /**
      * <p>
@@ -458,7 +666,7 @@ public interface AmazonAlexaForBusiness {
      * @param listDeviceEventsRequest
      * @return Result of the ListDeviceEvents operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.ListDeviceEvents
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents"
      *      target="_top">AWS API Documentation</a>
@@ -480,18 +688,74 @@ public interface AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Lists all categories in the Alexa skill store.
+     * </p>
+     * 
+     * @param listSkillsStoreCategoriesRequest
+     * @return Result of the ListSkillsStoreCategories operation returned by the service.
+     * @sample AmazonAlexaForBusiness.ListSkillsStoreCategories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreCategories"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSkillsStoreCategoriesResult listSkillsStoreCategories(ListSkillsStoreCategoriesRequest listSkillsStoreCategoriesRequest);
+
+    /**
+     * <p>
+     * Lists all skills in the Alexa skill store by category.
+     * </p>
+     * 
+     * @param listSkillsStoreSkillsByCategoryRequest
+     * @return Result of the ListSkillsStoreSkillsByCategory operation returned by the service.
+     * @sample AmazonAlexaForBusiness.ListSkillsStoreSkillsByCategory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreSkillsByCategory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSkillsStoreSkillsByCategoryResult listSkillsStoreSkillsByCategory(ListSkillsStoreSkillsByCategoryRequest listSkillsStoreSkillsByCategoryRequest);
+
+    /**
+     * <p>
+     * Lists all of the smart home appliances associated with a room.
+     * </p>
+     * 
+     * @param listSmartHomeAppliancesRequest
+     * @return Result of the ListSmartHomeAppliances operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.ListSmartHomeAppliances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSmartHomeAppliances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSmartHomeAppliancesResult listSmartHomeAppliances(ListSmartHomeAppliancesRequest listSmartHomeAppliancesRequest);
+
+    /**
+     * <p>
      * Lists all tags for the specified resource.
      * </p>
      * 
      * @param listTagsRequest
      * @return Result of the ListTags operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.ListTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListTags" target="_top">AWS API
      *      Documentation</a>
      */
     ListTagsResult listTags(ListTagsRequest listTagsRequest);
+
+    /**
+     * <p>
+     * Sets the conference preferences on a specific conference provider at the account level.
+     * </p>
+     * 
+     * @param putConferencePreferenceRequest
+     * @return Result of the PutConferencePreference operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.PutConferencePreference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutConferencePreference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutConferencePreferenceResult putConferencePreference(PutConferencePreferenceRequest putConferencePreferenceRequest);
 
     /**
      * <p>
@@ -501,11 +765,70 @@ public interface AmazonAlexaForBusiness {
      * 
      * @param putRoomSkillParameterRequest
      * @return Result of the PutRoomSkillParameter operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.PutRoomSkillParameter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutRoomSkillParameter"
      *      target="_top">AWS API Documentation</a>
      */
     PutRoomSkillParameterResult putRoomSkillParameter(PutRoomSkillParameterRequest putRoomSkillParameterRequest);
+
+    /**
+     * <p>
+     * Links a user's account to a third-party skill provider. If this API is called by an assumed IAM role, the skill
+     * being linked must be a private skill, and the skill must be owned by the AWS account that assumed the IAM role.
+     * </p>
+     * 
+     * @param putSkillAuthorizationRequest
+     * @return Result of the PutSkillAuthorization operation returned by the service.
+     * @throws UnauthorizedException
+     *         The caller has no permissions to operate on the resource involved in the API call.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @sample AmazonAlexaForBusiness.PutSkillAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutSkillAuthorization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutSkillAuthorizationResult putSkillAuthorization(PutSkillAuthorizationRequest putSkillAuthorizationRequest);
+
+    /**
+     * <p>
+     * Registers an Alexa-enabled device built by an Original Equipment Manufacturer (OEM) using Alexa Voice Service
+     * (AVS).
+     * </p>
+     * 
+     * @param registerAVSDeviceRequest
+     * @return Result of the RegisterAVSDevice operation returned by the service.
+     * @throws LimitExceededException
+     *         You are performing an action that would put you beyond your account's limits.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @throws InvalidDeviceException
+     *         The device is in an invalid state.
+     * @sample AmazonAlexaForBusiness.RegisterAVSDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RegisterAVSDevice"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RegisterAVSDeviceResult registerAVSDevice(RegisterAVSDeviceRequest registerAVSDeviceRequest);
+
+    /**
+     * <p>
+     * Disassociates a skill from the organization under a user's AWS account. If the skill is a private skill, it moves
+     * to an AcceptStatus of PENDING. Any private or public skill that is rejected can be added later by calling the
+     * ApproveSkill API.
+     * </p>
+     * 
+     * @param rejectSkillRequest
+     * @return Result of the RejectSkill operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.RejectSkill
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RejectSkill" target="_top">AWS
+     *      API Documentation</a>
+     */
+    RejectSkillResult rejectSkill(RejectSkillRequest rejectSkillRequest);
 
     /**
      * <p>
@@ -516,7 +839,7 @@ public interface AmazonAlexaForBusiness {
      * @param resolveRoomRequest
      * @return Result of the ResolveRoom operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.ResolveRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ResolveRoom" target="_top">AWS
      *      API Documentation</a>
@@ -531,7 +854,9 @@ public interface AmazonAlexaForBusiness {
      * @param revokeInvitationRequest
      * @return Result of the RevokeInvitation operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.RevokeInvitation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RevokeInvitation"
      *      target="_top">AWS API Documentation</a>
@@ -638,9 +963,11 @@ public interface AmazonAlexaForBusiness {
      * @param sendInvitationRequest
      * @return Result of the SendInvitation operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @throws InvalidUserStatusException
-     *         The attempt to update a user is invalid due to the user's current status. HTTP Status Code: 400
+     *         The attempt to update a user is invalid due to the user's current status.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.SendInvitation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendInvitation"
      *      target="_top">AWS API Documentation</a>
@@ -666,13 +993,29 @@ public interface AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Initiates the discovery of any smart home appliances associated with the room.
+     * </p>
+     * 
+     * @param startSmartHomeApplianceDiscoveryRequest
+     * @return Result of the StartSmartHomeApplianceDiscovery operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.StartSmartHomeApplianceDiscovery
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartSmartHomeApplianceDiscovery"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartSmartHomeApplianceDiscoveryResult startSmartHomeApplianceDiscovery(StartSmartHomeApplianceDiscoveryRequest startSmartHomeApplianceDiscoveryRequest);
+
+    /**
+     * <p>
      * Adds metadata tags to a specified resource.
      * </p>
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/TagResource" target="_top">AWS
      *      API Documentation</a>
@@ -687,7 +1030,7 @@ public interface AmazonAlexaForBusiness {
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @sample AmazonAlexaForBusiness.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UntagResource" target="_top">AWS
      *      API Documentation</a>
@@ -702,14 +1045,31 @@ public interface AmazonAlexaForBusiness {
      * @param updateAddressBookRequest
      * @return Result of the UpdateAddressBook operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @throws NameInUseException
-     *         The name sent in the request is already in use. HTTP Status Code: 400
+     *         The name sent in the request is already in use.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.UpdateAddressBook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
     UpdateAddressBookResult updateAddressBook(UpdateAddressBookRequest updateAddressBookRequest);
+
+    /**
+     * <p>
+     * Updates an existing conference provider's settings.
+     * </p>
+     * 
+     * @param updateConferenceProviderRequest
+     * @return Result of the UpdateConferenceProvider operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.UpdateConferenceProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateConferenceProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateConferenceProviderResult updateConferenceProvider(UpdateConferenceProviderRequest updateConferenceProviderRequest);
 
     /**
      * <p>
@@ -719,7 +1079,9 @@ public interface AmazonAlexaForBusiness {
      * @param updateContactRequest
      * @return Result of the UpdateContact operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.UpdateContact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact" target="_top">AWS
      *      API Documentation</a>
@@ -734,7 +1096,9 @@ public interface AmazonAlexaForBusiness {
      * @param updateDeviceRequest
      * @return Result of the UpdateDevice operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @throws DeviceNotRegisteredException
      *         The request failed because this device is no longer registered and therefore no longer managed by this
      *         account.
@@ -752,9 +1116,11 @@ public interface AmazonAlexaForBusiness {
      * @param updateProfileRequest
      * @return Result of the UpdateProfile operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @throws NameInUseException
-     *         The name sent in the request is already in use. HTTP Status Code: 400
+     *         The name sent in the request is already in use.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.UpdateProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateProfile" target="_top">AWS
      *      API Documentation</a>
@@ -769,9 +1135,9 @@ public interface AmazonAlexaForBusiness {
      * @param updateRoomRequest
      * @return Result of the UpdateRoom operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @throws NameInUseException
-     *         The name sent in the request is already in use. HTTP Status Code: 400
+     *         The name sent in the request is already in use.
      * @sample AmazonAlexaForBusiness.UpdateRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateRoom" target="_top">AWS
      *      API Documentation</a>
@@ -786,9 +1152,11 @@ public interface AmazonAlexaForBusiness {
      * @param updateSkillGroupRequest
      * @return Result of the UpdateSkillGroup operation returned by the service.
      * @throws NotFoundException
-     *         The resource is not found. HTTP Status Code: 400
+     *         The resource is not found.
      * @throws NameInUseException
-     *         The name sent in the request is already in use. HTTP Status Code: 400
+     *         The name sent in the request is already in use.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
      * @sample AmazonAlexaForBusiness.UpdateSkillGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateSkillGroup"
      *      target="_top">AWS API Documentation</a>

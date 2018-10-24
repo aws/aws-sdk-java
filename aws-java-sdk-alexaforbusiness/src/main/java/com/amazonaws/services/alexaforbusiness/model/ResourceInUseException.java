@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The resource in the request is already in use. HTTP Status Code: 400
+ * The resource in the request is already in use.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

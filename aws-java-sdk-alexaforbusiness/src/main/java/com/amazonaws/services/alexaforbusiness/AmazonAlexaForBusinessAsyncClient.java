@@ -30,7 +30,9 @@ import java.util.concurrent.ExecutorService;
  * you need for managing Alexa devices, enroll your users, and assign skills, at scale. You can build your own
  * context-aware voice skills using the Alexa Skills Kit and the Alexa for Business API operations. You can make also
  * these available as private skills for your organization. Alexa for Business makes it easy to voice-enable your
- * products and services, providing context-aware voice experiences for your customers.
+ * products and services, providing context-aware voice experiences for your customers. In addition, Alexa for Business
+ * enables Alexa Voice Services (AVS) device manufacturers to centrally deploy and manage their devices in Alexa for
+ * Business as shared devices as a part of their existing management flow.
  * </p>
  */
 @ThreadSafe
@@ -64,6 +66,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<ApproveSkillResult> approveSkillAsync(ApproveSkillRequest request) {
+
+        return approveSkillAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ApproveSkillResult> approveSkillAsync(final ApproveSkillRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ApproveSkillRequest, ApproveSkillResult> asyncHandler) {
+        final ApproveSkillRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ApproveSkillResult>() {
+            @Override
+            public ApproveSkillResult call() throws Exception {
+                ApproveSkillResult result = null;
+
+                try {
+                    result = executeApproveSkill(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -168,6 +203,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateSkillWithSkillGroupResult> associateSkillWithSkillGroupAsync(AssociateSkillWithSkillGroupRequest request) {
+
+        return associateSkillWithSkillGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateSkillWithSkillGroupResult> associateSkillWithSkillGroupAsync(final AssociateSkillWithSkillGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateSkillWithSkillGroupRequest, AssociateSkillWithSkillGroupResult> asyncHandler) {
+        final AssociateSkillWithSkillGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateSkillWithSkillGroupResult>() {
+            @Override
+            public AssociateSkillWithSkillGroupResult call() throws Exception {
+                AssociateSkillWithSkillGroupResult result = null;
+
+                try {
+                    result = executeAssociateSkillWithSkillGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAddressBookResult> createAddressBookAsync(CreateAddressBookRequest request) {
 
         return createAddressBookAsync(request, null);
@@ -185,6 +253,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeCreateAddressBook(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConferenceProviderResult> createConferenceProviderAsync(CreateConferenceProviderRequest request) {
+
+        return createConferenceProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConferenceProviderResult> createConferenceProviderAsync(final CreateConferenceProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateConferenceProviderRequest, CreateConferenceProviderResult> asyncHandler) {
+        final CreateConferenceProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateConferenceProviderResult>() {
+            @Override
+            public CreateConferenceProviderResult call() throws Exception {
+                CreateConferenceProviderResult result = null;
+
+                try {
+                    result = executeCreateConferenceProvider(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -399,6 +500,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteConferenceProviderResult> deleteConferenceProviderAsync(DeleteConferenceProviderRequest request) {
+
+        return deleteConferenceProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConferenceProviderResult> deleteConferenceProviderAsync(final DeleteConferenceProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteConferenceProviderRequest, DeleteConferenceProviderResult> asyncHandler) {
+        final DeleteConferenceProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteConferenceProviderResult>() {
+            @Override
+            public DeleteConferenceProviderResult call() throws Exception {
+                DeleteConferenceProviderResult result = null;
+
+                try {
+                    result = executeDeleteConferenceProvider(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteContactResult> deleteContactAsync(DeleteContactRequest request) {
 
         return deleteContactAsync(request, null);
@@ -416,6 +550,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeDeleteContact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeviceResult> deleteDeviceAsync(DeleteDeviceRequest request) {
+
+        return deleteDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeviceResult> deleteDeviceAsync(final DeleteDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDeviceRequest, DeleteDeviceResult> asyncHandler) {
+        final DeleteDeviceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDeviceResult>() {
+            @Override
+            public DeleteDeviceResult call() throws Exception {
+                DeleteDeviceResult result = null;
+
+                try {
+                    result = executeDeleteDevice(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -515,6 +682,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeDeleteRoomSkillParameter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSkillAuthorizationResult> deleteSkillAuthorizationAsync(DeleteSkillAuthorizationRequest request) {
+
+        return deleteSkillAuthorizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSkillAuthorizationResult> deleteSkillAuthorizationAsync(final DeleteSkillAuthorizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSkillAuthorizationRequest, DeleteSkillAuthorizationResult> asyncHandler) {
+        final DeleteSkillAuthorizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSkillAuthorizationResult>() {
+            @Override
+            public DeleteSkillAuthorizationResult call() throws Exception {
+                DeleteSkillAuthorizationResult result = null;
+
+                try {
+                    result = executeDeleteSkillAuthorization(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -665,6 +865,41 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateSkillFromSkillGroupResult> disassociateSkillFromSkillGroupAsync(
+            DisassociateSkillFromSkillGroupRequest request) {
+
+        return disassociateSkillFromSkillGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateSkillFromSkillGroupResult> disassociateSkillFromSkillGroupAsync(
+            final DisassociateSkillFromSkillGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateSkillFromSkillGroupRequest, DisassociateSkillFromSkillGroupResult> asyncHandler) {
+        final DisassociateSkillFromSkillGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateSkillFromSkillGroupResult>() {
+            @Override
+            public DisassociateSkillFromSkillGroupResult call() throws Exception {
+                DisassociateSkillFromSkillGroupResult result = null;
+
+                try {
+                    result = executeDisassociateSkillFromSkillGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateSkillGroupFromRoomResult> disassociateSkillGroupFromRoomAsync(DisassociateSkillGroupFromRoomRequest request) {
 
         return disassociateSkillGroupFromRoomAsync(request, null);
@@ -699,6 +934,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    public java.util.concurrent.Future<ForgetSmartHomeAppliancesResult> forgetSmartHomeAppliancesAsync(ForgetSmartHomeAppliancesRequest request) {
+
+        return forgetSmartHomeAppliancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ForgetSmartHomeAppliancesResult> forgetSmartHomeAppliancesAsync(final ForgetSmartHomeAppliancesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ForgetSmartHomeAppliancesRequest, ForgetSmartHomeAppliancesResult> asyncHandler) {
+        final ForgetSmartHomeAppliancesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ForgetSmartHomeAppliancesResult>() {
+            @Override
+            public ForgetSmartHomeAppliancesResult call() throws Exception {
+                ForgetSmartHomeAppliancesResult result = null;
+
+                try {
+                    result = executeForgetSmartHomeAppliances(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAddressBookResult> getAddressBookAsync(GetAddressBookRequest request) {
 
         return getAddressBookAsync(request, null);
@@ -716,6 +984,72 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeGetAddressBook(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConferencePreferenceResult> getConferencePreferenceAsync(GetConferencePreferenceRequest request) {
+
+        return getConferencePreferenceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConferencePreferenceResult> getConferencePreferenceAsync(final GetConferencePreferenceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetConferencePreferenceRequest, GetConferencePreferenceResult> asyncHandler) {
+        final GetConferencePreferenceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetConferencePreferenceResult>() {
+            @Override
+            public GetConferencePreferenceResult call() throws Exception {
+                GetConferencePreferenceResult result = null;
+
+                try {
+                    result = executeGetConferencePreference(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConferenceProviderResult> getConferenceProviderAsync(GetConferenceProviderRequest request) {
+
+        return getConferenceProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConferenceProviderResult> getConferenceProviderAsync(final GetConferenceProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetConferenceProviderRequest, GetConferenceProviderResult> asyncHandler) {
+        final GetConferenceProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetConferenceProviderResult>() {
+            @Override
+            public GetConferenceProviderResult call() throws Exception {
+                GetConferenceProviderResult result = null;
+
+                try {
+                    result = executeGetConferenceProvider(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -930,6 +1264,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    public java.util.concurrent.Future<ListConferenceProvidersResult> listConferenceProvidersAsync(ListConferenceProvidersRequest request) {
+
+        return listConferenceProvidersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConferenceProvidersResult> listConferenceProvidersAsync(final ListConferenceProvidersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListConferenceProvidersRequest, ListConferenceProvidersResult> asyncHandler) {
+        final ListConferenceProvidersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListConferenceProvidersResult>() {
+            @Override
+            public ListConferenceProvidersResult call() throws Exception {
+                ListConferenceProvidersResult result = null;
+
+                try {
+                    result = executeListConferenceProviders(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDeviceEventsResult> listDeviceEventsAsync(ListDeviceEventsRequest request) {
 
         return listDeviceEventsAsync(request, null);
@@ -996,6 +1363,107 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    public java.util.concurrent.Future<ListSkillsStoreCategoriesResult> listSkillsStoreCategoriesAsync(ListSkillsStoreCategoriesRequest request) {
+
+        return listSkillsStoreCategoriesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSkillsStoreCategoriesResult> listSkillsStoreCategoriesAsync(final ListSkillsStoreCategoriesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSkillsStoreCategoriesRequest, ListSkillsStoreCategoriesResult> asyncHandler) {
+        final ListSkillsStoreCategoriesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSkillsStoreCategoriesResult>() {
+            @Override
+            public ListSkillsStoreCategoriesResult call() throws Exception {
+                ListSkillsStoreCategoriesResult result = null;
+
+                try {
+                    result = executeListSkillsStoreCategories(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSkillsStoreSkillsByCategoryResult> listSkillsStoreSkillsByCategoryAsync(
+            ListSkillsStoreSkillsByCategoryRequest request) {
+
+        return listSkillsStoreSkillsByCategoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSkillsStoreSkillsByCategoryResult> listSkillsStoreSkillsByCategoryAsync(
+            final ListSkillsStoreSkillsByCategoryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSkillsStoreSkillsByCategoryRequest, ListSkillsStoreSkillsByCategoryResult> asyncHandler) {
+        final ListSkillsStoreSkillsByCategoryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSkillsStoreSkillsByCategoryResult>() {
+            @Override
+            public ListSkillsStoreSkillsByCategoryResult call() throws Exception {
+                ListSkillsStoreSkillsByCategoryResult result = null;
+
+                try {
+                    result = executeListSkillsStoreSkillsByCategory(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSmartHomeAppliancesResult> listSmartHomeAppliancesAsync(ListSmartHomeAppliancesRequest request) {
+
+        return listSmartHomeAppliancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSmartHomeAppliancesResult> listSmartHomeAppliancesAsync(final ListSmartHomeAppliancesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSmartHomeAppliancesRequest, ListSmartHomeAppliancesResult> asyncHandler) {
+        final ListSmartHomeAppliancesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSmartHomeAppliancesResult>() {
+            @Override
+            public ListSmartHomeAppliancesResult call() throws Exception {
+                ListSmartHomeAppliancesResult result = null;
+
+                try {
+                    result = executeListSmartHomeAppliances(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request) {
 
         return listTagsAsync(request, null);
@@ -1029,6 +1497,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    public java.util.concurrent.Future<PutConferencePreferenceResult> putConferencePreferenceAsync(PutConferencePreferenceRequest request) {
+
+        return putConferencePreferenceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutConferencePreferenceResult> putConferencePreferenceAsync(final PutConferencePreferenceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutConferencePreferenceRequest, PutConferencePreferenceResult> asyncHandler) {
+        final PutConferencePreferenceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutConferencePreferenceResult>() {
+            @Override
+            public PutConferencePreferenceResult call() throws Exception {
+                PutConferencePreferenceResult result = null;
+
+                try {
+                    result = executePutConferencePreference(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutRoomSkillParameterResult> putRoomSkillParameterAsync(PutRoomSkillParameterRequest request) {
 
         return putRoomSkillParameterAsync(request, null);
@@ -1046,6 +1547,105 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executePutRoomSkillParameter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSkillAuthorizationResult> putSkillAuthorizationAsync(PutSkillAuthorizationRequest request) {
+
+        return putSkillAuthorizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSkillAuthorizationResult> putSkillAuthorizationAsync(final PutSkillAuthorizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutSkillAuthorizationRequest, PutSkillAuthorizationResult> asyncHandler) {
+        final PutSkillAuthorizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutSkillAuthorizationResult>() {
+            @Override
+            public PutSkillAuthorizationResult call() throws Exception {
+                PutSkillAuthorizationResult result = null;
+
+                try {
+                    result = executePutSkillAuthorization(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterAVSDeviceResult> registerAVSDeviceAsync(RegisterAVSDeviceRequest request) {
+
+        return registerAVSDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterAVSDeviceResult> registerAVSDeviceAsync(final RegisterAVSDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RegisterAVSDeviceRequest, RegisterAVSDeviceResult> asyncHandler) {
+        final RegisterAVSDeviceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RegisterAVSDeviceResult>() {
+            @Override
+            public RegisterAVSDeviceResult call() throws Exception {
+                RegisterAVSDeviceResult result = null;
+
+                try {
+                    result = executeRegisterAVSDevice(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectSkillResult> rejectSkillAsync(RejectSkillRequest request) {
+
+        return rejectSkillAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectSkillResult> rejectSkillAsync(final RejectSkillRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RejectSkillRequest, RejectSkillResult> asyncHandler) {
+        final RejectSkillRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RejectSkillResult>() {
+            @Override
+            public RejectSkillResult call() throws Exception {
+                RejectSkillResult result = null;
+
+                try {
+                    result = executeRejectSkill(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1425,6 +2025,41 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    public java.util.concurrent.Future<StartSmartHomeApplianceDiscoveryResult> startSmartHomeApplianceDiscoveryAsync(
+            StartSmartHomeApplianceDiscoveryRequest request) {
+
+        return startSmartHomeApplianceDiscoveryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSmartHomeApplianceDiscoveryResult> startSmartHomeApplianceDiscoveryAsync(
+            final StartSmartHomeApplianceDiscoveryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartSmartHomeApplianceDiscoveryRequest, StartSmartHomeApplianceDiscoveryResult> asyncHandler) {
+        final StartSmartHomeApplianceDiscoveryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartSmartHomeApplianceDiscoveryResult>() {
+            @Override
+            public StartSmartHomeApplianceDiscoveryResult call() throws Exception {
+                StartSmartHomeApplianceDiscoveryResult result = null;
+
+                try {
+                    result = executeStartSmartHomeApplianceDiscovery(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -1508,6 +2143,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeUpdateAddressBook(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConferenceProviderResult> updateConferenceProviderAsync(UpdateConferenceProviderRequest request) {
+
+        return updateConferenceProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConferenceProviderResult> updateConferenceProviderAsync(final UpdateConferenceProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateConferenceProviderRequest, UpdateConferenceProviderResult> asyncHandler) {
+        final UpdateConferenceProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateConferenceProviderResult>() {
+            @Override
+            public UpdateConferenceProviderResult call() throws Exception {
+                UpdateConferenceProviderResult result = null;
+
+                try {
+                    result = executeUpdateConferenceProvider(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

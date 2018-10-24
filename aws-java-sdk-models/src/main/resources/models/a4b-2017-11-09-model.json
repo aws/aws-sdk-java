@@ -12,6 +12,21 @@
     "uid":"alexaforbusiness-2017-11-09"
   },
   "operations":{
+    "ApproveSkill":{
+      "name":"ApproveSkill",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ApproveSkillRequest"},
+      "output":{"shape":"ApproveSkillResponse"},
+      "errors":[
+        {"shape":"LimitExceededException"},
+        {"shape":"NotFoundException"},
+        {"shape":"ConcurrentModificationException"}
+      ],
+      "documentation":"<p>Associates a skill with the organization under the customer's AWS account. If a skill is private, the user implicitly accepts access to this skill during enablement.</p>"
+    },
     "AssociateContactWithAddressBook":{
       "name":"AssociateContactWithAddressBook",
       "http":{
@@ -35,6 +50,7 @@
       "output":{"shape":"AssociateDeviceWithRoomResponse"},
       "errors":[
         {"shape":"LimitExceededException"},
+        {"shape":"ConcurrentModificationException"},
         {"shape":"DeviceNotRegisteredException"}
       ],
       "documentation":"<p>Associates a device with a given room. This applies all the settings from the room profile to the device, and all the skills in any skill groups added to that room. This operation requires the device to be online, or else a manual sync is required. </p>"
@@ -47,7 +63,24 @@
       },
       "input":{"shape":"AssociateSkillGroupWithRoomRequest"},
       "output":{"shape":"AssociateSkillGroupWithRoomResponse"},
+      "errors":[
+        {"shape":"ConcurrentModificationException"}
+      ],
       "documentation":"<p>Associates a skill group with a given room. This enables all skills in the associated skill group on all devices in the room.</p>"
+    },
+    "AssociateSkillWithSkillGroup":{
+      "name":"AssociateSkillWithSkillGroup",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"AssociateSkillWithSkillGroupRequest"},
+      "output":{"shape":"AssociateSkillWithSkillGroupResponse"},
+      "errors":[
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"<p>Associates a skill with a skill group.</p>"
     },
     "CreateAddressBook":{
       "name":"CreateAddressBook",
@@ -62,6 +95,19 @@
         {"shape":"LimitExceededException"}
       ],
       "documentation":"<p>Creates an address book with the specified details.</p>"
+    },
+    "CreateConferenceProvider":{
+      "name":"CreateConferenceProvider",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateConferenceProviderRequest"},
+      "output":{"shape":"CreateConferenceProviderResponse"},
+      "errors":[
+        {"shape":"AlreadyExistsException"}
+      ],
+      "documentation":"<p>Adds a new conference provider under the user's AWS account.</p>"
     },
     "CreateContact":{
       "name":"CreateContact",
@@ -87,7 +133,8 @@
       "output":{"shape":"CreateProfileResponse"},
       "errors":[
         {"shape":"LimitExceededException"},
-        {"shape":"AlreadyExistsException"}
+        {"shape":"AlreadyExistsException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Creates a new room profile with the specified details.</p>"
     },
@@ -115,7 +162,8 @@
       "output":{"shape":"CreateSkillGroupResponse"},
       "errors":[
         {"shape":"AlreadyExistsException"},
-        {"shape":"LimitExceededException"}
+        {"shape":"LimitExceededException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Creates a skill group with a specified name and description.</p>"
     },
@@ -129,7 +177,8 @@
       "output":{"shape":"CreateUserResponse"},
       "errors":[
         {"shape":"ResourceInUseException"},
-        {"shape":"LimitExceededException"}
+        {"shape":"LimitExceededException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Creates a user.</p>"
     },
@@ -142,9 +191,23 @@
       "input":{"shape":"DeleteAddressBookRequest"},
       "output":{"shape":"DeleteAddressBookResponse"},
       "errors":[
-        {"shape":"NotFoundException"}
+        {"shape":"NotFoundException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Deletes an address book by the address book ARN.</p>"
+    },
+    "DeleteConferenceProvider":{
+      "name":"DeleteConferenceProvider",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteConferenceProviderRequest"},
+      "output":{"shape":"DeleteConferenceProviderResponse"},
+      "errors":[
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"<p>Deletes a conference provider.</p>"
     },
     "DeleteContact":{
       "name":"DeleteContact",
@@ -155,9 +218,25 @@
       "input":{"shape":"DeleteContactRequest"},
       "output":{"shape":"DeleteContactResponse"},
       "errors":[
-        {"shape":"NotFoundException"}
+        {"shape":"NotFoundException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Deletes a contact by the contact ARN.</p>"
+    },
+    "DeleteDevice":{
+      "name":"DeleteDevice",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteDeviceRequest"},
+      "output":{"shape":"DeleteDeviceResponse"},
+      "errors":[
+        {"shape":"NotFoundException"},
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"InvalidCertificateAuthorityException"}
+      ],
+      "documentation":"<p>Removes a device from Alexa For Business.</p>"
     },
     "DeleteProfile":{
       "name":"DeleteProfile",
@@ -168,7 +247,8 @@
       "input":{"shape":"DeleteProfileRequest"},
       "output":{"shape":"DeleteProfileResponse"},
       "errors":[
-        {"shape":"NotFoundException"}
+        {"shape":"NotFoundException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Deletes a room profile by the profile ARN.</p>"
     },
@@ -181,7 +261,8 @@
       "input":{"shape":"DeleteRoomRequest"},
       "output":{"shape":"DeleteRoomResponse"},
       "errors":[
-        {"shape":"NotFoundException"}
+        {"shape":"NotFoundException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Deletes a room by the room ARN.</p>"
     },
@@ -193,7 +274,24 @@
       },
       "input":{"shape":"DeleteRoomSkillParameterRequest"},
       "output":{"shape":"DeleteRoomSkillParameterResponse"},
+      "errors":[
+        {"shape":"ConcurrentModificationException"}
+      ],
       "documentation":"<p>Deletes room skill parameter details by room, skill, and parameter key ID.</p>"
+    },
+    "DeleteSkillAuthorization":{
+      "name":"DeleteSkillAuthorization",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteSkillAuthorizationRequest"},
+      "output":{"shape":"DeleteSkillAuthorizationResponse"},
+      "errors":[
+        {"shape":"NotFoundException"},
+        {"shape":"ConcurrentModificationException"}
+      ],
+      "documentation":"<p>Unlinks a third-party account from a skill.</p>"
     },
     "DeleteSkillGroup":{
       "name":"DeleteSkillGroup",
@@ -204,7 +302,8 @@
       "input":{"shape":"DeleteSkillGroupRequest"},
       "output":{"shape":"DeleteSkillGroupResponse"},
       "errors":[
-        {"shape":"NotFoundException"}
+        {"shape":"NotFoundException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Deletes a skill group by skill group ARN.</p>"
     },
@@ -217,7 +316,8 @@
       "input":{"shape":"DeleteUserRequest"},
       "output":{"shape":"DeleteUserResponse"},
       "errors":[
-        {"shape":"NotFoundException"}
+        {"shape":"NotFoundException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Deletes a specified user by user ARN and enrollment ARN.</p>"
     },
@@ -240,9 +340,24 @@
       "input":{"shape":"DisassociateDeviceFromRoomRequest"},
       "output":{"shape":"DisassociateDeviceFromRoomResponse"},
       "errors":[
+        {"shape":"ConcurrentModificationException"},
         {"shape":"DeviceNotRegisteredException"}
       ],
       "documentation":"<p>Disassociates a device from its current room. The device continues to be connected to the Wi-Fi network and is still registered to the account. The device settings and skills are removed from the room.</p>"
+    },
+    "DisassociateSkillFromSkillGroup":{
+      "name":"DisassociateSkillFromSkillGroup",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DisassociateSkillFromSkillGroupRequest"},
+      "output":{"shape":"DisassociateSkillFromSkillGroupResponse"},
+      "errors":[
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"<p>Disassociates a skill from a skill group.</p>"
     },
     "DisassociateSkillGroupFromRoom":{
       "name":"DisassociateSkillGroupFromRoom",
@@ -252,7 +367,23 @@
       },
       "input":{"shape":"DisassociateSkillGroupFromRoomRequest"},
       "output":{"shape":"DisassociateSkillGroupFromRoomResponse"},
+      "errors":[
+        {"shape":"ConcurrentModificationException"}
+      ],
       "documentation":"<p>Disassociates a skill group from a specified room. This disables all skills in the skill group on all devices in the room.</p>"
+    },
+    "ForgetSmartHomeAppliances":{
+      "name":"ForgetSmartHomeAppliances",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ForgetSmartHomeAppliancesRequest"},
+      "output":{"shape":"ForgetSmartHomeAppliancesResponse"},
+      "errors":[
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"<p>Forgets smart home appliances associated to a room.</p>"
     },
     "GetAddressBook":{
       "name":"GetAddressBook",
@@ -266,6 +397,32 @@
         {"shape":"NotFoundException"}
       ],
       "documentation":"<p>Gets address the book details by the address book ARN.</p>"
+    },
+    "GetConferencePreference":{
+      "name":"GetConferencePreference",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetConferencePreferenceRequest"},
+      "output":{"shape":"GetConferencePreferenceResponse"},
+      "errors":[
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"<p>Retrieves the existing conference preferences.</p>"
+    },
+    "GetConferenceProvider":{
+      "name":"GetConferenceProvider",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetConferenceProviderRequest"},
+      "output":{"shape":"GetConferenceProviderResponse"},
+      "errors":[
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"<p>Gets details about a specific conference provider.</p>"
     },
     "GetContact":{
       "name":"GetContact",
@@ -345,6 +502,16 @@
       ],
       "documentation":"<p>Gets skill group details by skill group ARN.</p>"
     },
+    "ListConferenceProviders":{
+      "name":"ListConferenceProviders",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListConferenceProvidersRequest"},
+      "output":{"shape":"ListConferenceProvidersResponse"},
+      "documentation":"<p>Lists conference providers under a specific AWS account.</p>"
+    },
     "ListDeviceEvents":{
       "name":"ListDeviceEvents",
       "http":{
@@ -368,6 +535,39 @@
       "output":{"shape":"ListSkillsResponse"},
       "documentation":"<p>Lists all enabled skills in a specific skill group.</p>"
     },
+    "ListSkillsStoreCategories":{
+      "name":"ListSkillsStoreCategories",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListSkillsStoreCategoriesRequest"},
+      "output":{"shape":"ListSkillsStoreCategoriesResponse"},
+      "documentation":"<p>Lists all categories in the Alexa skill store.</p>"
+    },
+    "ListSkillsStoreSkillsByCategory":{
+      "name":"ListSkillsStoreSkillsByCategory",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListSkillsStoreSkillsByCategoryRequest"},
+      "output":{"shape":"ListSkillsStoreSkillsByCategoryResponse"},
+      "documentation":"<p>Lists all skills in the Alexa skill store by category.</p>"
+    },
+    "ListSmartHomeAppliances":{
+      "name":"ListSmartHomeAppliances",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListSmartHomeAppliancesRequest"},
+      "output":{"shape":"ListSmartHomeAppliancesResponse"},
+      "errors":[
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"<p>Lists all of the smart home appliances associated with a room.</p>"
+    },
     "ListTags":{
       "name":"ListTags",
       "http":{
@@ -381,6 +581,19 @@
       ],
       "documentation":"<p>Lists all tags for the specified resource.</p>"
     },
+    "PutConferencePreference":{
+      "name":"PutConferencePreference",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"PutConferencePreferenceRequest"},
+      "output":{"shape":"PutConferencePreferenceResponse"},
+      "errors":[
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"<p>Sets the conference preferences on a specific conference provider at the account level.</p>"
+    },
     "PutRoomSkillParameter":{
       "name":"PutRoomSkillParameter",
       "http":{
@@ -389,7 +602,53 @@
       },
       "input":{"shape":"PutRoomSkillParameterRequest"},
       "output":{"shape":"PutRoomSkillParameterResponse"},
+      "errors":[
+        {"shape":"ConcurrentModificationException"}
+      ],
       "documentation":"<p>Updates room skill parameter details by room, skill, and parameter key ID. Not all skills have a room skill parameter.</p>"
+    },
+    "PutSkillAuthorization":{
+      "name":"PutSkillAuthorization",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"PutSkillAuthorizationRequest"},
+      "output":{"shape":"PutSkillAuthorizationResponse"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"ConcurrentModificationException"}
+      ],
+      "documentation":"<p>Links a user's account to a third-party skill provider. If this API is called by an assumed IAM role, the skill being linked must be a private skill, and the skill must be owned by the AWS account that assumed the IAM role.</p>"
+    },
+    "RegisterAVSDevice":{
+      "name":"RegisterAVSDevice",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"RegisterAVSDeviceRequest"},
+      "output":{"shape":"RegisterAVSDeviceResponse"},
+      "errors":[
+        {"shape":"LimitExceededException"},
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"InvalidDeviceException"}
+      ],
+      "documentation":"<p>Registers an Alexa-enabled device built by an Original Equipment Manufacturer (OEM) using Alexa Voice Service (AVS).</p>"
+    },
+    "RejectSkill":{
+      "name":"RejectSkill",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"RejectSkillRequest"},
+      "output":{"shape":"RejectSkillResponse"},
+      "errors":[
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"<p>Disassociates a skill from the organization under a user's AWS account. If the skill is a private skill, it moves to an AcceptStatus of PENDING. Any private or public skill that is rejected can be added later by calling the ApproveSkill API. </p>"
     },
     "ResolveRoom":{
       "name":"ResolveRoom",
@@ -413,7 +672,8 @@
       "input":{"shape":"RevokeInvitationRequest"},
       "output":{"shape":"RevokeInvitationResponse"},
       "errors":[
-        {"shape":"NotFoundException"}
+        {"shape":"NotFoundException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Revokes an invitation and invalidates the enrollment URL.</p>"
     },
@@ -497,7 +757,8 @@
       "output":{"shape":"SendInvitationResponse"},
       "errors":[
         {"shape":"NotFoundException"},
-        {"shape":"InvalidUserStatusException"}
+        {"shape":"InvalidUserStatusException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Sends an enrollment invitation email with a URL to a user. The URL is valid for 72 hours or until you call this operation again, whichever comes first. </p>"
     },
@@ -513,6 +774,19 @@
         {"shape":"DeviceNotRegisteredException"}
       ],
       "documentation":"<p>Resets a device and its account to the known default settings, by clearing all information and settings set by previous users.</p>"
+    },
+    "StartSmartHomeApplianceDiscovery":{
+      "name":"StartSmartHomeApplianceDiscovery",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StartSmartHomeApplianceDiscoveryRequest"},
+      "output":{"shape":"StartSmartHomeApplianceDiscoveryResponse"},
+      "errors":[
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"<p>Initiates the discovery of any smart home appliances associated with the room.</p>"
     },
     "TagResource":{
       "name":"TagResource",
@@ -550,9 +824,23 @@
       "output":{"shape":"UpdateAddressBookResponse"},
       "errors":[
         {"shape":"NotFoundException"},
-        {"shape":"NameInUseException"}
+        {"shape":"NameInUseException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Updates address book details by the address book ARN.</p>"
+    },
+    "UpdateConferenceProvider":{
+      "name":"UpdateConferenceProvider",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateConferenceProviderRequest"},
+      "output":{"shape":"UpdateConferenceProviderResponse"},
+      "errors":[
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"<p>Updates an existing conference provider's settings.</p>"
     },
     "UpdateContact":{
       "name":"UpdateContact",
@@ -563,7 +851,8 @@
       "input":{"shape":"UpdateContactRequest"},
       "output":{"shape":"UpdateContactResponse"},
       "errors":[
-        {"shape":"NotFoundException"}
+        {"shape":"NotFoundException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Updates the contact details by the contact ARN.</p>"
     },
@@ -577,6 +866,7 @@
       "output":{"shape":"UpdateDeviceResponse"},
       "errors":[
         {"shape":"NotFoundException"},
+        {"shape":"ConcurrentModificationException"},
         {"shape":"DeviceNotRegisteredException"}
       ],
       "documentation":"<p>Updates the device name by device ARN.</p>"
@@ -591,7 +881,8 @@
       "output":{"shape":"UpdateProfileResponse"},
       "errors":[
         {"shape":"NotFoundException"},
-        {"shape":"NameInUseException"}
+        {"shape":"NameInUseException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Updates an existing room profile by room profile ARN.</p>"
     },
@@ -619,7 +910,8 @@
       "output":{"shape":"UpdateSkillGroupResponse"},
       "errors":[
         {"shape":"NotFoundException"},
-        {"shape":"NameInUseException"}
+        {"shape":"NameInUseException"},
+        {"shape":"ConcurrentModificationException"}
       ],
       "documentation":"<p>Updates skill group details by skill group ARN.</p>"
     }
@@ -687,8 +979,30 @@
       "members":{
         "Message":{"shape":"ErrorMessage"}
       },
-      "documentation":"<p>The resource being created already exists. HTTP Status Code: 400</p>",
+      "documentation":"<p>The resource being created already exists.</p>",
       "exception":true
+    },
+    "AmazonId":{
+      "type":"string",
+      "pattern":"[a-zA-Z0-9]{1,18}"
+    },
+    "ApplianceDescription":{"type":"string"},
+    "ApplianceFriendlyName":{"type":"string"},
+    "ApplianceManufacturerName":{"type":"string"},
+    "ApproveSkillRequest":{
+      "type":"structure",
+      "required":["SkillId"],
+      "members":{
+        "SkillId":{
+          "shape":"SkillId",
+          "documentation":"<p>The unique identifier of the skill.</p>"
+        }
+      }
+    },
+    "ApproveSkillResponse":{
+      "type":"structure",
+      "members":{
+      }
     },
     "Arn":{
       "type":"string",
@@ -752,13 +1066,151 @@
       "members":{
       }
     },
+    "AssociateSkillWithSkillGroupRequest":{
+      "type":"structure",
+      "required":["SkillId"],
+      "members":{
+        "SkillGroupArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the skill group to associate the skill to.</p>"
+        },
+        "SkillId":{
+          "shape":"SkillId",
+          "documentation":"<p>The unique identifier of the skill.</p>"
+        }
+      }
+    },
+    "AssociateSkillWithSkillGroupResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "AuthorizationResult":{
+      "type":"map",
+      "key":{"shape":"Key"},
+      "value":{"shape":"Value"},
+      "sensitive":true
+    },
     "Boolean":{"type":"boolean"},
+    "BulletPoint":{"type":"string"},
+    "BulletPoints":{
+      "type":"list",
+      "member":{"shape":"BulletPoint"}
+    },
+    "Category":{
+      "type":"structure",
+      "members":{
+        "CategoryId":{
+          "shape":"CategoryId",
+          "documentation":"<p>The ID of the skill store category.</p>"
+        },
+        "CategoryName":{
+          "shape":"CategoryName",
+          "documentation":"<p>The name of the skill store category.</p>"
+        }
+      },
+      "documentation":"<p>The skill store category that is shown. Alexa skills are assigned a specific skill category during creation, such as News, Social, and Sports.</p>"
+    },
+    "CategoryId":{
+      "type":"long",
+      "min":1
+    },
+    "CategoryList":{
+      "type":"list",
+      "member":{"shape":"Category"}
+    },
+    "CategoryName":{"type":"string"},
+    "ClientId":{
+      "type":"string",
+      "pattern":"^\\S+{1,256}$"
+    },
     "ClientRequestToken":{
       "type":"string",
       "documentation":"User specified token that is used to support idempotency during Create Resource",
       "max":150,
       "min":10,
       "pattern":"[a-zA-Z0-9][a-zA-Z0-9_-]*"
+    },
+    "CommsProtocol":{
+      "type":"string",
+      "enum":[
+        "SIP",
+        "SIPS",
+        "H323"
+      ]
+    },
+    "ConcurrentModificationException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"Concurrent modification of resources. HTTP Status Code: 400.",
+      "exception":true
+    },
+    "ConferencePreference":{
+      "type":"structure",
+      "members":{
+        "DefaultConferenceProviderArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the default conference provider.</p>"
+        }
+      },
+      "documentation":"<p>The default conference provider that is used if no other scheduled meetings are detected.</p>"
+    },
+    "ConferenceProvider":{
+      "type":"structure",
+      "members":{
+        "Arn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the newly created conference provider.</p>"
+        },
+        "Name":{
+          "shape":"ConferenceProviderName",
+          "documentation":"<p>The name of the conference provider.</p>"
+        },
+        "Type":{
+          "shape":"ConferenceProviderType",
+          "documentation":"<p>The type of conference providers.</p>"
+        },
+        "IPDialIn":{
+          "shape":"IPDialIn",
+          "documentation":"<p>The IP endpoint and protocol for calling.</p>"
+        },
+        "PSTNDialIn":{
+          "shape":"PSTNDialIn",
+          "documentation":"<p>The information for PSTN conferencing.</p>"
+        },
+        "MeetingSetting":{
+          "shape":"MeetingSetting",
+          "documentation":"<p>The meeting settings for the conference provider.</p>"
+        }
+      },
+      "documentation":"<p>An entity that provides a conferencing solution. Alexa for Business acts as the voice interface and mediator that connects users to their preferred conference provider. Examples of conference providers include Amazon Chime, Zoom, Cisco, and Polycom. </p>"
+    },
+    "ConferenceProviderName":{
+      "type":"string",
+      "max":50,
+      "min":1,
+      "pattern":"[\\u0009\\u000A\\u000D\\u0020-\\u007E\\u0085\\u00A0-\\uD7FF\\uE000-\\uFFFD\\u10000-\\u10FFFF]*"
+    },
+    "ConferenceProviderType":{
+      "type":"string",
+      "enum":[
+        "CHIME",
+        "BLUEJEANS",
+        "FUZE",
+        "GOOGLE_HANGOUTS",
+        "POLYCOM",
+        "RINGCENTRAL",
+        "SKYPE_FOR_BUSINESS",
+        "WEBEX",
+        "ZOOM",
+        "CUSTOM"
+      ]
+    },
+    "ConferenceProvidersList":{
+      "type":"list",
+      "member":{"shape":"ConferenceProvider"}
     },
     "ConnectionStatus":{
       "type":"string",
@@ -829,6 +1281,10 @@
       "min":1,
       "pattern":"[\\u0009\\u000A\\u000D\\u0020-\\u007E\\u0085\\u00A0-\\uD7FF\\uE000-\\uFFFD\\u10000-\\u10FFFF]*"
     },
+    "CountryCode":{
+      "type":"string",
+      "pattern":"\\d{1,3}"
+    },
     "CreateAddressBookRequest":{
       "type":"structure",
       "required":["Name"],
@@ -854,6 +1310,50 @@
         "AddressBookArn":{
           "shape":"Arn",
           "documentation":"<p>The ARN of the newly created address book.</p>"
+        }
+      }
+    },
+    "CreateConferenceProviderRequest":{
+      "type":"structure",
+      "required":[
+        "ConferenceProviderName",
+        "ConferenceProviderType",
+        "MeetingSetting"
+      ],
+      "members":{
+        "ConferenceProviderName":{
+          "shape":"ConferenceProviderName",
+          "documentation":"<p>The name of the conference provider.</p>"
+        },
+        "ConferenceProviderType":{
+          "shape":"ConferenceProviderType",
+          "documentation":"<p>A string that represents a type within a list of predefined types.</p>"
+        },
+        "IPDialIn":{
+          "shape":"IPDialIn",
+          "documentation":"<p>The IP endpoint and protocol for calling.</p>"
+        },
+        "PSTNDialIn":{
+          "shape":"PSTNDialIn",
+          "documentation":"<p>The information for PSTN conferencing.</p>"
+        },
+        "MeetingSetting":{
+          "shape":"MeetingSetting",
+          "documentation":"<p>The meeting settings for the conference provider.</p>"
+        },
+        "ClientRequestToken":{
+          "shape":"ClientRequestToken",
+          "documentation":"<p>The request token of the client.</p>",
+          "idempotencyToken":true
+        }
+      }
+    },
+    "CreateConferenceProviderResponse":{
+      "type":"structure",
+      "members":{
+        "ConferenceProviderArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the newly created conference provider.</p>"
         }
       }
     },
@@ -1082,6 +1582,21 @@
       "members":{
       }
     },
+    "DeleteConferenceProviderRequest":{
+      "type":"structure",
+      "required":["ConferenceProviderArn"],
+      "members":{
+        "ConferenceProviderArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the conference provider.</p>"
+        }
+      }
+    },
+    "DeleteConferenceProviderResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "DeleteContactRequest":{
       "type":"structure",
       "required":["ContactArn"],
@@ -1093,6 +1608,21 @@
       }
     },
     "DeleteContactResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DeleteDeviceRequest":{
+      "type":"structure",
+      "required":["DeviceArn"],
+      "members":{
+        "DeviceArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the device for which to request details.</p>"
+        }
+      }
+    },
+    "DeleteDeviceResponse":{
       "type":"structure",
       "members":{
       }
@@ -1151,6 +1681,25 @@
       "members":{
       }
     },
+    "DeleteSkillAuthorizationRequest":{
+      "type":"structure",
+      "required":["SkillId"],
+      "members":{
+        "SkillId":{
+          "shape":"SkillId",
+          "documentation":"<p>The unique identifier of a skill.</p>"
+        },
+        "RoomArn":{
+          "shape":"Arn",
+          "documentation":"<p>The room that the skill is authorized for.</p>"
+        }
+      }
+    },
+    "DeleteSkillAuthorizationResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "DeleteSkillGroupRequest":{
       "type":"structure",
       "members":{
@@ -1184,6 +1733,29 @@
       "members":{
       }
     },
+    "DeveloperInfo":{
+      "type":"structure",
+      "members":{
+        "DeveloperName":{
+          "shape":"DeveloperName",
+          "documentation":"<p>The name of the developer.</p>"
+        },
+        "PrivacyPolicy":{
+          "shape":"PrivacyPolicy",
+          "documentation":"<p>The URL of the privacy policy.</p>"
+        },
+        "Email":{
+          "shape":"Email",
+          "documentation":"<p>The email of the developer.</p>"
+        },
+        "Url":{
+          "shape":"Url",
+          "documentation":"<p>The website of the developer.</p>"
+        }
+      },
+      "documentation":"<p>The details about the developer that published the skill.</p>"
+    },
+    "DeveloperName":{"type":"string"},
     "Device":{
       "type":"structure",
       "members":{
@@ -1324,6 +1896,10 @@
       "type":"string",
       "pattern":"[a-zA-Z0-9]{1,200}"
     },
+    "DeviceSerialNumberForAVS":{
+      "type":"string",
+      "pattern":"^[a-zA-Z0-9]{1,50}$"
+    },
     "DeviceStatus":{
       "type":"string",
       "enum":[
@@ -1408,6 +1984,25 @@
       "members":{
       }
     },
+    "DisassociateSkillFromSkillGroupRequest":{
+      "type":"structure",
+      "required":["SkillId"],
+      "members":{
+        "SkillGroupArn":{
+          "shape":"Arn",
+          "documentation":"<p>The unique identifier of a skill.</p>"
+        },
+        "SkillId":{
+          "shape":"SkillId",
+          "documentation":"<p>The ARN of a skill group to associate to a skill.</p>"
+        }
+      }
+    },
+    "DisassociateSkillFromSkillGroupResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "DisassociateSkillGroupFromRoomRequest":{
       "type":"structure",
       "members":{
@@ -1442,6 +2037,26 @@
       "max":128,
       "min":1,
       "pattern":"([0-9a-zA-Z]([+-.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})"
+    },
+    "EnablementType":{
+      "type":"string",
+      "enum":[
+        "ENABLED",
+        "PENDING"
+      ]
+    },
+    "EnablementTypeFilter":{
+      "type":"string",
+      "enum":[
+        "ENABLED",
+        "PENDING"
+      ]
+    },
+    "EndUserLicenseAgreement":{"type":"string"},
+    "Endpoint":{
+      "type":"string",
+      "max":256,
+      "min":1
     },
     "EnrollmentId":{
       "type":"string",
@@ -1512,6 +2127,26 @@
       "member":{"shape":"FilterValue"},
       "max":5
     },
+    "ForgetSmartHomeAppliancesRequest":{
+      "type":"structure",
+      "required":["RoomArn"],
+      "members":{
+        "RoomArn":{
+          "shape":"Arn",
+          "documentation":"<p>The room that the appliances are associated with.</p>"
+        }
+      }
+    },
+    "ForgetSmartHomeAppliancesResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "GenericKeyword":{"type":"string"},
+    "GenericKeywords":{
+      "type":"list",
+      "member":{"shape":"GenericKeyword"}
+    },
     "GetAddressBookRequest":{
       "type":"structure",
       "required":["AddressBookArn"],
@@ -1528,6 +2163,39 @@
         "AddressBook":{
           "shape":"AddressBook",
           "documentation":"<p>The details of the requested address book.</p>"
+        }
+      }
+    },
+    "GetConferencePreferenceRequest":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "GetConferencePreferenceResponse":{
+      "type":"structure",
+      "members":{
+        "Preference":{
+          "shape":"ConferencePreference",
+          "documentation":"<p>The conference preference.</p>"
+        }
+      }
+    },
+    "GetConferenceProviderRequest":{
+      "type":"structure",
+      "required":["ConferenceProviderArn"],
+      "members":{
+        "ConferenceProviderArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the newly created conference provider.</p>"
+        }
+      }
+    },
+    "GetConferenceProviderResponse":{
+      "type":"structure",
+      "members":{
+        "ConferenceProvider":{
+          "shape":"ConferenceProvider",
+          "documentation":"<p>The conference provider.</p>"
         }
       }
     },
@@ -1652,21 +2320,87 @@
         }
       }
     },
+    "IPDialIn":{
+      "type":"structure",
+      "required":[
+        "Endpoint",
+        "CommsProtocol"
+      ],
+      "members":{
+        "Endpoint":{
+          "shape":"Endpoint",
+          "documentation":"<p>The IP address.</p>"
+        },
+        "CommsProtocol":{
+          "shape":"CommsProtocol",
+          "documentation":"<p>The protocol, including SIP, SIPS, and H323.</p>"
+        }
+      },
+      "documentation":"<p>The IP endpoint and protocol for calling.</p>"
+    },
+    "IconUrl":{"type":"string"},
+    "InvalidCertificateAuthorityException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p>The Certificate Authority can't issue or revoke a certificate.</p>",
+      "exception":true
+    },
+    "InvalidDeviceException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p>The device is in an invalid state.</p>",
+      "exception":true
+    },
     "InvalidUserStatusException":{
       "type":"structure",
       "members":{
         "Message":{"shape":"ErrorMessage"}
       },
-      "documentation":"<p>The attempt to update a user is invalid due to the user's current status. HTTP Status Code: 400</p>",
+      "documentation":"<p>The attempt to update a user is invalid due to the user's current status.</p>",
       "exception":true
+    },
+    "InvocationPhrase":{"type":"string"},
+    "Key":{
+      "type":"string",
+      "min":1
     },
     "LimitExceededException":{
       "type":"structure",
       "members":{
         "Message":{"shape":"ErrorMessage"}
       },
-      "documentation":"<p>You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400</p>",
+      "documentation":"<p>You are performing an action that would put you beyond your account's limits.</p>",
       "exception":true
+    },
+    "ListConferenceProvidersRequest":{
+      "type":"structure",
+      "members":{
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The tokens used for pagination.</p>"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of conference providers to be return per paginated calls.</p>"
+        }
+      }
+    },
+    "ListConferenceProvidersResponse":{
+      "type":"structure",
+      "members":{
+        "ConferenceProviders":{
+          "shape":"ConferenceProvidersList",
+          "documentation":"<p>The conference providers.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The tokens used for pagination.</p>"
+        }
+      }
     },
     "ListDeviceEventsRequest":{
       "type":"structure",
@@ -1710,6 +2444,14 @@
           "shape":"Arn",
           "documentation":"<p>The ARN of the skill group for which to list enabled skills. Required.</p>"
         },
+        "EnablementType":{
+          "shape":"EnablementTypeFilter",
+          "documentation":"<p>Whether the skill is enabled under the user's account, or if it requires linking to be used.</p>"
+        },
+        "SkillType":{
+          "shape":"SkillTypeFilter",
+          "documentation":"<p>Whether the skill is publicly available or is a private skill.</p>"
+        },
         "NextToken":{
           "shape":"NextToken",
           "documentation":"<p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>"
@@ -1730,6 +2472,94 @@
         "NextToken":{
           "shape":"NextToken",
           "documentation":"<p>The token returned to indicate that there is more data available.</p>"
+        }
+      }
+    },
+    "ListSkillsStoreCategoriesRequest":{
+      "type":"structure",
+      "members":{
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The tokens used for pagination.</p>"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of categories returned per paginated calls.</p>"
+        }
+      }
+    },
+    "ListSkillsStoreCategoriesResponse":{
+      "type":"structure",
+      "members":{
+        "CategoryList":{
+          "shape":"CategoryList",
+          "documentation":"<p>The list of categories.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The tokens used for pagination.</p>"
+        }
+      }
+    },
+    "ListSkillsStoreSkillsByCategoryRequest":{
+      "type":"structure",
+      "required":["CategoryId"],
+      "members":{
+        "CategoryId":{
+          "shape":"CategoryId",
+          "documentation":"<p>The category ID for which the skills are being retrieved from the skill store.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The tokens used for pagination.</p>"
+        },
+        "MaxResults":{
+          "shape":"SkillListMaxResults",
+          "documentation":"<p>The maximum number of skills returned per paginated calls.</p>"
+        }
+      }
+    },
+    "ListSkillsStoreSkillsByCategoryResponse":{
+      "type":"structure",
+      "members":{
+        "SkillsStoreSkills":{
+          "shape":"SkillsStoreSkillList",
+          "documentation":"<p>The skill store skills.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The tokens used for pagination.</p>"
+        }
+      }
+    },
+    "ListSmartHomeAppliancesRequest":{
+      "type":"structure",
+      "required":["RoomArn"],
+      "members":{
+        "RoomArn":{
+          "shape":"Arn",
+          "documentation":"<p>The room that the appliances are associated with.</p>"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of appliances to be return per paginated calls.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The tokens used for pagination.</p>"
+        }
+      }
+    },
+    "ListSmartHomeAppliancesResponse":{
+      "type":"structure",
+      "members":{
+        "SmartHomeAppliances":{
+          "shape":"SmartHomeApplianceList",
+          "documentation":"<p>The smart home appliances.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The tokens used for pagination.</p>"
         }
       }
     },
@@ -1771,13 +2601,28 @@
       "min":1
     },
     "MaxVolumeLimit":{"type":"integer"},
+    "MeetingSetting":{
+      "type":"structure",
+      "required":["RequirePin"],
+      "members":{
+        "RequirePin":{
+          "shape":"RequirePin",
+          "documentation":"<p>The values that indicate whether the pin is always required.</p>"
+        }
+      },
+      "documentation":"<p>The values that indicate whether a pin is always required (YES), never required (NO), or OPTIONAL.</p> <ul> <li> <p>If YES, Alexa will always ask for a meeting pin.</p> </li> <li> <p>If NO, Alexa will never ask for a meeting pin.</p> </li> <li> <p>If OPTIONAL, Alexa will ask if you have a meeting pin and if the customer responds with yes, it will ask for the meeting pin.</p> </li> </ul>"
+    },
     "NameInUseException":{
       "type":"structure",
       "members":{
         "Message":{"shape":"ErrorMessage"}
       },
-      "documentation":"<p>The name sent in the request is already in use. HTTP Status Code: 400</p>",
+      "documentation":"<p>The name sent in the request is already in use.</p>",
       "exception":true
+    },
+    "NewInThisVersionBulletPoints":{
+      "type":"list",
+      "member":{"shape":"BulletPoint"}
     },
     "NextToken":{
       "type":"string",
@@ -1789,8 +2634,56 @@
       "members":{
         "Message":{"shape":"ErrorMessage"}
       },
-      "documentation":"<p>The resource is not found. HTTP Status Code: 400</p>",
+      "documentation":"<p>The resource is not found.</p>",
       "exception":true
+    },
+    "OneClickIdDelay":{
+      "type":"string",
+      "max":2,
+      "min":1
+    },
+    "OneClickPinDelay":{
+      "type":"string",
+      "max":2,
+      "min":1
+    },
+    "PSTNDialIn":{
+      "type":"structure",
+      "required":[
+        "CountryCode",
+        "PhoneNumber",
+        "OneClickIdDelay",
+        "OneClickPinDelay"
+      ],
+      "members":{
+        "CountryCode":{
+          "shape":"CountryCode",
+          "documentation":"<p>The zip code.</p>"
+        },
+        "PhoneNumber":{
+          "shape":"PhoneNumber",
+          "documentation":"<p>The phone number to call to join the conference.</p>"
+        },
+        "OneClickIdDelay":{
+          "shape":"OneClickIdDelay",
+          "documentation":"<p>The delay duration before Alexa enters the conference ID with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>"
+        },
+        "OneClickPinDelay":{
+          "shape":"OneClickPinDelay",
+          "documentation":"<p>The delay duration before Alexa enters the conference pin with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>"
+        }
+      },
+      "documentation":"<p>The information for public switched telephone network (PSTN) conferencing.</p>"
+    },
+    "PhoneNumber":{
+      "type":"string",
+      "pattern":"\\d{10}"
+    },
+    "PrivacyPolicy":{"type":"string"},
+    "ProductDescription":{"type":"string"},
+    "ProductId":{
+      "type":"string",
+      "pattern":"^[a-zA-Z0-9_]{1,256}$"
     },
     "Profile":{
       "type":"structure",
@@ -1802,6 +2695,10 @@
         "ProfileName":{
           "shape":"ProfileName",
           "documentation":"<p>The name of a room profile.</p>"
+        },
+        "IsDefault":{
+          "shape":"Boolean",
+          "documentation":"<p>Retrieves if the profile is default or not.</p>"
         },
         "Address":{
           "shape":"Address",
@@ -1834,6 +2731,10 @@
         "PSTNEnabled":{
           "shape":"Boolean",
           "documentation":"<p>The PSTN setting of a room profile.</p>"
+        },
+        "AddressBookArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the address book.</p>"
         }
       },
       "documentation":"<p>A room profile with attributes.</p>"
@@ -1848,6 +2749,10 @@
         "ProfileName":{
           "shape":"ProfileName",
           "documentation":"<p>The name of a room profile.</p>"
+        },
+        "IsDefault":{
+          "shape":"Boolean",
+          "documentation":"<p>Retrieves if the profile data is default or not.</p>"
         },
         "Address":{
           "shape":"Address",
@@ -1887,6 +2792,21 @@
       "max":100,
       "min":0
     },
+    "PutConferencePreferenceRequest":{
+      "type":"structure",
+      "required":["ConferencePreference"],
+      "members":{
+        "ConferencePreference":{
+          "shape":"ConferencePreference",
+          "documentation":"<p>The conference preference of a specific conference provider.</p>"
+        }
+      }
+    },
+    "PutConferencePreferenceResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "PutRoomSkillParameterRequest":{
       "type":"structure",
       "required":[
@@ -1912,6 +2832,97 @@
       "type":"structure",
       "members":{
       }
+    },
+    "PutSkillAuthorizationRequest":{
+      "type":"structure",
+      "required":[
+        "AuthorizationResult",
+        "SkillId"
+      ],
+      "members":{
+        "AuthorizationResult":{
+          "shape":"AuthorizationResult",
+          "documentation":"<p>The authorization result specific to OAUTH code grant output. \"Code” must be populated in the AuthorizationResult map to establish the authorization.</p>"
+        },
+        "SkillId":{
+          "shape":"SkillId",
+          "documentation":"<p>The unique identifier of a skill.</p>"
+        },
+        "RoomArn":{
+          "shape":"Arn",
+          "documentation":"<p>The room that the skill is authorized for.</p>"
+        }
+      }
+    },
+    "PutSkillAuthorizationResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "RegisterAVSDeviceRequest":{
+      "type":"structure",
+      "required":[
+        "ClientId",
+        "UserCode",
+        "ProductId",
+        "DeviceSerialNumber",
+        "AmazonId"
+      ],
+      "members":{
+        "ClientId":{
+          "shape":"ClientId",
+          "documentation":"<p>The client ID of the OEM used for code-based linking authorization on an AVS device.</p>"
+        },
+        "UserCode":{
+          "shape":"UserCode",
+          "documentation":"<p>The code that is obtained after your AVS device has made a POST request to LWA as a part of the Device Authorization Request component of the OAuth code-based linking specification.</p>"
+        },
+        "ProductId":{
+          "shape":"ProductId",
+          "documentation":"<p>The product ID used to identify your AVS device during authorization.</p>"
+        },
+        "DeviceSerialNumber":{
+          "shape":"DeviceSerialNumberForAVS",
+          "documentation":"<p>The key generated by the OEM that uniquely identifies a specified instance of your AVS device.</p>"
+        },
+        "AmazonId":{
+          "shape":"AmazonId",
+          "documentation":"<p>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</p>"
+        }
+      }
+    },
+    "RegisterAVSDeviceResponse":{
+      "type":"structure",
+      "members":{
+        "DeviceArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the device.</p>"
+        }
+      }
+    },
+    "RejectSkillRequest":{
+      "type":"structure",
+      "required":["SkillId"],
+      "members":{
+        "SkillId":{
+          "shape":"SkillId",
+          "documentation":"<p>The unique identifier of the skill.</p>"
+        }
+      }
+    },
+    "RejectSkillResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "ReleaseDate":{"type":"string"},
+    "RequirePin":{
+      "type":"string",
+      "enum":[
+        "YES",
+        "NO",
+        "OPTIONAL"
+      ]
     },
     "ResolveRoomRequest":{
       "type":"structure",
@@ -1953,8 +2964,15 @@
         "Message":{"shape":"ErrorMessage"},
         "ClientRequestToken":{"shape":"ClientRequestToken"}
       },
-      "documentation":"<p>The resource in the request is already in use. HTTP Status Code: 400</p>",
+      "documentation":"<p>The resource in the request is already in use.</p>",
       "exception":true
+    },
+    "ReviewKey":{"type":"string"},
+    "ReviewValue":{"type":"string"},
+    "Reviews":{
+      "type":"map",
+      "key":{"shape":"ReviewKey"},
+      "value":{"shape":"ReviewValue"}
     },
     "RevokeInvitationRequest":{
       "type":"structure",
@@ -2077,6 +3095,10 @@
     "RoomSkillParameters":{
       "type":"list",
       "member":{"shape":"RoomSkillParameter"}
+    },
+    "SampleUtterances":{
+      "type":"list",
+      "member":{"shape":"Utterance"}
     },
     "SearchAddressBooksRequest":{
       "type":"structure",
@@ -2358,6 +3380,53 @@
       "members":{
       }
     },
+    "ShortDescription":{"type":"string"},
+    "SkillDetails":{
+      "type":"structure",
+      "members":{
+        "ProductDescription":{
+          "shape":"ProductDescription",
+          "documentation":"<p>The description of the product.</p>"
+        },
+        "InvocationPhrase":{
+          "shape":"InvocationPhrase",
+          "documentation":"<p>The phrase used to trigger the skill.</p>"
+        },
+        "ReleaseDate":{
+          "shape":"ReleaseDate",
+          "documentation":"<p>The date when the skill was released.</p>"
+        },
+        "EndUserLicenseAgreement":{
+          "shape":"EndUserLicenseAgreement",
+          "documentation":"<p>The URL of the end user license agreement.</p>"
+        },
+        "GenericKeywords":{
+          "shape":"GenericKeywords",
+          "documentation":"<p>The generic keywords associated with the skill that can be used to find a skill.</p>"
+        },
+        "BulletPoints":{
+          "shape":"BulletPoints",
+          "documentation":"<p>The details about what the skill supports organized as bullet points.</p>"
+        },
+        "NewInThisVersionBulletPoints":{
+          "shape":"NewInThisVersionBulletPoints",
+          "documentation":"<p>The updates added in bullet points.</p>"
+        },
+        "SkillTypes":{
+          "shape":"SkillTypes",
+          "documentation":"<p>The types of skills.</p>"
+        },
+        "Reviews":{
+          "shape":"Reviews",
+          "documentation":"<p>The list of reviews for the skill, including Key and Value pair.</p>"
+        },
+        "DeveloperInfo":{
+          "shape":"DeveloperInfo",
+          "documentation":"<p>The details about the developer that published the skill.</p>"
+        }
+      },
+      "documentation":"<p>Granular information about the skill.</p>"
+    },
     "SkillGroup":{
       "type":"structure",
       "members":{
@@ -2425,6 +3494,7 @@
       "min":1,
       "pattern":"[\\u0009\\u000A\\u000D\\u0020-\\u007E\\u0085\\u00A0-\\uD7FF\\uE000-\\uFFFD\\u10000-\\u10FFFF]*"
     },
+    "SkillStoreType":{"type":"string"},
     "SkillSummary":{
       "type":"structure",
       "members":{
@@ -2439,6 +3509,14 @@
         "SupportsLinking":{
           "shape":"boolean",
           "documentation":"<p>Linking support for a skill.</p>"
+        },
+        "EnablementType":{
+          "shape":"EnablementType",
+          "documentation":"<p>Whether the skill is enabled under the user's account, or if it requires linking to be used.</p>"
+        },
+        "SkillType":{
+          "shape":"SkillType",
+          "documentation":"<p>Whether the skill is publicly available or is a private skill.</p>"
         }
       },
       "documentation":"<p>The summary of skills.</p>"
@@ -2446,6 +3524,88 @@
     "SkillSummaryList":{
       "type":"list",
       "member":{"shape":"SkillSummary"}
+    },
+    "SkillType":{
+      "type":"string",
+      "enum":[
+        "PUBLIC",
+        "PRIVATE"
+      ],
+      "max":100,
+      "min":1,
+      "pattern":"[a-zA-Z0-9][a-zA-Z0-9_-]*"
+    },
+    "SkillTypeFilter":{
+      "type":"string",
+      "enum":[
+        "PUBLIC",
+        "PRIVATE",
+        "ALL"
+      ]
+    },
+    "SkillTypes":{
+      "type":"list",
+      "member":{"shape":"SkillStoreType"}
+    },
+    "SkillsStoreSkill":{
+      "type":"structure",
+      "members":{
+        "SkillId":{
+          "shape":"SkillId",
+          "documentation":"<p>The ARN of the skill.</p>"
+        },
+        "SkillName":{
+          "shape":"SkillName",
+          "documentation":"<p>The name of the skill.</p>"
+        },
+        "ShortDescription":{
+          "shape":"ShortDescription",
+          "documentation":"<p>Short description about the skill.</p>"
+        },
+        "IconUrl":{
+          "shape":"IconUrl",
+          "documentation":"<p>The URL where the skill icon resides.</p>"
+        },
+        "SampleUtterances":{
+          "shape":"SampleUtterances",
+          "documentation":"<p>Sample utterances that interact with the skill.</p>"
+        },
+        "SkillDetails":{
+          "shape":"SkillDetails",
+          "documentation":"<p>Information about the skill.</p>"
+        },
+        "SupportsLinking":{
+          "shape":"boolean",
+          "documentation":"<p>Linking support for a skill.</p>"
+        }
+      },
+      "documentation":"<p>The detailed information about an Alexa skill.</p>"
+    },
+    "SkillsStoreSkillList":{
+      "type":"list",
+      "member":{"shape":"SkillsStoreSkill"}
+    },
+    "SmartHomeAppliance":{
+      "type":"structure",
+      "members":{
+        "FriendlyName":{
+          "shape":"ApplianceFriendlyName",
+          "documentation":"<p>The friendly name of the smart home appliance.</p>"
+        },
+        "Description":{
+          "shape":"ApplianceDescription",
+          "documentation":"<p>The description of the smart home appliance.</p>"
+        },
+        "ManufacturerName":{
+          "shape":"ApplianceManufacturerName",
+          "documentation":"<p>The name of the manufacturer of the smart home appliance.</p>"
+        }
+      },
+      "documentation":"<p>A smart home appliance that can connect to a central system. Any domestic device can be a smart appliance. </p>"
+    },
+    "SmartHomeApplianceList":{
+      "type":"list",
+      "member":{"shape":"SmartHomeAppliance"}
     },
     "SoftwareVersion":{"type":"string"},
     "Sort":{
@@ -2506,8 +3666,27 @@
       "members":{
       }
     },
+    "StartSmartHomeApplianceDiscoveryRequest":{
+      "type":"structure",
+      "required":["RoomArn"],
+      "members":{
+        "RoomArn":{
+          "shape":"Arn",
+          "documentation":"<p>The room where smart home appliance discovery was initiated.</p>"
+        }
+      }
+    },
+    "StartSmartHomeApplianceDiscoveryResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "Tag":{
       "type":"structure",
+      "required":[
+        "Key",
+        "Value"
+      ],
       "members":{
         "Key":{
           "shape":"TagKey",
@@ -2576,6 +3755,14 @@
       "min":1
     },
     "TotalCount":{"type":"integer"},
+    "UnauthorizedException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p>The caller has no permissions to operate on the resource involved in the API call.</p>",
+      "exception":true
+    },
     "UntagResourceRequest":{
       "type":"structure",
       "required":[
@@ -2617,6 +3804,41 @@
       }
     },
     "UpdateAddressBookResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "UpdateConferenceProviderRequest":{
+      "type":"structure",
+      "required":[
+        "ConferenceProviderArn",
+        "ConferenceProviderType",
+        "MeetingSetting"
+      ],
+      "members":{
+        "ConferenceProviderArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the conference provider.</p>"
+        },
+        "ConferenceProviderType":{
+          "shape":"ConferenceProviderType",
+          "documentation":"<p>The type of the conference provider.</p>"
+        },
+        "IPDialIn":{
+          "shape":"IPDialIn",
+          "documentation":"<p>The IP endpoint and protocol for calling.</p>"
+        },
+        "PSTNDialIn":{
+          "shape":"PSTNDialIn",
+          "documentation":"<p>The information for PSTN conferencing.</p>"
+        },
+        "MeetingSetting":{
+          "shape":"MeetingSetting",
+          "documentation":"<p>The meeting settings for the conference provider.</p>"
+        }
+      }
+    },
+    "UpdateConferenceProviderResponse":{
       "type":"structure",
       "members":{
       }
@@ -2680,6 +3902,10 @@
         "ProfileName":{
           "shape":"ProfileName",
           "documentation":"<p>The updated name for the room profile.</p>"
+        },
+        "IsDefault":{
+          "shape":"Boolean",
+          "documentation":"<p>Sets the profile as default if selected. If this is missing, no update is done to the default status.</p>"
         },
         "Timezone":{
           "shape":"Timezone",
@@ -2772,6 +3998,12 @@
       "members":{
       }
     },
+    "Url":{"type":"string"},
+    "UserCode":{
+      "type":"string",
+      "max":128,
+      "min":1
+    },
     "UserData":{
       "type":"structure",
       "members":{
@@ -2810,6 +4042,11 @@
       "type":"string",
       "pattern":"amzn1\\.[A-Za-z0-9+-\\/=.]{1,300}"
     },
+    "Utterance":{"type":"string"},
+    "Value":{
+      "type":"string",
+      "min":1
+    },
     "WakeWord":{
       "type":"string",
       "enum":[
@@ -2839,5 +4076,5 @@
       "pattern":"[a-zA-Z0-9@_+.-]*"
     }
   },
-  "documentation":"<p>Alexa for Business makes it easy for you to use Alexa in your organization. Alexa for Business gives you the tools you need for managing Alexa devices, enroll your users, and assign skills, at scale. You can build your own context-aware voice skills using the Alexa Skills Kit and the Alexa for Business API operations. You can make also these available as private skills for your organization. Alexa for Business makes it easy to voice-enable your products and services, providing context-aware voice experiences for your customers.</p>"
+  "documentation":"<p>Alexa for Business makes it easy for you to use Alexa in your organization. Alexa for Business gives you the tools you need for managing Alexa devices, enroll your users, and assign skills, at scale. You can build your own context-aware voice skills using the Alexa Skills Kit and the Alexa for Business API operations. You can make also these available as private skills for your organization. Alexa for Business makes it easy to voice-enable your products and services, providing context-aware voice experiences for your customers. In addition, Alexa for Business enables Alexa Voice Services (AVS) device manufacturers to centrally deploy and manage their devices in Alexa for Business as shared devices as a part of their existing management flow. </p>"
 }

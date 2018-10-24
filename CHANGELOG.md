@@ -1,3 +1,12 @@
+# __1.11.436__ __2018-10-24__
+## __AWS CodeStar__
+  - ### Features
+    - This release lets you create projects from source code and a toolchain definition that you provide.
+
+## __Alexa For Business__
+  - ### Features
+    - We extended the functionality of the Alexa for Business SDK, including additional support for third-party Alexa built-in devices, managing private and public skills, and conferencing setup.
+
 # __1.11.435__ __2018-10-23__
 ## __Amazon Elastic Compute Cloud__
   - ### Features

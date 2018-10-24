@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The attempt to update a user is invalid due to the user's current status. HTTP Status Code: 400
+ * The attempt to update a user is invalid due to the user's current status.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

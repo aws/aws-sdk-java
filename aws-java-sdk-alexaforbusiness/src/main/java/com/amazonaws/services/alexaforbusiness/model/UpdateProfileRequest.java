@@ -39,6 +39,12 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String profileName;
     /**
      * <p>
+     * Sets the profile as default if selected. If this is missing, no update is done to the default status.
+     * </p>
+     */
+    private Boolean isDefault;
+    /**
+     * <p>
      * The updated timezone for the room profile.
      * </p>
      */
@@ -164,6 +170,58 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
     public UpdateProfileRequest withProfileName(String profileName) {
         setProfileName(profileName);
         return this;
+    }
+
+    /**
+     * <p>
+     * Sets the profile as default if selected. If this is missing, no update is done to the default status.
+     * </p>
+     * 
+     * @param isDefault
+     *        Sets the profile as default if selected. If this is missing, no update is done to the default status.
+     */
+
+    public void setIsDefault(Boolean isDefault) {
+        this.isDefault = isDefault;
+    }
+
+    /**
+     * <p>
+     * Sets the profile as default if selected. If this is missing, no update is done to the default status.
+     * </p>
+     * 
+     * @return Sets the profile as default if selected. If this is missing, no update is done to the default status.
+     */
+
+    public Boolean getIsDefault() {
+        return this.isDefault;
+    }
+
+    /**
+     * <p>
+     * Sets the profile as default if selected. If this is missing, no update is done to the default status.
+     * </p>
+     * 
+     * @param isDefault
+     *        Sets the profile as default if selected. If this is missing, no update is done to the default status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProfileRequest withIsDefault(Boolean isDefault) {
+        setIsDefault(isDefault);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the profile as default if selected. If this is missing, no update is done to the default status.
+     * </p>
+     * 
+     * @return Sets the profile as default if selected. If this is missing, no update is done to the default status.
+     */
+
+    public Boolean isDefault() {
+        return this.isDefault;
     }
 
     /**
@@ -582,6 +640,8 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("ProfileArn: ").append(getProfileArn()).append(",");
         if (getProfileName() != null)
             sb.append("ProfileName: ").append(getProfileName()).append(",");
+        if (getIsDefault() != null)
+            sb.append("IsDefault: ").append(getIsDefault()).append(",");
         if (getTimezone() != null)
             sb.append("Timezone: ").append(getTimezone()).append(",");
         if (getAddress() != null)
@@ -619,6 +679,10 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (other.getProfileName() == null ^ this.getProfileName() == null)
             return false;
         if (other.getProfileName() != null && other.getProfileName().equals(this.getProfileName()) == false)
+            return false;
+        if (other.getIsDefault() == null ^ this.getIsDefault() == null)
+            return false;
+        if (other.getIsDefault() != null && other.getIsDefault().equals(this.getIsDefault()) == false)
             return false;
         if (other.getTimezone() == null ^ this.getTimezone() == null)
             return false;
@@ -662,6 +726,7 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getProfileArn() == null) ? 0 : getProfileArn().hashCode());
         hashCode = prime * hashCode + ((getProfileName() == null) ? 0 : getProfileName().hashCode());
+        hashCode = prime * hashCode + ((getIsDefault() == null) ? 0 : getIsDefault().hashCode());
         hashCode = prime * hashCode + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
         hashCode = prime * hashCode + ((getAddress() == null) ? 0 : getAddress().hashCode());
         hashCode = prime * hashCode + ((getDistanceUnit() == null) ? 0 : getDistanceUnit().hashCode());

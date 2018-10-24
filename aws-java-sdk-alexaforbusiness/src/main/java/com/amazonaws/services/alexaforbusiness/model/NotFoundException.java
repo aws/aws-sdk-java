@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The resource is not found. HTTP Status Code: 400
+ * The resource is not found.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
