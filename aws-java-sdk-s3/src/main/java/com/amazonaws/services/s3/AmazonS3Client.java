@@ -882,7 +882,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         /**
          * If URL encoding has been requested from S3 we'll automatically decode the response.
          */
-        final boolean shouldSDKDecodeResponse = listObjectsV2Request.getEncodingType() == Constants.URL_ENCODING;
+        final boolean shouldSDKDecodeResponse = Constants.URL_ENCODING.equals(listObjectsV2Request.getEncodingType());
 
         return invoke(request, new Unmarshallers.ListObjectsV2Unmarshaller(shouldSDKDecodeResponse), listObjectsV2Request.getBucketName(), null);
     }

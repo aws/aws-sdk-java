@@ -280,6 +280,18 @@ public class Instance implements Serializable, Cloneable {
      * </p>
      */
     private CpuOptions cpuOptions;
+    /**
+     * <p>
+     * The ID of the Capacity Reservation.
+     * </p>
+     */
+    private String capacityReservationId;
+    /**
+     * <p>
+     * Information about the Capacity Reservation targeting option.
+     * </p>
+     */
+    private CapacityReservationSpecificationResponse capacityReservationSpecification;
 
     /**
      * <p>
@@ -2455,6 +2467,86 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the Capacity Reservation.
+     * </p>
+     * 
+     * @param capacityReservationId
+     *        The ID of the Capacity Reservation.
+     */
+
+    public void setCapacityReservationId(String capacityReservationId) {
+        this.capacityReservationId = capacityReservationId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Capacity Reservation.
+     * </p>
+     * 
+     * @return The ID of the Capacity Reservation.
+     */
+
+    public String getCapacityReservationId() {
+        return this.capacityReservationId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Capacity Reservation.
+     * </p>
+     * 
+     * @param capacityReservationId
+     *        The ID of the Capacity Reservation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withCapacityReservationId(String capacityReservationId) {
+        setCapacityReservationId(capacityReservationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the Capacity Reservation targeting option.
+     * </p>
+     * 
+     * @param capacityReservationSpecification
+     *        Information about the Capacity Reservation targeting option.
+     */
+
+    public void setCapacityReservationSpecification(CapacityReservationSpecificationResponse capacityReservationSpecification) {
+        this.capacityReservationSpecification = capacityReservationSpecification;
+    }
+
+    /**
+     * <p>
+     * Information about the Capacity Reservation targeting option.
+     * </p>
+     * 
+     * @return Information about the Capacity Reservation targeting option.
+     */
+
+    public CapacityReservationSpecificationResponse getCapacityReservationSpecification() {
+        return this.capacityReservationSpecification;
+    }
+
+    /**
+     * <p>
+     * Information about the Capacity Reservation targeting option.
+     * </p>
+     * 
+     * @param capacityReservationSpecification
+     *        Information about the Capacity Reservation targeting option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withCapacityReservationSpecification(CapacityReservationSpecificationResponse capacityReservationSpecification) {
+        setCapacityReservationSpecification(capacityReservationSpecification);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2544,7 +2636,11 @@ public class Instance implements Serializable, Cloneable {
         if (getVirtualizationType() != null)
             sb.append("VirtualizationType: ").append(getVirtualizationType()).append(",");
         if (getCpuOptions() != null)
-            sb.append("CpuOptions: ").append(getCpuOptions());
+            sb.append("CpuOptions: ").append(getCpuOptions()).append(",");
+        if (getCapacityReservationId() != null)
+            sb.append("CapacityReservationId: ").append(getCapacityReservationId()).append(",");
+        if (getCapacityReservationSpecification() != null)
+            sb.append("CapacityReservationSpecification: ").append(getCapacityReservationSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -2719,6 +2815,15 @@ public class Instance implements Serializable, Cloneable {
             return false;
         if (other.getCpuOptions() != null && other.getCpuOptions().equals(this.getCpuOptions()) == false)
             return false;
+        if (other.getCapacityReservationId() == null ^ this.getCapacityReservationId() == null)
+            return false;
+        if (other.getCapacityReservationId() != null && other.getCapacityReservationId().equals(this.getCapacityReservationId()) == false)
+            return false;
+        if (other.getCapacityReservationSpecification() == null ^ this.getCapacityReservationSpecification() == null)
+            return false;
+        if (other.getCapacityReservationSpecification() != null
+                && other.getCapacityReservationSpecification().equals(this.getCapacityReservationSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -2767,6 +2872,8 @@ public class Instance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVirtualizationType() == null) ? 0 : getVirtualizationType().hashCode());
         hashCode = prime * hashCode + ((getCpuOptions() == null) ? 0 : getCpuOptions().hashCode());
+        hashCode = prime * hashCode + ((getCapacityReservationId() == null) ? 0 : getCapacityReservationId().hashCode());
+        hashCode = prime * hashCode + ((getCapacityReservationSpecification() == null) ? 0 : getCapacityReservationSpecification().hashCode());
         return hashCode;
     }
 

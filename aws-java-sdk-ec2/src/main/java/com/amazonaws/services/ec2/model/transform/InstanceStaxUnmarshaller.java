@@ -274,6 +274,16 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     instance.setCpuOptions(CpuOptionsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("capacityReservationId", targetDepth)) {
+                    instance.setCapacityReservationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("capacityReservationSpecification", targetDepth)) {
+                    instance.setCapacityReservationSpecification(CapacityReservationSpecificationResponseStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instance;

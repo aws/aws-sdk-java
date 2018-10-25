@@ -1776,6 +1776,66 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Cancels the specified Capacity Reservation, releases the reserved capacity, and changes the Capacity
+     * Reservation's state to <code>cancelled</code>.
+     * </p>
+     * <p>
+     * Instances running in the reserved capacity continue running until you stop them. Stopped instances that target
+     * the Capacity Reservation can no longer launch. Modify these instances to either target a different Capacity
+     * Reservation, launch On-Demand Instance capacity, or run in any open Capacity Reservation that has matching
+     * attributes and sufficient capacity.
+     * </p>
+     * 
+     * @param cancelCapacityReservationRequest
+     * @return Result of the CancelCapacityReservation operation returned by the service.
+     * @sample AmazonEC2.CancelCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CancelCapacityReservationResult cancelCapacityReservation(CancelCapacityReservationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelCapacityReservation(request);
+    }
+
+    @SdkInternalApi
+    final CancelCapacityReservationResult executeCancelCapacityReservation(CancelCapacityReservationRequest cancelCapacityReservationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelCapacityReservationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelCapacityReservationRequest> request = null;
+        Response<CancelCapacityReservationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelCapacityReservationRequestMarshaller().marshall(super.beforeMarshalling(cancelCapacityReservationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelCapacityReservation");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<CancelCapacityReservationResult> responseHandler = new StaxResponseHandler<CancelCapacityReservationResult>(
+                    new CancelCapacityReservationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Cancels an active conversion task. The task can be the import of an instance or volume. The action removes all
      * artifacts of the conversion, including a partially uploaded volume or instance. If the conversion is complete or
      * is in the process of transferring the final disk image, the command fails and returns an exception.
@@ -2365,6 +2425,81 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             URI cachedEndpoint = null;
 
             StaxResponseHandler<CopySnapshotResult> responseHandler = new StaxResponseHandler<CopySnapshotResult>(new CopySnapshotResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new Capacity Reservation with the specified attributes.
+     * </p>
+     * <p>
+     * Capacity Reservations enable you to reserve capacity for your Amazon EC2 instances in a specific Availability
+     * Zone for any duration. This gives you the flexibility to selectively add capacity reservations and still get the
+     * Regional RI discounts for that usage. By creating Capacity Reservations, you ensure that you always have access
+     * to Amazon EC2 capacity when you need it, for as long as you need it. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">Capacity
+     * Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Your request to create a Capacity Reservation could fail if Amazon EC2 does not have sufficient capacity to
+     * fulfill the request. If your request fails due to Amazon EC2 capacity constraints, either try again at a later
+     * time, try in a different Availability Zone, or request a smaller capacity reservation. If your application is
+     * flexible across instance types and sizes, try to create a Capacity Reservation with different instance
+     * attributes.
+     * </p>
+     * <p>
+     * Your request could also fail if the requested quantity exceeds your On-Demand Instance limit for the selected
+     * instance type. If your request fails due to limit constraints, increase your On-Demand Instance limit for the
+     * required instance type and try again. For more information about increasing your instance limits, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 Service Limits</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createCapacityReservationRequest
+     * @return Result of the CreateCapacityReservation operation returned by the service.
+     * @sample AmazonEC2.CreateCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateCapacityReservationResult createCapacityReservation(CreateCapacityReservationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCapacityReservation(request);
+    }
+
+    @SdkInternalApi
+    final CreateCapacityReservationResult executeCreateCapacityReservation(CreateCapacityReservationRequest createCapacityReservationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCapacityReservationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCapacityReservationRequest> request = null;
+        Response<CreateCapacityReservationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCapacityReservationRequestMarshaller().marshall(super.beforeMarshalling(createCapacityReservationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCapacityReservation");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<CreateCapacityReservationResult> responseHandler = new StaxResponseHandler<CreateCapacityReservationResult>(
+                    new CreateCapacityReservationResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7179,6 +7314,60 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeByoipCidrsResult> responseHandler = new StaxResponseHandler<DescribeByoipCidrsResult>(
                     new DescribeByoipCidrsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes one or more of your Capacity Reservations. The results describe only the Capacity Reservations in the
+     * AWS Region that you're currently using.
+     * </p>
+     * 
+     * @param describeCapacityReservationsRequest
+     * @return Result of the DescribeCapacityReservations operation returned by the service.
+     * @sample AmazonEC2.DescribeCapacityReservations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeCapacityReservationsResult describeCapacityReservations(DescribeCapacityReservationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCapacityReservations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCapacityReservationsResult executeDescribeCapacityReservations(DescribeCapacityReservationsRequest describeCapacityReservationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeCapacityReservationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeCapacityReservationsRequest> request = null;
+        Response<DescribeCapacityReservationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeCapacityReservationsRequestMarshaller().marshall(super.beforeMarshalling(describeCapacityReservationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCapacityReservations");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<DescribeCapacityReservationsResult> responseHandler = new StaxResponseHandler<DescribeCapacityReservationsResult>(
+                    new DescribeCapacityReservationsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13742,6 +13931,62 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Modifies a Capacity Reservation's capacity and the conditions under which it is to be released. You cannot change
+     * a Capacity Reservation's instance type, EBS optimization, instance store settings, platform, Availability Zone,
+     * or instance eligibility. If you need to modify any of these attributes, we recommend that you cancel the Capacity
+     * Reservation, and then create a new one with the required attributes.
+     * </p>
+     * 
+     * @param modifyCapacityReservationRequest
+     * @return Result of the ModifyCapacityReservation operation returned by the service.
+     * @sample AmazonEC2.ModifyCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ModifyCapacityReservationResult modifyCapacityReservation(ModifyCapacityReservationRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyCapacityReservation(request);
+    }
+
+    @SdkInternalApi
+    final ModifyCapacityReservationResult executeModifyCapacityReservation(ModifyCapacityReservationRequest modifyCapacityReservationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyCapacityReservationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyCapacityReservationRequest> request = null;
+        Response<ModifyCapacityReservationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyCapacityReservationRequestMarshaller().marshall(super.beforeMarshalling(modifyCapacityReservationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyCapacityReservation");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<ModifyCapacityReservationResult> responseHandler = new StaxResponseHandler<ModifyCapacityReservationResult>(
+                    new ModifyCapacityReservationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Modifies the specified EC2 Fleet.
      * </p>
      * <p>
@@ -14182,6 +14427,64 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyInstanceAttributeResult> responseHandler = new StaxResponseHandler<ModifyInstanceAttributeResult>(
                     new ModifyInstanceAttributeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the Capacity Reservation settings for a stopped instance. Use this action to configure an instance to
+     * target a specific Capacity Reservation, run in any <code>open</code> Capacity Reservation with matching
+     * attributes, or run On-Demand Instance capacity.
+     * </p>
+     * 
+     * @param modifyInstanceCapacityReservationAttributesRequest
+     * @return Result of the ModifyInstanceCapacityReservationAttributes operation returned by the service.
+     * @sample AmazonEC2.ModifyInstanceCapacityReservationAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCapacityReservationAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyInstanceCapacityReservationAttributesResult modifyInstanceCapacityReservationAttributes(
+            ModifyInstanceCapacityReservationAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyInstanceCapacityReservationAttributes(request);
+    }
+
+    @SdkInternalApi
+    final ModifyInstanceCapacityReservationAttributesResult executeModifyInstanceCapacityReservationAttributes(
+            ModifyInstanceCapacityReservationAttributesRequest modifyInstanceCapacityReservationAttributesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyInstanceCapacityReservationAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyInstanceCapacityReservationAttributesRequest> request = null;
+        Response<ModifyInstanceCapacityReservationAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyInstanceCapacityReservationAttributesRequestMarshaller().marshall(super
+                        .beforeMarshalling(modifyInstanceCapacityReservationAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyInstanceCapacityReservationAttributes");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<ModifyInstanceCapacityReservationAttributesResult> responseHandler = new StaxResponseHandler<ModifyInstanceCapacityReservationAttributesResult>(
+                    new ModifyInstanceCapacityReservationAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

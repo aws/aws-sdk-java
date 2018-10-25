@@ -156,6 +156,12 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
      * </p>
      */
     private LaunchTemplateCpuOptions cpuOptions;
+    /**
+     * <p>
+     * Information about the Capacity Reservation targeting option.
+     * </p>
+     */
+    private LaunchTemplateCapacityReservationSpecificationResponse capacityReservationSpecification;
 
     /**
      * <p>
@@ -1286,6 +1292,47 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about the Capacity Reservation targeting option.
+     * </p>
+     * 
+     * @param capacityReservationSpecification
+     *        Information about the Capacity Reservation targeting option.
+     */
+
+    public void setCapacityReservationSpecification(LaunchTemplateCapacityReservationSpecificationResponse capacityReservationSpecification) {
+        this.capacityReservationSpecification = capacityReservationSpecification;
+    }
+
+    /**
+     * <p>
+     * Information about the Capacity Reservation targeting option.
+     * </p>
+     * 
+     * @return Information about the Capacity Reservation targeting option.
+     */
+
+    public LaunchTemplateCapacityReservationSpecificationResponse getCapacityReservationSpecification() {
+        return this.capacityReservationSpecification;
+    }
+
+    /**
+     * <p>
+     * Information about the Capacity Reservation targeting option.
+     * </p>
+     * 
+     * @param capacityReservationSpecification
+     *        Information about the Capacity Reservation targeting option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResponseLaunchTemplateData withCapacityReservationSpecification(
+            LaunchTemplateCapacityReservationSpecificationResponse capacityReservationSpecification) {
+        setCapacityReservationSpecification(capacityReservationSpecification);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1337,7 +1384,9 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
         if (getCreditSpecification() != null)
             sb.append("CreditSpecification: ").append(getCreditSpecification()).append(",");
         if (getCpuOptions() != null)
-            sb.append("CpuOptions: ").append(getCpuOptions());
+            sb.append("CpuOptions: ").append(getCpuOptions()).append(",");
+        if (getCapacityReservationSpecification() != null)
+            sb.append("CapacityReservationSpecification: ").append(getCapacityReservationSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -1437,6 +1486,11 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
             return false;
         if (other.getCpuOptions() != null && other.getCpuOptions().equals(this.getCpuOptions()) == false)
             return false;
+        if (other.getCapacityReservationSpecification() == null ^ this.getCapacityReservationSpecification() == null)
+            return false;
+        if (other.getCapacityReservationSpecification() != null
+                && other.getCapacityReservationSpecification().equals(this.getCapacityReservationSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -1466,6 +1520,7 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInstanceMarketOptions() == null) ? 0 : getInstanceMarketOptions().hashCode());
         hashCode = prime * hashCode + ((getCreditSpecification() == null) ? 0 : getCreditSpecification().hashCode());
         hashCode = prime * hashCode + ((getCpuOptions() == null) ? 0 : getCpuOptions().hashCode());
+        hashCode = prime * hashCode + ((getCapacityReservationSpecification() == null) ? 0 : getCapacityReservationSpecification().hashCode());
         return hashCode;
     }
 

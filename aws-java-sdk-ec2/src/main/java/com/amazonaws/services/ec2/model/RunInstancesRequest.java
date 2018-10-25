@@ -309,6 +309,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      */
     private CpuOptionsRequest cpuOptions;
+    /**
+     * <p>
+     * Information about the Capacity Reservation targeting option.
+     * </p>
+     */
+    private CapacityReservationSpecification capacityReservationSpecification;
 
     /**
      * Default constructor for RunInstancesRequest object. Callers should use the setter or fluent setter (with...)
@@ -2539,6 +2545,46 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * <p>
+     * Information about the Capacity Reservation targeting option.
+     * </p>
+     * 
+     * @param capacityReservationSpecification
+     *        Information about the Capacity Reservation targeting option.
+     */
+
+    public void setCapacityReservationSpecification(CapacityReservationSpecification capacityReservationSpecification) {
+        this.capacityReservationSpecification = capacityReservationSpecification;
+    }
+
+    /**
+     * <p>
+     * Information about the Capacity Reservation targeting option.
+     * </p>
+     * 
+     * @return Information about the Capacity Reservation targeting option.
+     */
+
+    public CapacityReservationSpecification getCapacityReservationSpecification() {
+        return this.capacityReservationSpecification;
+    }
+
+    /**
+     * <p>
+     * Information about the Capacity Reservation targeting option.
+     * </p>
+     * 
+     * @param capacityReservationSpecification
+     *        Information about the Capacity Reservation targeting option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withCapacityReservationSpecification(CapacityReservationSpecification capacityReservationSpecification) {
+        setCapacityReservationSpecification(capacityReservationSpecification);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -2619,7 +2665,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         if (getCreditSpecification() != null)
             sb.append("CreditSpecification: ").append(getCreditSpecification()).append(",");
         if (getCpuOptions() != null)
-            sb.append("CpuOptions: ").append(getCpuOptions());
+            sb.append("CpuOptions: ").append(getCpuOptions()).append(",");
+        if (getCapacityReservationSpecification() != null)
+            sb.append("CapacityReservationSpecification: ").append(getCapacityReservationSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -2755,6 +2803,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getCpuOptions() != null && other.getCpuOptions().equals(this.getCpuOptions()) == false)
             return false;
+        if (other.getCapacityReservationSpecification() == null ^ this.getCapacityReservationSpecification() == null)
+            return false;
+        if (other.getCapacityReservationSpecification() != null
+                && other.getCapacityReservationSpecification().equals(this.getCapacityReservationSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -2793,6 +2846,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getInstanceMarketOptions() == null) ? 0 : getInstanceMarketOptions().hashCode());
         hashCode = prime * hashCode + ((getCreditSpecification() == null) ? 0 : getCreditSpecification().hashCode());
         hashCode = prime * hashCode + ((getCpuOptions() == null) ? 0 : getCpuOptions().hashCode());
+        hashCode = prime * hashCode + ((getCapacityReservationSpecification() == null) ? 0 : getCapacityReservationSpecification().hashCode());
         return hashCode;
     }
 

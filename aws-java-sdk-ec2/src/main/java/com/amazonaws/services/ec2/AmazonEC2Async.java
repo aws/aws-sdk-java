@@ -1305,6 +1305,53 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Cancels the specified Capacity Reservation, releases the reserved capacity, and changes the Capacity
+     * Reservation's state to <code>cancelled</code>.
+     * </p>
+     * <p>
+     * Instances running in the reserved capacity continue running until you stop them. Stopped instances that target
+     * the Capacity Reservation can no longer launch. Modify these instances to either target a different Capacity
+     * Reservation, launch On-Demand Instance capacity, or run in any open Capacity Reservation that has matching
+     * attributes and sufficient capacity.
+     * </p>
+     * 
+     * @param cancelCapacityReservationRequest
+     * @return A Java Future containing the result of the CancelCapacityReservation operation returned by the service.
+     * @sample AmazonEC2Async.CancelCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelCapacityReservationResult> cancelCapacityReservationAsync(
+            CancelCapacityReservationRequest cancelCapacityReservationRequest);
+
+    /**
+     * <p>
+     * Cancels the specified Capacity Reservation, releases the reserved capacity, and changes the Capacity
+     * Reservation's state to <code>cancelled</code>.
+     * </p>
+     * <p>
+     * Instances running in the reserved capacity continue running until you stop them. Stopped instances that target
+     * the Capacity Reservation can no longer launch. Modify these instances to either target a different Capacity
+     * Reservation, launch On-Demand Instance capacity, or run in any open Capacity Reservation that has matching
+     * attributes and sufficient capacity.
+     * </p>
+     * 
+     * @param cancelCapacityReservationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelCapacityReservation operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CancelCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelCapacityReservationResult> cancelCapacityReservationAsync(
+            CancelCapacityReservationRequest cancelCapacityReservationRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelCapacityReservationRequest, CancelCapacityReservationResult> asyncHandler);
+
+    /**
+     * <p>
      * Cancels an active conversion task. The task can be the import of an instance or volume. The action removes all
      * artifacts of the conversion, including a partially uploaded volume or instance. If the conversion is complete or
      * is in the process of transferring the final disk image, the command fails and returns an exception.
@@ -1771,6 +1818,83 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<CopySnapshotResult> copySnapshotAsync(CopySnapshotRequest copySnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<CopySnapshotRequest, CopySnapshotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new Capacity Reservation with the specified attributes.
+     * </p>
+     * <p>
+     * Capacity Reservations enable you to reserve capacity for your Amazon EC2 instances in a specific Availability
+     * Zone for any duration. This gives you the flexibility to selectively add capacity reservations and still get the
+     * Regional RI discounts for that usage. By creating Capacity Reservations, you ensure that you always have access
+     * to Amazon EC2 capacity when you need it, for as long as you need it. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">Capacity
+     * Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Your request to create a Capacity Reservation could fail if Amazon EC2 does not have sufficient capacity to
+     * fulfill the request. If your request fails due to Amazon EC2 capacity constraints, either try again at a later
+     * time, try in a different Availability Zone, or request a smaller capacity reservation. If your application is
+     * flexible across instance types and sizes, try to create a Capacity Reservation with different instance
+     * attributes.
+     * </p>
+     * <p>
+     * Your request could also fail if the requested quantity exceeds your On-Demand Instance limit for the selected
+     * instance type. If your request fails due to limit constraints, increase your On-Demand Instance limit for the
+     * required instance type and try again. For more information about increasing your instance limits, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 Service Limits</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createCapacityReservationRequest
+     * @return A Java Future containing the result of the CreateCapacityReservation operation returned by the service.
+     * @sample AmazonEC2Async.CreateCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCapacityReservationResult> createCapacityReservationAsync(
+            CreateCapacityReservationRequest createCapacityReservationRequest);
+
+    /**
+     * <p>
+     * Creates a new Capacity Reservation with the specified attributes.
+     * </p>
+     * <p>
+     * Capacity Reservations enable you to reserve capacity for your Amazon EC2 instances in a specific Availability
+     * Zone for any duration. This gives you the flexibility to selectively add capacity reservations and still get the
+     * Regional RI discounts for that usage. By creating Capacity Reservations, you ensure that you always have access
+     * to Amazon EC2 capacity when you need it, for as long as you need it. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">Capacity
+     * Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Your request to create a Capacity Reservation could fail if Amazon EC2 does not have sufficient capacity to
+     * fulfill the request. If your request fails due to Amazon EC2 capacity constraints, either try again at a later
+     * time, try in a different Availability Zone, or request a smaller capacity reservation. If your application is
+     * flexible across instance types and sizes, try to create a Capacity Reservation with different instance
+     * attributes.
+     * </p>
+     * <p>
+     * Your request could also fail if the requested quantity exceeds your On-Demand Instance limit for the selected
+     * instance type. If your request fails due to limit constraints, increase your On-Demand Instance limit for the
+     * required instance type and try again. For more information about increasing your instance limits, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 Service Limits</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createCapacityReservationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCapacityReservation operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CreateCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCapacityReservationResult> createCapacityReservationAsync(
+            CreateCapacityReservationRequest createCapacityReservationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCapacityReservationRequest, CreateCapacityReservationResult> asyncHandler);
 
     /**
      * <p>
@@ -5726,6 +5850,43 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DescribeByoipCidrsResult> describeByoipCidrsAsync(DescribeByoipCidrsRequest describeByoipCidrsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeByoipCidrsRequest, DescribeByoipCidrsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes one or more of your Capacity Reservations. The results describe only the Capacity Reservations in the
+     * AWS Region that you're currently using.
+     * </p>
+     * 
+     * @param describeCapacityReservationsRequest
+     * @return A Java Future containing the result of the DescribeCapacityReservations operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeCapacityReservations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCapacityReservationsResult> describeCapacityReservationsAsync(
+            DescribeCapacityReservationsRequest describeCapacityReservationsRequest);
+
+    /**
+     * <p>
+     * Describes one or more of your Capacity Reservations. The results describe only the Capacity Reservations in the
+     * AWS Region that you're currently using.
+     * </p>
+     * 
+     * @param describeCapacityReservationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeCapacityReservations operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeCapacityReservations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCapacityReservationsResult> describeCapacityReservationsAsync(
+            DescribeCapacityReservationsRequest describeCapacityReservationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeCapacityReservationsRequest, DescribeCapacityReservationsResult> asyncHandler);
 
     /**
      * <p>
@@ -11129,6 +11290,45 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Modifies a Capacity Reservation's capacity and the conditions under which it is to be released. You cannot change
+     * a Capacity Reservation's instance type, EBS optimization, instance store settings, platform, Availability Zone,
+     * or instance eligibility. If you need to modify any of these attributes, we recommend that you cancel the Capacity
+     * Reservation, and then create a new one with the required attributes.
+     * </p>
+     * 
+     * @param modifyCapacityReservationRequest
+     * @return A Java Future containing the result of the ModifyCapacityReservation operation returned by the service.
+     * @sample AmazonEC2Async.ModifyCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyCapacityReservationResult> modifyCapacityReservationAsync(
+            ModifyCapacityReservationRequest modifyCapacityReservationRequest);
+
+    /**
+     * <p>
+     * Modifies a Capacity Reservation's capacity and the conditions under which it is to be released. You cannot change
+     * a Capacity Reservation's instance type, EBS optimization, instance store settings, platform, Availability Zone,
+     * or instance eligibility. If you need to modify any of these attributes, we recommend that you cancel the Capacity
+     * Reservation, and then create a new one with the required attributes.
+     * </p>
+     * 
+     * @param modifyCapacityReservationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyCapacityReservation operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ModifyCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyCapacityReservationResult> modifyCapacityReservationAsync(
+            ModifyCapacityReservationRequest modifyCapacityReservationRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyCapacityReservationRequest, ModifyCapacityReservationResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies the specified EC2 Fleet.
      * </p>
      * <p>
@@ -11509,6 +11709,45 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<ModifyInstanceAttributeResult> modifyInstanceAttributeAsync(ModifyInstanceAttributeRequest modifyInstanceAttributeRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyInstanceAttributeRequest, ModifyInstanceAttributeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the Capacity Reservation settings for a stopped instance. Use this action to configure an instance to
+     * target a specific Capacity Reservation, run in any <code>open</code> Capacity Reservation with matching
+     * attributes, or run On-Demand Instance capacity.
+     * </p>
+     * 
+     * @param modifyInstanceCapacityReservationAttributesRequest
+     * @return A Java Future containing the result of the ModifyInstanceCapacityReservationAttributes operation returned
+     *         by the service.
+     * @sample AmazonEC2Async.ModifyInstanceCapacityReservationAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCapacityReservationAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyInstanceCapacityReservationAttributesResult> modifyInstanceCapacityReservationAttributesAsync(
+            ModifyInstanceCapacityReservationAttributesRequest modifyInstanceCapacityReservationAttributesRequest);
+
+    /**
+     * <p>
+     * Modifies the Capacity Reservation settings for a stopped instance. Use this action to configure an instance to
+     * target a specific Capacity Reservation, run in any <code>open</code> Capacity Reservation with matching
+     * attributes, or run On-Demand Instance capacity.
+     * </p>
+     * 
+     * @param modifyInstanceCapacityReservationAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyInstanceCapacityReservationAttributes operation returned
+     *         by the service.
+     * @sample AmazonEC2AsyncHandler.ModifyInstanceCapacityReservationAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCapacityReservationAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyInstanceCapacityReservationAttributesResult> modifyInstanceCapacityReservationAttributesAsync(
+            ModifyInstanceCapacityReservationAttributesRequest modifyInstanceCapacityReservationAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyInstanceCapacityReservationAttributesRequest, ModifyInstanceCapacityReservationAttributesResult> asyncHandler);
 
     /**
      * <p>

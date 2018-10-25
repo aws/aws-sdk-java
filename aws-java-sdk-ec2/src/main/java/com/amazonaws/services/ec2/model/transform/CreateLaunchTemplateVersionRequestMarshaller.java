@@ -458,6 +458,24 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
                     request.addParameter("LaunchTemplateData.CpuOptions.ThreadsPerCore", StringUtils.fromInteger(cpuOptions.getThreadsPerCore()));
                 }
             }
+
+            LaunchTemplateCapacityReservationSpecificationRequest capacityReservationSpecification = launchTemplateData.getCapacityReservationSpecification();
+            if (capacityReservationSpecification != null) {
+
+                if (capacityReservationSpecification.getCapacityReservationPreference() != null) {
+                    request.addParameter("LaunchTemplateData.CapacityReservationSpecification.CapacityReservationPreference",
+                            StringUtils.fromString(capacityReservationSpecification.getCapacityReservationPreference()));
+                }
+
+                CapacityReservationTarget capacityReservationTarget = capacityReservationSpecification.getCapacityReservationTarget();
+                if (capacityReservationTarget != null) {
+
+                    if (capacityReservationTarget.getCapacityReservationId() != null) {
+                        request.addParameter("LaunchTemplateData.CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationId",
+                                StringUtils.fromString(capacityReservationTarget.getCapacityReservationId()));
+                    }
+                }
+            }
         }
 
         return request;

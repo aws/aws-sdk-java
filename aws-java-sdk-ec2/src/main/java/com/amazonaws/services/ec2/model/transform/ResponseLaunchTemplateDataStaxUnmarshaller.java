@@ -181,6 +181,12 @@ public class ResponseLaunchTemplateDataStaxUnmarshaller implements Unmarshaller<
                     responseLaunchTemplateData.setCpuOptions(LaunchTemplateCpuOptionsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("capacityReservationSpecification", targetDepth)) {
+                    responseLaunchTemplateData.setCapacityReservationSpecification(LaunchTemplateCapacityReservationSpecificationResponseStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return responseLaunchTemplateData;

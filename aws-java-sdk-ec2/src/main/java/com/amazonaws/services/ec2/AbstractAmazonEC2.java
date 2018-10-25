@@ -164,6 +164,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CancelCapacityReservationResult cancelCapacityReservation(CancelCapacityReservationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelConversionTaskResult cancelConversionTask(CancelConversionTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -215,6 +220,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public CopySnapshotResult copySnapshot(CopySnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateCapacityReservationResult createCapacityReservation(CreateCapacityReservationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -635,6 +645,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DescribeByoipCidrsResult describeByoipCidrs(DescribeByoipCidrsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeCapacityReservationsResult describeCapacityReservations(DescribeCapacityReservationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1399,6 +1414,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public ModifyCapacityReservationResult modifyCapacityReservation(ModifyCapacityReservationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ModifyFleetResult modifyFleet(ModifyFleetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1430,6 +1450,12 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public ModifyInstanceAttributeResult modifyInstanceAttribute(ModifyInstanceAttributeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyInstanceCapacityReservationAttributesResult modifyInstanceCapacityReservationAttributes(
+            ModifyInstanceCapacityReservationAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

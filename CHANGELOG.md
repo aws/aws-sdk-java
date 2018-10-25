@@ -1,3 +1,8 @@
+# __1.11.437__ __2018-10-25__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - As part of this release we are introducing EC2 On-Demand Capacity Reservations. With On-Demand Capacity Reservations, customers can reserve the exact EC2 capacity they need, and can keep it only for as long as they need it.
+
 # __1.11.436__ __2018-10-24__
 ## __AWS CodeStar__
   - ### Features

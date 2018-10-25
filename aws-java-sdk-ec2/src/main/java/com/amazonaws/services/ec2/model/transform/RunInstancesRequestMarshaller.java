@@ -479,6 +479,24 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             }
         }
 
+        CapacityReservationSpecification capacityReservationSpecification = runInstancesRequest.getCapacityReservationSpecification();
+        if (capacityReservationSpecification != null) {
+
+            if (capacityReservationSpecification.getCapacityReservationPreference() != null) {
+                request.addParameter("CapacityReservationSpecification.CapacityReservationPreference",
+                        StringUtils.fromString(capacityReservationSpecification.getCapacityReservationPreference()));
+            }
+
+            CapacityReservationTarget capacityReservationTarget = capacityReservationSpecification.getCapacityReservationTarget();
+            if (capacityReservationTarget != null) {
+
+                if (capacityReservationTarget.getCapacityReservationId() != null) {
+                    request.addParameter("CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationId",
+                            StringUtils.fromString(capacityReservationTarget.getCapacityReservationId()));
+                }
+            }
+        }
+
         return request;
     }
 
