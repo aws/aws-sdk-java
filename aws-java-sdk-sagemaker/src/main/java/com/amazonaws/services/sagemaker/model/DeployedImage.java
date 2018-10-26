@@ -23,8 +23,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <a>ProductionVariant</a>.
  * </p>
  * <p>
- * If you used the <code>registry/repository[:tag]</code> form to to specify the image path of the primary container
- * when you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form
+ * If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when
+ * you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form
  * <code>registry/repository[@digest]</code>. A digest is a hash value that identifies a specific version of an image.
  * For information about Amazon ECR paths, see <a
  * href="http://docs.aws.amazon.com//AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an Image</a> in the

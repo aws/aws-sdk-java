@@ -52,8 +52,10 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * <p>
      * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
      * purpose, owner, or environment. For more information, see <a
-     * href="http://docs.aws.amazon.com//awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
+     * </p>
+     * <p>
+     * Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -215,14 +217,19 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * <p>
      * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
      * purpose, owner, or environment. For more information, see <a
-     * href="http://docs.aws.amazon.com//awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
+     * </p>
+     * <p>
+     * Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
      * </p>
      * 
      * @return An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *         example, by purpose, owner, or environment. For more information, see <a href=
-     *         "http://docs.aws.amazon.com//awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     *         Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *         example, by purpose, owner, or environment. For more information, see <a
+     *         href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+     *         Strategies</a>.</p>
+     *         <p>
+     *         Tags that you specify for the tuning job are also added to all training jobs that the tuning job
+     *         launches.
      */
 
     public java.util.List<Tag> getTags() {
@@ -233,15 +240,19 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * <p>
      * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
      * purpose, owner, or environment. For more information, see <a
-     * href="http://docs.aws.amazon.com//awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
+     * </p>
+     * <p>
+     * Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
      * </p>
      * 
      * @param tags
      *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
      *        example, by purpose, owner, or environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com//awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+     *        Strategies</a>.</p>
+     *        <p>
+     *        Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -257,8 +268,10 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * <p>
      * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
      * purpose, owner, or environment. For more information, see <a
-     * href="http://docs.aws.amazon.com//awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
+     * </p>
+     * <p>
+     * Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -269,8 +282,10 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * @param tags
      *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
      *        example, by purpose, owner, or environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com//awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+     *        Strategies</a>.</p>
+     *        <p>
+     *        Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,15 +303,19 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * <p>
      * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
      * purpose, owner, or environment. For more information, see <a
-     * href="http://docs.aws.amazon.com//awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
+     * </p>
+     * <p>
+     * Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
      * </p>
      * 
      * @param tags
      *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
      *        example, by purpose, owner, or environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com//awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+     *        Strategies</a>.</p>
+     *        <p>
+     *        Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

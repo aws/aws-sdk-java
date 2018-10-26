@@ -53,20 +53,49 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Defines how to assemble the results of the transform job as a single S3 object. You should select a format that
      * is most convenient to you. To concatenate the results in binary format, specify <code>None</code>. To add a
-     * newline character at the end of every transformed record, specify <code>Line</code>. To assemble the output in
-     * RecordIO format, specify <code>RecordIO</code>. The default value is <code>None</code>.
-     * </p>
-     * <p>
-     * For information about the <code>RecordIO</code> format, see <a
-     * href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data Format</a>.
+     * newline character at the end of every transformed record, specify <code>Line</code>.
      * </p>
      */
     private String assembleWith;
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key for Amazon S3 server-side encryption that Amazon SageMaker uses to
-     * encrypt the transformed data.
+     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest
+     * using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * // KMS Key ID
+     * </p>
+     * <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * // Amazon Resource Name (ARN) of a KMS Key
+     * </p>
+     * <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * // KMS Key Alias
+     * </p>
+     * <p>
+     * <code>"alias/ExampleAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * // Amazon Resource Name (ARN) of a KMS Key Alias
+     * </p>
+     * <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
      * account. For more information, see <a
@@ -217,22 +246,13 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Defines how to assemble the results of the transform job as a single S3 object. You should select a format that
      * is most convenient to you. To concatenate the results in binary format, specify <code>None</code>. To add a
-     * newline character at the end of every transformed record, specify <code>Line</code>. To assemble the output in
-     * RecordIO format, specify <code>RecordIO</code>. The default value is <code>None</code>.
-     * </p>
-     * <p>
-     * For information about the <code>RecordIO</code> format, see <a
-     * href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data Format</a>.
+     * newline character at the end of every transformed record, specify <code>Line</code>.
      * </p>
      * 
      * @param assembleWith
      *        Defines how to assemble the results of the transform job as a single S3 object. You should select a format
      *        that is most convenient to you. To concatenate the results in binary format, specify <code>None</code>. To
-     *        add a newline character at the end of every transformed record, specify <code>Line</code>. To assemble the
-     *        output in RecordIO format, specify <code>RecordIO</code>. The default value is <code>None</code>.</p>
-     *        <p>
-     *        For information about the <code>RecordIO</code> format, see <a
-     *        href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data Format</a>.
+     *        add a newline character at the end of every transformed record, specify <code>Line</code>.
      * @see AssemblyType
      */
 
@@ -244,22 +264,13 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Defines how to assemble the results of the transform job as a single S3 object. You should select a format that
      * is most convenient to you. To concatenate the results in binary format, specify <code>None</code>. To add a
-     * newline character at the end of every transformed record, specify <code>Line</code>. To assemble the output in
-     * RecordIO format, specify <code>RecordIO</code>. The default value is <code>None</code>.
-     * </p>
-     * <p>
-     * For information about the <code>RecordIO</code> format, see <a
-     * href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data Format</a>.
+     * newline character at the end of every transformed record, specify <code>Line</code>.
      * </p>
      * 
      * @return Defines how to assemble the results of the transform job as a single S3 object. You should select a
      *         format that is most convenient to you. To concatenate the results in binary format, specify
      *         <code>None</code>. To add a newline character at the end of every transformed record, specify
-     *         <code>Line</code>. To assemble the output in RecordIO format, specify <code>RecordIO</code>. The default
-     *         value is <code>None</code>.</p>
-     *         <p>
-     *         For information about the <code>RecordIO</code> format, see <a
-     *         href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data Format</a>.
+     *         <code>Line</code>.
      * @see AssemblyType
      */
 
@@ -271,22 +282,13 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Defines how to assemble the results of the transform job as a single S3 object. You should select a format that
      * is most convenient to you. To concatenate the results in binary format, specify <code>None</code>. To add a
-     * newline character at the end of every transformed record, specify <code>Line</code>. To assemble the output in
-     * RecordIO format, specify <code>RecordIO</code>. The default value is <code>None</code>.
-     * </p>
-     * <p>
-     * For information about the <code>RecordIO</code> format, see <a
-     * href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data Format</a>.
+     * newline character at the end of every transformed record, specify <code>Line</code>.
      * </p>
      * 
      * @param assembleWith
      *        Defines how to assemble the results of the transform job as a single S3 object. You should select a format
      *        that is most convenient to you. To concatenate the results in binary format, specify <code>None</code>. To
-     *        add a newline character at the end of every transformed record, specify <code>Line</code>. To assemble the
-     *        output in RecordIO format, specify <code>RecordIO</code>. The default value is <code>None</code>.</p>
-     *        <p>
-     *        For information about the <code>RecordIO</code> format, see <a
-     *        href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data Format</a>.
+     *        add a newline character at the end of every transformed record, specify <code>Line</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssemblyType
      */
@@ -300,22 +302,13 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Defines how to assemble the results of the transform job as a single S3 object. You should select a format that
      * is most convenient to you. To concatenate the results in binary format, specify <code>None</code>. To add a
-     * newline character at the end of every transformed record, specify <code>Line</code>. To assemble the output in
-     * RecordIO format, specify <code>RecordIO</code>. The default value is <code>None</code>.
-     * </p>
-     * <p>
-     * For information about the <code>RecordIO</code> format, see <a
-     * href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data Format</a>.
+     * newline character at the end of every transformed record, specify <code>Line</code>.
      * </p>
      * 
      * @param assembleWith
      *        Defines how to assemble the results of the transform job as a single S3 object. You should select a format
      *        that is most convenient to you. To concatenate the results in binary format, specify <code>None</code>. To
-     *        add a newline character at the end of every transformed record, specify <code>Line</code>. To assemble the
-     *        output in RecordIO format, specify <code>RecordIO</code>. The default value is <code>None</code>.</p>
-     *        <p>
-     *        For information about the <code>RecordIO</code> format, see <a
-     *        href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data Format</a>.
+     *        add a newline character at the end of every transformed record, specify <code>Line</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssemblyType
      */
@@ -327,9 +320,43 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key for Amazon S3 server-side encryption that Amazon SageMaker uses to
-     * encrypt the transformed data.
+     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest
+     * using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * // KMS Key ID
+     * </p>
+     * <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * // Amazon Resource Name (ARN) of a KMS Key
+     * </p>
+     * <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * // KMS Key Alias
+     * </p>
+     * <p>
+     * <code>"alias/ExampleAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * // Amazon Resource Name (ARN) of a KMS Key Alias
+     * </p>
+     * <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
      * account. For more information, see <a
@@ -344,8 +371,43 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key for Amazon S3 server-side encryption that Amazon SageMaker
-     *        uses to encrypt the transformed data.</p>
+     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at
+     *        rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following
+     *        formats: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        // KMS Key ID
+     *        </p>
+     *        <p>
+     *        <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        // Amazon Resource Name (ARN) of a KMS Key
+     *        </p>
+     *        <p>
+     *        <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        // KMS Key Alias
+     *        </p>
+     *        <p>
+     *        <code>"alias/ExampleAlias"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        // Amazon Resource Name (ARN) of a KMS Key Alias
+     *        </p>
+     *        <p>
+     *        <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
      *        account. For more information, see <a
@@ -365,9 +427,43 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key for Amazon S3 server-side encryption that Amazon SageMaker uses to
-     * encrypt the transformed data.
+     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest
+     * using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * // KMS Key ID
+     * </p>
+     * <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * // Amazon Resource Name (ARN) of a KMS Key
+     * </p>
+     * <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * // KMS Key Alias
+     * </p>
+     * <p>
+     * <code>"alias/ExampleAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * // Amazon Resource Name (ARN) of a KMS Key Alias
+     * </p>
+     * <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
      * account. For more information, see <a
@@ -381,8 +477,43 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
-     * @return The AWS Key Management Service (AWS KMS) key for Amazon S3 server-side encryption that Amazon SageMaker
-     *         uses to encrypt the transformed data.</p>
+     * @return The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at
+     *         rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following
+     *         formats: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         // KMS Key ID
+     *         </p>
+     *         <p>
+     *         <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         // Amazon Resource Name (ARN) of a KMS Key
+     *         </p>
+     *         <p>
+     *         <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         // KMS Key Alias
+     *         </p>
+     *         <p>
+     *         <code>"alias/ExampleAlias"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         // Amazon Resource Name (ARN) of a KMS Key Alias
+     *         </p>
+     *         <p>
+     *         <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code>
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
      *         role's account. For more information, see <a
@@ -402,9 +533,43 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key for Amazon S3 server-side encryption that Amazon SageMaker uses to
-     * encrypt the transformed data.
+     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest
+     * using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * // KMS Key ID
+     * </p>
+     * <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * // Amazon Resource Name (ARN) of a KMS Key
+     * </p>
+     * <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * // KMS Key Alias
+     * </p>
+     * <p>
+     * <code>"alias/ExampleAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * // Amazon Resource Name (ARN) of a KMS Key Alias
+     * </p>
+     * <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
      * account. For more information, see <a
@@ -419,8 +584,43 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key for Amazon S3 server-side encryption that Amazon SageMaker
-     *        uses to encrypt the transformed data.</p>
+     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at
+     *        rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following
+     *        formats: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        // KMS Key ID
+     *        </p>
+     *        <p>
+     *        <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        // Amazon Resource Name (ARN) of a KMS Key
+     *        </p>
+     *        <p>
+     *        <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        // KMS Key Alias
+     *        </p>
+     *        <p>
+     *        <code>"alias/ExampleAlias"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        // Amazon Resource Name (ARN) of a KMS Key Alias
+     *        </p>
+     *        <p>
+     *        <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
      *        account. For more information, see <a

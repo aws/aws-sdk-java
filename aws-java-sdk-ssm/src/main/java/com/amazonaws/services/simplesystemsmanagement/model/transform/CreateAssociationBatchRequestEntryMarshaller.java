@@ -49,6 +49,8 @@ public class CreateAssociationBatchRequestEntryMarshaller {
             .marshallLocationName("MaxErrors").build();
     private static final MarshallingInfo<String> MAXCONCURRENCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxConcurrency").build();
+    private static final MarshallingInfo<String> COMPLIANCESEVERITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComplianceSeverity").build();
 
     private static final CreateAssociationBatchRequestEntryMarshaller instance = new CreateAssociationBatchRequestEntryMarshaller();
 
@@ -76,6 +78,7 @@ public class CreateAssociationBatchRequestEntryMarshaller {
             protocolMarshaller.marshall(createAssociationBatchRequestEntry.getAssociationName(), ASSOCIATIONNAME_BINDING);
             protocolMarshaller.marshall(createAssociationBatchRequestEntry.getMaxErrors(), MAXERRORS_BINDING);
             protocolMarshaller.marshall(createAssociationBatchRequestEntry.getMaxConcurrency(), MAXCONCURRENCY_BINDING);
+            protocolMarshaller.marshall(createAssociationBatchRequestEntry.getComplianceSeverity(), COMPLIANCESEVERITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

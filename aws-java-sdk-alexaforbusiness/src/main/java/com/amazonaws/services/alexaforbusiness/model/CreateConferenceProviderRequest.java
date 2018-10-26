@@ -33,7 +33,7 @@ public class CreateConferenceProviderRequest extends com.amazonaws.AmazonWebServ
     private String conferenceProviderName;
     /**
      * <p>
-     * A string that represents a type within a list of predefined types.
+     * Represents a type within a list of predefined types.
      * </p>
      */
     private String conferenceProviderType;
@@ -104,11 +104,11 @@ public class CreateConferenceProviderRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A string that represents a type within a list of predefined types.
+     * Represents a type within a list of predefined types.
      * </p>
      * 
      * @param conferenceProviderType
-     *        A string that represents a type within a list of predefined types.
+     *        Represents a type within a list of predefined types.
      * @see ConferenceProviderType
      */
 
@@ -118,10 +118,10 @@ public class CreateConferenceProviderRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A string that represents a type within a list of predefined types.
+     * Represents a type within a list of predefined types.
      * </p>
      * 
-     * @return A string that represents a type within a list of predefined types.
+     * @return Represents a type within a list of predefined types.
      * @see ConferenceProviderType
      */
 
@@ -131,11 +131,11 @@ public class CreateConferenceProviderRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A string that represents a type within a list of predefined types.
+     * Represents a type within a list of predefined types.
      * </p>
      * 
      * @param conferenceProviderType
-     *        A string that represents a type within a list of predefined types.
+     *        Represents a type within a list of predefined types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConferenceProviderType
      */
@@ -147,11 +147,11 @@ public class CreateConferenceProviderRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A string that represents a type within a list of predefined types.
+     * Represents a type within a list of predefined types.
      * </p>
      * 
      * @param conferenceProviderType
-     *        A string that represents a type within a list of predefined types.
+     *        Represents a type within a list of predefined types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConferenceProviderType
      */

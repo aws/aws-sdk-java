@@ -25,18 +25,18 @@ public class CreateConferenceProviderResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the newly created conference provider.
+     * The ARN of the newly-created conference provider.
      * </p>
      */
     private String conferenceProviderArn;
 
     /**
      * <p>
-     * The ARN of the newly created conference provider.
+     * The ARN of the newly-created conference provider.
      * </p>
      * 
      * @param conferenceProviderArn
-     *        The ARN of the newly created conference provider.
+     *        The ARN of the newly-created conference provider.
      */
 
     public void setConferenceProviderArn(String conferenceProviderArn) {
@@ -45,10 +45,10 @@ public class CreateConferenceProviderResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the newly created conference provider.
+     * The ARN of the newly-created conference provider.
      * </p>
      * 
-     * @return The ARN of the newly created conference provider.
+     * @return The ARN of the newly-created conference provider.
      */
 
     public String getConferenceProviderArn() {
@@ -57,11 +57,11 @@ public class CreateConferenceProviderResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the newly created conference provider.
+     * The ARN of the newly-created conference provider.
      * </p>
      * 
      * @param conferenceProviderArn
-     *        The ARN of the newly created conference provider.
+     *        The ARN of the newly-created conference provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

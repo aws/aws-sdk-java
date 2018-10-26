@@ -107,7 +107,9 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * Returns the name of a notebook instance lifecycle configuration.
      * </p>
      * <p>
-     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * For information about notebook instance lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     * Customize a Notebook Instance</a>
      * </p>
      */
     private String notebookInstanceLifecycleConfigName;
@@ -118,10 +120,18 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * and endpoint services</i>.
      * </p>
      * <p>
-     * For more information, see <a>appendix-notebook-and-internet-access</a>.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * >Notebook Instances Are Internet-Enabled by Default</a>.
      * </p>
      */
     private String directInternetAccess;
+    /**
+     * <p>
+     * The size, in GB, of the ML storage volume attached to the notebook instance.
+     * </p>
+     */
+    private Integer volumeSizeInGB;
 
     /**
      * <p>
@@ -722,13 +732,17 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * Returns the name of a notebook instance lifecycle configuration.
      * </p>
      * <p>
-     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * For information about notebook instance lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     * Customize a Notebook Instance</a>
      * </p>
      * 
      * @param notebookInstanceLifecycleConfigName
      *        Returns the name of a notebook instance lifecycle configuration.</p>
      *        <p>
-     *        For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     *        For information about notebook instance lifestyle configurations, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     *        Customize a Notebook Instance</a>
      */
 
     public void setNotebookInstanceLifecycleConfigName(String notebookInstanceLifecycleConfigName) {
@@ -740,12 +754,16 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * Returns the name of a notebook instance lifecycle configuration.
      * </p>
      * <p>
-     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * For information about notebook instance lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     * Customize a Notebook Instance</a>
      * </p>
      * 
      * @return Returns the name of a notebook instance lifecycle configuration.</p>
      *         <p>
-     *         For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     *         For information about notebook instance lifestyle configurations, see <a
+     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     *         Customize a Notebook Instance</a>
      */
 
     public String getNotebookInstanceLifecycleConfigName() {
@@ -757,13 +775,17 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * Returns the name of a notebook instance lifecycle configuration.
      * </p>
      * <p>
-     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * For information about notebook instance lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     * Customize a Notebook Instance</a>
      * </p>
      * 
      * @param notebookInstanceLifecycleConfigName
      *        Returns the name of a notebook instance lifecycle configuration.</p>
      *        <p>
-     *        For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     *        For information about notebook instance lifestyle configurations, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     *        Customize a Notebook Instance</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -779,7 +801,9 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * and endpoint services</i>.
      * </p>
      * <p>
-     * For more information, see <a>appendix-notebook-and-internet-access</a>.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * >Notebook Instances Are Internet-Enabled by Default</a>.
      * </p>
      * 
      * @param directInternetAccess
@@ -787,7 +811,9 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      *        to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker
      *        training and endpoint services</i>.</p>
      *        <p>
-     *        For more information, see <a>appendix-notebook-and-internet-access</a>.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     *        >Notebook Instances Are Internet-Enabled by Default</a>.
      * @see DirectInternetAccess
      */
 
@@ -802,14 +828,18 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * and endpoint services</i>.
      * </p>
      * <p>
-     * For more information, see <a>appendix-notebook-and-internet-access</a>.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * >Notebook Instances Are Internet-Enabled by Default</a>.
      * </p>
      * 
      * @return Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is
      *         set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon
      *         SageMaker training and endpoint services</i>.</p>
      *         <p>
-     *         For more information, see <a>appendix-notebook-and-internet-access</a>.
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     *         >Notebook Instances Are Internet-Enabled by Default</a>.
      * @see DirectInternetAccess
      */
 
@@ -824,7 +854,9 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * and endpoint services</i>.
      * </p>
      * <p>
-     * For more information, see <a>appendix-notebook-and-internet-access</a>.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * >Notebook Instances Are Internet-Enabled by Default</a>.
      * </p>
      * 
      * @param directInternetAccess
@@ -832,7 +864,9 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      *        to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker
      *        training and endpoint services</i>.</p>
      *        <p>
-     *        For more information, see <a>appendix-notebook-and-internet-access</a>.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     *        >Notebook Instances Are Internet-Enabled by Default</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectInternetAccess
      */
@@ -849,7 +883,9 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * and endpoint services</i>.
      * </p>
      * <p>
-     * For more information, see <a>appendix-notebook-and-internet-access</a>.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * >Notebook Instances Are Internet-Enabled by Default</a>.
      * </p>
      * 
      * @param directInternetAccess
@@ -857,13 +893,55 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      *        to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker
      *        training and endpoint services</i>.</p>
      *        <p>
-     *        For more information, see <a>appendix-notebook-and-internet-access</a>.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     *        >Notebook Instances Are Internet-Enabled by Default</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectInternetAccess
      */
 
     public DescribeNotebookInstanceResult withDirectInternetAccess(DirectInternetAccess directInternetAccess) {
         this.directInternetAccess = directInternetAccess.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The size, in GB, of the ML storage volume attached to the notebook instance.
+     * </p>
+     * 
+     * @param volumeSizeInGB
+     *        The size, in GB, of the ML storage volume attached to the notebook instance.
+     */
+
+    public void setVolumeSizeInGB(Integer volumeSizeInGB) {
+        this.volumeSizeInGB = volumeSizeInGB;
+    }
+
+    /**
+     * <p>
+     * The size, in GB, of the ML storage volume attached to the notebook instance.
+     * </p>
+     * 
+     * @return The size, in GB, of the ML storage volume attached to the notebook instance.
+     */
+
+    public Integer getVolumeSizeInGB() {
+        return this.volumeSizeInGB;
+    }
+
+    /**
+     * <p>
+     * The size, in GB, of the ML storage volume attached to the notebook instance.
+     * </p>
+     * 
+     * @param volumeSizeInGB
+     *        The size, in GB, of the ML storage volume attached to the notebook instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeNotebookInstanceResult withVolumeSizeInGB(Integer volumeSizeInGB) {
+        setVolumeSizeInGB(volumeSizeInGB);
         return this;
     }
 
@@ -907,7 +985,9 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
         if (getNotebookInstanceLifecycleConfigName() != null)
             sb.append("NotebookInstanceLifecycleConfigName: ").append(getNotebookInstanceLifecycleConfigName()).append(",");
         if (getDirectInternetAccess() != null)
-            sb.append("DirectInternetAccess: ").append(getDirectInternetAccess());
+            sb.append("DirectInternetAccess: ").append(getDirectInternetAccess()).append(",");
+        if (getVolumeSizeInGB() != null)
+            sb.append("VolumeSizeInGB: ").append(getVolumeSizeInGB());
         sb.append("}");
         return sb.toString();
     }
@@ -983,6 +1063,10 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getDirectInternetAccess() != null && other.getDirectInternetAccess().equals(this.getDirectInternetAccess()) == false)
             return false;
+        if (other.getVolumeSizeInGB() == null ^ this.getVolumeSizeInGB() == null)
+            return false;
+        if (other.getVolumeSizeInGB() != null && other.getVolumeSizeInGB().equals(this.getVolumeSizeInGB()) == false)
+            return false;
         return true;
     }
 
@@ -1006,6 +1090,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getNotebookInstanceLifecycleConfigName() == null) ? 0 : getNotebookInstanceLifecycleConfigName().hashCode());
         hashCode = prime * hashCode + ((getDirectInternetAccess() == null) ? 0 : getDirectInternetAccess().hashCode());
+        hashCode = prime * hashCode + ((getVolumeSizeInGB() == null) ? 0 : getVolumeSizeInGB().hashCode());
         return hashCode;
     }
 

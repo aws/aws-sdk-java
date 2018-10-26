@@ -70,6 +70,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      */
     private String recordWrapperType;
 
+    private String inputMode;
+
     /**
      * <p>
      * The name of the channel.
@@ -397,6 +399,46 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param inputMode
+     * @see TrainingInputMode
+     */
+
+    public void setInputMode(String inputMode) {
+        this.inputMode = inputMode;
+    }
+
+    /**
+     * @return
+     * @see TrainingInputMode
+     */
+
+    public String getInputMode() {
+        return this.inputMode;
+    }
+
+    /**
+     * @param inputMode
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TrainingInputMode
+     */
+
+    public Channel withInputMode(String inputMode) {
+        setInputMode(inputMode);
+        return this;
+    }
+
+    /**
+     * @param inputMode
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TrainingInputMode
+     */
+
+    public Channel withInputMode(TrainingInputMode inputMode) {
+        this.inputMode = inputMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -416,7 +458,9 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         if (getCompressionType() != null)
             sb.append("CompressionType: ").append(getCompressionType()).append(",");
         if (getRecordWrapperType() != null)
-            sb.append("RecordWrapperType: ").append(getRecordWrapperType());
+            sb.append("RecordWrapperType: ").append(getRecordWrapperType()).append(",");
+        if (getInputMode() != null)
+            sb.append("InputMode: ").append(getInputMode());
         sb.append("}");
         return sb.toString();
     }
@@ -451,6 +495,10 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRecordWrapperType() != null && other.getRecordWrapperType().equals(this.getRecordWrapperType()) == false)
             return false;
+        if (other.getInputMode() == null ^ this.getInputMode() == null)
+            return false;
+        if (other.getInputMode() != null && other.getInputMode().equals(this.getInputMode()) == false)
+            return false;
         return true;
     }
 
@@ -464,6 +512,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         hashCode = prime * hashCode + ((getCompressionType() == null) ? 0 : getCompressionType().hashCode());
         hashCode = prime * hashCode + ((getRecordWrapperType() == null) ? 0 : getRecordWrapperType().hashCode());
+        hashCode = prime * hashCode + ((getInputMode() == null) ? 0 : getInputMode().hashCode());
         return hashCode;
     }
 

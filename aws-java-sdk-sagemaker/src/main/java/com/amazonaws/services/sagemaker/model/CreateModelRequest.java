@@ -64,8 +64,11 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to and
-     * from your model container by configuring the VPC. <code>VpcConfig</code> is currently used in hosting services
-     * but not in batch transform. For more information, see <a>host-vpc</a>.
+     * from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services and in batch
+     * transform. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual
+     * Private Cloud</a> and <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in
+     * Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.
      * </p>
      */
     private VpcConfig vpcConfig;
@@ -336,14 +339,21 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to and
-     * from your model container by configuring the VPC. <code>VpcConfig</code> is currently used in hosting services
-     * but not in batch transform. For more information, see <a>host-vpc</a>.
+     * from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services and in batch
+     * transform. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual
+     * Private Cloud</a> and <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in
+     * Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.
      * </p>
      * 
      * @param vpcConfig
      *        A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to
-     *        and from your model container by configuring the VPC. <code>VpcConfig</code> is currently used in hosting
-     *        services but not in batch transform. For more information, see <a>host-vpc</a>.
+     *        and from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services
+     *        and in batch transform. For more information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon
+     *        Virtual Private Cloud</a> and <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch Transform Jobs
+     *        by Using an Amazon Virtual Private Cloud</a>.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -353,13 +363,20 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to and
-     * from your model container by configuring the VPC. <code>VpcConfig</code> is currently used in hosting services
-     * but not in batch transform. For more information, see <a>host-vpc</a>.
+     * from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services and in batch
+     * transform. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual
+     * Private Cloud</a> and <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in
+     * Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.
      * </p>
      * 
      * @return A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access
-     *         to and from your model container by configuring the VPC. <code>VpcConfig</code> is currently used in
-     *         hosting services but not in batch transform. For more information, see <a>host-vpc</a>.
+     *         to and from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting
+     *         services and in batch transform. For more information, see <a
+     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon
+     *         Virtual Private Cloud</a> and <a
+     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch Transform Jobs
+     *         by Using an Amazon Virtual Private Cloud</a>.
      */
 
     public VpcConfig getVpcConfig() {
@@ -369,14 +386,21 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to and
-     * from your model container by configuring the VPC. <code>VpcConfig</code> is currently used in hosting services
-     * but not in batch transform. For more information, see <a>host-vpc</a>.
+     * from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services and in batch
+     * transform. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual
+     * Private Cloud</a> and <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in
+     * Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.
      * </p>
      * 
      * @param vpcConfig
      *        A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to
-     *        and from your model container by configuring the VPC. <code>VpcConfig</code> is currently used in hosting
-     *        services but not in batch transform. For more information, see <a>host-vpc</a>.
+     *        and from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services
+     *        and in batch transform. For more information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon
+     *        Virtual Private Cloud</a> and <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch Transform Jobs
+     *        by Using an Amazon Virtual Private Cloud</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

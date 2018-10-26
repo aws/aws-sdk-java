@@ -37,6 +37,8 @@ public class UpdateNotebookInstanceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LifecycleConfigName").build();
     private static final MarshallingInfo<Boolean> DISASSOCIATELIFECYCLECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisassociateLifecycleConfig").build();
+    private static final MarshallingInfo<Integer> VOLUMESIZEINGB_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeSizeInGB").build();
 
     private static final UpdateNotebookInstanceRequestMarshaller instance = new UpdateNotebookInstanceRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class UpdateNotebookInstanceRequestMarshaller {
             protocolMarshaller.marshall(updateNotebookInstanceRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(updateNotebookInstanceRequest.getLifecycleConfigName(), LIFECYCLECONFIGNAME_BINDING);
             protocolMarshaller.marshall(updateNotebookInstanceRequest.getDisassociateLifecycleConfig(), DISASSOCIATELIFECYCLECONFIG_BINDING);
+            protocolMarshaller.marshall(updateNotebookInstanceRequest.getVolumeSizeInGB(), VOLUMESIZEINGB_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

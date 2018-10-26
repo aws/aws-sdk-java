@@ -75,7 +75,9 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * The name of a notebook instance lifecycle configuration associated with this notebook instance.
      * </p>
      * <p>
-     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * For information about notebook instance lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     * Customize a Notebook Instance</a>.
      * </p>
      */
     private String notebookInstanceLifecycleConfigName;
@@ -403,13 +405,17 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * The name of a notebook instance lifecycle configuration associated with this notebook instance.
      * </p>
      * <p>
-     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * For information about notebook instance lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     * Customize a Notebook Instance</a>.
      * </p>
      * 
      * @param notebookInstanceLifecycleConfigName
      *        The name of a notebook instance lifecycle configuration associated with this notebook instance.</p>
      *        <p>
-     *        For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     *        For information about notebook instance lifestyle configurations, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     *        Customize a Notebook Instance</a>.
      */
 
     public void setNotebookInstanceLifecycleConfigName(String notebookInstanceLifecycleConfigName) {
@@ -421,12 +427,16 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * The name of a notebook instance lifecycle configuration associated with this notebook instance.
      * </p>
      * <p>
-     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * For information about notebook instance lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     * Customize a Notebook Instance</a>.
      * </p>
      * 
      * @return The name of a notebook instance lifecycle configuration associated with this notebook instance.</p>
      *         <p>
-     *         For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     *         For information about notebook instance lifestyle configurations, see <a
+     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     *         Customize a Notebook Instance</a>.
      */
 
     public String getNotebookInstanceLifecycleConfigName() {
@@ -438,13 +448,17 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * The name of a notebook instance lifecycle configuration associated with this notebook instance.
      * </p>
      * <p>
-     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * For information about notebook instance lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     * Customize a Notebook Instance</a>.
      * </p>
      * 
      * @param notebookInstanceLifecycleConfigName
      *        The name of a notebook instance lifecycle configuration associated with this notebook instance.</p>
      *        <p>
-     *        For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     *        For information about notebook instance lifestyle configurations, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     *        Customize a Notebook Instance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -44,8 +44,9 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
     private String executionRoleArn;
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see
-     * <a>host-vpc</a>
+     * A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual
+     * Private Cloud</a>
      * </p>
      */
     private VpcConfig vpcConfig;
@@ -190,13 +191,15 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see
-     * <a>host-vpc</a>
+     * A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual
+     * Private Cloud</a>
      * </p>
      * 
      * @param vpcConfig
      *        A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see
-     *        <a>host-vpc</a>
+     *        <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an
+     *        Amazon Virtual Private Cloud</a>
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -205,12 +208,14 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see
-     * <a>host-vpc</a>
+     * A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual
+     * Private Cloud</a>
      * </p>
      * 
      * @return A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see
-     *         <a>host-vpc</a>
+     *         <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an
+     *         Amazon Virtual Private Cloud</a>
      */
 
     public VpcConfig getVpcConfig() {
@@ -219,13 +224,15 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see
-     * <a>host-vpc</a>
+     * A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual
+     * Private Cloud</a>
      * </p>
      * 
      * @param vpcConfig
      *        A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see
-     *        <a>host-vpc</a>
+     *        <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an
+     *        Amazon Virtual Private Cloud</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

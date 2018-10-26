@@ -32,7 +32,9 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
     /**
      * <p>
      * The registry path of the Docker image that contains the training algorithm. For information about Docker registry
-     * paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
+     * paths for built-in algorithms, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>.
      * </p>
      */
     private String trainingImage;
@@ -65,12 +67,16 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
     /**
      * <p>
      * The registry path of the Docker image that contains the training algorithm. For information about Docker registry
-     * paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
+     * paths for built-in algorithms, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>.
      * </p>
      * 
      * @param trainingImage
      *        The registry path of the Docker image that contains the training algorithm. For information about Docker
-     *        registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
+     *        registry paths for built-in algorithms, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     *        Provided by Amazon SageMaker: Common Parameters</a>.
      */
 
     public void setTrainingImage(String trainingImage) {
@@ -80,11 +86,15 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
     /**
      * <p>
      * The registry path of the Docker image that contains the training algorithm. For information about Docker registry
-     * paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
+     * paths for built-in algorithms, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>.
      * </p>
      * 
      * @return The registry path of the Docker image that contains the training algorithm. For information about Docker
-     *         registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
+     *         registry paths for built-in algorithms, see <a
+     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html"
+     *         >Algorithms Provided by Amazon SageMaker: Common Parameters</a>.
      */
 
     public String getTrainingImage() {
@@ -94,12 +104,16 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
     /**
      * <p>
      * The registry path of the Docker image that contains the training algorithm. For information about Docker registry
-     * paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
+     * paths for built-in algorithms, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>.
      * </p>
      * 
      * @param trainingImage
      *        The registry path of the Docker image that contains the training algorithm. For information about Docker
-     *        registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
+     *        registry paths for built-in algorithms, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     *        Provided by Amazon SageMaker: Common Parameters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

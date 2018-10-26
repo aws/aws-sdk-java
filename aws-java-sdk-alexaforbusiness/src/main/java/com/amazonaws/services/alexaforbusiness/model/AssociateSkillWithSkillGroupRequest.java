@@ -27,7 +27,7 @@ public class AssociateSkillWithSkillGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the skill group to associate the skill to.
+     * The ARN of the skill group to associate the skill to. Required.
      * </p>
      */
     private String skillGroupArn;
@@ -40,11 +40,11 @@ public class AssociateSkillWithSkillGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the skill group to associate the skill to.
+     * The ARN of the skill group to associate the skill to. Required.
      * </p>
      * 
      * @param skillGroupArn
-     *        The ARN of the skill group to associate the skill to.
+     *        The ARN of the skill group to associate the skill to. Required.
      */
 
     public void setSkillGroupArn(String skillGroupArn) {
@@ -53,10 +53,10 @@ public class AssociateSkillWithSkillGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the skill group to associate the skill to.
+     * The ARN of the skill group to associate the skill to. Required.
      * </p>
      * 
-     * @return The ARN of the skill group to associate the skill to.
+     * @return The ARN of the skill group to associate the skill to. Required.
      */
 
     public String getSkillGroupArn() {
@@ -65,11 +65,11 @@ public class AssociateSkillWithSkillGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the skill group to associate the skill to.
+     * The ARN of the skill group to associate the skill to. Required.
      * </p>
      * 
      * @param skillGroupArn
-     *        The ARN of the skill group to associate the skill to.
+     *        The ARN of the skill group to associate the skill to. Required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

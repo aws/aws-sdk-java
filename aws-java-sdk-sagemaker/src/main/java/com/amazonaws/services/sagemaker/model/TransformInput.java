@@ -43,9 +43,9 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
     private String contentType;
     /**
      * <p>
-     * Compressing data helps save on storage space. If your transform data is compressed, specify the compression
-     * type.and Amazon SageMaker will automatically decompress the data for the transform job accordingly. The default
-     * value is <code>None</code>.
+     * Compressing data helps save on storage space. If your transform data is compressed, specify the compression type.
+     * Amazon SageMaker automatically decompresses the data for the transform job accordingly. The default value is
+     * <code>None</code>.
      * </p>
      */
     private String compressionType;
@@ -161,15 +161,15 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Compressing data helps save on storage space. If your transform data is compressed, specify the compression
-     * type.and Amazon SageMaker will automatically decompress the data for the transform job accordingly. The default
-     * value is <code>None</code>.
+     * Compressing data helps save on storage space. If your transform data is compressed, specify the compression type.
+     * Amazon SageMaker automatically decompresses the data for the transform job accordingly. The default value is
+     * <code>None</code>.
      * </p>
      * 
      * @param compressionType
      *        Compressing data helps save on storage space. If your transform data is compressed, specify the
-     *        compression type.and Amazon SageMaker will automatically decompress the data for the transform job
-     *        accordingly. The default value is <code>None</code>.
+     *        compression type. Amazon SageMaker automatically decompresses the data for the transform job accordingly.
+     *        The default value is <code>None</code>.
      * @see CompressionType
      */
 
@@ -179,14 +179,14 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Compressing data helps save on storage space. If your transform data is compressed, specify the compression
-     * type.and Amazon SageMaker will automatically decompress the data for the transform job accordingly. The default
-     * value is <code>None</code>.
+     * Compressing data helps save on storage space. If your transform data is compressed, specify the compression type.
+     * Amazon SageMaker automatically decompresses the data for the transform job accordingly. The default value is
+     * <code>None</code>.
      * </p>
      * 
      * @return Compressing data helps save on storage space. If your transform data is compressed, specify the
-     *         compression type.and Amazon SageMaker will automatically decompress the data for the transform job
-     *         accordingly. The default value is <code>None</code>.
+     *         compression type. Amazon SageMaker automatically decompresses the data for the transform job accordingly.
+     *         The default value is <code>None</code>.
      * @see CompressionType
      */
 
@@ -196,15 +196,15 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Compressing data helps save on storage space. If your transform data is compressed, specify the compression
-     * type.and Amazon SageMaker will automatically decompress the data for the transform job accordingly. The default
-     * value is <code>None</code>.
+     * Compressing data helps save on storage space. If your transform data is compressed, specify the compression type.
+     * Amazon SageMaker automatically decompresses the data for the transform job accordingly. The default value is
+     * <code>None</code>.
      * </p>
      * 
      * @param compressionType
      *        Compressing data helps save on storage space. If your transform data is compressed, specify the
-     *        compression type.and Amazon SageMaker will automatically decompress the data for the transform job
-     *        accordingly. The default value is <code>None</code>.
+     *        compression type. Amazon SageMaker automatically decompresses the data for the transform job accordingly.
+     *        The default value is <code>None</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CompressionType
      */
@@ -216,15 +216,15 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Compressing data helps save on storage space. If your transform data is compressed, specify the compression
-     * type.and Amazon SageMaker will automatically decompress the data for the transform job accordingly. The default
-     * value is <code>None</code>.
+     * Compressing data helps save on storage space. If your transform data is compressed, specify the compression type.
+     * Amazon SageMaker automatically decompresses the data for the transform job accordingly. The default value is
+     * <code>None</code>.
      * </p>
      * 
      * @param compressionType
      *        Compressing data helps save on storage space. If your transform data is compressed, specify the
-     *        compression type.and Amazon SageMaker will automatically decompress the data for the transform job
-     *        accordingly. The default value is <code>None</code>.
+     *        compression type. Amazon SageMaker automatically decompresses the data for the transform job accordingly.
+     *        The default value is <code>None</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CompressionType
      */

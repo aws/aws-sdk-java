@@ -111,6 +111,12 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String maxConcurrency;
+    /**
+     * <p>
+     * The severity level to assign to the association.
+     * </p>
+     */
+    private String complianceSeverity;
 
     /**
      * <p>
@@ -721,6 +727,65 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The severity level to assign to the association.
+     * </p>
+     * 
+     * @param complianceSeverity
+     *        The severity level to assign to the association.
+     * @see AssociationComplianceSeverity
+     */
+
+    public void setComplianceSeverity(String complianceSeverity) {
+        this.complianceSeverity = complianceSeverity;
+    }
+
+    /**
+     * <p>
+     * The severity level to assign to the association.
+     * </p>
+     * 
+     * @return The severity level to assign to the association.
+     * @see AssociationComplianceSeverity
+     */
+
+    public String getComplianceSeverity() {
+        return this.complianceSeverity;
+    }
+
+    /**
+     * <p>
+     * The severity level to assign to the association.
+     * </p>
+     * 
+     * @param complianceSeverity
+     *        The severity level to assign to the association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssociationComplianceSeverity
+     */
+
+    public UpdateAssociationRequest withComplianceSeverity(String complianceSeverity) {
+        setComplianceSeverity(complianceSeverity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The severity level to assign to the association.
+     * </p>
+     * 
+     * @param complianceSeverity
+     *        The severity level to assign to the association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssociationComplianceSeverity
+     */
+
+    public UpdateAssociationRequest withComplianceSeverity(AssociationComplianceSeverity complianceSeverity) {
+        this.complianceSeverity = complianceSeverity.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -752,7 +817,9 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getMaxErrors() != null)
             sb.append("MaxErrors: ").append(getMaxErrors()).append(",");
         if (getMaxConcurrency() != null)
-            sb.append("MaxConcurrency: ").append(getMaxConcurrency());
+            sb.append("MaxConcurrency: ").append(getMaxConcurrency()).append(",");
+        if (getComplianceSeverity() != null)
+            sb.append("ComplianceSeverity: ").append(getComplianceSeverity());
         sb.append("}");
         return sb.toString();
     }
@@ -811,6 +878,10 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getMaxConcurrency() != null && other.getMaxConcurrency().equals(this.getMaxConcurrency()) == false)
             return false;
+        if (other.getComplianceSeverity() == null ^ this.getComplianceSeverity() == null)
+            return false;
+        if (other.getComplianceSeverity() != null && other.getComplianceSeverity().equals(this.getComplianceSeverity()) == false)
+            return false;
         return true;
     }
 
@@ -830,6 +901,7 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getAssociationVersion() == null) ? 0 : getAssociationVersion().hashCode());
         hashCode = prime * hashCode + ((getMaxErrors() == null) ? 0 : getMaxErrors().hashCode());
         hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
+        hashCode = prime * hashCode + ((getComplianceSeverity() == null) ? 0 : getComplianceSeverity().hashCode());
         return hashCode;
     }
 

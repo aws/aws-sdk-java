@@ -54,7 +54,8 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
-     * configurations, see <a>notebook-lifecycle-config</a>.
+     * configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.
      * </p>
      */
     private String lifecycleConfigName;
@@ -65,6 +66,12 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private Boolean disassociateLifecycleConfig;
+    /**
+     * <p>
+     * The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * </p>
+     */
+    private Integer volumeSizeInGB;
 
     /**
      * <p>
@@ -253,12 +260,15 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
-     * configurations, see <a>notebook-lifecycle-config</a>.
+     * configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.
      * </p>
      * 
      * @param lifecycleConfigName
      *        The name of a lifecycle configuration to associate with the notebook instance. For information about
-     *        lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     *        lifestyle configurations, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     *        Customize a Notebook Instance</a>.
      */
 
     public void setLifecycleConfigName(String lifecycleConfigName) {
@@ -268,11 +278,14 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
-     * configurations, see <a>notebook-lifecycle-config</a>.
+     * configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.
      * </p>
      * 
      * @return The name of a lifecycle configuration to associate with the notebook instance. For information about
-     *         lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     *         lifestyle configurations, see <a
+     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     *         Customize a Notebook Instance</a>.
      */
 
     public String getLifecycleConfigName() {
@@ -282,12 +295,15 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
-     * configurations, see <a>notebook-lifecycle-config</a>.
+     * configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.
      * </p>
      * 
      * @param lifecycleConfigName
      *        The name of a lifecycle configuration to associate with the notebook instance. For information about
-     *        lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     *        lifestyle configurations, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     *        Customize a Notebook Instance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -357,6 +373,46 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * </p>
+     * 
+     * @param volumeSizeInGB
+     *        The size, in GB, of the ML storage volume to attach to the notebook instance.
+     */
+
+    public void setVolumeSizeInGB(Integer volumeSizeInGB) {
+        this.volumeSizeInGB = volumeSizeInGB;
+    }
+
+    /**
+     * <p>
+     * The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * </p>
+     * 
+     * @return The size, in GB, of the ML storage volume to attach to the notebook instance.
+     */
+
+    public Integer getVolumeSizeInGB() {
+        return this.volumeSizeInGB;
+    }
+
+    /**
+     * <p>
+     * The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * </p>
+     * 
+     * @param volumeSizeInGB
+     *        The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNotebookInstanceRequest withVolumeSizeInGB(Integer volumeSizeInGB) {
+        setVolumeSizeInGB(volumeSizeInGB);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -376,7 +432,9 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
         if (getLifecycleConfigName() != null)
             sb.append("LifecycleConfigName: ").append(getLifecycleConfigName()).append(",");
         if (getDisassociateLifecycleConfig() != null)
-            sb.append("DisassociateLifecycleConfig: ").append(getDisassociateLifecycleConfig());
+            sb.append("DisassociateLifecycleConfig: ").append(getDisassociateLifecycleConfig()).append(",");
+        if (getVolumeSizeInGB() != null)
+            sb.append("VolumeSizeInGB: ").append(getVolumeSizeInGB());
         sb.append("}");
         return sb.toString();
     }
@@ -411,6 +469,10 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getDisassociateLifecycleConfig() != null && other.getDisassociateLifecycleConfig().equals(this.getDisassociateLifecycleConfig()) == false)
             return false;
+        if (other.getVolumeSizeInGB() == null ^ this.getVolumeSizeInGB() == null)
+            return false;
+        if (other.getVolumeSizeInGB() != null && other.getVolumeSizeInGB().equals(this.getVolumeSizeInGB()) == false)
+            return false;
         return true;
     }
 
@@ -424,6 +486,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getLifecycleConfigName() == null) ? 0 : getLifecycleConfigName().hashCode());
         hashCode = prime * hashCode + ((getDisassociateLifecycleConfig() == null) ? 0 : getDisassociateLifecycleConfig().hashCode());
+        hashCode = prime * hashCode + ((getVolumeSizeInGB() == null) ? 0 : getVolumeSizeInGB().hashCode());
         return hashCode;
     }
 

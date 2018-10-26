@@ -83,7 +83,8 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
-     * configurations, see <a>notebook-lifecycle-config</a>.
+     * configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.
      * </p>
      */
     private String lifecycleConfigName;
@@ -95,11 +96,19 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * VPC.
      * </p>
      * <p>
-     * For more information, see <a>appendix-notebook-and-internet-access</a>. You can set the value of this parameter
-     * to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * >Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to
+     * <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
      * </p>
      */
     private String directInternetAccess;
+    /**
+     * <p>
+     * The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * </p>
+     */
+    private Integer volumeSizeInGB;
 
     /**
      * <p>
@@ -545,12 +554,15 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
-     * configurations, see <a>notebook-lifecycle-config</a>.
+     * configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.
      * </p>
      * 
      * @param lifecycleConfigName
      *        The name of a lifecycle configuration to associate with the notebook instance. For information about
-     *        lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     *        lifestyle configurations, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     *        Customize a Notebook Instance</a>.
      */
 
     public void setLifecycleConfigName(String lifecycleConfigName) {
@@ -560,11 +572,14 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
-     * configurations, see <a>notebook-lifecycle-config</a>.
+     * configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.
      * </p>
      * 
      * @return The name of a lifecycle configuration to associate with the notebook instance. For information about
-     *         lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     *         lifestyle configurations, see <a
+     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     *         Customize a Notebook Instance</a>.
      */
 
     public String getLifecycleConfigName() {
@@ -574,12 +589,15 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
-     * configurations, see <a>notebook-lifecycle-config</a>.
+     * configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.
      * </p>
      * 
      * @param lifecycleConfigName
      *        The name of a lifecycle configuration to associate with the notebook instance. For information about
-     *        lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     *        lifestyle configurations, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+     *        Customize a Notebook Instance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -596,8 +614,10 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * VPC.
      * </p>
      * <p>
-     * For more information, see <a>appendix-notebook-and-internet-access</a>. You can set the value of this parameter
-     * to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * >Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to
+     * <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
      * </p>
      * 
      * @param directInternetAccess
@@ -606,8 +626,10 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        not be able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT
      *        Gateway in your VPC.</p>
      *        <p>
-     *        For more information, see <a>appendix-notebook-and-internet-access</a>. You can set the value of this
-     *        parameter to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     *        >Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to
+     *        <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
      * @see DirectInternetAccess
      */
 
@@ -623,8 +645,10 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * VPC.
      * </p>
      * <p>
-     * For more information, see <a>appendix-notebook-and-internet-access</a>. You can set the value of this parameter
-     * to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * >Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to
+     * <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
      * </p>
      * 
      * @return Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
@@ -632,8 +656,10 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *         not be able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT
      *         Gateway in your VPC.</p>
      *         <p>
-     *         For more information, see <a>appendix-notebook-and-internet-access</a>. You can set the value of this
-     *         parameter to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     *         >Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to
+     *         <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
      * @see DirectInternetAccess
      */
 
@@ -649,8 +675,10 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * VPC.
      * </p>
      * <p>
-     * For more information, see <a>appendix-notebook-and-internet-access</a>. You can set the value of this parameter
-     * to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * >Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to
+     * <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
      * </p>
      * 
      * @param directInternetAccess
@@ -659,8 +687,10 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        not be able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT
      *        Gateway in your VPC.</p>
      *        <p>
-     *        For more information, see <a>appendix-notebook-and-internet-access</a>. You can set the value of this
-     *        parameter to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     *        >Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to
+     *        <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectInternetAccess
      */
@@ -678,8 +708,10 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * VPC.
      * </p>
      * <p>
-     * For more information, see <a>appendix-notebook-and-internet-access</a>. You can set the value of this parameter
-     * to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     * >Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to
+     * <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
      * </p>
      * 
      * @param directInternetAccess
@@ -688,14 +720,56 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        not be able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT
      *        Gateway in your VPC.</p>
      *        <p>
-     *        For more information, see <a>appendix-notebook-and-internet-access</a>. You can set the value of this
-     *        parameter to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
+     *        >Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to
+     *        <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectInternetAccess
      */
 
     public CreateNotebookInstanceRequest withDirectInternetAccess(DirectInternetAccess directInternetAccess) {
         this.directInternetAccess = directInternetAccess.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * </p>
+     * 
+     * @param volumeSizeInGB
+     *        The size, in GB, of the ML storage volume to attach to the notebook instance.
+     */
+
+    public void setVolumeSizeInGB(Integer volumeSizeInGB) {
+        this.volumeSizeInGB = volumeSizeInGB;
+    }
+
+    /**
+     * <p>
+     * The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * </p>
+     * 
+     * @return The size, in GB, of the ML storage volume to attach to the notebook instance.
+     */
+
+    public Integer getVolumeSizeInGB() {
+        return this.volumeSizeInGB;
+    }
+
+    /**
+     * <p>
+     * The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * </p>
+     * 
+     * @param volumeSizeInGB
+     *        The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNotebookInstanceRequest withVolumeSizeInGB(Integer volumeSizeInGB) {
+        setVolumeSizeInGB(volumeSizeInGB);
         return this;
     }
 
@@ -727,7 +801,9 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
         if (getLifecycleConfigName() != null)
             sb.append("LifecycleConfigName: ").append(getLifecycleConfigName()).append(",");
         if (getDirectInternetAccess() != null)
-            sb.append("DirectInternetAccess: ").append(getDirectInternetAccess());
+            sb.append("DirectInternetAccess: ").append(getDirectInternetAccess()).append(",");
+        if (getVolumeSizeInGB() != null)
+            sb.append("VolumeSizeInGB: ").append(getVolumeSizeInGB());
         sb.append("}");
         return sb.toString();
     }
@@ -778,6 +854,10 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getDirectInternetAccess() != null && other.getDirectInternetAccess().equals(this.getDirectInternetAccess()) == false)
             return false;
+        if (other.getVolumeSizeInGB() == null ^ this.getVolumeSizeInGB() == null)
+            return false;
+        if (other.getVolumeSizeInGB() != null && other.getVolumeSizeInGB().equals(this.getVolumeSizeInGB()) == false)
+            return false;
         return true;
     }
 
@@ -795,6 +875,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getLifecycleConfigName() == null) ? 0 : getLifecycleConfigName().hashCode());
         hashCode = prime * hashCode + ((getDirectInternetAccess() == null) ? 0 : getDirectInternetAccess().hashCode());
+        hashCode = prime * hashCode + ((getVolumeSizeInGB() == null) ? 0 : getVolumeSizeInGB().hashCode());
         return hashCode;
     }
 

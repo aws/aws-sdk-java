@@ -1,3 +1,16 @@
+# __1.11.438__ __2018-10-26__
+## __Alexa For Business__
+  - ### Features
+    - Documentation updates for AWS Alexa for Business
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - SageMaker notebook instances can now have a volume size configured.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Compliance Severity feature release for State Manager. Users now have the ability to select compliance severity to their association in state manager console or CLI.
+
 # __1.11.437__ __2018-10-25__
 ## __Amazon Elastic Compute Cloud__
   - ### Features

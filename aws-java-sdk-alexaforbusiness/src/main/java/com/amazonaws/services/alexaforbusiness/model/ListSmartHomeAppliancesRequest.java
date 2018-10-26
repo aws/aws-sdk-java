@@ -33,7 +33,7 @@ public class ListSmartHomeAppliancesRequest extends com.amazonaws.AmazonWebServi
     private String roomArn;
     /**
      * <p>
-     * The maximum number of appliances to be return per paginated calls.
+     * The maximum number of appliances to be returned, per paginated calls.
      * </p>
      */
     private Integer maxResults;
@@ -86,11 +86,11 @@ public class ListSmartHomeAppliancesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of appliances to be return per paginated calls.
+     * The maximum number of appliances to be returned, per paginated calls.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of appliances to be return per paginated calls.
+     *        The maximum number of appliances to be returned, per paginated calls.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -99,10 +99,10 @@ public class ListSmartHomeAppliancesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of appliances to be return per paginated calls.
+     * The maximum number of appliances to be returned, per paginated calls.
      * </p>
      * 
-     * @return The maximum number of appliances to be return per paginated calls.
+     * @return The maximum number of appliances to be returned, per paginated calls.
      */
 
     public Integer getMaxResults() {
@@ -111,11 +111,11 @@ public class ListSmartHomeAppliancesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of appliances to be return per paginated calls.
+     * The maximum number of appliances to be returned, per paginated calls.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of appliances to be return per paginated calls.
+     *        The maximum number of appliances to be returned, per paginated calls.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

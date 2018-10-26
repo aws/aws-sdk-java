@@ -27,7 +27,7 @@ public class DisassociateSkillFromSkillGroupRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The unique identifier of a skill.
+     * The unique identifier of a skill. Required.
      * </p>
      */
     private String skillGroupArn;
@@ -40,11 +40,11 @@ public class DisassociateSkillFromSkillGroupRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The unique identifier of a skill.
+     * The unique identifier of a skill. Required.
      * </p>
      * 
      * @param skillGroupArn
-     *        The unique identifier of a skill.
+     *        The unique identifier of a skill. Required.
      */
 
     public void setSkillGroupArn(String skillGroupArn) {
@@ -53,10 +53,10 @@ public class DisassociateSkillFromSkillGroupRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The unique identifier of a skill.
+     * The unique identifier of a skill. Required.
      * </p>
      * 
-     * @return The unique identifier of a skill.
+     * @return The unique identifier of a skill. Required.
      */
 
     public String getSkillGroupArn() {
@@ -65,11 +65,11 @@ public class DisassociateSkillFromSkillGroupRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The unique identifier of a skill.
+     * The unique identifier of a skill. Required.
      * </p>
      * 
      * @param skillGroupArn
-     *        The unique identifier of a skill.
+     *        The unique identifier of a skill. Required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

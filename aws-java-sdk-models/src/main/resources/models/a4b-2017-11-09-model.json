@@ -619,7 +619,7 @@
         {"shape":"UnauthorizedException"},
         {"shape":"ConcurrentModificationException"}
       ],
-      "documentation":"<p>Links a user's account to a third-party skill provider. If this API is called by an assumed IAM role, the skill being linked must be a private skill, and the skill must be owned by the AWS account that assumed the IAM role.</p>"
+      "documentation":"<p>Links a user's account to a third-party skill provider. If this API operation is called by an assumed IAM role, the skill being linked must be a private skill. Also, the skill must be owned by the AWS account that assumed the IAM role.</p>"
     },
     "RegisterAVSDevice":{
       "name":"RegisterAVSDevice",
@@ -1072,7 +1072,7 @@
       "members":{
         "SkillGroupArn":{
           "shape":"Arn",
-          "documentation":"<p>The ARN of the skill group to associate the skill to.</p>"
+          "documentation":"<p>The ARN of the skill group to associate the skill to. Required.</p>"
         },
         "SkillId":{
           "shape":"SkillId",
@@ -1327,7 +1327,7 @@
         },
         "ConferenceProviderType":{
           "shape":"ConferenceProviderType",
-          "documentation":"<p>A string that represents a type within a list of predefined types.</p>"
+          "documentation":"<p>Represents a type within a list of predefined types.</p>"
         },
         "IPDialIn":{
           "shape":"IPDialIn",
@@ -1353,7 +1353,7 @@
       "members":{
         "ConferenceProviderArn":{
           "shape":"Arn",
-          "documentation":"<p>The ARN of the newly created conference provider.</p>"
+          "documentation":"<p>The ARN of the newly-created conference provider.</p>"
         }
       }
     },
@@ -1990,7 +1990,7 @@
       "members":{
         "SkillGroupArn":{
           "shape":"Arn",
-          "documentation":"<p>The unique identifier of a skill.</p>"
+          "documentation":"<p>The unique identifier of a skill. Required.</p>"
         },
         "SkillId":{
           "shape":"SkillId",
@@ -2385,7 +2385,7 @@
         },
         "MaxResults":{
           "shape":"MaxResults",
-          "documentation":"<p>The maximum number of conference providers to be return per paginated calls.</p>"
+          "documentation":"<p>The maximum number of conference providers to be returned, per paginated calls.</p>"
         }
       }
     },
@@ -2484,7 +2484,7 @@
         },
         "MaxResults":{
           "shape":"MaxResults",
-          "documentation":"<p>The maximum number of categories returned per paginated calls.</p>"
+          "documentation":"<p>The maximum number of categories returned, per paginated calls.</p>"
         }
       }
     },
@@ -2542,7 +2542,7 @@
         },
         "MaxResults":{
           "shape":"MaxResults",
-          "documentation":"<p>The maximum number of appliances to be return per paginated calls.</p>"
+          "documentation":"<p>The maximum number of appliances to be returned, per paginated calls.</p>"
         },
         "NextToken":{
           "shape":"NextToken",
@@ -4076,5 +4076,5 @@
       "pattern":"[a-zA-Z0-9@_+.-]*"
     }
   },
-  "documentation":"<p>Alexa for Business makes it easy for you to use Alexa in your organization. Alexa for Business gives you the tools you need for managing Alexa devices, enroll your users, and assign skills, at scale. You can build your own context-aware voice skills using the Alexa Skills Kit and the Alexa for Business API operations. You can make also these available as private skills for your organization. Alexa for Business makes it easy to voice-enable your products and services, providing context-aware voice experiences for your customers. In addition, Alexa for Business enables Alexa Voice Services (AVS) device manufacturers to centrally deploy and manage their devices in Alexa for Business as shared devices as a part of their existing management flow. </p>"
+  "documentation":"<p>Alexa for Business helps you use Alexa in your organization. Alexa for Business provides the tools you to manage Alexa devices, enroll your users, and assign skills, at scale. You can build your own context-aware voice skills using the Alexa Skills Kit and the Alexa for Business API operations. You can also make these available as private skills for your organization. Alexa for Business makes it efficient to voice-enable your products and services, thus providing context-aware voice experiences for your customers. In addition, Alexa for Business enables Alexa Voice Services (AVS) device manufacturers to centrally deploy and manage their devices in Alexa for Business as shared devices as a part of their existing management flow. </p>"
 }

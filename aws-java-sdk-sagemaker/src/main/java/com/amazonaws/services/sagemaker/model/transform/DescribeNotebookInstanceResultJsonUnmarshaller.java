@@ -108,6 +108,10 @@ public class DescribeNotebookInstanceResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     describeNotebookInstanceResult.setDirectInternetAccess(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("VolumeSizeInGB", targetDepth)) {
+                    context.nextToken();
+                    describeNotebookInstanceResult.setVolumeSizeInGB(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

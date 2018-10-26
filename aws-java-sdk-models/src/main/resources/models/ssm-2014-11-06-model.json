@@ -1925,6 +1925,16 @@
       "documentation":"<p>The specified association already exists.</p>",
       "exception":true
     },
+    "AssociationComplianceSeverity":{
+      "type":"string",
+      "enum":[
+        "CRITICAL",
+        "HIGH",
+        "MEDIUM",
+        "LOW",
+        "UNSPECIFIED"
+      ]
+    },
     "AssociationDescription":{
       "type":"structure",
       "members":{
@@ -1999,6 +2009,10 @@
         "MaxConcurrency":{
           "shape":"MaxConcurrency",
           "documentation":"<p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p> <p>If a new instance starts and attempts to execute an association while Systems Manager is executing MaxConcurrency associations, the association is allowed to run. During the next association interval, the new instance will process its association within the limit specified for MaxConcurrency.</p>"
+        },
+        "ComplianceSeverity":{
+          "shape":"AssociationComplianceSeverity",
+          "documentation":"<p>The severity level that is assigned to the association.</p>"
         }
       },
       "documentation":"<p>Describes the parameters for a document.</p>"
@@ -2384,6 +2398,10 @@
         "MaxConcurrency":{
           "shape":"MaxConcurrency",
           "documentation":"<p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p> <p>If a new instance starts and attempts to execute an association while Systems Manager is executing MaxConcurrency associations, the association is allowed to run. During the next association interval, the new instance will process its association within the limit specified for MaxConcurrency.</p>"
+        },
+        "ComplianceSeverity":{
+          "shape":"AssociationComplianceSeverity",
+          "documentation":"<p>The severity level that is assigned to the association.</p>"
         }
       },
       "documentation":"<p>Information about the association version.</p>"
@@ -3519,6 +3537,10 @@
         "MaxConcurrency":{
           "shape":"MaxConcurrency",
           "documentation":"<p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p> <p>If a new instance starts and attempts to execute an association while Systems Manager is executing MaxConcurrency associations, the association is allowed to run. During the next association interval, the new instance will process its association within the limit specified for MaxConcurrency.</p>"
+        },
+        "ComplianceSeverity":{
+          "shape":"AssociationComplianceSeverity",
+          "documentation":"<p>The severity level to assign to the association.</p>"
         }
       },
       "documentation":"<p>Describes the association of a Systems Manager document and an instance.</p>"
@@ -3579,6 +3601,10 @@
         "MaxConcurrency":{
           "shape":"MaxConcurrency",
           "documentation":"<p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p> <p>If a new instance starts and attempts to execute an association while Systems Manager is executing MaxConcurrency associations, the association is allowed to run. During the next association interval, the new instance will process its association within the limit specified for MaxConcurrency.</p>"
+        },
+        "ComplianceSeverity":{
+          "shape":"AssociationComplianceSeverity",
+          "documentation":"<p>The severity level to assign to the association.</p>"
         }
       }
     },
@@ -11536,6 +11562,10 @@
         "MaxConcurrency":{
           "shape":"MaxConcurrency",
           "documentation":"<p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p> <p>If a new instance starts and attempts to execute an association while Systems Manager is executing MaxConcurrency associations, the association is allowed to run. During the next association interval, the new instance will process its association within the limit specified for MaxConcurrency.</p>"
+        },
+        "ComplianceSeverity":{
+          "shape":"AssociationComplianceSeverity",
+          "documentation":"<p>The severity level to assign to the association.</p>"
         }
       }
     },

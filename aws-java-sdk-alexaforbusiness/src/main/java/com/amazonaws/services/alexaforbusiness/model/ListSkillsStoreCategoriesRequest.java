@@ -33,7 +33,7 @@ public class ListSkillsStoreCategoriesRequest extends com.amazonaws.AmazonWebSer
     private String nextToken;
     /**
      * <p>
-     * The maximum number of categories returned per paginated calls.
+     * The maximum number of categories returned, per paginated calls.
      * </p>
      */
     private Integer maxResults;
@@ -80,11 +80,11 @@ public class ListSkillsStoreCategoriesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of categories returned per paginated calls.
+     * The maximum number of categories returned, per paginated calls.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of categories returned per paginated calls.
+     *        The maximum number of categories returned, per paginated calls.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -93,10 +93,10 @@ public class ListSkillsStoreCategoriesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of categories returned per paginated calls.
+     * The maximum number of categories returned, per paginated calls.
      * </p>
      * 
-     * @return The maximum number of categories returned per paginated calls.
+     * @return The maximum number of categories returned, per paginated calls.
      */
 
     public Integer getMaxResults() {
@@ -105,11 +105,11 @@ public class ListSkillsStoreCategoriesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of categories returned per paginated calls.
+     * The maximum number of categories returned, per paginated calls.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of categories returned per paginated calls.
+     *        The maximum number of categories returned, per paginated calls.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

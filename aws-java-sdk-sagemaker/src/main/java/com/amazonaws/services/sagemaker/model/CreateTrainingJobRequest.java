@@ -48,7 +48,8 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata,
      * including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing
-     * your own algorithms, see <a>your-algorithms</a>.
+     * your own algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your
+     * Own Algorithms with Amazon SageMaker</a>.
      * </p>
      */
     private AlgorithmSpecification algorithmSpecification;
@@ -110,7 +111,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control access to
-     * and from your training container by configuring the VPC. For more information, see <a>train-vpc</a>
+     * and from your training container by configuring the VPC. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
+     * Virtual Private Cloud</a>.
      * </p>
      */
     private VpcConfig vpcConfig;
@@ -275,14 +278,17 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata,
      * including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing
-     * your own algorithms, see <a>your-algorithms</a>.
+     * your own algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your
+     * Own Algorithms with Amazon SageMaker</a>.
      * </p>
      * 
      * @param algorithmSpecification
      *        The registry path of the Docker image that contains the training algorithm and algorithm-specific
      *        metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker,
      *        see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information
-     *        about providing your own algorithms, see <a>your-algorithms</a>.
+     *        about providing your own algorithms, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
+     *        Amazon SageMaker</a>.
      */
 
     public void setAlgorithmSpecification(AlgorithmSpecification algorithmSpecification) {
@@ -294,13 +300,16 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata,
      * including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing
-     * your own algorithms, see <a>your-algorithms</a>.
+     * your own algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your
+     * Own Algorithms with Amazon SageMaker</a>.
      * </p>
      * 
      * @return The registry path of the Docker image that contains the training algorithm and algorithm-specific
      *         metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker,
      *         see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information
-     *         about providing your own algorithms, see <a>your-algorithms</a>.
+     *         about providing your own algorithms, see <a
+     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
+     *         Amazon SageMaker</a>.
      */
 
     public AlgorithmSpecification getAlgorithmSpecification() {
@@ -312,14 +321,17 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata,
      * including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing
-     * your own algorithms, see <a>your-algorithms</a>.
+     * your own algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your
+     * Own Algorithms with Amazon SageMaker</a>.
      * </p>
      * 
      * @param algorithmSpecification
      *        The registry path of the Docker image that contains the training algorithm and algorithm-specific
      *        metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker,
      *        see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information
-     *        about providing your own algorithms, see <a>your-algorithms</a>.
+     *        about providing your own algorithms, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
+     *        Amazon SageMaker</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -723,13 +735,16 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control access to
-     * and from your training container by configuring the VPC. For more information, see <a>train-vpc</a>
+     * and from your training container by configuring the VPC. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
+     * Virtual Private Cloud</a>.
      * </p>
      * 
      * @param vpcConfig
      *        A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control
-     *        access to and from your training container by configuring the VPC. For more information, see
-     *        <a>train-vpc</a>
+     *        access to and from your training container by configuring the VPC. For more information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an
+     *        Amazon Virtual Private Cloud</a>.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -739,12 +754,15 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control access to
-     * and from your training container by configuring the VPC. For more information, see <a>train-vpc</a>
+     * and from your training container by configuring the VPC. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
+     * Virtual Private Cloud</a>.
      * </p>
      * 
      * @return A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control
-     *         access to and from your training container by configuring the VPC. For more information, see
-     *         <a>train-vpc</a>
+     *         access to and from your training container by configuring the VPC. For more information, see <a
+     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an
+     *         Amazon Virtual Private Cloud</a>.
      */
 
     public VpcConfig getVpcConfig() {
@@ -754,13 +772,16 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control access to
-     * and from your training container by configuring the VPC. For more information, see <a>train-vpc</a>
+     * and from your training container by configuring the VPC. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
+     * Virtual Private Cloud</a>.
      * </p>
      * 
      * @param vpcConfig
      *        A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control
-     *        access to and from your training container by configuring the VPC. For more information, see
-     *        <a>train-vpc</a>
+     *        access to and from your training container by configuring the VPC. For more information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an
+     *        Amazon Virtual Private Cloud</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
