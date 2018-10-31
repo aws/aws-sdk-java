@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.databasemigrationservice.waiters.AWSDatabaseMigrationServiceWaiters;
 
 /**
  * Abstract implementation of {@code AWSDatabaseMigrationService}. Convenient method forms pass through to the
@@ -264,6 +265,11 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AWSDatabaseMigrationServiceWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

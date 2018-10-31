@@ -426,6 +426,12 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      */
     private Boolean deletionProtection;
+    /**
+     * <p>
+     * Specifies the listener connection endpoint for SQL Server Always On.
+     * </p>
+     */
+    private Endpoint listenerEndpoint;
 
     /**
      * <p>
@@ -3525,6 +3531,46 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies the listener connection endpoint for SQL Server Always On.
+     * </p>
+     * 
+     * @param listenerEndpoint
+     *        Specifies the listener connection endpoint for SQL Server Always On.
+     */
+
+    public void setListenerEndpoint(Endpoint listenerEndpoint) {
+        this.listenerEndpoint = listenerEndpoint;
+    }
+
+    /**
+     * <p>
+     * Specifies the listener connection endpoint for SQL Server Always On.
+     * </p>
+     * 
+     * @return Specifies the listener connection endpoint for SQL Server Always On.
+     */
+
+    public Endpoint getListenerEndpoint() {
+        return this.listenerEndpoint;
+    }
+
+    /**
+     * <p>
+     * Specifies the listener connection endpoint for SQL Server Always On.
+     * </p>
+     * 
+     * @param listenerEndpoint
+     *        Specifies the listener connection endpoint for SQL Server Always On.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withListenerEndpoint(Endpoint listenerEndpoint) {
+        setListenerEndpoint(listenerEndpoint);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -3644,7 +3690,9 @@ public class DBInstance implements Serializable, Cloneable {
         if (getProcessorFeatures() != null)
             sb.append("ProcessorFeatures: ").append(getProcessorFeatures()).append(",");
         if (getDeletionProtection() != null)
-            sb.append("DeletionProtection: ").append(getDeletionProtection());
+            sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
+        if (getListenerEndpoint() != null)
+            sb.append("ListenerEndpoint: ").append(getListenerEndpoint());
         sb.append("}");
         return sb.toString();
     }
@@ -3885,6 +3933,10 @@ public class DBInstance implements Serializable, Cloneable {
             return false;
         if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
             return false;
+        if (other.getListenerEndpoint() == null ^ this.getListenerEndpoint() == null)
+            return false;
+        if (other.getListenerEndpoint() != null && other.getListenerEndpoint().equals(this.getListenerEndpoint()) == false)
+            return false;
         return true;
     }
 
@@ -3948,6 +4000,7 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEnabledCloudwatchLogsExports() == null) ? 0 : getEnabledCloudwatchLogsExports().hashCode());
         hashCode = prime * hashCode + ((getProcessorFeatures() == null) ? 0 : getProcessorFeatures().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
+        hashCode = prime * hashCode + ((getListenerEndpoint() == null) ? 0 : getListenerEndpoint().hashCode());
         return hashCode;
     }
 

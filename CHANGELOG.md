@@ -1,3 +1,20 @@
+# __1.11.439__ __2018-10-30__
+## __AWS Database Migration Service__
+  - ### Features
+    - Add waiters for TestConnectionSucceeds, EndpointDeleted, ReplicationInstanceAvailable, ReplicationInstanceDeleted, ReplicationTaskReady, ReplicationTaskStopped, ReplicationTaskRunning and ReplicationTaskDeleted.
+
+## __Amazon Chime__
+  - ### Features
+    - This is the initial release for the Amazon Chime AWS SDK. In this release, Amazon Chime adds support for administrative actions on users and accounts. API Documentation is also updated on https://docs.aws.amazon.com/chime/index.html
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This release adds the listener connection endpoint for SQL Server Always On to the list of fields returned when performing a describe-db-instances operation.
+
+## __Amazon S3__
+  - ### Bugfixes
+    - Fix a bug in `TransferManager` that caused tags set on a `CopyObjectRequest` to be omitted when it is promoted to a multi-part copy.
+
 # __1.11.438__ __2018-10-26__
 ## __Alexa For Business__
   - ### Features

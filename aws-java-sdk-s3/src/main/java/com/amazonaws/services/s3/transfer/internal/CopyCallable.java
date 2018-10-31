@@ -240,6 +240,8 @@ public class CopyCallable implements Callable<CopyResult> {
 
         populateMetadataWithEncryptionParams(metadata,newObjectMetadata);
 
+        req.setTagging(origReq.getNewObjectTagging());
+
         String uploadId = s3.initiateMultipartUpload(req).getUploadId();
         log.debug("Initiated new multipart upload: " + uploadId);
 

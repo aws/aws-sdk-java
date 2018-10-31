@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.439-SNAPSHOT</version>
+    <version>1.11.439</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,12 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-chime</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-signer</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -998,6 +1004,10 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>Amazon Chime</title>
+                                  <packages>com.amazonaws.services.chime*</packages>
+                              </group>
                               <group>
                                   <title>AWS Signer</title>
                                   <packages>com.amazonaws.services.signer*</packages>

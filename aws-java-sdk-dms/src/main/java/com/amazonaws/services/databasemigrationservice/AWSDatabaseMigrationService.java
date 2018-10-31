@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
+import com.amazonaws.services.databasemigrationservice.waiters.AWSDatabaseMigrationServiceWaiters;
 
 /**
  * Interface for accessing AWS Database Migration Service.
@@ -994,5 +995,7 @@ public interface AWSDatabaseMigrationService {
      * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AWSDatabaseMigrationServiceWaiters waiters();
 
 }
