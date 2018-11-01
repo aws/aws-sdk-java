@@ -30,7 +30,10 @@ public class Function implements Serializable, Cloneable, StructuredPojo {
     private String functionArn;
     /** The configuration of the Lambda function. */
     private FunctionConfiguration functionConfiguration;
-    /** The ID of the Lambda function. */
+    /**
+     * A descriptive or arbitrary ID for the function. This value must be unique within the function definition version.
+     * Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
+     */
     private String id;
 
     /**
@@ -102,10 +105,12 @@ public class Function implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The ID of the Lambda function.
+     * A descriptive or arbitrary ID for the function. This value must be unique within the function definition version.
+     * Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      * 
      * @param id
-     *        The ID of the Lambda function.
+     *        A descriptive or arbitrary ID for the function. This value must be unique within the function definition
+     *        version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      */
 
     public void setId(String id) {
@@ -113,9 +118,11 @@ public class Function implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The ID of the Lambda function.
+     * A descriptive or arbitrary ID for the function. This value must be unique within the function definition version.
+     * Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      * 
-     * @return The ID of the Lambda function.
+     * @return A descriptive or arbitrary ID for the function. This value must be unique within the function definition
+     *         version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      */
 
     public String getId() {
@@ -123,10 +130,12 @@ public class Function implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The ID of the Lambda function.
+     * A descriptive or arbitrary ID for the function. This value must be unique within the function definition version.
+     * Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      * 
      * @param id
-     *        The ID of the Lambda function.
+     *        A descriptive or arbitrary ID for the function. This value must be unique within the function definition
+     *        version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

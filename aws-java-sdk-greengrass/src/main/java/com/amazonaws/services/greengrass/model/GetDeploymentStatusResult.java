@@ -23,7 +23,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** The status of the deployment. */
+    /** The status of the deployment: ''Pending'', ''InProgress'', ''Success'', or ''Failure''. */
     private String deploymentStatus;
     /** The type of the deployment. */
     private String deploymentType;
@@ -35,10 +35,10 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
     private String updatedAt;
 
     /**
-     * The status of the deployment.
+     * The status of the deployment: ''Pending'', ''InProgress'', ''Success'', or ''Failure''.
      * 
      * @param deploymentStatus
-     *        The status of the deployment.
+     *        The status of the deployment: ''Pending'', ''InProgress'', ''Success'', or ''Failure''.
      */
 
     public void setDeploymentStatus(String deploymentStatus) {
@@ -46,9 +46,9 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * The status of the deployment.
+     * The status of the deployment: ''Pending'', ''InProgress'', ''Success'', or ''Failure''.
      * 
-     * @return The status of the deployment.
+     * @return The status of the deployment: ''Pending'', ''InProgress'', ''Success'', or ''Failure''.
      */
 
     public String getDeploymentStatus() {
@@ -56,10 +56,10 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * The status of the deployment.
+     * The status of the deployment: ''Pending'', ''InProgress'', ''Success'', or ''Failure''.
      * 
      * @param deploymentStatus
-     *        The status of the deployment.
+     *        The status of the deployment: ''Pending'', ''InProgress'', ''Success'', or ''Failure''.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -15,7 +15,7 @@ package com.amazonaws.services.greengrass.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * The type of deployment.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DeploymentType {

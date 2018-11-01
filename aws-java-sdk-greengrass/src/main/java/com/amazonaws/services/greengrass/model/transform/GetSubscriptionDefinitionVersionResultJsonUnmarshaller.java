@@ -64,6 +64,10 @@ public class GetSubscriptionDefinitionVersionResultJsonUnmarshaller implements U
                     context.nextToken();
                     getSubscriptionDefinitionVersionResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("NextToken", targetDepth)) {
+                    context.nextToken();
+                    getSubscriptionDefinitionVersionResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Version", targetDepth)) {
                     context.nextToken();
                     getSubscriptionDefinitionVersionResult.setVersion(context.getUnmarshaller(String.class).unmarshall(context));

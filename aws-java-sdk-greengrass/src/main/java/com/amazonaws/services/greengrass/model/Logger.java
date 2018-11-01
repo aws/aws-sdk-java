@@ -28,7 +28,10 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
 
     /** The component that will be subject to logging. */
     private String component;
-    /** The id of the logger. */
+    /**
+     * A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max
+     * length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
+     */
     private String id;
     /** The level of the logs. */
     private String level;
@@ -101,10 +104,12 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The id of the logger.
+     * A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max
+     * length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      * 
      * @param id
-     *        The id of the logger.
+     *        A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition
+     *        version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      */
 
     public void setId(String id) {
@@ -112,9 +117,11 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The id of the logger.
+     * A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max
+     * length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      * 
-     * @return The id of the logger.
+     * @return A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition
+     *         version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      */
 
     public String getId() {
@@ -122,10 +129,12 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The id of the logger.
+     * A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max
+     * length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      * 
      * @param id
-     *        The id of the logger.
+     *        A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition
+     *        version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

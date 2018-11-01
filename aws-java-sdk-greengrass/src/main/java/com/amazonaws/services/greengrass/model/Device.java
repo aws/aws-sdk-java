@@ -28,7 +28,10 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /** The ARN of the certificate associated with the device. */
     private String certificateArn;
-    /** The ID of the device. */
+    /**
+     * A descriptive or arbitrary ID for the device. This value must be unique within the device definition version. Max
+     * length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
+     */
     private String id;
     /** If true, the device's local shadow will be automatically synced with the cloud. */
     private Boolean syncShadow;
@@ -70,10 +73,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The ID of the device.
+     * A descriptive or arbitrary ID for the device. This value must be unique within the device definition version. Max
+     * length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      * 
      * @param id
-     *        The ID of the device.
+     *        A descriptive or arbitrary ID for the device. This value must be unique within the device definition
+     *        version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      */
 
     public void setId(String id) {
@@ -81,9 +86,11 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The ID of the device.
+     * A descriptive or arbitrary ID for the device. This value must be unique within the device definition version. Max
+     * length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      * 
-     * @return The ID of the device.
+     * @return A descriptive or arbitrary ID for the device. This value must be unique within the device definition
+     *         version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      */
 
     public String getId() {
@@ -91,10 +98,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The ID of the device.
+     * A descriptive or arbitrary ID for the device. This value must be unique within the device definition version. Max
+     * length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      * 
      * @param id
-     *        The ID of the device.
+     *        A descriptive or arbitrary ID for the device. This value must be unique within the device definition
+     *        version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

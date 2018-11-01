@@ -32,6 +32,8 @@ public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.Amazon
     private SubscriptionDefinitionVersion definition;
     /** The ID of the subscription definition version. */
     private String id;
+    /** The token for the next set of results, or ''null'' if there are no additional results. */
+    private String nextToken;
     /** The version of the subscription definition version. */
     private String version;
 
@@ -172,6 +174,40 @@ public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.Amazon
     }
 
     /**
+     * The token for the next set of results, or ''null'' if there are no additional results.
+     * 
+     * @param nextToken
+     *        The token for the next set of results, or ''null'' if there are no additional results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * The token for the next set of results, or ''null'' if there are no additional results.
+     * 
+     * @return The token for the next set of results, or ''null'' if there are no additional results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * The token for the next set of results, or ''null'' if there are no additional results.
+     * 
+     * @param nextToken
+     *        The token for the next set of results, or ''null'' if there are no additional results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSubscriptionDefinitionVersionResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * The version of the subscription definition version.
      * 
      * @param version
@@ -224,6 +260,8 @@ public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.Amazon
             sb.append("Definition: ").append(getDefinition()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion());
         sb.append("}");
@@ -256,6 +294,10 @@ public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.Amazon
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         if (other.getVersion() == null ^ this.getVersion() == null)
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
@@ -272,6 +314,7 @@ public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getCreationTimestamp() == null) ? 0 : getCreationTimestamp().hashCode());
         hashCode = prime * hashCode + ((getDefinition() == null) ? 0 : getDefinition().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }

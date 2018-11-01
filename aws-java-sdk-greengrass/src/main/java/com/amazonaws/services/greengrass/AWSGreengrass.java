@@ -106,7 +106,8 @@ public interface AWSGreengrass {
     CreateCoreDefinitionVersionResult createCoreDefinitionVersion(CreateCoreDefinitionVersionRequest createCoreDefinitionVersionRequest);
 
     /**
-     * Creates a deployment.
+     * Creates a deployment. ''CreateDeployment'' requests are idempotent with respect to the ''X-Amzn-Client-Token''
+     * token and the request parameters.
      * 
      * @param createDeploymentRequest
      * @return Result of the CreateDeployment operation returned by the service.
@@ -450,6 +451,19 @@ public interface AWSGreengrass {
     GetAssociatedRoleResult getAssociatedRole(GetAssociatedRoleRequest getAssociatedRoleRequest);
 
     /**
+     * Returns the status of a bulk deployment.
+     * 
+     * @param getBulkDeploymentStatusRequest
+     * @return Result of the GetBulkDeploymentStatus operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.GetBulkDeploymentStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetBulkDeploymentStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetBulkDeploymentStatusResult getBulkDeploymentStatus(GetBulkDeploymentStatusRequest getBulkDeploymentStatusRequest);
+
+    /**
      * Retrieves the connectivity information for a core.
      * 
      * @param getConnectivityInfoRequest
@@ -704,6 +718,33 @@ public interface AWSGreengrass {
     GetSubscriptionDefinitionVersionResult getSubscriptionDefinitionVersion(GetSubscriptionDefinitionVersionRequest getSubscriptionDefinitionVersionRequest);
 
     /**
+     * Gets a paginated list of the deployments that have been started in a bulk deployment operation, and their current
+     * deployment status.
+     * 
+     * @param listBulkDeploymentDetailedReportsRequest
+     * @return Result of the ListBulkDeploymentDetailedReports operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.ListBulkDeploymentDetailedReports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeploymentDetailedReports"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListBulkDeploymentDetailedReportsResult listBulkDeploymentDetailedReports(ListBulkDeploymentDetailedReportsRequest listBulkDeploymentDetailedReportsRequest);
+
+    /**
+     * Returns a list of bulk deployments.
+     * 
+     * @param listBulkDeploymentsRequest
+     * @return Result of the ListBulkDeployments operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.ListBulkDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeployments" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListBulkDeploymentsResult listBulkDeployments(ListBulkDeploymentsRequest listBulkDeploymentsRequest);
+
+    /**
      * Lists the versions of a core definition.
      * 
      * @param listCoreDefinitionVersionsRequest
@@ -913,6 +954,37 @@ public interface AWSGreengrass {
      *      API Documentation</a>
      */
     ResetDeploymentsResult resetDeployments(ResetDeploymentsRequest resetDeploymentsRequest);
+
+    /**
+     * Deploys multiple groups in one operation. This action starts the bulk deployment of a specified set of group
+     * versions. Each group version deployment will be triggered with an adaptive rate that has a fixed upper limit. We
+     * recommend that you include an ''X-Amzn-Client-Token'' token in every ''StartBulkDeployment'' request. These
+     * requests are idempotent with respect to the token and the request parameters.
+     * 
+     * @param startBulkDeploymentRequest
+     * @return Result of the StartBulkDeployment operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.StartBulkDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StartBulkDeployment" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StartBulkDeploymentResult startBulkDeployment(StartBulkDeploymentRequest startBulkDeploymentRequest);
+
+    /**
+     * Stops the execution of a bulk deployment. This action returns a status of ''Stopping'' until the deployment is
+     * stopped. You cannot start a new bulk deployment while a previous deployment is in the ''Stopping'' state. This
+     * action doesn't rollback completed deployments or cancel pending deployments.
+     * 
+     * @param stopBulkDeploymentRequest
+     * @return Result of the StopBulkDeployment operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.StopBulkDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StopBulkDeployment" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StopBulkDeploymentResult stopBulkDeployment(StopBulkDeploymentRequest stopBulkDeploymentRequest);
 
     /**
      * Updates the connectivity information for the core. Any devices that belong to the group which has this core will

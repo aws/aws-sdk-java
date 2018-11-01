@@ -1033,6 +1033,39 @@ public class AWSGreengrassAsyncClient extends AWSGreengrassClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<GetBulkDeploymentStatusResult> getBulkDeploymentStatusAsync(GetBulkDeploymentStatusRequest request) {
+
+        return getBulkDeploymentStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBulkDeploymentStatusResult> getBulkDeploymentStatusAsync(final GetBulkDeploymentStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetBulkDeploymentStatusRequest, GetBulkDeploymentStatusResult> asyncHandler) {
+        final GetBulkDeploymentStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetBulkDeploymentStatusResult>() {
+            @Override
+            public GetBulkDeploymentStatusResult call() throws Exception {
+                GetBulkDeploymentStatusResult result = null;
+
+                try {
+                    result = executeGetBulkDeploymentStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetConnectivityInfoResult> getConnectivityInfoAsync(GetConnectivityInfoRequest request) {
 
         return getConnectivityInfoAsync(request, null);
@@ -1664,6 +1697,74 @@ public class AWSGreengrassAsyncClient extends AWSGreengrassClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<ListBulkDeploymentDetailedReportsResult> listBulkDeploymentDetailedReportsAsync(
+            ListBulkDeploymentDetailedReportsRequest request) {
+
+        return listBulkDeploymentDetailedReportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBulkDeploymentDetailedReportsResult> listBulkDeploymentDetailedReportsAsync(
+            final ListBulkDeploymentDetailedReportsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListBulkDeploymentDetailedReportsRequest, ListBulkDeploymentDetailedReportsResult> asyncHandler) {
+        final ListBulkDeploymentDetailedReportsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListBulkDeploymentDetailedReportsResult>() {
+            @Override
+            public ListBulkDeploymentDetailedReportsResult call() throws Exception {
+                ListBulkDeploymentDetailedReportsResult result = null;
+
+                try {
+                    result = executeListBulkDeploymentDetailedReports(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBulkDeploymentsResult> listBulkDeploymentsAsync(ListBulkDeploymentsRequest request) {
+
+        return listBulkDeploymentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBulkDeploymentsResult> listBulkDeploymentsAsync(final ListBulkDeploymentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListBulkDeploymentsRequest, ListBulkDeploymentsResult> asyncHandler) {
+        final ListBulkDeploymentsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListBulkDeploymentsResult>() {
+            @Override
+            public ListBulkDeploymentsResult call() throws Exception {
+                ListBulkDeploymentsResult result = null;
+
+                try {
+                    result = executeListBulkDeployments(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCoreDefinitionVersionsResult> listCoreDefinitionVersionsAsync(ListCoreDefinitionVersionsRequest request) {
 
         return listCoreDefinitionVersionsAsync(request, null);
@@ -2215,6 +2316,72 @@ public class AWSGreengrassAsyncClient extends AWSGreengrassClient implements AWS
 
                 try {
                     result = executeResetDeployments(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartBulkDeploymentResult> startBulkDeploymentAsync(StartBulkDeploymentRequest request) {
+
+        return startBulkDeploymentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartBulkDeploymentResult> startBulkDeploymentAsync(final StartBulkDeploymentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartBulkDeploymentRequest, StartBulkDeploymentResult> asyncHandler) {
+        final StartBulkDeploymentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartBulkDeploymentResult>() {
+            @Override
+            public StartBulkDeploymentResult call() throws Exception {
+                StartBulkDeploymentResult result = null;
+
+                try {
+                    result = executeStartBulkDeployment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopBulkDeploymentResult> stopBulkDeploymentAsync(StopBulkDeploymentRequest request) {
+
+        return stopBulkDeploymentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopBulkDeploymentResult> stopBulkDeploymentAsync(final StopBulkDeploymentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopBulkDeploymentRequest, StopBulkDeploymentResult> asyncHandler) {
+        final StopBulkDeploymentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopBulkDeploymentResult>() {
+            @Override
+            public StopBulkDeploymentResult call() throws Exception {
+                StopBulkDeploymentResult result = null;
+
+                try {
+                    result = executeStopBulkDeployment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -1,3 +1,20 @@
+# __1.11.440__ __2018-10-31__
+## __AWS Config__
+  - ### Features
+    - With this release, AWS Config updated the ResourceType values. The updated list includes AWS Systems Manager AssociationCompliance and PatchCompliance, AWS Shield regional Protection, AWS Config ResourceCompliance, and AWS CodePipeline Pipeline.
+
+## __AWS Elemental MediaStore Data Plane__
+  - ### Features
+    - The object size limit is increased from 10MB to 25MB and the content type is more permissive.
+
+## __AWS Greengrass__
+  - ### Features
+    - Greengrass APIs now support bulk deployment operations, and APIs that list definition versions now support pagination.
+
+## __AWS Secrets Manager__
+  - ### Features
+    - Documentation updates for AWS Secrets Manager.
+
 # __1.11.439__ __2018-10-30__
 ## __AWS Database Migration Service__
   - ### Features

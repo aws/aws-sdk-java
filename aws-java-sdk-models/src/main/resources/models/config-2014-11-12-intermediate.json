@@ -59221,6 +59221,24 @@
       }, {
         "name" : "AWSXRayEncryptionConfig",
         "value" : "AWS::XRay::EncryptionConfig"
+      }, {
+        "name" : "AWSSSMAssociationCompliance",
+        "value" : "AWS::SSM::AssociationCompliance"
+      }, {
+        "name" : "AWSSSMPatchCompliance",
+        "value" : "AWS::SSM::PatchCompliance"
+      }, {
+        "name" : "AWSShieldProtection",
+        "value" : "AWS::Shield::Protection"
+      }, {
+        "name" : "AWSShieldRegionalProtection",
+        "value" : "AWS::ShieldRegional::Protection"
+      }, {
+        "name" : "AWSConfigResourceCompliance",
+        "value" : "AWS::Config::ResourceCompliance"
+      }, {
+        "name" : "AWSCodePipelinePipeline",
+        "value" : "AWS::CodePipeline::Pipeline"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

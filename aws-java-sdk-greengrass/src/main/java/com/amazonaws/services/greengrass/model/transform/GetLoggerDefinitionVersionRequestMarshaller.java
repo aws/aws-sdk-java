@@ -31,6 +31,8 @@ public class GetLoggerDefinitionVersionRequestMarshaller {
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("LoggerDefinitionId").build();
     private static final MarshallingInfo<String> LOGGERDEFINITIONVERSIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("LoggerDefinitionVersionId").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NextToken").build();
 
     private static final GetLoggerDefinitionVersionRequestMarshaller instance = new GetLoggerDefinitionVersionRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class GetLoggerDefinitionVersionRequestMarshaller {
         try {
             protocolMarshaller.marshall(getLoggerDefinitionVersionRequest.getLoggerDefinitionId(), LOGGERDEFINITIONID_BINDING);
             protocolMarshaller.marshall(getLoggerDefinitionVersionRequest.getLoggerDefinitionVersionId(), LOGGERDEFINITIONVERSIONID_BINDING);
+            protocolMarshaller.marshall(getLoggerDefinitionVersionRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

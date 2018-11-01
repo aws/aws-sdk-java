@@ -64,6 +64,10 @@ public class GetFunctionDefinitionVersionResultJsonUnmarshaller implements Unmar
                     context.nextToken();
                     getFunctionDefinitionVersionResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("NextToken", targetDepth)) {
+                    context.nextToken();
+                    getFunctionDefinitionVersionResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Version", targetDepth)) {
                     context.nextToken();
                     getFunctionDefinitionVersionResult.setVersion(context.getUnmarshaller(String.class).unmarshall(context));

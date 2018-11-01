@@ -64,6 +64,10 @@ public class GetCoreDefinitionVersionResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     getCoreDefinitionVersionResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("NextToken", targetDepth)) {
+                    context.nextToken();
+                    getCoreDefinitionVersionResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Version", targetDepth)) {
                     context.nextToken();
                     getCoreDefinitionVersionResult.setVersion(context.getUnmarshaller(String.class).unmarshall(context));

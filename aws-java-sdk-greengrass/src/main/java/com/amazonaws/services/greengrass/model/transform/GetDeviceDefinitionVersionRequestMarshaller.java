@@ -31,6 +31,8 @@ public class GetDeviceDefinitionVersionRequestMarshaller {
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("DeviceDefinitionId").build();
     private static final MarshallingInfo<String> DEVICEDEFINITIONVERSIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("DeviceDefinitionVersionId").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NextToken").build();
 
     private static final GetDeviceDefinitionVersionRequestMarshaller instance = new GetDeviceDefinitionVersionRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class GetDeviceDefinitionVersionRequestMarshaller {
         try {
             protocolMarshaller.marshall(getDeviceDefinitionVersionRequest.getDeviceDefinitionId(), DEVICEDEFINITIONID_BINDING);
             protocolMarshaller.marshall(getDeviceDefinitionVersionRequest.getDeviceDefinitionVersionId(), DEVICEDEFINITIONVERSIONID_BINDING);
+            protocolMarshaller.marshall(getDeviceDefinitionVersionRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

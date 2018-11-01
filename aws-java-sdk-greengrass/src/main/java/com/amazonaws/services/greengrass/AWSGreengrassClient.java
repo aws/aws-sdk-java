@@ -358,7 +358,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
     }
 
     /**
-     * Creates a deployment.
+     * Creates a deployment. ''CreateDeployment'' requests are idempotent with respect to the ''X-Amzn-Client-Token''
+     * token and the request parameters.
      * 
      * @param createDeploymentRequest
      * @return Result of the CreateDeployment operation returned by the service.
@@ -1739,6 +1740,61 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
     }
 
     /**
+     * Returns the status of a bulk deployment.
+     * 
+     * @param getBulkDeploymentStatusRequest
+     * @return Result of the GetBulkDeploymentStatus operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.GetBulkDeploymentStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetBulkDeploymentStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetBulkDeploymentStatusResult getBulkDeploymentStatus(GetBulkDeploymentStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetBulkDeploymentStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetBulkDeploymentStatusResult executeGetBulkDeploymentStatus(GetBulkDeploymentStatusRequest getBulkDeploymentStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getBulkDeploymentStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetBulkDeploymentStatusRequest> request = null;
+        Response<GetBulkDeploymentStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetBulkDeploymentStatusRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getBulkDeploymentStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBulkDeploymentStatus");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetBulkDeploymentStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetBulkDeploymentStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Retrieves the connectivity information for a core.
      * 
      * @param getConnectivityInfoRequest
@@ -2777,6 +2833,116 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
     }
 
     /**
+     * Gets a paginated list of the deployments that have been started in a bulk deployment operation, and their current
+     * deployment status.
+     * 
+     * @param listBulkDeploymentDetailedReportsRequest
+     * @return Result of the ListBulkDeploymentDetailedReports operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.ListBulkDeploymentDetailedReports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeploymentDetailedReports"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListBulkDeploymentDetailedReportsResult listBulkDeploymentDetailedReports(ListBulkDeploymentDetailedReportsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListBulkDeploymentDetailedReports(request);
+    }
+
+    @SdkInternalApi
+    final ListBulkDeploymentDetailedReportsResult executeListBulkDeploymentDetailedReports(
+            ListBulkDeploymentDetailedReportsRequest listBulkDeploymentDetailedReportsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listBulkDeploymentDetailedReportsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListBulkDeploymentDetailedReportsRequest> request = null;
+        Response<ListBulkDeploymentDetailedReportsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListBulkDeploymentDetailedReportsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listBulkDeploymentDetailedReportsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBulkDeploymentDetailedReports");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListBulkDeploymentDetailedReportsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListBulkDeploymentDetailedReportsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Returns a list of bulk deployments.
+     * 
+     * @param listBulkDeploymentsRequest
+     * @return Result of the ListBulkDeployments operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.ListBulkDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeployments" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListBulkDeploymentsResult listBulkDeployments(ListBulkDeploymentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListBulkDeployments(request);
+    }
+
+    @SdkInternalApi
+    final ListBulkDeploymentsResult executeListBulkDeployments(ListBulkDeploymentsRequest listBulkDeploymentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listBulkDeploymentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListBulkDeploymentsRequest> request = null;
+        Response<ListBulkDeploymentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListBulkDeploymentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBulkDeploymentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBulkDeployments");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListBulkDeploymentsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListBulkDeploymentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Lists the versions of a core definition.
      * 
      * @param listCoreDefinitionVersionsRequest
@@ -3680,6 +3846,117 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
 
             HttpResponseHandler<AmazonWebServiceResponse<ResetDeploymentsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ResetDeploymentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Deploys multiple groups in one operation. This action starts the bulk deployment of a specified set of group
+     * versions. Each group version deployment will be triggered with an adaptive rate that has a fixed upper limit. We
+     * recommend that you include an ''X-Amzn-Client-Token'' token in every ''StartBulkDeployment'' request. These
+     * requests are idempotent with respect to the token and the request parameters.
+     * 
+     * @param startBulkDeploymentRequest
+     * @return Result of the StartBulkDeployment operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.StartBulkDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StartBulkDeployment" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StartBulkDeploymentResult startBulkDeployment(StartBulkDeploymentRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartBulkDeployment(request);
+    }
+
+    @SdkInternalApi
+    final StartBulkDeploymentResult executeStartBulkDeployment(StartBulkDeploymentRequest startBulkDeploymentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startBulkDeploymentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartBulkDeploymentRequest> request = null;
+        Response<StartBulkDeploymentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartBulkDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startBulkDeploymentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartBulkDeployment");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartBulkDeploymentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartBulkDeploymentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Stops the execution of a bulk deployment. This action returns a status of ''Stopping'' until the deployment is
+     * stopped. You cannot start a new bulk deployment while a previous deployment is in the ''Stopping'' state. This
+     * action doesn't rollback completed deployments or cancel pending deployments.
+     * 
+     * @param stopBulkDeploymentRequest
+     * @return Result of the StopBulkDeployment operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.StopBulkDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StopBulkDeployment" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StopBulkDeploymentResult stopBulkDeployment(StopBulkDeploymentRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopBulkDeployment(request);
+    }
+
+    @SdkInternalApi
+    final StopBulkDeploymentResult executeStopBulkDeployment(StopBulkDeploymentRequest stopBulkDeploymentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopBulkDeploymentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopBulkDeploymentRequest> request = null;
+        Response<StopBulkDeploymentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopBulkDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopBulkDeploymentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopBulkDeployment");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopBulkDeploymentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopBulkDeploymentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -46,27 +46,27 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
     private String secretId;
     /**
      * <p>
-     * The list of staging labels to add to this version.
+     * The staging label to add to this version.
      * </p>
      */
     private String versionStage;
     /**
      * <p>
-     * Specifies the secret version ID of the version that the staging labels are to be removed from. If the staging
-     * label you are trying to attach to one version is already attached to a different version, then you must include
-     * this parameter and specify the version that the label is to be removed from. If the label is attached and you
-     * either do not specify this parameter, or the version ID does not match, then the operation fails.
+     * Specifies the secret version ID of the version that the staging label is to be removed from. If the staging label
+     * you are trying to attach to one version is already attached to a different version, then you must include this
+     * parameter and specify the version that the label is to be removed from. If the label is attached and you either
+     * do not specify this parameter, or the version ID does not match, then the operation fails.
      * </p>
      */
     private String removeFromVersionId;
     /**
      * <p>
-     * (Optional) The secret version ID that you want to add the staging labels to. If you want to remove a label from a
+     * (Optional) The secret version ID that you want to add the staging label to. If you want to remove a label from a
      * version, then do not specify this parameter.
      * </p>
      * <p>
-     * If any of the staging labels are already attached to a different version of the secret, then you must also
-     * specify the <code>RemoveFromVersionId</code> parameter.
+     * If the staging label is already attached to a different version of the secret, then you must also specify the
+     * <code>RemoveFromVersionId</code> parameter.
      * </p>
      */
     private String moveToVersionId;
@@ -185,11 +185,11 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The list of staging labels to add to this version.
+     * The staging label to add to this version.
      * </p>
      * 
      * @param versionStage
-     *        The list of staging labels to add to this version.
+     *        The staging label to add to this version.
      */
 
     public void setVersionStage(String versionStage) {
@@ -198,10 +198,10 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The list of staging labels to add to this version.
+     * The staging label to add to this version.
      * </p>
      * 
-     * @return The list of staging labels to add to this version.
+     * @return The staging label to add to this version.
      */
 
     public String getVersionStage() {
@@ -210,11 +210,11 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The list of staging labels to add to this version.
+     * The staging label to add to this version.
      * </p>
      * 
      * @param versionStage
-     *        The list of staging labels to add to this version.
+     *        The staging label to add to this version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,14 +225,14 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies the secret version ID of the version that the staging labels are to be removed from. If the staging
-     * label you are trying to attach to one version is already attached to a different version, then you must include
-     * this parameter and specify the version that the label is to be removed from. If the label is attached and you
-     * either do not specify this parameter, or the version ID does not match, then the operation fails.
+     * Specifies the secret version ID of the version that the staging label is to be removed from. If the staging label
+     * you are trying to attach to one version is already attached to a different version, then you must include this
+     * parameter and specify the version that the label is to be removed from. If the label is attached and you either
+     * do not specify this parameter, or the version ID does not match, then the operation fails.
      * </p>
      * 
      * @param removeFromVersionId
-     *        Specifies the secret version ID of the version that the staging labels are to be removed from. If the
+     *        Specifies the secret version ID of the version that the staging label is to be removed from. If the
      *        staging label you are trying to attach to one version is already attached to a different version, then you
      *        must include this parameter and specify the version that the label is to be removed from. If the label is
      *        attached and you either do not specify this parameter, or the version ID does not match, then the
@@ -245,13 +245,13 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies the secret version ID of the version that the staging labels are to be removed from. If the staging
-     * label you are trying to attach to one version is already attached to a different version, then you must include
-     * this parameter and specify the version that the label is to be removed from. If the label is attached and you
-     * either do not specify this parameter, or the version ID does not match, then the operation fails.
+     * Specifies the secret version ID of the version that the staging label is to be removed from. If the staging label
+     * you are trying to attach to one version is already attached to a different version, then you must include this
+     * parameter and specify the version that the label is to be removed from. If the label is attached and you either
+     * do not specify this parameter, or the version ID does not match, then the operation fails.
      * </p>
      * 
-     * @return Specifies the secret version ID of the version that the staging labels are to be removed from. If the
+     * @return Specifies the secret version ID of the version that the staging label is to be removed from. If the
      *         staging label you are trying to attach to one version is already attached to a different version, then
      *         you must include this parameter and specify the version that the label is to be removed from. If the
      *         label is attached and you either do not specify this parameter, or the version ID does not match, then
@@ -264,14 +264,14 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies the secret version ID of the version that the staging labels are to be removed from. If the staging
-     * label you are trying to attach to one version is already attached to a different version, then you must include
-     * this parameter and specify the version that the label is to be removed from. If the label is attached and you
-     * either do not specify this parameter, or the version ID does not match, then the operation fails.
+     * Specifies the secret version ID of the version that the staging label is to be removed from. If the staging label
+     * you are trying to attach to one version is already attached to a different version, then you must include this
+     * parameter and specify the version that the label is to be removed from. If the label is attached and you either
+     * do not specify this parameter, or the version ID does not match, then the operation fails.
      * </p>
      * 
      * @param removeFromVersionId
-     *        Specifies the secret version ID of the version that the staging labels are to be removed from. If the
+     *        Specifies the secret version ID of the version that the staging label is to be removed from. If the
      *        staging label you are trying to attach to one version is already attached to a different version, then you
      *        must include this parameter and specify the version that the label is to be removed from. If the label is
      *        attached and you either do not specify this parameter, or the version ID does not match, then the
@@ -286,20 +286,20 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Optional) The secret version ID that you want to add the staging labels to. If you want to remove a label from a
+     * (Optional) The secret version ID that you want to add the staging label to. If you want to remove a label from a
      * version, then do not specify this parameter.
      * </p>
      * <p>
-     * If any of the staging labels are already attached to a different version of the secret, then you must also
-     * specify the <code>RemoveFromVersionId</code> parameter.
+     * If the staging label is already attached to a different version of the secret, then you must also specify the
+     * <code>RemoveFromVersionId</code> parameter.
      * </p>
      * 
      * @param moveToVersionId
-     *        (Optional) The secret version ID that you want to add the staging labels to. If you want to remove a label
+     *        (Optional) The secret version ID that you want to add the staging label to. If you want to remove a label
      *        from a version, then do not specify this parameter.</p>
      *        <p>
-     *        If any of the staging labels are already attached to a different version of the secret, then you must also
-     *        specify the <code>RemoveFromVersionId</code> parameter.
+     *        If the staging label is already attached to a different version of the secret, then you must also specify
+     *        the <code>RemoveFromVersionId</code> parameter.
      */
 
     public void setMoveToVersionId(String moveToVersionId) {
@@ -308,19 +308,19 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Optional) The secret version ID that you want to add the staging labels to. If you want to remove a label from a
+     * (Optional) The secret version ID that you want to add the staging label to. If you want to remove a label from a
      * version, then do not specify this parameter.
      * </p>
      * <p>
-     * If any of the staging labels are already attached to a different version of the secret, then you must also
-     * specify the <code>RemoveFromVersionId</code> parameter.
+     * If the staging label is already attached to a different version of the secret, then you must also specify the
+     * <code>RemoveFromVersionId</code> parameter.
      * </p>
      * 
-     * @return (Optional) The secret version ID that you want to add the staging labels to. If you want to remove a
-     *         label from a version, then do not specify this parameter.</p>
+     * @return (Optional) The secret version ID that you want to add the staging label to. If you want to remove a label
+     *         from a version, then do not specify this parameter.</p>
      *         <p>
-     *         If any of the staging labels are already attached to a different version of the secret, then you must
-     *         also specify the <code>RemoveFromVersionId</code> parameter.
+     *         If the staging label is already attached to a different version of the secret, then you must also specify
+     *         the <code>RemoveFromVersionId</code> parameter.
      */
 
     public String getMoveToVersionId() {
@@ -329,20 +329,20 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Optional) The secret version ID that you want to add the staging labels to. If you want to remove a label from a
+     * (Optional) The secret version ID that you want to add the staging label to. If you want to remove a label from a
      * version, then do not specify this parameter.
      * </p>
      * <p>
-     * If any of the staging labels are already attached to a different version of the secret, then you must also
-     * specify the <code>RemoveFromVersionId</code> parameter.
+     * If the staging label is already attached to a different version of the secret, then you must also specify the
+     * <code>RemoveFromVersionId</code> parameter.
      * </p>
      * 
      * @param moveToVersionId
-     *        (Optional) The secret version ID that you want to add the staging labels to. If you want to remove a label
+     *        (Optional) The secret version ID that you want to add the staging label to. If you want to remove a label
      *        from a version, then do not specify this parameter.</p>
      *        <p>
-     *        If any of the staging labels are already attached to a different version of the secret, then you must also
-     *        specify the <code>RemoveFromVersionId</code> parameter.
+     *        If the staging label is already attached to a different version of the secret, then you must also specify
+     *        the <code>RemoveFromVersionId</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

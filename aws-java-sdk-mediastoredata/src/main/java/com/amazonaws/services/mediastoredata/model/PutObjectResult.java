@@ -37,7 +37,7 @@ public class PutObjectResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private String eTag;
     /**
      * <p>
-     * The storage class where the object was persisted. Should be “Temporal”.
+     * The storage class where the object was persisted. The class should be “Temporal”.
      * </p>
      */
     private String storageClass;
@@ -124,11 +124,11 @@ public class PutObjectResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The storage class where the object was persisted. Should be “Temporal”.
+     * The storage class where the object was persisted. The class should be “Temporal”.
      * </p>
      * 
      * @param storageClass
-     *        The storage class where the object was persisted. Should be “Temporal”.
+     *        The storage class where the object was persisted. The class should be “Temporal”.
      * @see StorageClass
      */
 
@@ -138,10 +138,10 @@ public class PutObjectResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The storage class where the object was persisted. Should be “Temporal”.
+     * The storage class where the object was persisted. The class should be “Temporal”.
      * </p>
      * 
-     * @return The storage class where the object was persisted. Should be “Temporal”.
+     * @return The storage class where the object was persisted. The class should be “Temporal”.
      * @see StorageClass
      */
 
@@ -151,11 +151,11 @@ public class PutObjectResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The storage class where the object was persisted. Should be “Temporal”.
+     * The storage class where the object was persisted. The class should be “Temporal”.
      * </p>
      * 
      * @param storageClass
-     *        The storage class where the object was persisted. Should be “Temporal”.
+     *        The storage class where the object was persisted. The class should be “Temporal”.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StorageClass
      */
@@ -167,11 +167,11 @@ public class PutObjectResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The storage class where the object was persisted. Should be “Temporal”.
+     * The storage class where the object was persisted. The class should be “Temporal”.
      * </p>
      * 
      * @param storageClass
-     *        The storage class where the object was persisted. Should be “Temporal”.
+     *        The storage class where the object was persisted. The class should be “Temporal”.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StorageClass
      */

@@ -120,7 +120,7 @@ public interface AWSMediaStoreData {
 
     /**
      * <p>
-     * Uploads an object to the specified path. Object sizes are limited to 10 MB.
+     * Uploads an object to the specified path. Object sizes are limited to 25 MB.
      * </p>
      * 
      * @param putObjectRequest

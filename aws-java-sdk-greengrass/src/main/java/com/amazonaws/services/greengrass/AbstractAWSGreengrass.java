@@ -173,6 +173,11 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
     }
 
     @Override
+    public GetBulkDeploymentStatusResult getBulkDeploymentStatus(GetBulkDeploymentStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetConnectivityInfoResult getConnectivityInfo(GetConnectivityInfoRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -268,6 +273,16 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
     }
 
     @Override
+    public ListBulkDeploymentDetailedReportsResult listBulkDeploymentDetailedReports(ListBulkDeploymentDetailedReportsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListBulkDeploymentsResult listBulkDeployments(ListBulkDeploymentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListCoreDefinitionVersionsResult listCoreDefinitionVersions(ListCoreDefinitionVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -349,6 +364,16 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
 
     @Override
     public ResetDeploymentsResult resetDeployments(ResetDeploymentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartBulkDeploymentResult startBulkDeployment(StartBulkDeploymentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopBulkDeploymentResult stopBulkDeployment(StopBulkDeploymentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

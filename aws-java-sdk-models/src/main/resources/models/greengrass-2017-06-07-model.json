@@ -4,6 +4,7 @@
     "endpointPrefix" : "greengrass",
     "signingName" : "greengrass",
     "serviceFullName" : "AWS Greengrass",
+    "serviceId" : "Greengrass",
     "protocol" : "rest-json",
     "jsonVersion" : "1.1",
     "uid" : "greengrass-2017-06-07",
@@ -112,7 +113,7 @@
         "shape" : "BadRequestException",
         "documentation" : "invalid request"
       } ],
-      "documentation" : "Creates a deployment."
+      "documentation" : "Creates a deployment. ''CreateDeployment'' requests are idempotent with respect to the ''X-Amzn-Client-Token'' token and the request parameters."
     },
     "CreateDeviceDefinition" : {
       "name" : "CreateDeviceDefinition",
@@ -596,6 +597,26 @@
       } ],
       "documentation" : "Retrieves the role associated with a particular group."
     },
+    "GetBulkDeploymentStatus" : {
+      "name" : "GetBulkDeploymentStatus",
+      "http" : {
+        "method" : "GET",
+        "requestUri" : "/greengrass/bulk/deployments/{BulkDeploymentId}/status",
+        "responseCode" : 200
+      },
+      "input" : {
+        "shape" : "GetBulkDeploymentStatusRequest"
+      },
+      "output" : {
+        "shape" : "GetBulkDeploymentStatusResponse",
+        "documentation" : "Success. The response body contains the status of the bulk deployment."
+      },
+      "errors" : [ {
+        "shape" : "BadRequestException",
+        "documentation" : "invalid request"
+      } ],
+      "documentation" : "Returns the status of a bulk deployment."
+    },
     "GetConnectivityInfo" : {
       "name" : "GetConnectivityInfo",
       "http" : {
@@ -979,6 +1000,46 @@
       } ],
       "documentation" : "Retrieves information about a subscription definition version."
     },
+    "ListBulkDeploymentDetailedReports" : {
+      "name" : "ListBulkDeploymentDetailedReports",
+      "http" : {
+        "method" : "GET",
+        "requestUri" : "/greengrass/bulk/deployments/{BulkDeploymentId}/detailed-reports",
+        "responseCode" : 200
+      },
+      "input" : {
+        "shape" : "ListBulkDeploymentDetailedReportsRequest"
+      },
+      "output" : {
+        "shape" : "ListBulkDeploymentDetailedReportsResponse",
+        "documentation" : "Success. The response body contains the list of deployments for the given group."
+      },
+      "errors" : [ {
+        "shape" : "BadRequestException",
+        "documentation" : "invalid request"
+      } ],
+      "documentation" : "Gets a paginated list of the deployments that have been started in a bulk deployment operation, and their current deployment status."
+    },
+    "ListBulkDeployments" : {
+      "name" : "ListBulkDeployments",
+      "http" : {
+        "method" : "GET",
+        "requestUri" : "/greengrass/bulk/deployments",
+        "responseCode" : 200
+      },
+      "input" : {
+        "shape" : "ListBulkDeploymentsRequest"
+      },
+      "output" : {
+        "shape" : "ListBulkDeploymentsResponse",
+        "documentation" : "Success. The response body contains the list of bulk deployments."
+      },
+      "errors" : [ {
+        "shape" : "BadRequestException",
+        "documentation" : "invalid request"
+      } ],
+      "documentation" : "Returns a list of bulk deployments."
+    },
     "ListCoreDefinitionVersions" : {
       "name" : "ListCoreDefinitionVersions",
       "http" : {
@@ -1292,6 +1353,46 @@
       } ],
       "documentation" : "Resets a group's deployments."
     },
+    "StartBulkDeployment" : {
+      "name" : "StartBulkDeployment",
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/greengrass/bulk/deployments",
+        "responseCode" : 200
+      },
+      "input" : {
+        "shape" : "StartBulkDeploymentRequest"
+      },
+      "output" : {
+        "shape" : "StartBulkDeploymentResponse",
+        "documentation" : "success"
+      },
+      "errors" : [ {
+        "shape" : "BadRequestException",
+        "documentation" : "invalid request"
+      } ],
+      "documentation" : "Deploys multiple groups in one operation. This action starts the bulk deployment of a specified set of group versions. Each group version deployment will be triggered with an adaptive rate that has a fixed upper limit. We recommend that you include an ''X-Amzn-Client-Token'' token in every ''StartBulkDeployment'' request. These requests are idempotent with respect to the token and the request parameters."
+    },
+    "StopBulkDeployment" : {
+      "name" : "StopBulkDeployment",
+      "http" : {
+        "method" : "PUT",
+        "requestUri" : "/greengrass/bulk/deployments/{BulkDeploymentId}/$stop",
+        "responseCode" : 200
+      },
+      "input" : {
+        "shape" : "StopBulkDeploymentRequest"
+      },
+      "output" : {
+        "shape" : "StopBulkDeploymentResponse",
+        "documentation" : "Success. The bulk deployment is being stopped."
+      },
+      "errors" : [ {
+        "shape" : "BadRequestException",
+        "documentation" : "invalid request"
+      } ],
+      "documentation" : "Stops the execution of a bulk deployment. This action returns a status of ''Stopping'' until the deployment is stopped. You cannot start a new bulk deployment while a previous deployment is in the ''Stopping'' state. This action doesn't rollback completed deployments or cancel pending deployments."
+    },
     "UpdateConnectivityInfo" : {
       "name" : "UpdateConnectivityInfo",
       "http" : {
@@ -1541,6 +1642,97 @@
         "httpStatusCode" : 400
       }
     },
+    "BulkDeployment" : {
+      "type" : "structure",
+      "members" : {
+        "BulkDeploymentArn" : {
+          "shape" : "__string",
+          "documentation" : "The ARN of the bulk deployment."
+        },
+        "BulkDeploymentId" : {
+          "shape" : "__string",
+          "documentation" : "The ID of the bulk deployment."
+        },
+        "CreatedAt" : {
+          "shape" : "__string",
+          "documentation" : "The time, in ISO format, when the deployment was created."
+        }
+      },
+      "documentation" : "Information about a bulk deployment."
+    },
+    "BulkDeploymentMetrics" : {
+      "type" : "structure",
+      "members" : {
+        "InvalidInputRecords" : {
+          "shape" : "__integer",
+          "documentation" : "The total number of records that returned a non-retryable error. For example, this can occur if a group record from the input file uses an invalid format or specifies a nonexistent group version, or if the execution role doesn't grant permission to deploy a group or group version."
+        },
+        "RecordsProcessed" : {
+          "shape" : "__integer",
+          "documentation" : "The total number of group records from the input file that have been processed so far, or attempted."
+        },
+        "RetryAttempts" : {
+          "shape" : "__integer",
+          "documentation" : "The total number of deployment attempts that returned a retryable error. For example, a retry is triggered if the attempt to deploy a group returns a throttling error. ''StartBulkDeployment'' retries a group deployment up to five times."
+        }
+      },
+      "documentation" : "Relevant metrics on input records processed during bulk deployment."
+    },
+    "BulkDeploymentResult" : {
+      "type" : "structure",
+      "members" : {
+        "CreatedAt" : {
+          "shape" : "__string",
+          "documentation" : "The time, in ISO format, when the deployment was created."
+        },
+        "DeploymentArn" : {
+          "shape" : "__string",
+          "documentation" : "The ARN of the group deployment."
+        },
+        "DeploymentId" : {
+          "shape" : "__string",
+          "documentation" : "The ID of the group deployment."
+        },
+        "DeploymentStatus" : {
+          "shape" : "__string",
+          "documentation" : "The current status of the group deployment: ''Pending'', ''InProgress'', ''Success'', or ''Failure''."
+        },
+        "DeploymentType" : {
+          "shape" : "DeploymentType",
+          "documentation" : "The type of the deployment."
+        },
+        "ErrorDetails" : {
+          "shape" : "ErrorDetails",
+          "documentation" : "Details about the error."
+        },
+        "ErrorMessage" : {
+          "shape" : "__string",
+          "documentation" : "The error message for a failed deployment"
+        },
+        "GroupArn" : {
+          "shape" : "__string",
+          "documentation" : "The ARN of the Greengrass group."
+        }
+      },
+      "documentation" : "Information about an individual group deployment in a bulk deployment operation."
+    },
+    "BulkDeploymentResults" : {
+      "type" : "list",
+      "member" : {
+        "shape" : "BulkDeploymentResult"
+      }
+    },
+    "BulkDeploymentStatus" : {
+      "type" : "string",
+      "documentation" : "The current status of the bulk deployment.",
+      "enum" : [ "Initializing", "Running", "Completed", "Stopping", "Stopped", "Failed" ]
+    },
+    "BulkDeployments" : {
+      "type" : "list",
+      "member" : {
+        "shape" : "BulkDeployment"
+      }
+    },
     "ConnectivityInfo" : {
       "type" : "structure",
       "members" : {
@@ -1572,7 +1764,7 @@
         },
         "Id" : {
           "shape" : "__string",
-          "documentation" : "The ID of the core."
+          "documentation" : "A descriptive or arbitrary ID for the core. This value must be unique within the core definition version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''."
         },
         "SyncShadow" : {
           "shape" : "__boolean",
@@ -2569,6 +2761,7 @@
     },
     "DeploymentType" : {
       "type" : "string",
+      "documentation" : "The type of deployment.",
       "enum" : [ "NewDeployment", "Redeployment", "ResetDeployment", "ForceResetDeployment" ]
     },
     "Deployments" : {
@@ -2586,7 +2779,7 @@
         },
         "Id" : {
           "shape" : "__string",
-          "documentation" : "The ID of the device."
+          "documentation" : "A descriptive or arbitrary ID for the device. This value must be unique within the device definition version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''."
         },
         "SyncShadow" : {
           "shape" : "__boolean",
@@ -2687,7 +2880,7 @@
         },
         "Id" : {
           "shape" : "__string",
-          "documentation" : "The ID of the Lambda function."
+          "documentation" : "A descriptive or arbitrary ID for the function. This value must be unique within the function definition version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''."
         }
       },
       "documentation" : "Information about a Lambda function.",
@@ -2791,6 +2984,43 @@
         "RoleArn" : {
           "shape" : "__string",
           "documentation" : "The ARN of the role that is associated with the group."
+        }
+      }
+    },
+    "GetBulkDeploymentStatusRequest" : {
+      "type" : "structure",
+      "members" : {
+        "BulkDeploymentId" : {
+          "shape" : "__string",
+          "location" : "uri",
+          "locationName" : "BulkDeploymentId",
+          "documentation" : "The ID of the bulk deployment."
+        }
+      },
+      "required" : [ "BulkDeploymentId" ]
+    },
+    "GetBulkDeploymentStatusResponse" : {
+      "type" : "structure",
+      "members" : {
+        "BulkDeploymentMetrics" : {
+          "shape" : "BulkDeploymentMetrics",
+          "documentation" : "Relevant metrics on input records processed during bulk deployment."
+        },
+        "BulkDeploymentStatus" : {
+          "shape" : "BulkDeploymentStatus",
+          "documentation" : "The status of the bulk deployment."
+        },
+        "CreatedAt" : {
+          "shape" : "__string",
+          "documentation" : "The time, in ISO format, when the deployment was created."
+        },
+        "ErrorDetails" : {
+          "shape" : "ErrorDetails",
+          "documentation" : "Error details"
+        },
+        "ErrorMessage" : {
+          "shape" : "__string",
+          "documentation" : "Error message"
         }
       }
     },
@@ -2902,6 +3132,10 @@
           "shape" : "__string",
           "documentation" : "The ID of the core definition version."
         },
+        "NextToken" : {
+          "shape" : "__string",
+          "documentation" : "The token for the next set of results, or ''null'' if there are no additional results."
+        },
         "Version" : {
           "shape" : "__string",
           "documentation" : "The version of the core definition version."
@@ -2931,7 +3165,7 @@
       "members" : {
         "DeploymentStatus" : {
           "shape" : "__string",
-          "documentation" : "The status of the deployment."
+          "documentation" : "The status of the deployment: ''Pending'', ''InProgress'', ''Success'', or ''Failure''."
         },
         "DeploymentType" : {
           "shape" : "DeploymentType",
@@ -3010,6 +3244,12 @@
           "location" : "uri",
           "locationName" : "DeviceDefinitionVersionId",
           "documentation" : "The ID of the device definition version."
+        },
+        "NextToken" : {
+          "shape" : "__string",
+          "location" : "querystring",
+          "locationName" : "NextToken",
+          "documentation" : "The token for the next set of results, or ''null'' if there are no additional results."
         }
       },
       "required" : [ "DeviceDefinitionVersionId", "DeviceDefinitionId" ]
@@ -3032,6 +3272,10 @@
         "Id" : {
           "shape" : "__string",
           "documentation" : "The ID of the device definition version."
+        },
+        "NextToken" : {
+          "shape" : "__string",
+          "documentation" : "The token for the next set of results, or ''null'' if there are no additional results."
         },
         "Version" : {
           "shape" : "__string",
@@ -3098,6 +3342,12 @@
           "location" : "uri",
           "locationName" : "FunctionDefinitionVersionId",
           "documentation" : "The ID of the function definition version."
+        },
+        "NextToken" : {
+          "shape" : "__string",
+          "location" : "querystring",
+          "locationName" : "NextToken",
+          "documentation" : "The token for the next set of results, or ''null'' if there are no additional results."
         }
       },
       "required" : [ "FunctionDefinitionId", "FunctionDefinitionVersionId" ]
@@ -3120,6 +3370,10 @@
         "Id" : {
           "shape" : "__string",
           "documentation" : "The ID of the function definition version."
+        },
+        "NextToken" : {
+          "shape" : "__string",
+          "documentation" : "The token for the next set of results, or ''null'' if there are no additional results."
         },
         "Version" : {
           "shape" : "__string",
@@ -3338,6 +3592,12 @@
           "location" : "uri",
           "locationName" : "LoggerDefinitionVersionId",
           "documentation" : "The ID of the logger definition version."
+        },
+        "NextToken" : {
+          "shape" : "__string",
+          "location" : "querystring",
+          "locationName" : "NextToken",
+          "documentation" : "The token for the next set of results, or ''null'' if there are no additional results."
         }
       },
       "required" : [ "LoggerDefinitionVersionId", "LoggerDefinitionId" ]
@@ -3520,6 +3780,12 @@
     "GetSubscriptionDefinitionVersionRequest" : {
       "type" : "structure",
       "members" : {
+        "NextToken" : {
+          "shape" : "__string",
+          "location" : "querystring",
+          "locationName" : "NextToken",
+          "documentation" : "The token for the next set of results, or ''null'' if there are no additional results."
+        },
         "SubscriptionDefinitionId" : {
           "shape" : "__string",
           "location" : "uri",
@@ -3553,6 +3819,10 @@
         "Id" : {
           "shape" : "__string",
           "documentation" : "The ID of the subscription definition version."
+        },
+        "NextToken" : {
+          "shape" : "__string",
+          "documentation" : "The token for the next set of results, or ''null'' if there are no additional results."
         },
         "Version" : {
           "shape" : "__string",
@@ -3686,6 +3956,73 @@
       "exception" : true,
       "error" : {
         "httpStatusCode" : 500
+      }
+    },
+    "ListBulkDeploymentDetailedReportsRequest" : {
+      "type" : "structure",
+      "members" : {
+        "BulkDeploymentId" : {
+          "shape" : "__string",
+          "location" : "uri",
+          "locationName" : "BulkDeploymentId",
+          "documentation" : "The ID of the bulk deployment."
+        },
+        "MaxResults" : {
+          "shape" : "__string",
+          "location" : "querystring",
+          "locationName" : "MaxResults",
+          "documentation" : "The maximum number of results to be returned per request."
+        },
+        "NextToken" : {
+          "shape" : "__string",
+          "location" : "querystring",
+          "locationName" : "NextToken",
+          "documentation" : "The token for the next set of results, or ''null'' if there are no additional results."
+        }
+      },
+      "required" : [ "BulkDeploymentId" ]
+    },
+    "ListBulkDeploymentDetailedReportsResponse" : {
+      "type" : "structure",
+      "members" : {
+        "Deployments" : {
+          "shape" : "BulkDeploymentResults",
+          "documentation" : "A list of the individual group deployments in the bulk deployment operation."
+        },
+        "NextToken" : {
+          "shape" : "__string",
+          "documentation" : "The token for the next set of results, or ''null'' if there are no additional results."
+        }
+      }
+    },
+    "ListBulkDeploymentsRequest" : {
+      "type" : "structure",
+      "members" : {
+        "MaxResults" : {
+          "shape" : "__string",
+          "location" : "querystring",
+          "locationName" : "MaxResults",
+          "documentation" : "The maximum number of results to be returned per request."
+        },
+        "NextToken" : {
+          "shape" : "__string",
+          "location" : "querystring",
+          "locationName" : "NextToken",
+          "documentation" : "The token for the next set of results, or ''null'' if there are no additional results."
+        }
+      }
+    },
+    "ListBulkDeploymentsResponse" : {
+      "type" : "structure",
+      "members" : {
+        "BulkDeployments" : {
+          "shape" : "BulkDeployments",
+          "documentation" : "A list of bulk deployments."
+        },
+        "NextToken" : {
+          "shape" : "__string",
+          "documentation" : "The token for the next set of results, or ''null'' if there are no additional results."
+        }
       }
     },
     "ListCoreDefinitionVersionsRequest" : {
@@ -4270,7 +4607,7 @@
         },
         "SourcePath" : {
           "shape" : "__string",
-          "documentation" : "The local absolute path of the volume resource on the host. The source path for a volume resource type cannot start with ''/sys''."
+          "documentation" : "The local absolute path of the volume resource on the host. The source path for a volume resource type cannot start with ''/proc'' or ''/sys''."
         }
       },
       "documentation" : "Attributes that define a local volume resource."
@@ -4284,7 +4621,7 @@
         },
         "Id" : {
           "shape" : "__string",
-          "documentation" : "The id of the logger."
+          "documentation" : "A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''."
         },
         "Level" : {
           "shape" : "LoggerLevel",
@@ -4468,12 +4805,60 @@
       "documentation" : "The piece of software on the Greengrass core that will be updated.",
       "enum" : [ "core", "ota_agent" ]
     },
+    "StartBulkDeploymentRequest" : {
+      "type" : "structure",
+      "members" : {
+        "AmznClientToken" : {
+          "shape" : "__string",
+          "location" : "header",
+          "locationName" : "X-Amzn-Client-Token",
+          "documentation" : "A client token used to correlate requests and responses."
+        },
+        "ExecutionRoleArn" : {
+          "shape" : "__string",
+          "documentation" : "The ARN of the execution role to associate with the bulk deployment operation. This IAM role must allow the ''greengrass:CreateDeployment'' action for all group versions that are listed in the input file. This IAM role must have access to the S3 bucket containing the input file."
+        },
+        "InputFileUri" : {
+          "shape" : "__string",
+          "documentation" : "The URI of the input file contained in the S3 bucket. The execution role must have ''getObject'' permissions on this bucket to access the input file. The input file is a JSON-serialized, line delimited file with UTF-8 encoding that provides a list of group and version IDs and the deployment type. This file must be less than 100MB. Currently, Greengrass; supports only ''NewDeployment'' deployment types."
+        }
+      }
+    },
+    "StartBulkDeploymentResponse" : {
+      "type" : "structure",
+      "members" : {
+        "BulkDeploymentArn" : {
+          "shape" : "__string",
+          "documentation" : "The ARN of the bulk deployment."
+        },
+        "BulkDeploymentId" : {
+          "shape" : "__string",
+          "documentation" : "The ID of the bulk deployment."
+        }
+      }
+    },
+    "StopBulkDeploymentRequest" : {
+      "type" : "structure",
+      "members" : {
+        "BulkDeploymentId" : {
+          "shape" : "__string",
+          "location" : "uri",
+          "locationName" : "BulkDeploymentId",
+          "documentation" : "The ID of the bulk deployment."
+        }
+      },
+      "required" : [ "BulkDeploymentId" ]
+    },
+    "StopBulkDeploymentResponse" : {
+      "type" : "structure",
+      "members" : { }
+    },
     "Subscription" : {
       "type" : "structure",
       "members" : {
         "Id" : {
           "shape" : "__string",
-          "documentation" : "The id of the subscription."
+          "documentation" : "A descriptive or arbitrary ID for the subscription. This value must be unique within the subscription definition version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''."
         },
         "Source" : {
           "shape" : "__string",
@@ -4845,8 +5230,13 @@
     "__string" : {
       "type" : "string"
     },
-    "__timestamp" : {
-      "type" : "timestamp"
+    "__timestampIso8601" : {
+      "type" : "timestamp",
+      "timestampFormat" : "iso8601"
+    },
+    "__timestampUnix" : {
+      "type" : "timestamp",
+      "timestampFormat" : "unixTimestamp"
     }
   },
   "documentation" : "AWS Greengrass seamlessly extends AWS onto physical devices so they can act locally on the data they generate, while still using the cloud for management, analytics, and durable storage. AWS Greengrass ensures your devices can respond quickly to local events and operate with intermittent connectivity. AWS Greengrass minimizes the cost of transmitting data to the cloud by allowing you to author AWS Lambda functions that execute locally."

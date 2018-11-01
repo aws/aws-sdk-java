@@ -34,14 +34,26 @@ public class ListItemsRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String path;
     /**
      * <p>
-     * The maximum results to return. The service might return fewer results.
+     * The maximum number of results to return per API request. For example, you submit a <code>ListItems</code> request
+     * with <code>MaxResults</code> set at 500. Although 2,000 items match your request, the service returns no more
+     * than the first 500 items. (The service also returns a <code>NextToken</code> value that you can use to fetch the
+     * next batch of results.) The service might return fewer results than the <code>MaxResults</code> value.
+     * </p>
+     * <p>
+     * If <code>MaxResults</code> is not included in the request, the service defaults to pagination with a maximum of
+     * 1,000 results per page.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The <code>NextToken</code> received in the <code>ListItemsResponse</code> for the same container and path. Tokens
-     * expire after 15 minutes.
+     * The token that identifies which batch of results that you want to see. For example, you submit a
+     * <code>ListItems</code> request with <code>MaxResults</code> set at 500. The service returns the first batch of
+     * results (up to 500) and a <code>NextToken</code> value. To see the next batch of results, you can submit the
+     * <code>ListItems</code> request a second time and specify the <code>NextToken</code> value.
+     * </p>
+     * <p>
+     * Tokens expire after 15 minutes.
      * </p>
      */
     private String nextToken;
@@ -94,11 +106,25 @@ public class ListItemsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The maximum results to return. The service might return fewer results.
+     * The maximum number of results to return per API request. For example, you submit a <code>ListItems</code> request
+     * with <code>MaxResults</code> set at 500. Although 2,000 items match your request, the service returns no more
+     * than the first 500 items. (The service also returns a <code>NextToken</code> value that you can use to fetch the
+     * next batch of results.) The service might return fewer results than the <code>MaxResults</code> value.
+     * </p>
+     * <p>
+     * If <code>MaxResults</code> is not included in the request, the service defaults to pagination with a maximum of
+     * 1,000 results per page.
      * </p>
      * 
      * @param maxResults
-     *        The maximum results to return. The service might return fewer results.
+     *        The maximum number of results to return per API request. For example, you submit a <code>ListItems</code>
+     *        request with <code>MaxResults</code> set at 500. Although 2,000 items match your request, the service
+     *        returns no more than the first 500 items. (The service also returns a <code>NextToken</code> value that
+     *        you can use to fetch the next batch of results.) The service might return fewer results than the
+     *        <code>MaxResults</code> value.</p>
+     *        <p>
+     *        If <code>MaxResults</code> is not included in the request, the service defaults to pagination with a
+     *        maximum of 1,000 results per page.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -107,10 +133,24 @@ public class ListItemsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The maximum results to return. The service might return fewer results.
+     * The maximum number of results to return per API request. For example, you submit a <code>ListItems</code> request
+     * with <code>MaxResults</code> set at 500. Although 2,000 items match your request, the service returns no more
+     * than the first 500 items. (The service also returns a <code>NextToken</code> value that you can use to fetch the
+     * next batch of results.) The service might return fewer results than the <code>MaxResults</code> value.
+     * </p>
+     * <p>
+     * If <code>MaxResults</code> is not included in the request, the service defaults to pagination with a maximum of
+     * 1,000 results per page.
      * </p>
      * 
-     * @return The maximum results to return. The service might return fewer results.
+     * @return The maximum number of results to return per API request. For example, you submit a <code>ListItems</code>
+     *         request with <code>MaxResults</code> set at 500. Although 2,000 items match your request, the service
+     *         returns no more than the first 500 items. (The service also returns a <code>NextToken</code> value that
+     *         you can use to fetch the next batch of results.) The service might return fewer results than the
+     *         <code>MaxResults</code> value.</p>
+     *         <p>
+     *         If <code>MaxResults</code> is not included in the request, the service defaults to pagination with a
+     *         maximum of 1,000 results per page.
      */
 
     public Integer getMaxResults() {
@@ -119,11 +159,25 @@ public class ListItemsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The maximum results to return. The service might return fewer results.
+     * The maximum number of results to return per API request. For example, you submit a <code>ListItems</code> request
+     * with <code>MaxResults</code> set at 500. Although 2,000 items match your request, the service returns no more
+     * than the first 500 items. (The service also returns a <code>NextToken</code> value that you can use to fetch the
+     * next batch of results.) The service might return fewer results than the <code>MaxResults</code> value.
+     * </p>
+     * <p>
+     * If <code>MaxResults</code> is not included in the request, the service defaults to pagination with a maximum of
+     * 1,000 results per page.
      * </p>
      * 
      * @param maxResults
-     *        The maximum results to return. The service might return fewer results.
+     *        The maximum number of results to return per API request. For example, you submit a <code>ListItems</code>
+     *        request with <code>MaxResults</code> set at 500. Although 2,000 items match your request, the service
+     *        returns no more than the first 500 items. (The service also returns a <code>NextToken</code> value that
+     *        you can use to fetch the next batch of results.) The service might return fewer results than the
+     *        <code>MaxResults</code> value.</p>
+     *        <p>
+     *        If <code>MaxResults</code> is not included in the request, the service defaults to pagination with a
+     *        maximum of 1,000 results per page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,12 +188,21 @@ public class ListItemsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The <code>NextToken</code> received in the <code>ListItemsResponse</code> for the same container and path. Tokens
-     * expire after 15 minutes.
+     * The token that identifies which batch of results that you want to see. For example, you submit a
+     * <code>ListItems</code> request with <code>MaxResults</code> set at 500. The service returns the first batch of
+     * results (up to 500) and a <code>NextToken</code> value. To see the next batch of results, you can submit the
+     * <code>ListItems</code> request a second time and specify the <code>NextToken</code> value.
+     * </p>
+     * <p>
+     * Tokens expire after 15 minutes.
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> received in the <code>ListItemsResponse</code> for the same container and path.
+     *        The token that identifies which batch of results that you want to see. For example, you submit a
+     *        <code>ListItems</code> request with <code>MaxResults</code> set at 500. The service returns the first
+     *        batch of results (up to 500) and a <code>NextToken</code> value. To see the next batch of results, you can
+     *        submit the <code>ListItems</code> request a second time and specify the <code>NextToken</code> value.</p>
+     *        <p>
      *        Tokens expire after 15 minutes.
      */
 
@@ -149,12 +212,22 @@ public class ListItemsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The <code>NextToken</code> received in the <code>ListItemsResponse</code> for the same container and path. Tokens
-     * expire after 15 minutes.
+     * The token that identifies which batch of results that you want to see. For example, you submit a
+     * <code>ListItems</code> request with <code>MaxResults</code> set at 500. The service returns the first batch of
+     * results (up to 500) and a <code>NextToken</code> value. To see the next batch of results, you can submit the
+     * <code>ListItems</code> request a second time and specify the <code>NextToken</code> value.
+     * </p>
+     * <p>
+     * Tokens expire after 15 minutes.
      * </p>
      * 
-     * @return The <code>NextToken</code> received in the <code>ListItemsResponse</code> for the same container and
-     *         path. Tokens expire after 15 minutes.
+     * @return The token that identifies which batch of results that you want to see. For example, you submit a
+     *         <code>ListItems</code> request with <code>MaxResults</code> set at 500. The service returns the first
+     *         batch of results (up to 500) and a <code>NextToken</code> value. To see the next batch of results, you
+     *         can submit the <code>ListItems</code> request a second time and specify the <code>NextToken</code>
+     *         value.</p>
+     *         <p>
+     *         Tokens expire after 15 minutes.
      */
 
     public String getNextToken() {
@@ -163,12 +236,21 @@ public class ListItemsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The <code>NextToken</code> received in the <code>ListItemsResponse</code> for the same container and path. Tokens
-     * expire after 15 minutes.
+     * The token that identifies which batch of results that you want to see. For example, you submit a
+     * <code>ListItems</code> request with <code>MaxResults</code> set at 500. The service returns the first batch of
+     * results (up to 500) and a <code>NextToken</code> value. To see the next batch of results, you can submit the
+     * <code>ListItems</code> request a second time and specify the <code>NextToken</code> value.
+     * </p>
+     * <p>
+     * Tokens expire after 15 minutes.
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> received in the <code>ListItemsResponse</code> for the same container and path.
+     *        The token that identifies which batch of results that you want to see. For example, you submit a
+     *        <code>ListItems</code> request with <code>MaxResults</code> set at 500. The service returns the first
+     *        batch of results (up to 500) and a <code>NextToken</code> value. To see the next batch of results, you can
+     *        submit the <code>ListItems</code> request a second time and specify the <code>NextToken</code> value.</p>
+     *        <p>
      *        Tokens expire after 15 minutes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -26,7 +26,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Subscription implements Serializable, Cloneable, StructuredPojo {
 
-    /** The id of the subscription. */
+    /**
+     * A descriptive or arbitrary ID for the subscription. This value must be unique within the subscription definition
+     * version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
+     */
     private String id;
     /**
      * The source of the subscription. Can be a thing ARN, a Lambda function ARN, 'cloud' (which represents the IoT
@@ -42,10 +45,12 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     private String target;
 
     /**
-     * The id of the subscription.
+     * A descriptive or arbitrary ID for the subscription. This value must be unique within the subscription definition
+     * version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      * 
      * @param id
-     *        The id of the subscription.
+     *        A descriptive or arbitrary ID for the subscription. This value must be unique within the subscription
+     *        definition version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      */
 
     public void setId(String id) {
@@ -53,9 +58,12 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The id of the subscription.
+     * A descriptive or arbitrary ID for the subscription. This value must be unique within the subscription definition
+     * version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      * 
-     * @return The id of the subscription.
+     * @return A descriptive or arbitrary ID for the subscription. This value must be unique within the subscription
+     *         definition version. Max length is 128 characters with pattern
+     *         ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      */
 
     public String getId() {
@@ -63,10 +71,12 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The id of the subscription.
+     * A descriptive or arbitrary ID for the subscription. This value must be unique within the subscription definition
+     * version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      * 
      * @param id
-     *        The id of the subscription.
+     *        A descriptive or arbitrary ID for the subscription. This value must be unique within the subscription
+     *        definition version. Max length is 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

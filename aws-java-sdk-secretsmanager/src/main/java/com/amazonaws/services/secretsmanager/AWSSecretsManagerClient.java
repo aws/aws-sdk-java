@@ -397,9 +397,9 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * <code>SecretBinary</code> for a secret in the same account as the calling user and that secret doesn't specify a
      * AWS KMS encryption key, Secrets Manager uses the account's default AWS managed customer master key (CMK) with the
      * alias <code>aws/secretsmanager</code>. If this key doesn't already exist in your account then Secrets Manager
-     * creates it for you automatically. All users in the same AWS account automatically have access to use the default
-     * CMK. Note that if an Secrets Manager API call results in AWS having to create the account's AWS-managed CMK, it
-     * can result in a one-time significant delay in returning the result.
+     * creates it for you automatically. All users and roles in the same AWS account automatically have access to use
+     * the default CMK. Note that if an Secrets Manager API call results in AWS having to create the account's
+     * AWS-managed CMK, it can result in a one-time significant delay in returning the result.
      * </p>
      * </li>
      * <li>
@@ -439,6 +439,11 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * <p>
      * kms:Decrypt - needed only if you use a customer-managed AWS KMS key to encrypt the secret. You do not need this
      * permission to use the account's default AWS managed CMK for Secrets Manager.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * secretsmanager:TagResource - needed only if you include the <code>Tags</code> parameter.
      * </p>
      * </li>
      * </ul>
@@ -1567,9 +1572,9 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * <code>SecretBinary</code> for a secret in the same account as the calling user and that secret doesn't specify a
      * AWS KMS encryption key, Secrets Manager uses the account's default AWS managed customer master key (CMK) with the
      * alias <code>aws/secretsmanager</code>. If this key doesn't already exist in your account then Secrets Manager
-     * creates it for you automatically. All users in the same AWS account automatically have access to use the default
-     * CMK. Note that if an Secrets Manager API call results in AWS having to create the account's AWS-managed CMK, it
-     * can result in a one-time significant delay in returning the result.
+     * creates it for you automatically. All users and roles in the same AWS account automatically have access to use
+     * the default CMK. Note that if an Secrets Manager API call results in AWS having to create the account's
+     * AWS-managed CMK, it can result in a one-time significant delay in returning the result.
      * </p>
      * </li>
      * <li>
@@ -2277,9 +2282,9 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * <code>SecretBinary</code> for a secret in the same account as the calling user and that secret doesn't specify a
      * AWS KMS encryption key, Secrets Manager uses the account's default AWS managed customer master key (CMK) with the
      * alias <code>aws/secretsmanager</code>. If this key doesn't already exist in your account then Secrets Manager
-     * creates it for you automatically. All users in the same AWS account automatically have access to use the default
-     * CMK. Note that if an Secrets Manager API call results in AWS having to create the account's AWS-managed CMK, it
-     * can result in a one-time significant delay in returning the result.
+     * creates it for you automatically. All users and roles in the same AWS account automatically have access to use
+     * the default CMK. Note that if an Secrets Manager API call results in AWS having to create the account's
+     * AWS-managed CMK, it can result in a one-time significant delay in returning the result.
      * </p>
      * </li>
      * <li>

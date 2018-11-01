@@ -77,7 +77,13 @@ public enum ResourceType {
     AWSElasticBeanstalkApplicationVersion("AWS::ElasticBeanstalk::ApplicationVersion"),
     AWSElasticBeanstalkEnvironment("AWS::ElasticBeanstalk::Environment"),
     AWSElasticLoadBalancingLoadBalancer("AWS::ElasticLoadBalancing::LoadBalancer"),
-    AWSXRayEncryptionConfig("AWS::XRay::EncryptionConfig");
+    AWSXRayEncryptionConfig("AWS::XRay::EncryptionConfig"),
+    AWSSSMAssociationCompliance("AWS::SSM::AssociationCompliance"),
+    AWSSSMPatchCompliance("AWS::SSM::PatchCompliance"),
+    AWSShieldProtection("AWS::Shield::Protection"),
+    AWSShieldRegionalProtection("AWS::ShieldRegional::Protection"),
+    AWSConfigResourceCompliance("AWS::Config::ResourceCompliance"),
+    AWSCodePipelinePipeline("AWS::CodePipeline::Pipeline");
 
     private String value;
 
