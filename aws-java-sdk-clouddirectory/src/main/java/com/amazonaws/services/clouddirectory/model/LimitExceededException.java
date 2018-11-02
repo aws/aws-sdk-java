@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Indicates that limits are exceeded. See <a
- * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more information.
+ * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more information.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -85,8 +85,8 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Creates an index object. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for more
-     * information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and
+     * search</a> for more information.
      * </p>
      */
     private BatchCreateIndex createIndex;
@@ -104,17 +104,17 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
     private BatchDetachFromIndex detachFromIndex;
     /**
      * <p>
-     * Attaches a typed link to a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Attaches a typed link to a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      */
     private BatchAttachTypedLink attachTypedLink;
     /**
      * <p>
-     * Detaches a typed link from a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Detaches a typed link from a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      */
     private BatchDetachTypedLink detachTypedLink;
@@ -488,14 +488,14 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Creates an index object. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for more
-     * information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and
+     * search</a> for more information.
      * </p>
      * 
      * @param createIndex
      *        Creates an index object. See <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for
-     *        more information.
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and
+     *        search</a> for more information.
      */
 
     public void setCreateIndex(BatchCreateIndex createIndex) {
@@ -505,13 +505,13 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Creates an index object. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for more
-     * information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and
+     * search</a> for more information.
      * </p>
      * 
      * @return Creates an index object. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for
-     *         more information.
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and
+     *         search</a> for more information.
      */
 
     public BatchCreateIndex getCreateIndex() {
@@ -521,14 +521,14 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Creates an index object. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for more
-     * information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and
+     * search</a> for more information.
      * </p>
      * 
      * @param createIndex
      *        Creates an index object. See <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for
-     *        more information.
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and
+     *        search</a> for more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -619,15 +619,15 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Attaches a typed link to a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Attaches a typed link to a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param attachTypedLink
-     *        Attaches a typed link to a specified source and target object. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     *        link</a>.
+     *        Attaches a typed link to a specified source and target object. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *        >Typed Links</a>.
      */
 
     public void setAttachTypedLink(BatchAttachTypedLink attachTypedLink) {
@@ -636,14 +636,14 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Attaches a typed link to a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Attaches a typed link to a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
-     * @return Attaches a typed link to a specified source and target object. For more information, see <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink"
-     *         >Typed link</a>.
+     * @return Attaches a typed link to a specified source and target object. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *         >Typed Links</a>.
      */
 
     public BatchAttachTypedLink getAttachTypedLink() {
@@ -652,15 +652,15 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Attaches a typed link to a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Attaches a typed link to a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param attachTypedLink
-     *        Attaches a typed link to a specified source and target object. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     *        link</a>.
+     *        Attaches a typed link to a specified source and target object. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *        >Typed Links</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -671,15 +671,15 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Detaches a typed link from a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Detaches a typed link from a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param detachTypedLink
-     *        Detaches a typed link from a specified source and target object. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     *        link</a>.
+     *        Detaches a typed link from a specified source and target object. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *        >Typed Links</a>.
      */
 
     public void setDetachTypedLink(BatchDetachTypedLink detachTypedLink) {
@@ -688,14 +688,14 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Detaches a typed link from a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Detaches a typed link from a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
-     * @return Detaches a typed link from a specified source and target object. For more information, see <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink"
-     *         >Typed link</a>.
+     * @return Detaches a typed link from a specified source and target object. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *         >Typed Links</a>.
      */
 
     public BatchDetachTypedLink getDetachTypedLink() {
@@ -704,15 +704,15 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Detaches a typed link from a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Detaches a typed link from a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param detachTypedLink
-     *        Detaches a typed link from a specified source and target object. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     *        link</a>.
+     *        Detaches a typed link from a specified source and target object. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *        >Typed Links</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

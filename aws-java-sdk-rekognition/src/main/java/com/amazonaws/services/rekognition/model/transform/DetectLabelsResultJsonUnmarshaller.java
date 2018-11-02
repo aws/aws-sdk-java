@@ -56,6 +56,10 @@ public class DetectLabelsResultJsonUnmarshaller implements Unmarshaller<DetectLa
                     context.nextToken();
                     detectLabelsResult.setOrientationCorrection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("LabelModelVersion", targetDepth)) {
+                    context.nextToken();
+                    detectLabelsResult.setLabelModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

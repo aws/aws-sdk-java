@@ -1,3 +1,12 @@
+# __1.11.442__ __2018-11-02__
+## __Amazon CloudDirectory__
+  - ### Features
+    - ListObjectParents API now supports a bool parameter IncludeAllLinksToEachParent, which if set to true, will return a ParentLinks list instead of a Parents map; BatchRead API now supports ListObjectParents operation.
+
+## __Amazon Rekognition__
+  - ### Features
+    - This release updates the DetectLabels operation. Bounding boxes are now returned for certain objects, a hierarchical taxonomy is now available for labels, and you can now get the version of the detection model used for detection.
+
 # __1.11.441__ __2018-11-01__
 ## __AWS Service Catalog__
   - ### Features

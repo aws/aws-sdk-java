@@ -33,8 +33,8 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
      * A path selector supports easy selection of an object by the parent/child links leading to it from the directory
      * root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/)
      * and link names are separated by slashes. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#accessingobjects"
-     * >Accessing Objects</a>. You can identify an object in one of the following ways:
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html"
+     * >Access Objects</a>. You can identify an object in one of the following ways:
      * </p>
      * <ul>
      * <li>
@@ -63,8 +63,8 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
      * A path selector supports easy selection of an object by the parent/child links leading to it from the directory
      * root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/)
      * and link names are separated by slashes. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#accessingobjects"
-     * >Accessing Objects</a>. You can identify an object in one of the following ways:
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html"
+     * >Access Objects</a>. You can identify an object in one of the following ways:
      * </p>
      * <ul>
      * <li>
@@ -90,8 +90,8 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
      *        A path selector supports easy selection of an object by the parent/child links leading to it from the
      *        directory root. Use the link names from each parent/child link to construct the path. Path selectors start
      *        with a slash (/) and link names are separated by slashes. For more information about paths, see <a href=
-     *        "http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#accessingobjects"
-     *        >Accessing Objects</a>. You can identify an object in one of the following ways:</p>
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html"
+     *        >Access Objects</a>. You can identify an object in one of the following ways:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -121,8 +121,8 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
      * A path selector supports easy selection of an object by the parent/child links leading to it from the directory
      * root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/)
      * and link names are separated by slashes. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#accessingobjects"
-     * >Accessing Objects</a>. You can identify an object in one of the following ways:
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html"
+     * >Access Objects</a>. You can identify an object in one of the following ways:
      * </p>
      * <ul>
      * <li>
@@ -147,9 +147,9 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
      * @return A path selector supports easy selection of an object by the parent/child links leading to it from the
      *         directory root. Use the link names from each parent/child link to construct the path. Path selectors
      *         start with a slash (/) and link names are separated by slashes. For more information about paths, see <a
-     *         href
-     *         ="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#accessingobjects"
-     *         >Accessing Objects</a>. You can identify an object in one of the following ways:</p>
+     *         href=
+     *         "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html"
+     *         >Access Objects</a>. You can identify an object in one of the following ways:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -179,8 +179,8 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
      * A path selector supports easy selection of an object by the parent/child links leading to it from the directory
      * root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/)
      * and link names are separated by slashes. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#accessingobjects"
-     * >Accessing Objects</a>. You can identify an object in one of the following ways:
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html"
+     * >Access Objects</a>. You can identify an object in one of the following ways:
      * </p>
      * <ul>
      * <li>
@@ -206,8 +206,8 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
      *        A path selector supports easy selection of an object by the parent/child links leading to it from the
      *        directory root. Use the link names from each parent/child link to construct the path. Path selectors start
      *        with a slash (/) and link names are separated by slashes. For more information about paths, see <a href=
-     *        "http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#accessingobjects"
-     *        >Accessing Objects</a>. You can identify an object in one of the following ways:</p>
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html"
+     *        >Access Objects</a>. You can identify an object in one of the following ways:</p>
      *        <ul>
      *        <li>
      *        <p>

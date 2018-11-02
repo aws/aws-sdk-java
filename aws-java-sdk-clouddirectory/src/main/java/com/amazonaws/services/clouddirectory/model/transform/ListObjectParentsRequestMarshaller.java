@@ -37,6 +37,8 @@ public class ListObjectParentsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> CONSISTENCYLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-consistency-level").build();
+    private static final MarshallingInfo<Boolean> INCLUDEALLLINKSTOEACHPARENT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeAllLinksToEachParent").build();
 
     private static final ListObjectParentsRequestMarshaller instance = new ListObjectParentsRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class ListObjectParentsRequestMarshaller {
             protocolMarshaller.marshall(listObjectParentsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listObjectParentsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listObjectParentsRequest.getConsistencyLevel(), CONSISTENCYLEVEL_BINDING);
+            protocolMarshaller.marshall(listObjectParentsRequest.getIncludeAllLinksToEachParent(), INCLUDEALLLINKSTOEACHPARENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

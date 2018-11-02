@@ -62,8 +62,8 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
      * <p>
      * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node
      * objects. For more information about objects, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
-     * Structure</a>.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html"
+     * >Directory Structure</a>.
      * </p>
      */
     private BatchListObjectParentPathsResponse listObjectParentPaths;
@@ -85,8 +85,9 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
      * present, an empty list is returned. If policies are present, and if some objects don't have the policies
      * attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns
      * <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the
-     * root from the target object are ignored. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * root from the target object are ignored. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      */
     private BatchLookupPolicyResponse lookupPolicy;
@@ -99,18 +100,18 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
     /**
      * <p>
      * Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      */
     private BatchListOutgoingTypedLinksResponse listOutgoingTypedLinks;
     /**
      * <p>
      * Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      */
     private BatchListIncomingTypedLinksResponse listIncomingTypedLinks;
@@ -120,6 +121,8 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
      * </p>
      */
     private BatchGetLinkAttributesResponse getLinkAttributes;
+
+    private BatchListObjectParentsResponse listObjectParents;
 
     /**
      * <p>
@@ -325,14 +328,14 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
      * <p>
      * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node
      * objects. For more information about objects, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
-     * Structure</a>.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html"
+     * >Directory Structure</a>.
      * </p>
      * 
      * @param listObjectParentPaths
      *        Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index
-     *        node objects. For more information about objects, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure"
+     *        node objects. For more information about objects, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html"
      *        >Directory Structure</a>.
      */
 
@@ -344,13 +347,13 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
      * <p>
      * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node
      * objects. For more information about objects, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
-     * Structure</a>.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html"
+     * >Directory Structure</a>.
      * </p>
      * 
      * @return Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index
-     *         node objects. For more information about objects, see <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure"
+     *         node objects. For more information about objects, see <a href=
+     *         "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html"
      *         >Directory Structure</a>.
      */
 
@@ -362,14 +365,14 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
      * <p>
      * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node
      * objects. For more information about objects, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
-     * Structure</a>.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html"
+     * >Directory Structure</a>.
      * </p>
      * 
      * @param listObjectParentPaths
      *        Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index
-     *        node objects. For more information about objects, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure"
+     *        node objects. For more information about objects, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html"
      *        >Directory Structure</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -465,8 +468,9 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
      * present, an empty list is returned. If policies are present, and if some objects don't have the policies
      * attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns
      * <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the
-     * root from the target object are ignored. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * root from the target object are ignored. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * 
      * @param lookupPolicy
@@ -474,8 +478,8 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
      *        present, an empty list is returned. If policies are present, and if some objects don't have the policies
      *        attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it
      *        returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that
-     *        don't lead to the root from the target object are ignored. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies"
+     *        don't lead to the root from the target object are ignored. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
      *        >Policies</a>.
      */
 
@@ -489,16 +493,17 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
      * present, an empty list is returned. If policies are present, and if some objects don't have the policies
      * attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns
      * <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the
-     * root from the target object are ignored. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * root from the target object are ignored. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * 
      * @return Lists all policies from the root of the <a>Directory</a> to the object specified. If there are no
      *         policies present, an empty list is returned. If policies are present, and if some objects don't have the
      *         policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are
      *         present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>.
-     *         Paths that don't lead to the root from the target object are ignored. For more information, see <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies"
+     *         Paths that don't lead to the root from the target object are ignored. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
      *         >Policies</a>.
      */
 
@@ -512,8 +517,9 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
      * present, an empty list is returned. If policies are present, and if some objects don't have the policies
      * attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns
      * <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the
-     * root from the target object are ignored. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * root from the target object are ignored. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * 
      * @param lookupPolicy
@@ -521,8 +527,8 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
      *        present, an empty list is returned. If policies are present, and if some objects don't have the policies
      *        attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it
      *        returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that
-     *        don't lead to the root from the target object are ignored. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies"
+     *        don't lead to the root from the target object are ignored. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
      *        >Policies</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -575,16 +581,16 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
     /**
      * <p>
      * Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listOutgoingTypedLinks
      *        Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
-     *        supports filtering by typed link facet and identity attributes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     *        link</a>.
+     *        supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *        >Typed Links</a>.
      */
 
     public void setListOutgoingTypedLinks(BatchListOutgoingTypedLinksResponse listOutgoingTypedLinks) {
@@ -594,15 +600,15 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
     /**
      * <p>
      * Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @return Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
-     *         supports filtering by typed link facet and identity attributes. For more information, see <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink"
-     *         >Typed link</a>.
+     *         supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *         >Typed Links</a>.
      */
 
     public BatchListOutgoingTypedLinksResponse getListOutgoingTypedLinks() {
@@ -612,16 +618,16 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
     /**
      * <p>
      * Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listOutgoingTypedLinks
      *        Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
-     *        supports filtering by typed link facet and identity attributes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     *        link</a>.
+     *        supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *        >Typed Links</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -633,16 +639,16 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
     /**
      * <p>
      * Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listIncomingTypedLinks
      *        Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
-     *        supports filtering by typed link facet and identity attributes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     *        link</a>.
+     *        supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *        >Typed Links</a>.
      */
 
     public void setListIncomingTypedLinks(BatchListIncomingTypedLinksResponse listIncomingTypedLinks) {
@@ -652,15 +658,15 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
     /**
      * <p>
      * Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @return Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
-     *         supports filtering by typed link facet and identity attributes. For more information, see <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink"
-     *         >Typed link</a>.
+     *         supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *         >Typed Links</a>.
      */
 
     public BatchListIncomingTypedLinksResponse getListIncomingTypedLinks() {
@@ -670,16 +676,16 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
     /**
      * <p>
      * Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listIncomingTypedLinks
      *        Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
-     *        supports filtering by typed link facet and identity attributes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     *        link</a>.
+     *        supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *        >Typed Links</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -729,6 +735,32 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
     }
 
     /**
+     * @param listObjectParents
+     */
+
+    public void setListObjectParents(BatchListObjectParentsResponse listObjectParents) {
+        this.listObjectParents = listObjectParents;
+    }
+
+    /**
+     * @return
+     */
+
+    public BatchListObjectParentsResponse getListObjectParents() {
+        return this.listObjectParents;
+    }
+
+    /**
+     * @param listObjectParents
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchReadSuccessfulResponse withListObjectParents(BatchListObjectParentsResponse listObjectParents) {
+        setListObjectParents(listObjectParents);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -764,7 +796,9 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
         if (getListIncomingTypedLinks() != null)
             sb.append("ListIncomingTypedLinks: ").append(getListIncomingTypedLinks()).append(",");
         if (getGetLinkAttributes() != null)
-            sb.append("GetLinkAttributes: ").append(getGetLinkAttributes());
+            sb.append("GetLinkAttributes: ").append(getGetLinkAttributes()).append(",");
+        if (getListObjectParents() != null)
+            sb.append("ListObjectParents: ").append(getListObjectParents());
         sb.append("}");
         return sb.toString();
     }
@@ -831,6 +865,10 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
             return false;
         if (other.getGetLinkAttributes() != null && other.getGetLinkAttributes().equals(this.getGetLinkAttributes()) == false)
             return false;
+        if (other.getListObjectParents() == null ^ this.getListObjectParents() == null)
+            return false;
+        if (other.getListObjectParents() != null && other.getListObjectParents().equals(this.getListObjectParents()) == false)
+            return false;
         return true;
     }
 
@@ -852,6 +890,7 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getListOutgoingTypedLinks() == null) ? 0 : getListOutgoingTypedLinks().hashCode());
         hashCode = prime * hashCode + ((getListIncomingTypedLinks() == null) ? 0 : getListIncomingTypedLinks().hashCode());
         hashCode = prime * hashCode + ((getGetLinkAttributes() == null) ? 0 : getGetLinkAttributes().hashCode());
+        hashCode = prime * hashCode + ((getListObjectParents() == null) ? 0 : getListObjectParents().hashCode());
         return hashCode;
     }
 

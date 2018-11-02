@@ -32,7 +32,7 @@ public class FacetAttributeReference implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The target facet name that is associated with the facet reference. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      */
@@ -40,7 +40,7 @@ public class FacetAttributeReference implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The target attribute name that is associated with the facet reference. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      */
@@ -49,13 +49,13 @@ public class FacetAttributeReference implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The target facet name that is associated with the facet reference. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      * 
      * @param targetFacetName
-     *        The target facet name that is associated with the facet reference. See <a href=
-     *        "http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     *        The target facet name that is associated with the facet reference. See <a
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      *        >Attribute References</a> for more information.
      */
 
@@ -66,12 +66,12 @@ public class FacetAttributeReference implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The target facet name that is associated with the facet reference. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      * 
      * @return The target facet name that is associated with the facet reference. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      *         >Attribute References</a> for more information.
      */
 
@@ -82,13 +82,13 @@ public class FacetAttributeReference implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The target facet name that is associated with the facet reference. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      * 
      * @param targetFacetName
-     *        The target facet name that is associated with the facet reference. See <a href=
-     *        "http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     *        The target facet name that is associated with the facet reference. See <a
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      *        >Attribute References</a> for more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -101,13 +101,13 @@ public class FacetAttributeReference implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The target attribute name that is associated with the facet reference. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      * 
      * @param targetAttributeName
-     *        The target attribute name that is associated with the facet reference. See <a href=
-     *        "http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     *        The target attribute name that is associated with the facet reference. See <a
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      *        >Attribute References</a> for more information.
      */
 
@@ -118,12 +118,12 @@ public class FacetAttributeReference implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The target attribute name that is associated with the facet reference. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      * 
      * @return The target attribute name that is associated with the facet reference. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      *         >Attribute References</a> for more information.
      */
 
@@ -134,13 +134,13 @@ public class FacetAttributeReference implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The target attribute name that is associated with the facet reference. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      * 
      * @param targetAttributeName
-     *        The target attribute name that is associated with the facet reference. See <a href=
-     *        "http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     *        The target attribute name that is associated with the facet reference. See <a
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      *        >Attribute References</a> for more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

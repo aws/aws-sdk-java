@@ -35,6 +35,12 @@ public class ListObjectParentsResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Returns a list of parent reference and LinkName Tuples.
+     * </p>
+     */
+    private java.util.List<ObjectIdentifierAndLinkNameTuple> parentLinks;
 
     /**
      * <p>
@@ -141,6 +147,76 @@ public class ListObjectParentsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * Returns a list of parent reference and LinkName Tuples.
+     * </p>
+     * 
+     * @return Returns a list of parent reference and LinkName Tuples.
+     */
+
+    public java.util.List<ObjectIdentifierAndLinkNameTuple> getParentLinks() {
+        return parentLinks;
+    }
+
+    /**
+     * <p>
+     * Returns a list of parent reference and LinkName Tuples.
+     * </p>
+     * 
+     * @param parentLinks
+     *        Returns a list of parent reference and LinkName Tuples.
+     */
+
+    public void setParentLinks(java.util.Collection<ObjectIdentifierAndLinkNameTuple> parentLinks) {
+        if (parentLinks == null) {
+            this.parentLinks = null;
+            return;
+        }
+
+        this.parentLinks = new java.util.ArrayList<ObjectIdentifierAndLinkNameTuple>(parentLinks);
+    }
+
+    /**
+     * <p>
+     * Returns a list of parent reference and LinkName Tuples.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setParentLinks(java.util.Collection)} or {@link #withParentLinks(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param parentLinks
+     *        Returns a list of parent reference and LinkName Tuples.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListObjectParentsResult withParentLinks(ObjectIdentifierAndLinkNameTuple... parentLinks) {
+        if (this.parentLinks == null) {
+            setParentLinks(new java.util.ArrayList<ObjectIdentifierAndLinkNameTuple>(parentLinks.length));
+        }
+        for (ObjectIdentifierAndLinkNameTuple ele : parentLinks) {
+            this.parentLinks.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns a list of parent reference and LinkName Tuples.
+     * </p>
+     * 
+     * @param parentLinks
+     *        Returns a list of parent reference and LinkName Tuples.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListObjectParentsResult withParentLinks(java.util.Collection<ObjectIdentifierAndLinkNameTuple> parentLinks) {
+        setParentLinks(parentLinks);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -154,7 +230,9 @@ public class ListObjectParentsResult extends com.amazonaws.AmazonWebServiceResul
         if (getParents() != null)
             sb.append("Parents: ").append(getParents()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getParentLinks() != null)
+            sb.append("ParentLinks: ").append(getParentLinks());
         sb.append("}");
         return sb.toString();
     }
@@ -177,6 +255,10 @@ public class ListObjectParentsResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getParentLinks() == null ^ this.getParentLinks() == null)
+            return false;
+        if (other.getParentLinks() != null && other.getParentLinks().equals(this.getParentLinks()) == false)
+            return false;
         return true;
     }
 
@@ -187,6 +269,7 @@ public class ListObjectParentsResult extends com.amazonaws.AmazonWebServiceResul
 
         hashCode = prime * hashCode + ((getParents() == null) ? 0 : getParents().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getParentLinks() == null) ? 0 : getParentLinks().hashCode());
         return hashCode;
     }
 

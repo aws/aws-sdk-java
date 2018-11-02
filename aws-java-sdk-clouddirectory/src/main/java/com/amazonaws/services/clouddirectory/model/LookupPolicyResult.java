@@ -26,8 +26,9 @@ public class LookupPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
-     * <code>PolicyType</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * <code>PolicyType</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      */
     private java.util.List<PolicyToPath> policyToPathList;
@@ -41,13 +42,14 @@ public class LookupPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
-     * <code>PolicyType</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * <code>PolicyType</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * 
      * @return Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>,
-     *         and <code>PolicyType</code>. For more information, see <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies"
+     *         and <code>PolicyType</code>. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
      *         >Policies</a>.
      */
 
@@ -58,14 +60,15 @@ public class LookupPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
-     * <code>PolicyType</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * <code>PolicyType</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * 
      * @param policyToPathList
      *        Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>,
-     *        and <code>PolicyType</code>. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies"
+     *        and <code>PolicyType</code>. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
      *        >Policies</a>.
      */
 
@@ -81,8 +84,9 @@ public class LookupPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
-     * <code>PolicyType</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * <code>PolicyType</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -92,8 +96,8 @@ public class LookupPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
      * 
      * @param policyToPathList
      *        Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>,
-     *        and <code>PolicyType</code>. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies"
+     *        and <code>PolicyType</code>. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
      *        >Policies</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -111,14 +115,15 @@ public class LookupPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
-     * <code>PolicyType</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * <code>PolicyType</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * 
      * @param policyToPathList
      *        Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>,
-     *        and <code>PolicyType</code>. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies"
+     *        and <code>PolicyType</code>. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
      *        >Policies</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

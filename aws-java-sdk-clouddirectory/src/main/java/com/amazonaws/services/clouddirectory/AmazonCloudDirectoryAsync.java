@@ -29,10 +29,10 @@ import com.amazonaws.services.clouddirectory.model.*;
  * <p>
  * Amazon Cloud Directory is a component of the AWS Directory Service that simplifies the development and management of
  * cloud-scale web, mobile, and IoT applications. This guide describes the Cloud Directory operations that you can call
- * programmatically and includes detailed information on data types and errors. For information about AWS Directory
- * Services features, see <a href="https://aws.amazon.com/directoryservice/">AWS Directory Service</a> and the <a
- * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">AWS Directory Service
- * Administration Guide</a>.
+ * programmatically and includes detailed information on data types and errors. For information about Cloud Directory
+ * features, see <a href="https://aws.amazon.com/directoryservice/">AWS Directory Service</a> and the <a
+ * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/what_is_cloud_directory.html">Amazon Cloud
+ * Directory Developer Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -221,9 +221,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Attaches a typed link to a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Attaches a typed link to a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param attachTypedLinkRequest
@@ -236,9 +236,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Attaches a typed link to a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Attaches a typed link to a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param attachTypedLinkRequest
@@ -321,6 +321,12 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * Creates a <a>Directory</a> by copying the published schema into the directory. A directory cannot be created
      * without a schema.
      * </p>
+     * <p>
+     * You can also quickly create a directory using a managed schema, called the <code>QuickStartSchema</code>. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_managed.html">Managed Schema</a>
+     * in the <i>Amazon Cloud Directory Developer Guide</i>.
+     * </p>
      * 
      * @param createDirectoryRequest
      * @return A Java Future containing the result of the CreateDirectory operation returned by the service.
@@ -334,6 +340,12 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * <p>
      * Creates a <a>Directory</a> by copying the published schema into the directory. A directory cannot be created
      * without a schema.
+     * </p>
+     * <p>
+     * You can also quickly create a directory using a managed schema, called the <code>QuickStartSchema</code>. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_managed.html">Managed Schema</a>
+     * in the <i>Amazon Cloud Directory Developer Guide</i>.
      * </p>
      * 
      * @param createDirectoryRequest
@@ -383,8 +395,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
     /**
      * <p>
      * Creates an index object. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for more
-     * information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.html">Indexing and
+     * search</a> for more information.
      * </p>
      * 
      * @param createIndexRequest
@@ -398,8 +410,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
     /**
      * <p>
      * Creates an index object. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for more
-     * information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.html">Indexing and
+     * search</a> for more information.
      * </p>
      * 
      * @param createIndexRequest
@@ -521,9 +533,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Creates a <a>TypedLinkFacet</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Creates a <a>TypedLinkFacet</a>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param createTypedLinkFacetRequest
@@ -536,9 +548,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Creates a <a>TypedLinkFacet</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Creates a <a>TypedLinkFacet</a>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param createTypedLinkFacetRequest
@@ -622,7 +634,10 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Deletes an object and its associated attributes. Only objects with no children and no parents can be deleted.
+     * Deletes an object and its associated attributes. Only objects with no children and no parents can be deleted. The
+     * maximum number of attributes that can be deleted during an object deletion is 30. For more information, see <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory
+     * Limits</a>.
      * </p>
      * 
      * @param deleteObjectRequest
@@ -635,7 +650,10 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Deletes an object and its associated attributes. Only objects with no children and no parents can be deleted.
+     * Deletes an object and its associated attributes. Only objects with no children and no parents can be deleted. The
+     * maximum number of attributes that can be deleted during an object deletion is 30. For more information, see <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory
+     * Limits</a>.
      * </p>
      * 
      * @param deleteObjectRequest
@@ -684,9 +702,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Deletes a <a>TypedLinkFacet</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Deletes a <a>TypedLinkFacet</a>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param deleteTypedLinkFacetRequest
@@ -699,9 +717,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Deletes a <a>TypedLinkFacet</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Deletes a <a>TypedLinkFacet</a>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param deleteTypedLinkFacetRequest
@@ -814,9 +832,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Detaches a typed link from a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Detaches a typed link from a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param detachTypedLinkRequest
@@ -829,9 +847,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Detaches a typed link from a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Detaches a typed link from a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param detachTypedLinkRequest
@@ -1104,8 +1122,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
     /**
      * <p>
      * Retrieves a JSON representation of the schema. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_schemas.html#jsonformat">JSON Schema
-     * Format</a> for more information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json">JSON
+     * Schema Format</a> for more information.
      * </p>
      * 
      * @param getSchemaAsJsonRequest
@@ -1119,8 +1137,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
     /**
      * <p>
      * Retrieves a JSON representation of the schema. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_schemas.html#jsonformat">JSON Schema
-     * Format</a> for more information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json">JSON
+     * Schema Format</a> for more information.
      * </p>
      * 
      * @param getSchemaAsJsonRequest
@@ -1138,9 +1156,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Returns the identity attribute order for a specific <a>TypedLinkFacet</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Returns the identity attribute order for a specific <a>TypedLinkFacet</a>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param getTypedLinkFacetInformationRequest
@@ -1155,9 +1173,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Returns the identity attribute order for a specific <a>TypedLinkFacet</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Returns the identity attribute order for a specific <a>TypedLinkFacet</a>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param getTypedLinkFacetInformationRequest
@@ -1368,9 +1386,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
     /**
      * <p>
      * Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listIncomingTypedLinksRequest
@@ -1384,9 +1402,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
     /**
      * <p>
      * Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listIncomingTypedLinksRequest
@@ -1532,8 +1550,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * <p>
      * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node
      * objects. For more information about objects, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
-     * Structure</a>.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html"
+     * >Directory Structure</a>.
      * </p>
      * <p>
      * Use this API to evaluate all parents for an object. The call returns all objects from the root of the directory
@@ -1555,8 +1573,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * <p>
      * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node
      * objects. For more information about objects, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
-     * Structure</a>.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html"
+     * >Directory Structure</a>.
      * </p>
      * <p>
      * Use this API to evaluate all parents for an object. The call returns all objects from the root of the directory
@@ -1644,9 +1662,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
     /**
      * <p>
      * Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listOutgoingTypedLinksRequest
@@ -1660,9 +1678,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
     /**
      * <p>
      * Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listOutgoingTypedLinksRequest
@@ -1778,9 +1796,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
     /**
      * <p>
      * Returns a paginated list of all attribute definitions for a particular <a>TypedLinkFacet</a>. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listTypedLinkFacetAttributesRequest
@@ -1796,9 +1814,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
     /**
      * <p>
      * Returns a paginated list of all attribute definitions for a particular <a>TypedLinkFacet</a>. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listTypedLinkFacetAttributesRequest
@@ -1819,8 +1837,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
     /**
      * <p>
      * Returns a paginated list of <code>TypedLink</code> facet names for a particular schema. For more information, see
-     * <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listTypedLinkFacetNamesRequest
@@ -1834,8 +1853,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
     /**
      * <p>
      * Returns a paginated list of <code>TypedLink</code> facet names for a particular schema. For more information, see
-     * <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listTypedLinkFacetNamesRequest
@@ -1857,8 +1877,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * present, an empty list is returned. If policies are present, and if some objects don't have the policies
      * attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns
      * <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the
-     * root from the target object are ignored. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * root from the target object are ignored. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * 
      * @param lookupPolicyRequest
@@ -1875,8 +1896,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * present, an empty list is returned. If policies are present, and if some objects don't have the policies
      * attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns
      * <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the
-     * root from the target object are ignored. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * root from the target object are ignored. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * 
      * @param lookupPolicyRequest
@@ -1926,8 +1948,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
     /**
      * <p>
      * Allows a schema to be updated using JSON upload. Only available for development schemas. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_schemas.html#jsonformat">JSON Schema
-     * Format</a> for more information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json">JSON
+     * Schema Format</a> for more information.
      * </p>
      * 
      * @param putSchemaFromJsonRequest
@@ -1941,8 +1963,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
     /**
      * <p>
      * Allows a schema to be updated using JSON upload. Only available for development schemas. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_schemas.html#jsonformat">JSON Schema
-     * Format</a> for more information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json">JSON
+     * Schema Format</a> for more information.
      * </p>
      * 
      * @param putSchemaFromJsonRequest
@@ -2213,9 +2235,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Updates a <a>TypedLinkFacet</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Updates a <a>TypedLinkFacet</a>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param updateTypedLinkFacetRequest
@@ -2228,9 +2250,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Updates a <a>TypedLinkFacet</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Updates a <a>TypedLinkFacet</a>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param updateTypedLinkFacetRequest

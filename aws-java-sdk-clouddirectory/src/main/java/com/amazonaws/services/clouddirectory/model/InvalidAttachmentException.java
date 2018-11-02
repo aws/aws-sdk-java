@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates that an attempt to attach an object with the same link name or to apply a schema with the same name has
- * occurred. Rename the link or the schema and then try again.
+ * Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes with a link type that
+ * is not applicable to the nodes or attempting to apply a schema to a directory a second time.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.rekognition.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,10 @@ public class LabelMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<Float> CONFIDENCE_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Confidence").build();
+    private static final MarshallingInfo<List> INSTANCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Instances").build();
+    private static final MarshallingInfo<List> PARENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Parents").build();
 
     private static final LabelMarshaller instance = new LabelMarshaller();
 
@@ -50,6 +55,8 @@ public class LabelMarshaller {
         try {
             protocolMarshaller.marshall(label.getName(), NAME_BINDING);
             protocolMarshaller.marshall(label.getConfidence(), CONFIDENCE_BINDING);
+            protocolMarshaller.marshall(label.getInstances(), INSTANCES_BINDING);
+            protocolMarshaller.marshall(label.getParents(), PARENTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

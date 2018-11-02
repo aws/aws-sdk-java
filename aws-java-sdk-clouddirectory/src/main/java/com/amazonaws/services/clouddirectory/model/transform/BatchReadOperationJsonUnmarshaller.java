@@ -72,6 +72,10 @@ public class BatchReadOperationJsonUnmarshaller implements Unmarshaller<BatchRea
                     context.nextToken();
                     batchReadOperation.setGetObjectAttributes(BatchGetObjectAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ListObjectParents", targetDepth)) {
+                    context.nextToken();
+                    batchReadOperation.setListObjectParents(BatchListObjectParentsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ListObjectPolicies", targetDepth)) {
                     context.nextToken();
                     batchReadOperation.setListObjectPolicies(BatchListObjectPoliciesJsonUnmarshaller.getInstance().unmarshall(context));

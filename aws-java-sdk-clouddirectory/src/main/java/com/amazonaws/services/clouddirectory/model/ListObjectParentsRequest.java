@@ -57,6 +57,13 @@ public class ListObjectParentsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String consistencyLevel;
+    /**
+     * <p>
+     * When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links between
+     * a parent-child pair.
+     * </p>
+     */
+    private Boolean includeAllLinksToEachParent;
 
     /**
      * <p>
@@ -308,6 +315,66 @@ public class ListObjectParentsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links between
+     * a parent-child pair.
+     * </p>
+     * 
+     * @param includeAllLinksToEachParent
+     *        When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links
+     *        between a parent-child pair.
+     */
+
+    public void setIncludeAllLinksToEachParent(Boolean includeAllLinksToEachParent) {
+        this.includeAllLinksToEachParent = includeAllLinksToEachParent;
+    }
+
+    /**
+     * <p>
+     * When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links between
+     * a parent-child pair.
+     * </p>
+     * 
+     * @return When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links
+     *         between a parent-child pair.
+     */
+
+    public Boolean getIncludeAllLinksToEachParent() {
+        return this.includeAllLinksToEachParent;
+    }
+
+    /**
+     * <p>
+     * When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links between
+     * a parent-child pair.
+     * </p>
+     * 
+     * @param includeAllLinksToEachParent
+     *        When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links
+     *        between a parent-child pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListObjectParentsRequest withIncludeAllLinksToEachParent(Boolean includeAllLinksToEachParent) {
+        setIncludeAllLinksToEachParent(includeAllLinksToEachParent);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links between
+     * a parent-child pair.
+     * </p>
+     * 
+     * @return When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links
+     *         between a parent-child pair.
+     */
+
+    public Boolean isIncludeAllLinksToEachParent() {
+        return this.includeAllLinksToEachParent;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -327,7 +394,9 @@ public class ListObjectParentsRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getConsistencyLevel() != null)
-            sb.append("ConsistencyLevel: ").append(getConsistencyLevel());
+            sb.append("ConsistencyLevel: ").append(getConsistencyLevel()).append(",");
+        if (getIncludeAllLinksToEachParent() != null)
+            sb.append("IncludeAllLinksToEachParent: ").append(getIncludeAllLinksToEachParent());
         sb.append("}");
         return sb.toString();
     }
@@ -362,6 +431,10 @@ public class ListObjectParentsRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getConsistencyLevel() != null && other.getConsistencyLevel().equals(this.getConsistencyLevel()) == false)
             return false;
+        if (other.getIncludeAllLinksToEachParent() == null ^ this.getIncludeAllLinksToEachParent() == null)
+            return false;
+        if (other.getIncludeAllLinksToEachParent() != null && other.getIncludeAllLinksToEachParent().equals(this.getIncludeAllLinksToEachParent()) == false)
+            return false;
         return true;
     }
 
@@ -375,6 +448,7 @@ public class ListObjectParentsRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getConsistencyLevel() == null) ? 0 : getConsistencyLevel().hashCode());
+        hashCode = prime * hashCode + ((getIncludeAllLinksToEachParent() == null) ? 0 : getIncludeAllLinksToEachParent().hashCode());
         return hashCode;
     }
 

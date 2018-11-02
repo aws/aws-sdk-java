@@ -56,8 +56,8 @@ public class BatchCreateIndex implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The batch reference name. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a> for
-     * more information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
+     * Support</a> for more information.
      * </p>
      */
     private String batchReferenceName;
@@ -267,14 +267,14 @@ public class BatchCreateIndex implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The batch reference name. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a> for
-     * more information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
+     * Support</a> for more information.
      * </p>
      * 
      * @param batchReferenceName
      *        The batch reference name. See <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a>
-     *        for more information.
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html"
+     *        >Transaction Support</a> for more information.
      */
 
     public void setBatchReferenceName(String batchReferenceName) {
@@ -284,13 +284,13 @@ public class BatchCreateIndex implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The batch reference name. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a> for
-     * more information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
+     * Support</a> for more information.
      * </p>
      * 
      * @return The batch reference name. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches"
-     *         >Batches</a> for more information.
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html"
+     *         >Transaction Support</a> for more information.
      */
 
     public String getBatchReferenceName() {
@@ -300,14 +300,14 @@ public class BatchCreateIndex implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The batch reference name. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a> for
-     * more information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
+     * Support</a> for more information.
      * </p>
      * 
      * @param batchReferenceName
      *        The batch reference name. See <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a>
-     *        for more information.
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html"
+     *        >Transaction Support</a> for more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

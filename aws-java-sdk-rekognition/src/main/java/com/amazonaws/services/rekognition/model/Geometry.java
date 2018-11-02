@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about where text detected by is located on an image.
+ * Information about where the text detected by is located on an image.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

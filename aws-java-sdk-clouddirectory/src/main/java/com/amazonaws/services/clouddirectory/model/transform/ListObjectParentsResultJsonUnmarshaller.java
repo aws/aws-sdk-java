@@ -57,6 +57,11 @@ public class ListObjectParentsResultJsonUnmarshaller implements Unmarshaller<Lis
                     context.nextToken();
                     listObjectParentsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ParentLinks", targetDepth)) {
+                    context.nextToken();
+                    listObjectParentsResult.setParentLinks(new ListUnmarshaller<ObjectIdentifierAndLinkNameTuple>(
+                            ObjectIdentifierAndLinkNameTupleJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

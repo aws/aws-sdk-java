@@ -46,8 +46,8 @@ public class ListIndexRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The maximum number of objects in a single page to retrieve from the index during a request. For more information,
-     * see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html#limits_cd">AWS Directory
-     * Service Limits</a>.
+     * see <a href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory
+     * Limits</a>.
      * </p>
      */
     private Integer maxResults;
@@ -217,15 +217,15 @@ public class ListIndexRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The maximum number of objects in a single page to retrieve from the index during a request. For more information,
-     * see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html#limits_cd">AWS Directory
-     * Service Limits</a>.
+     * see <a href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory
+     * Limits</a>.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of objects in a single page to retrieve from the index during a request. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html#limits_cd">AWS Directory
-     *        Service Limits</a>.
+     *        href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory
+     *        Limits</a>.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -235,14 +235,14 @@ public class ListIndexRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The maximum number of objects in a single page to retrieve from the index during a request. For more information,
-     * see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html#limits_cd">AWS Directory
-     * Service Limits</a>.
+     * see <a href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory
+     * Limits</a>.
      * </p>
      * 
      * @return The maximum number of objects in a single page to retrieve from the index during a request. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html#limits_cd">AWS Directory
-     *         Service Limits</a>.
+     *         href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory
+     *         Limits</a>.
      */
 
     public Integer getMaxResults() {
@@ -252,15 +252,15 @@ public class ListIndexRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The maximum number of objects in a single page to retrieve from the index during a request. For more information,
-     * see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html#limits_cd">AWS Directory
-     * Service Limits</a>.
+     * see <a href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory
+     * Limits</a>.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of objects in a single page to retrieve from the index during a request. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html#limits_cd">AWS Directory
-     *        Service Limits</a>.
+     *        href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory
+     *        Limits</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

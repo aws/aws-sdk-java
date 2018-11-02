@@ -50,8 +50,8 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
      * <p>
      * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node
      * objects. For more information about objects, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
-     * Structure</a>.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html"
+     * >Directory Structure</a>.
      * </p>
      */
     private BatchListObjectParentPaths listObjectParentPaths;
@@ -67,6 +67,8 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private BatchGetObjectAttributes getObjectAttributes;
+
+    private BatchListObjectParents listObjectParents;
     /**
      * <p>
      * Returns policies attached to an object in pagination fashion.
@@ -85,8 +87,9 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
      * present, an empty list is returned. If policies are present, and if some objects don't have the policies
      * attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns
      * <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the
-     * root from the target object are ignored. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * root from the target object are ignored. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      */
     private BatchLookupPolicy lookupPolicy;
@@ -99,18 +102,18 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      */
     private BatchListOutgoingTypedLinks listOutgoingTypedLinks;
     /**
      * <p>
      * Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      */
     private BatchListIncomingTypedLinks listIncomingTypedLinks;
@@ -245,14 +248,14 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
      * <p>
      * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node
      * objects. For more information about objects, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
-     * Structure</a>.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html"
+     * >Directory Structure</a>.
      * </p>
      * 
      * @param listObjectParentPaths
      *        Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index
-     *        node objects. For more information about objects, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure"
+     *        node objects. For more information about objects, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html"
      *        >Directory Structure</a>.
      */
 
@@ -264,13 +267,13 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
      * <p>
      * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node
      * objects. For more information about objects, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
-     * Structure</a>.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html"
+     * >Directory Structure</a>.
      * </p>
      * 
      * @return Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index
-     *         node objects. For more information about objects, see <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure"
+     *         node objects. For more information about objects, see <a href=
+     *         "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html"
      *         >Directory Structure</a>.
      */
 
@@ -282,14 +285,14 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
      * <p>
      * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node
      * objects. For more information about objects, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
-     * Structure</a>.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html"
+     * >Directory Structure</a>.
      * </p>
      * 
      * @param listObjectParentPaths
      *        Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index
-     *        node objects. For more information about objects, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure"
+     *        node objects. For more information about objects, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html"
      *        >Directory Structure</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -380,6 +383,32 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * @param listObjectParents
+     */
+
+    public void setListObjectParents(BatchListObjectParents listObjectParents) {
+        this.listObjectParents = listObjectParents;
+    }
+
+    /**
+     * @return
+     */
+
+    public BatchListObjectParents getListObjectParents() {
+        return this.listObjectParents;
+    }
+
+    /**
+     * @param listObjectParents
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchReadOperation withListObjectParents(BatchListObjectParents listObjectParents) {
+        setListObjectParents(listObjectParents);
+        return this;
+    }
+
+    /**
      * <p>
      * Returns policies attached to an object in pagination fashion.
      * </p>
@@ -465,8 +494,9 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
      * present, an empty list is returned. If policies are present, and if some objects don't have the policies
      * attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns
      * <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the
-     * root from the target object are ignored. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * root from the target object are ignored. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * 
      * @param lookupPolicy
@@ -474,8 +504,8 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
      *        present, an empty list is returned. If policies are present, and if some objects don't have the policies
      *        attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it
      *        returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that
-     *        don't lead to the root from the target object are ignored. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies"
+     *        don't lead to the root from the target object are ignored. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
      *        >Policies</a>.
      */
 
@@ -489,16 +519,17 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
      * present, an empty list is returned. If policies are present, and if some objects don't have the policies
      * attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns
      * <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the
-     * root from the target object are ignored. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * root from the target object are ignored. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * 
      * @return Lists all policies from the root of the <a>Directory</a> to the object specified. If there are no
      *         policies present, an empty list is returned. If policies are present, and if some objects don't have the
      *         policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are
      *         present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>.
-     *         Paths that don't lead to the root from the target object are ignored. For more information, see <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies"
+     *         Paths that don't lead to the root from the target object are ignored. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
      *         >Policies</a>.
      */
 
@@ -512,8 +543,9 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
      * present, an empty list is returned. If policies are present, and if some objects don't have the policies
      * attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns
      * <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the
-     * root from the target object are ignored. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * root from the target object are ignored. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * 
      * @param lookupPolicy
@@ -521,8 +553,8 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
      *        present, an empty list is returned. If policies are present, and if some objects don't have the policies
      *        attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it
      *        returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that
-     *        don't lead to the root from the target object are ignored. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies"
+     *        don't lead to the root from the target object are ignored. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
      *        >Policies</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -575,16 +607,16 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listOutgoingTypedLinks
      *        Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
-     *        supports filtering by typed link facet and identity attributes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     *        link</a>.
+     *        supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *        >Typed Links</a>.
      */
 
     public void setListOutgoingTypedLinks(BatchListOutgoingTypedLinks listOutgoingTypedLinks) {
@@ -594,15 +626,15 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @return Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
-     *         supports filtering by typed link facet and identity attributes. For more information, see <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink"
-     *         >Typed link</a>.
+     *         supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *         >Typed Links</a>.
      */
 
     public BatchListOutgoingTypedLinks getListOutgoingTypedLinks() {
@@ -612,16 +644,16 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listOutgoingTypedLinks
      *        Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
-     *        supports filtering by typed link facet and identity attributes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     *        link</a>.
+     *        supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *        >Typed Links</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -633,16 +665,16 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listIncomingTypedLinks
      *        Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
-     *        supports filtering by typed link facet and identity attributes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     *        link</a>.
+     *        supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *        >Typed Links</a>.
      */
 
     public void setListIncomingTypedLinks(BatchListIncomingTypedLinks listIncomingTypedLinks) {
@@ -652,15 +684,15 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @return Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
-     *         supports filtering by typed link facet and identity attributes. For more information, see <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink"
-     *         >Typed link</a>.
+     *         supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *         >Typed Links</a>.
      */
 
     public BatchListIncomingTypedLinks getListIncomingTypedLinks() {
@@ -670,16 +702,16 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listIncomingTypedLinks
      *        Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
-     *        supports filtering by typed link facet and identity attributes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     *        link</a>.
+     *        supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *        >Typed Links</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -751,6 +783,8 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
             sb.append("GetObjectInformation: ").append(getGetObjectInformation()).append(",");
         if (getGetObjectAttributes() != null)
             sb.append("GetObjectAttributes: ").append(getGetObjectAttributes()).append(",");
+        if (getListObjectParents() != null)
+            sb.append("ListObjectParents: ").append(getListObjectParents()).append(",");
         if (getListObjectPolicies() != null)
             sb.append("ListObjectPolicies: ").append(getListObjectPolicies()).append(",");
         if (getListPolicyAttachments() != null)
@@ -803,6 +837,10 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getGetObjectAttributes() != null && other.getGetObjectAttributes().equals(this.getGetObjectAttributes()) == false)
             return false;
+        if (other.getListObjectParents() == null ^ this.getListObjectParents() == null)
+            return false;
+        if (other.getListObjectParents() != null && other.getListObjectParents().equals(this.getListObjectParents()) == false)
+            return false;
         if (other.getListObjectPolicies() == null ^ this.getListObjectPolicies() == null)
             return false;
         if (other.getListObjectPolicies() != null && other.getListObjectPolicies().equals(this.getListObjectPolicies()) == false)
@@ -845,6 +883,7 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getListObjectParentPaths() == null) ? 0 : getListObjectParentPaths().hashCode());
         hashCode = prime * hashCode + ((getGetObjectInformation() == null) ? 0 : getGetObjectInformation().hashCode());
         hashCode = prime * hashCode + ((getGetObjectAttributes() == null) ? 0 : getGetObjectAttributes().hashCode());
+        hashCode = prime * hashCode + ((getListObjectParents() == null) ? 0 : getListObjectParents().hashCode());
         hashCode = prime * hashCode + ((getListObjectPolicies() == null) ? 0 : getListObjectPolicies().hashCode());
         hashCode = prime * hashCode + ((getListPolicyAttachments() == null) ? 0 : getListPolicyAttachments().hashCode());
         hashCode = prime * hashCode + ((getLookupPolicy() == null) ? 0 : getLookupPolicy().hashCode());
