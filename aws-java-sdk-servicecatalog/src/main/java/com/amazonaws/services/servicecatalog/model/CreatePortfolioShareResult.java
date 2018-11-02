@@ -24,6 +24,56 @@ import javax.annotation.Generated;
 public class CreatePortfolioShareResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
+     * <p>
+     * The portfolio share unique identifier. This will only be returned if portfolio is shared to an organization node.
+     * </p>
+     */
+    private String portfolioShareToken;
+
+    /**
+     * <p>
+     * The portfolio share unique identifier. This will only be returned if portfolio is shared to an organization node.
+     * </p>
+     * 
+     * @param portfolioShareToken
+     *        The portfolio share unique identifier. This will only be returned if portfolio is shared to an
+     *        organization node.
+     */
+
+    public void setPortfolioShareToken(String portfolioShareToken) {
+        this.portfolioShareToken = portfolioShareToken;
+    }
+
+    /**
+     * <p>
+     * The portfolio share unique identifier. This will only be returned if portfolio is shared to an organization node.
+     * </p>
+     * 
+     * @return The portfolio share unique identifier. This will only be returned if portfolio is shared to an
+     *         organization node.
+     */
+
+    public String getPortfolioShareToken() {
+        return this.portfolioShareToken;
+    }
+
+    /**
+     * <p>
+     * The portfolio share unique identifier. This will only be returned if portfolio is shared to an organization node.
+     * </p>
+     * 
+     * @param portfolioShareToken
+     *        The portfolio share unique identifier. This will only be returned if portfolio is shared to an
+     *        organization node.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePortfolioShareResult withPortfolioShareToken(String portfolioShareToken) {
+        setPortfolioShareToken(portfolioShareToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -34,6 +84,8 @@ public class CreatePortfolioShareResult extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getPortfolioShareToken() != null)
+            sb.append("PortfolioShareToken: ").append(getPortfolioShareToken());
         sb.append("}");
         return sb.toString();
     }
@@ -48,6 +100,10 @@ public class CreatePortfolioShareResult extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof CreatePortfolioShareResult == false)
             return false;
         CreatePortfolioShareResult other = (CreatePortfolioShareResult) obj;
+        if (other.getPortfolioShareToken() == null ^ this.getPortfolioShareToken() == null)
+            return false;
+        if (other.getPortfolioShareToken() != null && other.getPortfolioShareToken().equals(this.getPortfolioShareToken()) == false)
+            return false;
         return true;
     }
 
@@ -56,6 +112,7 @@ public class CreatePortfolioShareResult extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getPortfolioShareToken() == null) ? 0 : getPortfolioShareToken().hashCode());
         return hashCode;
     }
 

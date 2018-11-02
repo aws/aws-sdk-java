@@ -314,7 +314,9 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Shares the specified portfolio with the specified account.
+     * Shares the specified portfolio with the specified account or organization node. Shares to an organization node
+     * can only be created by the master account of an Organization. AWSOrganizationsAccess must be enabled in order to
+     * create a portfolio share to an organization node.
      * </p>
      * 
      * @param createPortfolioShareRequest
@@ -326,6 +328,8 @@ public interface AWSServiceCatalog {
      *         or increase your service limits and retry the operation.
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are not valid.
+     * @throws OperationNotSupportedException
+     *         The operation is not supported.
      * @sample AWSServiceCatalog.CreatePortfolioShare
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare"
      *      target="_top">AWS API Documentation</a>
@@ -492,13 +496,18 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Stops sharing the specified portfolio with the specified account.
+     * Stops sharing the specified portfolio with the specified account or organization node. Shares to an organization
+     * node can only be deleted by the master account of an Organization.
      * </p>
      * 
      * @param deletePortfolioShareRequest
      * @return Result of the DeletePortfolioShare operation returned by the service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws OperationNotSupportedException
+     *         The operation is not supported.
      * @sample AWSServiceCatalog.DeletePortfolioShare
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare"
      *      target="_top">AWS API Documentation</a>
@@ -656,6 +665,26 @@ public interface AWSServiceCatalog {
      *      target="_top">AWS API Documentation</a>
      */
     DescribePortfolioResult describePortfolio(DescribePortfolioRequest describePortfolioRequest);
+
+    /**
+     * <p>
+     * Gets the status of the specified portfolio share operation. This API can only be called by the master account in
+     * the organization.
+     * </p>
+     * 
+     * @param describePortfolioShareStatusRequest
+     * @return Result of the DescribePortfolioShareStatus operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws OperationNotSupportedException
+     *         The operation is not supported.
+     * @sample AWSServiceCatalog.DescribePortfolioShareStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShareStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribePortfolioShareStatusResult describePortfolioShareStatus(DescribePortfolioShareStatusRequest describePortfolioShareStatusRequest);
 
     /**
      * <p>
@@ -833,6 +862,29 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Disable portfolio sharing through AWS Organizations feature. This feature will not delete your current shares but
+     * it will prevent you from creating new shares throughout your organization. Current shares will not be in sync
+     * with your organization structure if it changes after calling this API. This API can only be called by the master
+     * account in the organization.
+     * </p>
+     * 
+     * @param disableAWSOrganizationsAccessRequest
+     * @return Result of the DisableAWSOrganizationsAccess operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidStateException
+     *         An attempt was made to modify a resource that is in a state that is not valid. Check your resources to
+     *         ensure that they are in valid states before retrying the operation.
+     * @throws OperationNotSupportedException
+     *         The operation is not supported.
+     * @sample AWSServiceCatalog.DisableAWSOrganizationsAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisableAWSOrganizationsAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisableAWSOrganizationsAccessResult disableAWSOrganizationsAccess(DisableAWSOrganizationsAccessRequest disableAWSOrganizationsAccessRequest);
+
+    /**
+     * <p>
      * Disassociates a previously associated principal ARN from a specified portfolio.
      * </p>
      * 
@@ -907,6 +959,32 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Enable portfolio sharing feature through AWS Organizations. This API will allow Service Catalog to receive
+     * updates on your organization in order to sync your shares with the current structure. This API can only be called
+     * by the master account in the organization.
+     * </p>
+     * <p>
+     * By calling this API Service Catalog will use FAS credentials to call organizations:EnableAWSServiceAccess so that
+     * your shares can be in sync with any changes in your AWS Organizations.
+     * </p>
+     * 
+     * @param enableAWSOrganizationsAccessRequest
+     * @return Result of the EnableAWSOrganizationsAccess operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidStateException
+     *         An attempt was made to modify a resource that is in a state that is not valid. Check your resources to
+     *         ensure that they are in valid states before retrying the operation.
+     * @throws OperationNotSupportedException
+     *         The operation is not supported.
+     * @sample AWSServiceCatalog.EnableAWSOrganizationsAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    EnableAWSOrganizationsAccessResult enableAWSOrganizationsAccess(EnableAWSOrganizationsAccessRequest enableAWSOrganizationsAccessRequest);
+
+    /**
+     * <p>
      * Provisions or modifies a product based on the resource changes for the specified plan.
      * </p>
      * 
@@ -949,6 +1027,24 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the master
+     * account in the organization.
+     * </p>
+     * 
+     * @param getAWSOrganizationsAccessStatusRequest
+     * @return Result of the GetAWSOrganizationsAccessStatus operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws OperationNotSupportedException
+     *         The operation is not supported.
+     * @sample AWSServiceCatalog.GetAWSOrganizationsAccessStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetAWSOrganizationsAccessStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAWSOrganizationsAccessStatusResult getAWSOrganizationsAccessStatus(GetAWSOrganizationsAccessStatusRequest getAWSOrganizationsAccessStatusRequest);
+
+    /**
+     * <p>
      * Lists all portfolios for which sharing was accepted by this account.
      * </p>
      * 
@@ -956,6 +1052,8 @@ public interface AWSServiceCatalog {
      * @return Result of the ListAcceptedPortfolioShares operation returned by the service.
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are not valid.
+     * @throws OperationNotSupportedException
+     *         The operation is not supported.
      * @sample AWSServiceCatalog.ListAcceptedPortfolioShares
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares"
      *      target="_top">AWS API Documentation</a>
@@ -996,6 +1094,26 @@ public interface AWSServiceCatalog {
      *      API Documentation</a>
      */
     ListLaunchPathsResult listLaunchPaths(ListLaunchPathsRequest listLaunchPathsRequest);
+
+    /**
+     * <p>
+     * Lists the organization nodes that have access to the specified portfolio. This API can only be called by the
+     * master account in the organization.
+     * </p>
+     * 
+     * @param listOrganizationPortfolioAccessRequest
+     * @return Result of the ListOrganizationPortfolioAccess operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws OperationNotSupportedException
+     *         The operation is not supported.
+     * @sample AWSServiceCatalog.ListOrganizationPortfolioAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListOrganizationPortfolioAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListOrganizationPortfolioAccessResult listOrganizationPortfolioAccess(ListOrganizationPortfolioAccessRequest listOrganizationPortfolioAccessRequest);
 
     /**
      * <p>

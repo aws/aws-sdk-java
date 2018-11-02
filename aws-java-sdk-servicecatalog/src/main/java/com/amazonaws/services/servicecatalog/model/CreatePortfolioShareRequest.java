@@ -56,10 +56,19 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     private String portfolioId;
     /**
      * <p>
-     * The AWS account ID.
+     * The AWS account ID. For example, <code>123456789012</code>.
      * </p>
      */
     private String accountId;
+    /**
+     * <p>
+     * The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
+     * <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
+     * <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the
+     * status of the <code>PortfolioShare</code> creation process.
+     * </p>
+     */
+    private OrganizationNode organizationNode;
 
     /**
      * <p>
@@ -242,11 +251,11 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS account ID.
+     * The AWS account ID. For example, <code>123456789012</code>.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID.
+     *        The AWS account ID. For example, <code>123456789012</code>.
      */
 
     public void setAccountId(String accountId) {
@@ -255,10 +264,10 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS account ID.
+     * The AWS account ID. For example, <code>123456789012</code>.
      * </p>
      * 
-     * @return The AWS account ID.
+     * @return The AWS account ID. For example, <code>123456789012</code>.
      */
 
     public String getAccountId() {
@@ -267,16 +276,74 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS account ID.
+     * The AWS account ID. For example, <code>123456789012</code>.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID.
+     *        The AWS account ID. For example, <code>123456789012</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreatePortfolioShareRequest withAccountId(String accountId) {
         setAccountId(accountId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
+     * <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
+     * <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the
+     * status of the <code>PortfolioShare</code> creation process.
+     * </p>
+     * 
+     * @param organizationNode
+     *        The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
+     *        <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
+     *        <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor
+     *        the status of the <code>PortfolioShare</code> creation process.
+     */
+
+    public void setOrganizationNode(OrganizationNode organizationNode) {
+        this.organizationNode = organizationNode;
+    }
+
+    /**
+     * <p>
+     * The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
+     * <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
+     * <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the
+     * status of the <code>PortfolioShare</code> creation process.
+     * </p>
+     * 
+     * @return The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
+     *         <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
+     *         <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor
+     *         the status of the <code>PortfolioShare</code> creation process.
+     */
+
+    public OrganizationNode getOrganizationNode() {
+        return this.organizationNode;
+    }
+
+    /**
+     * <p>
+     * The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
+     * <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
+     * <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the
+     * status of the <code>PortfolioShare</code> creation process.
+     * </p>
+     * 
+     * @param organizationNode
+     *        The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
+     *        <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
+     *        <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor
+     *        the status of the <code>PortfolioShare</code> creation process.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePortfolioShareRequest withOrganizationNode(OrganizationNode organizationNode) {
+        setOrganizationNode(organizationNode);
         return this;
     }
 
@@ -296,7 +363,9 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
         if (getPortfolioId() != null)
             sb.append("PortfolioId: ").append(getPortfolioId()).append(",");
         if (getAccountId() != null)
-            sb.append("AccountId: ").append(getAccountId());
+            sb.append("AccountId: ").append(getAccountId()).append(",");
+        if (getOrganizationNode() != null)
+            sb.append("OrganizationNode: ").append(getOrganizationNode());
         sb.append("}");
         return sb.toString();
     }
@@ -323,6 +392,10 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
             return false;
+        if (other.getOrganizationNode() == null ^ this.getOrganizationNode() == null)
+            return false;
+        if (other.getOrganizationNode() != null && other.getOrganizationNode().equals(this.getOrganizationNode()) == false)
+            return false;
         return true;
     }
 
@@ -334,6 +407,7 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage().hashCode());
         hashCode = prime * hashCode + ((getPortfolioId() == null) ? 0 : getPortfolioId().hashCode());
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode + ((getOrganizationNode() == null) ? 0 : getOrganizationNode().hashCode());
         return hashCode;
     }
 

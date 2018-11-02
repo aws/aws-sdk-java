@@ -31,6 +31,8 @@ public class RejectPortfolioShareRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptLanguage").build();
     private static final MarshallingInfo<String> PORTFOLIOID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PortfolioId").build();
+    private static final MarshallingInfo<String> PORTFOLIOSHARETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PortfolioShareType").build();
 
     private static final RejectPortfolioShareRequestMarshaller instance = new RejectPortfolioShareRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class RejectPortfolioShareRequestMarshaller {
         try {
             protocolMarshaller.marshall(rejectPortfolioShareRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
             protocolMarshaller.marshall(rejectPortfolioShareRequest.getPortfolioId(), PORTFOLIOID_BINDING);
+            protocolMarshaller.marshall(rejectPortfolioShareRequest.getPortfolioShareType(), PORTFOLIOSHARETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

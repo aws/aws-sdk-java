@@ -67,6 +67,11 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
+     * <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the master account of your organization
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>AWS_SERVICECATALOG</code> - List default portfolios
      * </p>
      * </li>
@@ -305,6 +310,11 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
+     * <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the master account of your organization
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>AWS_SERVICECATALOG</code> - List default portfolios
      * </p>
      * </li>
@@ -318,6 +328,11 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * @param portfolioShareType
      *        The type of shared portfolios to list. The default is to list imported portfolios.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the master account of your organization
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>AWS_SERVICECATALOG</code> - List default portfolios
@@ -342,6 +357,11 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
+     * <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the master account of your organization
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>AWS_SERVICECATALOG</code> - List default portfolios
      * </p>
      * </li>
@@ -354,6 +374,11 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * 
      * @return The type of shared portfolios to list. The default is to list imported portfolios.</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the master account of your organization
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>AWS_SERVICECATALOG</code> - List default portfolios
@@ -378,6 +403,11 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
+     * <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the master account of your organization
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>AWS_SERVICECATALOG</code> - List default portfolios
      * </p>
      * </li>
@@ -391,6 +421,11 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * @param portfolioShareType
      *        The type of shared portfolios to list. The default is to list imported portfolios.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the master account of your organization
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>AWS_SERVICECATALOG</code> - List default portfolios
@@ -417,6 +452,11 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
+     * <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the master account of your organization
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>AWS_SERVICECATALOG</code> - List default portfolios
      * </p>
      * </li>
@@ -430,6 +470,11 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * @param portfolioShareType
      *        The type of shared portfolios to list. The default is to list imported portfolios.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the master account of your organization
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>AWS_SERVICECATALOG</code> - List default portfolios

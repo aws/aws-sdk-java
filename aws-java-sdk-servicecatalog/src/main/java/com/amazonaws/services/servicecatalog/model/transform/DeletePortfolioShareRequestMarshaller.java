@@ -33,6 +33,8 @@ public class DeletePortfolioShareRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PortfolioId").build();
     private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AccountId").build();
+    private static final MarshallingInfo<StructuredPojo> ORGANIZATIONNODE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrganizationNode").build();
 
     private static final DeletePortfolioShareRequestMarshaller instance = new DeletePortfolioShareRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class DeletePortfolioShareRequestMarshaller {
             protocolMarshaller.marshall(deletePortfolioShareRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
             protocolMarshaller.marshall(deletePortfolioShareRequest.getPortfolioId(), PORTFOLIOID_BINDING);
             protocolMarshaller.marshall(deletePortfolioShareRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(deletePortfolioShareRequest.getOrganizationNode(), ORGANIZATIONNODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

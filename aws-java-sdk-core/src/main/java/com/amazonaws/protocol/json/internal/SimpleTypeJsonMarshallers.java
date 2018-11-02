@@ -114,9 +114,9 @@ public class SimpleTypeJsonMarshallers {
         public void marshall(Date val, StructuredJsonGenerator jsonGenerator, JsonMarshallerContext context,
                              MarshallingInfo<Date> marshallingInfo) {
 
-            TimestampFormat timestampFormat = marshallingInfo.timestampFormat();
-            if (timestampFormat == null) {
-                timestampFormat = TimestampFormat.UNIX_TIMESTAMP;
+            TimestampFormat timestampFormat = TimestampFormat.UNIX_TIMESTAMP;
+            if (marshallingInfo != null && marshallingInfo.timestampFormat() != null) {
+                timestampFormat = marshallingInfo.timestampFormat();
             }
             jsonGenerator.writeValue(val, timestampFormat);
         }

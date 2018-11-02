@@ -1151,6 +1151,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribePortfolioShareStatusResult> describePortfolioShareStatusAsync(DescribePortfolioShareStatusRequest request) {
+
+        return describePortfolioShareStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePortfolioShareStatusResult> describePortfolioShareStatusAsync(final DescribePortfolioShareStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribePortfolioShareStatusRequest, DescribePortfolioShareStatusResult> asyncHandler) {
+        final DescribePortfolioShareStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribePortfolioShareStatusResult>() {
+            @Override
+            public DescribePortfolioShareStatusResult call() throws Exception {
+                DescribePortfolioShareStatusResult result = null;
+
+                try {
+                    result = executeDescribePortfolioShareStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeProductResult> describeProductAsync(DescribeProductRequest request) {
 
         return describeProductAsync(request, null);
@@ -1483,6 +1516,40 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DisableAWSOrganizationsAccessResult> disableAWSOrganizationsAccessAsync(DisableAWSOrganizationsAccessRequest request) {
+
+        return disableAWSOrganizationsAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableAWSOrganizationsAccessResult> disableAWSOrganizationsAccessAsync(
+            final DisableAWSOrganizationsAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableAWSOrganizationsAccessRequest, DisableAWSOrganizationsAccessResult> asyncHandler) {
+        final DisableAWSOrganizationsAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisableAWSOrganizationsAccessResult>() {
+            @Override
+            public DisableAWSOrganizationsAccessResult call() throws Exception {
+                DisableAWSOrganizationsAccessResult result = null;
+
+                try {
+                    result = executeDisableAWSOrganizationsAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociatePrincipalFromPortfolioResult> disassociatePrincipalFromPortfolioAsync(
             DisassociatePrincipalFromPortfolioRequest request) {
 
@@ -1623,6 +1690,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<EnableAWSOrganizationsAccessResult> enableAWSOrganizationsAccessAsync(EnableAWSOrganizationsAccessRequest request) {
+
+        return enableAWSOrganizationsAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableAWSOrganizationsAccessResult> enableAWSOrganizationsAccessAsync(final EnableAWSOrganizationsAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableAWSOrganizationsAccessRequest, EnableAWSOrganizationsAccessResult> asyncHandler) {
+        final EnableAWSOrganizationsAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EnableAWSOrganizationsAccessResult>() {
+            @Override
+            public EnableAWSOrganizationsAccessResult call() throws Exception {
+                EnableAWSOrganizationsAccessResult result = null;
+
+                try {
+                    result = executeEnableAWSOrganizationsAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ExecuteProvisionedProductPlanResult> executeProvisionedProductPlanAsync(ExecuteProvisionedProductPlanRequest request) {
 
         return executeProvisionedProductPlanAsync(request, null);
@@ -1676,6 +1776,41 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeExecuteProvisionedProductServiceAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAWSOrganizationsAccessStatusResult> getAWSOrganizationsAccessStatusAsync(
+            GetAWSOrganizationsAccessStatusRequest request) {
+
+        return getAWSOrganizationsAccessStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAWSOrganizationsAccessStatusResult> getAWSOrganizationsAccessStatusAsync(
+            final GetAWSOrganizationsAccessStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAWSOrganizationsAccessStatusRequest, GetAWSOrganizationsAccessStatusResult> asyncHandler) {
+        final GetAWSOrganizationsAccessStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAWSOrganizationsAccessStatusResult>() {
+            @Override
+            public GetAWSOrganizationsAccessStatusResult call() throws Exception {
+                GetAWSOrganizationsAccessStatusResult result = null;
+
+                try {
+                    result = executeGetAWSOrganizationsAccessStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1775,6 +1910,41 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeListLaunchPaths(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOrganizationPortfolioAccessResult> listOrganizationPortfolioAccessAsync(
+            ListOrganizationPortfolioAccessRequest request) {
+
+        return listOrganizationPortfolioAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOrganizationPortfolioAccessResult> listOrganizationPortfolioAccessAsync(
+            final ListOrganizationPortfolioAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListOrganizationPortfolioAccessRequest, ListOrganizationPortfolioAccessResult> asyncHandler) {
+        final ListOrganizationPortfolioAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListOrganizationPortfolioAccessResult>() {
+            @Override
+            public ListOrganizationPortfolioAccessResult call() throws Exception {
+                ListOrganizationPortfolioAccessResult result = null;
+
+                try {
+                    result = executeListOrganizationPortfolioAccess(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

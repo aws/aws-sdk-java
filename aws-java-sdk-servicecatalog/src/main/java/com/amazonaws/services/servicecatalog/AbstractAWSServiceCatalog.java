@@ -176,6 +176,11 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
     }
 
     @Override
+    public DescribePortfolioShareStatusResult describePortfolioShareStatus(DescribePortfolioShareStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeProductResult describeProduct(DescribeProductRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -226,6 +231,11 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
     }
 
     @Override
+    public DisableAWSOrganizationsAccessResult disableAWSOrganizationsAccess(DisableAWSOrganizationsAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociatePrincipalFromPortfolioResult disassociatePrincipalFromPortfolio(DisassociatePrincipalFromPortfolioRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -247,12 +257,22 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
     }
 
     @Override
+    public EnableAWSOrganizationsAccessResult enableAWSOrganizationsAccess(EnableAWSOrganizationsAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ExecuteProvisionedProductPlanResult executeProvisionedProductPlan(ExecuteProvisionedProductPlanRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ExecuteProvisionedProductServiceActionResult executeProvisionedProductServiceAction(ExecuteProvisionedProductServiceActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAWSOrganizationsAccessStatusResult getAWSOrganizationsAccessStatus(GetAWSOrganizationsAccessStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -268,6 +288,11 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
 
     @Override
     public ListLaunchPathsResult listLaunchPaths(ListLaunchPathsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListOrganizationPortfolioAccessResult listOrganizationPortfolioAccess(ListOrganizationPortfolioAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

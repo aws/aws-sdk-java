@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum PortfolioShareType {
 
     IMPORTED("IMPORTED"),
-    AWS_SERVICECATALOG("AWS_SERVICECATALOG");
+    AWS_SERVICECATALOG("AWS_SERVICECATALOG"),
+    AWS_ORGANIZATIONS("AWS_ORGANIZATIONS");
 
     private String value;
 

@@ -64,7 +64,7 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
     private String provisionedProductId;
     /**
      * <p>
-     * The identifier of the provisioned product.
+     * The identifier of the product.
      * </p>
      */
     private String productId;
@@ -327,11 +327,11 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the provisioned product.
+     * The identifier of the product.
      * </p>
      * 
      * @param productId
-     *        The identifier of the provisioned product.
+     *        The identifier of the product.
      */
 
     public void setProductId(String productId) {
@@ -340,10 +340,10 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the provisioned product.
+     * The identifier of the product.
      * </p>
      * 
-     * @return The identifier of the provisioned product.
+     * @return The identifier of the product.
      */
 
     public String getProductId() {
@@ -352,11 +352,11 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the provisioned product.
+     * The identifier of the product.
      * </p>
      * 
      * @param productId
-     *        The identifier of the provisioned product.
+     *        The identifier of the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
