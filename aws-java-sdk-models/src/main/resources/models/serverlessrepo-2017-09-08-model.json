@@ -104,6 +104,38 @@
       } ],
       "documentation" : "<p>Creates an AWS CloudFormation change set for the given application.</p>"
     },
+    "CreateCloudFormationTemplate" : {
+      "name" : "CreateCloudFormationTemplate",
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/applications/{applicationId}/templates",
+        "responseCode" : 201
+      },
+      "input" : {
+        "shape" : "CreateCloudFormationTemplateRequest"
+      },
+      "output" : {
+        "shape" : "CreateCloudFormationTemplateResponse",
+        "documentation" : "<p>Success</p>"
+      },
+      "errors" : [ {
+        "shape" : "NotFoundException",
+        "documentation" : "<p>The resource (for example, an access policy statement) specified in the request doesn't exist.</p>"
+      }, {
+        "shape" : "TooManyRequestsException",
+        "documentation" : "<p>The client is sending more than the allowed number of requests per unit of time.</p>"
+      }, {
+        "shape" : "BadRequestException",
+        "documentation" : "<p>One of the parameters in the request is invalid.</p>"
+      }, {
+        "shape" : "InternalServerErrorException",
+        "documentation" : "<p>The AWS Serverless Application Repository service encountered an internal error.</p>"
+      }, {
+        "shape" : "ForbiddenException",
+        "documentation" : "<p>The client is not authenticated.</p>"
+      } ],
+      "documentation" : "<p>Creates an AWS CloudFormation template.</p>"
+    },
     "DeleteApplication" : {
       "name" : "DeleteApplication",
       "http" : {
@@ -199,6 +231,38 @@
       } ],
       "documentation" : "<p>Retrieves the policy for the application.</p>"
     },
+    "GetCloudFormationTemplate" : {
+      "name" : "GetCloudFormationTemplate",
+      "http" : {
+        "method" : "GET",
+        "requestUri" : "/applications/{applicationId}/templates/{templateId}",
+        "responseCode" : 200
+      },
+      "input" : {
+        "shape" : "GetCloudFormationTemplateRequest"
+      },
+      "output" : {
+        "shape" : "GetCloudFormationTemplateResponse",
+        "documentation" : "<p>Success</p>"
+      },
+      "errors" : [ {
+        "shape" : "NotFoundException",
+        "documentation" : "<p>The resource (for example, an access policy statement) specified in the request doesn't exist.</p>"
+      }, {
+        "shape" : "TooManyRequestsException",
+        "documentation" : "<p>The client is sending more than the allowed number of requests per unit of time.</p>"
+      }, {
+        "shape" : "BadRequestException",
+        "documentation" : "<p>One of the parameters in the request is invalid.</p>"
+      }, {
+        "shape" : "InternalServerErrorException",
+        "documentation" : "<p>The AWS Serverless Application Repository service encountered an internal error.</p>"
+      }, {
+        "shape" : "ForbiddenException",
+        "documentation" : "<p>The client is not authenticated.</p>"
+      } ],
+      "documentation" : "<p>Gets the specified AWS CloudFormation template.</p>"
+    },
     "ListApplicationVersions" : {
       "name" : "ListApplicationVersions",
       "http" : {
@@ -290,7 +354,7 @@
         "shape" : "ForbiddenException",
         "documentation" : "<p>The client is not authenticated.</p>"
       } ],
-      "documentation" : "<p>Sets the permission policy for an application. See\n <a href=\"https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions\">Application Permissions</a>\n for the list of supported actions that can be used with this operation.</p>"
+      "documentation" : "<p>Sets the permission policy for an application. For the list of actions supported for this operation, see\n <a href=\"https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions\">Application \n Permissions</a>\n .</p>"
     },
     "UpdateApplication" : {
       "name" : "UpdateApplication",
@@ -426,7 +490,7 @@
         "Actions" : {
           "shape" : "__listOf__string",
           "locationName" : "actions",
-          "documentation" : "<p>See <a href=\"https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions\">Application Permissions</a> for the list of supported actions.</p>"
+          "documentation" : "<p>For the list of actions supported for this operation, see <a href=\"https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions\">Application \n Permissions</a>.</p>"
         },
         "Principals" : {
           "shape" : "__listOf__string",
@@ -526,6 +590,10 @@
         "httpStatusCode" : 400
       }
     },
+    "Capability" : {
+      "type" : "string",
+      "enum" : [ "CAPABILITY_IAM", "CAPABILITY_NAMED_IAM", "CAPABILITY_AUTO_EXPAND", "CAPABILITY_RESOURCE_POLICY" ]
+    },
     "ChangeSetDetails" : {
       "type" : "structure",
       "members" : {
@@ -599,12 +667,12 @@
         "LicenseBody" : {
           "shape" : "__string",
           "locationName" : "licenseBody",
-          "documentation" : "<p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application.\n The file is of the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>Note: Only one of licenseBody and licenseUrl can be specified, otherwise an error will result.</p>"
+          "documentation" : "<p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application.\n The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>"
         },
         "LicenseUrl" : {
           "shape" : "__string",
           "locationName" : "licenseUrl",
-          "documentation" : "<p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>Note: Only one of licenseBody and licenseUrl can be specified, otherwise an error will result.</p>"
+          "documentation" : "<p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>"
         },
         "Name" : {
           "shape" : "__string",
@@ -614,12 +682,12 @@
         "ReadmeBody" : {
           "shape" : "__string",
           "locationName" : "readmeBody",
-          "documentation" : "<p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works.\n The file is of the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>Note: Only one of readmeBody and readmeUrl can be specified, otherwise an error will result.</p>"
+          "documentation" : "<p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works.\n The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>"
         },
         "ReadmeUrl" : {
           "shape" : "__string",
           "locationName" : "readmeUrl",
-          "documentation" : "<p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p><p>Note: Only one of readmeBody and readmeUrl can be specified, otherwise an error will result.</p>"
+          "documentation" : "<p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>"
         },
         "SemanticVersion" : {
           "shape" : "__string",
@@ -639,12 +707,12 @@
         "TemplateBody" : {
           "shape" : "__string",
           "locationName" : "templateBody",
-          "documentation" : "<p>The local raw packaged AWS SAM template file of your application.\n The file is of the format file://&lt;path>/&lt;filename>.</p><p>Note: Only one of templateBody and templateUrl can be specified, otherwise an error will result.</p>"
+          "documentation" : "<p>The local raw packaged AWS SAM template file of your application.\n The file has the format file://&lt;path>/&lt;filename>.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>"
         },
         "TemplateUrl" : {
           "shape" : "__string",
           "locationName" : "templateUrl",
-          "documentation" : "<p>A link to the S3 object cotaining the packaged AWS SAM template of your application.</p><p>Note: Only one of templateBody and templateUrl can be specified, otherwise an error will result.</p>"
+          "documentation" : "<p>A link to the S3 object containing the packaged AWS SAM template of your application.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>"
         }
       },
       "documentation" : "<p>Create an application request.</p>",
@@ -676,12 +744,12 @@
         "LicenseBody" : {
           "shape" : "__string",
           "locationName" : "licenseBody",
-          "documentation" : "<p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application.\n The file is of the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>Note: Only one of licenseBody and licenseUrl can be specified, otherwise an error will result.</p>"
+          "documentation" : "<p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application.\n The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>"
         },
         "LicenseUrl" : {
           "shape" : "__string",
           "locationName" : "licenseUrl",
-          "documentation" : "<p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>Note: Only one of licenseBody and licenseUrl can be specified, otherwise an error will result.</p>"
+          "documentation" : "<p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>"
         },
         "Name" : {
           "shape" : "__string",
@@ -691,12 +759,12 @@
         "ReadmeBody" : {
           "shape" : "__string",
           "locationName" : "readmeBody",
-          "documentation" : "<p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works.\n The file is of the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>Note: Only one of readmeBody and readmeUrl can be specified, otherwise an error will result.</p>"
+          "documentation" : "<p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works.\n The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>"
         },
         "ReadmeUrl" : {
           "shape" : "__string",
           "locationName" : "readmeUrl",
-          "documentation" : "<p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p><p>Note: Only one of readmeBody and readmeUrl can be specified, otherwise an error will result.</p>"
+          "documentation" : "<p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>"
         },
         "SemanticVersion" : {
           "shape" : "__string",
@@ -716,12 +784,12 @@
         "TemplateBody" : {
           "shape" : "__string",
           "locationName" : "templateBody",
-          "documentation" : "<p>The local raw packaged AWS SAM template file of your application.\n The file is of the format file://&lt;path>/&lt;filename>.</p><p>Note: Only one of templateBody and templateUrl can be specified, otherwise an error will result.</p>"
+          "documentation" : "<p>The local raw packaged AWS SAM template file of your application.\n The file has the format file://&lt;path>/&lt;filename>.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>"
         },
         "TemplateUrl" : {
           "shape" : "__string",
           "locationName" : "templateUrl",
-          "documentation" : "<p>A link to the S3 object cotaining the packaged AWS SAM template of your application.</p><p>Note: Only one of templateBody and templateUrl can be specified, otherwise an error will result.</p>"
+          "documentation" : "<p>A link to the S3 object containing the packaged AWS SAM template of your application.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>"
         }
       },
       "required" : [ "Description", "Name", "Author" ]
@@ -858,6 +926,16 @@
           "locationName" : "parameterDefinitions",
           "documentation" : "<p>An array of parameter types supported by the application.</p>"
         },
+        "RequiredCapabilities" : {
+          "shape" : "__listOfCapability",
+          "locationName" : "requiredCapabilities",
+          "documentation" : "<p>A list of values that you must specify before you can deploy certain applications.\n Some applications might include resources that can affect permissions in your AWS\n account, for example, by creating new AWS Identity and Access Management (IAM) users.\n For those applications, you must explicitly acknowledge their capabilities by\n specifying this parameter.</p><p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,\n and CAPABILITY_RESOURCE_POLICY.</p><p>The following resources require you to specify CAPABILITY_IAM or\n CAPABILITY_NAMED_IAM:\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html\">AWS::IAM::Group</a>,\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html\">AWS::IAM::InstanceProfile</a>,\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html\">AWS::IAM::Policy</a>, and\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html\">AWS::IAM::Role</a>.\n If the application contains IAM resources, you can specify either CAPABILITY_IAM\n or CAPABILITY_NAMED_IAM. If the application contains IAM resources\n with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY:\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html\">AWS::ApplicationAutoScaling::ScalingPolicy</a>,\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html\">AWS::S3::BucketPolicy</a>,\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html\">AWS::SQS::QueuePolicy</a>, and\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html\">AWS::SNS:TopicPolicy</a>.</p><p>If your application template contains any of the above resources, we recommend that you review\n all permissions associated with the application before deploying. If you don't specify\n this parameter for an application that requires capabilities, the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY</p>"
+        },
+        "ResourcesSupported" : {
+          "shape" : "__boolean",
+          "locationName" : "resourcesSupported",
+          "documentation" : "<p>Whether all of the AWS resources contained in this application are supported in the region\n in which it is being retrieved.</p>"
+        },
         "SemanticVersion" : {
           "shape" : "__string",
           "locationName" : "semanticVersion",
@@ -878,10 +956,45 @@
     "CreateCloudFormationChangeSetInput" : {
       "type" : "structure",
       "members" : {
+        "Capabilities" : {
+          "shape" : "__listOf__string",
+          "locationName" : "capabilities",
+          "documentation" : "<p>A list of values that you must specify before you can deploy certain applications.\n Some applications might include resources that can affect permissions in your AWS\n account, for example, by creating new AWS Identity and Access Management (IAM) users.\n For those applications, you must explicitly acknowledge their capabilities by\n specifying this parameter.</p><p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,\n and CAPABILITY_RESOURCE_POLICY.</p><p>The following resources require you to specify CAPABILITY_IAM or\n CAPABILITY_NAMED_IAM:\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html\">AWS::IAM::Group</a>,\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html\">AWS::IAM::InstanceProfile</a>,\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html\">AWS::IAM::Policy</a>, and\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html\">AWS::IAM::Role</a>.\n If the application contains IAM resources, you can specify either CAPABILITY_IAM\n or CAPABILITY_NAMED_IAM. If the application contains IAM resources\n with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY:\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html\">AWS::ApplicationAutoScaling::ScalingPolicy</a>,\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html\">AWS::S3::BucketPolicy</a>,\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html\">AWS::SQS::QueuePolicy</a>, and\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html\">AWS::SNS:TopicPolicy</a>.</p><p>If your application template contains any of the above resources, we recommend that you review\n all permissions associated with the application before deploying. If you don't specify\n this parameter for an application that requires capabilities, the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY</p>"
+        },
+        "ChangeSetName" : {
+          "shape" : "__string",
+          "locationName" : "changeSetName",
+          "documentation" : "<p>This property corresponds to the parameter of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet\">\n CreateChangeSet</a></i>\n API.</p>"
+        },
+        "ClientToken" : {
+          "shape" : "__string",
+          "locationName" : "clientToken",
+          "documentation" : "<p>This property corresponds to the parameter of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet\">\n CreateChangeSet</a></i>\n API.</p>"
+        },
+        "Description" : {
+          "shape" : "__string",
+          "locationName" : "description",
+          "documentation" : "<p>This property corresponds to the parameter of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet\">\n CreateChangeSet</a></i>\n API.</p>"
+        },
+        "NotificationArns" : {
+          "shape" : "__listOf__string",
+          "locationName" : "notificationArns",
+          "documentation" : "<p>This property corresponds to the parameter of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet\">\n CreateChangeSet</a></i>\n API.</p>"
+        },
         "ParameterOverrides" : {
           "shape" : "__listOfParameterValue",
           "locationName" : "parameterOverrides",
           "documentation" : "<p>A list of parameter values for the parameters of the application.</p>"
+        },
+        "ResourceTypes" : {
+          "shape" : "__listOf__string",
+          "locationName" : "resourceTypes",
+          "documentation" : "<p>This property corresponds to the parameter of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet\">\n CreateChangeSet</a></i>\n API.</p>"
+        },
+        "RollbackConfiguration" : {
+          "shape" : "RollbackConfiguration",
+          "locationName" : "rollbackConfiguration",
+          "documentation" : "<p>This property corresponds to the parameter of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet\">\n CreateChangeSet</a></i>\n API.</p>"
         },
         "SemanticVersion" : {
           "shape" : "__string",
@@ -891,7 +1004,17 @@
         "StackName" : {
           "shape" : "__string",
           "locationName" : "stackName",
-          "documentation" : "<p>The name or the unique ID of the stack for which you are creating a change set. AWS CloudFormation generates\n the change set by comparing this stack's information with the information that you submit, such as a modified\n template or different parameter input values. </p><p>Constraints: Minimum length of 1.</p><p>Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\\b(aws|aws-us-gov|aws-cn)\\b:[-a-zA-Z0-9:/._+]*)</p>"
+          "documentation" : "<p>This property corresponds to the parameter of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet\">\n CreateChangeSet</a></i>\n API.</p>"
+        },
+        "Tags" : {
+          "shape" : "__listOfTag",
+          "locationName" : "tags",
+          "documentation" : "<p>This property corresponds to the parameter of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet\">\n CreateChangeSet</a></i>\n API.</p>"
+        },
+        "TemplateId" : {
+          "shape" : "__string",
+          "locationName" : "templateId",
+          "documentation" : "<p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12}</p>"
         }
       },
       "documentation" : "<p>Create an application change set request.</p>",
@@ -906,10 +1029,45 @@
           "locationName" : "applicationId",
           "documentation" : "<p>The Amazon Resource Name (ARN) of the application.</p>"
         },
+        "Capabilities" : {
+          "shape" : "__listOf__string",
+          "locationName" : "capabilities",
+          "documentation" : "<p>A list of values that you must specify before you can deploy certain applications.\n Some applications might include resources that can affect permissions in your AWS\n account, for example, by creating new AWS Identity and Access Management (IAM) users.\n For those applications, you must explicitly acknowledge their capabilities by\n specifying this parameter.</p><p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,\n and CAPABILITY_RESOURCE_POLICY.</p><p>The following resources require you to specify CAPABILITY_IAM or\n CAPABILITY_NAMED_IAM:\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html\">AWS::IAM::Group</a>,\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html\">AWS::IAM::InstanceProfile</a>,\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html\">AWS::IAM::Policy</a>, and\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html\">AWS::IAM::Role</a>.\n If the application contains IAM resources, you can specify either CAPABILITY_IAM\n or CAPABILITY_NAMED_IAM. If the application contains IAM resources\n with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY:\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html\">AWS::ApplicationAutoScaling::ScalingPolicy</a>,\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html\">AWS::S3::BucketPolicy</a>,\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html\">AWS::SQS::QueuePolicy</a>, and\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html\">AWS::SNS:TopicPolicy</a>.</p><p>If your application template contains any of the above resources, we recommend that you review\n all permissions associated with the application before deploying. If you don't specify\n this parameter for an application that requires capabilities, the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY</p>"
+        },
+        "ChangeSetName" : {
+          "shape" : "__string",
+          "locationName" : "changeSetName",
+          "documentation" : "<p>This property corresponds to the parameter of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet\">\n CreateChangeSet</a></i>\n API.</p>"
+        },
+        "ClientToken" : {
+          "shape" : "__string",
+          "locationName" : "clientToken",
+          "documentation" : "<p>This property corresponds to the parameter of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet\">\n CreateChangeSet</a></i>\n API.</p>"
+        },
+        "Description" : {
+          "shape" : "__string",
+          "locationName" : "description",
+          "documentation" : "<p>This property corresponds to the parameter of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet\">\n CreateChangeSet</a></i>\n API.</p>"
+        },
+        "NotificationArns" : {
+          "shape" : "__listOf__string",
+          "locationName" : "notificationArns",
+          "documentation" : "<p>This property corresponds to the parameter of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet\">\n CreateChangeSet</a></i>\n API.</p>"
+        },
         "ParameterOverrides" : {
           "shape" : "__listOfParameterValue",
           "locationName" : "parameterOverrides",
           "documentation" : "<p>A list of parameter values for the parameters of the application.</p>"
+        },
+        "ResourceTypes" : {
+          "shape" : "__listOf__string",
+          "locationName" : "resourceTypes",
+          "documentation" : "<p>This property corresponds to the parameter of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet\">\n CreateChangeSet</a></i>\n API.</p>"
+        },
+        "RollbackConfiguration" : {
+          "shape" : "RollbackConfiguration",
+          "locationName" : "rollbackConfiguration",
+          "documentation" : "<p>This property corresponds to the parameter of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet\">\n CreateChangeSet</a></i>\n API.</p>"
         },
         "SemanticVersion" : {
           "shape" : "__string",
@@ -919,7 +1077,17 @@
         "StackName" : {
           "shape" : "__string",
           "locationName" : "stackName",
-          "documentation" : "<p>The name or the unique ID of the stack for which you are creating a change set. AWS CloudFormation generates\n the change set by comparing this stack's information with the information that you submit, such as a modified\n template or different parameter input values. </p><p>Constraints: Minimum length of 1.</p><p>Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\\b(aws|aws-us-gov|aws-cn)\\b:[-a-zA-Z0-9:/._+]*)</p>"
+          "documentation" : "<p>This property corresponds to the parameter of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet\">\n CreateChangeSet</a></i>\n API.</p>"
+        },
+        "Tags" : {
+          "shape" : "__listOfTag",
+          "locationName" : "tags",
+          "documentation" : "<p>This property corresponds to the parameter of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet\">\n CreateChangeSet</a></i>\n API.</p>"
+        },
+        "TemplateId" : {
+          "shape" : "__string",
+          "locationName" : "templateId",
+          "documentation" : "<p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12}</p>"
         }
       },
       "required" : [ "ApplicationId", "StackName" ]
@@ -946,6 +1114,63 @@
           "shape" : "__string",
           "locationName" : "stackId",
           "documentation" : "<p>The unique ID of the stack.</p>"
+        }
+      }
+    },
+    "CreateCloudFormationTemplateRequest" : {
+      "type" : "structure",
+      "members" : {
+        "ApplicationId" : {
+          "shape" : "__string",
+          "location" : "uri",
+          "locationName" : "applicationId",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the application.</p>"
+        },
+        "SemanticVersion" : {
+          "shape" : "__string",
+          "locationName" : "semanticVersion",
+          "documentation" : "<p>The semantic version of the application:</p><p>\n <a href=\"https://semver.org/\">https://semver.org/</a>\n </p>"
+        }
+      },
+      "required" : [ "ApplicationId" ]
+    },
+    "CreateCloudFormationTemplateResponse" : {
+      "type" : "structure",
+      "members" : {
+        "ApplicationId" : {
+          "shape" : "__string",
+          "locationName" : "applicationId",
+          "documentation" : "<p>The application Amazon Resource Name (ARN).</p>"
+        },
+        "CreationTime" : {
+          "shape" : "__string",
+          "locationName" : "creationTime",
+          "documentation" : "<p>The date and time this resource was created.</p>"
+        },
+        "ExpirationTime" : {
+          "shape" : "__string",
+          "locationName" : "expirationTime",
+          "documentation" : "<p>The date and time this template expires. Templates\n expire 1 hour after creation.</p>"
+        },
+        "SemanticVersion" : {
+          "shape" : "__string",
+          "locationName" : "semanticVersion",
+          "documentation" : "<p>The semantic version of the application:</p><p>\n <a href=\"https://semver.org/\">https://semver.org/</a>\n </p>"
+        },
+        "Status" : {
+          "shape" : "Status",
+          "locationName" : "status",
+          "documentation" : "<p>Status of the template creation workflow.</p><p>Possible values: PREPARING | ACTIVE | EXPIRED</p>"
+        },
+        "TemplateId" : {
+          "shape" : "__string",
+          "locationName" : "templateId",
+          "documentation" : "<p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12}</p>"
+        },
+        "TemplateUrl" : {
+          "shape" : "__string",
+          "locationName" : "templateUrl",
+          "documentation" : "<p>A link to the template that can be used to deploy the application using\n AWS CloudFormation.</p>"
         }
       }
     },
@@ -1078,6 +1303,64 @@
           "shape" : "Version",
           "locationName" : "version",
           "documentation" : "<p>Version information about the application.</p>"
+        }
+      }
+    },
+    "GetCloudFormationTemplateRequest" : {
+      "type" : "structure",
+      "members" : {
+        "ApplicationId" : {
+          "shape" : "__string",
+          "location" : "uri",
+          "locationName" : "applicationId",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the application.</p>"
+        },
+        "TemplateId" : {
+          "shape" : "__string",
+          "location" : "uri",
+          "locationName" : "templateId",
+          "documentation" : "<p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12}</p>"
+        }
+      },
+      "required" : [ "ApplicationId", "TemplateId" ]
+    },
+    "GetCloudFormationTemplateResponse" : {
+      "type" : "structure",
+      "members" : {
+        "ApplicationId" : {
+          "shape" : "__string",
+          "locationName" : "applicationId",
+          "documentation" : "<p>The application Amazon Resource Name (ARN).</p>"
+        },
+        "CreationTime" : {
+          "shape" : "__string",
+          "locationName" : "creationTime",
+          "documentation" : "<p>The date and time this resource was created.</p>"
+        },
+        "ExpirationTime" : {
+          "shape" : "__string",
+          "locationName" : "expirationTime",
+          "documentation" : "<p>The date and time this template expires. Templates\n expire 1 hour after creation.</p>"
+        },
+        "SemanticVersion" : {
+          "shape" : "__string",
+          "locationName" : "semanticVersion",
+          "documentation" : "<p>The semantic version of the application:</p><p>\n <a href=\"https://semver.org/\">https://semver.org/</a>\n </p>"
+        },
+        "Status" : {
+          "shape" : "Status",
+          "locationName" : "status",
+          "documentation" : "<p>Status of the template creation workflow.</p><p>Possible values: PREPARING | ACTIVE | EXPIRED</p>"
+        },
+        "TemplateId" : {
+          "shape" : "__string",
+          "locationName" : "templateId",
+          "documentation" : "<p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12}</p>"
+        },
+        "TemplateUrl" : {
+          "shape" : "__string",
+          "locationName" : "templateUrl",
+          "documentation" : "<p>A link to the template that can be used to deploy the application using\n AWS CloudFormation.</p>"
         }
       }
     },
@@ -1313,6 +1596,102 @@
         }
       }
     },
+    "RollbackConfiguration" : {
+      "type" : "structure",
+      "members" : {
+        "MonitoringTimeInMinutes" : {
+          "shape" : "__integer",
+          "locationName" : "monitoringTimeInMinutes",
+          "documentation" : "<p>This property corresponds to the content of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration\">\n RollbackConfiguration</a></i>\n Data Type.</p>"
+        },
+        "RollbackTriggers" : {
+          "shape" : "__listOfRollbackTrigger",
+          "locationName" : "rollbackTriggers",
+          "documentation" : "<p>This property corresponds to the content of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration\">\n RollbackConfiguration</a></i>\n Data Type.</p>"
+        }
+      },
+      "documentation" : "<p>This property corresponds to the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration\">\n RollbackConfiguration</a></i>\n Data Type.</p>"
+    },
+    "RollbackTrigger" : {
+      "type" : "structure",
+      "members" : {
+        "Arn" : {
+          "shape" : "__string",
+          "locationName" : "arn",
+          "documentation" : "<p>This property corresponds to the content of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger\">\n RollbackTrigger</a></i>\n Data Type.</p>"
+        },
+        "Type" : {
+          "shape" : "__string",
+          "locationName" : "type",
+          "documentation" : "<p>This property corresponds to the content of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger\">\n RollbackTrigger</a></i>\n Data Type.</p>"
+        }
+      },
+      "documentation" : "<p>This property corresponds to the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger\">\n RollbackTrigger</a></i>\n Data Type.</p>",
+      "required" : [ "Type", "Arn" ]
+    },
+    "Status" : {
+      "type" : "string",
+      "enum" : [ "PREPARING", "ACTIVE", "EXPIRED" ]
+    },
+    "Tag" : {
+      "type" : "structure",
+      "members" : {
+        "Key" : {
+          "shape" : "__string",
+          "locationName" : "key",
+          "documentation" : "<p>This property corresponds to the content of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag\">\n Tag</a></i>\n Data Type.</p>"
+        },
+        "Value" : {
+          "shape" : "__string",
+          "locationName" : "value",
+          "documentation" : "<p>This property corresponds to the content of the same name for the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag\">\n Tag</a></i>\n Data Type.</p>"
+        }
+      },
+      "documentation" : "<p>This property corresponds to the\n <i>AWS CloudFormation\n <a href=\"https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag\">\n Tag</a></i>\n Data Type.</p>",
+      "required" : [ "Value", "Key" ]
+    },
+    "TemplateDetails" : {
+      "type" : "structure",
+      "members" : {
+        "ApplicationId" : {
+          "shape" : "__string",
+          "locationName" : "applicationId",
+          "documentation" : "<p>The application Amazon Resource Name (ARN).</p>"
+        },
+        "CreationTime" : {
+          "shape" : "__string",
+          "locationName" : "creationTime",
+          "documentation" : "<p>The date and time this resource was created.</p>"
+        },
+        "ExpirationTime" : {
+          "shape" : "__string",
+          "locationName" : "expirationTime",
+          "documentation" : "<p>The date and time this template expires. Templates\n expire 1 hour after creation.</p>"
+        },
+        "SemanticVersion" : {
+          "shape" : "__string",
+          "locationName" : "semanticVersion",
+          "documentation" : "<p>The semantic version of the application:</p><p>\n <a href=\"https://semver.org/\">https://semver.org/</a>\n </p>"
+        },
+        "Status" : {
+          "shape" : "Status",
+          "locationName" : "status",
+          "documentation" : "<p>Status of the template creation workflow.</p><p>Possible values: PREPARING | ACTIVE | EXPIRED</p>"
+        },
+        "TemplateId" : {
+          "shape" : "__string",
+          "locationName" : "templateId",
+          "documentation" : "<p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12}</p>"
+        },
+        "TemplateUrl" : {
+          "shape" : "__string",
+          "locationName" : "templateUrl",
+          "documentation" : "<p>A link to the template that can be used to deploy the application using\n AWS CloudFormation.</p>"
+        }
+      },
+      "documentation" : "<p>Details of the template.</p>",
+      "required" : [ "Status", "TemplateUrl", "CreationTime", "ExpirationTime", "ApplicationId", "TemplateId", "SemanticVersion" ]
+    },
     "TooManyRequestsException" : {
       "type" : "structure",
       "members" : {
@@ -1489,6 +1868,16 @@
           "locationName" : "parameterDefinitions",
           "documentation" : "<p>An array of parameter types supported by the application.</p>"
         },
+        "RequiredCapabilities" : {
+          "shape" : "__listOfCapability",
+          "locationName" : "requiredCapabilities",
+          "documentation" : "<p>A list of values that you must specify before you can deploy certain applications.\n Some applications might include resources that can affect permissions in your AWS\n account, for example, by creating new AWS Identity and Access Management (IAM) users.\n For those applications, you must explicitly acknowledge their capabilities by\n specifying this parameter.</p><p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,\n and CAPABILITY_RESOURCE_POLICY.</p><p>The following resources require you to specify CAPABILITY_IAM or\n CAPABILITY_NAMED_IAM:\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html\">AWS::IAM::Group</a>,\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html\">AWS::IAM::InstanceProfile</a>,\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html\">AWS::IAM::Policy</a>, and\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html\">AWS::IAM::Role</a>.\n If the application contains IAM resources, you can specify either CAPABILITY_IAM\n or CAPABILITY_NAMED_IAM. If the application contains IAM resources\n with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY:\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html\">AWS::ApplicationAutoScaling::ScalingPolicy</a>,\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html\">AWS::S3::BucketPolicy</a>,\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html\">AWS::SQS::QueuePolicy</a>, and\n <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html\">AWS::SNS:TopicPolicy</a>.</p><p>If your application template contains any of the above resources, we recommend that you review\n all permissions associated with the application before deploying. If you don't specify\n this parameter for an application that requires capabilities, the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY</p>"
+        },
+        "ResourcesSupported" : {
+          "shape" : "__boolean",
+          "locationName" : "resourcesSupported",
+          "documentation" : "<p>Whether all of the AWS resources contained in this application are supported in the region\n in which it is being retrieved.</p>"
+        },
         "SemanticVersion" : {
           "shape" : "__string",
           "locationName" : "semanticVersion",
@@ -1506,7 +1895,7 @@
         }
       },
       "documentation" : "<p>Application version details.</p>",
-      "required" : [ "TemplateUrl", "ParameterDefinitions", "CreationTime", "ApplicationId", "SemanticVersion" ]
+      "required" : [ "TemplateUrl", "ParameterDefinitions", "ResourcesSupported", "CreationTime", "RequiredCapabilities", "ApplicationId", "SemanticVersion" ]
     },
     "VersionSummary" : {
       "type" : "structure",
@@ -1556,6 +1945,12 @@
         "shape" : "ApplicationSummary"
       }
     },
+    "__listOfCapability" : {
+      "type" : "list",
+      "member" : {
+        "shape" : "Capability"
+      }
+    },
     "__listOfParameterDefinition" : {
       "type" : "list",
       "member" : {
@@ -1566,6 +1961,18 @@
       "type" : "list",
       "member" : {
         "shape" : "ParameterValue"
+      }
+    },
+    "__listOfRollbackTrigger" : {
+      "type" : "list",
+      "member" : {
+        "shape" : "RollbackTrigger"
+      }
+    },
+    "__listOfTag" : {
+      "type" : "list",
+      "member" : {
+        "shape" : "Tag"
       }
     },
     "__listOfVersionSummary" : {

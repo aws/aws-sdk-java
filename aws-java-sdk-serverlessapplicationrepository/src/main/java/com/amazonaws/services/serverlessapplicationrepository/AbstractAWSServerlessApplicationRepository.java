@@ -43,6 +43,11 @@ public class AbstractAWSServerlessApplicationRepository implements AWSServerless
     }
 
     @Override
+    public CreateCloudFormationTemplateResult createCloudFormationTemplate(CreateCloudFormationTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteApplicationResult deleteApplication(DeleteApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -54,6 +59,11 @@ public class AbstractAWSServerlessApplicationRepository implements AWSServerless
 
     @Override
     public GetApplicationPolicyResult getApplicationPolicy(GetApplicationPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCloudFormationTemplateResult getCloudFormationTemplate(GetCloudFormationTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

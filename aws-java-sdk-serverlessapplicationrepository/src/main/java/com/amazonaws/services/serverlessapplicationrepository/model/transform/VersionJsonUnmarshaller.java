@@ -61,6 +61,14 @@ public class VersionJsonUnmarshaller implements Unmarshaller<Version, JsonUnmars
                     version.setParameterDefinitions(new ListUnmarshaller<ParameterDefinition>(ParameterDefinitionJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("requiredCapabilities", targetDepth)) {
+                    context.nextToken();
+                    version.setRequiredCapabilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("resourcesSupported", targetDepth)) {
+                    context.nextToken();
+                    version.setResourcesSupported(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("semanticVersion", targetDepth)) {
                     context.nextToken();
                     version.setSemanticVersion(context.getUnmarshaller(String.class).unmarshall(context));

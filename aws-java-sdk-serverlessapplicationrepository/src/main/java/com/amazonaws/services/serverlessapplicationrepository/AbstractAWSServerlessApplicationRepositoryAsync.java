@@ -68,6 +68,19 @@ public class AbstractAWSServerlessApplicationRepositoryAsync extends AbstractAWS
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCloudFormationTemplateResult> createCloudFormationTemplateAsync(CreateCloudFormationTemplateRequest request) {
+
+        return createCloudFormationTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCloudFormationTemplateResult> createCloudFormationTemplateAsync(CreateCloudFormationTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCloudFormationTemplateRequest, CreateCloudFormationTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest request) {
 
         return deleteApplicationAsync(request, null);
@@ -102,6 +115,19 @@ public class AbstractAWSServerlessApplicationRepositoryAsync extends AbstractAWS
     @Override
     public java.util.concurrent.Future<GetApplicationPolicyResult> getApplicationPolicyAsync(GetApplicationPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<GetApplicationPolicyRequest, GetApplicationPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudFormationTemplateResult> getCloudFormationTemplateAsync(GetCloudFormationTemplateRequest request) {
+
+        return getCloudFormationTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudFormationTemplateResult> getCloudFormationTemplateAsync(GetCloudFormationTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCloudFormationTemplateRequest, GetCloudFormationTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

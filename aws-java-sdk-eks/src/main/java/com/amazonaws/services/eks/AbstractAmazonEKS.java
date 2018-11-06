@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.eks.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.eks.waiters.AmazonEKSWaiters;
 
 /**
  * Abstract implementation of {@code AmazonEKS}. Convenient method forms pass through to the corresponding overload that
@@ -54,6 +55,11 @@ public class AbstractAmazonEKS implements AmazonEKS {
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonEKSWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

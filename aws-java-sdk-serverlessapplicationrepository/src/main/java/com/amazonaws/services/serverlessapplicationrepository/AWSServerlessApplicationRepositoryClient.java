@@ -370,6 +370,71 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
 
     /**
      * <p>
+     * Creates an AWS CloudFormation template.
+     * </p>
+     * 
+     * @param createCloudFormationTemplateRequest
+     * @return Result of the CreateCloudFormationTemplate operation returned by the service.
+     * @throws NotFoundException
+     *         The resource (for example, an access policy statement) specified in the request doesn't exist.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @throws InternalServerErrorException
+     *         The AWS Serverless Application Repository service encountered an internal error.
+     * @throws ForbiddenException
+     *         The client is not authenticated.
+     * @sample AWSServerlessApplicationRepository.CreateCloudFormationTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateCloudFormationTemplateResult createCloudFormationTemplate(CreateCloudFormationTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCloudFormationTemplate(request);
+    }
+
+    @SdkInternalApi
+    final CreateCloudFormationTemplateResult executeCreateCloudFormationTemplate(CreateCloudFormationTemplateRequest createCloudFormationTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCloudFormationTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCloudFormationTemplateRequest> request = null;
+        Response<CreateCloudFormationTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCloudFormationTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createCloudFormationTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCloudFormationTemplate");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCloudFormationTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateCloudFormationTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified application.
      * </p>
      * 
@@ -561,6 +626,71 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
 
     /**
      * <p>
+     * Gets the specified AWS CloudFormation template.
+     * </p>
+     * 
+     * @param getCloudFormationTemplateRequest
+     * @return Result of the GetCloudFormationTemplate operation returned by the service.
+     * @throws NotFoundException
+     *         The resource (for example, an access policy statement) specified in the request doesn't exist.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @throws InternalServerErrorException
+     *         The AWS Serverless Application Repository service encountered an internal error.
+     * @throws ForbiddenException
+     *         The client is not authenticated.
+     * @sample AWSServerlessApplicationRepository.GetCloudFormationTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetCloudFormationTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCloudFormationTemplateResult getCloudFormationTemplate(GetCloudFormationTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCloudFormationTemplate(request);
+    }
+
+    @SdkInternalApi
+    final GetCloudFormationTemplateResult executeGetCloudFormationTemplate(GetCloudFormationTemplateRequest getCloudFormationTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCloudFormationTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCloudFormationTemplateRequest> request = null;
+        Response<GetCloudFormationTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCloudFormationTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCloudFormationTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCloudFormationTemplate");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCloudFormationTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCloudFormationTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists versions for the specified application.
      * </p>
      * 
@@ -687,9 +817,9 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
 
     /**
      * <p>
-     * Sets the permission policy for an application. See <a href=
+     * Sets the permission policy for an application. For the list of actions supported for this operation, see <a href=
      * "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
-     * >Application Permissions</a> for the list of supported actions that can be used with this operation.
+     * >Application Permissions</a> .
      * </p>
      * 
      * @param putApplicationPolicyRequest

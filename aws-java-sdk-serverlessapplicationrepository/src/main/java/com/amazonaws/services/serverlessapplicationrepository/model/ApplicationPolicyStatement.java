@@ -30,9 +30,9 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * See <a href=
+     * For the list of actions supported for this operation, see <a href=
      * "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
-     * >Application Permissions</a> for the list of supported actions.
+     * >Application Permissions</a>.
      * </p>
      */
     private java.util.List<String> actions;
@@ -51,14 +51,14 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * See <a href=
+     * For the list of actions supported for this operation, see <a href=
      * "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
-     * >Application Permissions</a> for the list of supported actions.
+     * >Application Permissions</a>.
      * </p>
      * 
-     * @return See <a href=
+     * @return For the list of actions supported for this operation, see <a href=
      *         "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
-     *         >Application Permissions</a> for the list of supported actions.
+     *         >Application Permissions</a>.
      */
 
     public java.util.List<String> getActions() {
@@ -67,15 +67,15 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * See <a href=
+     * For the list of actions supported for this operation, see <a href=
      * "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
-     * >Application Permissions</a> for the list of supported actions.
+     * >Application Permissions</a>.
      * </p>
      * 
      * @param actions
-     *        See <a href=
+     *        For the list of actions supported for this operation, see <a href=
      *        "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
-     *        >Application Permissions</a> for the list of supported actions.
+     *        >Application Permissions</a>.
      */
 
     public void setActions(java.util.Collection<String> actions) {
@@ -89,9 +89,9 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * See <a href=
+     * For the list of actions supported for this operation, see <a href=
      * "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
-     * >Application Permissions</a> for the list of supported actions.
+     * >Application Permissions</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -100,9 +100,9 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
      * </p>
      * 
      * @param actions
-     *        See <a href=
+     *        For the list of actions supported for this operation, see <a href=
      *        "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
-     *        >Application Permissions</a> for the list of supported actions.
+     *        >Application Permissions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,15 +118,15 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * See <a href=
+     * For the list of actions supported for this operation, see <a href=
      * "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
-     * >Application Permissions</a> for the list of supported actions.
+     * >Application Permissions</a>.
      * </p>
      * 
      * @param actions
-     *        See <a href=
+     *        For the list of actions supported for this operation, see <a href=
      *        "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
-     *        >Application Permissions</a> for the list of supported actions.
+     *        >Application Permissions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

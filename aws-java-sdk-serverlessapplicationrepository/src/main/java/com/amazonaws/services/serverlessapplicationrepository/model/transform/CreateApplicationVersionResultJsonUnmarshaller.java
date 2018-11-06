@@ -61,6 +61,15 @@ public class CreateApplicationVersionResultJsonUnmarshaller implements Unmarshal
                     createApplicationVersionResult.setParameterDefinitions(new ListUnmarshaller<ParameterDefinition>(ParameterDefinitionJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("requiredCapabilities", targetDepth)) {
+                    context.nextToken();
+                    createApplicationVersionResult.setRequiredCapabilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+                            .unmarshall(context));
+                }
+                if (context.testExpression("resourcesSupported", targetDepth)) {
+                    context.nextToken();
+                    createApplicationVersionResult.setResourcesSupported(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("semanticVersion", targetDepth)) {
                     context.nextToken();
                     createApplicationVersionResult.setSemanticVersion(context.getUnmarshaller(String.class).unmarshall(context));

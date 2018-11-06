@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.eks.model.*;
+import com.amazonaws.services.eks.waiters.AmazonEKSWaiters;
 
 /**
  * Interface for accessing Amazon EKS.
@@ -219,5 +220,7 @@ public interface AmazonEKS {
      * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonEKSWaiters waiters();
 
 }

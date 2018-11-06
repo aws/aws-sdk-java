@@ -143,6 +143,29 @@ public interface AWSServerlessApplicationRepository {
 
     /**
      * <p>
+     * Creates an AWS CloudFormation template.
+     * </p>
+     * 
+     * @param createCloudFormationTemplateRequest
+     * @return Result of the CreateCloudFormationTemplate operation returned by the service.
+     * @throws NotFoundException
+     *         The resource (for example, an access policy statement) specified in the request doesn't exist.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @throws InternalServerErrorException
+     *         The AWS Serverless Application Repository service encountered an internal error.
+     * @throws ForbiddenException
+     *         The client is not authenticated.
+     * @sample AWSServerlessApplicationRepository.CreateCloudFormationTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateCloudFormationTemplateResult createCloudFormationTemplate(CreateCloudFormationTemplateRequest createCloudFormationTemplateRequest);
+
+    /**
+     * <p>
      * Deletes the specified application.
      * </p>
      * 
@@ -214,6 +237,29 @@ public interface AWSServerlessApplicationRepository {
 
     /**
      * <p>
+     * Gets the specified AWS CloudFormation template.
+     * </p>
+     * 
+     * @param getCloudFormationTemplateRequest
+     * @return Result of the GetCloudFormationTemplate operation returned by the service.
+     * @throws NotFoundException
+     *         The resource (for example, an access policy statement) specified in the request doesn't exist.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @throws InternalServerErrorException
+     *         The AWS Serverless Application Repository service encountered an internal error.
+     * @throws ForbiddenException
+     *         The client is not authenticated.
+     * @sample AWSServerlessApplicationRepository.GetCloudFormationTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetCloudFormationTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetCloudFormationTemplateResult getCloudFormationTemplate(GetCloudFormationTemplateRequest getCloudFormationTemplateRequest);
+
+    /**
+     * <p>
      * Lists versions for the specified application.
      * </p>
      * 
@@ -258,9 +304,9 @@ public interface AWSServerlessApplicationRepository {
 
     /**
      * <p>
-     * Sets the permission policy for an application. See <a href=
+     * Sets the permission policy for an application. For the list of actions supported for this operation, see <a href=
      * "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
-     * >Application Permissions</a> for the list of supported actions that can be used with this operation.
+     * >Application Permissions</a> .
      * </p>
      * 
      * @param putApplicationPolicyRequest

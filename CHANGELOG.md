@@ -1,3 +1,12 @@
+# __1.11.443__ __2018-11-05__
+## __AWSServerlessApplicationRepository__
+  - ### Features
+    - New AWS Serverless Application Repository APIs that support creating and reading a broader set of AWS CloudFormation templates, as well as enhancements to our existing APIs.
+
+## __Amazon Elastic Container Service for Kubernetes__
+  - ### Features
+    - Adds waiters for ClusterActive and ClusterDeleted
+
 # __1.11.442__ __2018-11-02__
 ## __Amazon CloudDirectory__
   - ### Features

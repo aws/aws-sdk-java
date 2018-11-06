@@ -39,6 +39,7 @@ import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.eks.AmazonEKSClientBuilder;
+import com.amazonaws.services.eks.waiters.AmazonEKSWaiters;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -73,6 +74,8 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "eks";
+
+    private volatile AmazonEKSWaiters waiters;
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
@@ -535,6 +538,26 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public AmazonEKSWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AmazonEKSWaiters(this);
+                }
+            }
+        }
+        return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }
