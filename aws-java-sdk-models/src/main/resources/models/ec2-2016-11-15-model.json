@@ -14016,13 +14016,6 @@
     },
     "ImportInstanceVolumeDetailItem":{
       "type":"structure",
-      "required":[
-        "AvailabilityZone",
-        "BytesConverted",
-        "Image",
-        "Status",
-        "Volume"
-      ],
       "members":{
         "AvailabilityZone":{
           "shape":"String",
@@ -15349,6 +15342,12 @@
         "r5.16xlarge",
         "r5.24xlarge",
         "r5.metal",
+        "r5a.large",
+        "r5a.xlarge",
+        "r5a.2xlarge",
+        "r5a.4xlarge",
+        "r5a.12xlarge",
+        "r5a.24xlarge",
         "r5d.large",
         "r5d.xlarge",
         "r5d.2xlarge",
@@ -15431,6 +15430,12 @@
         "m5.4xlarge",
         "m5.12xlarge",
         "m5.24xlarge",
+        "m5a.large",
+        "m5a.xlarge",
+        "m5a.2xlarge",
+        "m5a.4xlarge",
+        "m5a.12xlarge",
+        "m5a.24xlarge",
         "m5d.large",
         "m5d.xlarge",
         "m5d.2xlarge",
@@ -22100,10 +22105,6 @@
     },
     "SecurityGroupReference":{
       "type":"structure",
-      "required":[
-        "GroupId",
-        "ReferencingVpcId"
-      ],
       "members":{
         "GroupId":{
           "shape":"String",
@@ -23231,7 +23232,6 @@
     },
     "StaleSecurityGroup":{
       "type":"structure",
-      "required":["GroupId"],
       "members":{
         "Description":{
           "shape":"String",

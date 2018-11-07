@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * The endpoint and events combined response definition
+ * The response that's provided after registering the endpoint.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ItemResponse" target="_top">AWS API
  *      Documentation</a>
@@ -26,19 +26,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ItemResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** Endpoint item response after endpoint registration */
+    /** The response received after the endpoint was accepted. */
     private EndpointItemResponse endpointItemResponse;
     /**
-     * Events item response is a multipart response object per event Id, with eventId as the key and EventItemResponse
-     * object as the value
+     * A multipart response object that contains a key and value for each event ID in the request. In each object, the
+     * event ID is the key, and an EventItemResponse object is the value.
      */
     private java.util.Map<String, EventItemResponse> eventsItemResponse;
 
     /**
-     * Endpoint item response after endpoint registration
+     * The response received after the endpoint was accepted.
      * 
      * @param endpointItemResponse
-     *        Endpoint item response after endpoint registration
+     *        The response received after the endpoint was accepted.
      */
 
     public void setEndpointItemResponse(EndpointItemResponse endpointItemResponse) {
@@ -46,9 +46,9 @@ public class ItemResponse implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Endpoint item response after endpoint registration
+     * The response received after the endpoint was accepted.
      * 
-     * @return Endpoint item response after endpoint registration
+     * @return The response received after the endpoint was accepted.
      */
 
     public EndpointItemResponse getEndpointItemResponse() {
@@ -56,10 +56,10 @@ public class ItemResponse implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Endpoint item response after endpoint registration
+     * The response received after the endpoint was accepted.
      * 
      * @param endpointItemResponse
-     *        Endpoint item response after endpoint registration
+     *        The response received after the endpoint was accepted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -69,11 +69,11 @@ public class ItemResponse implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Events item response is a multipart response object per event Id, with eventId as the key and EventItemResponse
-     * object as the value
+     * A multipart response object that contains a key and value for each event ID in the request. In each object, the
+     * event ID is the key, and an EventItemResponse object is the value.
      * 
-     * @return Events item response is a multipart response object per event Id, with eventId as the key and
-     *         EventItemResponse object as the value
+     * @return A multipart response object that contains a key and value for each event ID in the request. In each
+     *         object, the event ID is the key, and an EventItemResponse object is the value.
      */
 
     public java.util.Map<String, EventItemResponse> getEventsItemResponse() {
@@ -81,12 +81,12 @@ public class ItemResponse implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Events item response is a multipart response object per event Id, with eventId as the key and EventItemResponse
-     * object as the value
+     * A multipart response object that contains a key and value for each event ID in the request. In each object, the
+     * event ID is the key, and an EventItemResponse object is the value.
      * 
      * @param eventsItemResponse
-     *        Events item response is a multipart response object per event Id, with eventId as the key and
-     *        EventItemResponse object as the value
+     *        A multipart response object that contains a key and value for each event ID in the request. In each
+     *        object, the event ID is the key, and an EventItemResponse object is the value.
      */
 
     public void setEventsItemResponse(java.util.Map<String, EventItemResponse> eventsItemResponse) {
@@ -94,12 +94,12 @@ public class ItemResponse implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Events item response is a multipart response object per event Id, with eventId as the key and EventItemResponse
-     * object as the value
+     * A multipart response object that contains a key and value for each event ID in the request. In each object, the
+     * event ID is the key, and an EventItemResponse object is the value.
      * 
      * @param eventsItemResponse
-     *        Events item response is a multipart response object per event Id, with eventId as the key and
-     *        EventItemResponse object as the value
+     *        A multipart response object that contains a key and value for each event ID in the request. In each
+     *        object, the event ID is the key, and an EventItemResponse object is the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

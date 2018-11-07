@@ -27,21 +27,21 @@ public class PutLoggingConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Kinesis Data Firehose delivery streams that contains the inspected traffic information, the redacted
-     * fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.
+     * The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields details,
+     * and the Amazon Resource Name (ARN) of the web ACL to monitor.
      * </p>
      */
     private LoggingConfiguration loggingConfiguration;
 
     /**
      * <p>
-     * The Amazon Kinesis Data Firehose delivery streams that contains the inspected traffic information, the redacted
-     * fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.
+     * The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields details,
+     * and the Amazon Resource Name (ARN) of the web ACL to monitor.
      * </p>
      * 
      * @param loggingConfiguration
-     *        The Amazon Kinesis Data Firehose delivery streams that contains the inspected traffic information, the
-     *        redacted fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.
+     *        The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields
+     *        details, and the Amazon Resource Name (ARN) of the web ACL to monitor.
      */
 
     public void setLoggingConfiguration(LoggingConfiguration loggingConfiguration) {
@@ -50,12 +50,12 @@ public class PutLoggingConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Kinesis Data Firehose delivery streams that contains the inspected traffic information, the redacted
-     * fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.
+     * The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields details,
+     * and the Amazon Resource Name (ARN) of the web ACL to monitor.
      * </p>
      * 
-     * @return The Amazon Kinesis Data Firehose delivery streams that contains the inspected traffic information, the
-     *         redacted fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.
+     * @return The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields
+     *         details, and the Amazon Resource Name (ARN) of the web ACL to monitor.
      */
 
     public LoggingConfiguration getLoggingConfiguration() {
@@ -64,13 +64,13 @@ public class PutLoggingConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Kinesis Data Firehose delivery streams that contains the inspected traffic information, the redacted
-     * fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.
+     * The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields details,
+     * and the Amazon Resource Name (ARN) of the web ACL to monitor.
      * </p>
      * 
      * @param loggingConfiguration
-     *        The Amazon Kinesis Data Firehose delivery streams that contains the inspected traffic information, the
-     *        redacted fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.
+     *        The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields
+     *        details, and the Amazon Resource Name (ARN) of the web ACL to monitor.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

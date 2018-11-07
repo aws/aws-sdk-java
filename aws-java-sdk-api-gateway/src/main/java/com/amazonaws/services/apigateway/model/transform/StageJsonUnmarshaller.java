@@ -102,6 +102,10 @@ public class StageJsonUnmarshaller implements Unmarshaller<Stage, JsonUnmarshall
                     context.nextToken();
                     stage.setTracingEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("webAclArn", targetDepth)) {
+                    context.nextToken();
+                    stage.setWebAclArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     stage.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))

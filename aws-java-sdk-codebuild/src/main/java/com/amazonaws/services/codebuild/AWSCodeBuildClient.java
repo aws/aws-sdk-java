@@ -85,8 +85,8 @@ import com.amazonaws.services.codebuild.model.transform.*;
  * <li>
  * <p>
  * <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
- * repository, enables AWS CodeBuild to begin automatically rebuilding the source code every time a code change is
- * pushed to the repository.
+ * or Bitbucket repository, enables AWS CodeBuild to begin automatically rebuilding the source code every time a code
+ * change is pushed to the repository.
  * </p>
  * </li>
  * <li>
@@ -102,8 +102,8 @@ import com.amazonaws.services.codebuild.model.transform.*;
  * <li>
  * <p>
  * <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
- * repository, stops AWS CodeBuild from automatically rebuilding the source code every time a code change is pushed to
- * the repository.
+ * or Bitbucket repository, stops AWS CodeBuild from automatically rebuilding the source code every time a code change
+ * is pushed to the repository.
  * </p>
  * </li>
  * <li>
@@ -612,8 +612,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * For an existing AWS CodeBuild build project that has its source code stored in a GitHub repository, enables AWS
-     * CodeBuild to begin automatically rebuilding the source code every time a code change is pushed to the repository.
+     * For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository,
+     * enables AWS CodeBuild to begin automatically rebuilding the source code every time a code change is pushed to the
+     * repository.
      * </p>
      * <important>
      * <p>
@@ -741,8 +742,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * For an existing AWS CodeBuild build project that has its source code stored in a GitHub repository, stops AWS
-     * CodeBuild from automatically rebuilding the source code every time a code change is pushed to the repository.
+     * For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository,
+     * stops AWS CodeBuild from automatically rebuilding the source code every time a code change is pushed to the
+     * repository.
      * </p>
      * 
      * @param deleteWebhookRequest
@@ -1256,6 +1258,11 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * <p>
      * Updates the webhook associated with an AWS CodeBuild build project.
      * </p>
+     * <note>
+     * <p>
+     * If you use Bitbucket for your repository then <code>rotateSecret</code> is ignored.
+     * </p>
+     * </note>
      * 
      * @param updateWebhookRequest
      * @return Result of the UpdateWebhook operation returned by the service.

@@ -31,8 +31,8 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     /** The CloudWatchMetrics settings for the app. */
     private Boolean cloudWatchMetricsEnabled;
     /**
-     * The default campaign limits for the app. These limits apply to each campaign for the app, unless the campaign
-     * overrides the default with limits of its own.
+     * The limits that apply to each campaign in the project by default. Campaigns can also have their own limits, which
+     * override the settings at the project level.
      */
     private CampaignLimits limits;
     /**
@@ -120,12 +120,12 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     }
 
     /**
-     * The default campaign limits for the app. These limits apply to each campaign for the app, unless the campaign
-     * overrides the default with limits of its own.
+     * The limits that apply to each campaign in the project by default. Campaigns can also have their own limits, which
+     * override the settings at the project level.
      * 
      * @param limits
-     *        The default campaign limits for the app. These limits apply to each campaign for the app, unless the
-     *        campaign overrides the default with limits of its own.
+     *        The limits that apply to each campaign in the project by default. Campaigns can also have their own
+     *        limits, which override the settings at the project level.
      */
 
     public void setLimits(CampaignLimits limits) {
@@ -133,11 +133,11 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     }
 
     /**
-     * The default campaign limits for the app. These limits apply to each campaign for the app, unless the campaign
-     * overrides the default with limits of its own.
+     * The limits that apply to each campaign in the project by default. Campaigns can also have their own limits, which
+     * override the settings at the project level.
      * 
-     * @return The default campaign limits for the app. These limits apply to each campaign for the app, unless the
-     *         campaign overrides the default with limits of its own.
+     * @return The limits that apply to each campaign in the project by default. Campaigns can also have their own
+     *         limits, which override the settings at the project level.
      */
 
     public CampaignLimits getLimits() {
@@ -145,12 +145,12 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     }
 
     /**
-     * The default campaign limits for the app. These limits apply to each campaign for the app, unless the campaign
-     * overrides the default with limits of its own.
+     * The limits that apply to each campaign in the project by default. Campaigns can also have their own limits, which
+     * override the settings at the project level.
      * 
      * @param limits
-     *        The default campaign limits for the app. These limits apply to each campaign for the app, unless the
-     *        campaign overrides the default with limits of its own.
+     *        The limits that apply to each campaign in the project by default. Campaigns can also have their own
+     *        limits, which override the settings at the project level.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

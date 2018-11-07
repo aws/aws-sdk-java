@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * The responses that are returned after you record an event.
+ * A complex object that holds the status code and message as a result of processing an event.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EventItemResponse" target="_top">AWS API
  *      Documentation</a>
@@ -28,7 +28,11 @@ public class EventItemResponse implements Serializable, Cloneable, StructuredPoj
 
     /** A custom message that is associated with the processing of an event. */
     private String message;
-    /** The status code to respond with for a particular event id */
+    /**
+     * The status returned in the response as a result of processing the event.
+     * 
+     * Possible values: 400 (for invalid events) and 202 (for events that were accepted).
+     */
     private Integer statusCode;
 
     /**
@@ -66,10 +70,14 @@ public class EventItemResponse implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The status code to respond with for a particular event id
+     * The status returned in the response as a result of processing the event.
+     * 
+     * Possible values: 400 (for invalid events) and 202 (for events that were accepted).
      * 
      * @param statusCode
-     *        The status code to respond with for a particular event id
+     *        The status returned in the response as a result of processing the event.
+     * 
+     *        Possible values: 400 (for invalid events) and 202 (for events that were accepted).
      */
 
     public void setStatusCode(Integer statusCode) {
@@ -77,9 +85,13 @@ public class EventItemResponse implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The status code to respond with for a particular event id
+     * The status returned in the response as a result of processing the event.
      * 
-     * @return The status code to respond with for a particular event id
+     * Possible values: 400 (for invalid events) and 202 (for events that were accepted).
+     * 
+     * @return The status returned in the response as a result of processing the event.
+     * 
+     *         Possible values: 400 (for invalid events) and 202 (for events that were accepted).
      */
 
     public Integer getStatusCode() {
@@ -87,10 +99,14 @@ public class EventItemResponse implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The status code to respond with for a particular event id
+     * The status returned in the response as a result of processing the event.
+     * 
+     * Possible values: 400 (for invalid events) and 202 (for events that were accepted).
      * 
      * @param statusCode
-     *        The status code to respond with for a particular event id
+     *        The status returned in the response as a result of processing the event.
+     * 
+     *        Possible values: 400 (for invalid events) and 202 (for events that were accepted).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

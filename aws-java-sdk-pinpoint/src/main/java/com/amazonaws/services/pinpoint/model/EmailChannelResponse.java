@@ -28,6 +28,8 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
 
     /** The unique ID of the application to which the email channel belongs. */
     private String applicationId;
+    /** The configuration set that you want to use when you send email using the Pinpoint Email API. */
+    private String configurationSet;
     /** The date that the settings were last updated in ISO 8601 format. */
     private String creationDate;
     /** If the channel is enabled for sending messages. */
@@ -86,6 +88,40 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
 
     public EmailChannelResponse withApplicationId(String applicationId) {
         setApplicationId(applicationId);
+        return this;
+    }
+
+    /**
+     * The configuration set that you want to use when you send email using the Pinpoint Email API.
+     * 
+     * @param configurationSet
+     *        The configuration set that you want to use when you send email using the Pinpoint Email API.
+     */
+
+    public void setConfigurationSet(String configurationSet) {
+        this.configurationSet = configurationSet;
+    }
+
+    /**
+     * The configuration set that you want to use when you send email using the Pinpoint Email API.
+     * 
+     * @return The configuration set that you want to use when you send email using the Pinpoint Email API.
+     */
+
+    public String getConfigurationSet() {
+        return this.configurationSet;
+    }
+
+    /**
+     * The configuration set that you want to use when you send email using the Pinpoint Email API.
+     * 
+     * @param configurationSet
+     *        The configuration set that you want to use when you send email using the Pinpoint Email API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EmailChannelResponse withConfigurationSet(String configurationSet) {
+        setConfigurationSet(configurationSet);
         return this;
     }
 
@@ -574,6 +610,8 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
+        if (getConfigurationSet() != null)
+            sb.append("ConfigurationSet: ").append(getConfigurationSet()).append(",");
         if (getCreationDate() != null)
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getEnabled() != null)
@@ -617,6 +655,10 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
         if (other.getApplicationId() == null ^ this.getApplicationId() == null)
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
+            return false;
+        if (other.getConfigurationSet() == null ^ this.getConfigurationSet() == null)
+            return false;
+        if (other.getConfigurationSet() != null && other.getConfigurationSet().equals(this.getConfigurationSet()) == false)
             return false;
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
@@ -679,6 +721,7 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
+        hashCode = prime * hashCode + ((getConfigurationSet() == null) ? 0 : getConfigurationSet().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getFromAddress() == null) ? 0 : getFromAddress().hashCode());

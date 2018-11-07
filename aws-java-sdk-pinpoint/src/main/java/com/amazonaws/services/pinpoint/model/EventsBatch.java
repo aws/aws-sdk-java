@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Events batch definition
+ * A batch of PublicEndpoints and Events to process.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EventsBatch" target="_top">AWS API
  *      Documentation</a>
@@ -26,16 +26,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EventsBatch implements Serializable, Cloneable, StructuredPojo {
 
-    /** Endpoint information */
+    /** The PublicEndpoint attached to the EndpointId from the request. */
     private PublicEndpoint endpoint;
-    /** Events */
+    /** An object that contains a set of events associated with the endpoint. */
     private java.util.Map<String, Event> events;
 
     /**
-     * Endpoint information
+     * The PublicEndpoint attached to the EndpointId from the request.
      * 
      * @param endpoint
-     *        Endpoint information
+     *        The PublicEndpoint attached to the EndpointId from the request.
      */
 
     public void setEndpoint(PublicEndpoint endpoint) {
@@ -43,9 +43,9 @@ public class EventsBatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Endpoint information
+     * The PublicEndpoint attached to the EndpointId from the request.
      * 
-     * @return Endpoint information
+     * @return The PublicEndpoint attached to the EndpointId from the request.
      */
 
     public PublicEndpoint getEndpoint() {
@@ -53,10 +53,10 @@ public class EventsBatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Endpoint information
+     * The PublicEndpoint attached to the EndpointId from the request.
      * 
      * @param endpoint
-     *        Endpoint information
+     *        The PublicEndpoint attached to the EndpointId from the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,9 +66,9 @@ public class EventsBatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Events
+     * An object that contains a set of events associated with the endpoint.
      * 
-     * @return Events
+     * @return An object that contains a set of events associated with the endpoint.
      */
 
     public java.util.Map<String, Event> getEvents() {
@@ -76,10 +76,10 @@ public class EventsBatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Events
+     * An object that contains a set of events associated with the endpoint.
      * 
      * @param events
-     *        Events
+     *        An object that contains a set of events associated with the endpoint.
      */
 
     public void setEvents(java.util.Map<String, Event> events) {
@@ -87,10 +87,10 @@ public class EventsBatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Events
+     * An object that contains a set of events associated with the endpoint.
      * 
      * @param events
-     *        Events
+     *        An object that contains a set of events associated with the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

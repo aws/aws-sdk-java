@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class EmailChannelRequestMarshaller {
 
+    private static final MarshallingInfo<String> CONFIGURATIONSET_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationSet").build();
     private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Enabled").build();
     private static final MarshallingInfo<String> FROMADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -52,6 +54,7 @@ public class EmailChannelRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(emailChannelRequest.getConfigurationSet(), CONFIGURATIONSET_BINDING);
             protocolMarshaller.marshall(emailChannelRequest.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(emailChannelRequest.getFromAddress(), FROMADDRESS_BINDING);
             protocolMarshaller.marshall(emailChannelRequest.getIdentity(), IDENTITY_BINDING);

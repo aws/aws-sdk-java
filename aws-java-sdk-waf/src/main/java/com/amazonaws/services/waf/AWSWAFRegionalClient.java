@@ -104,6 +104,9 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                             new JsonErrorShapeMetadata().withErrorCode("WAFNonexistentItemException").withModeledClass(
                                     com.amazonaws.services.waf.model.WAFNonexistentItemException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFServiceLinkedRoleErrorException").withModeledClass(
+                                    com.amazonaws.services.waf.model.WAFServiceLinkedRoleErrorException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("WAFInternalErrorException").withModeledClass(
                                     com.amazonaws.services.waf.model.WAFInternalErrorException.class))
                     .addErrorMetadata(
@@ -5915,6 +5918,61 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      *         identifier.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an invalid parameter name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or
+     *         <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other
+     *         than HEADER, METHOD, QUERY_STRING, URI, or BODY.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
+     *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
      * @sample AWSWAFRegional.ListResourcesForWebACL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListResourcesForWebACL"
      *      target="_top">AWS API Documentation</a>
@@ -6381,23 +6439,20 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      * <ol>
      * <li>
      * <p>
-     * Create an Amazon Kinesis Data Firehose delivery stream. For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html">Creating an Amazon Kinesis Data
-     * Firehose Delivery Stream</a>.
+     * Create an Amazon Kinesis Data Firehose .
      * </p>
      * </li>
      * <li>
      * <p>
-     * Associate that delivery stream to your web ACL using a <code>PutLoggingConfiguration</code> request.
+     * Associate that firehose to your web ACL using a <code>PutLoggingConfiguration</code> request.
      * </p>
      * </li>
      * </ol>
      * <p>
      * When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, AWS WAF will create a
-     * service linked role with the necessary permissions to write logs to the Amazon Kinesis Data Firehose delivery
-     * stream. For more information, see <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL Traffic Information</a>
-     * in the <i>AWS WAF Developer Guide</i>.
+     * service linked role with the necessary permissions to write logs to the Amazon Kinesis Data Firehose. For more
+     * information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL
+     * Traffic Information</a> in the <i>AWS WAF Developer Guide</i>.
      * </p>
      * 
      * @param putLoggingConfigurationRequest
@@ -6409,6 +6464,14 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      * @throws WAFStaleDataException
      *         The operation failed because you tried to create, update, or delete an object by using a change token
      *         that has already been used.
+     * @throws WAFServiceLinkedRoleErrorException
+     *         AWS WAF is not able to access the service linked role. This can be caused by a previous
+     *         <code>PutLoggingConfiguration</code> request, which can lock the service linked role for about 20
+     *         seconds. Please try your request again. The service linked role can also be locked by a previous
+     *         <code>DeleteServiceLinkedRole</code> request, which can lock the role for 15 minutes or more. If you
+     *         recently made a <code>DeleteServiceLinkedRole</code>, wait at least 15 minutes and try the request again.
+     *         If you receive this same exception again, you will have to wait additional time until the role is
+     *         unlocked.
      * @sample AWSWAFRegional.PutLoggingConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/PutLoggingConfiguration"
      *      target="_top">AWS API Documentation</a>

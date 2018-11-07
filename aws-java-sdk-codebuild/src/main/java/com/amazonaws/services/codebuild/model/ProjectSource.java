@@ -88,10 +88,22 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, the path to the ZIP file that
-     * contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)
+     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The path to the ZIP file that contains the source code (for example,
+     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The path to the folder that contains the source code (for example,
+     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -149,8 +161,8 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set to true to report the status of a build's start and finish to your source provider. This option is only valid
-     * when your source provider is GitHub. If this is set and you use a different source provider, an
-     * invalidInputException is thrown.
+     * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
+     * source provider, an invalidInputException is thrown.
      * </p>
      */
     private Boolean reportBuildStatus;
@@ -586,10 +598,22 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, the path to the ZIP file that
-     * contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)
+     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The path to the ZIP file that contains the source code (for example,
+     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The path to the folder that contains the source code (for example,
+     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -636,10 +660,22 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, the path to the ZIP file
-     *        that contains the source code (for example,
-     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)
+     *        For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The path to the ZIP file that contains the source code (for example,
+     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The path to the folder that contains the source code (for example,
+     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -693,10 +729,22 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, the path to the ZIP file that
-     * contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)
+     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The path to the ZIP file that contains the source code (for example,
+     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The path to the folder that contains the source code (for example,
+     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -742,10 +790,22 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, the path to the ZIP file
-     *         that contains the source code (for example,
-     *         <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)
+     *         For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The path to the ZIP file that contains the source code (for example,
+     *         <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The path to the folder that contains the source code (for example,
+     *         <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      *         <li>
      *         <p>
@@ -799,10 +859,22 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, the path to the ZIP file that
-     * contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)
+     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The path to the ZIP file that contains the source code (for example,
+     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The path to the folder that contains the source code (for example,
+     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -849,10 +921,22 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, the path to the ZIP file
-     *        that contains the source code (for example,
-     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)
+     *        For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The path to the ZIP file that contains the source code (for example,
+     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The path to the folder that contains the source code (for example,
+     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -1052,14 +1136,14 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set to true to report the status of a build's start and finish to your source provider. This option is only valid
-     * when your source provider is GitHub. If this is set and you use a different source provider, an
-     * invalidInputException is thrown.
+     * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
+     * source provider, an invalidInputException is thrown.
      * </p>
      * 
      * @param reportBuildStatus
      *        Set to true to report the status of a build's start and finish to your source provider. This option is
-     *        only valid when your source provider is GitHub. If this is set and you use a different source provider, an
-     *        invalidInputException is thrown.
+     *        only valid when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
+     *        use a different source provider, an invalidInputException is thrown.
      */
 
     public void setReportBuildStatus(Boolean reportBuildStatus) {
@@ -1069,13 +1153,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set to true to report the status of a build's start and finish to your source provider. This option is only valid
-     * when your source provider is GitHub. If this is set and you use a different source provider, an
-     * invalidInputException is thrown.
+     * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
+     * source provider, an invalidInputException is thrown.
      * </p>
      * 
      * @return Set to true to report the status of a build's start and finish to your source provider. This option is
-     *         only valid when your source provider is GitHub. If this is set and you use a different source provider,
-     *         an invalidInputException is thrown.
+     *         only valid when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
+     *         use a different source provider, an invalidInputException is thrown.
      */
 
     public Boolean getReportBuildStatus() {
@@ -1085,14 +1169,14 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set to true to report the status of a build's start and finish to your source provider. This option is only valid
-     * when your source provider is GitHub. If this is set and you use a different source provider, an
-     * invalidInputException is thrown.
+     * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
+     * source provider, an invalidInputException is thrown.
      * </p>
      * 
      * @param reportBuildStatus
      *        Set to true to report the status of a build's start and finish to your source provider. This option is
-     *        only valid when your source provider is GitHub. If this is set and you use a different source provider, an
-     *        invalidInputException is thrown.
+     *        only valid when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
+     *        use a different source provider, an invalidInputException is thrown.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1104,13 +1188,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set to true to report the status of a build's start and finish to your source provider. This option is only valid
-     * when your source provider is GitHub. If this is set and you use a different source provider, an
-     * invalidInputException is thrown.
+     * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
+     * source provider, an invalidInputException is thrown.
      * </p>
      * 
      * @return Set to true to report the status of a build's start and finish to your source provider. This option is
-     *         only valid when your source provider is GitHub. If this is set and you use a different source provider,
-     *         an invalidInputException is thrown.
+     *         only valid when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
+     *         use a different source provider, an invalidInputException is thrown.
      */
 
     public Boolean isReportBuildStatus() {

@@ -3254,7 +3254,7 @@
       "members" : {
         "AttributeType" : {
           "shape" : "AttributeType",
-          "documentation" : "The type of dimension:\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment."
+          "documentation" : "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment."
         },
         "Values" : {
           "shape" : "ListOf__string",
@@ -3483,7 +3483,7 @@
       "members" : {
         "Daily" : {
           "shape" : "__integer",
-          "documentation" : "The maximum number of messages that the campaign can send daily."
+          "documentation" : "The maximum number of messages that each campaign can send to a single endpoint in a 24-hour period."
         },
         "MaximumDuration" : {
           "shape" : "__integer",
@@ -3495,10 +3495,10 @@
         },
         "Total" : {
           "shape" : "__integer",
-          "documentation" : "The maximum total number of messages that the campaign can send."
+          "documentation" : "The maximum number of messages that an individual campaign can send to a single endpoint over the course of the campaign."
         }
       },
-      "documentation" : "Campaign Limits are used to limit the number of messages that can be sent to a user."
+      "documentation" : "Campaign Limits are used to limit the number of messages that can be sent to a single endpoint."
     },
     "CampaignResponse" : {
       "type" : "structure",
@@ -3857,7 +3857,7 @@
         },
         "SilentPush" : {
           "shape" : "__boolean",
-          "documentation" : "Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration and Phone Home use cases."
+          "documentation" : "Indicates if the message should display on the recipient's device. You can use silent pushes for remote configuration or to deliver messages to in-app notification centers."
         },
         "Substitutions" : {
           "shape" : "MapOfListOf__string",
@@ -4259,6 +4259,10 @@
           "shape" : "DefaultPushNotificationMessage",
           "documentation" : "The default push notification message for all push channels."
         },
+        "EmailMessage" : {
+          "shape" : "EmailMessage",
+          "documentation" : "The message to Email channels. Overrides the default message."
+        },
         "GCMMessage" : {
           "shape" : "GCMMessage",
           "documentation" : "The message to GCM channels. Overrides the default push notification message."
@@ -4278,6 +4282,10 @@
     "EmailChannelRequest" : {
       "type" : "structure",
       "members" : {
+        "ConfigurationSet" : {
+          "shape" : "__string",
+          "documentation" : "The configuration set that you want to use when you send email using the Pinpoint Email API."
+        },
         "Enabled" : {
           "shape" : "__boolean",
           "documentation" : "If the channel is enabled for sending messages."
@@ -4304,6 +4312,10 @@
         "ApplicationId" : {
           "shape" : "__string",
           "documentation" : "The unique ID of the application to which the email channel belongs."
+        },
+        "ConfigurationSet" : {
+          "shape" : "__string",
+          "documentation" : "The configuration set that you want to use when you send email using the Pinpoint Email API."
         },
         "CreationDate" : {
           "shape" : "__string",
@@ -4360,6 +4372,40 @@
       },
       "documentation" : "Email Channel Response.",
       "required" : [ ]
+    },
+    "EmailMessage" : {
+      "type" : "structure",
+      "members" : {
+        "Body" : {
+          "shape" : "__string",
+          "documentation" : "The body of the email message."
+        },
+        "FeedbackForwardingAddress" : {
+          "shape" : "__string",
+          "documentation" : "The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled."
+        },
+        "FromAddress" : {
+          "shape" : "__string",
+          "documentation" : "The email address used to send the email from. Defaults to use FromAddress specified in the Email Channel."
+        },
+        "RawEmail" : {
+          "shape" : "RawEmail",
+          "documentation" : "An email represented as a raw MIME message."
+        },
+        "ReplyToAddresses" : {
+          "shape" : "ListOf__string",
+          "documentation" : "The reply-to email address(es) for the email. If the recipient replies to the email, each reply-to address will receive the reply."
+        },
+        "SimpleEmail" : {
+          "shape" : "SimpleEmail",
+          "documentation" : "An email composed of a subject, a text part and a html part."
+        },
+        "Substitutions" : {
+          "shape" : "MapOfListOf__string",
+          "documentation" : "Default message substitutions. Can be overridden by individual address substitutions."
+        }
+      },
+      "documentation" : "Email Message."
     },
     "EndpointBatchItem" : {
       "type" : "structure",
@@ -4473,10 +4519,10 @@
         },
         "StatusCode" : {
           "shape" : "__integer",
-          "documentation" : "The status code to respond with for a particular endpoint id after endpoint registration"
+          "documentation" : "The status code associated with the merging of an endpoint when issuing a response."
         }
       },
-      "documentation" : "The responses that are returned after you create or update an endpoint and record an event."
+      "documentation" : "A complex object that holds the status code and message as a result of processing an endpoint."
     },
     "EndpointLocation" : {
       "type" : "structure",
@@ -4487,7 +4533,7 @@
         },
         "Country" : {
           "shape" : "__string",
-          "documentation" : "The two-letter code for the country or region of the endpoint. Specified as an ISO 3166-1 Alpha-2 code, such as \"US\" for the United States."
+          "documentation" : "The two-letter code for the country or region of the endpoint. Specified as an ISO 3166-1 alpha-2 code, such as \"US\" for the United States."
         },
         "Latitude" : {
           "shape" : "__double",
@@ -4587,7 +4633,7 @@
           "documentation" : "Custom user-specific attributes that your app reports to Amazon Pinpoint."
         }
       },
-      "documentation" : "Endpoint update request"
+      "documentation" : "An endpoint update request."
     },
     "EndpointResponse" : {
       "type" : "structure",
@@ -4723,11 +4769,11 @@
         },
         "Metrics" : {
           "shape" : "MapOf__double",
-          "documentation" : "Event metrics"
+          "documentation" : "Custom metrics related to the event."
         },
         "Session" : {
           "shape" : "Session",
-          "documentation" : "The session"
+          "documentation" : "Information about the session in which the event occurred."
         },
         "Timestamp" : {
           "shape" : "__string",
@@ -4746,10 +4792,10 @@
         },
         "StatusCode" : {
           "shape" : "__integer",
-          "documentation" : "The status code to respond with for a particular event id"
+          "documentation" : "The status returned in the response as a result of processing the event.\n\nPossible values: 400 (for invalid events) and 202 (for events that were accepted)."
         }
       },
-      "documentation" : "The responses that are returned after you record an event."
+      "documentation" : "A complex object that holds the status code and message as a result of processing an event."
     },
     "EventStream" : {
       "type" : "structure",
@@ -4787,14 +4833,14 @@
       "members" : {
         "Endpoint" : {
           "shape" : "PublicEndpoint",
-          "documentation" : "Endpoint information"
+          "documentation" : "The PublicEndpoint attached to the EndpointId from the request."
         },
         "Events" : {
           "shape" : "MapOfEvent",
-          "documentation" : "Events"
+          "documentation" : "An object that contains a set of events associated with the endpoint."
         }
       },
-      "documentation" : "Events batch definition",
+      "documentation" : "A batch of PublicEndpoints and Events to process.",
       "required" : [ ]
     },
     "EventsRequest" : {
@@ -4802,10 +4848,10 @@
       "members" : {
         "BatchItem" : {
           "shape" : "MapOfEventsBatch",
-          "documentation" : "Batch of events with endpoint id as the key and an object of EventsBatch as value. The EventsBatch object has the PublicEndpoint and a map of event Id's to events"
+          "documentation" : "A batch of events to process. Each BatchItem consists of an endpoint ID as the key, and an EventsBatch object as the value."
         }
       },
-      "documentation" : "Put Events request",
+      "documentation" : "A set of events to process.",
       "required" : [ ]
     },
     "EventsResponse" : {
@@ -4813,10 +4859,10 @@
       "members" : {
         "Results" : {
           "shape" : "MapOfItemResponse",
-          "documentation" : "A map containing a multi part response for each endpoint, with the endpoint id as the key and item response as the value"
+          "documentation" : "A map that contains a multipart response for each endpoint. Each item in this object uses the endpoint ID as the key, and the item response as the value.\n\nIf no item response exists, the value can also be one of the following: 202 (if the request was processed successfully) or 400 (if the payload was invalid, or required fields were missing)."
         }
       },
-      "documentation" : "The results from processing a put events request"
+      "documentation" : "Custom messages associated with events."
     },
     "ExportJobRequest" : {
       "type" : "structure",
@@ -6198,14 +6244,14 @@
       "members" : {
         "EndpointItemResponse" : {
           "shape" : "EndpointItemResponse",
-          "documentation" : "Endpoint item response after endpoint registration"
+          "documentation" : "The response received after the endpoint was accepted."
         },
         "EventsItemResponse" : {
           "shape" : "MapOfEventItemResponse",
-          "documentation" : "Events item response is a multipart response object per event Id, with eventId as the key and EventItemResponse object as the value"
+          "documentation" : "A multipart response object that contains a key and value for each event ID in the request. In each object, the event ID is the key, and an EventItemResponse object is the value."
         }
       },
-      "documentation" : "The endpoint and events combined response definition"
+      "documentation" : "The response that's provided after registering the endpoint."
     },
     "JobStatus" : {
       "type" : "string",
@@ -6418,14 +6464,15 @@
       "members" : {
         "ComparisonOperator" : {
           "shape" : "__string",
-          "documentation" : "GREATER_THAN | LESS_THAN | GREATER_THAN_OR_EQUAL | LESS_THAN_OR_EQUAL | EQUAL"
+          "documentation" : "The operator that you're using to compare metric values. Possible values: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL"
         },
         "Value" : {
           "shape" : "__double",
           "documentation" : "Value to be compared."
         }
       },
-      "documentation" : "Custom metric dimension"
+      "documentation" : "Custom metric dimension",
+      "required" : [ ]
     },
     "Mode" : {
       "type" : "string",
@@ -6461,7 +6508,7 @@
           "documentation" : "The phone number to get information about. The phone number that you provide should include a country code. If the number doesn't include a valid country code, the operation might result in an error."
         }
       },
-      "documentation" : "Phone Number Information request."
+      "documentation" : "Phone Number Validate request."
     },
     "NumberValidateResponse" : {
       "type" : "structure",
@@ -6500,7 +6547,7 @@
         },
         "OriginalCountryCodeIso2" : {
           "shape" : "__string",
-          "documentation" : "The two-character ISO code for the country or region that you included in the request body."
+          "documentation" : "The two-character code (in ISO 3166-1 alpha-2 format) for the country or region in the request body."
         },
         "OriginalPhoneNumber" : {
           "shape" : "__string",
@@ -6523,7 +6570,7 @@
           "documentation" : "The postal code for the location where the phone number was originally registered."
         }
       },
-      "documentation" : "Phone Number Information response."
+      "documentation" : "Phone Number Validate response."
     },
     "PhoneNumberValidateRequest" : {
       "type" : "structure",
@@ -6550,7 +6597,7 @@
       "members" : {
         "Address" : {
           "shape" : "__string",
-          "documentation" : "The unique identifier for the recipient. For example, an address could be a device token or an endpoint ID."
+          "documentation" : "The unique identifier for the recipient. For example, an address could be a device token, email address, or mobile phone number."
         },
         "Attributes" : {
           "shape" : "MapOfListOf__string",
@@ -6566,7 +6613,7 @@
         },
         "EffectiveDate" : {
           "shape" : "__string",
-          "documentation" : "The date and time when the endpoint was last updated."
+          "documentation" : "The date and time when the endpoint was last updated, in  ISO 8601 format."
         },
         "EndpointStatus" : {
           "shape" : "__string",
@@ -6652,25 +6699,38 @@
       "members" : {
         "End" : {
           "shape" : "__string",
-          "documentation" : "The default end time for quiet time in ISO 8601 format."
+          "documentation" : "The time at which quiet time should end. The value that you specify has to be in HH:mm format, where HH is the hour in 24-hour format (with a leading zero, if applicable), and mm is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM."
         },
         "Start" : {
           "shape" : "__string",
-          "documentation" : "The default start time for quiet time in ISO 8601 format."
+          "documentation" : "The time at which quiet time should begin. The value that you specify has to be in HH:mm format, where HH is the hour in 24-hour format (with a leading zero, if applicable), and mm is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM."
         }
       },
       "documentation" : "Quiet Time"
+    },
+    "RawEmail" : {
+      "type" : "structure",
+      "members" : {
+        "Data" : {
+          "shape" : "__blob",
+          "documentation" : "The raw data of the email."
+        }
+      },
+      "documentation" : "An email represented as a raw MIME message."
+    },
+    "__blob" : {
+      "type" : "blob"
     },
     "RecencyDimension" : {
       "type" : "structure",
       "members" : {
         "Duration" : {
           "shape" : "Duration",
-          "documentation" : "The length of time during which users have been active or inactive with your app.\nValid values: HR_24, DAY_7, DAY_14, DAY_30"
+          "documentation" : "The length of time during which users have been active or inactive with your app.\n\nValid values: HR_24, DAY_7, DAY_14, DAY_30"
         },
         "RecencyType" : {
           "shape" : "RecencyType",
-          "documentation" : "The recency dimension type:\nACTIVE - Users who have used your app within the specified duration are included in the segment.\nINACTIVE - Users who have not used your app within the specified duration are included in the segment."
+          "documentation" : "The recency dimension type:\n\nACTIVE - Users who have used your app within the specified duration are included in the segment.\n\nINACTIVE - Users who have not used your app within the specified duration are included in the segment."
         }
       },
       "documentation" : "Define how a segment based on recency of use.",
@@ -6934,7 +6994,7 @@
         },
         "SourceSegments" : {
           "shape" : "ListOfSegmentReference",
-          "documentation" : "The base segment that you build your segment on. The source segment defines the starting \"universe\" of endpoints. When you add dimensions to the segment, it filters the source segment based on the dimensions that you specify. You can specify more than one dimensional segment. You can only specify one imported segment."
+          "documentation" : "The base segment that you build your segment on. The source segment defines the starting \"universe\" of endpoints. When you add dimensions to the segment, it filters the source segment based on the dimensions that you specify. You can specify more than one dimensional segment. You can only specify one imported segment.\n\nNOTE: If you specify an imported segment for this attribute, the segment size estimate that appears in the Amazon Pinpoint console shows the size of the imported segment, without any filters applied to it."
         },
         "SourceType" : {
           "shape" : "SourceType",
@@ -6999,7 +7059,7 @@
       "members" : {
         "Country" : {
           "shape" : "SetDimension",
-          "documentation" : "The country filter according to ISO 3166-1 Alpha-2 codes."
+          "documentation" : "The country or region, in ISO 3166-1 alpha-2 format."
         },
         "GPSPoint" : {
           "shape" : "GPSPointDimension",
@@ -7020,7 +7080,8 @@
           "documentation" : "If specified contains a specific version of the segment included."
         }
       },
-      "documentation" : "Segment reference."
+      "documentation" : "Segment reference.",
+      "required" : [ ]
     },
     "SegmentResponse" : {
       "type" : "structure",
@@ -7187,7 +7248,7 @@
       "members" : {
         "Duration" : {
           "shape" : "__integer",
-          "documentation" : "Session duration in millis"
+          "documentation" : "The duration of the session, in milliseconds."
         },
         "Id" : {
           "shape" : "__string",
@@ -7210,7 +7271,7 @@
       "members" : {
         "DimensionType" : {
           "shape" : "DimensionType",
-          "documentation" : "The type of dimension:\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment."
+          "documentation" : "The type of dimension:\n\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\n\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment."
         },
         "Values" : {
           "shape" : "ListOf__string",
@@ -7219,6 +7280,38 @@
       },
       "documentation" : "Dimension specification of a segment.",
       "required" : [ ]
+    },
+    "SimpleEmail" : {
+      "type" : "structure",
+      "members" : {
+        "HtmlPart" : {
+          "shape" : "SimpleEmailPart",
+          "documentation" : "The content of the message, in HTML format. Use this for email clients that can process HTML. You can include clickable links, formatted text, and much more in an HTML message."
+        },
+        "Subject" : {
+          "shape" : "SimpleEmailPart",
+          "documentation" : "The subject of the message: A short summary of the content, which will appear in the recipient's inbox."
+        },
+        "TextPart" : {
+          "shape" : "SimpleEmailPart",
+          "documentation" : "The content of the message, in text format. Use this for text-based email clients, or clients on high-latency networks (such as mobile devices)."
+        }
+      },
+      "documentation" : "An email composed of a subject, a text part and a html part."
+    },
+    "SimpleEmailPart" : {
+      "type" : "structure",
+      "members" : {
+        "Charset" : {
+          "shape" : "__string",
+          "documentation" : "The character set of the content."
+        },
+        "Data" : {
+          "shape" : "__string",
+          "documentation" : "The textual data of the content."
+        }
+      },
+      "documentation" : "Textual email data, plus an optional character set specification."
     },
     "SourceType" : {
       "type" : "string",
@@ -7686,7 +7779,7 @@
         },
         "Limits" : {
           "shape" : "CampaignLimits",
-          "documentation" : "The default campaign limits for the app. These limits apply to each campaign for the app, unless the campaign overrides the default with limits of its own."
+          "documentation" : "The limits that apply to each campaign in the project by default. Campaigns can also have their own limits, which override the settings at the project level."
         },
         "QuietTime" : {
           "shape" : "QuietTime",

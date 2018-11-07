@@ -130,7 +130,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastModified;
     /**
      * <p>
-     * Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.
+     * Information about a webhook that connects repository events to a build project in AWS CodeBuild.
      * </p>
      */
     private Webhook webhook;
@@ -905,11 +905,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.
+     * Information about a webhook that connects repository events to a build project in AWS CodeBuild.
      * </p>
      * 
      * @param webhook
-     *        Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.
+     *        Information about a webhook that connects repository events to a build project in AWS CodeBuild.
      */
 
     public void setWebhook(Webhook webhook) {
@@ -918,11 +918,10 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.
+     * Information about a webhook that connects repository events to a build project in AWS CodeBuild.
      * </p>
      * 
-     * @return Information about a webhook in GitHub that connects repository events to a build project in AWS
-     *         CodeBuild.
+     * @return Information about a webhook that connects repository events to a build project in AWS CodeBuild.
      */
 
     public Webhook getWebhook() {
@@ -931,11 +930,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.
+     * Information about a webhook that connects repository events to a build project in AWS CodeBuild.
      * </p>
      * 
      * @param webhook
-     *        Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.
+     *        Information about a webhook that connects repository events to a build project in AWS CodeBuild.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

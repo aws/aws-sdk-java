@@ -26,7 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Session implements Serializable, Cloneable, StructuredPojo {
 
-    /** Session duration in millis */
+    /** The duration of the session, in milliseconds. */
     private Integer duration;
     /** A unique identifier for the session. */
     private String id;
@@ -36,10 +36,10 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     private String stopTimestamp;
 
     /**
-     * Session duration in millis
+     * The duration of the session, in milliseconds.
      * 
      * @param duration
-     *        Session duration in millis
+     *        The duration of the session, in milliseconds.
      */
 
     public void setDuration(Integer duration) {
@@ -47,9 +47,9 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Session duration in millis
+     * The duration of the session, in milliseconds.
      * 
-     * @return Session duration in millis
+     * @return The duration of the session, in milliseconds.
      */
 
     public Integer getDuration() {
@@ -57,10 +57,10 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Session duration in millis
+     * The duration of the session, in milliseconds.
      * 
      * @param duration
-     *        Session duration in millis
+     *        The duration of the session, in milliseconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

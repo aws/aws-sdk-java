@@ -26,16 +26,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentLocation implements Serializable, Cloneable, StructuredPojo {
 
-    /** The country filter according to ISO 3166-1 Alpha-2 codes. */
+    /** The country or region, in ISO 3166-1 alpha-2 format. */
     private SetDimension country;
     /** The GPS Point dimension. */
     private GPSPointDimension gPSPoint;
 
     /**
-     * The country filter according to ISO 3166-1 Alpha-2 codes.
+     * The country or region, in ISO 3166-1 alpha-2 format.
      * 
      * @param country
-     *        The country filter according to ISO 3166-1 Alpha-2 codes.
+     *        The country or region, in ISO 3166-1 alpha-2 format.
      */
 
     public void setCountry(SetDimension country) {
@@ -43,9 +43,9 @@ public class SegmentLocation implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The country filter according to ISO 3166-1 Alpha-2 codes.
+     * The country or region, in ISO 3166-1 alpha-2 format.
      * 
-     * @return The country filter according to ISO 3166-1 Alpha-2 codes.
+     * @return The country or region, in ISO 3166-1 alpha-2 format.
      */
 
     public SetDimension getCountry() {
@@ -53,10 +53,10 @@ public class SegmentLocation implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The country filter according to ISO 3166-1 Alpha-2 codes.
+     * The country or region, in ISO 3166-1 alpha-2 format.
      * 
      * @param country
-     *        The country filter according to ISO 3166-1 Alpha-2 codes.
+     *        The country or region, in ISO 3166-1 alpha-2 format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -32,9 +32,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     private String clientSdkVersion;
     /** The name of the custom event that you're recording. */
     private String eventType;
-    /** Event metrics */
+    /** Custom metrics related to the event. */
     private java.util.Map<String, Double> metrics;
-    /** The session */
+    /** Information about the session in which the event occurred. */
     private Session session;
     /** The date and time when the event occurred, in ISO 8601 format. */
     private String timestamp;
@@ -163,9 +163,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Event metrics
+     * Custom metrics related to the event.
      * 
-     * @return Event metrics
+     * @return Custom metrics related to the event.
      */
 
     public java.util.Map<String, Double> getMetrics() {
@@ -173,10 +173,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Event metrics
+     * Custom metrics related to the event.
      * 
      * @param metrics
-     *        Event metrics
+     *        Custom metrics related to the event.
      */
 
     public void setMetrics(java.util.Map<String, Double> metrics) {
@@ -184,10 +184,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Event metrics
+     * Custom metrics related to the event.
      * 
      * @param metrics
-     *        Event metrics
+     *        Custom metrics related to the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,10 +218,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The session
+     * Information about the session in which the event occurred.
      * 
      * @param session
-     *        The session
+     *        Information about the session in which the event occurred.
      */
 
     public void setSession(Session session) {
@@ -229,9 +229,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The session
+     * Information about the session in which the event occurred.
      * 
-     * @return The session
+     * @return Information about the session in which the event occurred.
      */
 
     public Session getSession() {
@@ -239,10 +239,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The session
+     * Information about the session in which the event occurred.
      * 
      * @param session
-     *        The session
+     *        Information about the session in which the event occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

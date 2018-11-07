@@ -143,7 +143,8 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Set to true to report to your source provider the status of a build's start and completion. If you use this
-     * option with a source provider other than GitHub, an invalidInputException is thrown.
+     * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an invalidInputException is
+     * thrown.
      * </p>
      */
     private Boolean reportBuildStatusOverride;
@@ -1112,12 +1113,14 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Set to true to report to your source provider the status of a build's start and completion. If you use this
-     * option with a source provider other than GitHub, an invalidInputException is thrown.
+     * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an invalidInputException is
+     * thrown.
      * </p>
      * 
      * @param reportBuildStatusOverride
      *        Set to true to report to your source provider the status of a build's start and completion. If you use
-     *        this option with a source provider other than GitHub, an invalidInputException is thrown.
+     *        this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an
+     *        invalidInputException is thrown.
      */
 
     public void setReportBuildStatusOverride(Boolean reportBuildStatusOverride) {
@@ -1127,11 +1130,13 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Set to true to report to your source provider the status of a build's start and completion. If you use this
-     * option with a source provider other than GitHub, an invalidInputException is thrown.
+     * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an invalidInputException is
+     * thrown.
      * </p>
      * 
      * @return Set to true to report to your source provider the status of a build's start and completion. If you use
-     *         this option with a source provider other than GitHub, an invalidInputException is thrown.
+     *         this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an
+     *         invalidInputException is thrown.
      */
 
     public Boolean getReportBuildStatusOverride() {
@@ -1141,12 +1146,14 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Set to true to report to your source provider the status of a build's start and completion. If you use this
-     * option with a source provider other than GitHub, an invalidInputException is thrown.
+     * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an invalidInputException is
+     * thrown.
      * </p>
      * 
      * @param reportBuildStatusOverride
      *        Set to true to report to your source provider the status of a build's start and completion. If you use
-     *        this option with a source provider other than GitHub, an invalidInputException is thrown.
+     *        this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an
+     *        invalidInputException is thrown.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1158,11 +1165,13 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Set to true to report to your source provider the status of a build's start and completion. If you use this
-     * option with a source provider other than GitHub, an invalidInputException is thrown.
+     * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an invalidInputException is
+     * thrown.
      * </p>
      * 
      * @return Set to true to report to your source provider the status of a build's start and completion. If you use
-     *         this option with a source provider other than GitHub, an invalidInputException is thrown.
+     *         this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an
+     *         invalidInputException is thrown.
      */
 
     public Boolean isReportBuildStatusOverride() {

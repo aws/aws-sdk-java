@@ -48,6 +48,10 @@ public class EmailChannelRequestJsonUnmarshaller implements Unmarshaller<EmailCh
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ConfigurationSet", targetDepth)) {
+                    context.nextToken();
+                    emailChannelRequest.setConfigurationSet(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Enabled", targetDepth)) {
                     context.nextToken();
                     emailChannelRequest.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));

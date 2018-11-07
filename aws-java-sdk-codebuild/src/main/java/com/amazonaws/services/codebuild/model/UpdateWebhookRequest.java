@@ -35,13 +35,14 @@ public class UpdateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
      * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
-     * branchFilter is empty, then all branches are built.
+     * <code>branchFilter</code> is empty, then all branches are built.
      * </p>
      */
     private String branchFilter;
     /**
      * <p>
-     * A boolean value that specifies whether the associated repository's secret token should be updated.
+     * A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you
+     * use Bitbucket for your repository then <code>rotateSecret</code> is ignored.
      * </p>
      */
     private Boolean rotateSecret;
@@ -90,13 +91,13 @@ public class UpdateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
      * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
-     * branchFilter is empty, then all branches are built.
+     * <code>branchFilter</code> is empty, then all branches are built.
      * </p>
      * 
      * @param branchFilter
      *        A regular expression used to determine which branches in a repository are built when a webhook is
      *        triggered. If the name of a branch matches the regular expression, then it is built. If it doesn't match,
-     *        then it is not. If branchFilter is empty, then all branches are built.
+     *        then it is not. If <code>branchFilter</code> is empty, then all branches are built.
      */
 
     public void setBranchFilter(String branchFilter) {
@@ -107,12 +108,12 @@ public class UpdateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
      * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
-     * branchFilter is empty, then all branches are built.
+     * <code>branchFilter</code> is empty, then all branches are built.
      * </p>
      * 
      * @return A regular expression used to determine which branches in a repository are built when a webhook is
      *         triggered. If the name of a branch matches the regular expression, then it is built. If it doesn't match,
-     *         then it is not. If branchFilter is empty, then all branches are built.
+     *         then it is not. If <code>branchFilter</code> is empty, then all branches are built.
      */
 
     public String getBranchFilter() {
@@ -123,13 +124,13 @@ public class UpdateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
      * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
-     * branchFilter is empty, then all branches are built.
+     * <code>branchFilter</code> is empty, then all branches are built.
      * </p>
      * 
      * @param branchFilter
      *        A regular expression used to determine which branches in a repository are built when a webhook is
      *        triggered. If the name of a branch matches the regular expression, then it is built. If it doesn't match,
-     *        then it is not. If branchFilter is empty, then all branches are built.
+     *        then it is not. If <code>branchFilter</code> is empty, then all branches are built.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,11 +141,13 @@ public class UpdateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A boolean value that specifies whether the associated repository's secret token should be updated.
+     * A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you
+     * use Bitbucket for your repository then <code>rotateSecret</code> is ignored.
      * </p>
      * 
      * @param rotateSecret
-     *        A boolean value that specifies whether the associated repository's secret token should be updated.
+     *        A boolean value that specifies whether the associated GitHub repository's secret token should be updated.
+     *        If you use Bitbucket for your repository then <code>rotateSecret</code> is ignored.
      */
 
     public void setRotateSecret(Boolean rotateSecret) {
@@ -153,10 +156,12 @@ public class UpdateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A boolean value that specifies whether the associated repository's secret token should be updated.
+     * A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you
+     * use Bitbucket for your repository then <code>rotateSecret</code> is ignored.
      * </p>
      * 
-     * @return A boolean value that specifies whether the associated repository's secret token should be updated.
+     * @return A boolean value that specifies whether the associated GitHub repository's secret token should be updated.
+     *         If you use Bitbucket for your repository then <code>rotateSecret</code> is ignored.
      */
 
     public Boolean getRotateSecret() {
@@ -165,11 +170,13 @@ public class UpdateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A boolean value that specifies whether the associated repository's secret token should be updated.
+     * A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you
+     * use Bitbucket for your repository then <code>rotateSecret</code> is ignored.
      * </p>
      * 
      * @param rotateSecret
-     *        A boolean value that specifies whether the associated repository's secret token should be updated.
+     *        A boolean value that specifies whether the associated GitHub repository's secret token should be updated.
+     *        If you use Bitbucket for your repository then <code>rotateSecret</code> is ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,10 +187,12 @@ public class UpdateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A boolean value that specifies whether the associated repository's secret token should be updated.
+     * A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you
+     * use Bitbucket for your repository then <code>rotateSecret</code> is ignored.
      * </p>
      * 
-     * @return A boolean value that specifies whether the associated repository's secret token should be updated.
+     * @return A boolean value that specifies whether the associated GitHub repository's secret token should be updated.
+     *         If you use Bitbucket for your repository then <code>rotateSecret</code> is ignored.
      */
 
     public Boolean isRotateSecret() {

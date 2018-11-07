@@ -111,6 +111,12 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
     private Boolean tracingEnabled;
     /**
      * <p>
+     * The ARN of the WebAcl associated with the <a>Stage</a>.
+     * </p>
+     */
+    private String webAclArn;
+    /**
+     * <p>
      * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      */
@@ -776,6 +782,46 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The ARN of the WebAcl associated with the <a>Stage</a>.
+     * </p>
+     * 
+     * @param webAclArn
+     *        The ARN of the WebAcl associated with the <a>Stage</a>.
+     */
+
+    public void setWebAclArn(String webAclArn) {
+        this.webAclArn = webAclArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the WebAcl associated with the <a>Stage</a>.
+     * </p>
+     * 
+     * @return The ARN of the WebAcl associated with the <a>Stage</a>.
+     */
+
+    public String getWebAclArn() {
+        return this.webAclArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the WebAcl associated with the <a>Stage</a>.
+     * </p>
+     * 
+     * @param webAclArn
+     *        The ARN of the WebAcl associated with the <a>Stage</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stage withWebAclArn(String webAclArn) {
+        setWebAclArn(webAclArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      * 
@@ -952,6 +998,8 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
             sb.append("CanarySettings: ").append(getCanarySettings()).append(",");
         if (getTracingEnabled() != null)
             sb.append("TracingEnabled: ").append(getTracingEnabled()).append(",");
+        if (getWebAclArn() != null)
+            sb.append("WebAclArn: ").append(getWebAclArn()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getCreatedDate() != null)
@@ -1024,6 +1072,10 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTracingEnabled() != null && other.getTracingEnabled().equals(this.getTracingEnabled()) == false)
             return false;
+        if (other.getWebAclArn() == null ^ this.getWebAclArn() == null)
+            return false;
+        if (other.getWebAclArn() != null && other.getWebAclArn().equals(this.getWebAclArn()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -1057,6 +1109,7 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAccessLogSettings() == null) ? 0 : getAccessLogSettings().hashCode());
         hashCode = prime * hashCode + ((getCanarySettings() == null) ? 0 : getCanarySettings().hashCode());
         hashCode = prime * hashCode + ((getTracingEnabled() == null) ? 0 : getTracingEnabled().hashCode());
+        hashCode = prime * hashCode + ((getWebAclArn() == null) ? 0 : getWebAclArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate().hashCode());

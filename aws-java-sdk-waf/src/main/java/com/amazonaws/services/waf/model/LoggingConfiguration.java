@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Amazon Kinesis Data Firehose delivery streams, <code>RedactedFields</code> information, and the web ACL Amazon
- * Resource Name (ARN).
+ * The Amazon Kinesis Data Firehose, <code>RedactedFields</code> information, and the web ACL Amazon Resource Name
+ * (ARN).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/LoggingConfiguration" target="_top">AWS
@@ -37,14 +37,14 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
     private String resourceArn;
     /**
      * <p>
-     * An array of Amazon Kinesis Data Firehose delivery stream ARNs.
+     * An array of Amazon Kinesis Data Firehose ARNs.
      * </p>
      */
     private java.util.List<String> logDestinationConfigs;
     /**
      * <p>
      * The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the
-     * cookie field in the delivery stream will be <code>xxx</code>.
+     * cookie field in the firehose will be <code>xxx</code>.
      * </p>
      */
     private java.util.List<FieldToMatch> redactedFields;
@@ -94,10 +94,10 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * An array of Amazon Kinesis Data Firehose delivery stream ARNs.
+     * An array of Amazon Kinesis Data Firehose ARNs.
      * </p>
      * 
-     * @return An array of Amazon Kinesis Data Firehose delivery stream ARNs.
+     * @return An array of Amazon Kinesis Data Firehose ARNs.
      */
 
     public java.util.List<String> getLogDestinationConfigs() {
@@ -106,11 +106,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * An array of Amazon Kinesis Data Firehose delivery stream ARNs.
+     * An array of Amazon Kinesis Data Firehose ARNs.
      * </p>
      * 
      * @param logDestinationConfigs
-     *        An array of Amazon Kinesis Data Firehose delivery stream ARNs.
+     *        An array of Amazon Kinesis Data Firehose ARNs.
      */
 
     public void setLogDestinationConfigs(java.util.Collection<String> logDestinationConfigs) {
@@ -124,7 +124,7 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * An array of Amazon Kinesis Data Firehose delivery stream ARNs.
+     * An array of Amazon Kinesis Data Firehose ARNs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -133,7 +133,7 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param logDestinationConfigs
-     *        An array of Amazon Kinesis Data Firehose delivery stream ARNs.
+     *        An array of Amazon Kinesis Data Firehose ARNs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -149,11 +149,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * An array of Amazon Kinesis Data Firehose delivery stream ARNs.
+     * An array of Amazon Kinesis Data Firehose ARNs.
      * </p>
      * 
      * @param logDestinationConfigs
-     *        An array of Amazon Kinesis Data Firehose delivery stream ARNs.
+     *        An array of Amazon Kinesis Data Firehose ARNs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,11 +165,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the
-     * cookie field in the delivery stream will be <code>xxx</code>.
+     * cookie field in the firehose will be <code>xxx</code>.
      * </p>
      * 
      * @return The parts of the request that you want redacted from the logs. For example, if you redact the cookie
-     *         field, the cookie field in the delivery stream will be <code>xxx</code>.
+     *         field, the cookie field in the firehose will be <code>xxx</code>.
      */
 
     public java.util.List<FieldToMatch> getRedactedFields() {
@@ -179,12 +179,12 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the
-     * cookie field in the delivery stream will be <code>xxx</code>.
+     * cookie field in the firehose will be <code>xxx</code>.
      * </p>
      * 
      * @param redactedFields
      *        The parts of the request that you want redacted from the logs. For example, if you redact the cookie
-     *        field, the cookie field in the delivery stream will be <code>xxx</code>.
+     *        field, the cookie field in the firehose will be <code>xxx</code>.
      */
 
     public void setRedactedFields(java.util.Collection<FieldToMatch> redactedFields) {
@@ -199,7 +199,7 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the
-     * cookie field in the delivery stream will be <code>xxx</code>.
+     * cookie field in the firehose will be <code>xxx</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -209,7 +209,7 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
      * 
      * @param redactedFields
      *        The parts of the request that you want redacted from the logs. For example, if you redact the cookie
-     *        field, the cookie field in the delivery stream will be <code>xxx</code>.
+     *        field, the cookie field in the firehose will be <code>xxx</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,12 +226,12 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the
-     * cookie field in the delivery stream will be <code>xxx</code>.
+     * cookie field in the firehose will be <code>xxx</code>.
      * </p>
      * 
      * @param redactedFields
      *        The parts of the request that you want redacted from the logs. For example, if you redact the cookie
-     *        field, the cookie field in the delivery stream will be <code>xxx</code>.
+     *        field, the cookie field in the firehose will be <code>xxx</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

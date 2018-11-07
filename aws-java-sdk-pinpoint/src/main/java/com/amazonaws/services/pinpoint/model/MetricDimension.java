@@ -26,16 +26,21 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MetricDimension implements Serializable, Cloneable, StructuredPojo {
 
-    /** GREATER_THAN | LESS_THAN | GREATER_THAN_OR_EQUAL | LESS_THAN_OR_EQUAL | EQUAL */
+    /**
+     * The operator that you're using to compare metric values. Possible values: GREATER_THAN, LESS_THAN,
+     * GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL
+     */
     private String comparisonOperator;
     /** Value to be compared. */
     private Double value;
 
     /**
-     * GREATER_THAN | LESS_THAN | GREATER_THAN_OR_EQUAL | LESS_THAN_OR_EQUAL | EQUAL
+     * The operator that you're using to compare metric values. Possible values: GREATER_THAN, LESS_THAN,
+     * GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL
      * 
      * @param comparisonOperator
-     *        GREATER_THAN | LESS_THAN | GREATER_THAN_OR_EQUAL | LESS_THAN_OR_EQUAL | EQUAL
+     *        The operator that you're using to compare metric values. Possible values: GREATER_THAN, LESS_THAN,
+     *        GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL
      */
 
     public void setComparisonOperator(String comparisonOperator) {
@@ -43,9 +48,11 @@ public class MetricDimension implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * GREATER_THAN | LESS_THAN | GREATER_THAN_OR_EQUAL | LESS_THAN_OR_EQUAL | EQUAL
+     * The operator that you're using to compare metric values. Possible values: GREATER_THAN, LESS_THAN,
+     * GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL
      * 
-     * @return GREATER_THAN | LESS_THAN | GREATER_THAN_OR_EQUAL | LESS_THAN_OR_EQUAL | EQUAL
+     * @return The operator that you're using to compare metric values. Possible values: GREATER_THAN, LESS_THAN,
+     *         GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL
      */
 
     public String getComparisonOperator() {
@@ -53,10 +60,12 @@ public class MetricDimension implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * GREATER_THAN | LESS_THAN | GREATER_THAN_OR_EQUAL | LESS_THAN_OR_EQUAL | EQUAL
+     * The operator that you're using to compare metric values. Possible values: GREATER_THAN, LESS_THAN,
+     * GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL
      * 
      * @param comparisonOperator
-     *        GREATER_THAN | LESS_THAN | GREATER_THAN_OR_EQUAL | LESS_THAN_OR_EQUAL | EQUAL
+     *        The operator that you're using to compare metric values. Possible values: GREATER_THAN, LESS_THAN,
+     *        GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

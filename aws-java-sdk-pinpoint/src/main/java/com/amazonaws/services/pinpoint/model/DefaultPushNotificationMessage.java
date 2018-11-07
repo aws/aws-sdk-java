@@ -42,8 +42,8 @@ public class DefaultPushNotificationMessage implements Serializable, Cloneable, 
      */
     private java.util.Map<String, String> data;
     /**
-     * Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration
-     * and Phone Home use cases.
+     * Indicates if the message should display on the recipient's device. You can use silent pushes for remote
+     * configuration or to deliver messages to in-app notification centers.
      */
     private Boolean silentPush;
     /** Default message substitutions. Can be overridden by individual address substitutions. */
@@ -252,12 +252,12 @@ public class DefaultPushNotificationMessage implements Serializable, Cloneable, 
     }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration
-     * and Phone Home use cases.
+     * Indicates if the message should display on the recipient's device. You can use silent pushes for remote
+     * configuration or to deliver messages to in-app notification centers.
      * 
      * @param silentPush
-     *        Indicates if the message should display on the users device. Silent pushes can be used for Remote
-     *        Configuration and Phone Home use cases.
+     *        Indicates if the message should display on the recipient's device. You can use silent pushes for remote
+     *        configuration or to deliver messages to in-app notification centers.
      */
 
     public void setSilentPush(Boolean silentPush) {
@@ -265,11 +265,11 @@ public class DefaultPushNotificationMessage implements Serializable, Cloneable, 
     }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration
-     * and Phone Home use cases.
+     * Indicates if the message should display on the recipient's device. You can use silent pushes for remote
+     * configuration or to deliver messages to in-app notification centers.
      * 
-     * @return Indicates if the message should display on the users device. Silent pushes can be used for Remote
-     *         Configuration and Phone Home use cases.
+     * @return Indicates if the message should display on the recipient's device. You can use silent pushes for remote
+     *         configuration or to deliver messages to in-app notification centers.
      */
 
     public Boolean getSilentPush() {
@@ -277,12 +277,12 @@ public class DefaultPushNotificationMessage implements Serializable, Cloneable, 
     }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration
-     * and Phone Home use cases.
+     * Indicates if the message should display on the recipient's device. You can use silent pushes for remote
+     * configuration or to deliver messages to in-app notification centers.
      * 
      * @param silentPush
-     *        Indicates if the message should display on the users device. Silent pushes can be used for Remote
-     *        Configuration and Phone Home use cases.
+     *        Indicates if the message should display on the recipient's device. You can use silent pushes for remote
+     *        configuration or to deliver messages to in-app notification centers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,11 +292,11 @@ public class DefaultPushNotificationMessage implements Serializable, Cloneable, 
     }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration
-     * and Phone Home use cases.
+     * Indicates if the message should display on the recipient's device. You can use silent pushes for remote
+     * configuration or to deliver messages to in-app notification centers.
      * 
-     * @return Indicates if the message should display on the users device. Silent pushes can be used for Remote
-     *         Configuration and Phone Home use cases.
+     * @return Indicates if the message should display on the recipient's device. You can use silent pushes for remote
+     *         configuration or to deliver messages to in-app notification centers.
      */
 
     public Boolean isSilentPush() {

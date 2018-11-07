@@ -29,7 +29,7 @@ public class EndpointLocation implements Serializable, Cloneable, StructuredPojo
     /** The city where the endpoint is located. */
     private String city;
     /**
-     * The two-letter code for the country or region of the endpoint. Specified as an ISO 3166-1 Alpha-2 code, such as
+     * The two-letter code for the country or region of the endpoint. Specified as an ISO 3166-1 alpha-2 code, such as
      * "US" for the United States.
      */
     private String country;
@@ -77,11 +77,11 @@ public class EndpointLocation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The two-letter code for the country or region of the endpoint. Specified as an ISO 3166-1 Alpha-2 code, such as
+     * The two-letter code for the country or region of the endpoint. Specified as an ISO 3166-1 alpha-2 code, such as
      * "US" for the United States.
      * 
      * @param country
-     *        The two-letter code for the country or region of the endpoint. Specified as an ISO 3166-1 Alpha-2 code,
+     *        The two-letter code for the country or region of the endpoint. Specified as an ISO 3166-1 alpha-2 code,
      *        such as "US" for the United States.
      */
 
@@ -90,10 +90,10 @@ public class EndpointLocation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The two-letter code for the country or region of the endpoint. Specified as an ISO 3166-1 Alpha-2 code, such as
+     * The two-letter code for the country or region of the endpoint. Specified as an ISO 3166-1 alpha-2 code, such as
      * "US" for the United States.
      * 
-     * @return The two-letter code for the country or region of the endpoint. Specified as an ISO 3166-1 Alpha-2 code,
+     * @return The two-letter code for the country or region of the endpoint. Specified as an ISO 3166-1 alpha-2 code,
      *         such as "US" for the United States.
      */
 
@@ -102,11 +102,11 @@ public class EndpointLocation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The two-letter code for the country or region of the endpoint. Specified as an ISO 3166-1 Alpha-2 code, such as
+     * The two-letter code for the country or region of the endpoint. Specified as an ISO 3166-1 alpha-2 code, such as
      * "US" for the United States.
      * 
      * @param country
-     *        The two-letter code for the country or region of the endpoint. Specified as an ISO 3166-1 Alpha-2 code,
+     *        The two-letter code for the country or region of the endpoint. Specified as an ISO 3166-1 alpha-2 code,
      *        such as "US" for the United States.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

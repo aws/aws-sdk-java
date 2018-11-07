@@ -29,6 +29,8 @@ public class ListResourcesForWebACLRequestMarshaller {
 
     private static final MarshallingInfo<String> WEBACLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("WebACLId").build();
+    private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceType").build();
 
     private static final ListResourcesForWebACLRequestMarshaller instance = new ListResourcesForWebACLRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class ListResourcesForWebACLRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listResourcesForWebACLRequest.getWebACLId(), WEBACLID_BINDING);
+            protocolMarshaller.marshall(listResourcesForWebACLRequest.getResourceType(), RESOURCETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Phone Number Information response.
+ * Phone Number Validate response.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/NumberValidateResponse" target="_top">AWS
  *      API Documentation</a>
@@ -42,7 +42,7 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     private String countryCodeNumeric;
     /** The county where the phone number was originally registered. */
     private String county;
-    /** The two-character ISO code for the country or region that you included in the request body. */
+    /** The two-character code (in ISO 3166-1 alpha-2 format) for the country or region in the request body. */
     private String originalCountryCodeIso2;
     /** The phone number that you included in the request body. */
     private String originalPhoneNumber;
@@ -331,10 +331,10 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The two-character ISO code for the country or region that you included in the request body.
+     * The two-character code (in ISO 3166-1 alpha-2 format) for the country or region in the request body.
      * 
      * @param originalCountryCodeIso2
-     *        The two-character ISO code for the country or region that you included in the request body.
+     *        The two-character code (in ISO 3166-1 alpha-2 format) for the country or region in the request body.
      */
 
     public void setOriginalCountryCodeIso2(String originalCountryCodeIso2) {
@@ -342,9 +342,9 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The two-character ISO code for the country or region that you included in the request body.
+     * The two-character code (in ISO 3166-1 alpha-2 format) for the country or region in the request body.
      * 
-     * @return The two-character ISO code for the country or region that you included in the request body.
+     * @return The two-character code (in ISO 3166-1 alpha-2 format) for the country or region in the request body.
      */
 
     public String getOriginalCountryCodeIso2() {
@@ -352,10 +352,10 @@ public class NumberValidateResponse implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The two-character ISO code for the country or region that you included in the request body.
+     * The two-character code (in ISO 3166-1 alpha-2 format) for the country or region in the request body.
      * 
      * @param originalCountryCodeIso2
-     *        The two-character ISO code for the country or region that you included in the request body.
+     *        The two-character code (in ISO 3166-1 alpha-2 format) for the country or region in the request body.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

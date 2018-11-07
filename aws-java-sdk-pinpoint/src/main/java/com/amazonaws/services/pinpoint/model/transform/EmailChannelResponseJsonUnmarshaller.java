@@ -52,6 +52,10 @@ public class EmailChannelResponseJsonUnmarshaller implements Unmarshaller<EmailC
                     context.nextToken();
                     emailChannelResponse.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ConfigurationSet", targetDepth)) {
+                    context.nextToken();
+                    emailChannelResponse.setConfigurationSet(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
                     emailChannelResponse.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));

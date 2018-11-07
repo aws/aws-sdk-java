@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.
+ * Information about a webhook that connects repository events to a build project in AWS CodeBuild.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/Webhook" target="_top">AWS API
@@ -44,13 +44,18 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The secret token of the associated repository.
      * </p>
+     * <note>
+     * <p>
+     * A Bitbucket webhook does not support <code>secret</code>.
+     * </p>
+     * </note>
      */
     private String secret;
     /**
      * <p>
      * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
      * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
-     * branchFilter is empty, then all branches are built.
+     * <code>branchFilter</code> is empty, then all branches are built.
      * </p>
      */
     private String branchFilter;
@@ -145,9 +150,17 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The secret token of the associated repository.
      * </p>
+     * <note>
+     * <p>
+     * A Bitbucket webhook does not support <code>secret</code>.
+     * </p>
+     * </note>
      * 
      * @param secret
-     *        The secret token of the associated repository.
+     *        The secret token of the associated repository. </p> <note>
+     *        <p>
+     *        A Bitbucket webhook does not support <code>secret</code>.
+     *        </p>
      */
 
     public void setSecret(String secret) {
@@ -158,8 +171,16 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The secret token of the associated repository.
      * </p>
+     * <note>
+     * <p>
+     * A Bitbucket webhook does not support <code>secret</code>.
+     * </p>
+     * </note>
      * 
-     * @return The secret token of the associated repository.
+     * @return The secret token of the associated repository. </p> <note>
+     *         <p>
+     *         A Bitbucket webhook does not support <code>secret</code>.
+     *         </p>
      */
 
     public String getSecret() {
@@ -170,9 +191,17 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The secret token of the associated repository.
      * </p>
+     * <note>
+     * <p>
+     * A Bitbucket webhook does not support <code>secret</code>.
+     * </p>
+     * </note>
      * 
      * @param secret
-     *        The secret token of the associated repository.
+     *        The secret token of the associated repository. </p> <note>
+     *        <p>
+     *        A Bitbucket webhook does not support <code>secret</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,13 +214,13 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
      * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
-     * branchFilter is empty, then all branches are built.
+     * <code>branchFilter</code> is empty, then all branches are built.
      * </p>
      * 
      * @param branchFilter
      *        A regular expression used to determine which branches in a repository are built when a webhook is
      *        triggered. If the name of a branch matches the regular expression, then it is built. If it doesn't match,
-     *        then it is not. If branchFilter is empty, then all branches are built.
+     *        then it is not. If <code>branchFilter</code> is empty, then all branches are built.
      */
 
     public void setBranchFilter(String branchFilter) {
@@ -202,12 +231,12 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
      * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
-     * branchFilter is empty, then all branches are built.
+     * <code>branchFilter</code> is empty, then all branches are built.
      * </p>
      * 
      * @return A regular expression used to determine which branches in a repository are built when a webhook is
      *         triggered. If the name of a branch matches the regular expression, then it is built. If it doesn't match,
-     *         then it is not. If branchFilter is empty, then all branches are built.
+     *         then it is not. If <code>branchFilter</code> is empty, then all branches are built.
      */
 
     public String getBranchFilter() {
@@ -218,13 +247,13 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
      * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
-     * branchFilter is empty, then all branches are built.
+     * <code>branchFilter</code> is empty, then all branches are built.
      * </p>
      * 
      * @param branchFilter
      *        A regular expression used to determine which branches in a repository are built when a webhook is
      *        triggered. If the name of a branch matches the regular expression, then it is built. If it doesn't match,
-     *        then it is not. If branchFilter is empty, then all branches are built.
+     *        then it is not. If <code>branchFilter</code> is empty, then all branches are built.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
