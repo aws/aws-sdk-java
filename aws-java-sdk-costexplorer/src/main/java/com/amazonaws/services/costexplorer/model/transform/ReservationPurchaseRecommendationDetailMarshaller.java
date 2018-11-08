@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ReservationPurchaseRecommendationDetailMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
     private static final MarshallingInfo<StructuredPojo> INSTANCEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceDetails").build();
     private static final MarshallingInfo<String> RECOMMENDEDNUMBEROFINSTANCESTOPURCHASE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -80,6 +82,7 @@ public class ReservationPurchaseRecommendationDetailMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(reservationPurchaseRecommendationDetail.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(reservationPurchaseRecommendationDetail.getInstanceDetails(), INSTANCEDETAILS_BINDING);
             protocolMarshaller.marshall(reservationPurchaseRecommendationDetail.getRecommendedNumberOfInstancesToPurchase(),
                     RECOMMENDEDNUMBEROFINSTANCESTOPURCHASE_BINDING);

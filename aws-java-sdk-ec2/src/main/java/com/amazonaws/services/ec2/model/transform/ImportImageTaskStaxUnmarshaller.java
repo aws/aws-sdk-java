@@ -55,6 +55,11 @@ public class ImportImageTaskStaxUnmarshaller implements Unmarshaller<ImportImage
                     continue;
                 }
 
+                if (context.testExpression("encrypted", targetDepth)) {
+                    importImageTask.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("hypervisor", targetDepth)) {
                     importImageTask.setHypervisor(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -67,6 +72,11 @@ public class ImportImageTaskStaxUnmarshaller implements Unmarshaller<ImportImage
 
                 if (context.testExpression("importTaskId", targetDepth)) {
                     importImageTask.setImportTaskId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("kmsKeyId", targetDepth)) {
+                    importImageTask.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

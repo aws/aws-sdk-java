@@ -28,6 +28,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReservationPurchaseRecommendationDetail implements Serializable, Cloneable, StructuredPojo {
 
+    private String accountId;
     /**
      * <p>
      * Details about the instances that AWS recommends that you purchase.
@@ -144,6 +145,32 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
      * </p>
      */
     private String recurringStandardMonthlyCost;
+
+    /**
+     * @param accountId
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * @param accountId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReservationPurchaseRecommendationDetail withAccountId(String accountId) {
+        setAccountId(accountId);
+        return this;
+    }
 
     /**
      * <p>
@@ -927,6 +954,8 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getInstanceDetails() != null)
             sb.append("InstanceDetails: ").append(getInstanceDetails()).append(",");
         if (getRecommendedNumberOfInstancesToPurchase() != null)
@@ -977,6 +1006,10 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
         if (obj instanceof ReservationPurchaseRecommendationDetail == false)
             return false;
         ReservationPurchaseRecommendationDetail other = (ReservationPurchaseRecommendationDetail) obj;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
         if (other.getInstanceDetails() == null ^ this.getInstanceDetails() == null)
             return false;
         if (other.getInstanceDetails() != null && other.getInstanceDetails().equals(this.getInstanceDetails()) == false)
@@ -1068,6 +1101,7 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getInstanceDetails() == null) ? 0 : getInstanceDetails().hashCode());
         hashCode = prime * hashCode + ((getRecommendedNumberOfInstancesToPurchase() == null) ? 0 : getRecommendedNumberOfInstancesToPurchase().hashCode());
         hashCode = prime * hashCode + ((getRecommendedNormalizedUnitsToPurchase() == null) ? 0 : getRecommendedNormalizedUnitsToPurchase().hashCode());

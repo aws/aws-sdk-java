@@ -96,6 +96,14 @@ public class ImportSnapshotRequestMarshaller implements Marshaller<Request<Impor
             }
         }
 
+        if (importSnapshotRequest.getEncrypted() != null) {
+            request.addParameter("Encrypted", StringUtils.fromBoolean(importSnapshotRequest.getEncrypted()));
+        }
+
+        if (importSnapshotRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(importSnapshotRequest.getKmsKeyId()));
+        }
+
         if (importSnapshotRequest.getRoleName() != null) {
             request.addParameter("RoleName", StringUtils.fromString(importSnapshotRequest.getRoleName()));
         }

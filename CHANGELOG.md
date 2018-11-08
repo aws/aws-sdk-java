@@ -1,3 +1,16 @@
+# __1.11.445__ __2018-11-07__
+## __AWS Cost Explorer Service__
+  - ### Features
+    - Enable Payer Accounts to View Linked Account Recommendations. Payer Accounts can specify "LINKED" as scope in the request now. In the response, there is a new filed called AccountId in ReservationPurchaseRecommendationDetail for indicating which account is this recommendation detail belongs to.
+
+## __AWS Database Migration Service__
+  - ### Features
+    - Update the DMS TestConnectionSucceeds waiter.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - VM Import/Export now supports generating encrypted EBS snapshots, as well as AMIs backed by encrypted EBS snapshots during the import process.
+
 # __1.11.444__ __2018-11-06__
 ## __AWS CodeBuild__
   - ### Features

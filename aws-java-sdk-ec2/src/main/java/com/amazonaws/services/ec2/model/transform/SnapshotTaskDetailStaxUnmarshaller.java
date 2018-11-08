@@ -53,8 +53,18 @@ public class SnapshotTaskDetailStaxUnmarshaller implements Unmarshaller<Snapshot
                     continue;
                 }
 
+                if (context.testExpression("encrypted", targetDepth)) {
+                    snapshotTaskDetail.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("format", targetDepth)) {
                     snapshotTaskDetail.setFormat(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("kmsKeyId", targetDepth)) {
+                    snapshotTaskDetail.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

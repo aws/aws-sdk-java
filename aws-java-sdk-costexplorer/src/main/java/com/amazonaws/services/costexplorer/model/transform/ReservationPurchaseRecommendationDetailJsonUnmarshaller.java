@@ -48,6 +48,10 @@ public class ReservationPurchaseRecommendationDetailJsonUnmarshaller implements 
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AccountId", targetDepth)) {
+                    context.nextToken();
+                    reservationPurchaseRecommendationDetail.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("InstanceDetails", targetDepth)) {
                     context.nextToken();
                     reservationPurchaseRecommendationDetail.setInstanceDetails(InstanceDetailsJsonUnmarshaller.getInstance().unmarshall(context));

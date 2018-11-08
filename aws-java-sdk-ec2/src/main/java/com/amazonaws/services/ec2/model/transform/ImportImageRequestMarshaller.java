@@ -120,8 +120,16 @@ public class ImportImageRequestMarshaller implements Marshaller<Request<ImportIm
             }
         }
 
+        if (importImageRequest.getEncrypted() != null) {
+            request.addParameter("Encrypted", StringUtils.fromBoolean(importImageRequest.getEncrypted()));
+        }
+
         if (importImageRequest.getHypervisor() != null) {
             request.addParameter("Hypervisor", StringUtils.fromString(importImageRequest.getHypervisor()));
+        }
+
+        if (importImageRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(importImageRequest.getKmsKeyId()));
         }
 
         if (importImageRequest.getLicenseType() != null) {

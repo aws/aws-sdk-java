@@ -59,7 +59,8 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * annotation appear on some line items in my bill?</a>.
      * </p>
      * <p>
-     * Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>UnblendedCost</code>, and
+     * Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
+     * <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
      * <code>UsageQuantity</code>.
      * </p>
      * <note>
@@ -305,7 +306,8 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * annotation appear on some line items in my bill?</a>.
      * </p>
      * <p>
-     * Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>UnblendedCost</code>, and
+     * Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
+     * <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
      * <code>UsageQuantity</code>.
      * </p>
      * <note>
@@ -325,7 +327,8 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      *         href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
      *         annotation appear on some line items in my bill?</a>. </p>
      *         <p>
-     *         Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>UnblendedCost</code>, and
+     *         Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
+     *         <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
      *         <code>UsageQuantity</code>.
      *         </p>
      *         <note>
@@ -352,7 +355,8 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * annotation appear on some line items in my bill?</a>.
      * </p>
      * <p>
-     * Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>UnblendedCost</code>, and
+     * Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
+     * <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
      * <code>UsageQuantity</code>.
      * </p>
      * <note>
@@ -373,7 +377,8 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      *        href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
      *        annotation appear on some line items in my bill?</a>. </p>
      *        <p>
-     *        Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>UnblendedCost</code>, and
+     *        Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
+     *        <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
      *        <code>UsageQuantity</code>.
      *        </p>
      *        <note>
@@ -405,7 +410,8 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * annotation appear on some line items in my bill?</a>.
      * </p>
      * <p>
-     * Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>UnblendedCost</code>, and
+     * Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
+     * <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
      * <code>UsageQuantity</code>.
      * </p>
      * <note>
@@ -431,7 +437,8 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      *        href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
      *        annotation appear on some line items in my bill?</a>. </p>
      *        <p>
-     *        Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>UnblendedCost</code>, and
+     *        Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
+     *        <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
      *        <code>UsageQuantity</code>.
      *        </p>
      *        <note>
@@ -465,7 +472,8 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * annotation appear on some line items in my bill?</a>.
      * </p>
      * <p>
-     * Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>UnblendedCost</code>, and
+     * Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
+     * <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
      * <code>UsageQuantity</code>.
      * </p>
      * <note>
@@ -486,7 +494,8 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      *        href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
      *        annotation appear on some line items in my bill?</a>. </p>
      *        <p>
-     *        Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>UnblendedCost</code>, and
+     *        Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
+     *        <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
      *        <code>UsageQuantity</code>.
      *        </p>
      *        <note>

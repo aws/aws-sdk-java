@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum Granularity {
 
     DAILY("DAILY"),
-    MONTHLY("MONTHLY");
+    MONTHLY("MONTHLY"),
+    HOURLY("HOURLY");
 
     private String value;
 
