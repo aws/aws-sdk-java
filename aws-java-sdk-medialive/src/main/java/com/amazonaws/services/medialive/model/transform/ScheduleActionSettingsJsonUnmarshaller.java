@@ -48,6 +48,10 @@ public class ScheduleActionSettingsJsonUnmarshaller implements Unmarshaller<Sche
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("inputSwitchSettings", targetDepth)) {
+                    context.nextToken();
+                    scheduleActionSettings.setInputSwitchSettings(InputSwitchScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("scte35ReturnToNetworkSettings", targetDepth)) {
                     context.nextToken();
                     scheduleActionSettings.setScte35ReturnToNetworkSettings(Scte35ReturnToNetworkScheduleActionSettingsJsonUnmarshaller.getInstance()

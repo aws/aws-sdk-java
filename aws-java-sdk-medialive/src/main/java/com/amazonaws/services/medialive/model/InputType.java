@@ -24,7 +24,8 @@ public enum InputType {
     RTP_PUSH("RTP_PUSH"),
     RTMP_PUSH("RTMP_PUSH"),
     RTMP_PULL("RTMP_PULL"),
-    URL_PULL("URL_PULL");
+    URL_PULL("URL_PULL"),
+    MP4_FILE("MP4_FILE");
 
     private String value;
 

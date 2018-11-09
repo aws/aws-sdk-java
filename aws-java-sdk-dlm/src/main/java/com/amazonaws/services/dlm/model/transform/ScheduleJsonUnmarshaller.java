@@ -52,6 +52,10 @@ public class ScheduleJsonUnmarshaller implements Unmarshaller<Schedule, JsonUnma
                     context.nextToken();
                     schedule.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CopyTags", targetDepth)) {
+                    context.nextToken();
+                    schedule.setCopyTags(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("TagsToAdd", targetDepth)) {
                     context.nextToken();
                     schedule.setTagsToAdd(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));

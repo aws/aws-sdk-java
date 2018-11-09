@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class InputAttachmentMarshaller {
 
+    private static final MarshallingInfo<String> INPUTATTACHMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputAttachmentName").build();
     private static final MarshallingInfo<String> INPUTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("inputId").build();
     private static final MarshallingInfo<StructuredPojo> INPUTSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -48,6 +50,7 @@ public class InputAttachmentMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(inputAttachment.getInputAttachmentName(), INPUTATTACHMENTNAME_BINDING);
             protocolMarshaller.marshall(inputAttachment.getInputId(), INPUTID_BINDING);
             protocolMarshaller.marshall(inputAttachment.getInputSettings(), INPUTSETTINGS_BINDING);
         } catch (Exception e) {

@@ -26,6 +26,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ScheduleActionSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /** Settings to switch an input */
+    private InputSwitchScheduleActionSettings inputSwitchSettings;
     /** Settings for SCTE-35 return_to_network message */
     private Scte35ReturnToNetworkScheduleActionSettings scte35ReturnToNetworkSettings;
     /** Settings for SCTE-35 splice_insert message */
@@ -36,6 +38,40 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     private StaticImageActivateScheduleActionSettings staticImageActivateSettings;
     /** Settings to deactivate a static image overlay */
     private StaticImageDeactivateScheduleActionSettings staticImageDeactivateSettings;
+
+    /**
+     * Settings to switch an input
+     * 
+     * @param inputSwitchSettings
+     *        Settings to switch an input
+     */
+
+    public void setInputSwitchSettings(InputSwitchScheduleActionSettings inputSwitchSettings) {
+        this.inputSwitchSettings = inputSwitchSettings;
+    }
+
+    /**
+     * Settings to switch an input
+     * 
+     * @return Settings to switch an input
+     */
+
+    public InputSwitchScheduleActionSettings getInputSwitchSettings() {
+        return this.inputSwitchSettings;
+    }
+
+    /**
+     * Settings to switch an input
+     * 
+     * @param inputSwitchSettings
+     *        Settings to switch an input
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleActionSettings withInputSwitchSettings(InputSwitchScheduleActionSettings inputSwitchSettings) {
+        setInputSwitchSettings(inputSwitchSettings);
+        return this;
+    }
 
     /**
      * Settings for SCTE-35 return_to_network message
@@ -218,6 +254,8 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getInputSwitchSettings() != null)
+            sb.append("InputSwitchSettings: ").append(getInputSwitchSettings()).append(",");
         if (getScte35ReturnToNetworkSettings() != null)
             sb.append("Scte35ReturnToNetworkSettings: ").append(getScte35ReturnToNetworkSettings()).append(",");
         if (getScte35SpliceInsertSettings() != null)
@@ -242,6 +280,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
         if (obj instanceof ScheduleActionSettings == false)
             return false;
         ScheduleActionSettings other = (ScheduleActionSettings) obj;
+        if (other.getInputSwitchSettings() == null ^ this.getInputSwitchSettings() == null)
+            return false;
+        if (other.getInputSwitchSettings() != null && other.getInputSwitchSettings().equals(this.getInputSwitchSettings()) == false)
+            return false;
         if (other.getScte35ReturnToNetworkSettings() == null ^ this.getScte35ReturnToNetworkSettings() == null)
             return false;
         if (other.getScte35ReturnToNetworkSettings() != null
@@ -272,6 +314,7 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getInputSwitchSettings() == null) ? 0 : getInputSwitchSettings().hashCode());
         hashCode = prime * hashCode + ((getScte35ReturnToNetworkSettings() == null) ? 0 : getScte35ReturnToNetworkSettings().hashCode());
         hashCode = prime * hashCode + ((getScte35SpliceInsertSettings() == null) ? 0 : getScte35SpliceInsertSettings().hashCode());
         hashCode = prime * hashCode + ((getScte35TimeSignalSettings() == null) ? 0 : getScte35TimeSignalSettings().hashCode());

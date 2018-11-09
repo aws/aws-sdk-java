@@ -33,6 +33,8 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String name;
+
+    private Boolean copyTags;
     /**
      * <p>
      * The tags to apply to policy-created resources. These user-defined tags are in addition to the AWS-added lifecycle
@@ -91,6 +93,40 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     public Schedule withName(String name) {
         setName(name);
         return this;
+    }
+
+    /**
+     * @param copyTags
+     */
+
+    public void setCopyTags(Boolean copyTags) {
+        this.copyTags = copyTags;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getCopyTags() {
+        return this.copyTags;
+    }
+
+    /**
+     * @param copyTags
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Schedule withCopyTags(Boolean copyTags) {
+        setCopyTags(copyTags);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isCopyTags() {
+        return this.copyTags;
     }
 
     /**
@@ -264,6 +300,8 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getCopyTags() != null)
+            sb.append("CopyTags: ").append(getCopyTags()).append(",");
         if (getTagsToAdd() != null)
             sb.append("TagsToAdd: ").append(getTagsToAdd()).append(",");
         if (getCreateRule() != null)
@@ -288,6 +326,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getCopyTags() == null ^ this.getCopyTags() == null)
+            return false;
+        if (other.getCopyTags() != null && other.getCopyTags().equals(this.getCopyTags()) == false)
+            return false;
         if (other.getTagsToAdd() == null ^ this.getTagsToAdd() == null)
             return false;
         if (other.getTagsToAdd() != null && other.getTagsToAdd().equals(this.getTagsToAdd()) == false)
@@ -309,6 +351,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getCopyTags() == null) ? 0 : getCopyTags().hashCode());
         hashCode = prime * hashCode + ((getTagsToAdd() == null) ? 0 : getTagsToAdd().hashCode());
         hashCode = prime * hashCode + ((getCreateRule() == null) ? 0 : getCreateRule().hashCode());
         hashCode = prime * hashCode + ((getRetainRule() == null) ? 0 : getRetainRule().hashCode());

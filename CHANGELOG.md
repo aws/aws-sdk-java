@@ -1,3 +1,16 @@
+# __1.11.446__ __2018-11-08__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - You can now switch a live channel between preconfigured inputs. This means assigned inputs for a running channel can be changed according to a defined schedule. You can also use MP4 files as inputs.
+
+## __Amazon CloudWatch Events__
+  - ### Features
+    - Documentation updates for events
+
+## __Amazon Data Lifecycle Manager__
+  - ### Features
+    - Amazon Data Lifecycle Manager adds support for copying EBS volume tags to EBS snapshots. AWS resource tags allow customers to add metadata and apply access policies to your Amazon Elastic Block Store (Amazon EBS) resources. Starting today, customers can use Amazon Data Lifecycle Manager (DLM) to copy tags on EBS volumes to EBS snapshots. This allows customers to easily set snapshot metadata, such as access policies, to match the parent volume. Customers can enable this functionality on new or existing lifecycle policies. They can also choose to disable it at a future date.  
+
 # __1.11.445__ __2018-11-07__
 ## __AWS Cost Explorer Service__
   - ### Features

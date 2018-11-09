@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ScheduleActionSettingsMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> INPUTSWITCHSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputSwitchSettings").build();
     private static final MarshallingInfo<StructuredPojo> SCTE35RETURNTONETWORKSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scte35ReturnToNetworkSettings").build();
     private static final MarshallingInfo<StructuredPojo> SCTE35SPLICEINSERTSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -54,6 +56,7 @@ public class ScheduleActionSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(scheduleActionSettings.getInputSwitchSettings(), INPUTSWITCHSETTINGS_BINDING);
             protocolMarshaller.marshall(scheduleActionSettings.getScte35ReturnToNetworkSettings(), SCTE35RETURNTONETWORKSETTINGS_BINDING);
             protocolMarshaller.marshall(scheduleActionSettings.getScte35SpliceInsertSettings(), SCTE35SPLICEINSERTSETTINGS_BINDING);
             protocolMarshaller.marshall(scheduleActionSettings.getScte35TimeSignalSettings(), SCTE35TIMESIGNALSETTINGS_BINDING);

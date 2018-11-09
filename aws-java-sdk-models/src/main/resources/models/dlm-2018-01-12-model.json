@@ -92,6 +92,7 @@
     }
   },
   "shapes":{
+    "CopyTags":{"type":"boolean"},
     "Count":{
       "type":"integer",
       "max":1000,
@@ -433,6 +434,7 @@
           "shape":"ScheduleName",
           "documentation":"<p>The name of the schedule.</p>"
         },
+        "CopyTags":{"shape":"CopyTags"},
         "TagsToAdd":{
           "shape":"TagsToAddList",
           "documentation":"<p>The tags to apply to policy-created resources. These user-defined tags are in addition to the AWS-added lifecycle tags.</p>"
