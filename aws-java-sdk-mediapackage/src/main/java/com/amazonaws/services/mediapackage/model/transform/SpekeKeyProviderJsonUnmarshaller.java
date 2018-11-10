@@ -48,6 +48,10 @@ public class SpekeKeyProviderJsonUnmarshaller implements Unmarshaller<SpekeKeyPr
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("certificateArn", targetDepth)) {
+                    context.nextToken();
+                    spekeKeyProvider.setCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("resourceId", targetDepth)) {
                     context.nextToken();
                     spekeKeyProvider.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));

@@ -1,3 +1,8 @@
+# __1.11.447__ __2018-11-09__
+## __AWS Elemental MediaPackage__
+  - ### Features
+    - As a part of SPEKE DRM encryption, MediaPackage now supports encrypted content keys. You can enable this enhanced content protection in an OriginEndpoint's encryption settings. When this is enabled, MediaPackage indicates to the key server that it requires an encrypted response. To use this, your DRM key provider must support content key encryption. For details on this feature, see the AWS MediaPackage User Guide at https://docs.aws.amazon.com/mediapackage/latest/ug/what-is.html.
+
 # __1.11.446__ __2018-11-08__
 ## __AWS Elemental MediaLive__
   - ### Features
