@@ -115,6 +115,16 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("CustomEndpoints", targetDepth)) {
+                    dBCluster.withCustomEndpoints(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("CustomEndpoints/member", targetDepth)) {
+                    dBCluster.withCustomEndpoints(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("MultiAZ", targetDepth)) {
                     dBCluster.setMultiAZ(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

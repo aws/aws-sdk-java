@@ -73,6 +73,16 @@ public class AbstractAmazonKinesisFirehose implements AmazonKinesisFirehose {
     }
 
     @Override
+    public StartDeliveryStreamEncryptionResult startDeliveryStreamEncryption(StartDeliveryStreamEncryptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopDeliveryStreamEncryptionResult stopDeliveryStreamEncryption(StopDeliveryStreamEncryptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagDeliveryStreamResult tagDeliveryStream(TagDeliveryStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

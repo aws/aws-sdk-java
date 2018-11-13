@@ -177,7 +177,7 @@ public interface AmazonRDS {
      * @throws DBClusterRoleAlreadyExistsException
      *         The specified IAM role Amazon Resource Name (ARN) is already associated with the specified DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws DBClusterRoleQuotaExceededException
      *         You have exceeded the maximum number of IAM roles that can be associated with the specified DB cluster.
      * @sample AmazonRDS.AddRoleToDBCluster
@@ -238,7 +238,7 @@ public interface AmazonRDS {
      * @throws ResourceNotFoundException
      *         The specified resource ID was not found.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBInstanceStateException
      *         The DB instance isn't in a valid state.
      * @sample AmazonRDS.ApplyPendingMaintenanceAction
@@ -298,7 +298,7 @@ public interface AmazonRDS {
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @sample AmazonRDS.BacktrackDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/BacktrackDBCluster" target="_top">AWS API
      *      Documentation</a>
@@ -423,7 +423,7 @@ public interface AmazonRDS {
      * @throws DBClusterSnapshotNotFoundException
      *         <i>DBClusterSnapshotIdentifier</i> doesn't refer to an existing DB cluster snapshot.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBClusterSnapshotStateException
      *         The supplied value isn't a valid DB cluster snapshot state.
      * @throws SnapshotQuotaExceededException
@@ -540,7 +540,7 @@ public interface AmazonRDS {
      * @throws InvalidVPCNetworkStateException
      *         The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBSubnetGroupStateException
      *         The DB subnet group cannot be deleted because it's in use.
      * @throws InvalidSubnetException
@@ -563,6 +563,31 @@ public interface AmazonRDS {
      *      Documentation</a>
      */
     DBCluster createDBCluster(CreateDBClusterRequest createDBClusterRequest);
+
+    /**
+     * <p>
+     * Creates a new custom endpoint and associates it with an Amazon Aurora DB cluster.
+     * </p>
+     * 
+     * @param createDBClusterEndpointRequest
+     * @return Result of the CreateDBClusterEndpoint operation returned by the service.
+     * @throws DBClusterEndpointQuotaExceededException
+     *         The cluster already has the maximum number of custom endpoints.
+     * @throws DBClusterEndpointAlreadyExistsException
+     *         The specified custom endpoint can't be created because it already exists.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @sample AmazonRDS.CreateDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateDBClusterEndpointResult createDBClusterEndpoint(CreateDBClusterEndpointRequest createDBClusterEndpointRequest);
 
     /**
      * <p>
@@ -621,7 +646,7 @@ public interface AmazonRDS {
      * @throws DBClusterSnapshotAlreadyExistsException
      *         The user already has a DB cluster snapshot with the given identifier.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws SnapshotQuotaExceededException
@@ -660,7 +685,7 @@ public interface AmazonRDS {
      *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
      * @throws InvalidVPCNetworkStateException
@@ -942,7 +967,7 @@ public interface AmazonRDS {
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws DBClusterSnapshotAlreadyExistsException
      *         The user already has a DB cluster snapshot with the given identifier.
      * @throws SnapshotQuotaExceededException
@@ -954,6 +979,25 @@ public interface AmazonRDS {
      *      Documentation</a>
      */
     DBCluster deleteDBCluster(DeleteDBClusterRequest deleteDBClusterRequest);
+
+    /**
+     * <p>
+     * Deletes a custom endpoint and removes it from an Amazon Aurora DB cluster.
+     * </p>
+     * 
+     * @param deleteDBClusterEndpointRequest
+     * @return Result of the DeleteDBClusterEndpoint operation returned by the service.
+     * @throws InvalidDBClusterEndpointStateException
+     *         The requested operation can't be performed on the endpoint while the endpoint is in this state.
+     * @throws DBClusterEndpointNotFoundException
+     *         The specified custom endpoint doesn't exist.
+     * @throws InvalidDBClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @sample AmazonRDS.DeleteDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteDBClusterEndpointResult deleteDBClusterEndpoint(DeleteDBClusterEndpointRequest deleteDBClusterEndpointRequest);
 
     /**
      * <p>
@@ -1055,7 +1099,7 @@ public interface AmazonRDS {
      * @throws SnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of DB snapshots.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @sample AmazonRDS.DeleteDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -1251,6 +1295,21 @@ public interface AmazonRDS {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeDBClusterBacktracksResult describeDBClusterBacktracks(DescribeDBClusterBacktracksRequest describeDBClusterBacktracksRequest);
+
+    /**
+     * <p>
+     * Returns information about endpoints for an Amazon Aurora DB cluster.
+     * </p>
+     * 
+     * @param describeDBClusterEndpointsRequest
+     * @return Result of the DescribeDBClusterEndpoints operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+     * @sample AmazonRDS.DescribeDBClusterEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterEndpoints" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeDBClusterEndpointsResult describeDBClusterEndpoints(DescribeDBClusterEndpointsRequest describeDBClusterEndpointsRequest);
 
     /**
      * <p>
@@ -1872,7 +1931,7 @@ public interface AmazonRDS {
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBInstanceStateException
      *         The DB instance isn't in a valid state.
      * @sample AmazonRDS.FailoverDBCluster
@@ -1945,7 +2004,7 @@ public interface AmazonRDS {
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBClusterCapacityException
      *         <i>Capacity</i> isn't a valid Aurora Serverless DB cluster capacity. Valid capacity values are
      *         <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>,
@@ -1969,7 +2028,7 @@ public interface AmazonRDS {
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws StorageQuotaExceededException
      *         The request would result in the user exceeding the allowed amount of storage available across all DB
      *         instances.
@@ -1994,6 +2053,29 @@ public interface AmazonRDS {
      *      Documentation</a>
      */
     DBCluster modifyDBCluster(ModifyDBClusterRequest modifyDBClusterRequest);
+
+    /**
+     * <p>
+     * Modifies the properties of an endpoint in an Amazon Aurora DB cluster.
+     * </p>
+     * 
+     * @param modifyDBClusterEndpointRequest
+     * @return Result of the ModifyDBClusterEndpoint operation returned by the service.
+     * @throws InvalidDBClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @throws InvalidDBClusterEndpointStateException
+     *         The requested operation can't be performed on the endpoint while the endpoint is in this state.
+     * @throws DBClusterEndpointNotFoundException
+     *         The specified custom endpoint doesn't exist.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @sample AmazonRDS.ModifyDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ModifyDBClusterEndpointResult modifyDBClusterEndpoint(ModifyDBClusterEndpointRequest modifyDBClusterEndpointRequest);
 
     /**
      * <p>
@@ -2328,7 +2410,7 @@ public interface AmazonRDS {
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @sample AmazonRDS.PromoteReadReplicaDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplicaDBCluster"
      *      target="_top">AWS API Documentation</a>
@@ -2397,7 +2479,7 @@ public interface AmazonRDS {
      * @throws DBClusterRoleNotFoundException
      *         The specified IAM role Amazon Resource Name (ARN) isn't associated with the specified DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @sample AmazonRDS.RemoveRoleFromDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBCluster" target="_top">AWS
      *      API Documentation</a>
@@ -2523,7 +2605,7 @@ public interface AmazonRDS {
      * @throws InvalidVPCNetworkStateException
      *         The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBSubnetGroupStateException
      *         The DB subnet group cannot be deleted because it's in use.
      * @throws InvalidSubnetException
@@ -2656,7 +2738,7 @@ public interface AmazonRDS {
      * @throws InvalidDBClusterSnapshotStateException
      *         The supplied value isn't a valid DB cluster snapshot state.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBSnapshotStateException
      *         The state of the DB snapshot doesn't allow deletion.
      * @throws InvalidRestoreException
@@ -2930,7 +3012,7 @@ public interface AmazonRDS {
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBInstanceStateException
      *         The DB instance isn't in a valid state.
      * @sample AmazonRDS.StartDBCluster
@@ -2970,7 +3052,7 @@ public interface AmazonRDS {
      *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
      * @throws InvalidVPCNetworkStateException
@@ -3007,7 +3089,7 @@ public interface AmazonRDS {
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBInstanceStateException
      *         The DB instance isn't in a valid state.
      * @sample AmazonRDS.StopDBCluster
@@ -3044,7 +3126,7 @@ public interface AmazonRDS {
      * @throws SnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of DB snapshots.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @sample AmazonRDS.StopDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstance" target="_top">AWS API
      *      Documentation</a>

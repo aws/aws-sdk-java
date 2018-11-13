@@ -52,6 +52,10 @@ public class PutRecordBatchResultJsonUnmarshaller implements Unmarshaller<PutRec
                     context.nextToken();
                     putRecordBatchResult.setFailedPutCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("Encrypted", targetDepth)) {
+                    context.nextToken();
+                    putRecordBatchResult.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("RequestResponses", targetDepth)) {
                     context.nextToken();
                     putRecordBatchResult.setRequestResponses(new ListUnmarshaller<PutRecordBatchResponseEntry>(PutRecordBatchResponseEntryJsonUnmarshaller

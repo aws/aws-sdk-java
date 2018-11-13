@@ -73,6 +73,11 @@ public class AbstractAWSBudgets implements AWSBudgets {
     }
 
     @Override
+    public DescribeBudgetPerformanceHistoryResult describeBudgetPerformanceHistory(DescribeBudgetPerformanceHistoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeBudgetsResult describeBudgets(DescribeBudgetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The DB cluster isn't in a valid state.
+ * The requested operation can't be performed while the cluster is in this state.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

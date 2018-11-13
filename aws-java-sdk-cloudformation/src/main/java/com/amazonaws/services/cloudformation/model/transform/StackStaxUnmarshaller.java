@@ -174,6 +174,11 @@ public class StackStaxUnmarshaller implements Unmarshaller<Stack, StaxUnmarshall
                     stack.setRootId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("DriftInformation", targetDepth)) {
+                    stack.setDriftInformation(StackDriftInformationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return stack;

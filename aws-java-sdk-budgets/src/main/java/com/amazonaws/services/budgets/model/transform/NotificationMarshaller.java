@@ -35,6 +35,8 @@ public class NotificationMarshaller {
             .marshallLocationName("Threshold").build();
     private static final MarshallingInfo<String> THRESHOLDTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ThresholdType").build();
+    private static final MarshallingInfo<String> NOTIFICATIONSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationState").build();
 
     private static final NotificationMarshaller instance = new NotificationMarshaller();
 
@@ -56,6 +58,7 @@ public class NotificationMarshaller {
             protocolMarshaller.marshall(notification.getComparisonOperator(), COMPARISONOPERATOR_BINDING);
             protocolMarshaller.marshall(notification.getThreshold(), THRESHOLD_BINDING);
             protocolMarshaller.marshall(notification.getThresholdType(), THRESHOLDTYPE_BINDING);
+            protocolMarshaller.marshall(notification.getNotificationState(), NOTIFICATIONSTATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

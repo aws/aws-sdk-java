@@ -119,6 +119,21 @@ public class AbstractAWSBudgetsAsync extends AbstractAWSBudgets implements AWSBu
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeBudgetPerformanceHistoryResult> describeBudgetPerformanceHistoryAsync(
+            DescribeBudgetPerformanceHistoryRequest request) {
+
+        return describeBudgetPerformanceHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBudgetPerformanceHistoryResult> describeBudgetPerformanceHistoryAsync(
+            DescribeBudgetPerformanceHistoryRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeBudgetPerformanceHistoryRequest, DescribeBudgetPerformanceHistoryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeBudgetsResult> describeBudgetsAsync(DescribeBudgetsRequest request) {
 
         return describeBudgetsAsync(request, null);

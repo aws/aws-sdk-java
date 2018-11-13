@@ -101,6 +101,10 @@ public class ComputeResourceJsonUnmarshaller implements Unmarshaller<ComputeReso
                     context.nextToken();
                     computeResource.setSpotIamFleetRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("launchTemplate", targetDepth)) {
+                    context.nextToken();
+                    computeResource.setLaunchTemplate(LaunchTemplateSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

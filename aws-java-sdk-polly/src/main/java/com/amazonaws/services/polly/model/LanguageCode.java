@@ -30,6 +30,7 @@ public enum LanguageCode {
     EnIN("en-IN"),
     EnUS("en-US"),
     EsES("es-ES"),
+    EsMX("es-MX"),
     EsUS("es-US"),
     FrCA("fr-CA"),
     FrFR("fr-FR"),

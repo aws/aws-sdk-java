@@ -122,6 +122,12 @@ public class DBCluster implements Serializable, Cloneable {
     private String readerEndpoint;
     /**
      * <p>
+     * Identifies all custom endpoints associated with the cluster.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> customEndpoints;
+    /**
+     * <p>
      * Specifies whether the DB cluster has instances in multiple Availability Zones.
      * </p>
      */
@@ -931,6 +937,79 @@ public class DBCluster implements Serializable, Cloneable {
 
     public DBCluster withReaderEndpoint(String readerEndpoint) {
         setReaderEndpoint(readerEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Identifies all custom endpoints associated with the cluster.
+     * </p>
+     * 
+     * @return Identifies all custom endpoints associated with the cluster.
+     */
+
+    public java.util.List<String> getCustomEndpoints() {
+        if (customEndpoints == null) {
+            customEndpoints = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return customEndpoints;
+    }
+
+    /**
+     * <p>
+     * Identifies all custom endpoints associated with the cluster.
+     * </p>
+     * 
+     * @param customEndpoints
+     *        Identifies all custom endpoints associated with the cluster.
+     */
+
+    public void setCustomEndpoints(java.util.Collection<String> customEndpoints) {
+        if (customEndpoints == null) {
+            this.customEndpoints = null;
+            return;
+        }
+
+        this.customEndpoints = new com.amazonaws.internal.SdkInternalList<String>(customEndpoints);
+    }
+
+    /**
+     * <p>
+     * Identifies all custom endpoints associated with the cluster.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCustomEndpoints(java.util.Collection)} or {@link #withCustomEndpoints(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param customEndpoints
+     *        Identifies all custom endpoints associated with the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withCustomEndpoints(String... customEndpoints) {
+        if (this.customEndpoints == null) {
+            setCustomEndpoints(new com.amazonaws.internal.SdkInternalList<String>(customEndpoints.length));
+        }
+        for (String ele : customEndpoints) {
+            this.customEndpoints.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Identifies all custom endpoints associated with the cluster.
+     * </p>
+     * 
+     * @param customEndpoints
+     *        Identifies all custom endpoints associated with the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withCustomEndpoints(java.util.Collection<String> customEndpoints) {
+        setCustomEndpoints(customEndpoints);
         return this;
     }
 
@@ -2484,6 +2563,8 @@ public class DBCluster implements Serializable, Cloneable {
             sb.append("Endpoint: ").append(getEndpoint()).append(",");
         if (getReaderEndpoint() != null)
             sb.append("ReaderEndpoint: ").append(getReaderEndpoint()).append(",");
+        if (getCustomEndpoints() != null)
+            sb.append("CustomEndpoints: ").append(getCustomEndpoints()).append(",");
         if (getMultiAZ() != null)
             sb.append("MultiAZ: ").append(getMultiAZ()).append(",");
         if (getEngine() != null)
@@ -2609,6 +2690,10 @@ public class DBCluster implements Serializable, Cloneable {
         if (other.getReaderEndpoint() == null ^ this.getReaderEndpoint() == null)
             return false;
         if (other.getReaderEndpoint() != null && other.getReaderEndpoint().equals(this.getReaderEndpoint()) == false)
+            return false;
+        if (other.getCustomEndpoints() == null ^ this.getCustomEndpoints() == null)
+            return false;
+        if (other.getCustomEndpoints() != null && other.getCustomEndpoints().equals(this.getCustomEndpoints()) == false)
             return false;
         if (other.getMultiAZ() == null ^ this.getMultiAZ() == null)
             return false;
@@ -2754,6 +2839,7 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEarliestRestorableTime() == null) ? 0 : getEarliestRestorableTime().hashCode());
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
         hashCode = prime * hashCode + ((getReaderEndpoint() == null) ? 0 : getReaderEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getCustomEndpoints() == null) ? 0 : getCustomEndpoints().hashCode());
         hashCode = prime * hashCode + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
         hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());

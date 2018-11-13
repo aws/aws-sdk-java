@@ -71,6 +71,12 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * The action declaration's AWS Region, such as us-east-1.
+     * </p>
+     */
+    private String region;
 
     /**
      * <p>
@@ -440,6 +446,46 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The action declaration's AWS Region, such as us-east-1.
+     * </p>
+     * 
+     * @param region
+     *        The action declaration's AWS Region, such as us-east-1.
+     */
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    /**
+     * <p>
+     * The action declaration's AWS Region, such as us-east-1.
+     * </p>
+     * 
+     * @return The action declaration's AWS Region, such as us-east-1.
+     */
+
+    public String getRegion() {
+        return this.region;
+    }
+
+    /**
+     * <p>
+     * The action declaration's AWS Region, such as us-east-1.
+     * </p>
+     * 
+     * @param region
+     *        The action declaration's AWS Region, such as us-east-1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActionDeclaration withRegion(String region) {
+        setRegion(region);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -463,7 +509,9 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
         if (getInputArtifacts() != null)
             sb.append("InputArtifacts: ").append(getInputArtifacts()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getRegion() != null)
+            sb.append("Region: ").append(getRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -506,6 +554,10 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getRegion() == null ^ this.getRegion() == null)
+            return false;
+        if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
+            return false;
         return true;
     }
 
@@ -521,6 +573,7 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getOutputArtifacts() == null) ? 0 : getOutputArtifacts().hashCode());
         hashCode = prime * hashCode + ((getInputArtifacts() == null) ? 0 : getInputArtifacts().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         return hashCode;
     }
 

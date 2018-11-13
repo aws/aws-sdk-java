@@ -1079,6 +1079,71 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Returns information about a stack drift detection operation. A stack drift detection operation detects whether a
+     * stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration, as defined in the
+     * stack template and any values specified as template parameters. A stack is considered to have drifted if one or
+     * more of its resources have drifted. For more information on stack and resource drift, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.
+     * </p>
+     * <p>
+     * Use <a>DetectStackDrift</a> to initiate a stack drift detection operation. <code>DetectStackDrift</code> returns
+     * a <code>StackDriftDetectionId</code> you can use to monitor the progress of the operation using
+     * <code>DescribeStackDriftDetectionStatus</code>. Once the drift detection operation has completed, use
+     * <a>DescribeStackResourceDrifts</a> to return drift information about the stack and its resources.
+     * </p>
+     * 
+     * @param describeStackDriftDetectionStatusRequest
+     * @return Result of the DescribeStackDriftDetectionStatus operation returned by the service.
+     * @sample AmazonCloudFormation.DescribeStackDriftDetectionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackDriftDetectionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeStackDriftDetectionStatusResult describeStackDriftDetectionStatus(DescribeStackDriftDetectionStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStackDriftDetectionStatus(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStackDriftDetectionStatusResult executeDescribeStackDriftDetectionStatus(
+            DescribeStackDriftDetectionStatusRequest describeStackDriftDetectionStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeStackDriftDetectionStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeStackDriftDetectionStatusRequest> request = null;
+        Response<DescribeStackDriftDetectionStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeStackDriftDetectionStatusRequestMarshaller().marshall(super.beforeMarshalling(describeStackDriftDetectionStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackDriftDetectionStatus");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<DescribeStackDriftDetectionStatusResult> responseHandler = new StaxResponseHandler<DescribeStackDriftDetectionStatusResult>(
+                    new DescribeStackDriftDetectionStatusResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns all stack related events for a specified stack in reverse chronological order. For more information about
      * a stack's event history, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a> in the AWS
@@ -1248,6 +1313,73 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DescribeStackResourceResult> responseHandler = new StaxResponseHandler<DescribeStackResourceResult>(
                     new DescribeStackResourceResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns drift information for the resources that have been checked for drift in the specified stack. This
+     * includes actual and expected configuration values for resources where AWS CloudFormation detects configuration
+     * drift.
+     * </p>
+     * <p>
+     * For a given stack, there will be one <code>StackResourceDrift</code> for each stack resource that has been
+     * checked for drift. Resources that have not yet been checked for drift are not included. Resources that do not
+     * currently support drift detection are not checked, and so not included. For a list of resources that support
+     * drift detection, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * >Resources that Support Drift Detection</a>.
+     * </p>
+     * <p>
+     * Use <a>DetectStackResourceDrift</a> to detect drift on individual resources, or <a>DetectStackDrift</a> to detect
+     * drift on all supported resources for a given stack.
+     * </p>
+     * 
+     * @param describeStackResourceDriftsRequest
+     * @return Result of the DescribeStackResourceDrifts operation returned by the service.
+     * @sample AmazonCloudFormation.DescribeStackResourceDrifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResourceDrifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeStackResourceDriftsResult describeStackResourceDrifts(DescribeStackResourceDriftsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStackResourceDrifts(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStackResourceDriftsResult executeDescribeStackResourceDrifts(DescribeStackResourceDriftsRequest describeStackResourceDriftsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeStackResourceDriftsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeStackResourceDriftsRequest> request = null;
+        Response<DescribeStackResourceDriftsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeStackResourceDriftsRequestMarshaller().marshall(super.beforeMarshalling(describeStackResourceDriftsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackResourceDrifts");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<DescribeStackResourceDriftsResult> responseHandler = new StaxResponseHandler<DescribeStackResourceDriftsResult>(
+                    new DescribeStackResourceDriftsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1511,6 +1643,154 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     @Override
     public DescribeStacksResult describeStacks() {
         return describeStacks(new DescribeStacksRequest());
+    }
+
+    /**
+     * <p>
+     * Detects whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration,
+     * as defined in the stack template and any values specified as template parameters. For each resource in the stack
+     * that supports drift detection, AWS CloudFormation compares the actual configuration of the resource with its
+     * expected template configuration. Only resource properties explicitly defined in the stack template are checked
+     * for drift. A stack is considered to have drifted if one or more of its resources differ from their expected
+     * template configurations. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.
+     * </p>
+     * <p>
+     * Use <code>DetectStackDrift</code> to detect drift on all supported resources for a given stack, or
+     * <a>DetectStackResourceDrift</a> to detect drift on individual resources.
+     * </p>
+     * <p>
+     * For a list of stack resources that currently support drift detection, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * >Resources that Support Drift Detection</a>.
+     * </p>
+     * <p>
+     * <code>DetectStackDrift</code> can take up to several minutes, depending on the number of resources contained
+     * within the stack. Use <a>DescribeStackDriftDetectionStatus</a> to monitor the progress of a detect stack drift
+     * operation. Once the drift detection operation has completed, use <a>DescribeStackResourceDrifts</a> to return
+     * drift information about the stack and its resources.
+     * </p>
+     * <p>
+     * When detecting drift on a stack, AWS CloudFormation does not detect drift on any nested stacks belonging to that
+     * stack. Perform <code>DetectStackDrift</code> directly on the nested stack itself.
+     * </p>
+     * 
+     * @param detectStackDriftRequest
+     * @return Result of the DetectStackDrift operation returned by the service.
+     * @sample AmazonCloudFormation.DetectStackDrift
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackDrift"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DetectStackDriftResult detectStackDrift(DetectStackDriftRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetectStackDrift(request);
+    }
+
+    @SdkInternalApi
+    final DetectStackDriftResult executeDetectStackDrift(DetectStackDriftRequest detectStackDriftRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(detectStackDriftRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DetectStackDriftRequest> request = null;
+        Response<DetectStackDriftResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DetectStackDriftRequestMarshaller().marshall(super.beforeMarshalling(detectStackDriftRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectStackDrift");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<DetectStackDriftResult> responseHandler = new StaxResponseHandler<DetectStackDriftResult>(
+                    new DetectStackDriftResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about whether a resource's actual configuration differs, or has <i>drifted</i>, from it's
+     * expected configuration, as defined in the stack template and any values specified as template parameters. This
+     * information includes actual and expected property values for resources in which AWS CloudFormation detects drift.
+     * Only resource properties explicitly defined in the stack template are checked for drift. For more information
+     * about stack and resource drift, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.
+     * </p>
+     * <p>
+     * Use <code>DetectStackResourceDrift</code> to detect drift on individual resources, or <a>DetectStackDrift</a> to
+     * detect drift on all resources in a given stack that support drift detection.
+     * </p>
+     * <p>
+     * Resources that do not currently support drift detection cannot be checked. For a list of resources that support
+     * drift detection, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * >Resources that Support Drift Detection</a>.
+     * </p>
+     * 
+     * @param detectStackResourceDriftRequest
+     * @return Result of the DetectStackResourceDrift operation returned by the service.
+     * @sample AmazonCloudFormation.DetectStackResourceDrift
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackResourceDrift"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DetectStackResourceDriftResult detectStackResourceDrift(DetectStackResourceDriftRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetectStackResourceDrift(request);
+    }
+
+    @SdkInternalApi
+    final DetectStackResourceDriftResult executeDetectStackResourceDrift(DetectStackResourceDriftRequest detectStackResourceDriftRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(detectStackResourceDriftRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DetectStackResourceDriftRequest> request = null;
+        Response<DetectStackResourceDriftResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DetectStackResourceDriftRequestMarshaller().marshall(super.beforeMarshalling(detectStackResourceDriftRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectStackResourceDrift");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<DetectStackResourceDriftResult> responseHandler = new StaxResponseHandler<DetectStackResourceDriftResult>(
+                    new DetectStackResourceDriftResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -2750,12 +3030,12 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * <p>
      * Updates termination protection for the specified stack. If a user attempts to delete a stack with termination
      * protection enabled, the operation fails and the stack remains unchanged. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
-     * Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.
+     * href="AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a>
+     * in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * <p>
-     * For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
-     * stacks</a>, termination protection is set on the root stack and cannot be changed directly on the nested stack.
+     * For <a href="AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination
+     * protection is set on the root stack and cannot be changed directly on the nested stack.
      * </p>
      * 
      * @param updateTerminationProtectionRequest

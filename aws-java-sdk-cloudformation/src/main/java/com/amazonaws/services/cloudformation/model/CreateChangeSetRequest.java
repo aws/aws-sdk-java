@@ -67,9 +67,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A list of <code>Parameter</code> structures that specify input parameters for the change set. For more
-     * information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
-     * type.
+     * information, see the <a>Parameter</a> data type.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Parameter> parameters;
@@ -445,15 +443,11 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A list of <code>Parameter</code> structures that specify input parameters for the change set. For more
-     * information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
-     * type.
+     * information, see the <a>Parameter</a> data type.
      * </p>
      * 
      * @return A list of <code>Parameter</code> structures that specify input parameters for the change set. For more
-     *         information, see the <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
-     *         data type.
+     *         information, see the <a>Parameter</a> data type.
      */
 
     public java.util.List<Parameter> getParameters() {
@@ -466,16 +460,12 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A list of <code>Parameter</code> structures that specify input parameters for the change set. For more
-     * information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
-     * type.
+     * information, see the <a>Parameter</a> data type.
      * </p>
      * 
      * @param parameters
      *        A list of <code>Parameter</code> structures that specify input parameters for the change set. For more
-     *        information, see the <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
-     *        data type.
+     *        information, see the <a>Parameter</a> data type.
      */
 
     public void setParameters(java.util.Collection<Parameter> parameters) {
@@ -490,9 +480,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A list of <code>Parameter</code> structures that specify input parameters for the change set. For more
-     * information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
-     * type.
+     * information, see the <a>Parameter</a> data type.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -502,9 +490,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param parameters
      *        A list of <code>Parameter</code> structures that specify input parameters for the change set. For more
-     *        information, see the <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
-     *        data type.
+     *        information, see the <a>Parameter</a> data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -521,16 +507,12 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A list of <code>Parameter</code> structures that specify input parameters for the change set. For more
-     * information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
-     * type.
+     * information, see the <a>Parameter</a> data type.
      * </p>
      * 
      * @param parameters
      *        A list of <code>Parameter</code> structures that specify input parameters for the change set. For more
-     *        information, see the <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
-     *        data type.
+     *        information, see the <a>Parameter</a> data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

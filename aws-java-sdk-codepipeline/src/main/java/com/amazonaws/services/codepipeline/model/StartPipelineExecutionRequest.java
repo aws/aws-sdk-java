@@ -34,6 +34,12 @@ public class StartPipelineExecutionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The system-generated unique ID used to identify a unique execution request.
+     * </p>
+     */
+    private String clientRequestToken;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class StartPipelineExecutionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The system-generated unique ID used to identify a unique execution request.
+     * </p>
+     * 
+     * @param clientRequestToken
+     *        The system-generated unique ID used to identify a unique execution request.
+     */
+
+    public void setClientRequestToken(String clientRequestToken) {
+        this.clientRequestToken = clientRequestToken;
+    }
+
+    /**
+     * <p>
+     * The system-generated unique ID used to identify a unique execution request.
+     * </p>
+     * 
+     * @return The system-generated unique ID used to identify a unique execution request.
+     */
+
+    public String getClientRequestToken() {
+        return this.clientRequestToken;
+    }
+
+    /**
+     * <p>
+     * The system-generated unique ID used to identify a unique execution request.
+     * </p>
+     * 
+     * @param clientRequestToken
+     *        The system-generated unique ID used to identify a unique execution request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartPipelineExecutionRequest withClientRequestToken(String clientRequestToken) {
+        setClientRequestToken(clientRequestToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -87,7 +133,9 @@ public class StartPipelineExecutionRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getClientRequestToken() != null)
+            sb.append("ClientRequestToken: ").append(getClientRequestToken());
         sb.append("}");
         return sb.toString();
     }
@@ -106,6 +154,10 @@ public class StartPipelineExecutionRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getClientRequestToken() == null ^ this.getClientRequestToken() == null)
+            return false;
+        if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
+            return false;
         return true;
     }
 
@@ -115,6 +167,7 @@ public class StartPipelineExecutionRequest extends com.amazonaws.AmazonWebServic
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         return hashCode;
     }
 

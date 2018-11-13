@@ -27,14 +27,15 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs.
+     * The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs. You must specify either a
+     * job queue or an array job ID.
      * </p>
      */
     private String jobQueue;
     /**
      * <p>
      * The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the
-     * specified array.
+     * specified array. You must specify either a job queue or an array job ID.
      * </p>
      */
     private String arrayJobId;
@@ -74,11 +75,13 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs.
+     * The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs. You must specify either a
+     * job queue or an array job ID.
      * </p>
      * 
      * @param jobQueue
-     *        The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs.
+     *        The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs. You must specify
+     *        either a job queue or an array job ID.
      */
 
     public void setJobQueue(String jobQueue) {
@@ -87,10 +90,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs.
+     * The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs. You must specify either a
+     * job queue or an array job ID.
      * </p>
      * 
-     * @return The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs.
+     * @return The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs. You must specify
+     *         either a job queue or an array job ID.
      */
 
     public String getJobQueue() {
@@ -99,11 +104,13 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs.
+     * The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs. You must specify either a
+     * job queue or an array job ID.
      * </p>
      * 
      * @param jobQueue
-     *        The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs.
+     *        The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs. You must specify
+     *        either a job queue or an array job ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,12 +122,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the
-     * specified array.
+     * specified array. You must specify either a job queue or an array job ID.
      * </p>
      * 
      * @param arrayJobId
      *        The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from
-     *        within the specified array.
+     *        within the specified array. You must specify either a job queue or an array job ID.
      */
 
     public void setArrayJobId(String arrayJobId) {
@@ -130,11 +137,11 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the
-     * specified array.
+     * specified array. You must specify either a job queue or an array job ID.
      * </p>
      * 
      * @return The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from
-     *         within the specified array.
+     *         within the specified array. You must specify either a job queue or an array job ID.
      */
 
     public String getArrayJobId() {
@@ -144,12 +151,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the
-     * specified array.
+     * specified array. You must specify either a job queue or an array job ID.
      * </p>
      * 
      * @param arrayJobId
      *        The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from
-     *        within the specified array.
+     *        within the specified array. You must specify either a job queue or an array job ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

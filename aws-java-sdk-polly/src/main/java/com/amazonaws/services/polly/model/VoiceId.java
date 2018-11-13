@@ -73,7 +73,10 @@ public enum VoiceId {
     Takumi("Takumi"),
     Seoyeon("Seoyeon"),
     Aditi("Aditi"),
-    Zhiyu("Zhiyu");
+    Zhiyu("Zhiyu"),
+    Bianca("Bianca"),
+    Lucia("Lucia"),
+    Mia("Mia");
 
     private String value;
 

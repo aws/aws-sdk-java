@@ -7,6 +7,7 @@
     "protocol":"json",
     "serviceAbbreviation":"CodePipeline",
     "serviceFullName":"AWS CodePipeline",
+    "serviceId":"CodePipeline",
     "signatureVersion":"v4",
     "targetPrefix":"CodePipeline_20150709",
     "uid":"codepipeline-2015-07-09"
@@ -488,6 +489,11 @@
     }
   },
   "shapes":{
+    "AWSRegionName":{
+      "type":"string",
+      "max":30,
+      "min":4
+    },
     "AWSSessionCredentials":{
       "type":"structure",
       "required":[
@@ -717,6 +723,10 @@
         "roleArn":{
           "shape":"RoleArn",
           "documentation":"<p>The ARN of the IAM service role that will perform the declared action. This is assumed through the roleArn for the pipeline.</p>"
+        },
+        "region":{
+          "shape":"AWSRegionName",
+          "documentation":"<p>The action declaration's AWS Region, such as us-east-1.</p>"
         }
       },
       "documentation":"<p>Represents information about an action declaration.</p>"
@@ -1116,6 +1126,11 @@
       "min":3,
       "pattern":"[a-zA-Z0-9\\-\\.]+"
     },
+    "ArtifactStoreMap":{
+      "type":"map",
+      "key":{"shape":"AWSRegionName"},
+      "value":{"shape":"ArtifactStore"}
+    },
     "ArtifactStoreType":{
       "type":"string",
       "enum":["S3"]
@@ -1151,6 +1166,12 @@
     "ClientId":{
       "type":"string",
       "pattern":"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+    },
+    "ClientRequestToken":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"^[a-zA-Z0-9-]+$"
     },
     "ClientToken":{
       "type":"string",
@@ -2091,7 +2112,6 @@
       "required":[
         "name",
         "roleArn",
-        "artifactStore",
         "stages"
       ],
       "members":{
@@ -2106,6 +2126,10 @@
         "artifactStore":{
           "shape":"ArtifactStore",
           "documentation":"<p>Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline. </p>"
+        },
+        "artifactStores":{
+          "shape":"ArtifactStoreMap",
+          "documentation":"<p>A mapping of artifactStore objects and their corresponding regions. There must be an artifact store for the pipeline region and for each cross-region action within the pipeline. You can only use either artifactStore or artifactStores, not both.</p> <p>If you create a cross-region action in your pipeline, you must use artifactStores.</p>"
         },
         "stages":{
           "shape":"PipelineStageDeclarationList",
@@ -2183,7 +2207,10 @@
           "shape":"Timestamp",
           "documentation":"<p>The date and time of the last change to the pipeline execution, in timestamp format.</p>"
         },
-        "sourceRevisions":{"shape":"SourceRevisionList"}
+        "sourceRevisions":{
+          "shape":"SourceRevisionList",
+          "documentation":"<p>A list of the source artifact revisions that initiated a pipeline execution.</p>"
+        }
       },
       "documentation":"<p>Summary information about a pipeline execution.</p>"
     },
@@ -2627,11 +2654,24 @@
       "type":"structure",
       "required":["actionName"],
       "members":{
-        "actionName":{"shape":"ActionName"},
-        "revisionId":{"shape":"Revision"},
-        "revisionSummary":{"shape":"RevisionSummary"},
-        "revisionUrl":{"shape":"Url"}
-      }
+        "actionName":{
+          "shape":"ActionName",
+          "documentation":"<p>The name of the action that processed the revision to the source artifact.</p>"
+        },
+        "revisionId":{
+          "shape":"Revision",
+          "documentation":"<p>The system-generated unique ID that identifies the revision number of the artifact.</p>"
+        },
+        "revisionSummary":{
+          "shape":"RevisionSummary",
+          "documentation":"<p>Summary information about the most recent revision of the artifact. For GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.</p>"
+        },
+        "revisionUrl":{
+          "shape":"Url",
+          "documentation":"<p>The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit repositories, the commit ID is linked to a commit details page.</p>"
+        }
+      },
+      "documentation":"<p>Information about the version (or revision) of a source artifact that initiated a pipeline execution.</p>"
     },
     "SourceRevisionList":{
       "type":"list",
@@ -2767,6 +2807,11 @@
         "name":{
           "shape":"PipelineName",
           "documentation":"<p>The name of the pipeline to start.</p>"
+        },
+        "clientRequestToken":{
+          "shape":"ClientRequestToken",
+          "documentation":"<p>The system-generated unique ID used to identify a unique execution request.</p>",
+          "idempotencyToken":true
         }
       },
       "documentation":"<p>Represents the input of a StartPipelineExecution action.</p>"
@@ -2932,9 +2977,16 @@
     "WebhookAuthConfiguration":{
       "type":"structure",
       "members":{
-        "AllowedIPRange":{"shape":"WebhookAuthConfigurationAllowedIPRange"},
-        "SecretToken":{"shape":"WebhookAuthConfigurationSecretToken"}
-      }
+        "AllowedIPRange":{
+          "shape":"WebhookAuthConfigurationAllowedIPRange",
+          "documentation":"<p>The property used to configure acceptance of webhooks within a specific IP range. For IP, only the AllowedIPRange property must be set, and this property must be set to a valid CIDR range.</p>"
+        },
+        "SecretToken":{
+          "shape":"WebhookAuthConfigurationSecretToken",
+          "documentation":"<p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the SecretToken property must be set.</p>"
+        }
+      },
+      "documentation":"<p>The authentication applied to incoming webhook trigger requests.</p>"
     },
     "WebhookAuthConfigurationAllowedIPRange":{
       "type":"string",

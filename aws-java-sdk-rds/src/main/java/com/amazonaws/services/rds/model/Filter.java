@@ -37,6 +37,11 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
+ * <a>DescribeDBClusterEndpoints</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>DescribeDBClusters</a>
  * </p>
  * </li>

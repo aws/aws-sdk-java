@@ -39,6 +39,8 @@ public enum BudgetsActions implements Action {
     DeleteSubscriber("budgets:DeleteSubscriber"),
     /** Action for the DescribeBudget operation. */
     DescribeBudget("budgets:DescribeBudget"),
+    /** Action for the DescribeBudgetPerformanceHistory operation. */
+    DescribeBudgetPerformanceHistory("budgets:DescribeBudgetPerformanceHistory"),
     /** Action for the DescribeBudgets operation. */
     DescribeBudgets("budgets:DescribeBudgets"),
     /** Action for the DescribeNotificationsForBudget operation. */

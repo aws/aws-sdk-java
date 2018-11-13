@@ -259,7 +259,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6
+     * Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6 or later
      * </p>
      * </li>
      * <li>
@@ -2202,7 +2202,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6
+     * Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6 or later
      * </p>
      * </li>
      * <li>
@@ -2248,7 +2248,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6
+     *        Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6 or later
      *        </p>
      *        </li>
      *        <li>
@@ -2299,7 +2299,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6
+     * Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6 or later
      * </p>
      * </li>
      * <li>
@@ -2344,7 +2344,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6
+     *         Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6 or later
      *         </p>
      *         </li>
      *         <li>
@@ -2395,7 +2395,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6
+     * Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6 or later
      * </p>
      * </li>
      * <li>
@@ -2441,7 +2441,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6
+     *        Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6 or later
      *        </p>
      *        </li>
      *        <li>

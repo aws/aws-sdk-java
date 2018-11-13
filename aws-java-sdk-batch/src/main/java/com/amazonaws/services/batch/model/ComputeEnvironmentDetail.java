@@ -54,9 +54,18 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
     private String type;
     /**
      * <p>
-     * The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>. An
-     * <code>ENABLED</code> state indicates that you can register instances with the compute environment and that the
-     * associated instances can accept jobs.
+     * The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.
+     * </p>
+     * <p>
+     * If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
+     * job queue on the compute resources within the environment. If the compute environment is managed, then it can
+     * scale its instances out or in automatically, based on job queue demand.
+     * </p>
+     * <p>
+     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within the
+     * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
+     * compute environments in the <code>DISABLED</code> state do not scale out; however, they scale in to
+     * <code>minvCpus</code> value once instances become idle.
      * </p>
      */
     private String state;
@@ -281,15 +290,33 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>. An
-     * <code>ENABLED</code> state indicates that you can register instances with the compute environment and that the
-     * associated instances can accept jobs.
+     * The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.
+     * </p>
+     * <p>
+     * If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
+     * job queue on the compute resources within the environment. If the compute environment is managed, then it can
+     * scale its instances out or in automatically, based on job queue demand.
+     * </p>
+     * <p>
+     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within the
+     * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
+     * compute environments in the <code>DISABLED</code> state do not scale out; however, they scale in to
+     * <code>minvCpus</code> value once instances become idle.
      * </p>
      * 
      * @param state
      *        The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.
-     *        An <code>ENABLED</code> state indicates that you can register instances with the compute environment and
-     *        that the associated instances can accept jobs.
+     *        </p>
+     *        <p>
+     *        If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an
+     *        associated job queue on the compute resources within the environment. If the compute environment is
+     *        managed, then it can scale its instances out or in automatically, based on job queue demand.
+     *        </p>
+     *        <p>
+     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within
+     *        the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
+     *        normally. Managed compute environments in the <code>DISABLED</code> state do not scale out; however, they
+     *        scale in to <code>minvCpus</code> value once instances become idle.
      * @see CEState
      */
 
@@ -299,14 +326,32 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>. An
-     * <code>ENABLED</code> state indicates that you can register instances with the compute environment and that the
-     * associated instances can accept jobs.
+     * The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.
+     * </p>
+     * <p>
+     * If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
+     * job queue on the compute resources within the environment. If the compute environment is managed, then it can
+     * scale its instances out or in automatically, based on job queue demand.
+     * </p>
+     * <p>
+     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within the
+     * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
+     * compute environments in the <code>DISABLED</code> state do not scale out; however, they scale in to
+     * <code>minvCpus</code> value once instances become idle.
      * </p>
      * 
      * @return The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.
-     *         An <code>ENABLED</code> state indicates that you can register instances with the compute environment and
-     *         that the associated instances can accept jobs.
+     *         </p>
+     *         <p>
+     *         If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an
+     *         associated job queue on the compute resources within the environment. If the compute environment is
+     *         managed, then it can scale its instances out or in automatically, based on job queue demand.
+     *         </p>
+     *         <p>
+     *         If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within
+     *         the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
+     *         normally. Managed compute environments in the <code>DISABLED</code> state do not scale out; however, they
+     *         scale in to <code>minvCpus</code> value once instances become idle.
      * @see CEState
      */
 
@@ -316,15 +361,33 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>. An
-     * <code>ENABLED</code> state indicates that you can register instances with the compute environment and that the
-     * associated instances can accept jobs.
+     * The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.
+     * </p>
+     * <p>
+     * If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
+     * job queue on the compute resources within the environment. If the compute environment is managed, then it can
+     * scale its instances out or in automatically, based on job queue demand.
+     * </p>
+     * <p>
+     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within the
+     * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
+     * compute environments in the <code>DISABLED</code> state do not scale out; however, they scale in to
+     * <code>minvCpus</code> value once instances become idle.
      * </p>
      * 
      * @param state
      *        The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.
-     *        An <code>ENABLED</code> state indicates that you can register instances with the compute environment and
-     *        that the associated instances can accept jobs.
+     *        </p>
+     *        <p>
+     *        If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an
+     *        associated job queue on the compute resources within the environment. If the compute environment is
+     *        managed, then it can scale its instances out or in automatically, based on job queue demand.
+     *        </p>
+     *        <p>
+     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within
+     *        the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
+     *        normally. Managed compute environments in the <code>DISABLED</code> state do not scale out; however, they
+     *        scale in to <code>minvCpus</code> value once instances become idle.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CEState
      */
@@ -336,15 +399,33 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>. An
-     * <code>ENABLED</code> state indicates that you can register instances with the compute environment and that the
-     * associated instances can accept jobs.
+     * The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.
+     * </p>
+     * <p>
+     * If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
+     * job queue on the compute resources within the environment. If the compute environment is managed, then it can
+     * scale its instances out or in automatically, based on job queue demand.
+     * </p>
+     * <p>
+     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within the
+     * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
+     * compute environments in the <code>DISABLED</code> state do not scale out; however, they scale in to
+     * <code>minvCpus</code> value once instances become idle.
      * </p>
      * 
      * @param state
      *        The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.
-     *        An <code>ENABLED</code> state indicates that you can register instances with the compute environment and
-     *        that the associated instances can accept jobs.
+     *        </p>
+     *        <p>
+     *        If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an
+     *        associated job queue on the compute resources within the environment. If the compute environment is
+     *        managed, then it can scale its instances out or in automatically, based on job queue demand.
+     *        </p>
+     *        <p>
+     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within
+     *        the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
+     *        normally. Managed compute environments in the <code>DISABLED</code> state do not scale out; however, they
+     *        scale in to <code>minvCpus</code> value once instances become idle.
      * @see CEState
      */
 
@@ -354,15 +435,33 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>. An
-     * <code>ENABLED</code> state indicates that you can register instances with the compute environment and that the
-     * associated instances can accept jobs.
+     * The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.
+     * </p>
+     * <p>
+     * If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an associated
+     * job queue on the compute resources within the environment. If the compute environment is managed, then it can
+     * scale its instances out or in automatically, based on job queue demand.
+     * </p>
+     * <p>
+     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within the
+     * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
+     * compute environments in the <code>DISABLED</code> state do not scale out; however, they scale in to
+     * <code>minvCpus</code> value once instances become idle.
      * </p>
      * 
      * @param state
      *        The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.
-     *        An <code>ENABLED</code> state indicates that you can register instances with the compute environment and
-     *        that the associated instances can accept jobs.
+     *        </p>
+     *        <p>
+     *        If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs from an
+     *        associated job queue on the compute resources within the environment. If the compute environment is
+     *        managed, then it can scale its instances out or in automatically, based on job queue demand.
+     *        </p>
+     *        <p>
+     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within
+     *        the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
+     *        normally. Managed compute environments in the <code>DISABLED</code> state do not scale out; however, they
+     *        scale in to <code>minvCpus</code> value once instances become idle.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CEState
      */

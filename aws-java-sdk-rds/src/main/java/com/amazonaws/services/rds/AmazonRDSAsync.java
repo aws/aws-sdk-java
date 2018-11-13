@@ -758,6 +758,37 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Creates a new custom endpoint and associates it with an Amazon Aurora DB cluster.
+     * </p>
+     * 
+     * @param createDBClusterEndpointRequest
+     * @return A Java Future containing the result of the CreateDBClusterEndpoint operation returned by the service.
+     * @sample AmazonRDSAsync.CreateDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDBClusterEndpointResult> createDBClusterEndpointAsync(CreateDBClusterEndpointRequest createDBClusterEndpointRequest);
+
+    /**
+     * <p>
+     * Creates a new custom endpoint and associates it with an Amazon Aurora DB cluster.
+     * </p>
+     * 
+     * @param createDBClusterEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateDBClusterEndpoint operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.CreateDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDBClusterEndpointResult> createDBClusterEndpointAsync(CreateDBClusterEndpointRequest createDBClusterEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDBClusterEndpointRequest, CreateDBClusterEndpointResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new DB cluster parameter group.
      * </p>
      * <p>
@@ -1290,6 +1321,37 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<DBCluster> deleteDBClusterAsync(DeleteDBClusterRequest deleteDBClusterRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDBClusterRequest, DBCluster> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a custom endpoint and removes it from an Amazon Aurora DB cluster.
+     * </p>
+     * 
+     * @param deleteDBClusterEndpointRequest
+     * @return A Java Future containing the result of the DeleteDBClusterEndpoint operation returned by the service.
+     * @sample AmazonRDSAsync.DeleteDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDBClusterEndpointResult> deleteDBClusterEndpointAsync(DeleteDBClusterEndpointRequest deleteDBClusterEndpointRequest);
+
+    /**
+     * <p>
+     * Deletes a custom endpoint and removes it from an Amazon Aurora DB cluster.
+     * </p>
+     * 
+     * @param deleteDBClusterEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDBClusterEndpoint operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.DeleteDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDBClusterEndpointResult> deleteDBClusterEndpointAsync(DeleteDBClusterEndpointRequest deleteDBClusterEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDBClusterEndpointRequest, DeleteDBClusterEndpointResult> asyncHandler);
 
     /**
      * <p>
@@ -1850,6 +1912,39 @@ public interface AmazonRDSAsync extends AmazonRDS {
     java.util.concurrent.Future<DescribeDBClusterBacktracksResult> describeDBClusterBacktracksAsync(
             DescribeDBClusterBacktracksRequest describeDBClusterBacktracksRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeDBClusterBacktracksRequest, DescribeDBClusterBacktracksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about endpoints for an Amazon Aurora DB cluster.
+     * </p>
+     * 
+     * @param describeDBClusterEndpointsRequest
+     * @return A Java Future containing the result of the DescribeDBClusterEndpoints operation returned by the service.
+     * @sample AmazonRDSAsync.DescribeDBClusterEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterEndpoints" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBClusterEndpointsResult> describeDBClusterEndpointsAsync(
+            DescribeDBClusterEndpointsRequest describeDBClusterEndpointsRequest);
+
+    /**
+     * <p>
+     * Returns information about endpoints for an Amazon Aurora DB cluster.
+     * </p>
+     * 
+     * @param describeDBClusterEndpointsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDBClusterEndpoints operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.DescribeDBClusterEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterEndpoints" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBClusterEndpointsResult> describeDBClusterEndpointsAsync(
+            DescribeDBClusterEndpointsRequest describeDBClusterEndpointsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDBClusterEndpointsRequest, DescribeDBClusterEndpointsResult> asyncHandler);
 
     /**
      * <p>
@@ -3388,6 +3483,37 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<DBCluster> modifyDBClusterAsync(ModifyDBClusterRequest modifyDBClusterRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyDBClusterRequest, DBCluster> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the properties of an endpoint in an Amazon Aurora DB cluster.
+     * </p>
+     * 
+     * @param modifyDBClusterEndpointRequest
+     * @return A Java Future containing the result of the ModifyDBClusterEndpoint operation returned by the service.
+     * @sample AmazonRDSAsync.ModifyDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyDBClusterEndpointResult> modifyDBClusterEndpointAsync(ModifyDBClusterEndpointRequest modifyDBClusterEndpointRequest);
+
+    /**
+     * <p>
+     * Modifies the properties of an endpoint in an Amazon Aurora DB cluster.
+     * </p>
+     * 
+     * @param modifyDBClusterEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyDBClusterEndpoint operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.ModifyDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyDBClusterEndpointResult> modifyDBClusterEndpointAsync(ModifyDBClusterEndpointRequest modifyDBClusterEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyDBClusterEndpointRequest, ModifyDBClusterEndpointResult> asyncHandler);
 
     /**
      * <p>

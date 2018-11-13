@@ -369,6 +369,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new SubscriptionNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBClusterCapacityExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterEndpointNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientStorageClusterCapacityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubnetAlreadyInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ProvisionedIopsNotAvailableInAZExceptionUnmarshaller());
@@ -384,6 +385,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new DBSubnetGroupDoesNotCoverEnoughAZsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterSnapshotNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSubnetGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterEndpointQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InstanceQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterParameterGroupNotFoundExceptionUnmarshaller());
@@ -391,6 +393,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new SnapshotQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBInstanceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SharedSnapshotQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidDBClusterEndpointStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedDBInstanceQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBClusterStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterAlreadyExistsExceptionUnmarshaller());
@@ -410,6 +413,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new EventSubscriptionQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StorageQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterEndpointAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.rds.model.AmazonRDSException.class));
 
@@ -438,7 +442,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterRoleAlreadyExistsException
      *         The specified IAM role Amazon Resource Name (ARN) is already associated with the specified DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws DBClusterRoleQuotaExceededException
      *         You have exceeded the maximum number of IAM roles that can be associated with the specified DB cluster.
      * @sample AmazonRDS.AddRoleToDBCluster
@@ -618,7 +622,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws ResourceNotFoundException
      *         The specified resource ID was not found.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBInstanceStateException
      *         The DB instance isn't in a valid state.
      * @sample AmazonRDS.ApplyPendingMaintenanceAction
@@ -757,7 +761,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @sample AmazonRDS.BacktrackDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/BacktrackDBCluster" target="_top">AWS API
      *      Documentation</a>
@@ -962,7 +966,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterSnapshotNotFoundException
      *         <i>DBClusterSnapshotIdentifier</i> doesn't refer to an existing DB cluster snapshot.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBClusterSnapshotStateException
      *         The supplied value isn't a valid DB cluster snapshot state.
      * @throws SnapshotQuotaExceededException
@@ -1235,7 +1239,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidVPCNetworkStateException
      *         The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBSubnetGroupStateException
      *         The DB subnet group cannot be deleted because it's in use.
      * @throws InvalidSubnetException
@@ -1288,6 +1292,71 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             URI cachedEndpoint = null;
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new custom endpoint and associates it with an Amazon Aurora DB cluster.
+     * </p>
+     * 
+     * @param createDBClusterEndpointRequest
+     * @return Result of the CreateDBClusterEndpoint operation returned by the service.
+     * @throws DBClusterEndpointQuotaExceededException
+     *         The cluster already has the maximum number of custom endpoints.
+     * @throws DBClusterEndpointAlreadyExistsException
+     *         The specified custom endpoint can't be created because it already exists.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @sample AmazonRDS.CreateDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateDBClusterEndpointResult createDBClusterEndpoint(CreateDBClusterEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDBClusterEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final CreateDBClusterEndpointResult executeCreateDBClusterEndpoint(CreateDBClusterEndpointRequest createDBClusterEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createDBClusterEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDBClusterEndpointRequest> request = null;
+        Response<CreateDBClusterEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDBClusterEndpointRequestMarshaller().marshall(super.beforeMarshalling(createDBClusterEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBClusterEndpoint");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<CreateDBClusterEndpointResult> responseHandler = new StaxResponseHandler<CreateDBClusterEndpointResult>(
+                    new CreateDBClusterEndpointResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1395,7 +1464,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterSnapshotAlreadyExistsException
      *         The user already has a DB cluster snapshot with the given identifier.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws SnapshotQuotaExceededException
@@ -1473,7 +1542,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
      * @throws InvalidVPCNetworkStateException
@@ -2067,7 +2136,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws DBClusterSnapshotAlreadyExistsException
      *         The user already has a DB cluster snapshot with the given identifier.
      * @throws SnapshotQuotaExceededException
@@ -2109,6 +2178,65 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             URI cachedEndpoint = null;
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a custom endpoint and removes it from an Amazon Aurora DB cluster.
+     * </p>
+     * 
+     * @param deleteDBClusterEndpointRequest
+     * @return Result of the DeleteDBClusterEndpoint operation returned by the service.
+     * @throws InvalidDBClusterEndpointStateException
+     *         The requested operation can't be performed on the endpoint while the endpoint is in this state.
+     * @throws DBClusterEndpointNotFoundException
+     *         The specified custom endpoint doesn't exist.
+     * @throws InvalidDBClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @sample AmazonRDS.DeleteDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteDBClusterEndpointResult deleteDBClusterEndpoint(DeleteDBClusterEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDBClusterEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDBClusterEndpointResult executeDeleteDBClusterEndpoint(DeleteDBClusterEndpointRequest deleteDBClusterEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDBClusterEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDBClusterEndpointRequest> request = null;
+        Response<DeleteDBClusterEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDBClusterEndpointRequestMarshaller().marshall(super.beforeMarshalling(deleteDBClusterEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBClusterEndpoint");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<DeleteDBClusterEndpointResult> responseHandler = new StaxResponseHandler<DeleteDBClusterEndpointResult>(
+                    new DeleteDBClusterEndpointResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2298,7 +2426,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws SnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of DB snapshots.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @sample AmazonRDS.DeleteDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -2878,6 +3006,61 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBClusterBacktracksResult> responseHandler = new StaxResponseHandler<DescribeDBClusterBacktracksResult>(
                     new DescribeDBClusterBacktracksResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about endpoints for an Amazon Aurora DB cluster.
+     * </p>
+     * 
+     * @param describeDBClusterEndpointsRequest
+     * @return Result of the DescribeDBClusterEndpoints operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+     * @sample AmazonRDS.DescribeDBClusterEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterEndpoints" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeDBClusterEndpointsResult describeDBClusterEndpoints(DescribeDBClusterEndpointsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBClusterEndpoints(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBClusterEndpointsResult executeDescribeDBClusterEndpoints(DescribeDBClusterEndpointsRequest describeDBClusterEndpointsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDBClusterEndpointsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDBClusterEndpointsRequest> request = null;
+        Response<DescribeDBClusterEndpointsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDBClusterEndpointsRequestMarshaller().marshall(super.beforeMarshalling(describeDBClusterEndpointsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusterEndpoints");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<DescribeDBClusterEndpointsResult> responseHandler = new StaxResponseHandler<DescribeDBClusterEndpointsResult>(
+                    new DescribeDBClusterEndpointsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4601,7 +4784,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBInstanceStateException
      *         The DB instance isn't in a valid state.
      * @sample AmazonRDS.FailoverDBCluster
@@ -4751,7 +4934,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBClusterCapacityException
      *         <i>Capacity</i> isn't a valid Aurora Serverless DB cluster capacity. Valid capacity values are
      *         <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>,
@@ -4815,7 +4998,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws StorageQuotaExceededException
      *         The request would result in the user exceeding the allowed amount of storage available across all DB
      *         instances.
@@ -4870,6 +5053,69 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             URI cachedEndpoint = null;
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the properties of an endpoint in an Amazon Aurora DB cluster.
+     * </p>
+     * 
+     * @param modifyDBClusterEndpointRequest
+     * @return Result of the ModifyDBClusterEndpoint operation returned by the service.
+     * @throws InvalidDBClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @throws InvalidDBClusterEndpointStateException
+     *         The requested operation can't be performed on the endpoint while the endpoint is in this state.
+     * @throws DBClusterEndpointNotFoundException
+     *         The specified custom endpoint doesn't exist.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @sample AmazonRDS.ModifyDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ModifyDBClusterEndpointResult modifyDBClusterEndpoint(ModifyDBClusterEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyDBClusterEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final ModifyDBClusterEndpointResult executeModifyDBClusterEndpoint(ModifyDBClusterEndpointRequest modifyDBClusterEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyDBClusterEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyDBClusterEndpointRequest> request = null;
+        Response<ModifyDBClusterEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyDBClusterEndpointRequestMarshaller().marshall(super.beforeMarshalling(modifyDBClusterEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBClusterEndpoint");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<ModifyDBClusterEndpointResult> responseHandler = new StaxResponseHandler<ModifyDBClusterEndpointResult>(
+                    new ModifyDBClusterEndpointResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5608,7 +5854,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @sample AmazonRDS.PromoteReadReplicaDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplicaDBCluster"
      *      target="_top">AWS API Documentation</a>
@@ -5795,7 +6041,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterRoleNotFoundException
      *         The specified IAM role Amazon Resource Name (ARN) isn't associated with the specified DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @sample AmazonRDS.RemoveRoleFromDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBCluster" target="_top">AWS
      *      API Documentation</a>
@@ -6122,7 +6368,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidVPCNetworkStateException
      *         The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBSubnetGroupStateException
      *         The DB subnet group cannot be deleted because it's in use.
      * @throws InvalidSubnetException
@@ -6333,7 +6579,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidDBClusterSnapshotStateException
      *         The supplied value isn't a valid DB cluster snapshot state.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBSnapshotStateException
      *         The state of the DB snapshot doesn't allow deletion.
      * @throws InvalidRestoreException
@@ -6802,7 +7048,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBInstanceStateException
      *         The DB instance isn't in a valid state.
      * @sample AmazonRDS.StartDBCluster
@@ -6881,7 +7127,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
      * @throws InvalidVPCNetworkStateException
@@ -6957,7 +7203,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBInstanceStateException
      *         The DB instance isn't in a valid state.
      * @sample AmazonRDS.StopDBCluster
@@ -7033,7 +7279,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws SnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of DB snapshots.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The requested operation can't be performed while the cluster is in this state.
      * @sample AmazonRDS.StopDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstance" target="_top">AWS API
      *      Documentation</a>

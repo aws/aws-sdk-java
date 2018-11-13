@@ -49,6 +49,8 @@ public enum RDSActions implements Action {
     CopyOptionGroup("rds:CopyOptionGroup"),
     /** Action for the CreateDBCluster operation. */
     CreateDBCluster("rds:CreateDBCluster"),
+    /** Action for the CreateDBClusterEndpoint operation. */
+    CreateDBClusterEndpoint("rds:CreateDBClusterEndpoint"),
     /** Action for the CreateDBClusterParameterGroup operation. */
     CreateDBClusterParameterGroup("rds:CreateDBClusterParameterGroup"),
     /** Action for the CreateDBClusterSnapshot operation. */
@@ -71,6 +73,8 @@ public enum RDSActions implements Action {
     CreateOptionGroup("rds:CreateOptionGroup"),
     /** Action for the DeleteDBCluster operation. */
     DeleteDBCluster("rds:DeleteDBCluster"),
+    /** Action for the DeleteDBClusterEndpoint operation. */
+    DeleteDBClusterEndpoint("rds:DeleteDBClusterEndpoint"),
     /** Action for the DeleteDBClusterParameterGroup operation. */
     DeleteDBClusterParameterGroup("rds:DeleteDBClusterParameterGroup"),
     /** Action for the DeleteDBClusterSnapshot operation. */
@@ -95,6 +99,8 @@ public enum RDSActions implements Action {
     DescribeCertificates("rds:DescribeCertificates"),
     /** Action for the DescribeDBClusterBacktracks operation. */
     DescribeDBClusterBacktracks("rds:DescribeDBClusterBacktracks"),
+    /** Action for the DescribeDBClusterEndpoints operation. */
+    DescribeDBClusterEndpoints("rds:DescribeDBClusterEndpoints"),
     /** Action for the DescribeDBClusterParameterGroups operation. */
     DescribeDBClusterParameterGroups("rds:DescribeDBClusterParameterGroups"),
     /** Action for the DescribeDBClusterParameters operation. */
@@ -159,6 +165,8 @@ public enum RDSActions implements Action {
     ModifyCurrentDBClusterCapacity("rds:ModifyCurrentDBClusterCapacity"),
     /** Action for the ModifyDBCluster operation. */
     ModifyDBCluster("rds:ModifyDBCluster"),
+    /** Action for the ModifyDBClusterEndpoint operation. */
+    ModifyDBClusterEndpoint("rds:ModifyDBClusterEndpoint"),
     /** Action for the ModifyDBClusterParameterGroup operation. */
     ModifyDBClusterParameterGroup("rds:ModifyDBClusterParameterGroup"),
     /** Action for the ModifyDBClusterSnapshotAttribute operation. */

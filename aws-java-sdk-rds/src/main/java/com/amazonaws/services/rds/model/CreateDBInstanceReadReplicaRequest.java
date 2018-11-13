@@ -48,7 +48,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6.
+     * Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or later.
      * </p>
      * </li>
      * <li>
@@ -356,7 +356,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Aurora 5.6 or higher.
+     * Aurora MySQL 5.6 or higher
      * </p>
      * </li>
      * </ul>
@@ -450,7 +450,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6.
+     *        Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or later.
      *        </p>
      *        </li>
      *        <li>
@@ -547,7 +547,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6.
+     * Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or later.
      * </p>
      * </li>
      * <li>
@@ -591,7 +591,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6.
+     *        Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or later.
      *        </p>
      *        </li>
      *        <li>
@@ -642,7 +642,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6.
+     * Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or later.
      * </p>
      * </li>
      * <li>
@@ -685,7 +685,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         </li>
      *         <li>
      *         <p>
-     *         Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6.
+     *         Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or later.
      *         </p>
      *         </li>
      *         <li>
@@ -736,7 +736,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6.
+     * Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or later.
      * </p>
      * </li>
      * <li>
@@ -780,7 +780,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6.
+     *        Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or later.
      *        </p>
      *        </li>
      *        <li>
@@ -2525,7 +2525,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Aurora 5.6 or higher.
+     * Aurora MySQL 5.6 or higher
      * </p>
      * </li>
      * </ul>
@@ -2552,7 +2552,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        Aurora 5.6 or higher.
+     *        Aurora MySQL 5.6 or higher
      *        </p>
      *        </li>
      *        </ul>
@@ -2585,7 +2585,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Aurora 5.6 or higher.
+     * Aurora MySQL 5.6 or higher
      * </p>
      * </li>
      * </ul>
@@ -2611,7 +2611,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         </li>
      *         <li>
      *         <p>
-     *         Aurora 5.6 or higher.
+     *         Aurora MySQL 5.6 or higher
      *         </p>
      *         </li>
      *         </ul>
@@ -2644,7 +2644,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Aurora 5.6 or higher.
+     * Aurora MySQL 5.6 or higher
      * </p>
      * </li>
      * </ul>
@@ -2671,7 +2671,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        Aurora 5.6 or higher.
+     *        Aurora MySQL 5.6 or higher
      *        </p>
      *        </li>
      *        </ul>
@@ -2706,7 +2706,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Aurora 5.6 or higher.
+     * Aurora MySQL 5.6 or higher
      * </p>
      * </li>
      * </ul>
@@ -2732,7 +2732,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         </li>
      *         <li>
      *         <p>
-     *         Aurora 5.6 or higher.
+     *         Aurora MySQL 5.6 or higher
      *         </p>
      *         </li>
      *         </ul>

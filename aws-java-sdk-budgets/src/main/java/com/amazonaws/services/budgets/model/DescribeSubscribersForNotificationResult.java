@@ -26,23 +26,23 @@ public class DescribeSubscribersForNotificationResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A list of subscribers associated with a notification.
+     * A list of subscribers that are associated with a notification.
      * </p>
      */
     private java.util.List<Subscriber> subscribers;
     /**
      * <p>
-     * The pagination token that indicates the next set of results that you can retrieve.
+     * The pagination token in the service response that indicates the next set of results that you can retrieve.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of subscribers associated with a notification.
+     * A list of subscribers that are associated with a notification.
      * </p>
      * 
-     * @return A list of subscribers associated with a notification.
+     * @return A list of subscribers that are associated with a notification.
      */
 
     public java.util.List<Subscriber> getSubscribers() {
@@ -51,11 +51,11 @@ public class DescribeSubscribersForNotificationResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A list of subscribers associated with a notification.
+     * A list of subscribers that are associated with a notification.
      * </p>
      * 
      * @param subscribers
-     *        A list of subscribers associated with a notification.
+     *        A list of subscribers that are associated with a notification.
      */
 
     public void setSubscribers(java.util.Collection<Subscriber> subscribers) {
@@ -69,7 +69,7 @@ public class DescribeSubscribersForNotificationResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A list of subscribers associated with a notification.
+     * A list of subscribers that are associated with a notification.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class DescribeSubscribersForNotificationResult extends com.amazonaws.Amaz
      * </p>
      * 
      * @param subscribers
-     *        A list of subscribers associated with a notification.
+     *        A list of subscribers that are associated with a notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class DescribeSubscribersForNotificationResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A list of subscribers associated with a notification.
+     * A list of subscribers that are associated with a notification.
      * </p>
      * 
      * @param subscribers
-     *        A list of subscribers associated with a notification.
+     *        A list of subscribers that are associated with a notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,11 +109,11 @@ public class DescribeSubscribersForNotificationResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The pagination token that indicates the next set of results that you can retrieve.
+     * The pagination token in the service response that indicates the next set of results that you can retrieve.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token that indicates the next set of results that you can retrieve.
+     *        The pagination token in the service response that indicates the next set of results that you can retrieve.
      */
 
     public void setNextToken(String nextToken) {
@@ -122,10 +122,11 @@ public class DescribeSubscribersForNotificationResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The pagination token that indicates the next set of results that you can retrieve.
+     * The pagination token in the service response that indicates the next set of results that you can retrieve.
      * </p>
      * 
-     * @return The pagination token that indicates the next set of results that you can retrieve.
+     * @return The pagination token in the service response that indicates the next set of results that you can
+     *         retrieve.
      */
 
     public String getNextToken() {
@@ -134,11 +135,11 @@ public class DescribeSubscribersForNotificationResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The pagination token that indicates the next set of results that you can retrieve.
+     * The pagination token in the service response that indicates the next set of results that you can retrieve.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token that indicates the next set of results that you can retrieve.
+     *        The pagination token in the service response that indicates the next set of results that you can retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

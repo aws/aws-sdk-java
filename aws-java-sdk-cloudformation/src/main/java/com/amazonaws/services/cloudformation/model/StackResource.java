@@ -83,6 +83,16 @@ public class StackResource implements Serializable, Cloneable {
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected
+     * configuration, as defined in the stack template and any values specified as template parameters. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
+     * >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     * </p>
+     */
+    private StackResourceDriftInformation driftInformation;
 
     /**
      * <p>
@@ -496,6 +506,70 @@ public class StackResource implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected
+     * configuration, as defined in the stack template and any values specified as template parameters. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
+     * >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     * </p>
+     * 
+     * @param driftInformation
+     *        Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its
+     *        expected configuration, as defined in the stack template and any values specified as template parameters.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
+     *        >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     */
+
+    public void setDriftInformation(StackResourceDriftInformation driftInformation) {
+        this.driftInformation = driftInformation;
+    }
+
+    /**
+     * <p>
+     * Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected
+     * configuration, as defined in the stack template and any values specified as template parameters. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
+     * >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     * </p>
+     * 
+     * @return Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its
+     *         expected configuration, as defined in the stack template and any values specified as template parameters.
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
+     *         >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     */
+
+    public StackResourceDriftInformation getDriftInformation() {
+        return this.driftInformation;
+    }
+
+    /**
+     * <p>
+     * Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected
+     * configuration, as defined in the stack template and any values specified as template parameters. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
+     * >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     * </p>
+     * 
+     * @param driftInformation
+     *        Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its
+     *        expected configuration, as defined in the stack template and any values specified as template parameters.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
+     *        >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackResource withDriftInformation(StackResourceDriftInformation driftInformation) {
+        setDriftInformation(driftInformation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -523,7 +597,9 @@ public class StackResource implements Serializable, Cloneable {
         if (getResourceStatusReason() != null)
             sb.append("ResourceStatusReason: ").append(getResourceStatusReason()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getDriftInformation() != null)
+            sb.append("DriftInformation: ").append(getDriftInformation());
         sb.append("}");
         return sb.toString();
     }
@@ -574,6 +650,10 @@ public class StackResource implements Serializable, Cloneable {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getDriftInformation() == null ^ this.getDriftInformation() == null)
+            return false;
+        if (other.getDriftInformation() != null && other.getDriftInformation().equals(this.getDriftInformation()) == false)
+            return false;
         return true;
     }
 
@@ -591,6 +671,7 @@ public class StackResource implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getResourceStatus() == null) ? 0 : getResourceStatus().hashCode());
         hashCode = prime * hashCode + ((getResourceStatusReason() == null) ? 0 : getResourceStatusReason().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getDriftInformation() == null) ? 0 : getDriftInformation().hashCode());
         return hashCode;
     }
 

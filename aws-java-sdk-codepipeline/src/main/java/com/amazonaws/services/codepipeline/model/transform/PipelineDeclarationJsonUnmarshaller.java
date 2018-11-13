@@ -60,6 +60,11 @@ public class PipelineDeclarationJsonUnmarshaller implements Unmarshaller<Pipelin
                     context.nextToken();
                     pipelineDeclaration.setArtifactStore(ArtifactStoreJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("artifactStores", targetDepth)) {
+                    context.nextToken();
+                    pipelineDeclaration.setArtifactStores(new MapUnmarshaller<String, ArtifactStore>(context.getUnmarshaller(String.class),
+                            ArtifactStoreJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("stages", targetDepth)) {
                     context.nextToken();
                     pipelineDeclaration.setStages(new ListUnmarshaller<StageDeclaration>(StageDeclarationJsonUnmarshaller.getInstance()).unmarshall(context));

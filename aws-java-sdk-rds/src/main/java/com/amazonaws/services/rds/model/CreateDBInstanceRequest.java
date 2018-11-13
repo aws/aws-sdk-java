@@ -276,12 +276,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.
      * </p>
      * </li>
      * <li>
@@ -1416,12 +1416,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.
      *        </p>
      *        </li>
      *        <li>
@@ -2811,12 +2811,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.
      * </p>
      * </li>
      * <li>
@@ -2975,12 +2975,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.
      *        </p>
      *        </li>
      *        <li>
@@ -3145,12 +3145,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.
      * </p>
      * </li>
      * <li>
@@ -3308,12 +3308,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
+     *         General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
+     *         Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.
      *         </p>
      *         </li>
      *         <li>
@@ -3478,12 +3478,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.
      * </p>
      * </li>
      * <li>
@@ -3642,12 +3642,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.
      *        </p>
      *        </li>
      *        <li>

@@ -75,7 +75,11 @@ public class PipelineExecutionSummary implements Serializable, Cloneable, Struct
      * </p>
      */
     private java.util.Date lastUpdateTime;
-
+    /**
+     * <p>
+     * A list of the source artifact revisions that initiated a pipeline execution.
+     * </p>
+     */
     private java.util.List<SourceRevision> sourceRevisions;
 
     /**
@@ -497,7 +501,11 @@ public class PipelineExecutionSummary implements Serializable, Cloneable, Struct
     }
 
     /**
-     * @return
+     * <p>
+     * A list of the source artifact revisions that initiated a pipeline execution.
+     * </p>
+     * 
+     * @return A list of the source artifact revisions that initiated a pipeline execution.
      */
 
     public java.util.List<SourceRevision> getSourceRevisions() {
@@ -505,7 +513,12 @@ public class PipelineExecutionSummary implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * A list of the source artifact revisions that initiated a pipeline execution.
+     * </p>
+     * 
      * @param sourceRevisions
+     *        A list of the source artifact revisions that initiated a pipeline execution.
      */
 
     public void setSourceRevisions(java.util.Collection<SourceRevision> sourceRevisions) {
@@ -519,12 +532,16 @@ public class PipelineExecutionSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
+     * A list of the source artifact revisions that initiated a pipeline execution.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSourceRevisions(java.util.Collection)} or {@link #withSourceRevisions(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param sourceRevisions
+     *        A list of the source artifact revisions that initiated a pipeline execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -539,7 +556,12 @@ public class PipelineExecutionSummary implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * A list of the source artifact revisions that initiated a pipeline execution.
+     * </p>
+     * 
      * @param sourceRevisions
+     *        A list of the source artifact revisions that initiated a pipeline execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

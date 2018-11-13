@@ -119,6 +119,32 @@ public class AbstractAmazonKinesisFirehoseAsync extends AbstractAmazonKinesisFir
     }
 
     @Override
+    public java.util.concurrent.Future<StartDeliveryStreamEncryptionResult> startDeliveryStreamEncryptionAsync(StartDeliveryStreamEncryptionRequest request) {
+
+        return startDeliveryStreamEncryptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDeliveryStreamEncryptionResult> startDeliveryStreamEncryptionAsync(StartDeliveryStreamEncryptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartDeliveryStreamEncryptionRequest, StartDeliveryStreamEncryptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopDeliveryStreamEncryptionResult> stopDeliveryStreamEncryptionAsync(StopDeliveryStreamEncryptionRequest request) {
+
+        return stopDeliveryStreamEncryptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopDeliveryStreamEncryptionResult> stopDeliveryStreamEncryptionAsync(StopDeliveryStreamEncryptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopDeliveryStreamEncryptionRequest, StopDeliveryStreamEncryptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagDeliveryStreamResult> tagDeliveryStreamAsync(TagDeliveryStreamRequest request) {
 
         return tagDeliveryStreamAsync(request, null);

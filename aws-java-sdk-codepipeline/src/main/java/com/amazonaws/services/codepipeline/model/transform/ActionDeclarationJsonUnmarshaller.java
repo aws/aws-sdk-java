@@ -78,6 +78,10 @@ public class ActionDeclarationJsonUnmarshaller implements Unmarshaller<ActionDec
                     context.nextToken();
                     actionDeclaration.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("region", targetDepth)) {
+                    context.nextToken();
+                    actionDeclaration.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

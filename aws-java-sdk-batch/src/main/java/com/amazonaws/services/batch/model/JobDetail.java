@@ -50,6 +50,13 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current status for the job.
      * </p>
+     * <note>
+     * <p>
+     * If your jobs do not progress to <code>STARTING</code>, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck in
+     * <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      */
     private String status;
     /**
@@ -255,9 +262,22 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current status for the job.
      * </p>
+     * <note>
+     * <p>
+     * If your jobs do not progress to <code>STARTING</code>, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck in
+     * <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param status
-     *        The current status for the job.
+     *        The current status for the job. </p> <note>
+     *        <p>
+     *        If your jobs do not progress to <code>STARTING</code>, see <a
+     *        href="http://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
+     *        Stuck in <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User
+     *        Guide</i>.
+     *        </p>
      * @see JobStatus
      */
 
@@ -269,8 +289,21 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current status for the job.
      * </p>
+     * <note>
+     * <p>
+     * If your jobs do not progress to <code>STARTING</code>, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck in
+     * <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      * 
-     * @return The current status for the job.
+     * @return The current status for the job. </p> <note>
+     *         <p>
+     *         If your jobs do not progress to <code>STARTING</code>, see <a
+     *         href="http://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
+     *         Stuck in <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User
+     *         Guide</i>.
+     *         </p>
      * @see JobStatus
      */
 
@@ -282,9 +315,22 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current status for the job.
      * </p>
+     * <note>
+     * <p>
+     * If your jobs do not progress to <code>STARTING</code>, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck in
+     * <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param status
-     *        The current status for the job.
+     *        The current status for the job. </p> <note>
+     *        <p>
+     *        If your jobs do not progress to <code>STARTING</code>, see <a
+     *        href="http://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
+     *        Stuck in <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User
+     *        Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */
@@ -298,9 +344,22 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current status for the job.
      * </p>
+     * <note>
+     * <p>
+     * If your jobs do not progress to <code>STARTING</code>, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck in
+     * <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param status
-     *        The current status for the job.
+     *        The current status for the job. </p> <note>
+     *        <p>
+     *        If your jobs do not progress to <code>STARTING</code>, see <a
+     *        href="http://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
+     *        Stuck in <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User
+     *        Guide</i>.
+     *        </p>
      * @see JobStatus
      */
 
@@ -312,9 +371,22 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current status for the job.
      * </p>
+     * <note>
+     * <p>
+     * If your jobs do not progress to <code>STARTING</code>, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck in
+     * <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param status
-     *        The current status for the job.
+     *        The current status for the job. </p> <note>
+     *        <p>
+     *        If your jobs do not progress to <code>STARTING</code>, see <a
+     *        href="http://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
+     *        Stuck in <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User
+     *        Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */

@@ -19,7 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The types of cost included in a budget, such as tax and subscriptions.
+ * The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions.
+ * </p>
+ * <p>
+ * <code>USAGE</code>, <code>RI_UTILIZATION</code>, and <code>RI_COVERAGE</code> budgets do not have
+ * <code>CostTypes</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -45,7 +49,7 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     private Boolean includeSubscription;
     /**
      * <p>
-     * Specifies whether a budget uses blended rate.
+     * Specifies whether a budget uses a blended rate.
      * </p>
      * <p>
      * The default value is <code>false</code>.
@@ -271,14 +275,14 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether a budget uses blended rate.
+     * Specifies whether a budget uses a blended rate.
      * </p>
      * <p>
      * The default value is <code>false</code>.
      * </p>
      * 
      * @param useBlended
-     *        Specifies whether a budget uses blended rate.</p>
+     *        Specifies whether a budget uses a blended rate.</p>
      *        <p>
      *        The default value is <code>false</code>.
      */
@@ -289,13 +293,13 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether a budget uses blended rate.
+     * Specifies whether a budget uses a blended rate.
      * </p>
      * <p>
      * The default value is <code>false</code>.
      * </p>
      * 
-     * @return Specifies whether a budget uses blended rate.</p>
+     * @return Specifies whether a budget uses a blended rate.</p>
      *         <p>
      *         The default value is <code>false</code>.
      */
@@ -306,14 +310,14 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether a budget uses blended rate.
+     * Specifies whether a budget uses a blended rate.
      * </p>
      * <p>
      * The default value is <code>false</code>.
      * </p>
      * 
      * @param useBlended
-     *        Specifies whether a budget uses blended rate.</p>
+     *        Specifies whether a budget uses a blended rate.</p>
      *        <p>
      *        The default value is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -326,13 +330,13 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether a budget uses blended rate.
+     * Specifies whether a budget uses a blended rate.
      * </p>
      * <p>
      * The default value is <code>false</code>.
      * </p>
      * 
-     * @return Specifies whether a budget uses blended rate.</p>
+     * @return Specifies whether a budget uses a blended rate.</p>
      *         <p>
      *         The default value is <code>false</code>.
      */
