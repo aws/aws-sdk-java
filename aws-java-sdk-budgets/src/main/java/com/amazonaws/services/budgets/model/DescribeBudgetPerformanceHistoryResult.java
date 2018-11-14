@@ -25,8 +25,8 @@ public class DescribeBudgetPerformanceHistoryResult extends com.amazonaws.Amazon
      * </p>
      * <p>
      * For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For
-     * <code>MONTHLY</code> budgets, the history saves the state of the budget for the last 12 months. For
-     * <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.
+     * <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12
+     * months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.
      * </p>
      */
     private BudgetPerformanceHistory budgetPerformanceHistory;
@@ -39,16 +39,17 @@ public class DescribeBudgetPerformanceHistoryResult extends com.amazonaws.Amazon
      * </p>
      * <p>
      * For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For
-     * <code>MONTHLY</code> budgets, the history saves the state of the budget for the last 12 months. For
-     * <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.
+     * <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12
+     * months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.
      * </p>
      * 
      * @param budgetPerformanceHistory
      *        The history of how often the budget has gone into an <code>ALARM</code> state.</p>
      *        <p>
      *        For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For
-     *        <code>MONTHLY</code> budgets, the history saves the state of the budget for the last 12 months. For
-     *        <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.
+     *        <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the
+     *        last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last
+     *        four quarters.
      */
 
     public void setBudgetPerformanceHistory(BudgetPerformanceHistory budgetPerformanceHistory) {
@@ -61,15 +62,16 @@ public class DescribeBudgetPerformanceHistoryResult extends com.amazonaws.Amazon
      * </p>
      * <p>
      * For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For
-     * <code>MONTHLY</code> budgets, the history saves the state of the budget for the last 12 months. For
-     * <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.
+     * <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12
+     * months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.
      * </p>
      * 
      * @return The history of how often the budget has gone into an <code>ALARM</code> state.</p>
      *         <p>
      *         For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For
-     *         <code>MONTHLY</code> budgets, the history saves the state of the budget for the last 12 months. For
-     *         <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.
+     *         <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the
+     *         last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the
+     *         last four quarters.
      */
 
     public BudgetPerformanceHistory getBudgetPerformanceHistory() {
@@ -82,16 +84,17 @@ public class DescribeBudgetPerformanceHistoryResult extends com.amazonaws.Amazon
      * </p>
      * <p>
      * For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For
-     * <code>MONTHLY</code> budgets, the history saves the state of the budget for the last 12 months. For
-     * <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.
+     * <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12
+     * months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.
      * </p>
      * 
      * @param budgetPerformanceHistory
      *        The history of how often the budget has gone into an <code>ALARM</code> state.</p>
      *        <p>
      *        For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For
-     *        <code>MONTHLY</code> budgets, the history saves the state of the budget for the last 12 months. For
-     *        <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.
+     *        <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the
+     *        last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last
+     *        four quarters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

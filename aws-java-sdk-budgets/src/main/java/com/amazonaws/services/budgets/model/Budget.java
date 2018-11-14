@@ -54,6 +54,36 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The cost filters, such as service or region, that are applied to a budget.
      * </p>
+     * <p>
+     * AWS Budgets supports the following services as a filter for RI budgets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon Elastic Compute Cloud - Compute
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon ElastiCache
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Elasticsearch Service
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.Map<String, java.util.List<String>> costFilters;
     /**
@@ -233,8 +263,67 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The cost filters, such as service or region, that are applied to a budget.
      * </p>
+     * <p>
+     * AWS Budgets supports the following services as a filter for RI budgets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon Elastic Compute Cloud - Compute
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon ElastiCache
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Elasticsearch Service
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The cost filters, such as service or region, that are applied to a budget.
+     * @return The cost filters, such as service or region, that are applied to a budget.</p>
+     *         <p>
+     *         AWS Budgets supports the following services as a filter for RI budgets:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Amazon Elastic Compute Cloud - Compute
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Redshift
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Relational Database Service
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon ElastiCache
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Elasticsearch Service
+     *         </p>
+     *         </li>
      */
 
     public java.util.Map<String, java.util.List<String>> getCostFilters() {
@@ -245,9 +334,68 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The cost filters, such as service or region, that are applied to a budget.
      * </p>
+     * <p>
+     * AWS Budgets supports the following services as a filter for RI budgets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon Elastic Compute Cloud - Compute
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon ElastiCache
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Elasticsearch Service
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param costFilters
-     *        The cost filters, such as service or region, that are applied to a budget.
+     *        The cost filters, such as service or region, that are applied to a budget.</p>
+     *        <p>
+     *        AWS Budgets supports the following services as a filter for RI budgets:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Amazon Elastic Compute Cloud - Compute
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Redshift
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Relational Database Service
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon ElastiCache
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Elasticsearch Service
+     *        </p>
+     *        </li>
      */
 
     public void setCostFilters(java.util.Map<String, java.util.List<String>> costFilters) {
@@ -258,9 +406,68 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The cost filters, such as service or region, that are applied to a budget.
      * </p>
+     * <p>
+     * AWS Budgets supports the following services as a filter for RI budgets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon Elastic Compute Cloud - Compute
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon ElastiCache
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Elasticsearch Service
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param costFilters
-     *        The cost filters, such as service or region, that are applied to a budget.
+     *        The cost filters, such as service or region, that are applied to a budget.</p>
+     *        <p>
+     *        AWS Budgets supports the following services as a filter for RI budgets:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Amazon Elastic Compute Cloud - Compute
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Redshift
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Relational Database Service
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon ElastiCache
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Elasticsearch Service
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

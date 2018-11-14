@@ -31,6 +31,8 @@ public enum RedshiftActions implements Action {
     AuthorizeClusterSecurityGroupIngress("redshift:AuthorizeClusterSecurityGroupIngress"),
     /** Action for the AuthorizeSnapshotAccess operation. */
     AuthorizeSnapshotAccess("redshift:AuthorizeSnapshotAccess"),
+    /** Action for the CancelResize operation. */
+    CancelResize("redshift:CancelResize"),
     /** Action for the CopyClusterSnapshot operation. */
     CopyClusterSnapshot("redshift:CopyClusterSnapshot"),
     /** Action for the CreateCluster operation. */
@@ -73,6 +75,8 @@ public enum RedshiftActions implements Action {
     DeleteSnapshotCopyGrant("redshift:DeleteSnapshotCopyGrant"),
     /** Action for the DeleteTags operation. */
     DeleteTags("redshift:DeleteTags"),
+    /** Action for the DescribeAccountAttributes operation. */
+    DescribeAccountAttributes("redshift:DescribeAccountAttributes"),
     /** Action for the DescribeClusterDbRevisions operation. */
     DescribeClusterDbRevisions("redshift:DescribeClusterDbRevisions"),
     /** Action for the DescribeClusterParameterGroups operation. */
@@ -137,6 +141,8 @@ public enum RedshiftActions implements Action {
     ModifyClusterDbRevision("redshift:ModifyClusterDbRevision"),
     /** Action for the ModifyClusterIamRoles operation. */
     ModifyClusterIamRoles("redshift:ModifyClusterIamRoles"),
+    /** Action for the ModifyClusterMaintenance operation. */
+    ModifyClusterMaintenance("redshift:ModifyClusterMaintenance"),
     /** Action for the ModifyClusterParameterGroup operation. */
     ModifyClusterParameterGroup("redshift:ModifyClusterParameterGroup"),
     /** Action for the ModifyClusterSubnetGroup operation. */

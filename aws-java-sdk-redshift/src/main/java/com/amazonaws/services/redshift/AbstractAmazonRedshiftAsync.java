@@ -67,6 +67,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CancelResizeResult> cancelResizeAsync(CancelResizeRequest request) {
+
+        return cancelResizeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelResizeResult> cancelResizeAsync(CancelResizeRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelResizeRequest, CancelResizeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<Snapshot> copyClusterSnapshotAsync(CopyClusterSnapshotRequest request) {
 
         return copyClusterSnapshotAsync(request, null);
@@ -335,6 +348,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     @Override
     public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(DescribeAccountAttributesRequest request) {
+
+        return describeAccountAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(DescribeAccountAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1151,6 +1177,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     @Override
     public java.util.concurrent.Future<Cluster> modifyClusterIamRolesAsync(ModifyClusterIamRolesRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyClusterIamRolesRequest, Cluster> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<Cluster> modifyClusterMaintenanceAsync(ModifyClusterMaintenanceRequest request) {
+
+        return modifyClusterMaintenanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Cluster> modifyClusterMaintenanceAsync(ModifyClusterMaintenanceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyClusterMaintenanceRequest, Cluster> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

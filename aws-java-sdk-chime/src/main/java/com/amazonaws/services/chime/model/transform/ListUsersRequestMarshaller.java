@@ -29,6 +29,8 @@ public class ListUsersRequestMarshaller {
 
     private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("accountId").build();
+    private static final MarshallingInfo<String> USEREMAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("user-email").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("max-results").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -51,6 +53,7 @@ public class ListUsersRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listUsersRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(listUsersRequest.getUserEmail(), USEREMAIL_BINDING);
             protocolMarshaller.marshall(listUsersRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listUsersRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {

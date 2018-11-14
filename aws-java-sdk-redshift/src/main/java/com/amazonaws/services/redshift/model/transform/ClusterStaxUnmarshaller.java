@@ -175,6 +175,11 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("DataTransferProgress", targetDepth)) {
+                    cluster.setDataTransferProgress(DataTransferProgressStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("HsmStatus", targetDepth)) {
                     cluster.setHsmStatus(HsmStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -257,6 +262,21 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
 
                 if (context.testExpression("ElasticResizeNumberOfNodeOptions", targetDepth)) {
                     cluster.setElasticResizeNumberOfNodeOptions(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DeferredMaintenanceWindows", targetDepth)) {
+                    cluster.withDeferredMaintenanceWindows(new ArrayList<DeferredMaintenanceWindow>());
+                    continue;
+                }
+
+                if (context.testExpression("DeferredMaintenanceWindows/DeferredMaintenanceWindow", targetDepth)) {
+                    cluster.withDeferredMaintenanceWindows(DeferredMaintenanceWindowStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ResizeInfo", targetDepth)) {
+                    cluster.setResizeInfo(ResizeInfoStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

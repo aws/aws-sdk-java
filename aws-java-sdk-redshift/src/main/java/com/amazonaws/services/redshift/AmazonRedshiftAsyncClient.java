@@ -369,6 +369,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CancelResizeResult> cancelResizeAsync(CancelResizeRequest request) {
+
+        return cancelResizeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelResizeResult> cancelResizeAsync(final CancelResizeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelResizeRequest, CancelResizeResult> asyncHandler) {
+        final CancelResizeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelResizeResult>() {
+            @Override
+            public CancelResizeResult call() throws Exception {
+                CancelResizeResult result = null;
+
+                try {
+                    result = executeCancelResize(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<Snapshot> copyClusterSnapshotAsync(CopyClusterSnapshotRequest request) {
 
         return copyClusterSnapshotAsync(request, null);
@@ -1046,6 +1079,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
 
                 try {
                     result = executeDeleteTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(DescribeAccountAttributesRequest request) {
+
+        return describeAccountAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(final DescribeAccountAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult> asyncHandler) {
+        final DescribeAccountAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAccountAttributesResult>() {
+            @Override
+            public DescribeAccountAttributesResult call() throws Exception {
+                DescribeAccountAttributesResult result = null;
+
+                try {
+                    result = executeDescribeAccountAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2506,6 +2572,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
 
                 try {
                     result = executeModifyClusterIamRoles(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Cluster> modifyClusterMaintenanceAsync(ModifyClusterMaintenanceRequest request) {
+
+        return modifyClusterMaintenanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Cluster> modifyClusterMaintenanceAsync(final ModifyClusterMaintenanceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyClusterMaintenanceRequest, Cluster> asyncHandler) {
+        final ModifyClusterMaintenanceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<Cluster>() {
+            @Override
+            public Cluster call() throws Exception {
+                Cluster result = null;
+
+                try {
+                    result = executeModifyClusterMaintenance(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

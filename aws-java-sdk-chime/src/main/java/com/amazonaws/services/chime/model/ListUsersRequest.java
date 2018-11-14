@@ -33,6 +33,12 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String accountId;
     /**
      * <p>
+     * Optional. The user email address used to filter results. Maximum 1.
+     * </p>
+     */
+    private String userEmail;
+    /**
+     * <p>
      * The maximum number of results to return in a single call. Defaults to 100.
      * </p>
      */
@@ -81,6 +87,46 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     public ListUsersRequest withAccountId(String accountId) {
         setAccountId(accountId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional. The user email address used to filter results. Maximum 1.
+     * </p>
+     * 
+     * @param userEmail
+     *        Optional. The user email address used to filter results. Maximum 1.
+     */
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    /**
+     * <p>
+     * Optional. The user email address used to filter results. Maximum 1.
+     * </p>
+     * 
+     * @return Optional. The user email address used to filter results. Maximum 1.
+     */
+
+    public String getUserEmail() {
+        return this.userEmail;
+    }
+
+    /**
+     * <p>
+     * Optional. The user email address used to filter results. Maximum 1.
+     * </p>
+     * 
+     * @param userEmail
+     *        Optional. The user email address used to filter results. Maximum 1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListUsersRequest withUserEmail(String userEmail) {
+        setUserEmail(userEmail);
         return this;
     }
 
@@ -177,6 +223,8 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
         sb.append("{");
         if (getAccountId() != null)
             sb.append("AccountId: ").append(getAccountId()).append(",");
+        if (getUserEmail() != null)
+            sb.append("UserEmail: ").append(getUserEmail()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -199,6 +247,10 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
             return false;
+        if (other.getUserEmail() == null ^ this.getUserEmail() == null)
+            return false;
+        if (other.getUserEmail() != null && other.getUserEmail().equals(this.getUserEmail()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -216,6 +268,7 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode + ((getUserEmail() == null) ? 0 : getUserEmail().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

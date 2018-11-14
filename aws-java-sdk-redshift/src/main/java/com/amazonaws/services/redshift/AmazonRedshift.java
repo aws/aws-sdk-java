@@ -223,6 +223,27 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Cancels a resize operation.
+     * </p>
+     * 
+     * @param cancelResizeRequest
+     * @return Result of the CancelResize operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws ResizeNotFoundException
+     *         A resize operation for the specified cluster is not found.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @sample AmazonRedshift.CancelResize
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CancelResize" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CancelResizeResult cancelResize(CancelResizeRequest cancelResizeRequest);
+
+    /**
+     * <p>
      * Copies the specified automated cluster snapshot to a new manual cluster snapshot. The source must be an automated
      * snapshot and it must be in the available state.
      * </p>
@@ -875,6 +896,19 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Returns a list of attributes attached to an account
+     * </p>
+     * 
+     * @param describeAccountAttributesRequest
+     * @return Result of the DescribeAccountAttributes operation returned by the service.
+     * @sample AmazonRedshift.DescribeAccountAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeAccountAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest);
+
+    /**
+     * <p>
      * Returns an array of <code>ClusterDbRevision</code> objects.
      * </p>
      * 
@@ -882,6 +916,8 @@ public interface AmazonRedshift {
      * @return Result of the DescribeClusterDbRevisions operation returned by the service.
      * @throws ClusterNotFoundException
      *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
      * @sample AmazonRedshift.DescribeClusterDbRevisions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterDbRevisions"
      *      target="_top">AWS API Documentation</a>
@@ -1832,6 +1868,22 @@ public interface AmazonRedshift {
      *      API Documentation</a>
      */
     Cluster modifyClusterIamRoles(ModifyClusterIamRolesRequest modifyClusterIamRolesRequest);
+
+    /**
+     * <p>
+     * Modifies the maintenance settings of a cluster. For example, you can defer a maintenance window. You can also
+     * update or cancel a deferment.
+     * </p>
+     * 
+     * @param modifyClusterMaintenanceRequest
+     * @return Result of the ModifyClusterMaintenance operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @sample AmazonRedshift.ModifyClusterMaintenance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterMaintenance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    Cluster modifyClusterMaintenance(ModifyClusterMaintenanceRequest modifyClusterMaintenanceRequest);
 
     /**
      * <p>

@@ -1,3 +1,16 @@
+# __1.11.449__ __2018-11-13__
+## __AWS Budgets__
+  - ### Features
+    - Doc Update: 1. Available monthly-budgets maximal history data points from 12 to 13.  2. Added 'Amazon Elasticsearch' costfilters support.
+
+## __Amazon Chime__
+  - ### Features
+    - This release adds support in ListUsers API to filter the list by an email address.
+
+## __Amazon Redshift__
+  - ### Features
+    - Amazon Redshift provides the option to defer non-mandatory maintenance updates to a later date.
+
 # __1.11.448__ __2018-11-12__
 ## __AWS Batch__
   - ### Features

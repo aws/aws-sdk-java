@@ -38,6 +38,12 @@ public class UpdateTarget implements Serializable, Cloneable {
      * </p>
      */
     private String databaseVersion;
+    /**
+     * <p>
+     * A list of operations supported by the maintenance track.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<SupportedOperation> supportedOperations;
 
     /**
      * <p>
@@ -120,6 +126,79 @@ public class UpdateTarget implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A list of operations supported by the maintenance track.
+     * </p>
+     * 
+     * @return A list of operations supported by the maintenance track.
+     */
+
+    public java.util.List<SupportedOperation> getSupportedOperations() {
+        if (supportedOperations == null) {
+            supportedOperations = new com.amazonaws.internal.SdkInternalList<SupportedOperation>();
+        }
+        return supportedOperations;
+    }
+
+    /**
+     * <p>
+     * A list of operations supported by the maintenance track.
+     * </p>
+     * 
+     * @param supportedOperations
+     *        A list of operations supported by the maintenance track.
+     */
+
+    public void setSupportedOperations(java.util.Collection<SupportedOperation> supportedOperations) {
+        if (supportedOperations == null) {
+            this.supportedOperations = null;
+            return;
+        }
+
+        this.supportedOperations = new com.amazonaws.internal.SdkInternalList<SupportedOperation>(supportedOperations);
+    }
+
+    /**
+     * <p>
+     * A list of operations supported by the maintenance track.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedOperations(java.util.Collection)} or {@link #withSupportedOperations(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedOperations
+     *        A list of operations supported by the maintenance track.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTarget withSupportedOperations(SupportedOperation... supportedOperations) {
+        if (this.supportedOperations == null) {
+            setSupportedOperations(new com.amazonaws.internal.SdkInternalList<SupportedOperation>(supportedOperations.length));
+        }
+        for (SupportedOperation ele : supportedOperations) {
+            this.supportedOperations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of operations supported by the maintenance track.
+     * </p>
+     * 
+     * @param supportedOperations
+     *        A list of operations supported by the maintenance track.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTarget withSupportedOperations(java.util.Collection<SupportedOperation> supportedOperations) {
+        setSupportedOperations(supportedOperations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -133,7 +212,9 @@ public class UpdateTarget implements Serializable, Cloneable {
         if (getMaintenanceTrackName() != null)
             sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName()).append(",");
         if (getDatabaseVersion() != null)
-            sb.append("DatabaseVersion: ").append(getDatabaseVersion());
+            sb.append("DatabaseVersion: ").append(getDatabaseVersion()).append(",");
+        if (getSupportedOperations() != null)
+            sb.append("SupportedOperations: ").append(getSupportedOperations());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +237,10 @@ public class UpdateTarget implements Serializable, Cloneable {
             return false;
         if (other.getDatabaseVersion() != null && other.getDatabaseVersion().equals(this.getDatabaseVersion()) == false)
             return false;
+        if (other.getSupportedOperations() == null ^ this.getSupportedOperations() == null)
+            return false;
+        if (other.getSupportedOperations() != null && other.getSupportedOperations().equals(this.getSupportedOperations()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +251,7 @@ public class UpdateTarget implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
         hashCode = prime * hashCode + ((getDatabaseVersion() == null) ? 0 : getDatabaseVersion().hashCode());
+        hashCode = prime * hashCode + ((getSupportedOperations() == null) ? 0 : getSupportedOperations().hashCode());
         return hashCode;
     }
 

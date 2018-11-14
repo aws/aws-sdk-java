@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.redshift.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -52,6 +54,17 @@ public class UpdateTargetStaxUnmarshaller implements Unmarshaller<UpdateTarget, 
                     updateTarget.setDatabaseVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SupportedOperations", targetDepth)) {
+                    updateTarget.withSupportedOperations(new ArrayList<SupportedOperation>());
+                    continue;
+                }
+
+                if (context.testExpression("SupportedOperations/SupportedOperation", targetDepth)) {
+                    updateTarget.withSupportedOperations(SupportedOperationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return updateTarget;

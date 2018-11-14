@@ -52,7 +52,8 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
      * The status of the resize operation.
      * </p>
      * <p>
-     * Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code>
+     * Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> |
+     * <code>CANCELLING</code>
      * </p>
      */
     private String status;
@@ -284,13 +285,15 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
      * The status of the resize operation.
      * </p>
      * <p>
-     * Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code>
+     * Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> |
+     * <code>CANCELLING</code>
      * </p>
      * 
      * @param status
      *        The status of the resize operation.</p>
      *        <p>
      *        Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code>
+     *        | <code>CANCELLING</code>
      */
 
     public void setStatus(String status) {
@@ -302,12 +305,14 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
      * The status of the resize operation.
      * </p>
      * <p>
-     * Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code>
+     * Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> |
+     * <code>CANCELLING</code>
      * </p>
      * 
      * @return The status of the resize operation.</p>
      *         <p>
      *         Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code>
+     *         | <code>CANCELLING</code>
      */
 
     public String getStatus() {
@@ -319,13 +324,15 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
      * The status of the resize operation.
      * </p>
      * <p>
-     * Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code>
+     * Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> |
+     * <code>CANCELLING</code>
      * </p>
      * 
      * @param status
      *        The status of the resize operation.</p>
      *        <p>
      *        Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code>
+     *        | <code>CANCELLING</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

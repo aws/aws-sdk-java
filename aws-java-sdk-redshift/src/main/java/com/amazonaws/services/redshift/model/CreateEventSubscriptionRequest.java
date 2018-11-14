@@ -95,7 +95,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * Specifies the Amazon Redshift event categories to be published by the event notification subscription.
      * </p>
      * <p>
-     * Values: Configuration, Management, Monitoring, Security
+     * Values: configuration, management, monitoring, security
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> eventCategories;
@@ -570,13 +570,13 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * Specifies the Amazon Redshift event categories to be published by the event notification subscription.
      * </p>
      * <p>
-     * Values: Configuration, Management, Monitoring, Security
+     * Values: configuration, management, monitoring, security
      * </p>
      * 
      * @return Specifies the Amazon Redshift event categories to be published by the event notification
      *         subscription.</p>
      *         <p>
-     *         Values: Configuration, Management, Monitoring, Security
+     *         Values: configuration, management, monitoring, security
      */
 
     public java.util.List<String> getEventCategories() {
@@ -591,13 +591,13 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * Specifies the Amazon Redshift event categories to be published by the event notification subscription.
      * </p>
      * <p>
-     * Values: Configuration, Management, Monitoring, Security
+     * Values: configuration, management, monitoring, security
      * </p>
      * 
      * @param eventCategories
      *        Specifies the Amazon Redshift event categories to be published by the event notification subscription.</p>
      *        <p>
-     *        Values: Configuration, Management, Monitoring, Security
+     *        Values: configuration, management, monitoring, security
      */
 
     public void setEventCategories(java.util.Collection<String> eventCategories) {
@@ -614,7 +614,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * Specifies the Amazon Redshift event categories to be published by the event notification subscription.
      * </p>
      * <p>
-     * Values: Configuration, Management, Monitoring, Security
+     * Values: configuration, management, monitoring, security
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -625,7 +625,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * @param eventCategories
      *        Specifies the Amazon Redshift event categories to be published by the event notification subscription.</p>
      *        <p>
-     *        Values: Configuration, Management, Monitoring, Security
+     *        Values: configuration, management, monitoring, security
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -644,13 +644,13 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * Specifies the Amazon Redshift event categories to be published by the event notification subscription.
      * </p>
      * <p>
-     * Values: Configuration, Management, Monitoring, Security
+     * Values: configuration, management, monitoring, security
      * </p>
      * 
      * @param eventCategories
      *        Specifies the Amazon Redshift event categories to be published by the event notification subscription.</p>
      *        <p>
-     *        Values: Configuration, Management, Monitoring, Security
+     *        Values: configuration, management, monitoring, security
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

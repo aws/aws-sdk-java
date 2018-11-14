@@ -50,6 +50,11 @@ public class Cluster implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>cancelling-resize</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>creating</code>
      * </p>
      * </li>
@@ -262,6 +267,8 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      */
     private RestoreStatus restoreStatus;
+
+    private DataTransferProgress dataTransferProgress;
     /**
      * <p>
      * A value that reports whether the Amazon Redshift cluster has finished applying any hardware security module (HSM)
@@ -355,6 +362,30 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      */
     private String elasticResizeNumberOfNodeOptions;
+    /**
+     * <p>
+     * Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<DeferredMaintenanceWindow> deferredMaintenanceWindows;
+    /**
+     * <p>
+     * Returns the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResizeType: Returns ClassicResize
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private ResizeInfo resizeInfo;
 
     /**
      * <p>
@@ -448,6 +479,11 @@ public class Cluster implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>cancelling-resize</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>creating</code>
      * </p>
      * </li>
@@ -529,6 +565,11 @@ public class Cluster implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>available</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cancelling-resize</code>
      *        </p>
      *        </li>
      *        <li>
@@ -624,6 +665,11 @@ public class Cluster implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>cancelling-resize</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>creating</code>
      * </p>
      * </li>
@@ -704,6 +750,11 @@ public class Cluster implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>available</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>cancelling-resize</code>
      *         </p>
      *         </li>
      *         <li>
@@ -799,6 +850,11 @@ public class Cluster implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>cancelling-resize</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>creating</code>
      * </p>
      * </li>
@@ -880,6 +936,11 @@ public class Cluster implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>available</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cancelling-resize</code>
      *        </p>
      *        </li>
      *        <li>
@@ -2017,6 +2078,32 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
+     * @param dataTransferProgress
+     */
+
+    public void setDataTransferProgress(DataTransferProgress dataTransferProgress) {
+        this.dataTransferProgress = dataTransferProgress;
+    }
+
+    /**
+     * @return
+     */
+
+    public DataTransferProgress getDataTransferProgress() {
+        return this.dataTransferProgress;
+    }
+
+    /**
+     * @param dataTransferProgress
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withDataTransferProgress(DataTransferProgress dataTransferProgress) {
+        setDataTransferProgress(dataTransferProgress);
+        return this;
+    }
+
+    /**
      * <p>
      * A value that reports whether the Amazon Redshift cluster has finished applying any hardware security module (HSM)
      * settings changes specified in a modify cluster command.
@@ -2785,6 +2872,188 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+     * </p>
+     * 
+     * @return Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+     */
+
+    public java.util.List<DeferredMaintenanceWindow> getDeferredMaintenanceWindows() {
+        if (deferredMaintenanceWindows == null) {
+            deferredMaintenanceWindows = new com.amazonaws.internal.SdkInternalList<DeferredMaintenanceWindow>();
+        }
+        return deferredMaintenanceWindows;
+    }
+
+    /**
+     * <p>
+     * Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+     * </p>
+     * 
+     * @param deferredMaintenanceWindows
+     *        Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+     */
+
+    public void setDeferredMaintenanceWindows(java.util.Collection<DeferredMaintenanceWindow> deferredMaintenanceWindows) {
+        if (deferredMaintenanceWindows == null) {
+            this.deferredMaintenanceWindows = null;
+            return;
+        }
+
+        this.deferredMaintenanceWindows = new com.amazonaws.internal.SdkInternalList<DeferredMaintenanceWindow>(deferredMaintenanceWindows);
+    }
+
+    /**
+     * <p>
+     * Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDeferredMaintenanceWindows(java.util.Collection)} or
+     * {@link #withDeferredMaintenanceWindows(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param deferredMaintenanceWindows
+     *        Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withDeferredMaintenanceWindows(DeferredMaintenanceWindow... deferredMaintenanceWindows) {
+        if (this.deferredMaintenanceWindows == null) {
+            setDeferredMaintenanceWindows(new com.amazonaws.internal.SdkInternalList<DeferredMaintenanceWindow>(deferredMaintenanceWindows.length));
+        }
+        for (DeferredMaintenanceWindow ele : deferredMaintenanceWindows) {
+            this.deferredMaintenanceWindows.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+     * </p>
+     * 
+     * @param deferredMaintenanceWindows
+     *        Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withDeferredMaintenanceWindows(java.util.Collection<DeferredMaintenanceWindow> deferredMaintenanceWindows) {
+        setDeferredMaintenanceWindows(deferredMaintenanceWindows);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResizeType: Returns ClassicResize
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resizeInfo
+     *        Returns the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResizeType: Returns ClassicResize
+     *        </p>
+     *        </li>
+     */
+
+    public void setResizeInfo(ResizeInfo resizeInfo) {
+        this.resizeInfo = resizeInfo;
+    }
+
+    /**
+     * <p>
+     * Returns the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResizeType: Returns ClassicResize
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Returns the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ResizeType: Returns ClassicResize
+     *         </p>
+     *         </li>
+     */
+
+    public ResizeInfo getResizeInfo() {
+        return this.resizeInfo;
+    }
+
+    /**
+     * <p>
+     * Returns the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResizeType: Returns ClassicResize
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resizeInfo
+     *        Returns the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResizeType: Returns ClassicResize
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withResizeInfo(ResizeInfo resizeInfo) {
+        setResizeInfo(resizeInfo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2841,6 +3110,8 @@ public class Cluster implements Serializable, Cloneable {
             sb.append("Encrypted: ").append(getEncrypted()).append(",");
         if (getRestoreStatus() != null)
             sb.append("RestoreStatus: ").append(getRestoreStatus()).append(",");
+        if (getDataTransferProgress() != null)
+            sb.append("DataTransferProgress: ").append(getDataTransferProgress()).append(",");
         if (getHsmStatus() != null)
             sb.append("HsmStatus: ").append(getHsmStatus()).append(",");
         if (getClusterSnapshotCopyStatus() != null)
@@ -2866,7 +3137,11 @@ public class Cluster implements Serializable, Cloneable {
         if (getMaintenanceTrackName() != null)
             sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName()).append(",");
         if (getElasticResizeNumberOfNodeOptions() != null)
-            sb.append("ElasticResizeNumberOfNodeOptions: ").append(getElasticResizeNumberOfNodeOptions());
+            sb.append("ElasticResizeNumberOfNodeOptions: ").append(getElasticResizeNumberOfNodeOptions()).append(",");
+        if (getDeferredMaintenanceWindows() != null)
+            sb.append("DeferredMaintenanceWindows: ").append(getDeferredMaintenanceWindows()).append(",");
+        if (getResizeInfo() != null)
+            sb.append("ResizeInfo: ").append(getResizeInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -2974,6 +3249,10 @@ public class Cluster implements Serializable, Cloneable {
             return false;
         if (other.getRestoreStatus() != null && other.getRestoreStatus().equals(this.getRestoreStatus()) == false)
             return false;
+        if (other.getDataTransferProgress() == null ^ this.getDataTransferProgress() == null)
+            return false;
+        if (other.getDataTransferProgress() != null && other.getDataTransferProgress().equals(this.getDataTransferProgress()) == false)
+            return false;
         if (other.getHsmStatus() == null ^ this.getHsmStatus() == null)
             return false;
         if (other.getHsmStatus() != null && other.getHsmStatus().equals(this.getHsmStatus()) == false)
@@ -3027,6 +3306,14 @@ public class Cluster implements Serializable, Cloneable {
         if (other.getElasticResizeNumberOfNodeOptions() != null
                 && other.getElasticResizeNumberOfNodeOptions().equals(this.getElasticResizeNumberOfNodeOptions()) == false)
             return false;
+        if (other.getDeferredMaintenanceWindows() == null ^ this.getDeferredMaintenanceWindows() == null)
+            return false;
+        if (other.getDeferredMaintenanceWindows() != null && other.getDeferredMaintenanceWindows().equals(this.getDeferredMaintenanceWindows()) == false)
+            return false;
+        if (other.getResizeInfo() == null ^ this.getResizeInfo() == null)
+            return false;
+        if (other.getResizeInfo() != null && other.getResizeInfo().equals(this.getResizeInfo()) == false)
+            return false;
         return true;
     }
 
@@ -3058,6 +3345,7 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         hashCode = prime * hashCode + ((getRestoreStatus() == null) ? 0 : getRestoreStatus().hashCode());
+        hashCode = prime * hashCode + ((getDataTransferProgress() == null) ? 0 : getDataTransferProgress().hashCode());
         hashCode = prime * hashCode + ((getHsmStatus() == null) ? 0 : getHsmStatus().hashCode());
         hashCode = prime * hashCode + ((getClusterSnapshotCopyStatus() == null) ? 0 : getClusterSnapshotCopyStatus().hashCode());
         hashCode = prime * hashCode + ((getClusterPublicKey() == null) ? 0 : getClusterPublicKey().hashCode());
@@ -3071,6 +3359,8 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPendingActions() == null) ? 0 : getPendingActions().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
         hashCode = prime * hashCode + ((getElasticResizeNumberOfNodeOptions() == null) ? 0 : getElasticResizeNumberOfNodeOptions().hashCode());
+        hashCode = prime * hashCode + ((getDeferredMaintenanceWindows() == null) ? 0 : getDeferredMaintenanceWindows().hashCode());
+        hashCode = prime * hashCode + ((getResizeInfo() == null) ? 0 : getResizeInfo().hashCode());
         return hashCode;
     }
 

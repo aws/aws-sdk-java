@@ -206,6 +206,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Cancels a resize operation.
+     * </p>
+     * 
+     * @param cancelResizeRequest
+     * @return A Java Future containing the result of the CancelResize operation returned by the service.
+     * @sample AmazonRedshiftAsync.CancelResize
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CancelResize" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CancelResizeResult> cancelResizeAsync(CancelResizeRequest cancelResizeRequest);
+
+    /**
+     * <p>
+     * Cancels a resize operation.
+     * </p>
+     * 
+     * @param cancelResizeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelResize operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.CancelResize
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CancelResize" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CancelResizeResult> cancelResizeAsync(CancelResizeRequest cancelResizeRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelResizeRequest, CancelResizeResult> asyncHandler);
+
+    /**
+     * <p>
      * Copies the specified automated cluster snapshot to a new manual cluster snapshot. The source must be an automated
      * snapshot and it must be in the available state.
      * </p>
@@ -1134,6 +1165,39 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest deleteTagsRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of attributes attached to an account
+     * </p>
+     * 
+     * @param describeAccountAttributesRequest
+     * @return A Java Future containing the result of the DescribeAccountAttributes operation returned by the service.
+     * @sample AmazonRedshiftAsync.DescribeAccountAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeAccountAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(
+            DescribeAccountAttributesRequest describeAccountAttributesRequest);
+
+    /**
+     * <p>
+     * Returns a list of attributes attached to an account
+     * </p>
+     * 
+     * @param describeAccountAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAccountAttributes operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.DescribeAccountAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeAccountAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(
+            DescribeAccountAttributesRequest describeAccountAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult> asyncHandler);
 
     /**
      * <p>
@@ -2907,6 +2971,39 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<Cluster> modifyClusterIamRolesAsync(ModifyClusterIamRolesRequest modifyClusterIamRolesRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyClusterIamRolesRequest, Cluster> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the maintenance settings of a cluster. For example, you can defer a maintenance window. You can also
+     * update or cancel a deferment.
+     * </p>
+     * 
+     * @param modifyClusterMaintenanceRequest
+     * @return A Java Future containing the result of the ModifyClusterMaintenance operation returned by the service.
+     * @sample AmazonRedshiftAsync.ModifyClusterMaintenance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterMaintenance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<Cluster> modifyClusterMaintenanceAsync(ModifyClusterMaintenanceRequest modifyClusterMaintenanceRequest);
+
+    /**
+     * <p>
+     * Modifies the maintenance settings of a cluster. For example, you can defer a maintenance window. You can also
+     * update or cancel a deferment.
+     * </p>
+     * 
+     * @param modifyClusterMaintenanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyClusterMaintenance operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.ModifyClusterMaintenance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterMaintenance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<Cluster> modifyClusterMaintenanceAsync(ModifyClusterMaintenanceRequest modifyClusterMaintenanceRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyClusterMaintenanceRequest, Cluster> asyncHandler);
 
     /**
      * <p>

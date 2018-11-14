@@ -54,6 +54,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public CancelResizeResult cancelResize(CancelResizeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public Snapshot copyClusterSnapshot(CopyClusterSnapshotRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -155,6 +160,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
 
     @Override
     public DeleteTagsResult deleteTags(DeleteTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -400,6 +410,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
 
     @Override
     public Cluster modifyClusterIamRoles(ModifyClusterIamRolesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public Cluster modifyClusterMaintenance(ModifyClusterMaintenanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
