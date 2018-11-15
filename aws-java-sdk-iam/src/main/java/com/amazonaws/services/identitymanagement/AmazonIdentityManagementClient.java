@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
 
 import com.amazonaws.services.identitymanagement.AmazonIdentityManagementClientBuilder;
 import com.amazonaws.services.identitymanagement.waiters.AmazonIdentityManagementWaiters;
@@ -134,6 +135,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
+    private final AdvancedConfig advancedConfig;
+
     /**
      * List of exception unmarshallers for all modeled exceptions
      */
@@ -223,6 +226,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     public AmazonIdentityManagementClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -287,6 +291,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -305,9 +310,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *        Object providing client parameters.
      */
     AmazonIdentityManagementClient(AwsSyncClientParams clientParams) {
-        super(clientParams);
-        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
-        init();
+        this(clientParams, false);
     }
 
     /**
@@ -323,6 +326,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     AmazonIdentityManagementClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -416,6 +420,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddClientIDToOpenIDConnectProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -502,6 +507,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddRoleToInstanceProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -563,6 +569,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddUserToGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -638,6 +645,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachGroupPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -721,6 +729,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachRolePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -796,6 +805,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachUserPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -872,6 +882,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ChangePassword");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -951,6 +962,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccessKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1018,6 +1030,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccountAlias");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1086,6 +1099,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1151,6 +1165,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInstanceProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1220,6 +1235,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLoginProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1317,6 +1333,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOpenIDConnectProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1393,6 +1410,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1469,6 +1487,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePolicyVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1538,6 +1557,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1624,6 +1644,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSAMLProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1699,6 +1720,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateServiceLinkedRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1776,6 +1798,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateServiceSpecificCredential");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1844,6 +1867,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1918,6 +1942,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVirtualMFADevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1989,6 +2014,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeactivateMFADevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2055,6 +2081,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccessKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2118,6 +2145,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccountAlias");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2179,6 +2207,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccountPasswordPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2248,6 +2277,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2314,6 +2344,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroupPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2389,6 +2420,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInstanceProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2462,6 +2494,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLoginProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2530,6 +2563,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOpenIDConnectProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2627,6 +2661,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2702,6 +2737,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePolicyVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2778,6 +2814,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2845,6 +2882,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRolePermissionsBoundary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2916,6 +2954,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRolePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2990,6 +3029,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSAMLProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3052,6 +3092,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSSHPublicKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3133,6 +3174,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteServerCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3211,6 +3253,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteServiceLinkedRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3268,6 +3311,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteServiceSpecificCredential");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3334,6 +3378,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSigningCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3399,6 +3444,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3462,6 +3508,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserPermissionsBoundary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3529,6 +3576,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3599,6 +3647,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVirtualMFADevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3668,6 +3717,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachGroupPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3741,6 +3791,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachRolePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3810,6 +3861,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachUserPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3881,6 +3933,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableMFADevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3941,6 +3994,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GenerateCredentialReport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4004,6 +4058,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccessKeyLastUsed");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4073,6 +4128,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccountAuthorizationDetails");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4138,6 +4194,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccountPasswordPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4203,6 +4260,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccountSummary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4272,6 +4330,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContextKeysForCustomPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4348,6 +4407,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContextKeysForPrincipalPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4415,6 +4475,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCredentialReport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4479,6 +4540,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4554,6 +4616,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroupPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4615,6 +4678,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInstanceProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4674,6 +4738,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLoginProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4734,6 +4799,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOpenIDConnectProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4808,6 +4874,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4893,6 +4960,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPolicyVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4961,6 +5029,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5041,6 +5110,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRolePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5107,6 +5177,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSAMLProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5171,6 +5242,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSSHPublicKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5235,6 +5307,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetServerCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5300,6 +5373,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetServiceLinkedRoleDeletionStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5362,6 +5436,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5442,6 +5517,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUserPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5516,6 +5592,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccessKeys");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5578,6 +5655,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccountAliases");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5655,6 +5733,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAttachedGroupPolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5727,6 +5806,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAttachedRolePolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5799,6 +5879,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAttachedUserPolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5867,6 +5948,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEntitiesForPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5935,6 +6017,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupPolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5993,6 +6076,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6058,6 +6142,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupsForUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6118,6 +6203,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInstanceProfiles");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6186,6 +6272,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInstanceProfilesForRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6249,6 +6336,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMFADevices");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6309,6 +6397,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOpenIDConnectProviders");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6384,6 +6473,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6454,6 +6544,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPolicyVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6522,6 +6613,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRolePolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6582,6 +6674,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRoles");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6647,6 +6740,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSAMLProviders");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6719,6 +6813,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSSHPublicKeys");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6789,6 +6884,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListServerCertificates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6857,6 +6953,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListServiceSpecificCredentials");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6926,6 +7023,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSigningCertificates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6999,6 +7097,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUserPolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7058,6 +7157,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7120,6 +7220,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVirtualMFADevices");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7208,6 +7309,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutGroupPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7289,6 +7391,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRolePermissionsBoundary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7383,6 +7486,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRolePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7456,6 +7560,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutUserPermissionsBoundary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7539,6 +7644,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutUserPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7605,6 +7711,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveClientIDFromOpenIDConnectProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7683,6 +7790,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveRoleFromInstanceProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7744,6 +7852,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveUserFromGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7802,6 +7911,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetServiceSpecificCredential");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7871,6 +7981,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResyncMFADevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7943,6 +8054,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetDefaultPolicyVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8020,6 +8132,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SimulateCustomPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8110,6 +8223,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SimulatePrincipalPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8183,6 +8297,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccessKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8265,6 +8380,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccountPasswordPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8336,6 +8452,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAssumeRolePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8415,6 +8532,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8487,6 +8605,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLoginProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8566,6 +8685,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateOpenIDConnectProviderThumbprint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8628,6 +8748,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8693,6 +8814,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRoleDescription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8762,6 +8884,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSAMLProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8826,6 +8949,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSSHPublicKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8913,6 +9037,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateServerCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8972,6 +9097,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateServiceSpecificCredential");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9040,6 +9166,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSigningCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9122,6 +9249,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9193,6 +9321,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UploadSSHPublicKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9288,6 +9417,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UploadServerCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9376,6 +9506,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UploadSigningCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -57,6 +57,10 @@ public class ListGroupResourcesResultJsonUnmarshaller implements Unmarshaller<Li
                     context.nextToken();
                     listGroupResourcesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("QueryErrors", targetDepth)) {
+                    context.nextToken();
+                    listGroupResourcesResult.setQueryErrors(new ListUnmarshaller<QueryError>(QueryErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

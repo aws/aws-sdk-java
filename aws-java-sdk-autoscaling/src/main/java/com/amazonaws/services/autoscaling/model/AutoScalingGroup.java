@@ -52,6 +52,12 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private LaunchTemplateSpecification launchTemplate;
     /**
      * <p>
+     * The mixed instances policy for the group.
+     * </p>
+     */
+    private MixedInstancesPolicy mixedInstancesPolicy;
+    /**
+     * <p>
      * The minimum size of the group.
      * </p>
      */
@@ -125,7 +131,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<SuspendedProcess> suspendedProcesses;
     /**
      * <p>
-     * The name of the placement group into which you'll launch your instances, if any. For more information, see <a
+     * The name of the placement group into which to launch your instances, if any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -336,6 +342,46 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     public AutoScalingGroup withLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
         setLaunchTemplate(launchTemplate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The mixed instances policy for the group.
+     * </p>
+     * 
+     * @param mixedInstancesPolicy
+     *        The mixed instances policy for the group.
+     */
+
+    public void setMixedInstancesPolicy(MixedInstancesPolicy mixedInstancesPolicy) {
+        this.mixedInstancesPolicy = mixedInstancesPolicy;
+    }
+
+    /**
+     * <p>
+     * The mixed instances policy for the group.
+     * </p>
+     * 
+     * @return The mixed instances policy for the group.
+     */
+
+    public MixedInstancesPolicy getMixedInstancesPolicy() {
+        return this.mixedInstancesPolicy;
+    }
+
+    /**
+     * <p>
+     * The mixed instances policy for the group.
+     * </p>
+     * 
+     * @param mixedInstancesPolicy
+     *        The mixed instances policy for the group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingGroup withMixedInstancesPolicy(MixedInstancesPolicy mixedInstancesPolicy) {
+        setMixedInstancesPolicy(mixedInstancesPolicy);
         return this;
     }
 
@@ -995,14 +1041,14 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the placement group into which you'll launch your instances, if any. For more information, see <a
+     * The name of the placement group into which to launch your instances, if any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param placementGroup
-     *        The name of the placement group into which you'll launch your instances, if any. For more information, see
-     *        <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *        The name of the placement group into which to launch your instances, if any. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
@@ -1012,14 +1058,14 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the placement group into which you'll launch your instances, if any. For more information, see <a
+     * The name of the placement group into which to launch your instances, if any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return The name of the placement group into which you'll launch your instances, if any. For more information,
-     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     *         Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return The name of the placement group into which to launch your instances, if any. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public String getPlacementGroup() {
@@ -1028,14 +1074,14 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the placement group into which you'll launch your instances, if any. For more information, see <a
+     * The name of the placement group into which to launch your instances, if any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param placementGroup
-     *        The name of the placement group into which you'll launch your instances, if any. For more information, see
-     *        <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *        The name of the placement group into which to launch your instances, if any. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1484,6 +1530,8 @@ public class AutoScalingGroup implements Serializable, Cloneable {
             sb.append("LaunchConfigurationName: ").append(getLaunchConfigurationName()).append(",");
         if (getLaunchTemplate() != null)
             sb.append("LaunchTemplate: ").append(getLaunchTemplate()).append(",");
+        if (getMixedInstancesPolicy() != null)
+            sb.append("MixedInstancesPolicy: ").append(getMixedInstancesPolicy()).append(",");
         if (getMinSize() != null)
             sb.append("MinSize: ").append(getMinSize()).append(",");
         if (getMaxSize() != null)
@@ -1553,6 +1601,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         if (other.getLaunchTemplate() == null ^ this.getLaunchTemplate() == null)
             return false;
         if (other.getLaunchTemplate() != null && other.getLaunchTemplate().equals(this.getLaunchTemplate()) == false)
+            return false;
+        if (other.getMixedInstancesPolicy() == null ^ this.getMixedInstancesPolicy() == null)
+            return false;
+        if (other.getMixedInstancesPolicy() != null && other.getMixedInstancesPolicy().equals(this.getMixedInstancesPolicy()) == false)
             return false;
         if (other.getMinSize() == null ^ this.getMinSize() == null)
             return false;
@@ -1647,6 +1699,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAutoScalingGroupARN() == null) ? 0 : getAutoScalingGroupARN().hashCode());
         hashCode = prime * hashCode + ((getLaunchConfigurationName() == null) ? 0 : getLaunchConfigurationName().hashCode());
         hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
+        hashCode = prime * hashCode + ((getMixedInstancesPolicy() == null) ? 0 : getMixedInstancesPolicy().hashCode());
         hashCode = prime * hashCode + ((getMinSize() == null) ? 0 : getMinSize().hashCode());
         hashCode = prime * hashCode + ((getMaxSize() == null) ? 0 : getMaxSize().hashCode());
         hashCode = prime * hashCode + ((getDesiredCapacity() == null) ? 0 : getDesiredCapacity().hashCode());

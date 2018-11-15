@@ -46,7 +46,7 @@ public class LifecycleHook implements Serializable, Cloneable {
     private String autoScalingGroupName;
     /**
      * <p>
-     * The state of the EC2 instance to which you want to attach the lifecycle hook. The following are possible values:
+     * The state of the EC2 instance to which to attach the lifecycle hook. The following are possible values:
      * </p>
      * <ul>
      * <li>
@@ -189,7 +189,7 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the EC2 instance to which you want to attach the lifecycle hook. The following are possible values:
+     * The state of the EC2 instance to which to attach the lifecycle hook. The following are possible values:
      * </p>
      * <ul>
      * <li>
@@ -205,7 +205,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      * </ul>
      * 
      * @param lifecycleTransition
-     *        The state of the EC2 instance to which you want to attach the lifecycle hook. The following are possible
+     *        The state of the EC2 instance to which to attach the lifecycle hook. The following are possible
      *        values:</p>
      *        <ul>
      *        <li>
@@ -226,7 +226,7 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the EC2 instance to which you want to attach the lifecycle hook. The following are possible values:
+     * The state of the EC2 instance to which to attach the lifecycle hook. The following are possible values:
      * </p>
      * <ul>
      * <li>
@@ -241,7 +241,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The state of the EC2 instance to which you want to attach the lifecycle hook. The following are possible
+     * @return The state of the EC2 instance to which to attach the lifecycle hook. The following are possible
      *         values:</p>
      *         <ul>
      *         <li>
@@ -262,7 +262,7 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the EC2 instance to which you want to attach the lifecycle hook. The following are possible values:
+     * The state of the EC2 instance to which to attach the lifecycle hook. The following are possible values:
      * </p>
      * <ul>
      * <li>
@@ -278,7 +278,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      * </ul>
      * 
      * @param lifecycleTransition
-     *        The state of the EC2 instance to which you want to attach the lifecycle hook. The following are possible
+     *        The state of the EC2 instance to which to attach the lifecycle hook. The following are possible
      *        values:</p>
      *        <ul>
      *        <li>

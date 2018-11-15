@@ -27,7 +27,8 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A filter used to scope the tags to return.
+     * One or more filters to scope the tags to return. The maximum number of filters per filter type (for example,
+     * <code>auto-scaling-group</code>) is 1000.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
@@ -46,10 +47,12 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A filter used to scope the tags to return.
+     * One or more filters to scope the tags to return. The maximum number of filters per filter type (for example,
+     * <code>auto-scaling-group</code>) is 1000.
      * </p>
      * 
-     * @return A filter used to scope the tags to return.
+     * @return One or more filters to scope the tags to return. The maximum number of filters per filter type (for
+     *         example, <code>auto-scaling-group</code>) is 1000.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -61,11 +64,13 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A filter used to scope the tags to return.
+     * One or more filters to scope the tags to return. The maximum number of filters per filter type (for example,
+     * <code>auto-scaling-group</code>) is 1000.
      * </p>
      * 
      * @param filters
-     *        A filter used to scope the tags to return.
+     *        One or more filters to scope the tags to return. The maximum number of filters per filter type (for
+     *        example, <code>auto-scaling-group</code>) is 1000.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -79,7 +84,8 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A filter used to scope the tags to return.
+     * One or more filters to scope the tags to return. The maximum number of filters per filter type (for example,
+     * <code>auto-scaling-group</code>) is 1000.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,7 +94,8 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param filters
-     *        A filter used to scope the tags to return.
+     *        One or more filters to scope the tags to return. The maximum number of filters per filter type (for
+     *        example, <code>auto-scaling-group</code>) is 1000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +111,13 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A filter used to scope the tags to return.
+     * One or more filters to scope the tags to return. The maximum number of filters per filter type (for example,
+     * <code>auto-scaling-group</code>) is 1000.
      * </p>
      * 
      * @param filters
-     *        A filter used to scope the tags to return.
+     *        One or more filters to scope the tags to return. The maximum number of filters per filter type (for
+     *        example, <code>auto-scaling-group</code>) is 1000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

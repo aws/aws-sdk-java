@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum QueryType {
 
-    TAG_FILTERS_1_0("TAG_FILTERS_1_0");
+    TAG_FILTERS_1_0("TAG_FILTERS_1_0"),
+    CLOUDFORMATION_STACK_1_0("CLOUDFORMATION_STACK_1_0");
 
     private String value;
 

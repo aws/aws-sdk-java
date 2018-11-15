@@ -145,6 +145,26 @@ public class FleetDataStaxUnmarshaller implements Unmarshaller<FleetData, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("errorSet", targetDepth)) {
+                    fleetData.withErrors(new ArrayList<DescribeFleetError>());
+                    continue;
+                }
+
+                if (context.testExpression("errorSet/item", targetDepth)) {
+                    fleetData.withErrors(DescribeFleetErrorStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("fleetInstanceSet", targetDepth)) {
+                    fleetData.withInstances(new ArrayList<DescribeFleetsInstances>());
+                    continue;
+                }
+
+                if (context.testExpression("fleetInstanceSet/item", targetDepth)) {
+                    fleetData.withInstances(DescribeFleetsInstancesStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return fleetData;

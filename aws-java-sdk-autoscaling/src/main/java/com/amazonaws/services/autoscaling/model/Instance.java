@@ -40,15 +40,15 @@ public class Instance implements Serializable, Cloneable {
     private String availabilityZone;
     /**
      * <p>
-     * A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
+     * A description of the current lifecycle state. The <code>Quarantined</code> state is not used.
      * </p>
      */
     private String lifecycleState;
     /**
      * <p>
      * The last reported health status of the instance. "Healthy" means that the instance is healthy and should remain
-     * in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should terminate and
-     * replace it.
+     * in service. "Unhealthy" means that the instance is unhealthy and that Amazon EC2 Auto Scaling should terminate
+     * and replace it.
      * </p>
      */
     private String healthStatus;
@@ -153,11 +153,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
+     * A description of the current lifecycle state. The <code>Quarantined</code> state is not used.
      * </p>
      * 
      * @param lifecycleState
-     *        A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
+     *        A description of the current lifecycle state. The <code>Quarantined</code> state is not used.
      * @see LifecycleState
      */
 
@@ -167,10 +167,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
+     * A description of the current lifecycle state. The <code>Quarantined</code> state is not used.
      * </p>
      * 
-     * @return A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
+     * @return A description of the current lifecycle state. The <code>Quarantined</code> state is not used.
      * @see LifecycleState
      */
 
@@ -180,11 +180,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
+     * A description of the current lifecycle state. The <code>Quarantined</code> state is not used.
      * </p>
      * 
      * @param lifecycleState
-     *        A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
+     *        A description of the current lifecycle state. The <code>Quarantined</code> state is not used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LifecycleState
      */
@@ -196,11 +196,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
+     * A description of the current lifecycle state. The <code>Quarantined</code> state is not used.
      * </p>
      * 
      * @param lifecycleState
-     *        A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
+     *        A description of the current lifecycle state. The <code>Quarantined</code> state is not used.
      * @see LifecycleState
      */
 
@@ -210,11 +210,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
+     * A description of the current lifecycle state. The <code>Quarantined</code> state is not used.
      * </p>
      * 
      * @param lifecycleState
-     *        A description of the current lifecycle state. Note that the <code>Quarantined</code> state is not used.
+     *        A description of the current lifecycle state. The <code>Quarantined</code> state is not used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LifecycleState
      */
@@ -227,14 +227,14 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The last reported health status of the instance. "Healthy" means that the instance is healthy and should remain
-     * in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should terminate and
-     * replace it.
+     * in service. "Unhealthy" means that the instance is unhealthy and that Amazon EC2 Auto Scaling should terminate
+     * and replace it.
      * </p>
      * 
      * @param healthStatus
      *        The last reported health status of the instance. "Healthy" means that the instance is healthy and should
-     *        remain in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should
-     *        terminate and replace it.
+     *        remain in service. "Unhealthy" means that the instance is unhealthy and that Amazon EC2 Auto Scaling
+     *        should terminate and replace it.
      */
 
     public void setHealthStatus(String healthStatus) {
@@ -244,13 +244,13 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The last reported health status of the instance. "Healthy" means that the instance is healthy and should remain
-     * in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should terminate and
-     * replace it.
+     * in service. "Unhealthy" means that the instance is unhealthy and that Amazon EC2 Auto Scaling should terminate
+     * and replace it.
      * </p>
      * 
      * @return The last reported health status of the instance. "Healthy" means that the instance is healthy and should
-     *         remain in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should
-     *         terminate and replace it.
+     *         remain in service. "Unhealthy" means that the instance is unhealthy and that Amazon EC2 Auto Scaling
+     *         should terminate and replace it.
      */
 
     public String getHealthStatus() {
@@ -260,14 +260,14 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The last reported health status of the instance. "Healthy" means that the instance is healthy and should remain
-     * in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should terminate and
-     * replace it.
+     * in service. "Unhealthy" means that the instance is unhealthy and that Amazon EC2 Auto Scaling should terminate
+     * and replace it.
      * </p>
      * 
      * @param healthStatus
      *        The last reported health status of the instance. "Healthy" means that the instance is healthy and should
-     *        remain in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should
-     *        terminate and replace it.
+     *        remain in service. "Unhealthy" means that the instance is unhealthy and that Amazon EC2 Auto Scaling
+     *        should terminate and replace it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

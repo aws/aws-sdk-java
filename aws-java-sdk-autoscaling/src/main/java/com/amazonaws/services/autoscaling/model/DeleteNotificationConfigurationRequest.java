@@ -33,7 +33,7 @@ public class DeleteNotificationConfigurationRequest extends com.amazonaws.Amazon
     private String autoScalingGroupName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      * </p>
      */
     private String topicARN;
@@ -80,11 +80,11 @@ public class DeleteNotificationConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      * </p>
      * 
      * @param topicARN
-     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
+     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      */
 
     public void setTopicARN(String topicARN) {
@@ -93,10 +93,10 @@ public class DeleteNotificationConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
+     * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      */
 
     public String getTopicARN() {
@@ -105,11 +105,11 @@ public class DeleteNotificationConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      * </p>
      * 
      * @param topicARN
-     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
+     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

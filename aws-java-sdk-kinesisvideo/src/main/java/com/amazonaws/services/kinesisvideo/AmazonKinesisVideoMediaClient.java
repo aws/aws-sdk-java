@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
 
 import com.amazonaws.services.kinesisvideo.AmazonKinesisVideoMediaClientBuilder;
 
@@ -66,6 +67,8 @@ public class AmazonKinesisVideoMediaClient extends AmazonWebServiceClient implem
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
@@ -108,9 +111,7 @@ public class AmazonKinesisVideoMediaClient extends AmazonWebServiceClient implem
      *        Object providing client parameters.
      */
     AmazonKinesisVideoMediaClient(AwsSyncClientParams clientParams) {
-        super(clientParams);
-        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
-        init();
+        this(clientParams, false);
     }
 
     /**
@@ -126,6 +127,7 @@ public class AmazonKinesisVideoMediaClient extends AmazonWebServiceClient implem
     AmazonKinesisVideoMediaClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -221,6 +223,7 @@ public class AmazonKinesisVideoMediaClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video Media");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMedia");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

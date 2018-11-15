@@ -301,6 +301,9 @@ public interface AmazonSNS {
      *         Indicates an internal service error.
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
+     * @throws InvalidSecurityException
+     *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
+     *         Signature Version 4.
      * @sample AmazonSNS.CreateTopic
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic" target="_top">AWS API
      *      Documentation</a>
@@ -513,6 +516,9 @@ public interface AmazonSNS {
      *         Indicates that the requested resource does not exist.
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
+     * @throws InvalidSecurityException
+     *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
+     *         Signature Version 4.
      * @sample AmazonSNS.GetTopicAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes" target="_top">AWS API
      *      Documentation</a>
@@ -809,6 +815,26 @@ public interface AmazonSNS {
      *         Exception error indicating platform application disabled.
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
+     * @throws KMSDisabledException
+     *         The request was rejected because the specified customer master key (CMK) isn't enabled.
+     * @throws KMSInvalidStateException
+     *         The request was rejected because the state of the specified resource isn't valid for this request. For
+     *         more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+     *         Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer
+     *         Guide</i>.
+     * @throws KMSNotFoundException
+     *         The request was rejected because the specified entity or resource can't be found.
+     * @throws KMSOptInRequiredException
+     *         The AWS access key ID needs a subscription for the service.
+     * @throws KMSThrottlingException
+     *         The request was denied due to request throttling. For more information about throttling, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
+     *         the <i>AWS Key Management Service Developer Guide.</i>
+     * @throws KMSAccessDeniedException
+     *         The ciphertext references a key that doesn't exist or that you don't have access to.
+     * @throws InvalidSecurityException
+     *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
+     *         Signature Version 4.
      * @sample AmazonSNS.Publish
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish" target="_top">AWS API
      *      Documentation</a>
@@ -985,6 +1011,9 @@ public interface AmazonSNS {
      *         Indicates that the requested resource does not exist.
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
+     * @throws InvalidSecurityException
+     *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
+     *         Signature Version 4.
      * @sample AmazonSNS.SetTopicAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes" target="_top">AWS API
      *      Documentation</a>
@@ -1024,6 +1053,9 @@ public interface AmazonSNS {
      *         Indicates that the requested resource does not exist.
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
+     * @throws InvalidSecurityException
+     *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
+     *         Signature Version 4.
      * @sample AmazonSNS.Subscribe
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe" target="_top">AWS API
      *      Documentation</a>
@@ -1060,6 +1092,9 @@ public interface AmazonSNS {
      *         Indicates that the user has been denied access to the requested resource.
      * @throws NotFoundException
      *         Indicates that the requested resource does not exist.
+     * @throws InvalidSecurityException
+     *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
+     *         Signature Version 4.
      * @sample AmazonSNS.Unsubscribe
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe" target="_top">AWS API
      *      Documentation</a>

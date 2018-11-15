@@ -154,7 +154,10 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Starts a hyperparameter tuning job.
+     * Starts a hyperparameter tuning job. A hyperparameter tuning job finds the best version of a model by running many
+     * training jobs on your dataset using the algorithm you choose and values for hyperparameters within ranges that
+     * you specify. It then chooses the hyperparameter values that result in a model that performs the best, as measured
+     * by an objective metric that you choose.
      * </p>
      * 
      * @param createHyperParameterTuningJobRequest
@@ -326,9 +329,9 @@ public interface AmazonSageMaker {
      * the specified list to every AWS Identity and Access Management user, group, or role used to access the notebook
      * instance. Use the <code>NotIpAddress</code> condition operator and the <code>aws:SourceIP</code> condition
      * context key to specify the list of IP addresses that you want to have access to the notebook instance. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/howitworks-access-ws.html#nbi-ip-filter"
-     * >Limit Access to a Notebook Instance by IP Address</a>.
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/howitworks-access-ws.html#nbi-ip-filter">Limit Access to a
+     * Notebook Instance by IP Address</a>.
      * </p>
      * 
      * @param createPresignedNotebookInstanceUrlRequest

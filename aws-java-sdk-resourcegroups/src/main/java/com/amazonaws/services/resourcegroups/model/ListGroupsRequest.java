@@ -32,7 +32,7 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>group-type</code> - Filter groups by resource type. Specify up to five group types in the format
+     * <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format
      * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
      * </p>
      * </li>
@@ -61,7 +61,7 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>group-type</code> - Filter groups by resource type. Specify up to five group types in the format
+     * <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format
      * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
      * </p>
      * </li>
@@ -71,8 +71,8 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>group-type</code> - Filter groups by resource type. Specify up to five group types in the format
-     *         AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     *         <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the
+     *         format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
      *         </p>
      *         </li>
      */
@@ -88,7 +88,7 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>group-type</code> - Filter groups by resource type. Specify up to five group types in the format
+     * <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format
      * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
      * </p>
      * </li>
@@ -99,8 +99,8 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>group-type</code> - Filter groups by resource type. Specify up to five group types in the format
-     *        AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     *        <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the
+     *        format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
      *        </p>
      *        </li>
      */
@@ -121,7 +121,7 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>group-type</code> - Filter groups by resource type. Specify up to five group types in the format
+     * <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format
      * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
      * </p>
      * </li>
@@ -137,8 +137,8 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>group-type</code> - Filter groups by resource type. Specify up to five group types in the format
-     *        AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     *        <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the
+     *        format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -161,7 +161,7 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>group-type</code> - Filter groups by resource type. Specify up to five group types in the format
+     * <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format
      * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
      * </p>
      * </li>
@@ -172,8 +172,8 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>group-type</code> - Filter groups by resource type. Specify up to five group types in the format
-     *        AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     *        <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the
+     *        format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -1,3 +1,32 @@
+# __1.11.450__ __2018-11-14__
+## __AWS MediaTailor__
+  - ### Features
+    - AWS Elemental MediaTailor SDK now returns a manifest endpoint prefix for clients to initiate a DASH playback session.
+
+## __AWS Resource Groups__
+  - ### Features
+    - The AWS Resource Groups service added support for AWS CloudFormation stack-based groups.
+
+## __AWS Service Catalog__
+  - ### Features
+    - Adds support for Cloudformation StackSets in Service Catalog
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Amazon EC2 Fleet now supports a new request type "Instant" that you can use to provision capacity synchronously across instance types & purchase models and CreateFleet will return the instances launched in the API response.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - SageMaker now makes the final set of metrics published from training jobs available in the DescribeTrainingJob results.  Automatic Model Tuning now supports warm start of hyperparameter tuning jobs.  Notebook instances now support a larger number of instance types to include instances from the ml.t3, ml.m5, ml.c4, ml.c5 families.
+
+## __Amazon Simple Notification Service__
+  - ### Features
+    - Added an optional request parameter, named Attributes, to the Amazon SNS CreateTopic API action. For more information, see the Amazon SNS API Reference (https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html).
+
+## __Auto Scaling__
+  - ### Features
+    - EC2 Auto Scaling now allows users to provision and automatically scale instances across purchase options (Spot, On-Demand, and RIs) and instance types in a single Auto Scaling group (ASG).
+
 # __1.11.449__ __2018-11-13__
 ## __AWS Budgets__
   - ### Features

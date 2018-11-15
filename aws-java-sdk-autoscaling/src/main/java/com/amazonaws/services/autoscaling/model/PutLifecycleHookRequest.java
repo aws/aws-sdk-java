@@ -69,17 +69,17 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
     private String roleARN;
     /**
      * <p>
-     * The ARN of the notification target that Amazon EC2 Auto Scaling will use to notify you when an instance is in the
+     * The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in the
      * transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic. If you specify
      * an empty string, this overrides the current ARN.
      * </p>
      * <p>
-     * This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key/value
+     * This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key-value
      * pair format when sending notifications to an Amazon SNS topic.
      * </p>
      * <p>
-     * When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test messages contains
-     * the following additional key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
+     * When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test messages contain
+     * the following additional key-value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
      * </p>
      */
     private String notificationTargetARN;
@@ -377,30 +377,30 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN of the notification target that Amazon EC2 Auto Scaling will use to notify you when an instance is in the
+     * The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in the
      * transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic. If you specify
      * an empty string, this overrides the current ARN.
      * </p>
      * <p>
-     * This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key/value
+     * This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key-value
      * pair format when sending notifications to an Amazon SNS topic.
      * </p>
      * <p>
-     * When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test messages contains
-     * the following additional key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
+     * When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test messages contain
+     * the following additional key-value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
      * </p>
      * 
      * @param notificationTargetARN
-     *        The ARN of the notification target that Amazon EC2 Auto Scaling will use to notify you when an instance is
-     *        in the transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic. If
+     *        The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in
+     *        the transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic. If
      *        you specify an empty string, this overrides the current ARN.</p>
      *        <p>
      *        This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email
-     *        key/value pair format when sending notifications to an Amazon SNS topic.
+     *        key-value pair format when sending notifications to an Amazon SNS topic.
      *        </p>
      *        <p>
      *        When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test messages
-     *        contains the following additional key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
+     *        contain the following additional key-value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
      */
 
     public void setNotificationTargetARN(String notificationTargetARN) {
@@ -409,29 +409,29 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN of the notification target that Amazon EC2 Auto Scaling will use to notify you when an instance is in the
+     * The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in the
      * transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic. If you specify
      * an empty string, this overrides the current ARN.
      * </p>
      * <p>
-     * This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key/value
+     * This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key-value
      * pair format when sending notifications to an Amazon SNS topic.
      * </p>
      * <p>
-     * When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test messages contains
-     * the following additional key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
+     * When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test messages contain
+     * the following additional key-value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
      * </p>
      * 
-     * @return The ARN of the notification target that Amazon EC2 Auto Scaling will use to notify you when an instance
-     *         is in the transition state for the lifecycle hook. This target can be either an SQS queue or an SNS
-     *         topic. If you specify an empty string, this overrides the current ARN.</p>
+     * @return The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in
+     *         the transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic. If
+     *         you specify an empty string, this overrides the current ARN.</p>
      *         <p>
      *         This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email
-     *         key/value pair format when sending notifications to an Amazon SNS topic.
+     *         key-value pair format when sending notifications to an Amazon SNS topic.
      *         </p>
      *         <p>
      *         When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test messages
-     *         contains the following additional key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
+     *         contain the following additional key-value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
      */
 
     public String getNotificationTargetARN() {
@@ -440,30 +440,30 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN of the notification target that Amazon EC2 Auto Scaling will use to notify you when an instance is in the
+     * The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in the
      * transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic. If you specify
      * an empty string, this overrides the current ARN.
      * </p>
      * <p>
-     * This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key/value
+     * This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key-value
      * pair format when sending notifications to an Amazon SNS topic.
      * </p>
      * <p>
-     * When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test messages contains
-     * the following additional key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
+     * When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test messages contain
+     * the following additional key-value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
      * </p>
      * 
      * @param notificationTargetARN
-     *        The ARN of the notification target that Amazon EC2 Auto Scaling will use to notify you when an instance is
-     *        in the transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic. If
+     *        The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in
+     *        the transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic. If
      *        you specify an empty string, this overrides the current ARN.</p>
      *        <p>
      *        This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email
-     *        key/value pair format when sending notifications to an Amazon SNS topic.
+     *        key-value pair format when sending notifications to an Amazon SNS topic.
      *        </p>
      *        <p>
      *        When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test messages
-     *        contains the following additional key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
+     *        contain the following additional key-value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -34,6 +34,8 @@ public class CreateHyperParameterTuningJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HyperParameterTuningJobConfig").build();
     private static final MarshallingInfo<StructuredPojo> TRAININGJOBDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingJobDefinition").build();
+    private static final MarshallingInfo<StructuredPojo> WARMSTARTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WarmStartConfig").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -56,6 +58,7 @@ public class CreateHyperParameterTuningJobRequestMarshaller {
             protocolMarshaller.marshall(createHyperParameterTuningJobRequest.getHyperParameterTuningJobName(), HYPERPARAMETERTUNINGJOBNAME_BINDING);
             protocolMarshaller.marshall(createHyperParameterTuningJobRequest.getHyperParameterTuningJobConfig(), HYPERPARAMETERTUNINGJOBCONFIG_BINDING);
             protocolMarshaller.marshall(createHyperParameterTuningJobRequest.getTrainingJobDefinition(), TRAININGJOBDEFINITION_BINDING);
+            protocolMarshaller.marshall(createHyperParameterTuningJobRequest.getWarmStartConfig(), WARMSTARTCONFIG_BINDING);
             protocolMarshaller.marshall(createHyperParameterTuningJobRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

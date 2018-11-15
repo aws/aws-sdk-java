@@ -28,6 +28,8 @@ import java.util.Map;
 public class ResponseMetadata {
     public static final String AWS_REQUEST_ID = "AWS_REQUEST_ID";
 
+    public static final String AWS_EXTENDED_REQUEST_ID = "AWS_EXTENDED_REQUEST_ID";
+
     protected final Map<String, String> metadata;
 
     /**

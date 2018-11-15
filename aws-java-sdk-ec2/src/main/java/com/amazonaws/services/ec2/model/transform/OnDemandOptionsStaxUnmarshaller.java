@@ -47,6 +47,16 @@ public class OnDemandOptionsStaxUnmarshaller implements Unmarshaller<OnDemandOpt
                     onDemandOptions.setAllocationStrategy(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("singleInstanceType", targetDepth)) {
+                    onDemandOptions.setSingleInstanceType(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("minTargetCapacity", targetDepth)) {
+                    onDemandOptions.setMinTargetCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return onDemandOptions;

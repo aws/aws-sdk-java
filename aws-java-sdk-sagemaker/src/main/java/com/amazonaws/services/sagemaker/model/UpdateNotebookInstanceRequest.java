@@ -68,7 +68,7 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     private Boolean disassociateLifecycleConfig;
     /**
      * <p>
-     * The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.
      * </p>
      */
     private Integer volumeSizeInGB;
@@ -374,11 +374,11 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.
      * </p>
      * 
      * @param volumeSizeInGB
-     *        The size, in GB, of the ML storage volume to attach to the notebook instance.
+     *        The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.
      */
 
     public void setVolumeSizeInGB(Integer volumeSizeInGB) {
@@ -387,10 +387,10 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.
      * </p>
      * 
-     * @return The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * @return The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.
      */
 
     public Integer getVolumeSizeInGB() {
@@ -399,11 +399,11 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.
      * </p>
      * 
      * @param volumeSizeInGB
-     *        The size, in GB, of the ML storage volume to attach to the notebook instance.
+     *        The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

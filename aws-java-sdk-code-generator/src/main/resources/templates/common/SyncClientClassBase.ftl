@@ -32,6 +32,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
 import com.amazonaws.cache.EndpointDiscoveryCache;
 import ${metadata.packageName}.${metadata.syncClientBuilderClassName};
 <#if hasWaiters>
@@ -85,6 +86,8 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ${clientConfigFactory} configFactory = new ${clientConfigFactory}();
+
+    private final AdvancedConfig advancedConfig;
 
     <@AdditionalSyncClientFieldsMacro.content .data_model />
 
@@ -179,6 +182,7 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
         this.endpointDiscoveryEnabled = false;
         </#if>
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -252,6 +256,7 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
         <#if endpointOperation?has_content>
         this.endpointDiscoveryEnabled = false;
         </#if>
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 </#if>
@@ -271,12 +276,7 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
      * @param clientParams Object providing client parameters.
      */
     ${metadata.syncClient}(AwsSyncClientParams clientParams) {
-        super(clientParams);
-        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
-        <#if endpointOperation?has_content>
-        this.endpointDiscoveryEnabled = false;
-        </#if>
-        init();
+        this(clientParams, false);
     }
 
     /**
@@ -295,6 +295,7 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
         <#if endpointOperation?has_content>
         this.endpointDiscoveryEnabled = endpointDiscoveryEnabled;
         </#if>
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 

@@ -33,7 +33,7 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
     private String autoScalingGroupName;
     /**
      * <p>
-     * The names of one or more policies. If you omit this parameter, all policies are described. If an group name is
+     * The names of one or more policies. If you omit this parameter, all policies are described. If a group name is
      * provided, the results are limited to that group. This list is limited to 50 items. If you specify an unknown
      * policy name, it is ignored with no error.
      * </p>
@@ -100,12 +100,12 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The names of one or more policies. If you omit this parameter, all policies are described. If an group name is
+     * The names of one or more policies. If you omit this parameter, all policies are described. If a group name is
      * provided, the results are limited to that group. This list is limited to 50 items. If you specify an unknown
      * policy name, it is ignored with no error.
      * </p>
      * 
-     * @return The names of one or more policies. If you omit this parameter, all policies are described. If an group
+     * @return The names of one or more policies. If you omit this parameter, all policies are described. If a group
      *         name is provided, the results are limited to that group. This list is limited to 50 items. If you specify
      *         an unknown policy name, it is ignored with no error.
      */
@@ -119,15 +119,15 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The names of one or more policies. If you omit this parameter, all policies are described. If an group name is
+     * The names of one or more policies. If you omit this parameter, all policies are described. If a group name is
      * provided, the results are limited to that group. This list is limited to 50 items. If you specify an unknown
      * policy name, it is ignored with no error.
      * </p>
      * 
      * @param policyNames
-     *        The names of one or more policies. If you omit this parameter, all policies are described. If an group
-     *        name is provided, the results are limited to that group. This list is limited to 50 items. If you specify
-     *        an unknown policy name, it is ignored with no error.
+     *        The names of one or more policies. If you omit this parameter, all policies are described. If a group name
+     *        is provided, the results are limited to that group. This list is limited to 50 items. If you specify an
+     *        unknown policy name, it is ignored with no error.
      */
 
     public void setPolicyNames(java.util.Collection<String> policyNames) {
@@ -141,7 +141,7 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The names of one or more policies. If you omit this parameter, all policies are described. If an group name is
+     * The names of one or more policies. If you omit this parameter, all policies are described. If a group name is
      * provided, the results are limited to that group. This list is limited to 50 items. If you specify an unknown
      * policy name, it is ignored with no error.
      * </p>
@@ -152,9 +152,9 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param policyNames
-     *        The names of one or more policies. If you omit this parameter, all policies are described. If an group
-     *        name is provided, the results are limited to that group. This list is limited to 50 items. If you specify
-     *        an unknown policy name, it is ignored with no error.
+     *        The names of one or more policies. If you omit this parameter, all policies are described. If a group name
+     *        is provided, the results are limited to that group. This list is limited to 50 items. If you specify an
+     *        unknown policy name, it is ignored with no error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,15 +170,15 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The names of one or more policies. If you omit this parameter, all policies are described. If an group name is
+     * The names of one or more policies. If you omit this parameter, all policies are described. If a group name is
      * provided, the results are limited to that group. This list is limited to 50 items. If you specify an unknown
      * policy name, it is ignored with no error.
      * </p>
      * 
      * @param policyNames
-     *        The names of one or more policies. If you omit this parameter, all policies are described. If an group
-     *        name is provided, the results are limited to that group. This list is limited to 50 items. If you specify
-     *        an unknown policy name, it is ignored with no error.
+     *        The names of one or more policies. If you omit this parameter, all policies are described. If a group name
+     *        is provided, the results are limited to that group. This list is limited to 50 items. If you specify an
+     *        unknown policy name, it is ignored with no error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

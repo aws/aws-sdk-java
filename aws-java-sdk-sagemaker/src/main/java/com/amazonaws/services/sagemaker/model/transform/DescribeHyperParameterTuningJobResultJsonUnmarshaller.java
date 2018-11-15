@@ -97,6 +97,16 @@ public class DescribeHyperParameterTuningJobResultJsonUnmarshaller implements Un
                     describeHyperParameterTuningJobResult
                             .setBestTrainingJob(HyperParameterTrainingJobSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("OverallBestTrainingJob", targetDepth)) {
+                    context.nextToken();
+                    describeHyperParameterTuningJobResult.setOverallBestTrainingJob(HyperParameterTrainingJobSummaryJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
+                if (context.testExpression("WarmStartConfig", targetDepth)) {
+                    context.nextToken();
+                    describeHyperParameterTuningJobResult.setWarmStartConfig(HyperParameterTuningJobWarmStartConfigJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
                 if (context.testExpression("FailureReason", targetDepth)) {
                     context.nextToken();
                     describeHyperParameterTuningJobResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));

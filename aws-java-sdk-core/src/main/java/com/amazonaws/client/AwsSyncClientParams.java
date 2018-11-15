@@ -17,6 +17,7 @@ package com.amazonaws.client;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.client.builder.AdvancedConfig;
 import com.amazonaws.monitoring.MonitoringListener;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.internal.auth.SignerProvider;
@@ -46,6 +47,10 @@ public abstract class AwsSyncClientParams {
     public abstract CsmConfigurationProvider getClientSideMonitoringConfigurationProvider();
 
     public abstract MonitoringListener getMonitoringListener();
+
+    public AdvancedConfig getAdvancedConfig() {
+        return AdvancedConfig.EMPTY;
+    }
 
     public SignerProvider getSignerProvider() {
         // Not currently used by AWS clients. The builder uses setRegion to configure endpoint

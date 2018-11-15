@@ -29,6 +29,20 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String fleetId;
+    /**
+     * <p>
+     * Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is set to
+     * <code>instant</code>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<CreateFleetError> errors;
+    /**
+     * <p>
+     * Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to
+     * <code>instant</code>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<CreateFleetInstance> instances;
 
     /**
      * <p>
@@ -71,6 +85,168 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is set to
+     * <code>instant</code>.
+     * </p>
+     * 
+     * @return Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is
+     *         set to <code>instant</code>.
+     */
+
+    public java.util.List<CreateFleetError> getErrors() {
+        if (errors == null) {
+            errors = new com.amazonaws.internal.SdkInternalList<CreateFleetError>();
+        }
+        return errors;
+    }
+
+    /**
+     * <p>
+     * Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is set to
+     * <code>instant</code>.
+     * </p>
+     * 
+     * @param errors
+     *        Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is
+     *        set to <code>instant</code>.
+     */
+
+    public void setErrors(java.util.Collection<CreateFleetError> errors) {
+        if (errors == null) {
+            this.errors = null;
+            return;
+        }
+
+        this.errors = new com.amazonaws.internal.SdkInternalList<CreateFleetError>(errors);
+    }
+
+    /**
+     * <p>
+     * Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is set to
+     * <code>instant</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setErrors(java.util.Collection)} or {@link #withErrors(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param errors
+     *        Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is
+     *        set to <code>instant</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetResult withErrors(CreateFleetError... errors) {
+        if (this.errors == null) {
+            setErrors(new com.amazonaws.internal.SdkInternalList<CreateFleetError>(errors.length));
+        }
+        for (CreateFleetError ele : errors) {
+            this.errors.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is set to
+     * <code>instant</code>.
+     * </p>
+     * 
+     * @param errors
+     *        Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is
+     *        set to <code>instant</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetResult withErrors(java.util.Collection<CreateFleetError> errors) {
+        setErrors(errors);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to
+     * <code>instant</code>.
+     * </p>
+     * 
+     * @return Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to
+     *         <code>instant</code>.
+     */
+
+    public java.util.List<CreateFleetInstance> getInstances() {
+        if (instances == null) {
+            instances = new com.amazonaws.internal.SdkInternalList<CreateFleetInstance>();
+        }
+        return instances;
+    }
+
+    /**
+     * <p>
+     * Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to
+     * <code>instant</code>.
+     * </p>
+     * 
+     * @param instances
+     *        Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to
+     *        <code>instant</code>.
+     */
+
+    public void setInstances(java.util.Collection<CreateFleetInstance> instances) {
+        if (instances == null) {
+            this.instances = null;
+            return;
+        }
+
+        this.instances = new com.amazonaws.internal.SdkInternalList<CreateFleetInstance>(instances);
+    }
+
+    /**
+     * <p>
+     * Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to
+     * <code>instant</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstances(java.util.Collection)} or {@link #withInstances(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param instances
+     *        Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to
+     *        <code>instant</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetResult withInstances(CreateFleetInstance... instances) {
+        if (this.instances == null) {
+            setInstances(new com.amazonaws.internal.SdkInternalList<CreateFleetInstance>(instances.length));
+        }
+        for (CreateFleetInstance ele : instances) {
+            this.instances.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to
+     * <code>instant</code>.
+     * </p>
+     * 
+     * @param instances
+     *        Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to
+     *        <code>instant</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetResult withInstances(java.util.Collection<CreateFleetInstance> instances) {
+        setInstances(instances);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -82,7 +258,11 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetId() != null)
-            sb.append("FleetId: ").append(getFleetId());
+            sb.append("FleetId: ").append(getFleetId()).append(",");
+        if (getErrors() != null)
+            sb.append("Errors: ").append(getErrors()).append(",");
+        if (getInstances() != null)
+            sb.append("Instances: ").append(getInstances());
         sb.append("}");
         return sb.toString();
     }
@@ -101,6 +281,14 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getFleetId() != null && other.getFleetId().equals(this.getFleetId()) == false)
             return false;
+        if (other.getErrors() == null ^ this.getErrors() == null)
+            return false;
+        if (other.getErrors() != null && other.getErrors().equals(this.getErrors()) == false)
+            return false;
+        if (other.getInstances() == null ^ this.getInstances() == null)
+            return false;
+        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false)
+            return false;
         return true;
     }
 
@@ -110,6 +298,8 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
+        hashCode = prime * hashCode + ((getErrors() == null) ? 0 : getErrors().hashCode());
+        hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
         return hashCode;
     }
 

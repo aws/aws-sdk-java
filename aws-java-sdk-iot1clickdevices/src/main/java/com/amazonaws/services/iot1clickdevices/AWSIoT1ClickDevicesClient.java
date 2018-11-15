@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
 
 import com.amazonaws.services.iot1clickdevices.AWSIoT1ClickDevicesClientBuilder;
 
@@ -67,6 +68,8 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
@@ -113,9 +116,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
      *        Object providing client parameters.
      */
     AWSIoT1ClickDevicesClient(AwsSyncClientParams clientParams) {
-        super(clientParams);
-        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
-        init();
+        this(clientParams, false);
     }
 
     /**
@@ -132,6 +133,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
     AWSIoT1ClickDevicesClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -189,6 +191,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ClaimDevicesByClaimCode");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -249,6 +252,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -318,6 +322,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "FinalizeDeviceClaim");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -377,6 +382,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeviceMethods");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -444,6 +450,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InitiateDeviceClaim");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -510,6 +517,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InvokeDeviceMethod");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -571,6 +579,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeviceEvents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -630,6 +639,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDevices");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -689,6 +699,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnclaimDevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -748,6 +759,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDeviceState");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

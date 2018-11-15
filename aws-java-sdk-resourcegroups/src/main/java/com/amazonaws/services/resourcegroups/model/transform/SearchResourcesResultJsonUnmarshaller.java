@@ -57,6 +57,10 @@ public class SearchResourcesResultJsonUnmarshaller implements Unmarshaller<Searc
                     context.nextToken();
                     searchResourcesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("QueryErrors", targetDepth)) {
+                    context.nextToken();
+                    searchResourcesResult.setQueryErrors(new ListUnmarshaller<QueryError>(QueryErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

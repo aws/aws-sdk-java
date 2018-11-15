@@ -40,6 +40,8 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
      * </p>
      */
     private String trainingJobArn;
+
+    private String tuningJobName;
     /**
      * <p>
      * The date and time that the training job was created.
@@ -190,6 +192,32 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
 
     public HyperParameterTrainingJobSummary withTrainingJobArn(String trainingJobArn) {
         setTrainingJobArn(trainingJobArn);
+        return this;
+    }
+
+    /**
+     * @param tuningJobName
+     */
+
+    public void setTuningJobName(String tuningJobName) {
+        this.tuningJobName = tuningJobName;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getTuningJobName() {
+        return this.tuningJobName;
+    }
+
+    /**
+     * @param tuningJobName
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HyperParameterTrainingJobSummary withTuningJobName(String tuningJobName) {
+        setTuningJobName(tuningJobName);
         return this;
     }
 
@@ -778,6 +806,8 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
             sb.append("TrainingJobName: ").append(getTrainingJobName()).append(",");
         if (getTrainingJobArn() != null)
             sb.append("TrainingJobArn: ").append(getTrainingJobArn()).append(",");
+        if (getTuningJobName() != null)
+            sb.append("TuningJobName: ").append(getTuningJobName()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getTrainingStartTime() != null)
@@ -815,6 +845,10 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
         if (other.getTrainingJobArn() == null ^ this.getTrainingJobArn() == null)
             return false;
         if (other.getTrainingJobArn() != null && other.getTrainingJobArn().equals(this.getTrainingJobArn()) == false)
+            return false;
+        if (other.getTuningJobName() == null ^ this.getTuningJobName() == null)
+            return false;
+        if (other.getTuningJobName() != null && other.getTuningJobName().equals(this.getTuningJobName()) == false)
             return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
@@ -859,6 +893,7 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
 
         hashCode = prime * hashCode + ((getTrainingJobName() == null) ? 0 : getTrainingJobName().hashCode());
         hashCode = prime * hashCode + ((getTrainingJobArn() == null) ? 0 : getTrainingJobArn().hashCode());
+        hashCode = prime * hashCode + ((getTuningJobName() == null) ? 0 : getTuningJobName().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getTrainingStartTime() == null) ? 0 : getTrainingStartTime().hashCode());
         hashCode = prime * hashCode + ((getTrainingEndTime() == null) ? 0 : getTrainingEndTime().hashCode());

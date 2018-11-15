@@ -290,6 +290,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private java.util.List<SecondaryStatusTransition> secondaryStatusTransitions;
+    /**
+     * <p>
+     * A collection of <code>MetricData</code> objects that specify the names, values, and dates and times that the
+     * training algorithm emitted to Amazon CloudWatch.
+     * </p>
+     */
+    private java.util.List<MetricData> finalMetricDataList;
 
     /**
      * <p>
@@ -2367,6 +2374,84 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * A collection of <code>MetricData</code> objects that specify the names, values, and dates and times that the
+     * training algorithm emitted to Amazon CloudWatch.
+     * </p>
+     * 
+     * @return A collection of <code>MetricData</code> objects that specify the names, values, and dates and times that
+     *         the training algorithm emitted to Amazon CloudWatch.
+     */
+
+    public java.util.List<MetricData> getFinalMetricDataList() {
+        return finalMetricDataList;
+    }
+
+    /**
+     * <p>
+     * A collection of <code>MetricData</code> objects that specify the names, values, and dates and times that the
+     * training algorithm emitted to Amazon CloudWatch.
+     * </p>
+     * 
+     * @param finalMetricDataList
+     *        A collection of <code>MetricData</code> objects that specify the names, values, and dates and times that
+     *        the training algorithm emitted to Amazon CloudWatch.
+     */
+
+    public void setFinalMetricDataList(java.util.Collection<MetricData> finalMetricDataList) {
+        if (finalMetricDataList == null) {
+            this.finalMetricDataList = null;
+            return;
+        }
+
+        this.finalMetricDataList = new java.util.ArrayList<MetricData>(finalMetricDataList);
+    }
+
+    /**
+     * <p>
+     * A collection of <code>MetricData</code> objects that specify the names, values, and dates and times that the
+     * training algorithm emitted to Amazon CloudWatch.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFinalMetricDataList(java.util.Collection)} or {@link #withFinalMetricDataList(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param finalMetricDataList
+     *        A collection of <code>MetricData</code> objects that specify the names, values, and dates and times that
+     *        the training algorithm emitted to Amazon CloudWatch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withFinalMetricDataList(MetricData... finalMetricDataList) {
+        if (this.finalMetricDataList == null) {
+            setFinalMetricDataList(new java.util.ArrayList<MetricData>(finalMetricDataList.length));
+        }
+        for (MetricData ele : finalMetricDataList) {
+            this.finalMetricDataList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A collection of <code>MetricData</code> objects that specify the names, values, and dates and times that the
+     * training algorithm emitted to Amazon CloudWatch.
+     * </p>
+     * 
+     * @param finalMetricDataList
+     *        A collection of <code>MetricData</code> objects that specify the names, values, and dates and times that
+     *        the training algorithm emitted to Amazon CloudWatch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withFinalMetricDataList(java.util.Collection<MetricData> finalMetricDataList) {
+        setFinalMetricDataList(finalMetricDataList);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2416,7 +2501,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         if (getLastModifiedTime() != null)
             sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getSecondaryStatusTransitions() != null)
-            sb.append("SecondaryStatusTransitions: ").append(getSecondaryStatusTransitions());
+            sb.append("SecondaryStatusTransitions: ").append(getSecondaryStatusTransitions()).append(",");
+        if (getFinalMetricDataList() != null)
+            sb.append("FinalMetricDataList: ").append(getFinalMetricDataList());
         sb.append("}");
         return sb.toString();
     }
@@ -2511,6 +2598,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getSecondaryStatusTransitions() != null && other.getSecondaryStatusTransitions().equals(this.getSecondaryStatusTransitions()) == false)
             return false;
+        if (other.getFinalMetricDataList() == null ^ this.getFinalMetricDataList() == null)
+            return false;
+        if (other.getFinalMetricDataList() != null && other.getFinalMetricDataList().equals(this.getFinalMetricDataList()) == false)
+            return false;
         return true;
     }
 
@@ -2539,6 +2630,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getTrainingEndTime() == null) ? 0 : getTrainingEndTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getSecondaryStatusTransitions() == null) ? 0 : getSecondaryStatusTransitions().hashCode());
+        hashCode = prime * hashCode + ((getFinalMetricDataList() == null) ? 0 : getFinalMetricDataList().hashCode());
         return hashCode;
     }
 

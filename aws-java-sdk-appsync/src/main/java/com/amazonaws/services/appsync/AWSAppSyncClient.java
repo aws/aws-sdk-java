@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
 
 import com.amazonaws.services.appsync.AWSAppSyncClientBuilder;
 
@@ -67,6 +68,8 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
@@ -121,9 +124,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      *        Object providing client parameters.
      */
     AWSAppSyncClient(AwsSyncClientParams clientParams) {
-        super(clientParams);
-        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
-        init();
+        this(clientParams, false);
     }
 
     /**
@@ -139,6 +140,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
     AWSAppSyncClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -206,6 +208,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApiKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -270,6 +273,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataSource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -336,6 +340,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGraphqlApi");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -401,6 +406,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateResolver");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -465,6 +471,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateType");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -527,6 +534,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApiKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -591,6 +599,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataSource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -655,6 +664,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGraphqlApi");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -716,6 +726,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResolver");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -780,6 +791,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteType");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -844,6 +856,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataSource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -906,6 +919,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGraphqlApi");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -967,6 +981,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIntrospectionSchema");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1027,6 +1042,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResolver");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1090,6 +1106,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSchemaCreationStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1155,6 +1172,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetType");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1224,6 +1242,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApiKeys");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1286,6 +1305,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDataSources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1346,6 +1366,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGraphqlApis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1408,6 +1429,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResolvers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1472,6 +1494,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTypes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1539,6 +1562,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSchemaCreation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1606,6 +1630,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApiKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1670,6 +1695,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataSource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1734,6 +1760,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGraphqlApi");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1795,6 +1822,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResolver");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1859,6 +1887,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateType");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

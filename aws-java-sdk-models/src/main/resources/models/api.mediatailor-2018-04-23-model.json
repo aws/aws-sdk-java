@@ -92,7 +92,7 @@
       },
       "documentation" : "<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>"
     },
-    "HlsConfiguration": {
+    "HlsConfiguration" : {
       "type" : "structure",
       "members" : {
         "ManifestEndpointPrefix" : {
@@ -101,6 +101,16 @@
         }
       },
       "documentation" : "<p>The configuration for HLS content. </p>"
+    },
+    "DashConfiguration" : {
+      "type" : "structure",
+      "members" : {
+        "ManifestEndpointPrefix" : {
+          "shape" : "__string",
+          "documentation" : "<p>The URL that is used to initiate a playback session for devices that support DASH. </p>"
+        }
+      },
+      "documentation" : "<p>The configuration object for DASH content. </p>"
     },
     "DeletePlaybackConfigurationRequest" : {
       "type" : "structure",
@@ -145,6 +155,10 @@
           "shape" : "CdnConfiguration",
           "documentation" : "<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>"
         },
+        "DashConfiguration" : {
+          "shape" : "DashConfiguration",
+          "documentation" : "<p>The configuration object for DASH content. </p>"
+        },
         "HlsConfiguration" : {
           "shape" : "HlsConfiguration",
           "documentation" : "<p>The configuration for HLS content. </p>"
@@ -164,6 +178,10 @@
         "SlateAdUrl" : {
           "shape" : "__string",
           "documentation" : "<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>"
+        },
+        "TranscodeProfileName" : {
+          "shape" : "__string",
+          "documentation" : "<p>Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor service team. </p>"
         },
         "VideoContentSourceUrl" : {
           "shape" : "__string",
@@ -246,6 +264,10 @@
           "shape" : "__string",
           "documentation" : "<p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>"
         },
+        "TranscodeProfileName" : {
+          "shape" : "__string",
+          "documentation" : "<p>Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor service team. </p>"
+        },
         "VideoContentSourceUrl" : {
           "shape" : "__string",
           "documentation" : "<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>"
@@ -262,6 +284,10 @@
         "CdnConfiguration" : {
           "shape" : "CdnConfiguration",
           "documentation" : "<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>"
+        },
+        "DashConfiguration" : {
+          "shape" : "DashConfiguration",
+          "documentation" : "<p>The configuration object for DASH content. </p>"
         },
         "HlsConfiguration" : {
           "shape" : "HlsConfiguration",
@@ -283,6 +309,10 @@
           "shape" : "__string",
           "documentation" : "<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>"
         },
+        "TranscodeProfileName" : {
+          "shape" : "__string",
+          "documentation" : "<p>Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor service team. </p>"
+        },
         "VideoContentSourceUrl" : {
           "shape" : "__string",
           "documentation" : "<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>"
@@ -300,7 +330,7 @@
     },
     "__listOfPlaybackConfigurations" : {
       "type" : "list",
-      "member": {
+      "member" : {
         "shape" : "PlaybackConfiguration"
       }
     },
@@ -314,6 +344,14 @@
       "type": "integer",
       "min": 1,
       "max": 100
+    },
+      "__timestampIso8601" : {
+      "type" : "timestamp",
+      "timestampFormat" : "iso8601"
+    },
+    "__timestampUnix" : {
+      "type" : "timestamp",
+      "timestampFormat" : "unixTimestamp"
     }
   },
   "documentation" : "<p>Use the AWS Elemental MediaTailor SDK to configure scalable ad insertion for your live and VOD content. With AWS Elemental MediaTailor, you can serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. For information about using the service, including detailed information about the settings covered in this guide, see the AWS Elemental MediaTailor User Guide.<p>Through the SDK, you manage AWS Elemental MediaTailor configurations the same as you do through the console. For example, you specify ad insertion behavior and mapping information for the origin server and the ad decision server (ADS).</p>"

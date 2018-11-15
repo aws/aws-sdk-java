@@ -58,6 +58,14 @@ public class CreateFleetRequestMarshaller implements Marshaller<Request<CreateFl
             if (spotOptions.getInstancePoolsToUseCount() != null) {
                 request.addParameter("SpotOptions.InstancePoolsToUseCount", StringUtils.fromInteger(spotOptions.getInstancePoolsToUseCount()));
             }
+
+            if (spotOptions.getSingleInstanceType() != null) {
+                request.addParameter("SpotOptions.SingleInstanceType", StringUtils.fromBoolean(spotOptions.getSingleInstanceType()));
+            }
+
+            if (spotOptions.getMinTargetCapacity() != null) {
+                request.addParameter("SpotOptions.MinTargetCapacity", StringUtils.fromInteger(spotOptions.getMinTargetCapacity()));
+            }
         }
 
         OnDemandOptionsRequest onDemandOptions = createFleetRequest.getOnDemandOptions();
@@ -65,6 +73,14 @@ public class CreateFleetRequestMarshaller implements Marshaller<Request<CreateFl
 
             if (onDemandOptions.getAllocationStrategy() != null) {
                 request.addParameter("OnDemandOptions.AllocationStrategy", StringUtils.fromString(onDemandOptions.getAllocationStrategy()));
+            }
+
+            if (onDemandOptions.getSingleInstanceType() != null) {
+                request.addParameter("OnDemandOptions.SingleInstanceType", StringUtils.fromBoolean(onDemandOptions.getSingleInstanceType()));
+            }
+
+            if (onDemandOptions.getMinTargetCapacity() != null) {
+                request.addParameter("OnDemandOptions.MinTargetCapacity", StringUtils.fromInteger(onDemandOptions.getMinTargetCapacity()));
             }
         }
 
@@ -134,6 +150,40 @@ public class CreateFleetRequestMarshaller implements Marshaller<Request<CreateFl
                         if (fleetLaunchTemplateConfigRequestOverridesListValue.getPriority() != null) {
                             request.addParameter("LaunchTemplateConfigs." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex + ".Priority",
                                     StringUtils.fromDouble(fleetLaunchTemplateConfigRequestOverridesListValue.getPriority()));
+                        }
+
+                        Placement placement = fleetLaunchTemplateConfigRequestOverridesListValue.getPlacement();
+                        if (placement != null) {
+
+                            if (placement.getAvailabilityZone() != null) {
+                                request.addParameter("LaunchTemplateConfigs." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
+                                        + ".Placement.AvailabilityZone", StringUtils.fromString(placement.getAvailabilityZone()));
+                            }
+
+                            if (placement.getAffinity() != null) {
+                                request.addParameter("LaunchTemplateConfigs." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
+                                        + ".Placement.Affinity", StringUtils.fromString(placement.getAffinity()));
+                            }
+
+                            if (placement.getGroupName() != null) {
+                                request.addParameter("LaunchTemplateConfigs." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
+                                        + ".Placement.GroupName", StringUtils.fromString(placement.getGroupName()));
+                            }
+
+                            if (placement.getHostId() != null) {
+                                request.addParameter("LaunchTemplateConfigs." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
+                                        + ".Placement.HostId", StringUtils.fromString(placement.getHostId()));
+                            }
+
+                            if (placement.getTenancy() != null) {
+                                request.addParameter("LaunchTemplateConfigs." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
+                                        + ".Placement.Tenancy", StringUtils.fromString(placement.getTenancy()));
+                            }
+
+                            if (placement.getSpreadDomain() != null) {
+                                request.addParameter("LaunchTemplateConfigs." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
+                                        + ".Placement.SpreadDomain", StringUtils.fromString(placement.getSpreadDomain()));
+                            }
                         }
                         overridesListIndex++;
                     }

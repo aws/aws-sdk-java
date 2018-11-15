@@ -34,22 +34,22 @@ public class GetPlatformApplicationAttributesResult extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications should be sent.
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications should be sent.
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications should be sent.
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent upon
      * Direct Publish delivery failure (permanent) to one of the application's endpoints.
      * </p>
      * </li>
@@ -64,22 +64,22 @@ public class GetPlatformApplicationAttributesResult extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications should be sent.
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications should be sent.
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications should be sent.
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent upon
      * Direct Publish delivery failure (permanent) to one of the application's endpoints.
      * </p>
      * </li>
@@ -89,26 +89,25 @@ public class GetPlatformApplicationAttributesResult extends com.amazonaws.Amazon
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications should be
+     *         <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event notifications should be
      *         sent.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications should be
+     *         <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event notifications should be
      *         sent.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications should be
-     *         sent.
+     *         <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications should be sent.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications should be
-     *         sent upon Direct Publish delivery failure (permanent) to one of the application's endpoints.
+     *         <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent
+     *         upon Direct Publish delivery failure (permanent) to one of the application's endpoints.
      *         </p>
      *         </li>
      */
@@ -127,22 +126,22 @@ public class GetPlatformApplicationAttributesResult extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications should be sent.
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications should be sent.
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications should be sent.
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent upon
      * Direct Publish delivery failure (permanent) to one of the application's endpoints.
      * </p>
      * </li>
@@ -153,24 +152,22 @@ public class GetPlatformApplicationAttributesResult extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications should be
-     *        sent.
+     *        <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event notifications should be sent.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications should be
-     *        sent.
+     *        <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event notifications should be sent.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications should be sent.
+     *        <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications should be sent.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications should be sent
+     *        <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent
      *        upon Direct Publish delivery failure (permanent) to one of the application's endpoints.
      *        </p>
      *        </li>
@@ -187,22 +184,22 @@ public class GetPlatformApplicationAttributesResult extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications should be sent.
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications should be sent.
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications should be sent.
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent upon
      * Direct Publish delivery failure (permanent) to one of the application's endpoints.
      * </p>
      * </li>
@@ -213,24 +210,22 @@ public class GetPlatformApplicationAttributesResult extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications should be
-     *        sent.
+     *        <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event notifications should be sent.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications should be
-     *        sent.
+     *        <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event notifications should be sent.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications should be sent.
+     *        <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications should be sent.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications should be sent
+     *        <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent
      *        upon Direct Publish delivery failure (permanent) to one of the application's endpoints.
      *        </p>
      *        </li>

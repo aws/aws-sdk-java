@@ -57,6 +57,16 @@ public class SpotOptionsStaxUnmarshaller implements Unmarshaller<SpotOptions, St
                     spotOptions.setInstancePoolsToUseCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("singleInstanceType", targetDepth)) {
+                    spotOptions.setSingleInstanceType(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("minTargetCapacity", targetDepth)) {
+                    spotOptions.setMinTargetCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return spotOptions;

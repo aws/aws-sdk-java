@@ -58,6 +58,14 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
     private String slateAdUrl;
     /**
      * <p>
+     * Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
+     * transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor
+     * service team.
+     * </p>
+     */
+    private String transcodeProfileName;
+    /**
+     * <p>
      * The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.
      * </p>
      */
@@ -270,6 +278,58 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
+     * Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
+     * transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor
+     * service team.
+     * </p>
+     * 
+     * @param transcodeProfileName
+     *        Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
+     *        transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor
+     *        service team.
+     */
+
+    public void setTranscodeProfileName(String transcodeProfileName) {
+        this.transcodeProfileName = transcodeProfileName;
+    }
+
+    /**
+     * <p>
+     * Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
+     * transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor
+     * service team.
+     * </p>
+     * 
+     * @return Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
+     *         transcoding defaults. Do not include this field if you have not setup custom profiles with the
+     *         MediaTailor service team.
+     */
+
+    public String getTranscodeProfileName() {
+        return this.transcodeProfileName;
+    }
+
+    /**
+     * <p>
+     * Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
+     * transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor
+     * service team.
+     * </p>
+     * 
+     * @param transcodeProfileName
+     *        Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
+     *        transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor
+     *        service team.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutPlaybackConfigurationRequest withTranscodeProfileName(String transcodeProfileName) {
+        setTranscodeProfileName(transcodeProfileName);
+        return this;
+    }
+
+    /**
+     * <p>
      * The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.
      * </p>
      * 
@@ -330,6 +390,8 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
             sb.append("Name: ").append(getName()).append(",");
         if (getSlateAdUrl() != null)
             sb.append("SlateAdUrl: ").append(getSlateAdUrl()).append(",");
+        if (getTranscodeProfileName() != null)
+            sb.append("TranscodeProfileName: ").append(getTranscodeProfileName()).append(",");
         if (getVideoContentSourceUrl() != null)
             sb.append("VideoContentSourceUrl: ").append(getVideoContentSourceUrl());
         sb.append("}");
@@ -362,6 +424,10 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getSlateAdUrl() != null && other.getSlateAdUrl().equals(this.getSlateAdUrl()) == false)
             return false;
+        if (other.getTranscodeProfileName() == null ^ this.getTranscodeProfileName() == null)
+            return false;
+        if (other.getTranscodeProfileName() != null && other.getTranscodeProfileName().equals(this.getTranscodeProfileName()) == false)
+            return false;
         if (other.getVideoContentSourceUrl() == null ^ this.getVideoContentSourceUrl() == null)
             return false;
         if (other.getVideoContentSourceUrl() != null && other.getVideoContentSourceUrl().equals(this.getVideoContentSourceUrl()) == false)
@@ -378,6 +444,7 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getCdnConfiguration() == null) ? 0 : getCdnConfiguration().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getSlateAdUrl() == null) ? 0 : getSlateAdUrl().hashCode());
+        hashCode = prime * hashCode + ((getTranscodeProfileName() == null) ? 0 : getTranscodeProfileName().hashCode());
         hashCode = prime * hashCode + ((getVideoContentSourceUrl() == null) ? 0 : getVideoContentSourceUrl().hashCode());
         return hashCode;
     }

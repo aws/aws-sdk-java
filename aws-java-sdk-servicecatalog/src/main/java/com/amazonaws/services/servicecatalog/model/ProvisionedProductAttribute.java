@@ -42,7 +42,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
     private String arn;
     /**
      * <p>
-     * The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
      * </p>
      */
     private String type;
@@ -229,11 +229,12 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
      * </p>
      * 
      * @param type
-     *        The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     *        The type of provisioned product. The supported values are <code>CFN_STACK</code> and
+     *        <code>CFN_STACKSET</code>.
      */
 
     public void setType(String type) {
@@ -242,10 +243,11 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
      * </p>
      * 
-     * @return The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     * @return The type of provisioned product. The supported values are <code>CFN_STACK</code> and
+     *         <code>CFN_STACKSET</code>.
      */
 
     public String getType() {
@@ -254,11 +256,12 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
      * </p>
      * 
      * @param type
-     *        The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     *        The type of provisioned product. The supported values are <code>CFN_STACK</code> and
+     *        <code>CFN_STACKSET</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

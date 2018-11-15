@@ -33,6 +33,8 @@ public class HyperParameterTrainingJobSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingJobName").build();
     private static final MarshallingInfo<String> TRAININGJOBARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingJobArn").build();
+    private static final MarshallingInfo<String> TUNINGJOBNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TuningJobName").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> TRAININGSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -69,6 +71,7 @@ public class HyperParameterTrainingJobSummaryMarshaller {
         try {
             protocolMarshaller.marshall(hyperParameterTrainingJobSummary.getTrainingJobName(), TRAININGJOBNAME_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobSummary.getTrainingJobArn(), TRAININGJOBARN_BINDING);
+            protocolMarshaller.marshall(hyperParameterTrainingJobSummary.getTuningJobName(), TUNINGJOBNAME_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobSummary.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobSummary.getTrainingStartTime(), TRAININGSTARTTIME_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobSummary.getTrainingEndTime(), TRAININGENDTIME_BINDING);

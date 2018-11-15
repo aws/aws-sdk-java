@@ -47,6 +47,19 @@ public class SpotOptions implements Serializable, Cloneable {
      * </p>
      */
     private Integer instancePoolsToUseCount;
+    /**
+     * <p>
+     * Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.
+     * </p>
+     */
+    private Boolean singleInstanceType;
+    /**
+     * <p>
+     * The minimum target capacity for Spot Instances in the fleet. If the minimum target capacity is not reached, the
+     * fleet launches no instances.
+     * </p>
+     */
+    private Integer minTargetCapacity;
 
     /**
      * <p>
@@ -227,6 +240,104 @@ public class SpotOptions implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.
+     * </p>
+     * 
+     * @param singleInstanceType
+     *        Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.
+     */
+
+    public void setSingleInstanceType(Boolean singleInstanceType) {
+        this.singleInstanceType = singleInstanceType;
+    }
+
+    /**
+     * <p>
+     * Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.
+     * </p>
+     * 
+     * @return Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.
+     */
+
+    public Boolean getSingleInstanceType() {
+        return this.singleInstanceType;
+    }
+
+    /**
+     * <p>
+     * Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.
+     * </p>
+     * 
+     * @param singleInstanceType
+     *        Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotOptions withSingleInstanceType(Boolean singleInstanceType) {
+        setSingleInstanceType(singleInstanceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.
+     * </p>
+     * 
+     * @return Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.
+     */
+
+    public Boolean isSingleInstanceType() {
+        return this.singleInstanceType;
+    }
+
+    /**
+     * <p>
+     * The minimum target capacity for Spot Instances in the fleet. If the minimum target capacity is not reached, the
+     * fleet launches no instances.
+     * </p>
+     * 
+     * @param minTargetCapacity
+     *        The minimum target capacity for Spot Instances in the fleet. If the minimum target capacity is not
+     *        reached, the fleet launches no instances.
+     */
+
+    public void setMinTargetCapacity(Integer minTargetCapacity) {
+        this.minTargetCapacity = minTargetCapacity;
+    }
+
+    /**
+     * <p>
+     * The minimum target capacity for Spot Instances in the fleet. If the minimum target capacity is not reached, the
+     * fleet launches no instances.
+     * </p>
+     * 
+     * @return The minimum target capacity for Spot Instances in the fleet. If the minimum target capacity is not
+     *         reached, the fleet launches no instances.
+     */
+
+    public Integer getMinTargetCapacity() {
+        return this.minTargetCapacity;
+    }
+
+    /**
+     * <p>
+     * The minimum target capacity for Spot Instances in the fleet. If the minimum target capacity is not reached, the
+     * fleet launches no instances.
+     * </p>
+     * 
+     * @param minTargetCapacity
+     *        The minimum target capacity for Spot Instances in the fleet. If the minimum target capacity is not
+     *        reached, the fleet launches no instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotOptions withMinTargetCapacity(Integer minTargetCapacity) {
+        setMinTargetCapacity(minTargetCapacity);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -242,7 +353,11 @@ public class SpotOptions implements Serializable, Cloneable {
         if (getInstanceInterruptionBehavior() != null)
             sb.append("InstanceInterruptionBehavior: ").append(getInstanceInterruptionBehavior()).append(",");
         if (getInstancePoolsToUseCount() != null)
-            sb.append("InstancePoolsToUseCount: ").append(getInstancePoolsToUseCount());
+            sb.append("InstancePoolsToUseCount: ").append(getInstancePoolsToUseCount()).append(",");
+        if (getSingleInstanceType() != null)
+            sb.append("SingleInstanceType: ").append(getSingleInstanceType()).append(",");
+        if (getMinTargetCapacity() != null)
+            sb.append("MinTargetCapacity: ").append(getMinTargetCapacity());
         sb.append("}");
         return sb.toString();
     }
@@ -269,6 +384,14 @@ public class SpotOptions implements Serializable, Cloneable {
             return false;
         if (other.getInstancePoolsToUseCount() != null && other.getInstancePoolsToUseCount().equals(this.getInstancePoolsToUseCount()) == false)
             return false;
+        if (other.getSingleInstanceType() == null ^ this.getSingleInstanceType() == null)
+            return false;
+        if (other.getSingleInstanceType() != null && other.getSingleInstanceType().equals(this.getSingleInstanceType()) == false)
+            return false;
+        if (other.getMinTargetCapacity() == null ^ this.getMinTargetCapacity() == null)
+            return false;
+        if (other.getMinTargetCapacity() != null && other.getMinTargetCapacity().equals(this.getMinTargetCapacity()) == false)
+            return false;
         return true;
     }
 
@@ -280,6 +403,8 @@ public class SpotOptions implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAllocationStrategy() == null) ? 0 : getAllocationStrategy().hashCode());
         hashCode = prime * hashCode + ((getInstanceInterruptionBehavior() == null) ? 0 : getInstanceInterruptionBehavior().hashCode());
         hashCode = prime * hashCode + ((getInstancePoolsToUseCount() == null) ? 0 : getInstancePoolsToUseCount().hashCode());
+        hashCode = prime * hashCode + ((getSingleInstanceType() == null) ? 0 : getSingleInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getMinTargetCapacity() == null) ? 0 : getMinTargetCapacity().hashCode());
         return hashCode;
     }
 

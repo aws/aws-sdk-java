@@ -76,7 +76,7 @@ public class DescribeFleetsRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of request (<code>request</code> | <code>maintain</code>).
+     * <code>type</code> - The type of request (<code>instant</code> | <code>request</code> | <code>maintain</code>).
      * </p>
      * </li>
      * </ul>
@@ -277,7 +277,7 @@ public class DescribeFleetsRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of request (<code>request</code> | <code>maintain</code>).
+     * <code>type</code> - The type of request (<code>instant</code> | <code>request</code> | <code>maintain</code>).
      * </p>
      * </li>
      * </ul>
@@ -311,7 +311,8 @@ public class DescribeFleetsRequest extends AmazonWebServiceRequest implements Se
      *         </li>
      *         <li>
      *         <p>
-     *         <code>type</code> - The type of request (<code>request</code> | <code>maintain</code>).
+     *         <code>type</code> - The type of request (<code>instant</code> | <code>request</code> |
+     *         <code>maintain</code>).
      *         </p>
      *         </li>
      */
@@ -355,7 +356,7 @@ public class DescribeFleetsRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of request (<code>request</code> | <code>maintain</code>).
+     * <code>type</code> - The type of request (<code>instant</code> | <code>request</code> | <code>maintain</code>).
      * </p>
      * </li>
      * </ul>
@@ -390,7 +391,8 @@ public class DescribeFleetsRequest extends AmazonWebServiceRequest implements Se
      *        </li>
      *        <li>
      *        <p>
-     *        <code>type</code> - The type of request (<code>request</code> | <code>maintain</code>).
+     *        <code>type</code> - The type of request (<code>instant</code> | <code>request</code> |
+     *        <code>maintain</code>).
      *        </p>
      *        </li>
      */
@@ -436,7 +438,7 @@ public class DescribeFleetsRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of request (<code>request</code> | <code>maintain</code>).
+     * <code>type</code> - The type of request (<code>instant</code> | <code>request</code> | <code>maintain</code>).
      * </p>
      * </li>
      * </ul>
@@ -476,7 +478,8 @@ public class DescribeFleetsRequest extends AmazonWebServiceRequest implements Se
      *        </li>
      *        <li>
      *        <p>
-     *        <code>type</code> - The type of request (<code>request</code> | <code>maintain</code>).
+     *        <code>type</code> - The type of request (<code>instant</code> | <code>request</code> |
+     *        <code>maintain</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -524,7 +527,7 @@ public class DescribeFleetsRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>type</code> - The type of request (<code>request</code> | <code>maintain</code>).
+     * <code>type</code> - The type of request (<code>instant</code> | <code>request</code> | <code>maintain</code>).
      * </p>
      * </li>
      * </ul>
@@ -559,7 +562,8 @@ public class DescribeFleetsRequest extends AmazonWebServiceRequest implements Se
      *        </li>
      *        <li>
      *        <p>
-     *        <code>type</code> - The type of request (<code>request</code> | <code>maintain</code>).
+     *        <code>type</code> - The type of request (<code>instant</code> | <code>request</code> |
+     *        <code>maintain</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

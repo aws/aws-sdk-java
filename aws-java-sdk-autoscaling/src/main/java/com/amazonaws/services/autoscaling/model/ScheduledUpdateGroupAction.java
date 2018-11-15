@@ -56,7 +56,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * </p>
      * <p>
      * When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
-     * boundaries of when the recurring action will start and stop.
+     * boundaries of when the recurring action starts and stops.
      * </p>
      */
     private java.util.Date startTime;
@@ -257,7 +257,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * </p>
      * <p>
      * When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
-     * boundaries of when the recurring action will start and stop.
+     * boundaries of when the recurring action starts and stops.
      * </p>
      * 
      * @param startTime
@@ -265,7 +265,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      *        future.</p>
      *        <p>
      *        When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form
-     *        the boundaries of when the recurring action will start and stop.
+     *        the boundaries of when the recurring action starts and stops.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -278,14 +278,14 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * </p>
      * <p>
      * When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
-     * boundaries of when the recurring action will start and stop.
+     * boundaries of when the recurring action starts and stops.
      * </p>
      * 
      * @return The date and time that the action is scheduled to begin. This date and time can be up to one month in the
      *         future.</p>
      *         <p>
      *         When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they
-     *         form the boundaries of when the recurring action will start and stop.
+     *         form the boundaries of when the recurring action starts and stops.
      */
 
     public java.util.Date getStartTime() {
@@ -298,7 +298,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * </p>
      * <p>
      * When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
-     * boundaries of when the recurring action will start and stop.
+     * boundaries of when the recurring action starts and stops.
      * </p>
      * 
      * @param startTime
@@ -306,7 +306,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      *        future.</p>
      *        <p>
      *        When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form
-     *        the boundaries of when the recurring action will start and stop.
+     *        the boundaries of when the recurring action starts and stops.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

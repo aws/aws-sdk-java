@@ -41,6 +41,12 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
     private CdnConfiguration cdnConfiguration;
     /**
      * <p>
+     * The configuration object for DASH content.
+     * </p>
+     */
+    private DashConfiguration dashConfiguration;
+    /**
+     * <p>
      * The configuration for HLS content.
      * </p>
      */
@@ -73,6 +79,14 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String slateAdUrl;
+    /**
+     * <p>
+     * Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
+     * transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor
+     * service team.
+     * </p>
+     */
+    private String transcodeProfileName;
     /**
      * <p>
      * The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.
@@ -181,6 +195,46 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     public GetPlaybackConfigurationResult withCdnConfiguration(CdnConfiguration cdnConfiguration) {
         setCdnConfiguration(cdnConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration object for DASH content.
+     * </p>
+     * 
+     * @param dashConfiguration
+     *        The configuration object for DASH content.
+     */
+
+    public void setDashConfiguration(DashConfiguration dashConfiguration) {
+        this.dashConfiguration = dashConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration object for DASH content.
+     * </p>
+     * 
+     * @return The configuration object for DASH content.
+     */
+
+    public DashConfiguration getDashConfiguration() {
+        return this.dashConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration object for DASH content.
+     * </p>
+     * 
+     * @param dashConfiguration
+     *        The configuration object for DASH content.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPlaybackConfigurationResult withDashConfiguration(DashConfiguration dashConfiguration) {
+        setDashConfiguration(dashConfiguration);
         return this;
     }
 
@@ -413,6 +467,58 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
+     * Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
+     * transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor
+     * service team.
+     * </p>
+     * 
+     * @param transcodeProfileName
+     *        Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
+     *        transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor
+     *        service team.
+     */
+
+    public void setTranscodeProfileName(String transcodeProfileName) {
+        this.transcodeProfileName = transcodeProfileName;
+    }
+
+    /**
+     * <p>
+     * Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
+     * transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor
+     * service team.
+     * </p>
+     * 
+     * @return Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
+     *         transcoding defaults. Do not include this field if you have not setup custom profiles with the
+     *         MediaTailor service team.
+     */
+
+    public String getTranscodeProfileName() {
+        return this.transcodeProfileName;
+    }
+
+    /**
+     * <p>
+     * Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
+     * transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor
+     * service team.
+     * </p>
+     * 
+     * @param transcodeProfileName
+     *        Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
+     *        transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor
+     *        service team.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPlaybackConfigurationResult withTranscodeProfileName(String transcodeProfileName) {
+        setTranscodeProfileName(transcodeProfileName);
+        return this;
+    }
+
+    /**
+     * <p>
      * The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.
      * </p>
      * 
@@ -469,6 +575,8 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
             sb.append("AdDecisionServerUrl: ").append(getAdDecisionServerUrl()).append(",");
         if (getCdnConfiguration() != null)
             sb.append("CdnConfiguration: ").append(getCdnConfiguration()).append(",");
+        if (getDashConfiguration() != null)
+            sb.append("DashConfiguration: ").append(getDashConfiguration()).append(",");
         if (getHlsConfiguration() != null)
             sb.append("HlsConfiguration: ").append(getHlsConfiguration()).append(",");
         if (getName() != null)
@@ -479,6 +587,8 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
             sb.append("SessionInitializationEndpointPrefix: ").append(getSessionInitializationEndpointPrefix()).append(",");
         if (getSlateAdUrl() != null)
             sb.append("SlateAdUrl: ").append(getSlateAdUrl()).append(",");
+        if (getTranscodeProfileName() != null)
+            sb.append("TranscodeProfileName: ").append(getTranscodeProfileName()).append(",");
         if (getVideoContentSourceUrl() != null)
             sb.append("VideoContentSourceUrl: ").append(getVideoContentSourceUrl());
         sb.append("}");
@@ -503,6 +613,10 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getCdnConfiguration() != null && other.getCdnConfiguration().equals(this.getCdnConfiguration()) == false)
             return false;
+        if (other.getDashConfiguration() == null ^ this.getDashConfiguration() == null)
+            return false;
+        if (other.getDashConfiguration() != null && other.getDashConfiguration().equals(this.getDashConfiguration()) == false)
+            return false;
         if (other.getHlsConfiguration() == null ^ this.getHlsConfiguration() == null)
             return false;
         if (other.getHlsConfiguration() != null && other.getHlsConfiguration().equals(this.getHlsConfiguration()) == false)
@@ -524,6 +638,10 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getSlateAdUrl() != null && other.getSlateAdUrl().equals(this.getSlateAdUrl()) == false)
             return false;
+        if (other.getTranscodeProfileName() == null ^ this.getTranscodeProfileName() == null)
+            return false;
+        if (other.getTranscodeProfileName() != null && other.getTranscodeProfileName().equals(this.getTranscodeProfileName()) == false)
+            return false;
         if (other.getVideoContentSourceUrl() == null ^ this.getVideoContentSourceUrl() == null)
             return false;
         if (other.getVideoContentSourceUrl() != null && other.getVideoContentSourceUrl().equals(this.getVideoContentSourceUrl()) == false)
@@ -538,11 +656,13 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
         hashCode = prime * hashCode + ((getAdDecisionServerUrl() == null) ? 0 : getAdDecisionServerUrl().hashCode());
         hashCode = prime * hashCode + ((getCdnConfiguration() == null) ? 0 : getCdnConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDashConfiguration() == null) ? 0 : getDashConfiguration().hashCode());
         hashCode = prime * hashCode + ((getHlsConfiguration() == null) ? 0 : getHlsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPlaybackEndpointPrefix() == null) ? 0 : getPlaybackEndpointPrefix().hashCode());
         hashCode = prime * hashCode + ((getSessionInitializationEndpointPrefix() == null) ? 0 : getSessionInitializationEndpointPrefix().hashCode());
         hashCode = prime * hashCode + ((getSlateAdUrl() == null) ? 0 : getSlateAdUrl().hashCode());
+        hashCode = prime * hashCode + ((getTranscodeProfileName() == null) ? 0 : getTranscodeProfileName().hashCode());
         hashCode = prime * hashCode + ((getVideoContentSourceUrl() == null) ? 0 : getVideoContentSourceUrl().hashCode());
         return hashCode;
     }

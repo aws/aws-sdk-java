@@ -26,18 +26,21 @@ public class CreateHyperParameterTuningJobResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the tuning job.
+     * The Amazon Resource Name (ARN) of the tuning job. Amazon SageMaker assigns an ARN to a hyperparameter tuning job
+     * when you create it.
      * </p>
      */
     private String hyperParameterTuningJobArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the tuning job.
+     * The Amazon Resource Name (ARN) of the tuning job. Amazon SageMaker assigns an ARN to a hyperparameter tuning job
+     * when you create it.
      * </p>
      * 
      * @param hyperParameterTuningJobArn
-     *        The Amazon Resource Name (ARN) of the tuning job.
+     *        The Amazon Resource Name (ARN) of the tuning job. Amazon SageMaker assigns an ARN to a hyperparameter
+     *        tuning job when you create it.
      */
 
     public void setHyperParameterTuningJobArn(String hyperParameterTuningJobArn) {
@@ -46,10 +49,12 @@ public class CreateHyperParameterTuningJobResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the tuning job.
+     * The Amazon Resource Name (ARN) of the tuning job. Amazon SageMaker assigns an ARN to a hyperparameter tuning job
+     * when you create it.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the tuning job.
+     * @return The Amazon Resource Name (ARN) of the tuning job. Amazon SageMaker assigns an ARN to a hyperparameter
+     *         tuning job when you create it.
      */
 
     public String getHyperParameterTuningJobArn() {
@@ -58,11 +63,13 @@ public class CreateHyperParameterTuningJobResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the tuning job.
+     * The Amazon Resource Name (ARN) of the tuning job. Amazon SageMaker assigns an ARN to a hyperparameter tuning job
+     * when you create it.
      * </p>
      * 
      * @param hyperParameterTuningJobArn
-     *        The Amazon Resource Name (ARN) of the tuning job.
+     *        The Amazon Resource Name (ARN) of the tuning job. Amazon SageMaker assigns an ARN to a hyperparameter
+     *        tuning job when you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

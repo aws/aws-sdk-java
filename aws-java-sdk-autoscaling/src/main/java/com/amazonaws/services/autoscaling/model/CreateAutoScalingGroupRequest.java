@@ -33,27 +33,34 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     private String autoScalingGroupName;
     /**
      * <p>
-     * The name of the launch configuration. You must specify one of the following: a launch configuration, a launch
-     * template, or an EC2 instance.
+     * The name of the launch configuration. This parameter, a launch template, a mixed instances policy, or an EC2
+     * instance must be specified.
      * </p>
      */
     private String launchConfigurationName;
     /**
      * <p>
-     * The launch template to use to launch instances. You must specify one of the following: a launch template, a
-     * launch configuration, or an EC2 instance.
+     * The launch template to use to launch instances. This parameter, a launch configuration, a mixed instances policy,
+     * or an EC2 instance must be specified.
      * </p>
      */
     private LaunchTemplateSpecification launchTemplate;
     /**
      * <p>
-     * The ID of the instance used to create a launch configuration for the group. You must specify one of the
-     * following: an EC2 instance, a launch configuration, or a launch template.
+     * The mixed instances policy to use to launch instances. This parameter, a launch template, a launch configuration,
+     * or an EC2 instance must be specified.
+     * </p>
+     */
+    private MixedInstancesPolicy mixedInstancesPolicy;
+    /**
+     * <p>
+     * The ID of the instance used to create a launch configuration for the group. This parameter, a launch
+     * configuration, a launch template, or a mixed instances policy must be specified.
      * </p>
      * <p>
      * When you specify an ID of an instance, Amazon EC2 Auto Scaling creates a new launch configuration and associates
-     * it with the group. This launch configuration derives its attributes from the specified instance, with the
-     * exception of the block device mapping.
+     * it with the group. This launch configuration derives its attributes from the specified instance, except for the
+     * block device mapping.
      * </p>
      * <p>
      * For more information, see <a
@@ -145,7 +152,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     private Integer healthCheckGracePeriod;
     /**
      * <p>
-     * The name of the placement group into which you'll launch your instances, if any. For more information, see <a
+     * The name of the placement group into which to launch your instances, if any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -252,13 +259,13 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the launch configuration. You must specify one of the following: a launch configuration, a launch
-     * template, or an EC2 instance.
+     * The name of the launch configuration. This parameter, a launch template, a mixed instances policy, or an EC2
+     * instance must be specified.
      * </p>
      * 
      * @param launchConfigurationName
-     *        The name of the launch configuration. You must specify one of the following: a launch configuration, a
-     *        launch template, or an EC2 instance.
+     *        The name of the launch configuration. This parameter, a launch template, a mixed instances policy, or an
+     *        EC2 instance must be specified.
      */
 
     public void setLaunchConfigurationName(String launchConfigurationName) {
@@ -267,12 +274,12 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the launch configuration. You must specify one of the following: a launch configuration, a launch
-     * template, or an EC2 instance.
+     * The name of the launch configuration. This parameter, a launch template, a mixed instances policy, or an EC2
+     * instance must be specified.
      * </p>
      * 
-     * @return The name of the launch configuration. You must specify one of the following: a launch configuration, a
-     *         launch template, or an EC2 instance.
+     * @return The name of the launch configuration. This parameter, a launch template, a mixed instances policy, or an
+     *         EC2 instance must be specified.
      */
 
     public String getLaunchConfigurationName() {
@@ -281,13 +288,13 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the launch configuration. You must specify one of the following: a launch configuration, a launch
-     * template, or an EC2 instance.
+     * The name of the launch configuration. This parameter, a launch template, a mixed instances policy, or an EC2
+     * instance must be specified.
      * </p>
      * 
      * @param launchConfigurationName
-     *        The name of the launch configuration. You must specify one of the following: a launch configuration, a
-     *        launch template, or an EC2 instance.
+     *        The name of the launch configuration. This parameter, a launch template, a mixed instances policy, or an
+     *        EC2 instance must be specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -298,13 +305,13 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch template to use to launch instances. You must specify one of the following: a launch template, a
-     * launch configuration, or an EC2 instance.
+     * The launch template to use to launch instances. This parameter, a launch configuration, a mixed instances policy,
+     * or an EC2 instance must be specified.
      * </p>
      * 
      * @param launchTemplate
-     *        The launch template to use to launch instances. You must specify one of the following: a launch template,
-     *        a launch configuration, or an EC2 instance.
+     *        The launch template to use to launch instances. This parameter, a launch configuration, a mixed instances
+     *        policy, or an EC2 instance must be specified.
      */
 
     public void setLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
@@ -313,12 +320,12 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch template to use to launch instances. You must specify one of the following: a launch template, a
-     * launch configuration, or an EC2 instance.
+     * The launch template to use to launch instances. This parameter, a launch configuration, a mixed instances policy,
+     * or an EC2 instance must be specified.
      * </p>
      * 
-     * @return The launch template to use to launch instances. You must specify one of the following: a launch template,
-     *         a launch configuration, or an EC2 instance.
+     * @return The launch template to use to launch instances. This parameter, a launch configuration, a mixed instances
+     *         policy, or an EC2 instance must be specified.
      */
 
     public LaunchTemplateSpecification getLaunchTemplate() {
@@ -327,13 +334,13 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch template to use to launch instances. You must specify one of the following: a launch template, a
-     * launch configuration, or an EC2 instance.
+     * The launch template to use to launch instances. This parameter, a launch configuration, a mixed instances policy,
+     * or an EC2 instance must be specified.
      * </p>
      * 
      * @param launchTemplate
-     *        The launch template to use to launch instances. You must specify one of the following: a launch template,
-     *        a launch configuration, or an EC2 instance.
+     *        The launch template to use to launch instances. This parameter, a launch configuration, a mixed instances
+     *        policy, or an EC2 instance must be specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -344,13 +351,59 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the instance used to create a launch configuration for the group. You must specify one of the
-     * following: an EC2 instance, a launch configuration, or a launch template.
+     * The mixed instances policy to use to launch instances. This parameter, a launch template, a launch configuration,
+     * or an EC2 instance must be specified.
+     * </p>
+     * 
+     * @param mixedInstancesPolicy
+     *        The mixed instances policy to use to launch instances. This parameter, a launch template, a launch
+     *        configuration, or an EC2 instance must be specified.
+     */
+
+    public void setMixedInstancesPolicy(MixedInstancesPolicy mixedInstancesPolicy) {
+        this.mixedInstancesPolicy = mixedInstancesPolicy;
+    }
+
+    /**
+     * <p>
+     * The mixed instances policy to use to launch instances. This parameter, a launch template, a launch configuration,
+     * or an EC2 instance must be specified.
+     * </p>
+     * 
+     * @return The mixed instances policy to use to launch instances. This parameter, a launch template, a launch
+     *         configuration, or an EC2 instance must be specified.
+     */
+
+    public MixedInstancesPolicy getMixedInstancesPolicy() {
+        return this.mixedInstancesPolicy;
+    }
+
+    /**
+     * <p>
+     * The mixed instances policy to use to launch instances. This parameter, a launch template, a launch configuration,
+     * or an EC2 instance must be specified.
+     * </p>
+     * 
+     * @param mixedInstancesPolicy
+     *        The mixed instances policy to use to launch instances. This parameter, a launch template, a launch
+     *        configuration, or an EC2 instance must be specified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAutoScalingGroupRequest withMixedInstancesPolicy(MixedInstancesPolicy mixedInstancesPolicy) {
+        setMixedInstancesPolicy(mixedInstancesPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance used to create a launch configuration for the group. This parameter, a launch
+     * configuration, a launch template, or a mixed instances policy must be specified.
      * </p>
      * <p>
      * When you specify an ID of an instance, Amazon EC2 Auto Scaling creates a new launch configuration and associates
-     * it with the group. This launch configuration derives its attributes from the specified instance, with the
-     * exception of the block device mapping.
+     * it with the group. This launch configuration derives its attributes from the specified instance, except for the
+     * block device mapping.
      * </p>
      * <p>
      * For more information, see <a
@@ -359,12 +412,12 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param instanceId
-     *        The ID of the instance used to create a launch configuration for the group. You must specify one of the
-     *        following: an EC2 instance, a launch configuration, or a launch template.</p>
+     *        The ID of the instance used to create a launch configuration for the group. This parameter, a launch
+     *        configuration, a launch template, or a mixed instances policy must be specified.</p>
      *        <p>
      *        When you specify an ID of an instance, Amazon EC2 Auto Scaling creates a new launch configuration and
      *        associates it with the group. This launch configuration derives its attributes from the specified
-     *        instance, with the exception of the block device mapping.
+     *        instance, except for the block device mapping.
      *        </p>
      *        <p>
      *        For more information, see <a
@@ -378,13 +431,13 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the instance used to create a launch configuration for the group. You must specify one of the
-     * following: an EC2 instance, a launch configuration, or a launch template.
+     * The ID of the instance used to create a launch configuration for the group. This parameter, a launch
+     * configuration, a launch template, or a mixed instances policy must be specified.
      * </p>
      * <p>
      * When you specify an ID of an instance, Amazon EC2 Auto Scaling creates a new launch configuration and associates
-     * it with the group. This launch configuration derives its attributes from the specified instance, with the
-     * exception of the block device mapping.
+     * it with the group. This launch configuration derives its attributes from the specified instance, except for the
+     * block device mapping.
      * </p>
      * <p>
      * For more information, see <a
@@ -392,12 +445,12 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * Group Using an EC2 Instance</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return The ID of the instance used to create a launch configuration for the group. You must specify one of the
-     *         following: an EC2 instance, a launch configuration, or a launch template.</p>
+     * @return The ID of the instance used to create a launch configuration for the group. This parameter, a launch
+     *         configuration, a launch template, or a mixed instances policy must be specified.</p>
      *         <p>
      *         When you specify an ID of an instance, Amazon EC2 Auto Scaling creates a new launch configuration and
      *         associates it with the group. This launch configuration derives its attributes from the specified
-     *         instance, with the exception of the block device mapping.
+     *         instance, except for the block device mapping.
      *         </p>
      *         <p>
      *         For more information, see <a
@@ -411,13 +464,13 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the instance used to create a launch configuration for the group. You must specify one of the
-     * following: an EC2 instance, a launch configuration, or a launch template.
+     * The ID of the instance used to create a launch configuration for the group. This parameter, a launch
+     * configuration, a launch template, or a mixed instances policy must be specified.
      * </p>
      * <p>
      * When you specify an ID of an instance, Amazon EC2 Auto Scaling creates a new launch configuration and associates
-     * it with the group. This launch configuration derives its attributes from the specified instance, with the
-     * exception of the block device mapping.
+     * it with the group. This launch configuration derives its attributes from the specified instance, except for the
+     * block device mapping.
      * </p>
      * <p>
      * For more information, see <a
@@ -426,12 +479,12 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param instanceId
-     *        The ID of the instance used to create a launch configuration for the group. You must specify one of the
-     *        following: an EC2 instance, a launch configuration, or a launch template.</p>
+     *        The ID of the instance used to create a launch configuration for the group. This parameter, a launch
+     *        configuration, a launch template, or a mixed instances policy must be specified.</p>
      *        <p>
      *        When you specify an ID of an instance, Amazon EC2 Auto Scaling creates a new launch configuration and
      *        associates it with the group. This launch configuration derives its attributes from the specified
-     *        instance, with the exception of the block device mapping.
+     *        instance, except for the block device mapping.
      *        </p>
      *        <p>
      *        For more information, see <a
@@ -1080,14 +1133,14 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the placement group into which you'll launch your instances, if any. For more information, see <a
+     * The name of the placement group into which to launch your instances, if any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param placementGroup
-     *        The name of the placement group into which you'll launch your instances, if any. For more information, see
-     *        <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *        The name of the placement group into which to launch your instances, if any. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
@@ -1097,14 +1150,14 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the placement group into which you'll launch your instances, if any. For more information, see <a
+     * The name of the placement group into which to launch your instances, if any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return The name of the placement group into which you'll launch your instances, if any. For more information,
-     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     *         Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return The name of the placement group into which to launch your instances, if any. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public String getPlacementGroup() {
@@ -1113,14 +1166,14 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the placement group into which you'll launch your instances, if any. For more information, see <a
+     * The name of the placement group into which to launch your instances, if any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param placementGroup
-     *        The name of the placement group into which you'll launch your instances, if any. For more information, see
-     *        <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *        The name of the placement group into which to launch your instances, if any. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1643,6 +1696,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
             sb.append("LaunchConfigurationName: ").append(getLaunchConfigurationName()).append(",");
         if (getLaunchTemplate() != null)
             sb.append("LaunchTemplate: ").append(getLaunchTemplate()).append(",");
+        if (getMixedInstancesPolicy() != null)
+            sb.append("MixedInstancesPolicy: ").append(getMixedInstancesPolicy()).append(",");
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getMinSize() != null)
@@ -1702,6 +1757,10 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         if (other.getLaunchTemplate() == null ^ this.getLaunchTemplate() == null)
             return false;
         if (other.getLaunchTemplate() != null && other.getLaunchTemplate().equals(this.getLaunchTemplate()) == false)
+            return false;
+        if (other.getMixedInstancesPolicy() == null ^ this.getMixedInstancesPolicy() == null)
+            return false;
+        if (other.getMixedInstancesPolicy() != null && other.getMixedInstancesPolicy().equals(this.getMixedInstancesPolicy()) == false)
             return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
@@ -1784,6 +1843,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
         hashCode = prime * hashCode + ((getLaunchConfigurationName() == null) ? 0 : getLaunchConfigurationName().hashCode());
         hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
+        hashCode = prime * hashCode + ((getMixedInstancesPolicy() == null) ? 0 : getMixedInstancesPolicy().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getMinSize() == null) ? 0 : getMinSize().hashCode());
         hashCode = prime * hashCode + ((getMaxSize() == null) ? 0 : getMaxSize().hashCode());

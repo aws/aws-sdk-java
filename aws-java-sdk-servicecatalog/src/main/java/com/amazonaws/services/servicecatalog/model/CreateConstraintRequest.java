@@ -71,7 +71,13 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * Specify the <code>RoleArn</code> property as follows:
      * </p>
      * <p>
-     * \"RoleArn\" : \"arn:aws:iam::123456789012:role/LaunchRole\"
+     * <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
+     * </p>
+     * <p>
+     * You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
+     * </p>
+     * <p>
+     * You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.
      * </p>
      * </dd>
      * <dt>NOTIFICATION</dt>
@@ -80,7 +86,25 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * Specify the <code>NotificationArns</code> property as follows:
      * </p>
      * <p>
-     * \"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]
+     * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+     * </p>
+     * </dd>
+     * <dt>STACKSET</dt>
+     * <dd>
+     * <p>
+     * Specify the <code>Parameters</code> property as follows:
+     * </p>
+     * <p>
+     * <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
+     * </p>
+     * <p>
+     * You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
+     * </p>
+     * <p>
+     * You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.
+     * </p>
+     * <p>
+     * Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.
      * </p>
      * </dd>
      * <dt>TEMPLATE</dt>
@@ -107,6 +131,11 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * <li>
      * <p>
      * <code>NOTIFICATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>STACKSET</code>
      * </p>
      * </li>
      * <li>
@@ -361,7 +390,13 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * Specify the <code>RoleArn</code> property as follows:
      * </p>
      * <p>
-     * \"RoleArn\" : \"arn:aws:iam::123456789012:role/LaunchRole\"
+     * <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
+     * </p>
+     * <p>
+     * You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
+     * </p>
+     * <p>
+     * You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.
      * </p>
      * </dd>
      * <dt>NOTIFICATION</dt>
@@ -370,7 +405,25 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * Specify the <code>NotificationArns</code> property as follows:
      * </p>
      * <p>
-     * \"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]
+     * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+     * </p>
+     * </dd>
+     * <dt>STACKSET</dt>
+     * <dd>
+     * <p>
+     * Specify the <code>Parameters</code> property as follows:
+     * </p>
+     * <p>
+     * <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
+     * </p>
+     * <p>
+     * You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
+     * </p>
+     * <p>
+     * You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.
+     * </p>
+     * <p>
+     * Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.
      * </p>
      * </dd>
      * <dt>TEMPLATE</dt>
@@ -392,7 +445,13 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *        Specify the <code>RoleArn</code> property as follows:
      *        </p>
      *        <p>
-     *        \"RoleArn\" : \"arn:aws:iam::123456789012:role/LaunchRole\"
+     *        <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
+     *        </p>
+     *        <p>
+     *        You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
+     *        </p>
+     *        <p>
+     *        You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.
      *        </p>
      *        </dd>
      *        <dt>NOTIFICATION</dt>
@@ -401,7 +460,25 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *        Specify the <code>NotificationArns</code> property as follows:
      *        </p>
      *        <p>
-     *        \"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]
+     *        <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+     *        </p>
+     *        </dd>
+     *        <dt>STACKSET</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the <code>Parameters</code> property as follows:
+     *        </p>
+     *        <p>
+     *        <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
+     *        </p>
+     *        <p>
+     *        You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
+     *        </p>
+     *        <p>
+     *        You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.
+     *        </p>
+     *        <p>
+     *        Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.
      *        </p>
      *        </dd>
      *        <dt>TEMPLATE</dt>
@@ -429,7 +506,13 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * Specify the <code>RoleArn</code> property as follows:
      * </p>
      * <p>
-     * \"RoleArn\" : \"arn:aws:iam::123456789012:role/LaunchRole\"
+     * <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
+     * </p>
+     * <p>
+     * You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
+     * </p>
+     * <p>
+     * You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.
      * </p>
      * </dd>
      * <dt>NOTIFICATION</dt>
@@ -438,7 +521,25 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * Specify the <code>NotificationArns</code> property as follows:
      * </p>
      * <p>
-     * \"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]
+     * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+     * </p>
+     * </dd>
+     * <dt>STACKSET</dt>
+     * <dd>
+     * <p>
+     * Specify the <code>Parameters</code> property as follows:
+     * </p>
+     * <p>
+     * <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
+     * </p>
+     * <p>
+     * You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
+     * </p>
+     * <p>
+     * You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.
+     * </p>
+     * <p>
+     * Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.
      * </p>
      * </dd>
      * <dt>TEMPLATE</dt>
@@ -459,7 +560,13 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *         Specify the <code>RoleArn</code> property as follows:
      *         </p>
      *         <p>
-     *         \"RoleArn\" : \"arn:aws:iam::123456789012:role/LaunchRole\"
+     *         <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
+     *         </p>
+     *         <p>
+     *         You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
+     *         </p>
+     *         <p>
+     *         You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.
      *         </p>
      *         </dd>
      *         <dt>NOTIFICATION</dt>
@@ -468,7 +575,25 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *         Specify the <code>NotificationArns</code> property as follows:
      *         </p>
      *         <p>
-     *         \"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]
+     *         <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+     *         </p>
+     *         </dd>
+     *         <dt>STACKSET</dt>
+     *         <dd>
+     *         <p>
+     *         Specify the <code>Parameters</code> property as follows:
+     *         </p>
+     *         <p>
+     *         <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
+     *         </p>
+     *         <p>
+     *         You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
+     *         </p>
+     *         <p>
+     *         You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.
+     *         </p>
+     *         <p>
+     *         Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.
      *         </p>
      *         </dd>
      *         <dt>TEMPLATE</dt>
@@ -496,7 +621,13 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * Specify the <code>RoleArn</code> property as follows:
      * </p>
      * <p>
-     * \"RoleArn\" : \"arn:aws:iam::123456789012:role/LaunchRole\"
+     * <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
+     * </p>
+     * <p>
+     * You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
+     * </p>
+     * <p>
+     * You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.
      * </p>
      * </dd>
      * <dt>NOTIFICATION</dt>
@@ -505,7 +636,25 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * Specify the <code>NotificationArns</code> property as follows:
      * </p>
      * <p>
-     * \"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]
+     * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+     * </p>
+     * </dd>
+     * <dt>STACKSET</dt>
+     * <dd>
+     * <p>
+     * Specify the <code>Parameters</code> property as follows:
+     * </p>
+     * <p>
+     * <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
+     * </p>
+     * <p>
+     * You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
+     * </p>
+     * <p>
+     * You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.
+     * </p>
+     * <p>
+     * Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.
      * </p>
      * </dd>
      * <dt>TEMPLATE</dt>
@@ -527,7 +676,13 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *        Specify the <code>RoleArn</code> property as follows:
      *        </p>
      *        <p>
-     *        \"RoleArn\" : \"arn:aws:iam::123456789012:role/LaunchRole\"
+     *        <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
+     *        </p>
+     *        <p>
+     *        You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
+     *        </p>
+     *        <p>
+     *        You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.
      *        </p>
      *        </dd>
      *        <dt>NOTIFICATION</dt>
@@ -536,7 +691,25 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *        Specify the <code>NotificationArns</code> property as follows:
      *        </p>
      *        <p>
-     *        \"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]
+     *        <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+     *        </p>
+     *        </dd>
+     *        <dt>STACKSET</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the <code>Parameters</code> property as follows:
+     *        </p>
+     *        <p>
+     *        <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
+     *        </p>
+     *        <p>
+     *        You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
+     *        </p>
+     *        <p>
+     *        You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.
+     *        </p>
+     *        <p>
+     *        Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.
      *        </p>
      *        </dd>
      *        <dt>TEMPLATE</dt>
@@ -572,6 +745,11 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * <code>STACKSET</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>TEMPLATE</code>
      * </p>
      * </li>
@@ -588,6 +766,11 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        <code>NOTIFICATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>STACKSET</code>
      *        </p>
      *        </li>
      *        <li>
@@ -618,6 +801,11 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * <code>STACKSET</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>TEMPLATE</code>
      * </p>
      * </li>
@@ -633,6 +821,11 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *         <li>
      *         <p>
      *         <code>NOTIFICATION</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>STACKSET</code>
      *         </p>
      *         </li>
      *         <li>
@@ -663,6 +856,11 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * <code>STACKSET</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>TEMPLATE</code>
      * </p>
      * </li>
@@ -679,6 +877,11 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        <code>NOTIFICATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>STACKSET</code>
      *        </p>
      *        </li>
      *        <li>

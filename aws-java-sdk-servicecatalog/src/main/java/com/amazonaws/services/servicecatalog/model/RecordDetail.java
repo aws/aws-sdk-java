@@ -89,7 +89,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date updatedTime;
     /**
      * <p>
-     * The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
      * </p>
      */
     private String provisionedProductType;
@@ -673,11 +673,12 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
      * </p>
      * 
      * @param provisionedProductType
-     *        The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     *        The type of provisioned product. The supported values are <code>CFN_STACK</code> and
+     *        <code>CFN_STACKSET</code>.
      */
 
     public void setProvisionedProductType(String provisionedProductType) {
@@ -686,10 +687,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
      * </p>
      * 
-     * @return The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     * @return The type of provisioned product. The supported values are <code>CFN_STACK</code> and
+     *         <code>CFN_STACKSET</code>.
      */
 
     public String getProvisionedProductType() {
@@ -698,11 +700,12 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
      * </p>
      * 
      * @param provisionedProductType
-     *        The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     *        The type of provisioned product. The supported values are <code>CFN_STACK</code> and
+     *        <code>CFN_STACKSET</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

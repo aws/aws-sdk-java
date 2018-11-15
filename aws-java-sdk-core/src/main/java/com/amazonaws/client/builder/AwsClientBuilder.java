@@ -72,6 +72,8 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
      */
     private final AwsRegionProvider regionProvider;
 
+    private final AdvancedConfig.Builder advancedConfig = AdvancedConfig.builder();
+
     private AWSCredentialsProvider credentials;
     private ClientConfiguration clientConfig;
     private RequestMetricCollector metricsCollector;
@@ -390,6 +392,26 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
     }
 
     /**
+     * Get the current value of an advanced config option.
+     * @param key Key of value to get.
+     * @param <T> Type of value to get.
+     * @return Value if set, otherwise null.
+     */
+    protected final <T> T getAdvancedConfig(AdvancedConfig.Key<T> key) {
+        return advancedConfig.get(key);
+    }
+
+    /**
+     * Sets the value of an advanced config option.
+     * @param key Key of value to set.
+     * @param value The new value.
+     * @param <T> Type of value.
+     */
+    protected final <T> void putAdvancedConfig(AdvancedConfig.Key<T> key, T value) {
+        advancedConfig.put(key, value);
+    }
+
+    /**
      * Region and endpoint logic is tightly coupled to the client class right now so it's easier to
      * set them after client creation and let the normal logic kick in. Ideally this should resolve
      * the endpoint and signer information here and just pass that information as is to the client.
@@ -417,6 +439,10 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
      */
     protected final AwsSyncClientParams getSyncClientParams() {
         return new SyncBuilderParams();
+    }
+
+    protected final AdvancedConfig getAdvancedConfig() {
+        return advancedConfig.build();
     }
 
     private void setRegion(AmazonWebServiceClient client) {
@@ -473,6 +499,7 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
         private final List<RequestHandler2> _requestHandlers;
         private final CsmConfigurationProvider _csmConfig;
         private final MonitoringListener _monitoringListener;
+        private final AdvancedConfig _advancedConfig;
 
         protected SyncBuilderParams() {
             this._clientConfig = resolveClientConfiguration();
@@ -481,6 +508,7 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
             this._requestHandlers = resolveRequestHandlers();
             this._csmConfig = resolveClientSideMonitoringConfig();
             this._monitoringListener = monitoringListener;
+            this._advancedConfig = advancedConfig.build();
         }
 
         @Override
@@ -511,6 +539,11 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
         @Override
         public MonitoringListener getMonitoringListener() {
             return this._monitoringListener;
+        }
+
+        @Override
+        public AdvancedConfig getAdvancedConfig() {
+            return _advancedConfig;
         }
 
         @Override

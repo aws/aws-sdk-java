@@ -88,6 +88,10 @@ public final class ${metadata.syncClientBuilderClassName}
     }
     </#if>
 
+    <#if AdditionalBuilderMethods?has_content>
+        <@AdditionalBuilderMethods.content .data_model, metadata.syncClientBuilderClassName />
+    </#if>
+
     /**
      * Construct a synchronous implementation of ${metadata.syncInterface} using the current builder configuration.
      *

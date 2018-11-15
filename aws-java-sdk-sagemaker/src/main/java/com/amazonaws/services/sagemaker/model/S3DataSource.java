@@ -82,7 +82,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
      * </p>
      * <p>
-     * <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code>
+     * <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code>
      * </p>
      * <p>
      * <code>...</code>
@@ -258,7 +258,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
      * </p>
      * <p>
-     * <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code>
+     * <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code>
      * </p>
      * <p>
      * <code>...</code>
@@ -312,7 +312,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *        <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
      *        </p>
      *        <p>
-     *        <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code>
+     *        <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code>
      *        </p>
      *        <p>
      *        <code>...</code>
@@ -372,7 +372,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
      * </p>
      * <p>
-     * <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code>
+     * <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code>
      * </p>
      * <p>
      * <code>...</code>
@@ -425,7 +425,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *         <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
      *         </p>
      *         <p>
-     *         <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code>
+     *         <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code>
      *         </p>
      *         <p>
      *         <code>...</code>
@@ -485,7 +485,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
      * </p>
      * <p>
-     * <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code>
+     * <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code>
      * </p>
      * <p>
      * <code>...</code>
@@ -539,7 +539,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *        <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
      *        </p>
      *        <p>
-     *        <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code>
+     *        <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code>
      *        </p>
      *        <p>
      *        <code>...</code>

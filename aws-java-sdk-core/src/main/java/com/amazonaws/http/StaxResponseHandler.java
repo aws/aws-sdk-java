@@ -79,6 +79,7 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     public AmazonWebServiceResponse<T> handle(HttpResponse response) throws Exception {
         log.trace("Parsing service response XML");
         InputStream content = response.getContent();
+
         if (content == null) {
             content = new ByteArrayInputStream("<eof/>".getBytes(StringUtils.UTF8));
         }
@@ -106,6 +107,10 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
                 if (responseHeaders.get(X_AMZN_REQUEST_ID_HEADER) != null) {
                     metadata.put(ResponseMetadata.AWS_REQUEST_ID,
                                  responseHeaders.get(X_AMZN_REQUEST_ID_HEADER));
+                }
+                if (responseHeaders.get(X_AMZN_EXTENDED_REQUEST_ID_HEADER) != null) {
+                    metadata.put(ResponseMetadata.AWS_EXTENDED_REQUEST_ID,
+                                 responseHeaders.get(X_AMZN_EXTENDED_REQUEST_ID_HEADER));
                 }
             }
             awsResponse.setResponseMetadata(getResponseMetadata(metadata));

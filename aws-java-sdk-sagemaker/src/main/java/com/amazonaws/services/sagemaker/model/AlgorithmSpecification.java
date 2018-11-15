@@ -65,6 +65,13 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * </p>
      */
     private String trainingInputMode;
+    /**
+     * <p>
+     * A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse
+     * algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     * </p>
+     */
+    private java.util.List<MetricDefinition> metricDefinitions;
 
     /**
      * <p>
@@ -308,6 +315,84 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse
+     * algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     * </p>
+     * 
+     * @return A list of metric definition objects. Each object specifies the metric name and regular expressions used
+     *         to parse algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     */
+
+    public java.util.List<MetricDefinition> getMetricDefinitions() {
+        return metricDefinitions;
+    }
+
+    /**
+     * <p>
+     * A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse
+     * algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     * </p>
+     * 
+     * @param metricDefinitions
+     *        A list of metric definition objects. Each object specifies the metric name and regular expressions used to
+     *        parse algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     */
+
+    public void setMetricDefinitions(java.util.Collection<MetricDefinition> metricDefinitions) {
+        if (metricDefinitions == null) {
+            this.metricDefinitions = null;
+            return;
+        }
+
+        this.metricDefinitions = new java.util.ArrayList<MetricDefinition>(metricDefinitions);
+    }
+
+    /**
+     * <p>
+     * A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse
+     * algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMetricDefinitions(java.util.Collection)} or {@link #withMetricDefinitions(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param metricDefinitions
+     *        A list of metric definition objects. Each object specifies the metric name and regular expressions used to
+     *        parse algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AlgorithmSpecification withMetricDefinitions(MetricDefinition... metricDefinitions) {
+        if (this.metricDefinitions == null) {
+            setMetricDefinitions(new java.util.ArrayList<MetricDefinition>(metricDefinitions.length));
+        }
+        for (MetricDefinition ele : metricDefinitions) {
+            this.metricDefinitions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse
+     * algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     * </p>
+     * 
+     * @param metricDefinitions
+     *        A list of metric definition objects. Each object specifies the metric name and regular expressions used to
+     *        parse algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AlgorithmSpecification withMetricDefinitions(java.util.Collection<MetricDefinition> metricDefinitions) {
+        setMetricDefinitions(metricDefinitions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -321,7 +406,9 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
         if (getTrainingImage() != null)
             sb.append("TrainingImage: ").append(getTrainingImage()).append(",");
         if (getTrainingInputMode() != null)
-            sb.append("TrainingInputMode: ").append(getTrainingInputMode());
+            sb.append("TrainingInputMode: ").append(getTrainingInputMode()).append(",");
+        if (getMetricDefinitions() != null)
+            sb.append("MetricDefinitions: ").append(getMetricDefinitions());
         sb.append("}");
         return sb.toString();
     }
@@ -344,6 +431,10 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
             return false;
         if (other.getTrainingInputMode() != null && other.getTrainingInputMode().equals(this.getTrainingInputMode()) == false)
             return false;
+        if (other.getMetricDefinitions() == null ^ this.getMetricDefinitions() == null)
+            return false;
+        if (other.getMetricDefinitions() != null && other.getMetricDefinitions().equals(this.getMetricDefinitions()) == false)
+            return false;
         return true;
     }
 
@@ -354,6 +445,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
 
         hashCode = prime * hashCode + ((getTrainingImage() == null) ? 0 : getTrainingImage().hashCode());
         hashCode = prime * hashCode + ((getTrainingInputMode() == null) ? 0 : getTrainingInputMode().hashCode());
+        hashCode = prime * hashCode + ((getMetricDefinitions() == null) ? 0 : getMetricDefinitions().hashCode());
         return hashCode;
     }
 

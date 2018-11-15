@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum FleetType {
 
     Request("request"),
-    Maintain("maintain");
+    Maintain("maintain"),
+    Instant("instant");
 
     private String value;
 

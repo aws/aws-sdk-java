@@ -35,6 +35,8 @@ public class PutPlaybackConfigurationRequestMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> SLATEADURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SlateAdUrl").build();
+    private static final MarshallingInfo<String> TRANSCODEPROFILENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TranscodeProfileName").build();
     private static final MarshallingInfo<String> VIDEOCONTENTSOURCEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VideoContentSourceUrl").build();
 
@@ -58,6 +60,7 @@ public class PutPlaybackConfigurationRequestMarshaller {
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getCdnConfiguration(), CDNCONFIGURATION_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getSlateAdUrl(), SLATEADURL_BINDING);
+            protocolMarshaller.marshall(putPlaybackConfigurationRequest.getTranscodeProfileName(), TRANSCODEPROFILENAME_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getVideoContentSourceUrl(), VIDEOCONTENTSOURCEURL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

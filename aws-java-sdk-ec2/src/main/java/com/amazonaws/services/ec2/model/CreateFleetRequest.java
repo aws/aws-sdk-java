@@ -73,12 +73,12 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     private Boolean terminateInstancesWithExpiration;
     /**
      * <p>
-     * The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or also
-     * attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places the
-     * required requests. It does not attempt to replenish instances if capacity is diminished, and does not submit
-     * requests in alternative capacity pools if capacity is unavailable. To maintain a certain target capacity, EC2
-     * Fleet places the required requests to meet this target capacity. It also automatically replenishes any
-     * interrupted Spot Instances. Default: <code>maintain</code>.
+     * The type of request. <code>instant</code> indicates whether the EC2 Fleet submits a one-time request for your
+     * desired capacity. <code>request</code> indicates whether the EC2 Fleet submits ongoing requests until your
+     * desired capacity is fulfilled, but does not attempt to submit requests in alternative capacity pools if capacity
+     * is unavailable or maintain the capacity. <code>maintain</code> indicates whether the EC2 Fleet submits ongoing
+     * requests until your desired capacity is fulfilled, and continues to maintain your desired capacity by
+     * replenishing interrupted Spot Instances. Default: <code>maintain</code>.
      * </p>
      */
     private String type;
@@ -491,21 +491,21 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or also
-     * attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places the
-     * required requests. It does not attempt to replenish instances if capacity is diminished, and does not submit
-     * requests in alternative capacity pools if capacity is unavailable. To maintain a certain target capacity, EC2
-     * Fleet places the required requests to meet this target capacity. It also automatically replenishes any
-     * interrupted Spot Instances. Default: <code>maintain</code>.
+     * The type of request. <code>instant</code> indicates whether the EC2 Fleet submits a one-time request for your
+     * desired capacity. <code>request</code> indicates whether the EC2 Fleet submits ongoing requests until your
+     * desired capacity is fulfilled, but does not attempt to submit requests in alternative capacity pools if capacity
+     * is unavailable or maintain the capacity. <code>maintain</code> indicates whether the EC2 Fleet submits ongoing
+     * requests until your desired capacity is fulfilled, and continues to maintain your desired capacity by
+     * replenishing interrupted Spot Instances. Default: <code>maintain</code>.
      * </p>
      * 
      * @param type
-     *        The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or
-     *        also attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places
-     *        the required requests. It does not attempt to replenish instances if capacity is diminished, and does not
-     *        submit requests in alternative capacity pools if capacity is unavailable. To maintain a certain target
-     *        capacity, EC2 Fleet places the required requests to meet this target capacity. It also automatically
-     *        replenishes any interrupted Spot Instances. Default: <code>maintain</code>.
+     *        The type of request. <code>instant</code> indicates whether the EC2 Fleet submits a one-time request for
+     *        your desired capacity. <code>request</code> indicates whether the EC2 Fleet submits ongoing requests until
+     *        your desired capacity is fulfilled, but does not attempt to submit requests in alternative capacity pools
+     *        if capacity is unavailable or maintain the capacity. <code>maintain</code> indicates whether the EC2 Fleet
+     *        submits ongoing requests until your desired capacity is fulfilled, and continues to maintain your desired
+     *        capacity by replenishing interrupted Spot Instances. Default: <code>maintain</code>.
      * @see FleetType
      */
 
@@ -515,20 +515,20 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or also
-     * attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places the
-     * required requests. It does not attempt to replenish instances if capacity is diminished, and does not submit
-     * requests in alternative capacity pools if capacity is unavailable. To maintain a certain target capacity, EC2
-     * Fleet places the required requests to meet this target capacity. It also automatically replenishes any
-     * interrupted Spot Instances. Default: <code>maintain</code>.
+     * The type of request. <code>instant</code> indicates whether the EC2 Fleet submits a one-time request for your
+     * desired capacity. <code>request</code> indicates whether the EC2 Fleet submits ongoing requests until your
+     * desired capacity is fulfilled, but does not attempt to submit requests in alternative capacity pools if capacity
+     * is unavailable or maintain the capacity. <code>maintain</code> indicates whether the EC2 Fleet submits ongoing
+     * requests until your desired capacity is fulfilled, and continues to maintain your desired capacity by
+     * replenishing interrupted Spot Instances. Default: <code>maintain</code>.
      * </p>
      * 
-     * @return The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or
-     *         also attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only
-     *         places the required requests. It does not attempt to replenish instances if capacity is diminished, and
-     *         does not submit requests in alternative capacity pools if capacity is unavailable. To maintain a certain
-     *         target capacity, EC2 Fleet places the required requests to meet this target capacity. It also
-     *         automatically replenishes any interrupted Spot Instances. Default: <code>maintain</code>.
+     * @return The type of request. <code>instant</code> indicates whether the EC2 Fleet submits a one-time request for
+     *         your desired capacity. <code>request</code> indicates whether the EC2 Fleet submits ongoing requests
+     *         until your desired capacity is fulfilled, but does not attempt to submit requests in alternative capacity
+     *         pools if capacity is unavailable or maintain the capacity. <code>maintain</code> indicates whether the
+     *         EC2 Fleet submits ongoing requests until your desired capacity is fulfilled, and continues to maintain
+     *         your desired capacity by replenishing interrupted Spot Instances. Default: <code>maintain</code>.
      * @see FleetType
      */
 
@@ -538,21 +538,21 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or also
-     * attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places the
-     * required requests. It does not attempt to replenish instances if capacity is diminished, and does not submit
-     * requests in alternative capacity pools if capacity is unavailable. To maintain a certain target capacity, EC2
-     * Fleet places the required requests to meet this target capacity. It also automatically replenishes any
-     * interrupted Spot Instances. Default: <code>maintain</code>.
+     * The type of request. <code>instant</code> indicates whether the EC2 Fleet submits a one-time request for your
+     * desired capacity. <code>request</code> indicates whether the EC2 Fleet submits ongoing requests until your
+     * desired capacity is fulfilled, but does not attempt to submit requests in alternative capacity pools if capacity
+     * is unavailable or maintain the capacity. <code>maintain</code> indicates whether the EC2 Fleet submits ongoing
+     * requests until your desired capacity is fulfilled, and continues to maintain your desired capacity by
+     * replenishing interrupted Spot Instances. Default: <code>maintain</code>.
      * </p>
      * 
      * @param type
-     *        The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or
-     *        also attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places
-     *        the required requests. It does not attempt to replenish instances if capacity is diminished, and does not
-     *        submit requests in alternative capacity pools if capacity is unavailable. To maintain a certain target
-     *        capacity, EC2 Fleet places the required requests to meet this target capacity. It also automatically
-     *        replenishes any interrupted Spot Instances. Default: <code>maintain</code>.
+     *        The type of request. <code>instant</code> indicates whether the EC2 Fleet submits a one-time request for
+     *        your desired capacity. <code>request</code> indicates whether the EC2 Fleet submits ongoing requests until
+     *        your desired capacity is fulfilled, but does not attempt to submit requests in alternative capacity pools
+     *        if capacity is unavailable or maintain the capacity. <code>maintain</code> indicates whether the EC2 Fleet
+     *        submits ongoing requests until your desired capacity is fulfilled, and continues to maintain your desired
+     *        capacity by replenishing interrupted Spot Instances. Default: <code>maintain</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */
@@ -564,21 +564,21 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or also
-     * attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places the
-     * required requests. It does not attempt to replenish instances if capacity is diminished, and does not submit
-     * requests in alternative capacity pools if capacity is unavailable. To maintain a certain target capacity, EC2
-     * Fleet places the required requests to meet this target capacity. It also automatically replenishes any
-     * interrupted Spot Instances. Default: <code>maintain</code>.
+     * The type of request. <code>instant</code> indicates whether the EC2 Fleet submits a one-time request for your
+     * desired capacity. <code>request</code> indicates whether the EC2 Fleet submits ongoing requests until your
+     * desired capacity is fulfilled, but does not attempt to submit requests in alternative capacity pools if capacity
+     * is unavailable or maintain the capacity. <code>maintain</code> indicates whether the EC2 Fleet submits ongoing
+     * requests until your desired capacity is fulfilled, and continues to maintain your desired capacity by
+     * replenishing interrupted Spot Instances. Default: <code>maintain</code>.
      * </p>
      * 
      * @param type
-     *        The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or
-     *        also attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places
-     *        the required requests. It does not attempt to replenish instances if capacity is diminished, and does not
-     *        submit requests in alternative capacity pools if capacity is unavailable. To maintain a certain target
-     *        capacity, EC2 Fleet places the required requests to meet this target capacity. It also automatically
-     *        replenishes any interrupted Spot Instances. Default: <code>maintain</code>.
+     *        The type of request. <code>instant</code> indicates whether the EC2 Fleet submits a one-time request for
+     *        your desired capacity. <code>request</code> indicates whether the EC2 Fleet submits ongoing requests until
+     *        your desired capacity is fulfilled, but does not attempt to submit requests in alternative capacity pools
+     *        if capacity is unavailable or maintain the capacity. <code>maintain</code> indicates whether the EC2 Fleet
+     *        submits ongoing requests until your desired capacity is fulfilled, and continues to maintain your desired
+     *        capacity by replenishing interrupted Spot Instances. Default: <code>maintain</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */

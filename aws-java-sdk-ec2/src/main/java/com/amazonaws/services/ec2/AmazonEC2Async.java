@@ -6294,7 +6294,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your EC2 Fleet.
+     * Describes one or more of your EC2 Fleets.
      * </p>
      * 
      * @param describeFleetsRequest
@@ -6307,7 +6307,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your EC2 Fleet.
+     * Describes one or more of your EC2 Fleets.
      * </p>
      * 
      * @param describeFleetsRequest

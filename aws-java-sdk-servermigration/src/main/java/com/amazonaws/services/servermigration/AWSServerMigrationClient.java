@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
 
 import com.amazonaws.services.servermigration.AWSServerMigrationClientBuilder;
 
@@ -65,6 +66,8 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
@@ -186,6 +189,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
     public AWSServerMigrationClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -250,6 +254,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -268,9 +273,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *        Object providing client parameters.
      */
     AWSServerMigrationClient(AwsSyncClientParams clientParams) {
-        super(clientParams);
-        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
-        init();
+        this(clientParams, false);
     }
 
     /**
@@ -286,6 +289,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
     AWSServerMigrationClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -354,6 +358,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateReplicationJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -419,6 +424,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteReplicationJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -481,6 +487,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteServerCatalog");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -543,6 +550,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateConnector");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -597,6 +605,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConnectors");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -656,6 +665,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetReplicationJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -716,6 +726,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetReplicationRuns");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -770,6 +781,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetServers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -836,6 +848,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportServerCatalog");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -902,6 +915,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartOnDemandReplicationRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -971,6 +985,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateReplicationJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

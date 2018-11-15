@@ -37,6 +37,7 @@
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "${metadata.serviceId}");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "${operationModel.operationName}");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -49,7 +50,7 @@
             </#if>
 
             <#if operationModel.returnType??>
-                <@ResponseHandlerCreation.content operationModel, metadata, "new ${operationModel.syncReturnType}${metadata.unmarshallerClassSuffix}()", operationModel.returnType.returnType />
+                <@ResponseHandlerCreation.content customConfig, operationModel, metadata, "new ${operationModel.syncReturnType}${metadata.unmarshallerClassSuffix}()", operationModel.returnType.returnType />
                 response = <@ClientInvokeMethodInvocation.content operationModel />
 
 
@@ -68,7 +69,7 @@
 
                 return response.getAwsResponse();
             <#else>
-                <@ResponseHandlerCreation.content operationModel, metadata, "null", "Void" />
+                <@ResponseHandlerCreation.content customConfig, operationModel, metadata, "null", "Void" />
                 <@ClientInvokeMethodInvocation.content operationModel />
             </#if>
 

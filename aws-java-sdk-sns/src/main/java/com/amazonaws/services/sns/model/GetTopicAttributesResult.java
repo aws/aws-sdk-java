@@ -33,48 +33,48 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * <ul>
      * <li>
      * <p>
-     * <code>TopicArn</code> -- the topic's ARN
+     * <code>TopicArn</code> – the topic's ARN
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Owner</code> -- the AWS account ID of the topic's owner
+     * <code>Owner</code> – the AWS account ID of the topic's owner
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Policy</code> -- the JSON serialization of the topic's access control policy
+     * <code>Policy</code> – the JSON serialization of the topic's access control policy
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DisplayName</code> -- the human-readable name used in the "From" field for notifications to email and
+     * <code>DisplayName</code> – the human-readable name used in the "From" field for notifications to email and
      * email-json endpoints
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsPending</code> -- the number of subscriptions pending confirmation on this topic
+     * <code>SubscriptionsPending</code> – the number of subscriptions pending confirmation on this topic
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsConfirmed</code> -- the number of confirmed subscriptions on this topic
+     * <code>SubscriptionsConfirmed</code> – the number of confirmed subscriptions on this topic
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this topic
+     * <code>SubscriptionsDeleted</code> – the number of deleted subscriptions on this topic
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DeliveryPolicy</code> -- the JSON serialization of the topic's delivery policy
+     * <code>DeliveryPolicy</code> – the JSON serialization of the topic's delivery policy
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the effective delivery policy that takes into
+     * <code>EffectiveDeliveryPolicy</code> – the JSON serialization of the effective delivery policy that takes into
      * account system defaults
      * </p>
      * </li>
@@ -89,48 +89,48 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * <ul>
      * <li>
      * <p>
-     * <code>TopicArn</code> -- the topic's ARN
+     * <code>TopicArn</code> – the topic's ARN
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Owner</code> -- the AWS account ID of the topic's owner
+     * <code>Owner</code> – the AWS account ID of the topic's owner
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Policy</code> -- the JSON serialization of the topic's access control policy
+     * <code>Policy</code> – the JSON serialization of the topic's access control policy
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DisplayName</code> -- the human-readable name used in the "From" field for notifications to email and
+     * <code>DisplayName</code> – the human-readable name used in the "From" field for notifications to email and
      * email-json endpoints
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsPending</code> -- the number of subscriptions pending confirmation on this topic
+     * <code>SubscriptionsPending</code> – the number of subscriptions pending confirmation on this topic
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsConfirmed</code> -- the number of confirmed subscriptions on this topic
+     * <code>SubscriptionsConfirmed</code> – the number of confirmed subscriptions on this topic
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this topic
+     * <code>SubscriptionsDeleted</code> – the number of deleted subscriptions on this topic
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DeliveryPolicy</code> -- the JSON serialization of the topic's delivery policy
+     * <code>DeliveryPolicy</code> – the JSON serialization of the topic's delivery policy
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the effective delivery policy that takes into
+     * <code>EffectiveDeliveryPolicy</code> – the JSON serialization of the effective delivery policy that takes into
      * account system defaults
      * </p>
      * </li>
@@ -140,49 +140,49 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>TopicArn</code> -- the topic's ARN
+     *         <code>TopicArn</code> – the topic's ARN
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Owner</code> -- the AWS account ID of the topic's owner
+     *         <code>Owner</code> – the AWS account ID of the topic's owner
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Policy</code> -- the JSON serialization of the topic's access control policy
+     *         <code>Policy</code> – the JSON serialization of the topic's access control policy
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DisplayName</code> -- the human-readable name used in the "From" field for notifications to email
+     *         <code>DisplayName</code> – the human-readable name used in the "From" field for notifications to email
      *         and email-json endpoints
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SubscriptionsPending</code> -- the number of subscriptions pending confirmation on this topic
+     *         <code>SubscriptionsPending</code> – the number of subscriptions pending confirmation on this topic
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SubscriptionsConfirmed</code> -- the number of confirmed subscriptions on this topic
+     *         <code>SubscriptionsConfirmed</code> – the number of confirmed subscriptions on this topic
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this topic
+     *         <code>SubscriptionsDeleted</code> – the number of deleted subscriptions on this topic
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DeliveryPolicy</code> -- the JSON serialization of the topic's delivery policy
+     *         <code>DeliveryPolicy</code> – the JSON serialization of the topic's delivery policy
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the effective delivery policy that
-     *         takes into account system defaults
+     *         <code>EffectiveDeliveryPolicy</code> – the JSON serialization of the effective delivery policy that takes
+     *         into account system defaults
      *         </p>
      *         </li>
      */
@@ -201,48 +201,48 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * <ul>
      * <li>
      * <p>
-     * <code>TopicArn</code> -- the topic's ARN
+     * <code>TopicArn</code> – the topic's ARN
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Owner</code> -- the AWS account ID of the topic's owner
+     * <code>Owner</code> – the AWS account ID of the topic's owner
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Policy</code> -- the JSON serialization of the topic's access control policy
+     * <code>Policy</code> – the JSON serialization of the topic's access control policy
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DisplayName</code> -- the human-readable name used in the "From" field for notifications to email and
+     * <code>DisplayName</code> – the human-readable name used in the "From" field for notifications to email and
      * email-json endpoints
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsPending</code> -- the number of subscriptions pending confirmation on this topic
+     * <code>SubscriptionsPending</code> – the number of subscriptions pending confirmation on this topic
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsConfirmed</code> -- the number of confirmed subscriptions on this topic
+     * <code>SubscriptionsConfirmed</code> – the number of confirmed subscriptions on this topic
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this topic
+     * <code>SubscriptionsDeleted</code> – the number of deleted subscriptions on this topic
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DeliveryPolicy</code> -- the JSON serialization of the topic's delivery policy
+     * <code>DeliveryPolicy</code> – the JSON serialization of the topic's delivery policy
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the effective delivery policy that takes into
+     * <code>EffectiveDeliveryPolicy</code> – the JSON serialization of the effective delivery policy that takes into
      * account system defaults
      * </p>
      * </li>
@@ -253,48 +253,48 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>TopicArn</code> -- the topic's ARN
+     *        <code>TopicArn</code> – the topic's ARN
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Owner</code> -- the AWS account ID of the topic's owner
+     *        <code>Owner</code> – the AWS account ID of the topic's owner
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Policy</code> -- the JSON serialization of the topic's access control policy
+     *        <code>Policy</code> – the JSON serialization of the topic's access control policy
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DisplayName</code> -- the human-readable name used in the "From" field for notifications to email
-     *        and email-json endpoints
+     *        <code>DisplayName</code> – the human-readable name used in the "From" field for notifications to email and
+     *        email-json endpoints
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SubscriptionsPending</code> -- the number of subscriptions pending confirmation on this topic
+     *        <code>SubscriptionsPending</code> – the number of subscriptions pending confirmation on this topic
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SubscriptionsConfirmed</code> -- the number of confirmed subscriptions on this topic
+     *        <code>SubscriptionsConfirmed</code> – the number of confirmed subscriptions on this topic
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this topic
+     *        <code>SubscriptionsDeleted</code> – the number of deleted subscriptions on this topic
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DeliveryPolicy</code> -- the JSON serialization of the topic's delivery policy
+     *        <code>DeliveryPolicy</code> – the JSON serialization of the topic's delivery policy
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the effective delivery policy that takes
+     *        <code>EffectiveDeliveryPolicy</code> – the JSON serialization of the effective delivery policy that takes
      *        into account system defaults
      *        </p>
      *        </li>
@@ -311,48 +311,48 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * <ul>
      * <li>
      * <p>
-     * <code>TopicArn</code> -- the topic's ARN
+     * <code>TopicArn</code> – the topic's ARN
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Owner</code> -- the AWS account ID of the topic's owner
+     * <code>Owner</code> – the AWS account ID of the topic's owner
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Policy</code> -- the JSON serialization of the topic's access control policy
+     * <code>Policy</code> – the JSON serialization of the topic's access control policy
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DisplayName</code> -- the human-readable name used in the "From" field for notifications to email and
+     * <code>DisplayName</code> – the human-readable name used in the "From" field for notifications to email and
      * email-json endpoints
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsPending</code> -- the number of subscriptions pending confirmation on this topic
+     * <code>SubscriptionsPending</code> – the number of subscriptions pending confirmation on this topic
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsConfirmed</code> -- the number of confirmed subscriptions on this topic
+     * <code>SubscriptionsConfirmed</code> – the number of confirmed subscriptions on this topic
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this topic
+     * <code>SubscriptionsDeleted</code> – the number of deleted subscriptions on this topic
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DeliveryPolicy</code> -- the JSON serialization of the topic's delivery policy
+     * <code>DeliveryPolicy</code> – the JSON serialization of the topic's delivery policy
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the effective delivery policy that takes into
+     * <code>EffectiveDeliveryPolicy</code> – the JSON serialization of the effective delivery policy that takes into
      * account system defaults
      * </p>
      * </li>
@@ -363,48 +363,48 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>TopicArn</code> -- the topic's ARN
+     *        <code>TopicArn</code> – the topic's ARN
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Owner</code> -- the AWS account ID of the topic's owner
+     *        <code>Owner</code> – the AWS account ID of the topic's owner
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Policy</code> -- the JSON serialization of the topic's access control policy
+     *        <code>Policy</code> – the JSON serialization of the topic's access control policy
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DisplayName</code> -- the human-readable name used in the "From" field for notifications to email
-     *        and email-json endpoints
+     *        <code>DisplayName</code> – the human-readable name used in the "From" field for notifications to email and
+     *        email-json endpoints
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SubscriptionsPending</code> -- the number of subscriptions pending confirmation on this topic
+     *        <code>SubscriptionsPending</code> – the number of subscriptions pending confirmation on this topic
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SubscriptionsConfirmed</code> -- the number of confirmed subscriptions on this topic
+     *        <code>SubscriptionsConfirmed</code> – the number of confirmed subscriptions on this topic
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this topic
+     *        <code>SubscriptionsDeleted</code> – the number of deleted subscriptions on this topic
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DeliveryPolicy</code> -- the JSON serialization of the topic's delivery policy
+     *        <code>DeliveryPolicy</code> – the JSON serialization of the topic's delivery policy
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the effective delivery policy that takes
+     *        <code>EffectiveDeliveryPolicy</code> – the JSON serialization of the effective delivery policy that takes
      *        into account system defaults
      *        </p>
      *        </li>

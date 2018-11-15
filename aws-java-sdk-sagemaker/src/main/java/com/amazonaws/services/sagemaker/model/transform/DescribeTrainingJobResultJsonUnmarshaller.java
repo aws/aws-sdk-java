@@ -130,6 +130,11 @@ public class DescribeTrainingJobResultJsonUnmarshaller implements Unmarshaller<D
                     describeTrainingJobResult.setSecondaryStatusTransitions(new ListUnmarshaller<SecondaryStatusTransition>(
                             SecondaryStatusTransitionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("FinalMetricDataList", targetDepth)) {
+                    context.nextToken();
+                    describeTrainingJobResult.setFinalMetricDataList(new ListUnmarshaller<MetricData>(MetricDataJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

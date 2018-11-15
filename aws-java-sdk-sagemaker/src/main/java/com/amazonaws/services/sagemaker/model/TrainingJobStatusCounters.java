@@ -30,7 +30,7 @@ public class TrainingJobStatusCounters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The number of completed training jobs launched by a hyperparameter tuning job.
+     * The number of completed training jobs launched by the hyperparameter tuning job.
      * </p>
      */
     private Integer completed;
@@ -63,11 +63,11 @@ public class TrainingJobStatusCounters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The number of completed training jobs launched by a hyperparameter tuning job.
+     * The number of completed training jobs launched by the hyperparameter tuning job.
      * </p>
      * 
      * @param completed
-     *        The number of completed training jobs launched by a hyperparameter tuning job.
+     *        The number of completed training jobs launched by the hyperparameter tuning job.
      */
 
     public void setCompleted(Integer completed) {
@@ -76,10 +76,10 @@ public class TrainingJobStatusCounters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The number of completed training jobs launched by a hyperparameter tuning job.
+     * The number of completed training jobs launched by the hyperparameter tuning job.
      * </p>
      * 
-     * @return The number of completed training jobs launched by a hyperparameter tuning job.
+     * @return The number of completed training jobs launched by the hyperparameter tuning job.
      */
 
     public Integer getCompleted() {
@@ -88,11 +88,11 @@ public class TrainingJobStatusCounters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The number of completed training jobs launched by a hyperparameter tuning job.
+     * The number of completed training jobs launched by the hyperparameter tuning job.
      * </p>
      * 
      * @param completed
-     *        The number of completed training jobs launched by a hyperparameter tuning job.
+     *        The number of completed training jobs launched by the hyperparameter tuning job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

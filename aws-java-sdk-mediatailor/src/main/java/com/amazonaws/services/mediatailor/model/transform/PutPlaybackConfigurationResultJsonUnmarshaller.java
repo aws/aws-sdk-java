@@ -56,6 +56,10 @@ public class PutPlaybackConfigurationResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     putPlaybackConfigurationResult.setCdnConfiguration(CdnConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DashConfiguration", targetDepth)) {
+                    context.nextToken();
+                    putPlaybackConfigurationResult.setDashConfiguration(DashConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("HlsConfiguration", targetDepth)) {
                     context.nextToken();
                     putPlaybackConfigurationResult.setHlsConfiguration(HlsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
@@ -75,6 +79,10 @@ public class PutPlaybackConfigurationResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("SlateAdUrl", targetDepth)) {
                     context.nextToken();
                     putPlaybackConfigurationResult.setSlateAdUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TranscodeProfileName", targetDepth)) {
+                    context.nextToken();
+                    putPlaybackConfigurationResult.setTranscodeProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VideoContentSourceUrl", targetDepth)) {
                     context.nextToken();

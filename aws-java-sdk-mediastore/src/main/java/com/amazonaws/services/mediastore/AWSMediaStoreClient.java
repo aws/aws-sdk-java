@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
 
 import com.amazonaws.services.mediastore.AWSMediaStoreClientBuilder;
 
@@ -68,6 +69,8 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
@@ -109,9 +112,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
      *        Object providing client parameters.
      */
     AWSMediaStoreClient(AwsSyncClientParams clientParams) {
-        super(clientParams);
-        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
-        init();
+        this(clientParams, false);
     }
 
     /**
@@ -127,6 +128,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
     AWSMediaStoreClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -182,6 +184,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateContainer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -242,6 +245,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteContainer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -303,6 +307,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteContainerPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -369,6 +374,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCorsPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -430,6 +436,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeContainer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -493,6 +500,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContainerPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -558,6 +566,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCorsPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -623,6 +632,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListContainers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -688,6 +698,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutContainerPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -756,6 +767,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutCorsPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

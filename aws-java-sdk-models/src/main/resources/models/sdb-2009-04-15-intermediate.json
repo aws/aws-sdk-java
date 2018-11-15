@@ -61,6 +61,7 @@
     "customErrorCodeFieldName" : null,
     "customExceptionUnmarshallerImpl" : "LegacyErrorUnmarshaller",
     "customFileHeader" : null,
+    "customResponseHandlerFqcn" : null,
     "customResponseMetadataClassName" : "com.amazonaws.services.simpledb.SimpleDBResponseMetadata",
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,

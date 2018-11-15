@@ -56,7 +56,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * previously deactivated AWS STS for a region, you need to reactivate AWS STS for that region. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
+     * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      */
     private String modelDataUrl;
@@ -189,7 +189,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * previously deactivated AWS STS for a region, you need to reactivate AWS STS for that region. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
+     * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * 
      * @param modelDataUrl
@@ -201,7 +201,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        you previously deactivated AWS STS for a region, you need to reactivate AWS STS for that region. For more
      *        information, see <a
      *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-     *        and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
+     *        and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
      */
 
     public void setModelDataUrl(String modelDataUrl) {
@@ -219,7 +219,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * previously deactivated AWS STS for a region, you need to reactivate AWS STS for that region. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
+     * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * 
      * @return The S3 path where the model artifacts, which result from model training, are stored. This path must point
@@ -230,7 +230,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         If you previously deactivated AWS STS for a region, you need to reactivate AWS STS for that region. For
      *         more information, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-     *         and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
+     *         and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User
+     *         Guide</i>.
      */
 
     public String getModelDataUrl() {
@@ -248,7 +249,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * previously deactivated AWS STS for a region, you need to reactivate AWS STS for that region. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
+     * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * 
      * @param modelDataUrl
@@ -260,7 +261,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        you previously deactivated AWS STS for a region, you need to reactivate AWS STS for that region. For more
      *        information, see <a
      *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-     *        and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
+     *        and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

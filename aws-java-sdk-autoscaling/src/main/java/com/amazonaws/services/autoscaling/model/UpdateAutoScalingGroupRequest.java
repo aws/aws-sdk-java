@@ -33,17 +33,25 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     private String autoScalingGroupName;
     /**
      * <p>
-     * The name of the launch configuration. If you specify a launch configuration, you can't specify a launch template.
+     * The name of the launch configuration. If you specify this parameter, you can't specify a launch template or a
+     * mixed instances policy.
      * </p>
      */
     private String launchConfigurationName;
     /**
      * <p>
-     * The launch template to use to specify the updates. If you specify a launch template, you can't specify a launch
-     * configuration.
+     * The launch template and version to use to specify the updates. If you specify this parameter, you can't specify a
+     * launch configuration or a mixed instances policy.
      * </p>
      */
     private LaunchTemplateSpecification launchTemplate;
+    /**
+     * <p>
+     * The mixed instances policy to use to specify the updates. If you specify this parameter, you can't specify a
+     * launch configuration or a launch template.
+     * </p>
+     */
+    private MixedInstancesPolicy mixedInstancesPolicy;
     /**
      * <p>
      * The minimum size of the Auto Scaling group.
@@ -99,7 +107,7 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     private Integer healthCheckGracePeriod;
     /**
      * <p>
-     * The name of the placement group into which you'll launch your instances, if any. For more information, see <a
+     * The name of the placement group into which to launch your instances, if any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -188,12 +196,13 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the launch configuration. If you specify a launch configuration, you can't specify a launch template.
+     * The name of the launch configuration. If you specify this parameter, you can't specify a launch template or a
+     * mixed instances policy.
      * </p>
      * 
      * @param launchConfigurationName
-     *        The name of the launch configuration. If you specify a launch configuration, you can't specify a launch
-     *        template.
+     *        The name of the launch configuration. If you specify this parameter, you can't specify a launch template
+     *        or a mixed instances policy.
      */
 
     public void setLaunchConfigurationName(String launchConfigurationName) {
@@ -202,11 +211,12 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the launch configuration. If you specify a launch configuration, you can't specify a launch template.
+     * The name of the launch configuration. If you specify this parameter, you can't specify a launch template or a
+     * mixed instances policy.
      * </p>
      * 
-     * @return The name of the launch configuration. If you specify a launch configuration, you can't specify a launch
-     *         template.
+     * @return The name of the launch configuration. If you specify this parameter, you can't specify a launch template
+     *         or a mixed instances policy.
      */
 
     public String getLaunchConfigurationName() {
@@ -215,12 +225,13 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the launch configuration. If you specify a launch configuration, you can't specify a launch template.
+     * The name of the launch configuration. If you specify this parameter, you can't specify a launch template or a
+     * mixed instances policy.
      * </p>
      * 
      * @param launchConfigurationName
-     *        The name of the launch configuration. If you specify a launch configuration, you can't specify a launch
-     *        template.
+     *        The name of the launch configuration. If you specify this parameter, you can't specify a launch template
+     *        or a mixed instances policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -231,13 +242,13 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch template to use to specify the updates. If you specify a launch template, you can't specify a launch
-     * configuration.
+     * The launch template and version to use to specify the updates. If you specify this parameter, you can't specify a
+     * launch configuration or a mixed instances policy.
      * </p>
      * 
      * @param launchTemplate
-     *        The launch template to use to specify the updates. If you specify a launch template, you can't specify a
-     *        launch configuration.
+     *        The launch template and version to use to specify the updates. If you specify this parameter, you can't
+     *        specify a launch configuration or a mixed instances policy.
      */
 
     public void setLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
@@ -246,12 +257,12 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch template to use to specify the updates. If you specify a launch template, you can't specify a launch
-     * configuration.
+     * The launch template and version to use to specify the updates. If you specify this parameter, you can't specify a
+     * launch configuration or a mixed instances policy.
      * </p>
      * 
-     * @return The launch template to use to specify the updates. If you specify a launch template, you can't specify a
-     *         launch configuration.
+     * @return The launch template and version to use to specify the updates. If you specify this parameter, you can't
+     *         specify a launch configuration or a mixed instances policy.
      */
 
     public LaunchTemplateSpecification getLaunchTemplate() {
@@ -260,18 +271,64 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch template to use to specify the updates. If you specify a launch template, you can't specify a launch
-     * configuration.
+     * The launch template and version to use to specify the updates. If you specify this parameter, you can't specify a
+     * launch configuration or a mixed instances policy.
      * </p>
      * 
      * @param launchTemplate
-     *        The launch template to use to specify the updates. If you specify a launch template, you can't specify a
-     *        launch configuration.
+     *        The launch template and version to use to specify the updates. If you specify this parameter, you can't
+     *        specify a launch configuration or a mixed instances policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAutoScalingGroupRequest withLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
         setLaunchTemplate(launchTemplate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The mixed instances policy to use to specify the updates. If you specify this parameter, you can't specify a
+     * launch configuration or a launch template.
+     * </p>
+     * 
+     * @param mixedInstancesPolicy
+     *        The mixed instances policy to use to specify the updates. If you specify this parameter, you can't specify
+     *        a launch configuration or a launch template.
+     */
+
+    public void setMixedInstancesPolicy(MixedInstancesPolicy mixedInstancesPolicy) {
+        this.mixedInstancesPolicy = mixedInstancesPolicy;
+    }
+
+    /**
+     * <p>
+     * The mixed instances policy to use to specify the updates. If you specify this parameter, you can't specify a
+     * launch configuration or a launch template.
+     * </p>
+     * 
+     * @return The mixed instances policy to use to specify the updates. If you specify this parameter, you can't
+     *         specify a launch configuration or a launch template.
+     */
+
+    public MixedInstancesPolicy getMixedInstancesPolicy() {
+        return this.mixedInstancesPolicy;
+    }
+
+    /**
+     * <p>
+     * The mixed instances policy to use to specify the updates. If you specify this parameter, you can't specify a
+     * launch configuration or a launch template.
+     * </p>
+     * 
+     * @param mixedInstancesPolicy
+     *        The mixed instances policy to use to specify the updates. If you specify this parameter, you can't specify
+     *        a launch configuration or a launch template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAutoScalingGroupRequest withMixedInstancesPolicy(MixedInstancesPolicy mixedInstancesPolicy) {
+        setMixedInstancesPolicy(mixedInstancesPolicy);
         return this;
     }
 
@@ -656,14 +713,14 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the placement group into which you'll launch your instances, if any. For more information, see <a
+     * The name of the placement group into which to launch your instances, if any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param placementGroup
-     *        The name of the placement group into which you'll launch your instances, if any. For more information, see
-     *        <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *        The name of the placement group into which to launch your instances, if any. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
@@ -673,14 +730,14 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the placement group into which you'll launch your instances, if any. For more information, see <a
+     * The name of the placement group into which to launch your instances, if any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return The name of the placement group into which you'll launch your instances, if any. For more information,
-     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     *         Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return The name of the placement group into which to launch your instances, if any. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public String getPlacementGroup() {
@@ -689,14 +746,14 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the placement group into which you'll launch your instances, if any. For more information, see <a
+     * The name of the placement group into which to launch your instances, if any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param placementGroup
-     *        The name of the placement group into which you'll launch your instances, if any. For more information, see
-     *        <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *        The name of the placement group into which to launch your instances, if any. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1034,6 +1091,8 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
             sb.append("LaunchConfigurationName: ").append(getLaunchConfigurationName()).append(",");
         if (getLaunchTemplate() != null)
             sb.append("LaunchTemplate: ").append(getLaunchTemplate()).append(",");
+        if (getMixedInstancesPolicy() != null)
+            sb.append("MixedInstancesPolicy: ").append(getMixedInstancesPolicy()).append(",");
         if (getMinSize() != null)
             sb.append("MinSize: ").append(getMinSize()).append(",");
         if (getMaxSize() != null)
@@ -1083,6 +1142,10 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         if (other.getLaunchTemplate() == null ^ this.getLaunchTemplate() == null)
             return false;
         if (other.getLaunchTemplate() != null && other.getLaunchTemplate().equals(this.getLaunchTemplate()) == false)
+            return false;
+        if (other.getMixedInstancesPolicy() == null ^ this.getMixedInstancesPolicy() == null)
+            return false;
+        if (other.getMixedInstancesPolicy() != null && other.getMixedInstancesPolicy().equals(this.getMixedInstancesPolicy()) == false)
             return false;
         if (other.getMinSize() == null ^ this.getMinSize() == null)
             return false;
@@ -1144,6 +1207,7 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
         hashCode = prime * hashCode + ((getLaunchConfigurationName() == null) ? 0 : getLaunchConfigurationName().hashCode());
         hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
+        hashCode = prime * hashCode + ((getMixedInstancesPolicy() == null) ? 0 : getMixedInstancesPolicy().hashCode());
         hashCode = prime * hashCode + ((getMinSize() == null) ? 0 : getMinSize().hashCode());
         hashCode = prime * hashCode + ((getMaxSize() == null) ? 0 : getMaxSize().hashCode());
         hashCode = prime * hashCode + ((getDesiredCapacity() == null) ? 0 : getDesiredCapacity().hashCode());

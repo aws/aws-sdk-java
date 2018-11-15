@@ -56,6 +56,10 @@ public class HyperParameterTrainingJobSummaryJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     hyperParameterTrainingJobSummary.setTrainingJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TuningJobName", targetDepth)) {
+                    context.nextToken();
+                    hyperParameterTrainingJobSummary.setTuningJobName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
                     hyperParameterTrainingJobSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

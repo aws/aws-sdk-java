@@ -69,7 +69,9 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest on the ML storage volume that
-     * is attached to your notebook instance.
+     * is attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in
+     * the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
     private String kmsKeyId;
@@ -105,7 +107,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     private String directInternetAccess;
     /**
      * <p>
-     * The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.
      * </p>
      */
     private Integer volumeSizeInGB;
@@ -430,12 +432,16 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest on the ML storage volume that
-     * is attached to your notebook instance.
+     * is attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in
+     * the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param kmsKeyId
      *        If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest on the ML storage volume
-     *        that is attached to your notebook instance.
+     *        that is attached to your notebook instance. The KMS key you provide must be enabled. For information, see
+     *        <a href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
+     *        Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -445,11 +451,16 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest on the ML storage volume that
-     * is attached to your notebook instance.
+     * is attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in
+     * the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @return If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest on the ML storage
-     *         volume that is attached to your notebook instance.
+     *         volume that is attached to your notebook instance. The KMS key you provide must be enabled. For
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
+     *         Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public String getKmsKeyId() {
@@ -459,12 +470,16 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest on the ML storage volume that
-     * is attached to your notebook instance.
+     * is attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in
+     * the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param kmsKeyId
      *        If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest on the ML storage volume
-     *        that is attached to your notebook instance.
+     *        that is attached to your notebook instance. The KMS key you provide must be enabled. For information, see
+     *        <a href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
+     *        Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -735,11 +750,11 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.
      * </p>
      * 
      * @param volumeSizeInGB
-     *        The size, in GB, of the ML storage volume to attach to the notebook instance.
+     *        The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.
      */
 
     public void setVolumeSizeInGB(Integer volumeSizeInGB) {
@@ -748,10 +763,10 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.
      * </p>
      * 
-     * @return The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * @return The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.
      */
 
     public Integer getVolumeSizeInGB() {
@@ -760,11 +775,11 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.
      * </p>
      * 
      * @param volumeSizeInGB
-     *        The size, in GB, of the ML storage volume to attach to the notebook instance.
+     *        The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
 
 import com.amazonaws.services.kms.AWSKMSClientBuilder;
 
@@ -166,6 +167,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
@@ -319,6 +322,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     public AWSKMSClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -382,6 +386,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     public AWSKMSClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -400,9 +405,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *        Object providing client parameters.
      */
     AWSKMSClient(AwsSyncClientParams clientParams) {
-        super(clientParams);
-        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
-        init();
+        this(clientParams, false);
     }
 
     /**
@@ -418,6 +421,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     AWSKMSClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -493,6 +497,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelKeyDeletion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -593,6 +598,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAlias");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -680,6 +686,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGrant");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -771,6 +778,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -880,6 +888,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Decrypt");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -955,6 +964,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAlias");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1043,6 +1053,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteImportedKeyMaterial");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1115,6 +1126,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1193,6 +1205,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1272,6 +1285,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableKeyRotation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1349,6 +1363,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1428,6 +1443,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableKeyRotation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1535,6 +1551,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Encrypt");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1674,6 +1691,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GenerateDataKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1769,6 +1787,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GenerateDataKeyWithoutPlaintext");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1832,6 +1851,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GenerateRandom");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1905,6 +1925,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetKeyPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2000,6 +2021,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetKeyRotationStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2091,6 +2113,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetParametersForImport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2228,6 +2251,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportKeyMaterial");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2305,6 +2329,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAliases");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2384,6 +2409,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGrants");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2453,6 +2479,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListKeyPolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2513,6 +2540,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListKeys");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2583,6 +2611,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceTags");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2650,6 +2679,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRetirableGrants");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2732,6 +2762,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutKeyPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2827,6 +2858,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReEncrypt");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2921,6 +2953,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RetireGrant");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3000,6 +3033,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeGrant");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3091,6 +3125,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ScheduleKeyDeletion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3181,6 +3216,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3257,6 +3293,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3344,6 +3381,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAlias");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3419,6 +3457,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateKeyDescription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

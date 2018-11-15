@@ -26,23 +26,30 @@ public class DescribeTerminationPolicyTypesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The termination policies supported by Amazon EC2 Auto Scaling (<code>OldestInstance</code>,
-     * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
-     * <code>Default</code>).
+     * The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
+     * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
+     * <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>. Currently, the
+     * <code>OldestLaunchTemplate</code> and <code>AllocationStrategy</code> policies are only supported for Auto
+     * Scaling groups with <a>MixedInstancesPolicy</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> terminationPolicyTypes;
 
     /**
      * <p>
-     * The termination policies supported by Amazon EC2 Auto Scaling (<code>OldestInstance</code>,
-     * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
-     * <code>Default</code>).
+     * The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
+     * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
+     * <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>. Currently, the
+     * <code>OldestLaunchTemplate</code> and <code>AllocationStrategy</code> policies are only supported for Auto
+     * Scaling groups with <a>MixedInstancesPolicy</a>.
      * </p>
      * 
-     * @return The termination policies supported by Amazon EC2 Auto Scaling (<code>OldestInstance</code>,
+     * @return The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
      *         <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>,
-     *         <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).
+     *         <code>ClosestToNextInstanceHour</code>, <code>Default</code>, <code>OldestLaunchTemplate</code>, and
+     *         <code>AllocationStrategy</code>. Currently, the <code>OldestLaunchTemplate</code> and
+     *         <code>AllocationStrategy</code> policies are only supported for Auto Scaling groups with
+     *         <a>MixedInstancesPolicy</a>.
      */
 
     public java.util.List<String> getTerminationPolicyTypes() {
@@ -54,15 +61,20 @@ public class DescribeTerminationPolicyTypesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The termination policies supported by Amazon EC2 Auto Scaling (<code>OldestInstance</code>,
-     * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
-     * <code>Default</code>).
+     * The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
+     * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
+     * <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>. Currently, the
+     * <code>OldestLaunchTemplate</code> and <code>AllocationStrategy</code> policies are only supported for Auto
+     * Scaling groups with <a>MixedInstancesPolicy</a>.
      * </p>
      * 
      * @param terminationPolicyTypes
-     *        The termination policies supported by Amazon EC2 Auto Scaling (<code>OldestInstance</code>,
+     *        The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
      *        <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>,
-     *        <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).
+     *        <code>ClosestToNextInstanceHour</code>, <code>Default</code>, <code>OldestLaunchTemplate</code>, and
+     *        <code>AllocationStrategy</code>. Currently, the <code>OldestLaunchTemplate</code> and
+     *        <code>AllocationStrategy</code> policies are only supported for Auto Scaling groups with
+     *        <a>MixedInstancesPolicy</a>.
      */
 
     public void setTerminationPolicyTypes(java.util.Collection<String> terminationPolicyTypes) {
@@ -76,9 +88,11 @@ public class DescribeTerminationPolicyTypesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The termination policies supported by Amazon EC2 Auto Scaling (<code>OldestInstance</code>,
-     * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
-     * <code>Default</code>).
+     * The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
+     * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
+     * <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>. Currently, the
+     * <code>OldestLaunchTemplate</code> and <code>AllocationStrategy</code> policies are only supported for Auto
+     * Scaling groups with <a>MixedInstancesPolicy</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -87,9 +101,12 @@ public class DescribeTerminationPolicyTypesResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param terminationPolicyTypes
-     *        The termination policies supported by Amazon EC2 Auto Scaling (<code>OldestInstance</code>,
+     *        The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
      *        <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>,
-     *        <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).
+     *        <code>ClosestToNextInstanceHour</code>, <code>Default</code>, <code>OldestLaunchTemplate</code>, and
+     *        <code>AllocationStrategy</code>. Currently, the <code>OldestLaunchTemplate</code> and
+     *        <code>AllocationStrategy</code> policies are only supported for Auto Scaling groups with
+     *        <a>MixedInstancesPolicy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,15 +122,20 @@ public class DescribeTerminationPolicyTypesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The termination policies supported by Amazon EC2 Auto Scaling (<code>OldestInstance</code>,
-     * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
-     * <code>Default</code>).
+     * The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
+     * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
+     * <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>. Currently, the
+     * <code>OldestLaunchTemplate</code> and <code>AllocationStrategy</code> policies are only supported for Auto
+     * Scaling groups with <a>MixedInstancesPolicy</a>.
      * </p>
      * 
      * @param terminationPolicyTypes
-     *        The termination policies supported by Amazon EC2 Auto Scaling (<code>OldestInstance</code>,
+     *        The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
      *        <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>,
-     *        <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).
+     *        <code>ClosestToNextInstanceHour</code>, <code>Default</code>, <code>OldestLaunchTemplate</code>, and
+     *        <code>AllocationStrategy</code>. Currently, the <code>OldestLaunchTemplate</code> and
+     *        <code>AllocationStrategy</code> policies are only supported for Auto Scaling groups with
+     *        <a>MixedInstancesPolicy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

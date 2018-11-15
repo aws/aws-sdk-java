@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
 
 import com.amazonaws.services.marketplaceentitlement.AWSMarketplaceEntitlementClientBuilder;
 
@@ -84,6 +85,8 @@ public class AWSMarketplaceEntitlementClient extends AmazonWebServiceClient impl
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
+    private final AdvancedConfig advancedConfig;
+
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
                     .withProtocolVersion("1.1")
@@ -116,9 +119,7 @@ public class AWSMarketplaceEntitlementClient extends AmazonWebServiceClient impl
      *        Object providing client parameters.
      */
     AWSMarketplaceEntitlementClient(AwsSyncClientParams clientParams) {
-        super(clientParams);
-        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
-        init();
+        this(clientParams, false);
     }
 
     /**
@@ -135,6 +136,7 @@ public class AWSMarketplaceEntitlementClient extends AmazonWebServiceClient impl
     AWSMarketplaceEntitlementClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -193,6 +195,7 @@ public class AWSMarketplaceEntitlementClient extends AmazonWebServiceClient impl
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Entitlement Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEntitlements");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

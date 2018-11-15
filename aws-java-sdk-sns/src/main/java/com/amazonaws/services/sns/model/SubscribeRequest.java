@@ -41,42 +41,42 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST
+     * <code>http</code> – delivery of JSON-encoded message via HTTP POST
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>https</code> -- delivery of JSON-encoded message via HTTPS POST
+     * <code>https</code> – delivery of JSON-encoded message via HTTPS POST
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>email</code> -- delivery of message via SMTP
+     * <code>email</code> – delivery of message via SMTP
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>email-json</code> -- delivery of JSON-encoded message via SMTP
+     * <code>email-json</code> – delivery of JSON-encoded message via SMTP
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sms</code> -- delivery of message via SMS
+     * <code>sms</code> – delivery of message via SMS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS queue
+     * <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>application</code> -- delivery of JSON-encoded message to an EndpointArn for a mobile app and device.
+     * <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda function.
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function.
      * </p>
      * </li>
      * </ul>
@@ -132,9 +132,33 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String endpoint;
     /**
      * <p>
-     * Assigns attributes to the subscription as a map of key-value pairs. You can assign any attribute that is
-     * supported by the <code>SetSubscriptionAttributes</code> action.
+     * A map of attributes with their corresponding values.
      * </p>
+     * <p>
+     * The following lists the names, descriptions, and values of the special request parameters that the
+     * <code>SetTopicAttributes</code> action uses:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     * endpoints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages,
+     * rather than receiving every message published to the topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or
+     * HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise
+     * created for Amazon SNS metadata.
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
     /**
@@ -176,43 +200,42 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>http</code> -- delivery of JSON-encoded message via HTTP POST
+     *        <code>http</code> – delivery of JSON-encoded message via HTTP POST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>https</code> -- delivery of JSON-encoded message via HTTPS POST
+     *        <code>https</code> – delivery of JSON-encoded message via HTTPS POST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>email</code> -- delivery of message via SMTP
+     *        <code>email</code> – delivery of message via SMTP
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>email-json</code> -- delivery of JSON-encoded message via SMTP
+     *        <code>email-json</code> – delivery of JSON-encoded message via SMTP
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sms</code> -- delivery of message via SMS
+     *        <code>sms</code> – delivery of message via SMS
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS queue
+     *        <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>application</code> -- delivery of JSON-encoded message to an EndpointArn for a mobile app and
-     *        device.
+     *        <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda function.
+     *        <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function.
      *        </p>
      *        </li>
      * @param endpoint
@@ -312,42 +335,42 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST
+     * <code>http</code> – delivery of JSON-encoded message via HTTP POST
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>https</code> -- delivery of JSON-encoded message via HTTPS POST
+     * <code>https</code> – delivery of JSON-encoded message via HTTPS POST
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>email</code> -- delivery of message via SMTP
+     * <code>email</code> – delivery of message via SMTP
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>email-json</code> -- delivery of JSON-encoded message via SMTP
+     * <code>email-json</code> – delivery of JSON-encoded message via SMTP
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sms</code> -- delivery of message via SMS
+     * <code>sms</code> – delivery of message via SMS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS queue
+     * <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>application</code> -- delivery of JSON-encoded message to an EndpointArn for a mobile app and device.
+     * <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda function.
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function.
      * </p>
      * </li>
      * </ul>
@@ -357,43 +380,42 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>http</code> -- delivery of JSON-encoded message via HTTP POST
+     *        <code>http</code> – delivery of JSON-encoded message via HTTP POST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>https</code> -- delivery of JSON-encoded message via HTTPS POST
+     *        <code>https</code> – delivery of JSON-encoded message via HTTPS POST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>email</code> -- delivery of message via SMTP
+     *        <code>email</code> – delivery of message via SMTP
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>email-json</code> -- delivery of JSON-encoded message via SMTP
+     *        <code>email-json</code> – delivery of JSON-encoded message via SMTP
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sms</code> -- delivery of message via SMS
+     *        <code>sms</code> – delivery of message via SMS
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS queue
+     *        <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>application</code> -- delivery of JSON-encoded message to an EndpointArn for a mobile app and
-     *        device.
+     *        <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda function.
+     *        <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function.
      *        </p>
      *        </li>
      */
@@ -409,42 +431,42 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST
+     * <code>http</code> – delivery of JSON-encoded message via HTTP POST
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>https</code> -- delivery of JSON-encoded message via HTTPS POST
+     * <code>https</code> – delivery of JSON-encoded message via HTTPS POST
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>email</code> -- delivery of message via SMTP
+     * <code>email</code> – delivery of message via SMTP
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>email-json</code> -- delivery of JSON-encoded message via SMTP
+     * <code>email-json</code> – delivery of JSON-encoded message via SMTP
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sms</code> -- delivery of message via SMS
+     * <code>sms</code> – delivery of message via SMS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS queue
+     * <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>application</code> -- delivery of JSON-encoded message to an EndpointArn for a mobile app and device.
+     * <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda function.
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function.
      * </p>
      * </li>
      * </ul>
@@ -453,43 +475,43 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>http</code> -- delivery of JSON-encoded message via HTTP POST
+     *         <code>http</code> – delivery of JSON-encoded message via HTTP POST
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>https</code> -- delivery of JSON-encoded message via HTTPS POST
+     *         <code>https</code> – delivery of JSON-encoded message via HTTPS POST
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>email</code> -- delivery of message via SMTP
+     *         <code>email</code> – delivery of message via SMTP
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>email-json</code> -- delivery of JSON-encoded message via SMTP
+     *         <code>email-json</code> – delivery of JSON-encoded message via SMTP
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sms</code> -- delivery of message via SMS
+     *         <code>sms</code> – delivery of message via SMS
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS queue
+     *         <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>application</code> -- delivery of JSON-encoded message to an EndpointArn for a mobile app and
+     *         <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and
      *         device.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda function.
+     *         <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function.
      *         </p>
      *         </li>
      */
@@ -505,42 +527,42 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST
+     * <code>http</code> – delivery of JSON-encoded message via HTTP POST
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>https</code> -- delivery of JSON-encoded message via HTTPS POST
+     * <code>https</code> – delivery of JSON-encoded message via HTTPS POST
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>email</code> -- delivery of message via SMTP
+     * <code>email</code> – delivery of message via SMTP
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>email-json</code> -- delivery of JSON-encoded message via SMTP
+     * <code>email-json</code> – delivery of JSON-encoded message via SMTP
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sms</code> -- delivery of message via SMS
+     * <code>sms</code> – delivery of message via SMS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS queue
+     * <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>application</code> -- delivery of JSON-encoded message to an EndpointArn for a mobile app and device.
+     * <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda function.
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function.
      * </p>
      * </li>
      * </ul>
@@ -550,43 +572,42 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>http</code> -- delivery of JSON-encoded message via HTTP POST
+     *        <code>http</code> – delivery of JSON-encoded message via HTTP POST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>https</code> -- delivery of JSON-encoded message via HTTPS POST
+     *        <code>https</code> – delivery of JSON-encoded message via HTTPS POST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>email</code> -- delivery of message via SMTP
+     *        <code>email</code> – delivery of message via SMTP
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>email-json</code> -- delivery of JSON-encoded message via SMTP
+     *        <code>email-json</code> – delivery of JSON-encoded message via SMTP
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sms</code> -- delivery of message via SMS
+     *        <code>sms</code> – delivery of message via SMS
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS queue
+     *        <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>application</code> -- delivery of JSON-encoded message to an EndpointArn for a mobile app and
-     *        device.
+     *        <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda function.
+     *        <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -888,12 +909,59 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Assigns attributes to the subscription as a map of key-value pairs. You can assign any attribute that is
-     * supported by the <code>SetSubscriptionAttributes</code> action.
+     * A map of attributes with their corresponding values.
      * </p>
+     * <p>
+     * The following lists the names, descriptions, and values of the special request parameters that the
+     * <code>SetTopicAttributes</code> action uses:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     * endpoints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages,
+     * rather than receiving every message published to the topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or
+     * HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise
+     * created for Amazon SNS metadata.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Assigns attributes to the subscription as a map of key-value pairs. You can assign any attribute that is
-     *         supported by the <code>SetSubscriptionAttributes</code> action.
+     * @return A map of attributes with their corresponding values.</p>
+     *         <p>
+     *         The following lists the names, descriptions, and values of the special request parameters that the
+     *         <code>SetTopicAttributes</code> action uses:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     *         endpoints.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of
+     *         messages, rather than receiving every message published to the topic.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon
+     *         SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is
+     *         otherwise created for Amazon SNS metadata.
+     *         </p>
+     *         </li>
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -905,13 +973,60 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Assigns attributes to the subscription as a map of key-value pairs. You can assign any attribute that is
-     * supported by the <code>SetSubscriptionAttributes</code> action.
+     * A map of attributes with their corresponding values.
      * </p>
+     * <p>
+     * The following lists the names, descriptions, and values of the special request parameters that the
+     * <code>SetTopicAttributes</code> action uses:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     * endpoints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages,
+     * rather than receiving every message published to the topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or
+     * HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise
+     * created for Amazon SNS metadata.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributes
-     *        Assigns attributes to the subscription as a map of key-value pairs. You can assign any attribute that is
-     *        supported by the <code>SetSubscriptionAttributes</code> action.
+     *        A map of attributes with their corresponding values.</p>
+     *        <p>
+     *        The following lists the names, descriptions, and values of the special request parameters that the
+     *        <code>SetTopicAttributes</code> action uses:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     *        endpoints.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of
+     *        messages, rather than receiving every message published to the topic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon
+     *        SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is
+     *        otherwise created for Amazon SNS metadata.
+     *        </p>
+     *        </li>
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -920,13 +1035,60 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Assigns attributes to the subscription as a map of key-value pairs. You can assign any attribute that is
-     * supported by the <code>SetSubscriptionAttributes</code> action.
+     * A map of attributes with their corresponding values.
      * </p>
+     * <p>
+     * The following lists the names, descriptions, and values of the special request parameters that the
+     * <code>SetTopicAttributes</code> action uses:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     * endpoints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages,
+     * rather than receiving every message published to the topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or
+     * HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise
+     * created for Amazon SNS metadata.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributes
-     *        Assigns attributes to the subscription as a map of key-value pairs. You can assign any attribute that is
-     *        supported by the <code>SetSubscriptionAttributes</code> action.
+     *        A map of attributes with their corresponding values.</p>
+     *        <p>
+     *        The following lists the names, descriptions, and values of the special request parameters that the
+     *        <code>SetTopicAttributes</code> action uses:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     *        endpoints.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of
+     *        messages, rather than receiving every message published to the topic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon
+     *        SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is
+     *        otherwise created for Amazon SNS metadata.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
