@@ -28,7 +28,7 @@ public class DeleteDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The DBSnapshot identifier.
+     * The DB snapshot identifier.
      * </p>
      * <p>
      * Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.
@@ -48,7 +48,7 @@ public class DeleteDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * to initialize any additional object members.
      * 
      * @param dBSnapshotIdentifier
-     *        The DBSnapshot identifier.</p>
+     *        The DB snapshot identifier.</p>
      *        <p>
      *        Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.
      */
@@ -58,14 +58,14 @@ public class DeleteDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The DBSnapshot identifier.
+     * The DB snapshot identifier.
      * </p>
      * <p>
      * Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.
      * </p>
      * 
      * @param dBSnapshotIdentifier
-     *        The DBSnapshot identifier.</p>
+     *        The DB snapshot identifier.</p>
      *        <p>
      *        Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.
      */
@@ -76,13 +76,13 @@ public class DeleteDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The DBSnapshot identifier.
+     * The DB snapshot identifier.
      * </p>
      * <p>
      * Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.
      * </p>
      * 
-     * @return The DBSnapshot identifier.</p>
+     * @return The DB snapshot identifier.</p>
      *         <p>
      *         Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.
      */
@@ -93,14 +93,14 @@ public class DeleteDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The DBSnapshot identifier.
+     * The DB snapshot identifier.
      * </p>
      * <p>
      * Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.
      * </p>
      * 
      * @param dBSnapshotIdentifier
-     *        The DBSnapshot identifier.</p>
+     *        The DB snapshot identifier.</p>
      *        <p>
      *        Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.
      * @return Returns a reference to this object so that method calls can be chained together.

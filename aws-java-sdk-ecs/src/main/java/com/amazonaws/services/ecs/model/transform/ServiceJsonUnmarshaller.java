@@ -137,6 +137,22 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                     context.nextToken();
                     service.setSchedulingStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    service.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("createdBy", targetDepth)) {
+                    context.nextToken();
+                    service.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("enableECSManagedTags", targetDepth)) {
+                    context.nextToken();
+                    service.setEnableECSManagedTags(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("propagateTags", targetDepth)) {
+                    context.nextToken();
+                    service.setPropagateTags(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -90,6 +90,11 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("ManualSnapshotRetentionPeriod", targetDepth)) {
+                    cluster.setManualSnapshotRetentionPeriod(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ClusterSecurityGroups", targetDepth)) {
                     cluster.withClusterSecurityGroups(new ArrayList<ClusterSecurityGroupMembership>());
                     continue;
@@ -272,6 +277,16 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
 
                 if (context.testExpression("DeferredMaintenanceWindows/DeferredMaintenanceWindow", targetDepth)) {
                     cluster.withDeferredMaintenanceWindows(DeferredMaintenanceWindowStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SnapshotScheduleIdentifier", targetDepth)) {
+                    cluster.setSnapshotScheduleIdentifier(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SnapshotScheduleState", targetDepth)) {
+                    cluster.setSnapshotScheduleState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

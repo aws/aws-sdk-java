@@ -52,6 +52,10 @@ public class ScheduleJsonUnmarshaller implements Unmarshaller<Schedule, JsonUnma
                     context.nextToken();
                     schedule.setEndTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EventFilter", targetDepth)) {
+                    context.nextToken();
+                    schedule.setEventFilter(CampaignEventFilterJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Frequency", targetDepth)) {
                     context.nextToken();
                     schedule.setFrequency(context.getUnmarshaller(String.class).unmarshall(context));

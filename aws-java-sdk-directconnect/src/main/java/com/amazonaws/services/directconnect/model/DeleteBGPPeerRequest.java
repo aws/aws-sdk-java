@@ -43,6 +43,12 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String customerAddress;
+    /**
+     * <p>
+     * The ID of the BGP peer.
+     * </p>
+     */
+    private String bgpPeerId;
 
     /**
      * <p>
@@ -165,6 +171,46 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The ID of the BGP peer.
+     * </p>
+     * 
+     * @param bgpPeerId
+     *        The ID of the BGP peer.
+     */
+
+    public void setBgpPeerId(String bgpPeerId) {
+        this.bgpPeerId = bgpPeerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the BGP peer.
+     * </p>
+     * 
+     * @return The ID of the BGP peer.
+     */
+
+    public String getBgpPeerId() {
+        return this.bgpPeerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the BGP peer.
+     * </p>
+     * 
+     * @param bgpPeerId
+     *        The ID of the BGP peer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteBGPPeerRequest withBgpPeerId(String bgpPeerId) {
+        setBgpPeerId(bgpPeerId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -180,7 +226,9 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getAsn() != null)
             sb.append("Asn: ").append(getAsn()).append(",");
         if (getCustomerAddress() != null)
-            sb.append("CustomerAddress: ").append(getCustomerAddress());
+            sb.append("CustomerAddress: ").append(getCustomerAddress()).append(",");
+        if (getBgpPeerId() != null)
+            sb.append("BgpPeerId: ").append(getBgpPeerId());
         sb.append("}");
         return sb.toString();
     }
@@ -207,6 +255,10 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getCustomerAddress() != null && other.getCustomerAddress().equals(this.getCustomerAddress()) == false)
             return false;
+        if (other.getBgpPeerId() == null ^ this.getBgpPeerId() == null)
+            return false;
+        if (other.getBgpPeerId() != null && other.getBgpPeerId().equals(this.getBgpPeerId()) == false)
+            return false;
         return true;
     }
 
@@ -218,6 +270,7 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getVirtualInterfaceId() == null) ? 0 : getVirtualInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getAsn() == null) ? 0 : getAsn().hashCode());
         hashCode = prime * hashCode + ((getCustomerAddress() == null) ? 0 : getCustomerAddress().hashCode());
+        hashCode = prime * hashCode + ((getBgpPeerId() == null) ? 0 : getBgpPeerId().hashCode());
         return hashCode;
     }
 

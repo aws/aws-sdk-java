@@ -14,16 +14,50 @@
  */
 package com.amazonaws.services.s3.model.transform;
 
-import java.io.InputStream;
-import java.util.List;
-
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
-import com.amazonaws.services.s3.model.*;
+import com.amazonaws.services.s3.model.AccessControlList;
+import com.amazonaws.services.s3.model.Bucket;
+import com.amazonaws.services.s3.model.BucketAccelerateConfiguration;
+import com.amazonaws.services.s3.model.BucketCrossOriginConfiguration;
+import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
+import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
+import com.amazonaws.services.s3.model.BucketReplicationConfiguration;
+import com.amazonaws.services.s3.model.BucketTaggingConfiguration;
+import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
+import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
+import com.amazonaws.services.s3.model.DeleteBucketAnalyticsConfigurationResult;
+import com.amazonaws.services.s3.model.DeleteBucketEncryptionResult;
+import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationResult;
+import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationResult;
+import com.amazonaws.services.s3.model.DeleteObjectTaggingResult;
+import com.amazonaws.services.s3.model.DeletePublicAccessBlockResult;
 import com.amazonaws.services.s3.model.GetBucketAnalyticsConfigurationResult;
+import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationResult;
+import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationResult;
+import com.amazonaws.services.s3.model.GetObjectTaggingResult;
+import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsResult;
+import com.amazonaws.services.s3.model.ListBucketInventoryConfigurationsResult;
+import com.amazonaws.services.s3.model.ListBucketMetricsConfigurationsResult;
+import com.amazonaws.services.s3.model.ListObjectsV2Result;
+import com.amazonaws.services.s3.model.MultipartUploadListing;
+import com.amazonaws.services.s3.model.ObjectListing;
+import com.amazonaws.services.s3.model.Owner;
+import com.amazonaws.services.s3.model.PartListing;
+import com.amazonaws.services.s3.model.RequestPaymentConfiguration;
+import com.amazonaws.services.s3.model.RestoreObjectResult;
+import com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationResult;
+import com.amazonaws.services.s3.model.SetBucketEncryptionResult;
+import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationResult;
+import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationResult;
+import com.amazonaws.services.s3.model.SetObjectTaggingResult;
+import com.amazonaws.services.s3.model.SetPublicAccessBlockResult;
+import com.amazonaws.services.s3.model.VersionListing;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CompleteMultipartUploadHandler;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjectResultHandler;
 import com.amazonaws.transform.Unmarshaller;
+import java.io.InputStream;
+import java.util.List;
 
 /**
  * Collection of unmarshallers for S3 XML responses.
@@ -222,6 +256,22 @@ public class Unmarshallers {
         public SetBucketEncryptionResult unmarshall(InputStream in) {
             // SetBucketEncryption has no output shape
             return new SetBucketEncryptionResult();
+        }
+    }
+
+    public static final class SetPublicAccessBlockUnmarshaller
+        implements Unmarshaller<SetPublicAccessBlockResult, InputStream> {
+        public SetPublicAccessBlockResult unmarshall(InputStream in) {
+            // SetPublicAccessBlock has no output shape
+            return new SetPublicAccessBlockResult();
+        }
+    }
+
+    public static final class DeletePublicAccessBlockUnmarshaller
+        implements Unmarshaller<DeletePublicAccessBlockResult, InputStream> {
+        public DeletePublicAccessBlockResult unmarshall(InputStream in) {
+            // DeletePublicAccessBlock has no output shape
+            return new DeletePublicAccessBlockResult();
         }
     }
 

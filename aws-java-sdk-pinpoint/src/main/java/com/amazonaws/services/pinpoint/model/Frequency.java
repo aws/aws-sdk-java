@@ -24,7 +24,8 @@ public enum Frequency {
     HOURLY("HOURLY"),
     DAILY("DAILY"),
     WEEKLY("WEEKLY"),
-    MONTHLY("MONTHLY");
+    MONTHLY("MONTHLY"),
+    EVENT("EVENT");
 
     private String value;
 

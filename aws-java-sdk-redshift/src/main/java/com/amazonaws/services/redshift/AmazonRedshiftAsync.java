@@ -206,6 +206,72 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Deletes a set of cluster snapshots.
+     * </p>
+     * 
+     * @param batchDeleteClusterSnapshotsRequest
+     * @return A Java Future containing the result of the BatchDeleteClusterSnapshots operation returned by the service.
+     * @sample AmazonRedshiftAsync.BatchDeleteClusterSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/BatchDeleteClusterSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteClusterSnapshotsResult> batchDeleteClusterSnapshotsAsync(
+            BatchDeleteClusterSnapshotsRequest batchDeleteClusterSnapshotsRequest);
+
+    /**
+     * <p>
+     * Deletes a set of cluster snapshots.
+     * </p>
+     * 
+     * @param batchDeleteClusterSnapshotsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDeleteClusterSnapshots operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.BatchDeleteClusterSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/BatchDeleteClusterSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteClusterSnapshotsResult> batchDeleteClusterSnapshotsAsync(
+            BatchDeleteClusterSnapshotsRequest batchDeleteClusterSnapshotsRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteClusterSnapshotsRequest, BatchDeleteClusterSnapshotsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the settings for a list of snapshots.
+     * </p>
+     * 
+     * @param batchModifyClusterSnapshotsRequest
+     * @return A Java Future containing the result of the BatchModifyClusterSnapshots operation returned by the service.
+     * @sample AmazonRedshiftAsync.BatchModifyClusterSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/BatchModifyClusterSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchModifyClusterSnapshotsResult> batchModifyClusterSnapshotsAsync(
+            BatchModifyClusterSnapshotsRequest batchModifyClusterSnapshotsRequest);
+
+    /**
+     * <p>
+     * Modifies the settings for a list of snapshots.
+     * </p>
+     * 
+     * @param batchModifyClusterSnapshotsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchModifyClusterSnapshots operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.BatchModifyClusterSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/BatchModifyClusterSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchModifyClusterSnapshotsResult> batchModifyClusterSnapshotsAsync(
+            BatchModifyClusterSnapshotsRequest batchModifyClusterSnapshotsRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchModifyClusterSnapshotsRequest, BatchModifyClusterSnapshotsResult> asyncHandler);
+
+    /**
+     * <p>
      * Cancels a resize operation.
      * </p>
      * 
@@ -719,6 +785,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Creates a new snapshot schedule.
+     * </p>
+     * 
+     * @param createSnapshotScheduleRequest
+     * @return A Java Future containing the result of the CreateSnapshotSchedule operation returned by the service.
+     * @sample AmazonRedshiftAsync.CreateSnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSnapshotScheduleResult> createSnapshotScheduleAsync(CreateSnapshotScheduleRequest createSnapshotScheduleRequest);
+
+    /**
+     * <p>
+     * Creates a new snapshot schedule.
+     * </p>
+     * 
+     * @param createSnapshotScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateSnapshotSchedule operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.CreateSnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSnapshotScheduleResult> createSnapshotScheduleAsync(CreateSnapshotScheduleRequest createSnapshotScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSnapshotScheduleRequest, CreateSnapshotScheduleResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds one or more tags to a specified resource.
      * </p>
      * <p>
@@ -1130,6 +1227,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<DeleteSnapshotCopyGrantResult> deleteSnapshotCopyGrantAsync(DeleteSnapshotCopyGrantRequest deleteSnapshotCopyGrantRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteSnapshotCopyGrantRequest, DeleteSnapshotCopyGrantResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a snapshot schedule.
+     * </p>
+     * 
+     * @param deleteSnapshotScheduleRequest
+     * @return A Java Future containing the result of the DeleteSnapshotSchedule operation returned by the service.
+     * @sample AmazonRedshiftAsync.DeleteSnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteSnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSnapshotScheduleResult> deleteSnapshotScheduleAsync(DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest);
+
+    /**
+     * <p>
+     * Deletes a snapshot schedule.
+     * </p>
+     * 
+     * @param deleteSnapshotScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSnapshotSchedule operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.DeleteSnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteSnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSnapshotScheduleResult> deleteSnapshotScheduleAsync(DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSnapshotScheduleRequest, DeleteSnapshotScheduleResult> asyncHandler);
 
     /**
      * <p>
@@ -2434,6 +2562,70 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Returns a list of snapshot schedules.
+     * </p>
+     * 
+     * @param describeSnapshotSchedulesRequest
+     * @return A Java Future containing the result of the DescribeSnapshotSchedules operation returned by the service.
+     * @sample AmazonRedshiftAsync.DescribeSnapshotSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSnapshotSchedulesResult> describeSnapshotSchedulesAsync(
+            DescribeSnapshotSchedulesRequest describeSnapshotSchedulesRequest);
+
+    /**
+     * <p>
+     * Returns a list of snapshot schedules.
+     * </p>
+     * 
+     * @param describeSnapshotSchedulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeSnapshotSchedules operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.DescribeSnapshotSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSnapshotSchedulesResult> describeSnapshotSchedulesAsync(
+            DescribeSnapshotSchedulesRequest describeSnapshotSchedulesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeSnapshotSchedulesRequest, DescribeSnapshotSchedulesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the total amount of snapshot usage and provisioned storage for a user in megabytes.
+     * </p>
+     * 
+     * @param describeStorageRequest
+     * @return A Java Future containing the result of the DescribeStorage operation returned by the service.
+     * @sample AmazonRedshiftAsync.DescribeStorage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeStorage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeStorageResult> describeStorageAsync(DescribeStorageRequest describeStorageRequest);
+
+    /**
+     * <p>
+     * Returns the total amount of snapshot usage and provisioned storage for a user in megabytes.
+     * </p>
+     * 
+     * @param describeStorageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeStorage operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.DescribeStorage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeStorage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeStorageResult> describeStorageAsync(DescribeStorageRequest describeStorageRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeStorageRequest, DescribeStorageResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the status of one or more table restore requests made using the <a>RestoreTableFromClusterSnapshot</a> API
      * action. If you don't specify a value for the <code>TableRestoreRequestId</code> parameter, then
      * <code>DescribeTableRestoreStatus</code> returns the status of all table restore requests ordered by the date and
@@ -3050,6 +3242,72 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Modifies the settings for a snapshot.
+     * </p>
+     * 
+     * @param modifyClusterSnapshotRequest
+     * @return A Java Future containing the result of the ModifyClusterSnapshot operation returned by the service.
+     * @sample AmazonRedshiftAsync.ModifyClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSnapshot" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<Snapshot> modifyClusterSnapshotAsync(ModifyClusterSnapshotRequest modifyClusterSnapshotRequest);
+
+    /**
+     * <p>
+     * Modifies the settings for a snapshot.
+     * </p>
+     * 
+     * @param modifyClusterSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyClusterSnapshot operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.ModifyClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSnapshot" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<Snapshot> modifyClusterSnapshotAsync(ModifyClusterSnapshotRequest modifyClusterSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyClusterSnapshotRequest, Snapshot> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies a snapshot schedule for a cluster.
+     * </p>
+     * 
+     * @param modifyClusterSnapshotScheduleRequest
+     * @return A Java Future containing the result of the ModifyClusterSnapshotSchedule operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsync.ModifyClusterSnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyClusterSnapshotScheduleResult> modifyClusterSnapshotScheduleAsync(
+            ModifyClusterSnapshotScheduleRequest modifyClusterSnapshotScheduleRequest);
+
+    /**
+     * <p>
+     * Modifies a snapshot schedule for a cluster.
+     * </p>
+     * 
+     * @param modifyClusterSnapshotScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyClusterSnapshotSchedule operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsyncHandler.ModifyClusterSnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyClusterSnapshotScheduleResult> modifyClusterSnapshotScheduleAsync(
+            ModifyClusterSnapshotScheduleRequest modifyClusterSnapshotScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyClusterSnapshotScheduleRequest, ModifyClusterSnapshotScheduleResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies a cluster subnet group to include the specified list of VPC subnets. The operation replaces the existing
      * list of subnets with the new list of subnets.
      * </p>
@@ -3114,8 +3372,11 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * Modifies the number of days to retain automated snapshots in the destination region after they are copied from
-     * the source region.
+     * Modifies the number of days to retain snapshots in the destination region after they are copied from the source
+     * region. By default, this only changes the retention period of copied automated snapshots. The retention periods
+     * for both new and existing copied automated snapshots will be updated with the new retention period. You can set
+     * the manual option to change only the retention periods of copied manual snapshots. If you set this option only
+     * newly copied manual snapshots will have the new retention period
      * </p>
      * 
      * @param modifySnapshotCopyRetentionPeriodRequest
@@ -3130,8 +3391,11 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * Modifies the number of days to retain automated snapshots in the destination region after they are copied from
-     * the source region.
+     * Modifies the number of days to retain snapshots in the destination region after they are copied from the source
+     * region. By default, this only changes the retention period of copied automated snapshots. The retention periods
+     * for both new and existing copied automated snapshots will be updated with the new retention period. You can set
+     * the manual option to change only the retention periods of copied manual snapshots. If you set this option only
+     * newly copied manual snapshots will have the new retention period
      * </p>
      * 
      * @param modifySnapshotCopyRetentionPeriodRequest
@@ -3148,6 +3412,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
     java.util.concurrent.Future<Cluster> modifySnapshotCopyRetentionPeriodAsync(
             ModifySnapshotCopyRetentionPeriodRequest modifySnapshotCopyRetentionPeriodRequest,
             com.amazonaws.handlers.AsyncHandler<ModifySnapshotCopyRetentionPeriodRequest, Cluster> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies a snapshot schedule. Any schedule associate with a cluster will be modified asynchronously.
+     * </p>
+     * 
+     * @param modifySnapshotScheduleRequest
+     * @return A Java Future containing the result of the ModifySnapshotSchedule operation returned by the service.
+     * @sample AmazonRedshiftAsync.ModifySnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifySnapshotScheduleResult> modifySnapshotScheduleAsync(ModifySnapshotScheduleRequest modifySnapshotScheduleRequest);
+
+    /**
+     * <p>
+     * Modifies a snapshot schedule. Any schedule associate with a cluster will be modified asynchronously.
+     * </p>
+     * 
+     * @param modifySnapshotScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifySnapshotSchedule operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.ModifySnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifySnapshotScheduleResult> modifySnapshotScheduleAsync(ModifySnapshotScheduleRequest modifySnapshotScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifySnapshotScheduleRequest, ModifySnapshotScheduleResult> asyncHandler);
 
     /**
      * <p>
@@ -3279,7 +3574,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
     /**
      * <p>
      * Changes the size of the cluster. You can change the cluster's type, or change the number or type of nodes. The
-     * default behavior is to use the elastic resize method. With an elastic resize your cluster is avaialble for read
+     * default behavior is to use the elastic resize method. With an elastic resize, your cluster is available for read
      * and write operations more quickly than with the classic resize method.
      * </p>
      * <p>
@@ -3315,7 +3610,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </li>
      * <li>
      * <p>
-     * The type of nodes you add must match the node type for the cluster.
+     * The type of nodes that you add must match the node type for the cluster.
      * </p>
      * </li>
      * </ul>
@@ -3331,7 +3626,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
     /**
      * <p>
      * Changes the size of the cluster. You can change the cluster's type, or change the number or type of nodes. The
-     * default behavior is to use the elastic resize method. With an elastic resize your cluster is avaialble for read
+     * default behavior is to use the elastic resize method. With an elastic resize, your cluster is available for read
      * and write operations more quickly than with the classic resize method.
      * </p>
      * <p>
@@ -3367,7 +3662,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </li>
      * <li>
      * <p>
-     * The type of nodes you add must match the node type for the cluster.
+     * The type of nodes that you add must match the node type for the cluster.
      * </p>
      * </li>
      * </ul>

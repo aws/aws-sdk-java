@@ -48,7 +48,7 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
     private String deepLink;
     /**
      * <p>
-     * The URL to an individual build log in an S3 bucket.
+     * The URL to a build log in an S3 bucket.
      * </p>
      */
     private String s3DeepLink;
@@ -187,11 +187,11 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL to an individual build log in an S3 bucket.
+     * The URL to a build log in an S3 bucket.
      * </p>
      * 
      * @param s3DeepLink
-     *        The URL to an individual build log in an S3 bucket.
+     *        The URL to a build log in an S3 bucket.
      */
 
     public void setS3DeepLink(String s3DeepLink) {
@@ -200,10 +200,10 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL to an individual build log in an S3 bucket.
+     * The URL to a build log in an S3 bucket.
      * </p>
      * 
-     * @return The URL to an individual build log in an S3 bucket.
+     * @return The URL to a build log in an S3 bucket.
      */
 
     public String getS3DeepLink() {
@@ -212,11 +212,11 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL to an individual build log in an S3 bucket.
+     * The URL to a build log in an S3 bucket.
      * </p>
      * 
      * @param s3DeepLink
-     *        The URL to an individual build log in an S3 bucket.
+     *        The URL to a build log in an S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

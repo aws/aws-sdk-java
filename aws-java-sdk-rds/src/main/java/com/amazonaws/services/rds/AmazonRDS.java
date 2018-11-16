@@ -1100,6 +1100,9 @@ public interface AmazonRDS {
      *         The request would result in the user exceeding the allowed number of DB snapshots.
      * @throws InvalidDBClusterStateException
      *         The requested operation can't be performed while the cluster is in this state.
+     * @throws DBInstanceAutomatedBackupQuotaExceededException
+     *         The quota for retained automated backups was exceeded. This prevents you from retaining any additional
+     *         automated backups. The retained automated backups quota is the same as your DB Instance quota.
      * @sample AmazonRDS.DeleteDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -1108,7 +1111,27 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted can't be associated with any DB
+     * Deletes automated backups based on the source instance's <code>DbiResourceId</code> value or the restorable
+     * instance's resource ID.
+     * </p>
+     * 
+     * @param deleteDBInstanceAutomatedBackupRequest
+     *        Parameter input for the <code>DeleteDBInstanceAutomatedBackup</code> operation.
+     * @return Result of the DeleteDBInstanceAutomatedBackup operation returned by the service.
+     * @throws InvalidDBInstanceAutomatedBackupStateException
+     *         The automated backup is in an invalid state. For example, this automated backup is associated with an
+     *         active instance.
+     * @throws DBInstanceAutomatedBackupNotFoundException
+     *         No automated backup for this DB instance was found.
+     * @sample AmazonRDS.DeleteDBInstanceAutomatedBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstanceAutomatedBackup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DBInstanceAutomatedBackup deleteDBInstanceAutomatedBackup(DeleteDBInstanceAutomatedBackupRequest deleteDBInstanceAutomatedBackupRequest);
+
+    /**
+     * <p>
+     * Deletes a specified DB parameter group. The DB parameter group to be deleted can't be associated with any DB
      * instances.
      * </p>
      * 
@@ -1149,11 +1172,11 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated.
+     * Deletes a DB snapshot. If the snapshot is being copied, the copy operation is terminated.
      * </p>
      * <note>
      * <p>
-     * The DBSnapshot must be in the <code>available</code> state to be deleted.
+     * The DB snapshot must be in the <code>available</code> state to be deleted.
      * </p>
      * </note>
      * 
@@ -1458,6 +1481,29 @@ public interface AmazonRDS {
      * @see #describeDBEngineVersions(DescribeDBEngineVersionsRequest)
      */
     DescribeDBEngineVersionsResult describeDBEngineVersions();
+
+    /**
+     * <p>
+     * Displays backups for both current and deleted instances. For example, use this operation to find details about
+     * automated backups for previously deleted instances. Current instances with retention periods greater than zero
+     * (0) are returned for both the <code>DescribeDBInstanceAutomatedBackups</code> and
+     * <code>DescribeDBInstances</code> operations.
+     * </p>
+     * <p>
+     * All parameters are optional.
+     * </p>
+     * 
+     * @param describeDBInstanceAutomatedBackupsRequest
+     *        Parameter input for DescribeDBInstanceAutomatedBackups.
+     * @return Result of the DescribeDBInstanceAutomatedBackups operation returned by the service.
+     * @throws DBInstanceAutomatedBackupNotFoundException
+     *         No automated backup for this DB instance was found.
+     * @sample AmazonRDS.DescribeDBInstanceAutomatedBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstanceAutomatedBackups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDBInstanceAutomatedBackupsResult describeDBInstanceAutomatedBackups(
+            DescribeDBInstanceAutomatedBackupsRequest describeDBInstanceAutomatedBackupsRequest);
 
     /**
      * <p>
@@ -2963,9 +3009,11 @@ public interface AmazonRDS {
      *         <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
      * @throws DomainNotFoundException
      *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
+     * @throws BackupPolicyNotFoundException
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
-     * @throws BackupPolicyNotFoundException
+     * @throws DBInstanceAutomatedBackupNotFoundException
+     *         No automated backup for this DB instance was found.
      * @sample AmazonRDS.RestoreDBInstanceToPointInTime
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime"
      *      target="_top">AWS API Documentation</a>
@@ -3029,7 +3077,7 @@ public interface AmazonRDS {
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html"> Starting an Amazon RDS DB
-     * Instance That Was Previously Stopped</a> in the <i>Amazon RDS User Guide.</i>
+     * instance That Was Previously Stopped</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <note>
      * <p>

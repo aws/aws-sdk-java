@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum BuildPhaseType {
 
     SUBMITTED("SUBMITTED"),
+    QUEUED("QUEUED"),
     PROVISIONING("PROVISIONING"),
     DOWNLOAD_SOURCE("DOWNLOAD_SOURCE"),
     INSTALL("INSTALL"),

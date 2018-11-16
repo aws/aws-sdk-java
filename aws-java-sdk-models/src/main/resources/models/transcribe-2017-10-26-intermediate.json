@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -96,7 +96,7 @@
       "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -137,7 +137,7 @@
       "asyncReturnType" : "DeleteTranscriptionJobResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Deletes a previously submitted transcription job as well as any other generated results such as the transcription, models, and so on.</p>",
+      "documentation" : "<p>Deletes a previously submitted transcription job along with any other generated results such as the transcription, models, and so on.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "exceptions" : [ {
@@ -146,7 +146,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalFailureException",
@@ -192,7 +192,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalFailureException",
@@ -230,7 +230,7 @@
       "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -288,7 +288,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -322,7 +322,7 @@
       "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -364,7 +364,7 @@
       "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -406,7 +406,7 @@
       "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -452,7 +452,7 @@
       "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -501,7 +501,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
+      "documentation" : "<p>Your request didn't pass one or more validation tests. For example, if the transcription you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's \"in progress\"). See the exception <code>Message</code> field for more information.</p>",
       "enums" : null,
       "errorCode" : "BadRequestException",
       "hasHeaderMember" : false,
@@ -3703,8 +3703,17 @@
         "name" : "FrCA",
         "value" : "fr-CA"
       }, {
-        "name" : "EnUK",
-        "value" : "en-UK"
+        "name" : "EnGB",
+        "value" : "en-GB"
+      }, {
+        "name" : "DeDE",
+        "value" : "de-DE"
+      }, {
+        "name" : "PtBR",
+        "value" : "pt-BR"
+      }, {
+        "name" : "FrFR",
+        "value" : "fr-FR"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -6998,11 +7007,11 @@
         "c2jName" : "TranscriptionJobName",
         "c2jShape" : "TranscriptionJobName",
         "deprecated" : false,
-        "documentation" : "<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>",
+        "documentation" : "<p>The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTranscriptionJobName",
-        "getterDocumentation" : "/**<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>\n@return The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.*/",
+        "getterDocumentation" : "/**<p>The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.</p>\n@return The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.*/",
         "getterMethodName" : "getTranscriptionJobName",
         "getterModel" : {
           "returnType" : "String",
@@ -7034,7 +7043,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TranscriptionJobName",
-        "setterDocumentation" : "/**<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.*/",
+        "setterDocumentation" : "/**<p>The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.*/",
         "setterMethodName" : "setTranscriptionJobName",
         "setterModel" : {
           "timestampFormat" : null,
@@ -7048,13 +7057,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "transcriptionJobName",
           "variableType" : "String",
-          "documentation" : "<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>",
+          "documentation" : "<p>The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -7851,11 +7860,11 @@
           "c2jName" : "TranscriptionJobName",
           "c2jShape" : "TranscriptionJobName",
           "deprecated" : false,
-          "documentation" : "<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>",
+          "documentation" : "<p>The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTranscriptionJobName",
-          "getterDocumentation" : "/**<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>\n@return The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.*/",
+          "getterDocumentation" : "/**<p>The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.</p>\n@return The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.*/",
           "getterMethodName" : "getTranscriptionJobName",
           "getterModel" : {
             "returnType" : "String",
@@ -7887,7 +7896,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TranscriptionJobName",
-          "setterDocumentation" : "/**<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.*/",
+          "setterDocumentation" : "/**<p>The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.*/",
           "setterMethodName" : "setTranscriptionJobName",
           "setterModel" : {
             "timestampFormat" : null,
@@ -7901,13 +7910,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "transcriptionJobName",
             "variableType" : "String",
-            "documentation" : "<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>",
+            "documentation" : "<p>The name of the job. Note that you can't use the strings \".\" or \"..\" by themselves as the job name. The name must also be unique within an AWS account.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

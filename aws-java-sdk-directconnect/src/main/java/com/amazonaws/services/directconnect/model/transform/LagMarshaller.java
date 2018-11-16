@@ -56,6 +56,8 @@ public class LagMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("allowsHostedConnections").build();
     private static final MarshallingInfo<Boolean> JUMBOFRAMECAPABLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jumboFrameCapable").build();
+    private static final MarshallingInfo<String> HASLOGICALREDUNDANCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hasLogicalRedundancy").build();
 
     private static final LagMarshaller instance = new LagMarshaller();
 
@@ -87,6 +89,7 @@ public class LagMarshaller {
             protocolMarshaller.marshall(lag.getConnections(), CONNECTIONS_BINDING);
             protocolMarshaller.marshall(lag.getAllowsHostedConnections(), ALLOWSHOSTEDCONNECTIONS_BINDING);
             protocolMarshaller.marshall(lag.getJumboFrameCapable(), JUMBOFRAMECAPABLE_BINDING);
+            protocolMarshaller.marshall(lag.getHasLogicalRedundancy(), HASLOGICALREDUNDANCY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

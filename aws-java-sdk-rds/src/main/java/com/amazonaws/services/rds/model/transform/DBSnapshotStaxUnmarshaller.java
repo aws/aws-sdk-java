@@ -185,6 +185,10 @@ public class DBSnapshotStaxUnmarshaller implements Unmarshaller<DBSnapshot, Stax
                     continue;
                 }
 
+                if (context.testExpression("DbiResourceId", targetDepth)) {
+                    dBSnapshot.setDbiResourceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBSnapshot;

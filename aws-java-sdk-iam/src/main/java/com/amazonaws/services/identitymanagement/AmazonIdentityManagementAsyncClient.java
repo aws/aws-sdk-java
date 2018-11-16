@@ -3570,6 +3570,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListRoleTagsResult> listRoleTagsAsync(ListRoleTagsRequest request) {
+
+        return listRoleTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRoleTagsResult> listRoleTagsAsync(final ListRoleTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRoleTagsRequest, ListRoleTagsResult> asyncHandler) {
+        final ListRoleTagsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRoleTagsResult>() {
+            @Override
+            public ListRoleTagsResult call() throws Exception {
+                ListRoleTagsResult result = null;
+
+                try {
+                    result = executeListRoleTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListRolesResult> listRolesAsync(ListRolesRequest request) {
 
         return listRolesAsync(request, null);
@@ -3900,6 +3933,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = executeListUserPolicies(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUserTagsResult> listUserTagsAsync(ListUserTagsRequest request) {
+
+        return listUserTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUserTagsResult> listUserTagsAsync(final ListUserTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListUserTagsRequest, ListUserTagsResult> asyncHandler) {
+        final ListUserTagsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListUserTagsResult>() {
+            @Override
+            public ListUserTagsResult call() throws Exception {
+                ListUserTagsResult result = null;
+
+                try {
+                    result = executeListUserTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4444,6 +4510,138 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = executeSimulatePrincipalPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagRoleResult> tagRoleAsync(TagRoleRequest request) {
+
+        return tagRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagRoleResult> tagRoleAsync(final TagRoleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagRoleRequest, TagRoleResult> asyncHandler) {
+        final TagRoleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagRoleResult>() {
+            @Override
+            public TagRoleResult call() throws Exception {
+                TagRoleResult result = null;
+
+                try {
+                    result = executeTagRole(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagUserResult> tagUserAsync(TagUserRequest request) {
+
+        return tagUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagUserResult> tagUserAsync(final TagUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagUserRequest, TagUserResult> asyncHandler) {
+        final TagUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagUserResult>() {
+            @Override
+            public TagUserResult call() throws Exception {
+                TagUserResult result = null;
+
+                try {
+                    result = executeTagUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagRoleResult> untagRoleAsync(UntagRoleRequest request) {
+
+        return untagRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagRoleResult> untagRoleAsync(final UntagRoleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagRoleRequest, UntagRoleResult> asyncHandler) {
+        final UntagRoleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagRoleResult>() {
+            @Override
+            public UntagRoleResult call() throws Exception {
+                UntagRoleResult result = null;
+
+                try {
+                    result = executeUntagRole(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagUserResult> untagUserAsync(UntagUserRequest request) {
+
+        return untagUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagUserResult> untagUserAsync(final UntagUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagUserRequest, UntagUserResult> asyncHandler) {
+        final UntagUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagUserResult>() {
+            @Override
+            public UntagUserResult call() throws Exception {
+                UntagUserResult result = null;
+
+                try {
+                    result = executeUntagUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

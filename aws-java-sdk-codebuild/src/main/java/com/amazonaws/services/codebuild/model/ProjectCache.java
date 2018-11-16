@@ -35,12 +35,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>NO_CACHE</code>: The build project will not use any cache.
+     * <code>NO_CACHE</code>: The build project does not use any cache.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The build project will read and write from/to S3.
+     * <code>S3</code>: The build project reads and writes from and to S3.
      * </p>
      * </li>
      * </ul>
@@ -48,12 +48,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
-     * Information about the cache location, as follows:
+     * Information about the cache location:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>NO_CACHE</code>: This value will be ignored.
+     * <code>NO_CACHE</code>: This value is ignored.
      * </p>
      * </li>
      * <li>
@@ -72,12 +72,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>NO_CACHE</code>: The build project will not use any cache.
+     * <code>NO_CACHE</code>: The build project does not use any cache.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The build project will read and write from/to S3.
+     * <code>S3</code>: The build project reads and writes from and to S3.
      * </p>
      * </li>
      * </ul>
@@ -87,12 +87,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NO_CACHE</code>: The build project will not use any cache.
+     *        <code>NO_CACHE</code>: The build project does not use any cache.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The build project will read and write from/to S3.
+     *        <code>S3</code>: The build project reads and writes from and to S3.
      *        </p>
      *        </li>
      * @see CacheType
@@ -109,12 +109,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>NO_CACHE</code>: The build project will not use any cache.
+     * <code>NO_CACHE</code>: The build project does not use any cache.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The build project will read and write from/to S3.
+     * <code>S3</code>: The build project reads and writes from and to S3.
      * </p>
      * </li>
      * </ul>
@@ -123,12 +123,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>NO_CACHE</code>: The build project will not use any cache.
+     *         <code>NO_CACHE</code>: The build project does not use any cache.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>S3</code>: The build project will read and write from/to S3.
+     *         <code>S3</code>: The build project reads and writes from and to S3.
      *         </p>
      *         </li>
      * @see CacheType
@@ -145,12 +145,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>NO_CACHE</code>: The build project will not use any cache.
+     * <code>NO_CACHE</code>: The build project does not use any cache.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The build project will read and write from/to S3.
+     * <code>S3</code>: The build project reads and writes from and to S3.
      * </p>
      * </li>
      * </ul>
@@ -160,12 +160,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NO_CACHE</code>: The build project will not use any cache.
+     *        <code>NO_CACHE</code>: The build project does not use any cache.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The build project will read and write from/to S3.
+     *        <code>S3</code>: The build project reads and writes from and to S3.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -184,12 +184,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>NO_CACHE</code>: The build project will not use any cache.
+     * <code>NO_CACHE</code>: The build project does not use any cache.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The build project will read and write from/to S3.
+     * <code>S3</code>: The build project reads and writes from and to S3.
      * </p>
      * </li>
      * </ul>
@@ -199,12 +199,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NO_CACHE</code>: The build project will not use any cache.
+     *        <code>NO_CACHE</code>: The build project does not use any cache.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The build project will read and write from/to S3.
+     *        <code>S3</code>: The build project reads and writes from and to S3.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -218,12 +218,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the cache location, as follows:
+     * Information about the cache location:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>NO_CACHE</code>: This value will be ignored.
+     * <code>NO_CACHE</code>: This value is ignored.
      * </p>
      * </li>
      * <li>
@@ -234,11 +234,11 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param location
-     *        Information about the cache location, as follows: </p>
+     *        Information about the cache location: </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NO_CACHE</code>: This value will be ignored.
+     *        <code>NO_CACHE</code>: This value is ignored.
      *        </p>
      *        </li>
      *        <li>
@@ -254,12 +254,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the cache location, as follows:
+     * Information about the cache location:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>NO_CACHE</code>: This value will be ignored.
+     * <code>NO_CACHE</code>: This value is ignored.
      * </p>
      * </li>
      * <li>
@@ -269,11 +269,11 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return Information about the cache location, as follows: </p>
+     * @return Information about the cache location: </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>NO_CACHE</code>: This value will be ignored.
+     *         <code>NO_CACHE</code>: This value is ignored.
      *         </p>
      *         </li>
      *         <li>
@@ -289,12 +289,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the cache location, as follows:
+     * Information about the cache location:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>NO_CACHE</code>: This value will be ignored.
+     * <code>NO_CACHE</code>: This value is ignored.
      * </p>
      * </li>
      * <li>
@@ -305,11 +305,11 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param location
-     *        Information about the cache location, as follows: </p>
+     *        Information about the cache location: </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NO_CACHE</code>: This value will be ignored.
+     *        <code>NO_CACHE</code>: This value is ignored.
      *        </p>
      *        </li>
      *        <li>

@@ -56,6 +56,10 @@ public class EnableSnapshotCopyRequestMarshaller implements Marshaller<Request<E
             request.addParameter("SnapshotCopyGrantName", StringUtils.fromString(enableSnapshotCopyRequest.getSnapshotCopyGrantName()));
         }
 
+        if (enableSnapshotCopyRequest.getManualSnapshotRetentionPeriod() != null) {
+            request.addParameter("ManualSnapshotRetentionPeriod", StringUtils.fromInteger(enableSnapshotCopyRequest.getManualSnapshotRetentionPeriod()));
+        }
+
         return request;
     }
 

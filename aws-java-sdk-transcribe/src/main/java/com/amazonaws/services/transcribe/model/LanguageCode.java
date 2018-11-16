@@ -24,7 +24,10 @@ public enum LanguageCode {
     EsUS("es-US"),
     EnAU("en-AU"),
     FrCA("fr-CA"),
-    EnUK("en-UK");
+    EnGB("en-GB"),
+    DeDE("de-DE"),
+    PtBR("pt-BR"),
+    FrFR("fr-FR");
 
     private String value;
 

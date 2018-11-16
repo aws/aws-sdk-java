@@ -94,12 +94,18 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Integer timeoutInMinutes;
     /**
      * <p>
+     * The number of minutes a build is allowed to be queued before it times out.
+     * </p>
+     */
+    private Integer queuedTimeoutInMinutes;
+    /**
+     * <p>
      * The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the
      * build output artifacts.
      * </p>
      * <p>
-     * You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the format
-     * <code>alias/<i>alias-name</i> </code>).
+     * You can specify either the Amazon Resource Name (ARN)of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
      * </p>
      */
     private String encryptionKey;
@@ -120,14 +126,14 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private VpcConfig vpcConfig;
     /**
      * <p>
-     * Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * Set this to true to generate a publicly accessible URL for your project's build badge.
      * </p>
      */
     private Boolean badgeEnabled;
     /**
      * <p>
-     * Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket,
-     * or both.
+     * Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs in an S3
+     * bucket, or both.
      * </p>
      */
     private LogsConfig logsConfig;
@@ -630,20 +636,60 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * The number of minutes a build is allowed to be queued before it times out.
+     * </p>
+     * 
+     * @param queuedTimeoutInMinutes
+     *        The number of minutes a build is allowed to be queued before it times out.
+     */
+
+    public void setQueuedTimeoutInMinutes(Integer queuedTimeoutInMinutes) {
+        this.queuedTimeoutInMinutes = queuedTimeoutInMinutes;
+    }
+
+    /**
+     * <p>
+     * The number of minutes a build is allowed to be queued before it times out.
+     * </p>
+     * 
+     * @return The number of minutes a build is allowed to be queued before it times out.
+     */
+
+    public Integer getQueuedTimeoutInMinutes() {
+        return this.queuedTimeoutInMinutes;
+    }
+
+    /**
+     * <p>
+     * The number of minutes a build is allowed to be queued before it times out.
+     * </p>
+     * 
+     * @param queuedTimeoutInMinutes
+     *        The number of minutes a build is allowed to be queued before it times out.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProjectRequest withQueuedTimeoutInMinutes(Integer queuedTimeoutInMinutes) {
+        setQueuedTimeoutInMinutes(queuedTimeoutInMinutes);
+        return this;
+    }
+
+    /**
+     * <p>
      * The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the
      * build output artifacts.
      * </p>
      * <p>
-     * You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the format
-     * <code>alias/<i>alias-name</i> </code>).
+     * You can specify either the Amazon Resource Name (ARN)of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
      * </p>
      * 
      * @param encryptionKey
      *        The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting
      *        the build output artifacts.</p>
      *        <p>
-     *        You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the
-     *        format <code>alias/<i>alias-name</i> </code>).
+     *        You can specify either the Amazon Resource Name (ARN)of the CMK or, if available, the CMK's alias (using
+     *        the format <code>alias/<i>alias-name</i> </code>).
      */
 
     public void setEncryptionKey(String encryptionKey) {
@@ -656,15 +702,15 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * build output artifacts.
      * </p>
      * <p>
-     * You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the format
-     * <code>alias/<i>alias-name</i> </code>).
+     * You can specify either the Amazon Resource Name (ARN)of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
      * </p>
      * 
      * @return The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting
      *         the build output artifacts.</p>
      *         <p>
-     *         You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the
-     *         format <code>alias/<i>alias-name</i> </code>).
+     *         You can specify either the Amazon Resource Name (ARN)of the CMK or, if available, the CMK's alias (using
+     *         the format <code>alias/<i>alias-name</i> </code>).
      */
 
     public String getEncryptionKey() {
@@ -677,16 +723,16 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * build output artifacts.
      * </p>
      * <p>
-     * You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the format
-     * <code>alias/<i>alias-name</i> </code>).
+     * You can specify either the Amazon Resource Name (ARN)of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
      * </p>
      * 
      * @param encryptionKey
      *        The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting
      *        the build output artifacts.</p>
      *        <p>
-     *        You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the
-     *        format <code>alias/<i>alias-name</i> </code>).
+     *        You can specify either the Amazon Resource Name (ARN)of the CMK or, if available, the CMK's alias (using
+     *        the format <code>alias/<i>alias-name</i> </code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -827,11 +873,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * Set this to true to generate a publicly accessible URL for your project's build badge.
      * </p>
      * 
      * @param badgeEnabled
-     *        Set this to true to generate a publicly-accessible URL for your project's build badge.
+     *        Set this to true to generate a publicly accessible URL for your project's build badge.
      */
 
     public void setBadgeEnabled(Boolean badgeEnabled) {
@@ -840,10 +886,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * Set this to true to generate a publicly accessible URL for your project's build badge.
      * </p>
      * 
-     * @return Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * @return Set this to true to generate a publicly accessible URL for your project's build badge.
      */
 
     public Boolean getBadgeEnabled() {
@@ -852,11 +898,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * Set this to true to generate a publicly accessible URL for your project's build badge.
      * </p>
      * 
      * @param badgeEnabled
-     *        Set this to true to generate a publicly-accessible URL for your project's build badge.
+     *        Set this to true to generate a publicly accessible URL for your project's build badge.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -867,10 +913,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * Set this to true to generate a publicly accessible URL for your project's build badge.
      * </p>
      * 
-     * @return Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * @return Set this to true to generate a publicly accessible URL for your project's build badge.
      */
 
     public Boolean isBadgeEnabled() {
@@ -879,13 +925,13 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket,
-     * or both.
+     * Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs in an S3
+     * bucket, or both.
      * </p>
      * 
      * @param logsConfig
-     *        Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3
-     *        bucket, or both.
+     *        Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs in
+     *        an S3 bucket, or both.
      */
 
     public void setLogsConfig(LogsConfig logsConfig) {
@@ -894,12 +940,12 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket,
-     * or both.
+     * Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs in an S3
+     * bucket, or both.
      * </p>
      * 
-     * @return Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3
-     *         bucket, or both.
+     * @return Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs
+     *         in an S3 bucket, or both.
      */
 
     public LogsConfig getLogsConfig() {
@@ -908,13 +954,13 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket,
-     * or both.
+     * Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs in an S3
+     * bucket, or both.
      * </p>
      * 
      * @param logsConfig
-     *        Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3
-     *        bucket, or both.
+     *        Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs in
+     *        an S3 bucket, or both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -954,6 +1000,8 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("ServiceRole: ").append(getServiceRole()).append(",");
         if (getTimeoutInMinutes() != null)
             sb.append("TimeoutInMinutes: ").append(getTimeoutInMinutes()).append(",");
+        if (getQueuedTimeoutInMinutes() != null)
+            sb.append("QueuedTimeoutInMinutes: ").append(getQueuedTimeoutInMinutes()).append(",");
         if (getEncryptionKey() != null)
             sb.append("EncryptionKey: ").append(getEncryptionKey()).append(",");
         if (getTags() != null)
@@ -1018,6 +1066,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTimeoutInMinutes() != null && other.getTimeoutInMinutes().equals(this.getTimeoutInMinutes()) == false)
             return false;
+        if (other.getQueuedTimeoutInMinutes() == null ^ this.getQueuedTimeoutInMinutes() == null)
+            return false;
+        if (other.getQueuedTimeoutInMinutes() != null && other.getQueuedTimeoutInMinutes().equals(this.getQueuedTimeoutInMinutes()) == false)
+            return false;
         if (other.getEncryptionKey() == null ^ this.getEncryptionKey() == null)
             return false;
         if (other.getEncryptionKey() != null && other.getEncryptionKey().equals(this.getEncryptionKey()) == false)
@@ -1056,6 +1108,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
         hashCode = prime * hashCode + ((getTimeoutInMinutes() == null) ? 0 : getTimeoutInMinutes().hashCode());
+        hashCode = prime * hashCode + ((getQueuedTimeoutInMinutes() == null) ? 0 : getQueuedTimeoutInMinutes().hashCode());
         hashCode = prime * hashCode + ((getEncryptionKey() == null) ? 0 : getEncryptionKey().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());

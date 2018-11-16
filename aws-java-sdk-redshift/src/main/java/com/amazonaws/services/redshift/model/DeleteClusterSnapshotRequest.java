@@ -31,7 +31,8 @@ public class DeleteClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * The unique identifier of the manual snapshot to be deleted.
      * </p>
      * <p>
-     * Constraints: Must be the name of an existing snapshot that is in the <code>available</code> state.
+     * Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>,
+     * or <code>cancelled</code> state.
      * </p>
      */
     private String snapshotIdentifier;
@@ -51,13 +52,15 @@ public class DeleteClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * The unique identifier of the manual snapshot to be deleted.
      * </p>
      * <p>
-     * Constraints: Must be the name of an existing snapshot that is in the <code>available</code> state.
+     * Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>,
+     * or <code>cancelled</code> state.
      * </p>
      * 
      * @param snapshotIdentifier
      *        The unique identifier of the manual snapshot to be deleted.</p>
      *        <p>
-     *        Constraints: Must be the name of an existing snapshot that is in the <code>available</code> state.
+     *        Constraints: Must be the name of an existing snapshot that is in the <code>available</code>,
+     *        <code>failed</code>, or <code>cancelled</code> state.
      */
 
     public void setSnapshotIdentifier(String snapshotIdentifier) {
@@ -69,12 +72,14 @@ public class DeleteClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * The unique identifier of the manual snapshot to be deleted.
      * </p>
      * <p>
-     * Constraints: Must be the name of an existing snapshot that is in the <code>available</code> state.
+     * Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>,
+     * or <code>cancelled</code> state.
      * </p>
      * 
      * @return The unique identifier of the manual snapshot to be deleted.</p>
      *         <p>
-     *         Constraints: Must be the name of an existing snapshot that is in the <code>available</code> state.
+     *         Constraints: Must be the name of an existing snapshot that is in the <code>available</code>,
+     *         <code>failed</code>, or <code>cancelled</code> state.
      */
 
     public String getSnapshotIdentifier() {
@@ -86,13 +91,15 @@ public class DeleteClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * The unique identifier of the manual snapshot to be deleted.
      * </p>
      * <p>
-     * Constraints: Must be the name of an existing snapshot that is in the <code>available</code> state.
+     * Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>,
+     * or <code>cancelled</code> state.
      * </p>
      * 
      * @param snapshotIdentifier
      *        The unique identifier of the manual snapshot to be deleted.</p>
      *        <p>
-     *        Constraints: Must be the name of an existing snapshot that is in the <code>available</code> state.
+     *        Constraints: Must be the name of an existing snapshot that is in the <code>available</code>,
+     *        <code>failed</code>, or <code>cancelled</code> state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

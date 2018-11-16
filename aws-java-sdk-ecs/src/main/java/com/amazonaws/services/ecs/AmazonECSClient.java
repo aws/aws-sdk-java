@@ -133,6 +133,9 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                             new JsonErrorShapeMetadata().withErrorCode("ClusterNotFoundException").withModeledClass(
                                     com.amazonaws.services.ecs.model.ClusterNotFoundException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.ecs.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServerException").withModeledClass(
                                     com.amazonaws.services.ecs.model.ServerException.class))
                     .addErrorMetadata(
@@ -518,9 +521,9 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon ECS clusters are region-specific.
+     *         Amazon ECS clusters are Region-specific.
      * @throws UnsupportedFeatureException
-     *         The specified task is not supported in this region.
+     *         The specified task is not supported in this Region.
      * @throws PlatformUnknownException
      *         The specified platform version does not exist.
      * @throws PlatformTaskDefinitionIncompatibilityException
@@ -576,6 +579,70 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     /**
      * <p>
+     * Modifies the ARN and resource ID format of a resource for a specified IAM user, IAM role, or the root user for an
+     * account. You can specify whether the new ARN and resource ID format are disabled for new resources that are
+     * created.
+     * </p>
+     * 
+     * @param deleteAccountSettingRequest
+     * @return Result of the DeleteAccountSetting operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonECS.DeleteAccountSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAccountSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteAccountSettingResult deleteAccountSetting(DeleteAccountSettingRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAccountSetting(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAccountSettingResult executeDeleteAccountSetting(DeleteAccountSettingRequest deleteAccountSettingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAccountSettingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAccountSettingRequest> request = null;
+        Response<DeleteAccountSettingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAccountSettingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAccountSettingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccountSetting");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAccountSettingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAccountSettingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes one or more custom attributes from an Amazon ECS resource.
      * </p>
      * 
@@ -583,10 +650,10 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return Result of the DeleteAttributes operation returned by the service.
      * @throws ClusterNotFoundException
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon ECS clusters are region-specific.
+     *         Amazon ECS clusters are Region-specific.
      * @throws TargetNotFoundException
      *         The specified target could not be found. You can view your available container instances with
-     *         <a>ListContainerInstances</a>. Amazon ECS container instances are cluster-specific and region-specific.
+     *         <a>ListContainerInstances</a>. Amazon ECS container instances are cluster-specific and Region-specific.
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @sample AmazonECS.DeleteAttributes
@@ -655,7 +722,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon ECS clusters are region-specific.
+     *         Amazon ECS clusters are Region-specific.
      * @throws ClusterContainsContainerInstancesException
      *         You cannot delete a cluster that has registered container instances. You must first deregister the
      *         container instances before you can delete the cluster. For more information, see
@@ -722,17 +789,17 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * <note>
      * <p>
      * When you delete a service, if there are still running tasks that require cleanup, the service status moves from
-     * <code>ACTIVE</code> to <code>DRAINING</code>, and the service is no longer visible in the console or in
-     * <a>ListServices</a> API operations. After the tasks have stopped, then the service status moves from
+     * <code>ACTIVE</code> to <code>DRAINING</code>, and the service is no longer visible in the console or in the
+     * <a>ListServices</a> API operation. After the tasks have stopped, then the service status moves from
      * <code>DRAINING</code> to <code>INACTIVE</code>. Services in the <code>DRAINING</code> or <code>INACTIVE</code>
-     * status can still be viewed with <a>DescribeServices</a> API operations. However, in the future,
+     * status can still be viewed with the <a>DescribeServices</a> API operation. However, in the future,
      * <code>INACTIVE</code> services may be cleaned up and purged from Amazon ECS record keeping, and
-     * <a>DescribeServices</a> API operations on those services return a <code>ServiceNotFoundException</code> error.
+     * <a>DescribeServices</a> calls on those services return a <code>ServiceNotFoundException</code> error.
      * </p>
      * </note> <important>
      * <p>
      * If you attempt to create a new service with the same name as an existing service in either <code>ACTIVE</code> or
-     * <code>DRAINING</code> status, you will receive an error.
+     * <code>DRAINING</code> status, you receive an error.
      * </p>
      * </important>
      * 
@@ -748,10 +815,10 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon ECS clusters are region-specific.
+     *         Amazon ECS clusters are Region-specific.
      * @throws ServiceNotFoundException
      *         The specified service could not be found. You can view your available services with <a>ListServices</a>.
-     *         Amazon ECS services are cluster-specific and region-specific.
+     *         Amazon ECS services are cluster-specific and Region-specific.
      * @sample AmazonECS.DeleteService
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService" target="_top">AWS API
      *      Documentation</a>
@@ -811,7 +878,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * </p>
      * <p>
      * Deregistering a container instance removes the instance from a cluster, but it does not terminate the EC2
-     * instance; if you are finished using the instance, be sure to terminate it in the Amazon EC2 console to stop
+     * instance. If you are finished using the instance, be sure to terminate it in the Amazon EC2 console to stop
      * billing.
      * </p>
      * <note>
@@ -834,7 +901,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon ECS clusters are region-specific.
+     *         Amazon ECS clusters are Region-specific.
      * @sample AmazonECS.DeregisterContainerInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance"
      *      target="_top">AWS API Documentation</a>
@@ -898,7 +965,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * </p>
      * <note>
      * <p>
-     * At this time, <code>INACTIVE</code> task definitions remain discoverable in your account indefinitely; however,
+     * At this time, <code>INACTIVE</code> task definitions remain discoverable in your account indefinitely. However,
      * this behavior is subject to change in the future, so you should not rely on <code>INACTIVE</code> task
      * definitions persisting beyond the lifecycle of any associated tasks and services.
      * </p>
@@ -1048,7 +1115,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon ECS clusters are region-specific.
+     *         Amazon ECS clusters are Region-specific.
      * @sample AmazonECS.DescribeContainerInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances" target="_top">AWS
      *      API Documentation</a>
@@ -1115,7 +1182,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon ECS clusters are region-specific.
+     *         Amazon ECS clusters are Region-specific.
      * @sample AmazonECS.DescribeServices
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices" target="_top">AWS API
      *      Documentation</a>
@@ -1250,7 +1317,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon ECS clusters are region-specific.
+     *         Amazon ECS clusters are Region-specific.
      * @sample AmazonECS.DescribeTasks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks" target="_top">AWS API
      *      Documentation</a>
@@ -1370,6 +1437,68 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     /**
      * <p>
+     * Lists the account settings for an Amazon ECS resource for a specified principal.
+     * </p>
+     * 
+     * @param listAccountSettingsRequest
+     * @return Result of the ListAccountSettings operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonECS.ListAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAccountSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListAccountSettingsResult listAccountSettings(ListAccountSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAccountSettings(request);
+    }
+
+    @SdkInternalApi
+    final ListAccountSettingsResult executeListAccountSettings(ListAccountSettingsRequest listAccountSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAccountSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAccountSettingsRequest> request = null;
+        Response<ListAccountSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAccountSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAccountSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccountSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAccountSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAccountSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the attributes for Amazon ECS resources within a specified target type and cluster. When you specify a
      * target type and cluster, <code>ListAttributes</code> returns a list of attribute objects, one for each attribute
      * on each resource. You can filter the list of results to a single attribute name to only return results that have
@@ -1381,7 +1510,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return Result of the ListAttributes operation returned by the service.
      * @throws ClusterNotFoundException
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon ECS clusters are region-specific.
+     *         Amazon ECS clusters are Region-specific.
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @sample AmazonECS.ListAttributes
@@ -1519,7 +1648,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon ECS clusters are region-specific.
+     *         Amazon ECS clusters are Region-specific.
      * @sample AmazonECS.ListContainerInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances" target="_top">AWS API
      *      Documentation</a>
@@ -1590,7 +1719,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon ECS clusters are region-specific.
+     *         Amazon ECS clusters are Region-specific.
      * @sample AmazonECS.ListServices
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices" target="_top">AWS API
      *      Documentation</a>
@@ -1641,6 +1770,71 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
     @Override
     public ListServicesResult listServices() {
         return listServices(new ListServicesRequest());
+    }
+
+    /**
+     * <p>
+     * List the tags for an Amazon ECS resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon ECS clusters are Region-specific.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonECS.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -1809,10 +2003,10 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon ECS clusters are region-specific.
+     *         Amazon ECS clusters are Region-specific.
      * @throws ServiceNotFoundException
      *         The specified service could not be found. You can view your available services with <a>ListServices</a>.
-     *         Amazon ECS services are cluster-specific and region-specific.
+     *         Amazon ECS services are cluster-specific and Region-specific.
      * @sample AmazonECS.ListTasks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks" target="_top">AWS API
      *      Documentation</a>
@@ -1867,6 +2061,70 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     /**
      * <p>
+     * Modifies the ARN and resource ID format of a resource for a specified IAM user, IAM role, or the root user for an
+     * account. You can specify whether the new ARN and resource ID format are enabled for new resources that are
+     * created. Enabling this setting is required to use new Amazon ECS features such as resource tagging.
+     * </p>
+     * 
+     * @param putAccountSettingRequest
+     * @return Result of the PutAccountSetting operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonECS.PutAccountSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutAccountSettingResult putAccountSetting(PutAccountSettingRequest request) {
+        request = beforeClientExecution(request);
+        return executePutAccountSetting(request);
+    }
+
+    @SdkInternalApi
+    final PutAccountSettingResult executePutAccountSetting(PutAccountSettingRequest putAccountSettingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putAccountSettingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutAccountSettingRequest> request = null;
+        Response<PutAccountSettingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutAccountSettingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putAccountSettingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccountSetting");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutAccountSettingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutAccountSettingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Create or update an attribute on an Amazon ECS resource. If the attribute does not exist, it is created. If the
      * attribute exists, its value is replaced with the specified value. To delete an attribute, use
      * <a>DeleteAttributes</a>. For more information, see <a
@@ -1878,10 +2136,10 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @return Result of the PutAttributes operation returned by the service.
      * @throws ClusterNotFoundException
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon ECS clusters are region-specific.
+     *         Amazon ECS clusters are Region-specific.
      * @throws TargetNotFoundException
      *         The specified target could not be found. You can view your available container instances with
-     *         <a>ListContainerInstances</a>. Amazon ECS container instances are cluster-specific and region-specific.
+     *         <a>ListContainerInstances</a>. Amazon ECS container instances are cluster-specific and Region-specific.
      * @throws AttributeLimitExceededException
      *         You can apply up to 10 custom attributes per resource. You can view the attributes of a resource with
      *         <a>ListAttributes</a>. You can remove existing attributes on a resource with <a>DeleteAttributes</a>.
@@ -2104,8 +2362,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * <p>
      * The Amazon ECS API follows an eventual consistency model, due to the distributed nature of the system supporting
      * the API. This means that the result of an API command you run that affects your Amazon ECS resources might not be
-     * immediately visible to all subsequent commands you run. You should keep this in mind when you carry out an API
-     * command that immediately follows a previous API command.
+     * immediately visible to all subsequent commands you run. Keep this in mind when you carry out an API command that
+     * immediately follows a previous API command.
      * </p>
      * <p>
      * To manage eventual consistency, you can do the following:
@@ -2140,9 +2398,9 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon ECS clusters are region-specific.
+     *         Amazon ECS clusters are Region-specific.
      * @throws UnsupportedFeatureException
-     *         The specified task is not supported in this region.
+     *         The specified task is not supported in this Region.
      * @throws PlatformUnknownException
      *         The specified platform version does not exist.
      * @throws PlatformTaskDefinitionIncompatibilityException
@@ -2150,8 +2408,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @throws AccessDeniedException
      *         You do not have authorization to perform the requested action.
      * @throws BlockedException
-     *         Your AWS account has been blocked. <a href="http://aws.amazon.com/contact-us/">Contact AWS Support</a>
-     *         for more information.
+     *         Your AWS account has been blocked. For more information, <a
+     *         href="http://aws.amazon.com/contact-us/">Contact AWS Support</a>.
      * @sample AmazonECS.RunTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask" target="_top">AWS API
      *      Documentation</a>
@@ -2221,7 +2479,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon ECS clusters are region-specific.
+     *         Amazon ECS clusters are Region-specific.
      * @sample AmazonECS.StartTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask" target="_top">AWS API
      *      Documentation</a>
@@ -2271,7 +2529,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     /**
      * <p>
-     * Stops a running task.
+     * Stops a running task. Any tags associated with the task will be deleted.
      * </p>
      * <p>
      * When <a>StopTask</a> is called on a task, the equivalent of <code>docker stop</code> is issued to the containers
@@ -2300,7 +2558,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon ECS clusters are region-specific.
+     *         Amazon ECS clusters are Region-specific.
      * @sample AmazonECS.StopTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask" target="_top">AWS API
      *      Documentation</a>
@@ -2492,6 +2750,142 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     /**
      * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
+     * associated with that resource are deleted as well.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon ECS clusters are Region-specific.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonECS.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon ECS clusters are Region-specific.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonECS.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the Amazon ECS container agent on a specified container instance. Updating the Amazon ECS container agent
      * does not interrupt running tasks or services on the container instance. The process for updating the agent
      * differs depending on whether your container instance was launched with the Amazon ECS-optimized AMI or another
@@ -2518,7 +2912,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon ECS clusters are region-specific.
+     *         Amazon ECS clusters are Region-specific.
      * @throws UpdateInProgressException
      *         There is already a current Amazon ECS container agent update in progress on the specified container
      *         instance. If the container agent becomes disconnected while it is in a transitional stage, such as
@@ -2622,7 +3016,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * </li>
      * </ul>
      * <p>
-     * Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not belong to a service are not affected; you must
+     * Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not belong to a service are not affected. You must
      * wait for them to finish or stop them manually.
      * </p>
      * <p>
@@ -2646,7 +3040,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon ECS clusters are region-specific.
+     *         Amazon ECS clusters are Region-specific.
      * @sample AmazonECS.UpdateContainerInstancesState
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState"
      *      target="_top">AWS API Documentation</a>
@@ -2814,10 +3208,10 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         The specified parameter is invalid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
      *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon ECS clusters are region-specific.
+     *         Amazon ECS clusters are Region-specific.
      * @throws ServiceNotFoundException
      *         The specified service could not be found. You can view your available services with <a>ListServices</a>.
-     *         Amazon ECS services are cluster-specific and region-specific.
+     *         Amazon ECS services are cluster-specific and Region-specific.
      * @throws ServiceNotActiveException
      *         The specified service is not active. You can't update a service that is inactive. If you have previously
      *         deleted a service, you can re-create it with <a>CreateService</a>.

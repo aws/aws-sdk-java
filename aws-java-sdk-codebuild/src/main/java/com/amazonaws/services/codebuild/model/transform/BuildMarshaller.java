@@ -68,6 +68,8 @@ public class BuildMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logs").build();
     private static final MarshallingInfo<Integer> TIMEOUTINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutInMinutes").build();
+    private static final MarshallingInfo<Integer> QUEUEDTIMEOUTINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("queuedTimeoutInMinutes").build();
     private static final MarshallingInfo<Boolean> BUILDCOMPLETE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("buildComplete").build();
     private static final MarshallingInfo<String> INITIATOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -115,6 +117,7 @@ public class BuildMarshaller {
             protocolMarshaller.marshall(build.getServiceRole(), SERVICEROLE_BINDING);
             protocolMarshaller.marshall(build.getLogs(), LOGS_BINDING);
             protocolMarshaller.marshall(build.getTimeoutInMinutes(), TIMEOUTINMINUTES_BINDING);
+            protocolMarshaller.marshall(build.getQueuedTimeoutInMinutes(), QUEUEDTIMEOUTINMINUTES_BINDING);
             protocolMarshaller.marshall(build.getBuildComplete(), BUILDCOMPLETE_BINDING);
             protocolMarshaller.marshall(build.getInitiator(), INITIATOR_BINDING);
             protocolMarshaller.marshall(build.getVpcConfig(), VPCCONFIG_BINDING);

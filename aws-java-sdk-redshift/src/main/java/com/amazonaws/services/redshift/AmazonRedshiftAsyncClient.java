@@ -369,6 +369,72 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<BatchDeleteClusterSnapshotsResult> batchDeleteClusterSnapshotsAsync(BatchDeleteClusterSnapshotsRequest request) {
+
+        return batchDeleteClusterSnapshotsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteClusterSnapshotsResult> batchDeleteClusterSnapshotsAsync(final BatchDeleteClusterSnapshotsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDeleteClusterSnapshotsRequest, BatchDeleteClusterSnapshotsResult> asyncHandler) {
+        final BatchDeleteClusterSnapshotsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDeleteClusterSnapshotsResult>() {
+            @Override
+            public BatchDeleteClusterSnapshotsResult call() throws Exception {
+                BatchDeleteClusterSnapshotsResult result = null;
+
+                try {
+                    result = executeBatchDeleteClusterSnapshots(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchModifyClusterSnapshotsResult> batchModifyClusterSnapshotsAsync(BatchModifyClusterSnapshotsRequest request) {
+
+        return batchModifyClusterSnapshotsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchModifyClusterSnapshotsResult> batchModifyClusterSnapshotsAsync(final BatchModifyClusterSnapshotsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchModifyClusterSnapshotsRequest, BatchModifyClusterSnapshotsResult> asyncHandler) {
+        final BatchModifyClusterSnapshotsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchModifyClusterSnapshotsResult>() {
+            @Override
+            public BatchModifyClusterSnapshotsResult call() throws Exception {
+                BatchModifyClusterSnapshotsResult result = null;
+
+                try {
+                    result = executeBatchModifyClusterSnapshots(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelResizeResult> cancelResizeAsync(CancelResizeRequest request) {
 
         return cancelResizeAsync(request, null);
@@ -732,6 +798,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSnapshotScheduleResult> createSnapshotScheduleAsync(CreateSnapshotScheduleRequest request) {
+
+        return createSnapshotScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSnapshotScheduleResult> createSnapshotScheduleAsync(final CreateSnapshotScheduleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSnapshotScheduleRequest, CreateSnapshotScheduleResult> asyncHandler) {
+        final CreateSnapshotScheduleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateSnapshotScheduleResult>() {
+            @Override
+            public CreateSnapshotScheduleResult call() throws Exception {
+                CreateSnapshotScheduleResult result = null;
+
+                try {
+                    result = executeCreateSnapshotSchedule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest request) {
 
         return createTagsAsync(request, null);
@@ -1046,6 +1145,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
 
                 try {
                     result = executeDeleteSnapshotCopyGrant(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSnapshotScheduleResult> deleteSnapshotScheduleAsync(DeleteSnapshotScheduleRequest request) {
+
+        return deleteSnapshotScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSnapshotScheduleResult> deleteSnapshotScheduleAsync(final DeleteSnapshotScheduleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSnapshotScheduleRequest, DeleteSnapshotScheduleResult> asyncHandler) {
+        final DeleteSnapshotScheduleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSnapshotScheduleResult>() {
+            @Override
+            public DeleteSnapshotScheduleResult call() throws Exception {
+                DeleteSnapshotScheduleResult result = null;
+
+                try {
+                    result = executeDeleteSnapshotSchedule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2177,6 +2309,72 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeSnapshotSchedulesResult> describeSnapshotSchedulesAsync(DescribeSnapshotSchedulesRequest request) {
+
+        return describeSnapshotSchedulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSnapshotSchedulesResult> describeSnapshotSchedulesAsync(final DescribeSnapshotSchedulesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeSnapshotSchedulesRequest, DescribeSnapshotSchedulesResult> asyncHandler) {
+        final DescribeSnapshotSchedulesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeSnapshotSchedulesResult>() {
+            @Override
+            public DescribeSnapshotSchedulesResult call() throws Exception {
+                DescribeSnapshotSchedulesResult result = null;
+
+                try {
+                    result = executeDescribeSnapshotSchedules(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStorageResult> describeStorageAsync(DescribeStorageRequest request) {
+
+        return describeStorageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStorageResult> describeStorageAsync(final DescribeStorageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeStorageRequest, DescribeStorageResult> asyncHandler) {
+        final DescribeStorageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeStorageResult>() {
+            @Override
+            public DescribeStorageResult call() throws Exception {
+                DescribeStorageResult result = null;
+
+                try {
+                    result = executeDescribeStorage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeTableRestoreStatusResult> describeTableRestoreStatusAsync(DescribeTableRestoreStatusRequest request) {
 
         return describeTableRestoreStatusAsync(request, null);
@@ -2654,6 +2852,73 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<Snapshot> modifyClusterSnapshotAsync(ModifyClusterSnapshotRequest request) {
+
+        return modifyClusterSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Snapshot> modifyClusterSnapshotAsync(final ModifyClusterSnapshotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyClusterSnapshotRequest, Snapshot> asyncHandler) {
+        final ModifyClusterSnapshotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<Snapshot>() {
+            @Override
+            public Snapshot call() throws Exception {
+                Snapshot result = null;
+
+                try {
+                    result = executeModifyClusterSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyClusterSnapshotScheduleResult> modifyClusterSnapshotScheduleAsync(ModifyClusterSnapshotScheduleRequest request) {
+
+        return modifyClusterSnapshotScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyClusterSnapshotScheduleResult> modifyClusterSnapshotScheduleAsync(
+            final ModifyClusterSnapshotScheduleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyClusterSnapshotScheduleRequest, ModifyClusterSnapshotScheduleResult> asyncHandler) {
+        final ModifyClusterSnapshotScheduleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyClusterSnapshotScheduleResult>() {
+            @Override
+            public ModifyClusterSnapshotScheduleResult call() throws Exception {
+                ModifyClusterSnapshotScheduleResult result = null;
+
+                try {
+                    result = executeModifyClusterSnapshotSchedule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ClusterSubnetGroup> modifyClusterSubnetGroupAsync(ModifyClusterSubnetGroupRequest request) {
 
         return modifyClusterSubnetGroupAsync(request, null);
@@ -2737,6 +3002,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
 
                 try {
                     result = executeModifySnapshotCopyRetentionPeriod(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifySnapshotScheduleResult> modifySnapshotScheduleAsync(ModifySnapshotScheduleRequest request) {
+
+        return modifySnapshotScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifySnapshotScheduleResult> modifySnapshotScheduleAsync(final ModifySnapshotScheduleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifySnapshotScheduleRequest, ModifySnapshotScheduleResult> asyncHandler) {
+        final ModifySnapshotScheduleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifySnapshotScheduleResult>() {
+            @Override
+            public ModifySnapshotScheduleResult call() throws Exception {
+                ModifySnapshotScheduleResult result = null;
+
+                try {
+                    result = executeModifySnapshotSchedule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

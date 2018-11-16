@@ -69,6 +69,19 @@ public class CreateClusterSnapshotRequest extends com.amazonaws.AmazonWebService
     private String clusterIdentifier;
     /**
      * <p>
+     * The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained
+     * indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     */
+    private Integer manualSnapshotRetentionPeriod;
+    /**
+     * <p>
      * A list of tag instances.
      * </p>
      */
@@ -327,6 +340,85 @@ public class CreateClusterSnapshotRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained
+     * indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     * 
+     * @param manualSnapshotRetentionPeriod
+     *        The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained
+     *        indefinitely. </p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653.
+     *        </p>
+     *        <p>
+     *        The default value is -1.
+     */
+
+    public void setManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
+        this.manualSnapshotRetentionPeriod = manualSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained
+     * indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     * 
+     * @return The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is
+     *         retained indefinitely. </p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
+     *         </p>
+     *         <p>
+     *         The default value is -1.
+     */
+
+    public Integer getManualSnapshotRetentionPeriod() {
+        return this.manualSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained
+     * indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     * 
+     * @param manualSnapshotRetentionPeriod
+     *        The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained
+     *        indefinitely. </p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653.
+     *        </p>
+     *        <p>
+     *        The default value is -1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterSnapshotRequest withManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
+        setManualSnapshotRetentionPeriod(manualSnapshotRetentionPeriod);
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of tag instances.
      * </p>
      * 
@@ -413,6 +505,8 @@ public class CreateClusterSnapshotRequest extends com.amazonaws.AmazonWebService
             sb.append("SnapshotIdentifier: ").append(getSnapshotIdentifier()).append(",");
         if (getClusterIdentifier() != null)
             sb.append("ClusterIdentifier: ").append(getClusterIdentifier()).append(",");
+        if (getManualSnapshotRetentionPeriod() != null)
+            sb.append("ManualSnapshotRetentionPeriod: ").append(getManualSnapshotRetentionPeriod()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -437,6 +531,11 @@ public class CreateClusterSnapshotRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getClusterIdentifier() != null && other.getClusterIdentifier().equals(this.getClusterIdentifier()) == false)
             return false;
+        if (other.getManualSnapshotRetentionPeriod() == null ^ this.getManualSnapshotRetentionPeriod() == null)
+            return false;
+        if (other.getManualSnapshotRetentionPeriod() != null
+                && other.getManualSnapshotRetentionPeriod().equals(this.getManualSnapshotRetentionPeriod()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -451,6 +550,7 @@ public class CreateClusterSnapshotRequest extends com.amazonaws.AmazonWebService
 
         hashCode = prime * hashCode + ((getSnapshotIdentifier() == null) ? 0 : getSnapshotIdentifier().hashCode());
         hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getManualSnapshotRetentionPeriod() == null) ? 0 : getManualSnapshotRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

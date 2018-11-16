@@ -41,21 +41,22 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String endpointType;
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     * postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
-     * sqlserver.
+     * The type of engine for the endpoint. Valid values, depending on the <code>EndPointType</code> value, include
+     * <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>, <code>aurora</code>,
+     * <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>, <code>db2</code>, <code>azuredb</code>,
+     * <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>, and <code>sqlserver</code>.
      * </p>
      */
     private String engineName;
     /**
      * <p>
-     * The user name to be used to login to the endpoint database.
+     * The user name to be used to log in to the endpoint database.
      * </p>
      */
     private String username;
     /**
      * <p>
-     * The password to be used to login to the endpoint database.
+     * The password to be used to log in to the endpoint database.
      * </p>
      */
     private String password;
@@ -85,9 +86,9 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String extraConnectionAttributes;
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
-     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
-     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
+     * The AWS KMS key identifier to use to encrypt the connection parameters. If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates the default
+     * encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
      * </p>
      */
     private String kmsKeyId;
@@ -105,19 +106,15 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String certificateArn;
     /**
      * <p>
-     * The SSL mode to use for the SSL connection.
-     * </p>
-     * <p>
-     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     * </p>
-     * <p>
-     * The default value is none.
+     * The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
+     * <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default value is
+     * <code>none</code>.
      * </p>
      */
     private String sslMode;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the service access role you want to use to create the endpoint.
+     * The Amazon Resource Name (ARN) for the service access role that you want to use to create the endpoint.
      * </p>
      */
     private String serviceAccessRoleArn;
@@ -130,66 +127,84 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
-     * settings, see the <b>Using Object Mapping to Migrate Data to DynamoDB</b> section at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html"> Using an Amazon DynamoDB
-     * Database as a Target for AWS Database Migration Service</a>.
+     * settings, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using Object
+     * Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      */
     private DynamoDbSettings dynamoDbSettings;
     /**
      * <p>
      * Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see
-     * the <b>Extra Connection Attributes</b> section at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html"> Using Amazon S3 as a Target for AWS
-     * Database Migration Service</a>.
+     * <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
+     * Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the <i>AWS Database Migration Service
+     * User Guide.</i>
      * </p>
      */
     private S3Settings s3Settings;
     /**
      * <p>
-     * The settings in JSON format for the DMS Transfer type source endpoint.
+     * The settings in JSON format for the DMS transfer type of source endpoint.
      * </p>
      * <p>
-     * Attributes include:
+     * Possible attributes include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     * <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
      * </p>
      * </li>
      * <li>
      * <p>
-     * bucketName - The name of the S3 bucket to use.
+     * <code>bucketName</code> - The name of the S3 bucket to use.
      * </p>
      * </li>
      * <li>
      * <p>
-     * compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the default) or do
-     * not use to leave the files uncompressed.
+     * <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use GZIP, set
+     * this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this value.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     * Shorthand syntax for these attributes is as follows:
+     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      * </p>
      * <p>
-     * JSON syntax:
-     * </p>
-     * <p>
-     * { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     * JSON syntax for these attributes is as follows:
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
      * </p>
      */
     private DmsTransferSettings dmsTransferSettings;
     /**
      * <p>
      * Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see
-     * the <b>Configuration Properties When Using MongoDB as a Source for AWS Database Migration Service</b> section at
-     * <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using MongoDB as a Target for
-     * AWS Database Migration Service</a>.
+     * the configuration properties section in <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using MongoDB as a Target for
+     * AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      */
     private MongoDbSettings mongoDbSettings;
+    /**
+     * <p>
+     * Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about the
+     * available settings, see <a href=
+     * "http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     * >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
+     * Guide.</i>
+     * </p>
+     */
+    private KinesisSettings kinesisSettings;
+    /**
+     * <p>
+     * Settings in JSON format for the target Elasticsearch endpoint. For more information about the available settings,
+     * see <a href=
+     * "http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration"
+     * >Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in the <i>AWS Database
+     * Migration User Guide.</i>
+     * </p>
+     */
+    private ElasticsearchSettings elasticsearchSettings;
 
     /**
      * <p>
@@ -312,15 +327,18 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     * postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
-     * sqlserver.
+     * The type of engine for the endpoint. Valid values, depending on the <code>EndPointType</code> value, include
+     * <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>, <code>aurora</code>,
+     * <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>, <code>db2</code>, <code>azuredb</code>,
+     * <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>, and <code>sqlserver</code>.
      * </p>
      * 
      * @param engineName
-     *        The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     *        postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
-     *        sqlserver.
+     *        The type of engine for the endpoint. Valid values, depending on the <code>EndPointType</code> value,
+     *        include <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>,
+     *        <code>aurora</code>, <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>,
+     *        <code>db2</code>, <code>azuredb</code>, <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>,
+     *        and <code>sqlserver</code>.
      */
 
     public void setEngineName(String engineName) {
@@ -329,14 +347,17 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     * postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
-     * sqlserver.
+     * The type of engine for the endpoint. Valid values, depending on the <code>EndPointType</code> value, include
+     * <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>, <code>aurora</code>,
+     * <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>, <code>db2</code>, <code>azuredb</code>,
+     * <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>, and <code>sqlserver</code>.
      * </p>
      * 
-     * @return The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     *         postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
-     *         sqlserver.
+     * @return The type of engine for the endpoint. Valid values, depending on the <code>EndPointType</code> value,
+     *         include <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>,
+     *         <code>aurora</code>, <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>,
+     *         <code>db2</code>, <code>azuredb</code>, <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>,
+     *         and <code>sqlserver</code>.
      */
 
     public String getEngineName() {
@@ -345,15 +366,18 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     * postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
-     * sqlserver.
+     * The type of engine for the endpoint. Valid values, depending on the <code>EndPointType</code> value, include
+     * <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>, <code>aurora</code>,
+     * <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>, <code>db2</code>, <code>azuredb</code>,
+     * <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>, and <code>sqlserver</code>.
      * </p>
      * 
      * @param engineName
-     *        The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     *        postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
-     *        sqlserver.
+     *        The type of engine for the endpoint. Valid values, depending on the <code>EndPointType</code> value,
+     *        include <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>,
+     *        <code>aurora</code>, <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>,
+     *        <code>db2</code>, <code>azuredb</code>, <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>,
+     *        and <code>sqlserver</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -364,11 +388,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user name to be used to login to the endpoint database.
+     * The user name to be used to log in to the endpoint database.
      * </p>
      * 
      * @param username
-     *        The user name to be used to login to the endpoint database.
+     *        The user name to be used to log in to the endpoint database.
      */
 
     public void setUsername(String username) {
@@ -377,10 +401,10 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user name to be used to login to the endpoint database.
+     * The user name to be used to log in to the endpoint database.
      * </p>
      * 
-     * @return The user name to be used to login to the endpoint database.
+     * @return The user name to be used to log in to the endpoint database.
      */
 
     public String getUsername() {
@@ -389,11 +413,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user name to be used to login to the endpoint database.
+     * The user name to be used to log in to the endpoint database.
      * </p>
      * 
      * @param username
-     *        The user name to be used to login to the endpoint database.
+     *        The user name to be used to log in to the endpoint database.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -404,11 +428,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The password to be used to login to the endpoint database.
+     * The password to be used to log in to the endpoint database.
      * </p>
      * 
      * @param password
-     *        The password to be used to login to the endpoint database.
+     *        The password to be used to log in to the endpoint database.
      */
 
     public void setPassword(String password) {
@@ -417,10 +441,10 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The password to be used to login to the endpoint database.
+     * The password to be used to log in to the endpoint database.
      * </p>
      * 
-     * @return The password to be used to login to the endpoint database.
+     * @return The password to be used to log in to the endpoint database.
      */
 
     public String getPassword() {
@@ -429,11 +453,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The password to be used to login to the endpoint database.
+     * The password to be used to log in to the endpoint database.
      * </p>
      * 
      * @param password
-     *        The password to be used to login to the endpoint database.
+     *        The password to be used to log in to the endpoint database.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -604,16 +628,16 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
-     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
-     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
+     * The AWS KMS key identifier to use to encrypt the connection parameters. If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates the default
+     * encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a
-     *        value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the
+     *        The AWS KMS key identifier to use to encrypt the connection parameters. If you don't specify a value for
+     *        the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
      *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
-     *        each AWS region.
+     *        each AWS Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -622,15 +646,15 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
-     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
-     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
+     * The AWS KMS key identifier to use to encrypt the connection parameters. If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates the default
+     * encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
      * </p>
      * 
-     * @return The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a
-     *         value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the
+     * @return The AWS KMS key identifier to use to encrypt the connection parameters. If you don't specify a value for
+     *         the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
      *         default encryption key for your AWS account. Your AWS account has a different default encryption key for
-     *         each AWS region.
+     *         each AWS Region.
      */
 
     public String getKmsKeyId() {
@@ -639,16 +663,16 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
-     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
-     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
+     * The AWS KMS key identifier to use to encrypt the connection parameters. If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates the default
+     * encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a
-     *        value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the
+     *        The AWS KMS key identifier to use to encrypt the connection parameters. If you don't specify a value for
+     *        the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
      *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
-     *        each AWS region.
+     *        each AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -769,22 +793,15 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SSL mode to use for the SSL connection.
-     * </p>
-     * <p>
-     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     * </p>
-     * <p>
-     * The default value is none.
+     * The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
+     * <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default value is
+     * <code>none</code>.
      * </p>
      * 
      * @param sslMode
-     *        The SSL mode to use for the SSL connection.</p>
-     *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     *        </p>
-     *        <p>
-     *        The default value is none.
+     *        The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
+     *        <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default
+     *        value is <code>none</code>.
      * @see DmsSslModeValue
      */
 
@@ -794,21 +811,14 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SSL mode to use for the SSL connection.
-     * </p>
-     * <p>
-     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     * </p>
-     * <p>
-     * The default value is none.
+     * The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
+     * <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default value is
+     * <code>none</code>.
      * </p>
      * 
-     * @return The SSL mode to use for the SSL connection.</p>
-     *         <p>
-     *         SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     *         </p>
-     *         <p>
-     *         The default value is none.
+     * @return The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four
+     *         values: <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The
+     *         default value is <code>none</code>.
      * @see DmsSslModeValue
      */
 
@@ -818,22 +828,15 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SSL mode to use for the SSL connection.
-     * </p>
-     * <p>
-     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     * </p>
-     * <p>
-     * The default value is none.
+     * The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
+     * <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default value is
+     * <code>none</code>.
      * </p>
      * 
      * @param sslMode
-     *        The SSL mode to use for the SSL connection.</p>
-     *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     *        </p>
-     *        <p>
-     *        The default value is none.
+     *        The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
+     *        <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default
+     *        value is <code>none</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DmsSslModeValue
      */
@@ -845,22 +848,15 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SSL mode to use for the SSL connection.
-     * </p>
-     * <p>
-     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     * </p>
-     * <p>
-     * The default value is none.
+     * The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
+     * <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default value is
+     * <code>none</code>.
      * </p>
      * 
      * @param sslMode
-     *        The SSL mode to use for the SSL connection.</p>
-     *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     *        </p>
-     *        <p>
-     *        The default value is none.
+     *        The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
+     *        <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default
+     *        value is <code>none</code>.
      * @see DmsSslModeValue
      */
 
@@ -870,22 +866,15 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SSL mode to use for the SSL connection.
-     * </p>
-     * <p>
-     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     * </p>
-     * <p>
-     * The default value is none.
+     * The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
+     * <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default value is
+     * <code>none</code>.
      * </p>
      * 
      * @param sslMode
-     *        The SSL mode to use for the SSL connection.</p>
-     *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     *        </p>
-     *        <p>
-     *        The default value is none.
+     *        The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL mode can be one of four values:
+     *        <code>none</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code>. The default
+     *        value is <code>none</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DmsSslModeValue
      */
@@ -897,11 +886,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the service access role you want to use to create the endpoint.
+     * The Amazon Resource Name (ARN) for the service access role that you want to use to create the endpoint.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The Amazon Resource Name (ARN) for the service access role you want to use to create the endpoint.
+     *        The Amazon Resource Name (ARN) for the service access role that you want to use to create the endpoint.
      */
 
     public void setServiceAccessRoleArn(String serviceAccessRoleArn) {
@@ -910,10 +899,10 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the service access role you want to use to create the endpoint.
+     * The Amazon Resource Name (ARN) for the service access role that you want to use to create the endpoint.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the service access role you want to use to create the endpoint.
+     * @return The Amazon Resource Name (ARN) for the service access role that you want to use to create the endpoint.
      */
 
     public String getServiceAccessRoleArn() {
@@ -922,11 +911,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the service access role you want to use to create the endpoint.
+     * The Amazon Resource Name (ARN) for the service access role that you want to use to create the endpoint.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The Amazon Resource Name (ARN) for the service access role you want to use to create the endpoint.
+     *        The Amazon Resource Name (ARN) for the service access role that you want to use to create the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -978,16 +967,14 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
-     * settings, see the <b>Using Object Mapping to Migrate Data to DynamoDB</b> section at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html"> Using an Amazon DynamoDB
-     * Database as a Target for AWS Database Migration Service</a>.
+     * settings, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using Object
+     * Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param dynamoDbSettings
      *        Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
-     *        settings, see the <b>Using Object Mapping to Migrate Data to DynamoDB</b> section at <a
-     *        href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html"> Using an Amazon DynamoDB
-     *        Database as a Target for AWS Database Migration Service</a>.
+     *        settings, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
+     *        Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
     public void setDynamoDbSettings(DynamoDbSettings dynamoDbSettings) {
@@ -997,15 +984,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
-     * settings, see the <b>Using Object Mapping to Migrate Data to DynamoDB</b> section at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html"> Using an Amazon DynamoDB
-     * Database as a Target for AWS Database Migration Service</a>.
+     * settings, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using Object
+     * Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @return Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
-     *         settings, see the <b>Using Object Mapping to Migrate Data to DynamoDB</b> section at <a
-     *         href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html"> Using an Amazon
-     *         DynamoDB Database as a Target for AWS Database Migration Service</a>.
+     *         settings, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
+     *         Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
     public DynamoDbSettings getDynamoDbSettings() {
@@ -1015,16 +1000,14 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
-     * settings, see the <b>Using Object Mapping to Migrate Data to DynamoDB</b> section at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html"> Using an Amazon DynamoDB
-     * Database as a Target for AWS Database Migration Service</a>.
+     * settings, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using Object
+     * Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param dynamoDbSettings
      *        Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
-     *        settings, see the <b>Using Object Mapping to Migrate Data to DynamoDB</b> section at <a
-     *        href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html"> Using an Amazon DynamoDB
-     *        Database as a Target for AWS Database Migration Service</a>.
+     *        settings, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
+     *        Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1036,16 +1019,17 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see
-     * the <b>Extra Connection Attributes</b> section at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html"> Using Amazon S3 as a Target for AWS
-     * Database Migration Service</a>.
+     * <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
+     * Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the <i>AWS Database Migration Service
+     * User Guide.</i>
      * </p>
      * 
      * @param s3Settings
      *        Settings in JSON format for the target Amazon S3 endpoint. For more information about the available
-     *        settings, see the <b>Extra Connection Attributes</b> section at <a
-     *        href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html"> Using Amazon S3 as a Target
-     *        for AWS Database Migration Service</a>.
+     *        settings, see <a
+     *        href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring"
+     *        >Extra Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the <i>AWS Database
+     *        Migration Service User Guide.</i>
      */
 
     public void setS3Settings(S3Settings s3Settings) {
@@ -1055,15 +1039,16 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see
-     * the <b>Extra Connection Attributes</b> section at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html"> Using Amazon S3 as a Target for AWS
-     * Database Migration Service</a>.
+     * <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
+     * Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the <i>AWS Database Migration Service
+     * User Guide.</i>
      * </p>
      * 
      * @return Settings in JSON format for the target Amazon S3 endpoint. For more information about the available
-     *         settings, see the <b>Extra Connection Attributes</b> section at <a
-     *         href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html"> Using Amazon S3 as a Target
-     *         for AWS Database Migration Service</a>.
+     *         settings, see <a
+     *         href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring"
+     *         >Extra Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the <i>AWS Database
+     *         Migration Service User Guide.</i>
      */
 
     public S3Settings getS3Settings() {
@@ -1073,16 +1058,17 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see
-     * the <b>Extra Connection Attributes</b> section at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html"> Using Amazon S3 as a Target for AWS
-     * Database Migration Service</a>.
+     * <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
+     * Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the <i>AWS Database Migration Service
+     * User Guide.</i>
      * </p>
      * 
      * @param s3Settings
      *        Settings in JSON format for the target Amazon S3 endpoint. For more information about the available
-     *        settings, see the <b>Extra Connection Attributes</b> section at <a
-     *        href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html"> Using Amazon S3 as a Target
-     *        for AWS Database Migration Service</a>.
+     *        settings, see <a
+     *        href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring"
+     *        >Extra Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the <i>AWS Database
+     *        Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1093,70 +1079,69 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The settings in JSON format for the DMS Transfer type source endpoint.
+     * The settings in JSON format for the DMS transfer type of source endpoint.
      * </p>
      * <p>
-     * Attributes include:
+     * Possible attributes include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     * <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
      * </p>
      * </li>
      * <li>
      * <p>
-     * bucketName - The name of the S3 bucket to use.
+     * <code>bucketName</code> - The name of the S3 bucket to use.
      * </p>
      * </li>
      * <li>
      * <p>
-     * compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the default) or do
-     * not use to leave the files uncompressed.
+     * <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use GZIP, set
+     * this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this value.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     * Shorthand syntax for these attributes is as follows:
+     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      * </p>
      * <p>
-     * JSON syntax:
-     * </p>
-     * <p>
-     * { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     * JSON syntax for these attributes is as follows:
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
      * </p>
      * 
      * @param dmsTransferSettings
-     *        The settings in JSON format for the DMS Transfer type source endpoint. </p>
+     *        The settings in JSON format for the DMS transfer type of source endpoint. </p>
      *        <p>
-     *        Attributes include:
+     *        Possible attributes include the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     *        <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        bucketName - The name of the S3 bucket to use.
+     *        <code>bucketName</code> - The name of the S3 bucket to use.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the
-     *        default) or do not use to leave the files uncompressed.
+     *        <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use
+     *        GZIP, set this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this
+     *        value.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     *        Shorthand syntax for these attributes is as follows:
+     *        <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      *        </p>
      *        <p>
-     *        JSON syntax:
-     *        </p>
-     *        <p>
-     *        { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     *        JSON syntax for these attributes is as follows:
+     *        <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
      */
 
     public void setDmsTransferSettings(DmsTransferSettings dmsTransferSettings) {
@@ -1165,69 +1150,68 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The settings in JSON format for the DMS Transfer type source endpoint.
+     * The settings in JSON format for the DMS transfer type of source endpoint.
      * </p>
      * <p>
-     * Attributes include:
+     * Possible attributes include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     * <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
      * </p>
      * </li>
      * <li>
      * <p>
-     * bucketName - The name of the S3 bucket to use.
+     * <code>bucketName</code> - The name of the S3 bucket to use.
      * </p>
      * </li>
      * <li>
      * <p>
-     * compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the default) or do
-     * not use to leave the files uncompressed.
+     * <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use GZIP, set
+     * this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this value.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     * Shorthand syntax for these attributes is as follows:
+     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      * </p>
      * <p>
-     * JSON syntax:
-     * </p>
-     * <p>
-     * { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     * JSON syntax for these attributes is as follows:
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
      * </p>
      * 
-     * @return The settings in JSON format for the DMS Transfer type source endpoint. </p>
+     * @return The settings in JSON format for the DMS transfer type of source endpoint. </p>
      *         <p>
-     *         Attributes include:
+     *         Possible attributes include the following:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     *         <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         bucketName - The name of the S3 bucket to use.
+     *         <code>bucketName</code> - The name of the S3 bucket to use.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the
-     *         default) or do not use to leave the files uncompressed.
+     *         <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use
+     *         GZIP, set this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this
+     *         value.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     *         Shorthand syntax for these attributes is as follows:
+     *         <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      *         </p>
      *         <p>
-     *         JSON syntax:
-     *         </p>
-     *         <p>
-     *         { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     *         JSON syntax for these attributes is as follows:
+     *         <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
      */
 
     public DmsTransferSettings getDmsTransferSettings() {
@@ -1236,70 +1220,69 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The settings in JSON format for the DMS Transfer type source endpoint.
+     * The settings in JSON format for the DMS transfer type of source endpoint.
      * </p>
      * <p>
-     * Attributes include:
+     * Possible attributes include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     * <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
      * </p>
      * </li>
      * <li>
      * <p>
-     * bucketName - The name of the S3 bucket to use.
+     * <code>bucketName</code> - The name of the S3 bucket to use.
      * </p>
      * </li>
      * <li>
      * <p>
-     * compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the default) or do
-     * not use to leave the files uncompressed.
+     * <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use GZIP, set
+     * this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this value.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     * Shorthand syntax for these attributes is as follows:
+     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      * </p>
      * <p>
-     * JSON syntax:
-     * </p>
-     * <p>
-     * { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     * JSON syntax for these attributes is as follows:
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
      * </p>
      * 
      * @param dmsTransferSettings
-     *        The settings in JSON format for the DMS Transfer type source endpoint. </p>
+     *        The settings in JSON format for the DMS transfer type of source endpoint. </p>
      *        <p>
-     *        Attributes include:
+     *        Possible attributes include the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     *        <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        bucketName - The name of the S3 bucket to use.
+     *        <code>bucketName</code> - The name of the S3 bucket to use.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the
-     *        default) or do not use to leave the files uncompressed.
+     *        <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use
+     *        GZIP, set this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this
+     *        value.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     *        Shorthand syntax for these attributes is as follows:
+     *        <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      *        </p>
      *        <p>
-     *        JSON syntax:
-     *        </p>
-     *        <p>
-     *        { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     *        JSON syntax for these attributes is as follows:
+     *        <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1311,16 +1294,16 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see
-     * the <b>Configuration Properties When Using MongoDB as a Source for AWS Database Migration Service</b> section at
-     * <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using MongoDB as a Target for
-     * AWS Database Migration Service</a>.
+     * the configuration properties section in <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using MongoDB as a Target for
+     * AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param mongoDbSettings
      *        Settings in JSON format for the source MongoDB endpoint. For more information about the available
-     *        settings, see the <b>Configuration Properties When Using MongoDB as a Source for AWS Database Migration
-     *        Service</b> section at <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
-     *        Using MongoDB as a Target for AWS Database Migration Service</a>.
+     *        settings, see the configuration properties section in <a
+     *        href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using MongoDB as a Target
+     *        for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
     public void setMongoDbSettings(MongoDbSettings mongoDbSettings) {
@@ -1330,16 +1313,15 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see
-     * the <b>Configuration Properties When Using MongoDB as a Source for AWS Database Migration Service</b> section at
-     * <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using MongoDB as a Target for
-     * AWS Database Migration Service</a>.
+     * the configuration properties section in <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using MongoDB as a Target for
+     * AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @return Settings in JSON format for the source MongoDB endpoint. For more information about the available
-     *         settings, see the <b>Configuration Properties When Using MongoDB as a Source for AWS Database Migration
-     *         Service</b> section at <a
+     *         settings, see the configuration properties section in <a
      *         href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using MongoDB as a
-     *         Target for AWS Database Migration Service</a>.
+     *         Target for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
     public MongoDbSettings getMongoDbSettings() {
@@ -1349,21 +1331,149 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see
-     * the <b>Configuration Properties When Using MongoDB as a Source for AWS Database Migration Service</b> section at
-     * <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using MongoDB as a Target for
-     * AWS Database Migration Service</a>.
+     * the configuration properties section in <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using MongoDB as a Target for
+     * AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param mongoDbSettings
      *        Settings in JSON format for the source MongoDB endpoint. For more information about the available
-     *        settings, see the <b>Configuration Properties When Using MongoDB as a Source for AWS Database Migration
-     *        Service</b> section at <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
-     *        Using MongoDB as a Target for AWS Database Migration Service</a>.
+     *        settings, see the configuration properties section in <a
+     *        href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using MongoDB as a Target
+     *        for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateEndpointRequest withMongoDbSettings(MongoDbSettings mongoDbSettings) {
         setMongoDbSettings(mongoDbSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about the
+     * available settings, see <a href=
+     * "http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     * >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
+     * Guide.</i>
+     * </p>
+     * 
+     * @param kinesisSettings
+     *        Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about
+     *        the available settings, see <a href=
+     *        "http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     *        >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
+     *        Guide.</i>
+     */
+
+    public void setKinesisSettings(KinesisSettings kinesisSettings) {
+        this.kinesisSettings = kinesisSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about the
+     * available settings, see <a href=
+     * "http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     * >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
+     * Guide.</i>
+     * </p>
+     * 
+     * @return Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about
+     *         the available settings, see <a href=
+     *         "http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     *         >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
+     *         Guide.</i>
+     */
+
+    public KinesisSettings getKinesisSettings() {
+        return this.kinesisSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about the
+     * available settings, see <a href=
+     * "http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     * >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
+     * Guide.</i>
+     * </p>
+     * 
+     * @param kinesisSettings
+     *        Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about
+     *        the available settings, see <a href=
+     *        "http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping "
+     *        >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
+     *        Guide.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointRequest withKinesisSettings(KinesisSettings kinesisSettings) {
+        setKinesisSettings(kinesisSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the target Elasticsearch endpoint. For more information about the available settings,
+     * see <a href=
+     * "http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration"
+     * >Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in the <i>AWS Database
+     * Migration User Guide.</i>
+     * </p>
+     * 
+     * @param elasticsearchSettings
+     *        Settings in JSON format for the target Elasticsearch endpoint. For more information about the available
+     *        settings, see <a href=
+     *        "http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration"
+     *        >Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in the <i>AWS Database
+     *        Migration User Guide.</i>
+     */
+
+    public void setElasticsearchSettings(ElasticsearchSettings elasticsearchSettings) {
+        this.elasticsearchSettings = elasticsearchSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the target Elasticsearch endpoint. For more information about the available settings,
+     * see <a href=
+     * "http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration"
+     * >Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in the <i>AWS Database
+     * Migration User Guide.</i>
+     * </p>
+     * 
+     * @return Settings in JSON format for the target Elasticsearch endpoint. For more information about the available
+     *         settings, see <a href=
+     *         "http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration"
+     *         >Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in the <i>AWS Database
+     *         Migration User Guide.</i>
+     */
+
+    public ElasticsearchSettings getElasticsearchSettings() {
+        return this.elasticsearchSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the target Elasticsearch endpoint. For more information about the available settings,
+     * see <a href=
+     * "http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration"
+     * >Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in the <i>AWS Database
+     * Migration User Guide.</i>
+     * </p>
+     * 
+     * @param elasticsearchSettings
+     *        Settings in JSON format for the target Elasticsearch endpoint. For more information about the available
+     *        settings, see <a href=
+     *        "http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration"
+     *        >Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in the <i>AWS Database
+     *        Migration User Guide.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointRequest withElasticsearchSettings(ElasticsearchSettings elasticsearchSettings) {
+        setElasticsearchSettings(elasticsearchSettings);
         return this;
     }
 
@@ -1415,7 +1525,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getDmsTransferSettings() != null)
             sb.append("DmsTransferSettings: ").append(getDmsTransferSettings()).append(",");
         if (getMongoDbSettings() != null)
-            sb.append("MongoDbSettings: ").append(getMongoDbSettings());
+            sb.append("MongoDbSettings: ").append(getMongoDbSettings()).append(",");
+        if (getKinesisSettings() != null)
+            sb.append("KinesisSettings: ").append(getKinesisSettings()).append(",");
+        if (getElasticsearchSettings() != null)
+            sb.append("ElasticsearchSettings: ").append(getElasticsearchSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -1506,6 +1620,14 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getMongoDbSettings() != null && other.getMongoDbSettings().equals(this.getMongoDbSettings()) == false)
             return false;
+        if (other.getKinesisSettings() == null ^ this.getKinesisSettings() == null)
+            return false;
+        if (other.getKinesisSettings() != null && other.getKinesisSettings().equals(this.getKinesisSettings()) == false)
+            return false;
+        if (other.getElasticsearchSettings() == null ^ this.getElasticsearchSettings() == null)
+            return false;
+        if (other.getElasticsearchSettings() != null && other.getElasticsearchSettings().equals(this.getElasticsearchSettings()) == false)
+            return false;
         return true;
     }
 
@@ -1533,6 +1655,8 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getS3Settings() == null) ? 0 : getS3Settings().hashCode());
         hashCode = prime * hashCode + ((getDmsTransferSettings() == null) ? 0 : getDmsTransferSettings().hashCode());
         hashCode = prime * hashCode + ((getMongoDbSettings() == null) ? 0 : getMongoDbSettings().hashCode());
+        hashCode = prime * hashCode + ((getKinesisSettings() == null) ? 0 : getKinesisSettings().hashCode());
+        hashCode = prime * hashCode + ((getElasticsearchSettings() == null) ? 0 : getElasticsearchSettings().hashCode());
         return hashCode;
     }
 

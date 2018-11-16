@@ -48,6 +48,10 @@ public class CreateClusterSnapshotRequestMarshaller implements Marshaller<Reques
             request.addParameter("ClusterIdentifier", StringUtils.fromString(createClusterSnapshotRequest.getClusterIdentifier()));
         }
 
+        if (createClusterSnapshotRequest.getManualSnapshotRetentionPeriod() != null) {
+            request.addParameter("ManualSnapshotRetentionPeriod", StringUtils.fromInteger(createClusterSnapshotRequest.getManualSnapshotRetentionPeriod()));
+        }
+
         if (!createClusterSnapshotRequest.getTags().isEmpty()
                 || !((com.amazonaws.internal.SdkInternalList<Tag>) createClusterSnapshotRequest.getTags()).isAutoConstruct()) {
             com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createClusterSnapshotRequest.getTags();

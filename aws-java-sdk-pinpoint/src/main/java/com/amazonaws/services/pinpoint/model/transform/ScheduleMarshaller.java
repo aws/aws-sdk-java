@@ -29,6 +29,8 @@ public class ScheduleMarshaller {
 
     private static final MarshallingInfo<String> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("EndTime").build();
+    private static final MarshallingInfo<StructuredPojo> EVENTFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventFilter").build();
     private static final MarshallingInfo<String> FREQUENCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Frequency").build();
     private static final MarshallingInfo<Boolean> ISLOCALTIME_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -57,6 +59,7 @@ public class ScheduleMarshaller {
 
         try {
             protocolMarshaller.marshall(schedule.getEndTime(), ENDTIME_BINDING);
+            protocolMarshaller.marshall(schedule.getEventFilter(), EVENTFILTER_BINDING);
             protocolMarshaller.marshall(schedule.getFrequency(), FREQUENCY_BINDING);
             protocolMarshaller.marshall(schedule.getIsLocalTime(), ISLOCALTIME_BINDING);
             protocolMarshaller.marshall(schedule.getQuietTime(), QUIETTIME_BINDING);

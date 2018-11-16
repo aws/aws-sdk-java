@@ -57,7 +57,7 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
      * object
      */
     private java.util.Map<String, String> data;
-    /** The URL that points to a video used in the push notification. */
+    /** A URL that refers to the location of an image or video that you want to display in the push notification. */
     private String mediaUrl;
     /** The preferred authentication method, either "CERTIFICATE" or "TOKEN" */
     private String preferredAuthenticationMethod;
@@ -436,10 +436,10 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL that points to a video used in the push notification.
+     * A URL that refers to the location of an image or video that you want to display in the push notification.
      * 
      * @param mediaUrl
-     *        The URL that points to a video used in the push notification.
+     *        A URL that refers to the location of an image or video that you want to display in the push notification.
      */
 
     public void setMediaUrl(String mediaUrl) {
@@ -447,9 +447,9 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL that points to a video used in the push notification.
+     * A URL that refers to the location of an image or video that you want to display in the push notification.
      * 
-     * @return The URL that points to a video used in the push notification.
+     * @return A URL that refers to the location of an image or video that you want to display in the push notification.
      */
 
     public String getMediaUrl() {
@@ -457,10 +457,10 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL that points to a video used in the push notification.
+     * A URL that refers to the location of an image or video that you want to display in the push notification.
      * 
      * @param mediaUrl
-     *        The URL that points to a video used in the push notification.
+     *        A URL that refers to the location of an image or video that you want to display in the push notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

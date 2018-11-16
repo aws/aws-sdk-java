@@ -358,11 +358,12 @@ public interface AmazonDirectConnect {
      * Creates a BGP peer on the specified virtual interface.
      * </p>
      * <p>
-     * The BGP peer cannot be in the same address family (IPv4/IPv6) of an existing BGP peer on the virtual interface.
+     * You must create a BGP peer for the corresponding address family (IPv4/IPv6) in order to access AWS resources that
+     * also use that address family.
      * </p>
      * <p>
-     * You must create a BGP peer for the corresponding address family in order to access AWS resources that also use
-     * that address family.
+     * If logical redundancy is not supported by the connection, interconnect, or LAG, the BGP peer cannot be in the
+     * same address family as an existing BGP peer on the virtual interface.
      * </p>
      * <p>
      * When creating a IPv6 BGP peer, omit the Amazon address and customer address. IPv6 addresses are automatically
@@ -581,7 +582,7 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Deletes the BGP peer on the specified virtual interface with the specified customer address and ASN.
+     * Deletes the specified BGP peer on the specified virtual interface with the specified customer address and ASN.
      * </p>
      * <p>
      * You cannot delete the last BGP peer from a virtual interface.

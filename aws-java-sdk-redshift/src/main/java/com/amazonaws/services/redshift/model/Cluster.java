@@ -172,6 +172,16 @@ public class Cluster implements Serializable, Cloneable {
     private Integer automatedSnapshotRetentionPeriod;
     /**
      * <p>
+     * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     * indefinitely. This setting does not change the retention period of existing snapshots.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653
+     * </p>
+     */
+    private Integer manualSnapshotRetentionPeriod;
+    /**
+     * <p>
      * A list of cluster security group that are associated with the cluster. Each security group is represented by an
      * element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code>
      * subelements.
@@ -358,7 +368,7 @@ public class Cluster implements Serializable, Cloneable {
     private String maintenanceTrackName;
     /**
      * <p>
-     * Indicates the number of nodes the cluster can be resized to with the elastic resize method.
+     * The number of nodes that you can resize the cluster to with the elastic resize method.
      * </p>
      */
     private String elasticResizeNumberOfNodeOptions;
@@ -368,6 +378,18 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DeferredMaintenanceWindow> deferredMaintenanceWindows;
+    /**
+     * <p>
+     * A unique identifier for the cluster snapshot schedule.
+     * </p>
+     */
+    private String snapshotScheduleIdentifier;
+    /**
+     * <p>
+     * The current state of the cluster snapshot schedule.
+     * </p>
+     */
+    private String snapshotScheduleState;
     /**
      * <p>
      * Returns the following:
@@ -1281,6 +1303,67 @@ public class Cluster implements Serializable, Cloneable {
 
     public Cluster withAutomatedSnapshotRetentionPeriod(Integer automatedSnapshotRetentionPeriod) {
         setAutomatedSnapshotRetentionPeriod(automatedSnapshotRetentionPeriod);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     * indefinitely. This setting does not change the retention period of existing snapshots.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653
+     * </p>
+     * 
+     * @param manualSnapshotRetentionPeriod
+     *        The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     *        indefinitely. This setting does not change the retention period of existing snapshots.</p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653
+     */
+
+    public void setManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
+        this.manualSnapshotRetentionPeriod = manualSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     * indefinitely. This setting does not change the retention period of existing snapshots.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653
+     * </p>
+     * 
+     * @return The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     *         indefinitely. This setting does not change the retention period of existing snapshots.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653
+     */
+
+    public Integer getManualSnapshotRetentionPeriod() {
+        return this.manualSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     * indefinitely. This setting does not change the retention period of existing snapshots.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653
+     * </p>
+     * 
+     * @param manualSnapshotRetentionPeriod
+     *        The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     *        indefinitely. This setting does not change the retention period of existing snapshots.</p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
+        setManualSnapshotRetentionPeriod(manualSnapshotRetentionPeriod);
         return this;
     }
 
@@ -2833,11 +2916,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the number of nodes the cluster can be resized to with the elastic resize method.
+     * The number of nodes that you can resize the cluster to with the elastic resize method.
      * </p>
      * 
      * @param elasticResizeNumberOfNodeOptions
-     *        Indicates the number of nodes the cluster can be resized to with the elastic resize method.
+     *        The number of nodes that you can resize the cluster to with the elastic resize method.
      */
 
     public void setElasticResizeNumberOfNodeOptions(String elasticResizeNumberOfNodeOptions) {
@@ -2846,10 +2929,10 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the number of nodes the cluster can be resized to with the elastic resize method.
+     * The number of nodes that you can resize the cluster to with the elastic resize method.
      * </p>
      * 
-     * @return Indicates the number of nodes the cluster can be resized to with the elastic resize method.
+     * @return The number of nodes that you can resize the cluster to with the elastic resize method.
      */
 
     public String getElasticResizeNumberOfNodeOptions() {
@@ -2858,11 +2941,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the number of nodes the cluster can be resized to with the elastic resize method.
+     * The number of nodes that you can resize the cluster to with the elastic resize method.
      * </p>
      * 
      * @param elasticResizeNumberOfNodeOptions
-     *        Indicates the number of nodes the cluster can be resized to with the elastic resize method.
+     *        The number of nodes that you can resize the cluster to with the elastic resize method.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2941,6 +3024,105 @@ public class Cluster implements Serializable, Cloneable {
 
     public Cluster withDeferredMaintenanceWindows(java.util.Collection<DeferredMaintenanceWindow> deferredMaintenanceWindows) {
         setDeferredMaintenanceWindows(deferredMaintenanceWindows);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the cluster snapshot schedule.
+     * </p>
+     * 
+     * @param snapshotScheduleIdentifier
+     *        A unique identifier for the cluster snapshot schedule.
+     */
+
+    public void setSnapshotScheduleIdentifier(String snapshotScheduleIdentifier) {
+        this.snapshotScheduleIdentifier = snapshotScheduleIdentifier;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the cluster snapshot schedule.
+     * </p>
+     * 
+     * @return A unique identifier for the cluster snapshot schedule.
+     */
+
+    public String getSnapshotScheduleIdentifier() {
+        return this.snapshotScheduleIdentifier;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the cluster snapshot schedule.
+     * </p>
+     * 
+     * @param snapshotScheduleIdentifier
+     *        A unique identifier for the cluster snapshot schedule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withSnapshotScheduleIdentifier(String snapshotScheduleIdentifier) {
+        setSnapshotScheduleIdentifier(snapshotScheduleIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current state of the cluster snapshot schedule.
+     * </p>
+     * 
+     * @param snapshotScheduleState
+     *        The current state of the cluster snapshot schedule.
+     * @see ScheduleState
+     */
+
+    public void setSnapshotScheduleState(String snapshotScheduleState) {
+        this.snapshotScheduleState = snapshotScheduleState;
+    }
+
+    /**
+     * <p>
+     * The current state of the cluster snapshot schedule.
+     * </p>
+     * 
+     * @return The current state of the cluster snapshot schedule.
+     * @see ScheduleState
+     */
+
+    public String getSnapshotScheduleState() {
+        return this.snapshotScheduleState;
+    }
+
+    /**
+     * <p>
+     * The current state of the cluster snapshot schedule.
+     * </p>
+     * 
+     * @param snapshotScheduleState
+     *        The current state of the cluster snapshot schedule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ScheduleState
+     */
+
+    public Cluster withSnapshotScheduleState(String snapshotScheduleState) {
+        setSnapshotScheduleState(snapshotScheduleState);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current state of the cluster snapshot schedule.
+     * </p>
+     * 
+     * @param snapshotScheduleState
+     *        The current state of the cluster snapshot schedule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ScheduleState
+     */
+
+    public Cluster withSnapshotScheduleState(ScheduleState snapshotScheduleState) {
+        this.snapshotScheduleState = snapshotScheduleState.toString();
         return this;
     }
 
@@ -3082,6 +3264,8 @@ public class Cluster implements Serializable, Cloneable {
             sb.append("ClusterCreateTime: ").append(getClusterCreateTime()).append(",");
         if (getAutomatedSnapshotRetentionPeriod() != null)
             sb.append("AutomatedSnapshotRetentionPeriod: ").append(getAutomatedSnapshotRetentionPeriod()).append(",");
+        if (getManualSnapshotRetentionPeriod() != null)
+            sb.append("ManualSnapshotRetentionPeriod: ").append(getManualSnapshotRetentionPeriod()).append(",");
         if (getClusterSecurityGroups() != null)
             sb.append("ClusterSecurityGroups: ").append(getClusterSecurityGroups()).append(",");
         if (getVpcSecurityGroups() != null)
@@ -3140,6 +3324,10 @@ public class Cluster implements Serializable, Cloneable {
             sb.append("ElasticResizeNumberOfNodeOptions: ").append(getElasticResizeNumberOfNodeOptions()).append(",");
         if (getDeferredMaintenanceWindows() != null)
             sb.append("DeferredMaintenanceWindows: ").append(getDeferredMaintenanceWindows()).append(",");
+        if (getSnapshotScheduleIdentifier() != null)
+            sb.append("SnapshotScheduleIdentifier: ").append(getSnapshotScheduleIdentifier()).append(",");
+        if (getSnapshotScheduleState() != null)
+            sb.append("SnapshotScheduleState: ").append(getSnapshotScheduleState()).append(",");
         if (getResizeInfo() != null)
             sb.append("ResizeInfo: ").append(getResizeInfo());
         sb.append("}");
@@ -3192,6 +3380,11 @@ public class Cluster implements Serializable, Cloneable {
             return false;
         if (other.getAutomatedSnapshotRetentionPeriod() != null
                 && other.getAutomatedSnapshotRetentionPeriod().equals(this.getAutomatedSnapshotRetentionPeriod()) == false)
+            return false;
+        if (other.getManualSnapshotRetentionPeriod() == null ^ this.getManualSnapshotRetentionPeriod() == null)
+            return false;
+        if (other.getManualSnapshotRetentionPeriod() != null
+                && other.getManualSnapshotRetentionPeriod().equals(this.getManualSnapshotRetentionPeriod()) == false)
             return false;
         if (other.getClusterSecurityGroups() == null ^ this.getClusterSecurityGroups() == null)
             return false;
@@ -3310,6 +3503,14 @@ public class Cluster implements Serializable, Cloneable {
             return false;
         if (other.getDeferredMaintenanceWindows() != null && other.getDeferredMaintenanceWindows().equals(this.getDeferredMaintenanceWindows()) == false)
             return false;
+        if (other.getSnapshotScheduleIdentifier() == null ^ this.getSnapshotScheduleIdentifier() == null)
+            return false;
+        if (other.getSnapshotScheduleIdentifier() != null && other.getSnapshotScheduleIdentifier().equals(this.getSnapshotScheduleIdentifier()) == false)
+            return false;
+        if (other.getSnapshotScheduleState() == null ^ this.getSnapshotScheduleState() == null)
+            return false;
+        if (other.getSnapshotScheduleState() != null && other.getSnapshotScheduleState().equals(this.getSnapshotScheduleState()) == false)
+            return false;
         if (other.getResizeInfo() == null ^ this.getResizeInfo() == null)
             return false;
         if (other.getResizeInfo() != null && other.getResizeInfo().equals(this.getResizeInfo()) == false)
@@ -3331,6 +3532,7 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
         hashCode = prime * hashCode + ((getClusterCreateTime() == null) ? 0 : getClusterCreateTime().hashCode());
         hashCode = prime * hashCode + ((getAutomatedSnapshotRetentionPeriod() == null) ? 0 : getAutomatedSnapshotRetentionPeriod().hashCode());
+        hashCode = prime * hashCode + ((getManualSnapshotRetentionPeriod() == null) ? 0 : getManualSnapshotRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getClusterSecurityGroups() == null) ? 0 : getClusterSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getVpcSecurityGroups() == null) ? 0 : getVpcSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getClusterParameterGroups() == null) ? 0 : getClusterParameterGroups().hashCode());
@@ -3360,6 +3562,8 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
         hashCode = prime * hashCode + ((getElasticResizeNumberOfNodeOptions() == null) ? 0 : getElasticResizeNumberOfNodeOptions().hashCode());
         hashCode = prime * hashCode + ((getDeferredMaintenanceWindows() == null) ? 0 : getDeferredMaintenanceWindows().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotScheduleIdentifier() == null) ? 0 : getSnapshotScheduleIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotScheduleState() == null) ? 0 : getSnapshotScheduleState().hashCode());
         hashCode = prime * hashCode + ((getResizeInfo() == null) ? 0 : getResizeInfo().hashCode());
         return hashCode;
     }

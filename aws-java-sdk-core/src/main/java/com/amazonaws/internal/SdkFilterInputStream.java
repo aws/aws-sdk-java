@@ -16,11 +16,11 @@ package com.amazonaws.internal;
 
 import static com.amazonaws.util.SdkRuntime.shouldAbort;
 
+import com.amazonaws.AbortedException;
+import com.amazonaws.annotation.SdkProtectedApi;
 import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-
-import com.amazonaws.AbortedException;
 
 /**
  * Base class for AWS Java SDK specific {@link FilterInputStream}.
@@ -31,6 +31,14 @@ public class SdkFilterInputStream extends FilterInputStream implements
 
     protected SdkFilterInputStream(InputStream in) {
         super(in);
+    }
+
+    /**
+     * @return The wrapped stream.
+     */
+    @SdkProtectedApi
+    public InputStream getDelegateStream() {
+        return in;
     }
 
     @Override

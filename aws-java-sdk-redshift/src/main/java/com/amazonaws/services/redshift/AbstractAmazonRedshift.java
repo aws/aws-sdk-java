@@ -54,6 +54,16 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public BatchDeleteClusterSnapshotsResult batchDeleteClusterSnapshots(BatchDeleteClusterSnapshotsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchModifyClusterSnapshotsResult batchModifyClusterSnapshots(BatchModifyClusterSnapshotsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelResizeResult cancelResize(CancelResizeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -109,6 +119,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public CreateSnapshotScheduleResult createSnapshotSchedule(CreateSnapshotScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateTagsResult createTags(CreateTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -155,6 +170,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
 
     @Override
     public DeleteSnapshotCopyGrantResult deleteSnapshotCopyGrant(DeleteSnapshotCopyGrantRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSnapshotScheduleResult deleteSnapshotSchedule(DeleteSnapshotScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -349,6 +369,16 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public DescribeSnapshotSchedulesResult describeSnapshotSchedules(DescribeSnapshotSchedulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeStorageResult describeStorage(DescribeStorageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeTableRestoreStatusResult describeTableRestoreStatus(DescribeTableRestoreStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -424,6 +454,16 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public Snapshot modifyClusterSnapshot(ModifyClusterSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyClusterSnapshotScheduleResult modifyClusterSnapshotSchedule(ModifyClusterSnapshotScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ClusterSubnetGroup modifyClusterSubnetGroup(ModifyClusterSubnetGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -435,6 +475,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
 
     @Override
     public Cluster modifySnapshotCopyRetentionPeriod(ModifySnapshotCopyRetentionPeriodRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifySnapshotScheduleResult modifySnapshotSchedule(ModifySnapshotScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

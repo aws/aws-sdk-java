@@ -317,6 +317,16 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Integer automatedSnapshotRetentionPeriod;
     /**
      * <p>
+     * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     * indefinitely. This setting does not change the retention period of existing snapshots.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653
+     * </p>
+     */
+    private Integer manualSnapshotRetentionPeriod;
+    /**
+     * <p>
      * The port number on which the cluster accepts incoming connections.
      * </p>
      * <p>
@@ -476,6 +486,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String maintenanceTrackName;
+    /**
+     * <p>
+     * A unique identifier for the snapshot schedule.
+     * </p>
+     */
+    private String snapshotScheduleIdentifier;
 
     /**
      * <p>
@@ -2311,6 +2327,67 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     * indefinitely. This setting does not change the retention period of existing snapshots.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653
+     * </p>
+     * 
+     * @param manualSnapshotRetentionPeriod
+     *        The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     *        indefinitely. This setting does not change the retention period of existing snapshots.</p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653
+     */
+
+    public void setManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
+        this.manualSnapshotRetentionPeriod = manualSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     * indefinitely. This setting does not change the retention period of existing snapshots.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653
+     * </p>
+     * 
+     * @return The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     *         indefinitely. This setting does not change the retention period of existing snapshots.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653
+     */
+
+    public Integer getManualSnapshotRetentionPeriod() {
+        return this.manualSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     * indefinitely. This setting does not change the retention period of existing snapshots.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653
+     * </p>
+     * 
+     * @param manualSnapshotRetentionPeriod
+     *        The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     *        indefinitely. This setting does not change the retention period of existing snapshots.</p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
+        setManualSnapshotRetentionPeriod(manualSnapshotRetentionPeriod);
+        return this;
+    }
+
+    /**
+     * <p>
      * The port number on which the cluster accepts incoming connections.
      * </p>
      * <p>
@@ -3474,6 +3551,46 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * A unique identifier for the snapshot schedule.
+     * </p>
+     * 
+     * @param snapshotScheduleIdentifier
+     *        A unique identifier for the snapshot schedule.
+     */
+
+    public void setSnapshotScheduleIdentifier(String snapshotScheduleIdentifier) {
+        this.snapshotScheduleIdentifier = snapshotScheduleIdentifier;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the snapshot schedule.
+     * </p>
+     * 
+     * @return A unique identifier for the snapshot schedule.
+     */
+
+    public String getSnapshotScheduleIdentifier() {
+        return this.snapshotScheduleIdentifier;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the snapshot schedule.
+     * </p>
+     * 
+     * @param snapshotScheduleIdentifier
+     *        A unique identifier for the snapshot schedule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withSnapshotScheduleIdentifier(String snapshotScheduleIdentifier) {
+        setSnapshotScheduleIdentifier(snapshotScheduleIdentifier);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -3510,6 +3627,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("ClusterParameterGroupName: ").append(getClusterParameterGroupName()).append(",");
         if (getAutomatedSnapshotRetentionPeriod() != null)
             sb.append("AutomatedSnapshotRetentionPeriod: ").append(getAutomatedSnapshotRetentionPeriod()).append(",");
+        if (getManualSnapshotRetentionPeriod() != null)
+            sb.append("ManualSnapshotRetentionPeriod: ").append(getManualSnapshotRetentionPeriod()).append(",");
         if (getPort() != null)
             sb.append("Port: ").append(getPort()).append(",");
         if (getClusterVersion() != null)
@@ -3539,7 +3658,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getIamRoles() != null)
             sb.append("IamRoles: ").append(getIamRoles()).append(",");
         if (getMaintenanceTrackName() != null)
-            sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName());
+            sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName()).append(",");
+        if (getSnapshotScheduleIdentifier() != null)
+            sb.append("SnapshotScheduleIdentifier: ").append(getSnapshotScheduleIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -3607,6 +3728,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (other.getAutomatedSnapshotRetentionPeriod() != null
                 && other.getAutomatedSnapshotRetentionPeriod().equals(this.getAutomatedSnapshotRetentionPeriod()) == false)
             return false;
+        if (other.getManualSnapshotRetentionPeriod() == null ^ this.getManualSnapshotRetentionPeriod() == null)
+            return false;
+        if (other.getManualSnapshotRetentionPeriod() != null
+                && other.getManualSnapshotRetentionPeriod().equals(this.getManualSnapshotRetentionPeriod()) == false)
+            return false;
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
@@ -3668,6 +3794,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getMaintenanceTrackName() != null && other.getMaintenanceTrackName().equals(this.getMaintenanceTrackName()) == false)
             return false;
+        if (other.getSnapshotScheduleIdentifier() == null ^ this.getSnapshotScheduleIdentifier() == null)
+            return false;
+        if (other.getSnapshotScheduleIdentifier() != null && other.getSnapshotScheduleIdentifier().equals(this.getSnapshotScheduleIdentifier()) == false)
+            return false;
         return true;
     }
 
@@ -3689,6 +3819,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode());
         hashCode = prime * hashCode + ((getClusterParameterGroupName() == null) ? 0 : getClusterParameterGroupName().hashCode());
         hashCode = prime * hashCode + ((getAutomatedSnapshotRetentionPeriod() == null) ? 0 : getAutomatedSnapshotRetentionPeriod().hashCode());
+        hashCode = prime * hashCode + ((getManualSnapshotRetentionPeriod() == null) ? 0 : getManualSnapshotRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getClusterVersion() == null) ? 0 : getClusterVersion().hashCode());
         hashCode = prime * hashCode + ((getAllowVersionUpgrade() == null) ? 0 : getAllowVersionUpgrade().hashCode());
@@ -3704,6 +3835,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode());
         hashCode = prime * hashCode + ((getIamRoles() == null) ? 0 : getIamRoles().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotScheduleIdentifier() == null) ? 0 : getSnapshotScheduleIdentifier().hashCode());
         return hashCode;
     }
 

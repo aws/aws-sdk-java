@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.451-SNAPSHOT</version>
+    <version>1.11.451</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,30 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-route53resolver</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-ram</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-s3control</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-pinpointsmsvoice</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-pinpointemail</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -1010,6 +1034,22 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>Amazon Route 53 Resolver</title>
+                                  <packages>com.amazonaws.services.route53resolver*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Resource Access Manager</title>
+                                  <packages>com.amazonaws.services.ram*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS S3 Control</title>
+                                  <packages>com.amazonaws.services.s3control*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Pinpoint SMS and Voice</title>
+                                  <packages>com.amazonaws.services.pinpointsmsvoice*</packages>
+                              </group>
                               <group>
                                   <title>Amazon Pinpoint Email</title>
                                   <packages>com.amazonaws.services.pinpointemail*</packages>

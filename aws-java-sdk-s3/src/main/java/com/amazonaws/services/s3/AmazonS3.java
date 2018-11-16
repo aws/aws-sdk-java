@@ -51,6 +51,8 @@ import com.amazonaws.services.s3.model.DeleteBucketEncryptionResult;
 import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketLifecycleConfigurationRequest;
+import com.amazonaws.services.s3.model.DeletePublicAccessBlockRequest;
+import com.amazonaws.services.s3.model.DeletePublicAccessBlockResult;
 import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketPolicyRequest;
@@ -76,11 +78,15 @@ import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketLifecycleConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketLocationRequest;
+import com.amazonaws.services.s3.model.GetPublicAccessBlockRequest;
+import com.amazonaws.services.s3.model.GetPublicAccessBlockResult;
 import com.amazonaws.services.s3.model.GetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketNotificationConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketPolicyRequest;
+import com.amazonaws.services.s3.model.GetBucketPolicyStatusRequest;
+import com.amazonaws.services.s3.model.GetBucketPolicyStatusResult;
 import com.amazonaws.services.s3.model.GetBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketTaggingConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketVersioningConfigurationRequest;
@@ -136,6 +142,8 @@ import com.amazonaws.services.s3.model.SetBucketEncryptionResult;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest;
+import com.amazonaws.services.s3.model.SetPublicAccessBlockRequest;
+import com.amazonaws.services.s3.model.SetPublicAccessBlockResult;
 import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationResult;
@@ -5220,6 +5228,50 @@ public interface AmazonS3 extends S3DirectSpi {
      */
     SetBucketEncryptionResult setBucketEncryption(SetBucketEncryptionRequest setBucketEncryptionRequest)
         throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Creates or modifies the Public Access Block configuration for an Amazon S3 bucket.
+     *
+     * @param request The request object for setting the buckets Public Access Block configuration.
+     * @return A {@link SetPublicAccessBlockResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SetPublicAccessBlock">AWS API Documentation</a>
+     */
+    SetPublicAccessBlockResult setPublicAccessBlock(SetPublicAccessBlockRequest request);
+
+    /**
+     * Retrieves the Public Access Block configuration for an Amazon S3 bucket.
+     *
+     * @param request The request object for getting the buckets Public Access Block configuration.
+     * @return A {@link GetPublicAccessBlockResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">AWS API Documentation</a>
+     */
+    GetPublicAccessBlockResult getPublicAccessBlock(GetPublicAccessBlockRequest request);
+
+    /**
+     * Removes the Public Access Block configuration for an Amazon S3 bucket.
+     *
+     * @param request The request object for deleting the buckets Public Access Block configuration.
+     * @return A {@link DeletePublicAccessBlockResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">AWS API Documentation</a>
+     */
+    DeletePublicAccessBlockResult deletePublicAccessBlock(DeletePublicAccessBlockRequest request);
+
+    /**
+     * Retrieves the policy status for an Amazon S3 bucket, indicating whether the bucket is public
+     *
+     * @param request The request object for getting the current policy status of the bucket.
+     * @return A {@link DeletePublicAccessBlockResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicyStatus">AWS API Documentation</a>
+     */
+    GetBucketPolicyStatusResult getBucketPolicyStatus(GetBucketPolicyStatusRequest request);
 
     /**
      * This operation filters the contents of an Amazon S3 object based on a simple Structured Query Language (SQL) statement.

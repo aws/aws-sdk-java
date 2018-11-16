@@ -60,8 +60,8 @@ import com.amazonaws.services.databasemigrationservice.model.transform.*;
  * Server to PostgreSQL.
  * </p>
  * <p>
- * For more information about AWS DMS, see the AWS DMS user guide at <a
- * href="http://docs.aws.amazon.com/dms/latest/userguide/Welcome.html"> What Is AWS Database Migration Service? </a>
+ * For more information about AWS DMS, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What
+ * Is AWS Database Migration Service?</a> in the <i>AWS Database Migration User Guide.</i>
  * </p>
  */
 @ThreadSafe
@@ -479,8 +479,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * </p>
      * <p>
      * For more information about AWS DMS events, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working with Events and Notifications
-     * </a> in the AWS Database MIgration Service User Guide.
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a>
+     * in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param createEventSubscriptionRequest
@@ -1413,8 +1413,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * <p>
      * Lists categories for all event source types, or, if specified, for a specified source type. You can see a list of
      * the event categories and source types in <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working with Events and Notifications
-     * </a> in the AWS Database Migration Service User Guide.
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a>
+     * in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param describeEventCategoriesRequest
@@ -1534,8 +1534,9 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
     /**
      * <p>
      * Lists events for a given source identifier and source type. You can also specify a start and end time. For more
-     * information on AWS DMS events, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">
-     * Working with Events and Notifications </a>.
+     * information on AWS DMS events, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a>
+     * in the <i>AWS Database Migration User Guide.</i>
      * </p>
      * 
      * @param describeEventsRequest
@@ -2517,8 +2518,9 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * You can't modify the task endpoints. The task must be stopped before you can modify it.
      * </p>
      * <p>
-     * For more information about AWS DMS tasks, see the AWS DMS user guide at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working with Migration Tasks </a>
+     * For more information about AWS DMS tasks, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working with Migration Tasks</a> in the
+     * <i>AWS Database Migration Service User Guide</i>.
      * </p>
      * 
      * @param modifyReplicationTaskRequest
@@ -2823,8 +2825,9 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * Starts the replication task.
      * </p>
      * <p>
-     * For more information about AWS DMS tasks, see the AWS DMS user guide at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working with Migration Tasks </a>
+     * For more information about AWS DMS tasks, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working with Migration Tasks </a> in the
+     * <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param startReplicationTaskRequest

@@ -92,6 +92,10 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
                     context.nextToken();
                     project.setTimeoutInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("queuedTimeoutInMinutes", targetDepth)) {
+                    context.nextToken();
+                    project.setQueuedTimeoutInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("encryptionKey", targetDepth)) {
                     context.nextToken();
                     project.setEncryptionKey(context.getUnmarshaller(String.class).unmarshall(context));

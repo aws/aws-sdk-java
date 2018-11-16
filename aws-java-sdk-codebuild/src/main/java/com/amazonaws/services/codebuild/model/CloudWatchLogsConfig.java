@@ -30,7 +30,7 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current status of the Amazon CloudWatch Logs for a build project. Valid values are:
+     * The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:
      * </p>
      * <ul>
      * <li>
@@ -48,9 +48,9 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
     private String status;
     /**
      * <p>
-     * The group name of the Amazon CloudWatch Logs. For more information, see <a
+     * The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
-     * with Log Groups and Log Streams</a>
+     * with Log Groups and Log Streams</a>.
      * </p>
      */
     private String groupName;
@@ -58,14 +58,14 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
      * <p>
      * The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
-     * with Log Groups and Log Streams</a>
+     * with Log Groups and Log Streams</a>.
      * </p>
      */
     private String streamName;
 
     /**
      * <p>
-     * The current status of the Amazon CloudWatch Logs for a build project. Valid values are:
+     * The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:
      * </p>
      * <ul>
      * <li>
@@ -81,7 +81,7 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
      * </ul>
      * 
      * @param status
-     *        The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</p>
+     *        The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -102,7 +102,7 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current status of the Amazon CloudWatch Logs for a build project. Valid values are:
+     * The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:
      * </p>
      * <ul>
      * <li>
@@ -117,7 +117,7 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
      * </li>
      * </ul>
      * 
-     * @return The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</p>
+     * @return The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -138,7 +138,7 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current status of the Amazon CloudWatch Logs for a build project. Valid values are:
+     * The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:
      * </p>
      * <ul>
      * <li>
@@ -154,7 +154,7 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
      * </ul>
      * 
      * @param status
-     *        The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</p>
+     *        The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -177,7 +177,7 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current status of the Amazon CloudWatch Logs for a build project. Valid values are:
+     * The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:
      * </p>
      * <ul>
      * <li>
@@ -193,7 +193,7 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
      * </ul>
      * 
      * @param status
-     *        The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</p>
+     *        The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -216,15 +216,15 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The group name of the Amazon CloudWatch Logs. For more information, see <a
+     * The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
-     * with Log Groups and Log Streams</a>
+     * with Log Groups and Log Streams</a>.
      * </p>
      * 
      * @param groupName
-     *        The group name of the Amazon CloudWatch Logs. For more information, see <a
+     *        The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     *        >Working with Log Groups and Log Streams</a>
+     *        >Working with Log Groups and Log Streams</a>.
      */
 
     public void setGroupName(String groupName) {
@@ -233,14 +233,14 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The group name of the Amazon CloudWatch Logs. For more information, see <a
+     * The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
-     * with Log Groups and Log Streams</a>
+     * with Log Groups and Log Streams</a>.
      * </p>
      * 
-     * @return The group name of the Amazon CloudWatch Logs. For more information, see <a
+     * @return The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     *         >Working with Log Groups and Log Streams</a>
+     *         >Working with Log Groups and Log Streams</a>.
      */
 
     public String getGroupName() {
@@ -249,15 +249,15 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The group name of the Amazon CloudWatch Logs. For more information, see <a
+     * The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
-     * with Log Groups and Log Streams</a>
+     * with Log Groups and Log Streams</a>.
      * </p>
      * 
      * @param groupName
-     *        The group name of the Amazon CloudWatch Logs. For more information, see <a
+     *        The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     *        >Working with Log Groups and Log Streams</a>
+     *        >Working with Log Groups and Log Streams</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,13 +270,13 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
      * <p>
      * The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
-     * with Log Groups and Log Streams</a>
+     * with Log Groups and Log Streams</a>.
      * </p>
      * 
      * @param streamName
      *        The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     *        >Working with Log Groups and Log Streams</a>
+     *        >Working with Log Groups and Log Streams</a>.
      */
 
     public void setStreamName(String streamName) {
@@ -287,12 +287,12 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
      * <p>
      * The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
-     * with Log Groups and Log Streams</a>
+     * with Log Groups and Log Streams</a>.
      * </p>
      * 
      * @return The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     *         >Working with Log Groups and Log Streams</a>
+     *         >Working with Log Groups and Log Streams</a>.
      */
 
     public String getStreamName() {
@@ -303,13 +303,13 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
      * <p>
      * The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
-     * with Log Groups and Log Streams</a>
+     * with Log Groups and Log Streams</a>.
      * </p>
      * 
      * @param streamName
      *        The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     *        >Working with Log Groups and Log Streams</a>
+     *        >Working with Log Groups and Log Streams</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

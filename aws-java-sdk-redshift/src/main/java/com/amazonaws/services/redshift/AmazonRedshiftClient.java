@@ -294,8 +294,11 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     private void init() {
         exceptionUnmarshallers.add(new InvalidHsmConfigurationStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SnapshotScheduleAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SnapshotScheduleQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionEventIdNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSubscriptionStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidClusterSnapshotScheduleStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterTrackExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionSeverityNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CopyToRegionDisabledExceptionUnmarshaller());
@@ -303,6 +306,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new InvalidRestoreExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotCopyDisabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSubnetGroupQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidScheduleExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SNSInvalidTopicExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DependentServiceRequestThrottlingExceptionUnmarshaller());
         exceptionUnmarshallers.add(new BucketNotFoundExceptionUnmarshaller());
@@ -340,6 +344,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new NumberOfNodesPerClusterLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NumberOfNodesQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSnapshotAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidRetentionPeriodExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSecurityGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedNodeOfferingNotFoundExceptionUnmarshaller());
@@ -347,12 +352,15 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new AccessToSnapshotDeniedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidElasticIpExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TableLimitExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SnapshotScheduleUpdateInProgressExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSnapshotCopyGrantStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ResizeNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidHsmClientCertificateStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterSubnetGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterOnLatestRevisionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSnapshotNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ScheduleDefinitionTypeUnsupportedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new BatchModifyClusterSnapshotsLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidTagExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HsmClientCertificateAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HsmClientCertificateQuotaExceededExceptionUnmarshaller());
@@ -363,6 +371,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new ClusterParameterGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new UnauthorizedOperationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterSubnetStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SnapshotScheduleNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionAlreadyExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedNodeAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedNodeNotFoundExceptionUnmarshaller());
@@ -380,6 +389,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new InvalidClusterSnapshotStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterParameterGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientS3BucketPolicyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new BatchDeleteRequestSizeExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidS3KeyPrefixExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.redshift.model.AmazonRedshiftException.class));
@@ -622,6 +632,122 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Deletes a set of cluster snapshots.
+     * </p>
+     * 
+     * @param batchDeleteClusterSnapshotsRequest
+     * @return Result of the BatchDeleteClusterSnapshots operation returned by the service.
+     * @throws BatchDeleteRequestSizeExceededException
+     *         The maximum number for a batch delete of snapshots has been reached. The limit is 100.
+     * @sample AmazonRedshift.BatchDeleteClusterSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/BatchDeleteClusterSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchDeleteClusterSnapshotsResult batchDeleteClusterSnapshots(BatchDeleteClusterSnapshotsRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchDeleteClusterSnapshots(request);
+    }
+
+    @SdkInternalApi
+    final BatchDeleteClusterSnapshotsResult executeBatchDeleteClusterSnapshots(BatchDeleteClusterSnapshotsRequest batchDeleteClusterSnapshotsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchDeleteClusterSnapshotsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchDeleteClusterSnapshotsRequest> request = null;
+        Response<BatchDeleteClusterSnapshotsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchDeleteClusterSnapshotsRequestMarshaller().marshall(super.beforeMarshalling(batchDeleteClusterSnapshotsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeleteClusterSnapshots");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<BatchDeleteClusterSnapshotsResult> responseHandler = new StaxResponseHandler<BatchDeleteClusterSnapshotsResult>(
+                    new BatchDeleteClusterSnapshotsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the settings for a list of snapshots.
+     * </p>
+     * 
+     * @param batchModifyClusterSnapshotsRequest
+     * @return Result of the BatchModifyClusterSnapshots operation returned by the service.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
+     * @throws BatchModifyClusterSnapshotsLimitExceededException
+     *         The maximum number for snapshot identifiers has been reached. The limit is 100.
+     * @sample AmazonRedshift.BatchModifyClusterSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/BatchModifyClusterSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchModifyClusterSnapshotsResult batchModifyClusterSnapshots(BatchModifyClusterSnapshotsRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchModifyClusterSnapshots(request);
+    }
+
+    @SdkInternalApi
+    final BatchModifyClusterSnapshotsResult executeBatchModifyClusterSnapshots(BatchModifyClusterSnapshotsRequest batchModifyClusterSnapshotsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchModifyClusterSnapshotsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchModifyClusterSnapshotsRequest> request = null;
+        Response<BatchModifyClusterSnapshotsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchModifyClusterSnapshotsRequestMarshaller().marshall(super.beforeMarshalling(batchModifyClusterSnapshotsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchModifyClusterSnapshots");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<BatchModifyClusterSnapshotsResult> responseHandler = new StaxResponseHandler<BatchModifyClusterSnapshotsResult>(
+                    new BatchModifyClusterSnapshotsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Cancels a resize operation.
      * </p>
      * 
@@ -709,6 +835,10 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         authorized to access the snapshot.
      * @throws ClusterSnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of cluster snapshots.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.CopyClusterSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CopyClusterSnapshot" target="_top">AWS
      *      API Documentation</a>
@@ -806,8 +936,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidElasticIpException
      *         The Elastic IP (EIP) is invalid or cannot be found.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @throws LimitExceededException
@@ -817,6 +946,12 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         Redshift on your behalf. Wait and retry the request.
      * @throws InvalidClusterTrackException
      *         The provided cluster track name is not valid.
+     * @throws SnapshotScheduleNotFoundException
+     *         We could not find the specified snapshot schedule.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.CreateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster" target="_top">AWS API
      *      Documentation</a>
@@ -889,8 +1024,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterParameterGroupAlreadyExistsException
      *         A cluster parameter group with the same name already exists.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateClusterParameterGroup
@@ -960,8 +1094,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon
      *         Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateClusterSecurityGroup
@@ -1032,10 +1165,13 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterSnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of cluster snapshots.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.CreateClusterSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSnapshot" target="_top">AWS
      *      API Documentation</a>
@@ -1112,8 +1248,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnauthorizedOperationException
      *         Your account is not authorized to perform the requested operation.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @throws DependentServiceRequestThrottlingException
@@ -1215,8 +1350,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws SourceNotFoundException
      *         The specified Amazon Redshift event source could not be found.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateEventSubscription
@@ -1287,8 +1421,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon
      *         Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateHsmClientCertificate
@@ -1359,8 +1492,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon
      *         Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateHsmConfiguration
@@ -1430,8 +1562,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws LimitExceededException
      *         The encryption key has exceeded its grant limit in AWS KMS.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @throws DependentServiceRequestThrottlingException
@@ -1485,6 +1616,70 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Creates a new snapshot schedule.
+     * </p>
+     * 
+     * @param createSnapshotScheduleRequest
+     * @return Result of the CreateSnapshotSchedule operation returned by the service.
+     * @throws SnapshotScheduleAlreadyExistsException
+     *         The specified snapshot schedule already exists.
+     * @throws InvalidScheduleException
+     *         The schedule you submitted isn't valid.
+     * @throws SnapshotScheduleQuotaExceededException
+     *         You have exceeded the quota of snapshot schedules.
+     * @throws TagLimitExceededException
+     *         You have exceeded the number of tags allowed.
+     * @throws ScheduleDefinitionTypeUnsupportedException
+     *         The definition you submitted is not supported.
+     * @sample AmazonRedshift.CreateSnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateSnapshotScheduleResult createSnapshotSchedule(CreateSnapshotScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSnapshotSchedule(request);
+    }
+
+    @SdkInternalApi
+    final CreateSnapshotScheduleResult executeCreateSnapshotSchedule(CreateSnapshotScheduleRequest createSnapshotScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSnapshotScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSnapshotScheduleRequest> request = null;
+        Response<CreateSnapshotScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSnapshotScheduleRequestMarshaller().marshall(super.beforeMarshalling(createSnapshotScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSnapshotSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<CreateSnapshotScheduleResult> responseHandler = new StaxResponseHandler<CreateSnapshotScheduleResult>(
+                    new CreateSnapshotScheduleResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds one or more tags to a specified resource.
      * </p>
      * <p>
@@ -1500,8 +1695,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *        Contains the output from the <code>CreateTags</code> action.
      * @return Result of the CreateTags operation returned by the service.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws InvalidTagException
@@ -1583,6 +1777,10 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         The value specified as a snapshot identifier is already used by an existing snapshot.
      * @throws ClusterSnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of cluster snapshots.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.DeleteCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCluster" target="_top">AWS API
      *      Documentation</a>
@@ -2114,6 +2312,64 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<DeleteSnapshotCopyGrantResult> responseHandler = new StaxResponseHandler<DeleteSnapshotCopyGrantResult>(
                     new DeleteSnapshotCopyGrantResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a snapshot schedule.
+     * </p>
+     * 
+     * @param deleteSnapshotScheduleRequest
+     * @return Result of the DeleteSnapshotSchedule operation returned by the service.
+     * @throws InvalidClusterSnapshotScheduleStateException
+     *         The cluster snapshot schedule state is not valid.
+     * @throws SnapshotScheduleNotFoundException
+     *         We could not find the specified snapshot schedule.
+     * @sample AmazonRedshift.DeleteSnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteSnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteSnapshotScheduleResult deleteSnapshotSchedule(DeleteSnapshotScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSnapshotSchedule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSnapshotScheduleResult executeDeleteSnapshotSchedule(DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSnapshotScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSnapshotScheduleRequest> request = null;
+        Response<DeleteSnapshotScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSnapshotScheduleRequestMarshaller().marshall(super.beforeMarshalling(deleteSnapshotScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSnapshotSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<DeleteSnapshotScheduleResult> responseHandler = new StaxResponseHandler<DeleteSnapshotScheduleResult>(
+                    new DeleteSnapshotScheduleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3674,6 +3930,114 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Returns a list of snapshot schedules.
+     * </p>
+     * 
+     * @param describeSnapshotSchedulesRequest
+     * @return Result of the DescribeSnapshotSchedules operation returned by the service.
+     * @sample AmazonRedshift.DescribeSnapshotSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeSnapshotSchedulesResult describeSnapshotSchedules(DescribeSnapshotSchedulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSnapshotSchedules(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSnapshotSchedulesResult executeDescribeSnapshotSchedules(DescribeSnapshotSchedulesRequest describeSnapshotSchedulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeSnapshotSchedulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSnapshotSchedulesRequest> request = null;
+        Response<DescribeSnapshotSchedulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSnapshotSchedulesRequestMarshaller().marshall(super.beforeMarshalling(describeSnapshotSchedulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSnapshotSchedules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<DescribeSnapshotSchedulesResult> responseHandler = new StaxResponseHandler<DescribeSnapshotSchedulesResult>(
+                    new DescribeSnapshotSchedulesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the total amount of snapshot usage and provisioned storage for a user in megabytes.
+     * </p>
+     * 
+     * @param describeStorageRequest
+     * @return Result of the DescribeStorage operation returned by the service.
+     * @sample AmazonRedshift.DescribeStorage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeStorage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeStorageResult describeStorage(DescribeStorageRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStorage(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStorageResult executeDescribeStorage(DescribeStorageRequest describeStorageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeStorageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeStorageRequest> request = null;
+        Response<DescribeStorageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeStorageRequestMarshaller().marshall(super.beforeMarshalling(describeStorageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStorage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<DescribeStorageResult> responseHandler = new StaxResponseHandler<DescribeStorageResult>(
+                    new DescribeStorageResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the status of one or more table restore requests made using the <a>RestoreTableFromClusterSnapshot</a> API
      * action. If you don't specify a value for the <code>TableRestoreRequestId</code> parameter, then
      * <code>DescribeTableRestoreStatus</code> returns the status of all table restore requests ordered by the date and
@@ -4049,6 +4413,10 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws DependentServiceRequestThrottlingException
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.EnableSnapshotCopy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableSnapshotCopy" target="_top">AWS
      *      API Documentation</a>
@@ -4305,6 +4673,10 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         The number of tables in the cluster exceeds the limit for the requested new cluster node type.
      * @throws InvalidClusterTrackException
      *         The provided cluster track name is not valid.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.ModifyCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster" target="_top">AWS API
      *      Documentation</a>
@@ -4594,6 +4966,128 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Modifies the settings for a snapshot.
+     * </p>
+     * 
+     * @param modifyClusterSnapshotRequest
+     * @return Result of the ModifyClusterSnapshot operation returned by the service.
+     * @throws InvalidClusterSnapshotStateException
+     *         The specified cluster snapshot is not in the <code>available</code> state, or other accounts are
+     *         authorized to access the snapshot.
+     * @throws ClusterSnapshotNotFoundException
+     *         The snapshot identifier does not refer to an existing cluster snapshot.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
+     * @sample AmazonRedshift.ModifyClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSnapshot" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public Snapshot modifyClusterSnapshot(ModifyClusterSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyClusterSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final Snapshot executeModifyClusterSnapshot(ModifyClusterSnapshotRequest modifyClusterSnapshotRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyClusterSnapshotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyClusterSnapshotRequest> request = null;
+        Response<Snapshot> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyClusterSnapshotRequestMarshaller().marshall(super.beforeMarshalling(modifyClusterSnapshotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyClusterSnapshot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<Snapshot> responseHandler = new StaxResponseHandler<Snapshot>(new SnapshotStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies a snapshot schedule for a cluster.
+     * </p>
+     * 
+     * @param modifyClusterSnapshotScheduleRequest
+     * @return Result of the ModifyClusterSnapshotSchedule operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws SnapshotScheduleNotFoundException
+     *         We could not find the specified snapshot schedule.
+     * @throws InvalidClusterSnapshotScheduleStateException
+     *         The cluster snapshot schedule state is not valid.
+     * @sample AmazonRedshift.ModifyClusterSnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyClusterSnapshotScheduleResult modifyClusterSnapshotSchedule(ModifyClusterSnapshotScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyClusterSnapshotSchedule(request);
+    }
+
+    @SdkInternalApi
+    final ModifyClusterSnapshotScheduleResult executeModifyClusterSnapshotSchedule(ModifyClusterSnapshotScheduleRequest modifyClusterSnapshotScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyClusterSnapshotScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyClusterSnapshotScheduleRequest> request = null;
+        Response<ModifyClusterSnapshotScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyClusterSnapshotScheduleRequestMarshaller().marshall(super.beforeMarshalling(modifyClusterSnapshotScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyClusterSnapshotSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<ModifyClusterSnapshotScheduleResult> responseHandler = new StaxResponseHandler<ModifyClusterSnapshotScheduleResult>(
+                    new ModifyClusterSnapshotScheduleResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Modifies a cluster subnet group to include the specified list of VPC subnets. The operation replaces the existing
      * list of subnets with the new list of subnets.
      * </p>
@@ -4739,8 +5233,11 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Modifies the number of days to retain automated snapshots in the destination region after they are copied from
-     * the source region.
+     * Modifies the number of days to retain snapshots in the destination region after they are copied from the source
+     * region. By default, this only changes the retention period of copied automated snapshots. The retention periods
+     * for both new and existing copied automated snapshots will be updated with the new retention period. You can set
+     * the manual option to change only the retention periods of copied manual snapshots. If you set this option only
+     * newly copied manual snapshots will have the new retention period
      * </p>
      * 
      * @param modifySnapshotCopyRetentionPeriodRequest
@@ -4753,6 +5250,10 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         Your account is not authorized to perform the requested operation.
      * @throws InvalidClusterStateException
      *         The specified cluster is not in the <code>available</code> state.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.ModifySnapshotCopyRetentionPeriod
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod"
      *      target="_top">AWS API Documentation</a>
@@ -4789,6 +5290,66 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             URI cachedEndpoint = null;
 
             StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies a snapshot schedule. Any schedule associate with a cluster will be modified asynchronously.
+     * </p>
+     * 
+     * @param modifySnapshotScheduleRequest
+     * @return Result of the ModifySnapshotSchedule operation returned by the service.
+     * @throws InvalidScheduleException
+     *         The schedule you submitted isn't valid.
+     * @throws SnapshotScheduleNotFoundException
+     *         We could not find the specified snapshot schedule.
+     * @throws SnapshotScheduleUpdateInProgressException
+     *         The specified snapshot schedule is already being updated.
+     * @sample AmazonRedshift.ModifySnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifySnapshotScheduleResult modifySnapshotSchedule(ModifySnapshotScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifySnapshotSchedule(request);
+    }
+
+    @SdkInternalApi
+    final ModifySnapshotScheduleResult executeModifySnapshotSchedule(ModifySnapshotScheduleRequest modifySnapshotScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifySnapshotScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifySnapshotScheduleRequest> request = null;
+        Response<ModifySnapshotScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifySnapshotScheduleRequestMarshaller().marshall(super.beforeMarshalling(modifySnapshotScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifySnapshotSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<ModifySnapshotScheduleResult> responseHandler = new StaxResponseHandler<ModifySnapshotScheduleResult>(
+                    new ModifySnapshotScheduleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4996,7 +5557,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Changes the size of the cluster. You can change the cluster's type, or change the number or type of nodes. The
-     * default behavior is to use the elastic resize method. With an elastic resize your cluster is avaialble for read
+     * default behavior is to use the elastic resize method. With an elastic resize, your cluster is available for read
      * and write operations more quickly than with the classic resize method.
      * </p>
      * <p>
@@ -5032,7 +5593,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * </li>
      * <li>
      * <p>
-     * The type of nodes you add must match the node type for the cluster.
+     * The type of nodes that you add must match the node type for the cluster.
      * </p>
      * </li>
      * </ul>
@@ -5178,6 +5739,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         Redshift on your behalf. Wait and retry the request.
      * @throws InvalidClusterTrackException
      *         The provided cluster track name is not valid.
+     * @throws SnapshotScheduleNotFoundException
+     *         We could not find the specified snapshot schedule.
      * @sample AmazonRedshift.RestoreFromClusterSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot"
      *      target="_top">AWS API Documentation</a>

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The specified target could not be found. You can view your available container instances with
- * <a>ListContainerInstances</a>. Amazon ECS container instances are cluster-specific and region-specific.
+ * <a>ListContainerInstances</a>. Amazon ECS container instances are cluster-specific and Region-specific.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

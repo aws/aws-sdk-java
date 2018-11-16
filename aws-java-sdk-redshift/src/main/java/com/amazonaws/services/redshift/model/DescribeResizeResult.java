@@ -123,8 +123,8 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
     private Long estimatedTimeToCompletionInSeconds;
     /**
      * <p>
-     * An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize
-     * operation being performed.
+     * An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe
+     * the type of resize operation being performed.
      * </p>
      */
     private String resizeType;
@@ -864,13 +864,13 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize
-     * operation being performed.
+     * An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe
+     * the type of resize operation being performed.
      * </p>
      * 
      * @param resizeType
-     *        An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize
-     *        operation being performed.
+     *        An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values
+     *        describe the type of resize operation being performed.
      */
 
     public void setResizeType(String resizeType) {
@@ -879,12 +879,12 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize
-     * operation being performed.
+     * An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe
+     * the type of resize operation being performed.
      * </p>
      * 
-     * @return An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize
-     *         operation being performed.
+     * @return An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values
+     *         describe the type of resize operation being performed.
      */
 
     public String getResizeType() {
@@ -893,13 +893,13 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize
-     * operation being performed.
+     * An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe
+     * the type of resize operation being performed.
      * </p>
      * 
      * @param resizeType
-     *        An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize
-     *        operation being performed.
+     *        An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values
+     *        describe the type of resize operation being performed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

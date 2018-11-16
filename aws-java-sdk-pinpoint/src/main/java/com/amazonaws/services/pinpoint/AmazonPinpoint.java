@@ -552,6 +552,29 @@ public interface AmazonPinpoint {
     DeleteUserEndpointsResult deleteUserEndpoints(DeleteUserEndpointsRequest deleteUserEndpointsRequest);
 
     /**
+     * Delete an Voice channel
+     * 
+     * @param deleteVoiceChannelRequest
+     * @return Result of the DeleteVoiceChannel operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @throws ForbiddenException
+     *         403 response
+     * @throws NotFoundException
+     *         404 response
+     * @throws MethodNotAllowedException
+     *         405 response
+     * @throws TooManyRequestsException
+     *         429 response
+     * @sample AmazonPinpoint.DeleteVoiceChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceChannel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteVoiceChannelResult deleteVoiceChannel(DeleteVoiceChannelRequest deleteVoiceChannelRequest);
+
+    /**
      * Get an ADM channel.
      * 
      * @param getAdmChannelRequest
@@ -1265,6 +1288,29 @@ public interface AmazonPinpoint {
     GetUserEndpointsResult getUserEndpoints(GetUserEndpointsRequest getUserEndpointsRequest);
 
     /**
+     * Get a Voice Channel
+     * 
+     * @param getVoiceChannelRequest
+     * @return Result of the GetVoiceChannel operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @throws ForbiddenException
+     *         403 response
+     * @throws NotFoundException
+     *         404 response
+     * @throws MethodNotAllowedException
+     *         405 response
+     * @throws TooManyRequestsException
+     *         429 response
+     * @sample AmazonPinpoint.GetVoiceChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetVoiceChannelResult getVoiceChannel(GetVoiceChannelRequest getVoiceChannelRequest);
+
+    /**
      * Returns information about the specified phone number.
      * 
      * @param phoneNumberValidateRequest
@@ -1724,6 +1770,29 @@ public interface AmazonPinpoint {
      *      Documentation</a>
      */
     UpdateSmsChannelResult updateSmsChannel(UpdateSmsChannelRequest updateSmsChannelRequest);
+
+    /**
+     * Update an Voice channel
+     * 
+     * @param updateVoiceChannelRequest
+     * @return Result of the UpdateVoiceChannel operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @throws ForbiddenException
+     *         403 response
+     * @throws NotFoundException
+     *         404 response
+     * @throws MethodNotAllowedException
+     *         405 response
+     * @throws TooManyRequestsException
+     *         429 response
+     * @sample AmazonPinpoint.UpdateVoiceChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceChannel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateVoiceChannelResult updateVoiceChannel(UpdateVoiceChannelRequest updateVoiceChannelRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

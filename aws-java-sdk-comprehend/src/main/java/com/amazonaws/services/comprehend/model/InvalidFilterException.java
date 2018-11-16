@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid. Specify a different filter.
+ * The filter specified for the <code>ListDocumentClassificationJobs</code> operation is invalid. Specify a different
+ * filter.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

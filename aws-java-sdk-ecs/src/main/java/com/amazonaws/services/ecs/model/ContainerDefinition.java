@@ -136,7 +136,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * On Linux container instances, the Docker daemon on the container instance uses the CPU value to calculate the
      * relative CPU share ratios for running containers. For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU share constraint</a> in the Docker
-     * documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is
+     * documentation. The minimum valid CPU share value that the Linux kernel allows is 2. However, the CPU parameter is
      * not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including
      * null), the behavior varies based on your Amazon ECS container agent version:
      * </p>
@@ -178,7 +178,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * both of <code>memory</code> or <code>memoryReservation</code> in container definitions. If you specify both,
      * <code>memory</code> must be greater than <code>memoryReservation</code>. If you specify
      * <code>memoryReservation</code>, then that value is subtracted from the available memory resources for the
-     * container instance on which the container is placed; otherwise, the value of <code>memory</code> is used.
+     * container instance on which the container is placed. Otherwise, the value of <code>memory</code> is used.
      * </p>
      * <p>
      * The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer than 4
@@ -189,7 +189,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The soft limit (in MiB) of memory to reserve for the container. When system memory is under heavy contention,
-     * Docker attempts to keep the container memory to this soft limit; however, your container can consume more memory
+     * Docker attempts to keep the container memory to this soft limit. However, your container can consume more memory
      * when it needs to, up to either the hard limit specified with the <code>memory</code> parameter (if applicable),
      * or all of the available memory on the container instance, whichever comes first. This parameter maps to
      * <code>MemoryReservation</code> in the <a
@@ -202,7 +202,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * You must specify a non-zero integer for one or both of <code>memory</code> or <code>memoryReservation</code> in
      * container definitions. If you specify both, <code>memory</code> must be greater than
      * <code>memoryReservation</code>. If you specify <code>memoryReservation</code>, then that value is subtracted from
-     * the available memory resources for the container instance on which the container is placed; otherwise, the value
+     * the available memory resources for the container instance on which the container is placed. Otherwise, the value
      * of <code>memory</code> is used.
      * </p>
      * <p>
@@ -376,6 +376,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private LinuxParameters linuxParameters;
     /**
      * <p>
+     * The secrets to pass to the container.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Secret> secrets;
+    /**
+     * <p>
      * The hostname to use for your container. This parameter maps to <code>Hostname</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--hostname</code> option
@@ -383,7 +389,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * The <code>hostname</code> parameter is not supported if using the <code>awsvpc</code> networkMode.
+     * The <code>hostname</code> parameter is not supported if you are using the <code>awsvpc</code> network mode.
      * </p>
      * </note>
      */
@@ -486,8 +492,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private com.amazonaws.internal.SdkInternalList<String> dnsSearchDomains;
     /**
      * <p>
-     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. If
-     * using the Fargate launch type, this may be used to list non-Fargate hosts to which the container can talk. This
+     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. This
      * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--add-host</code> option
@@ -495,7 +500,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers.
+     * This parameter is not supported for Windows containers or tasks that use the <code>awsvpc</code> network mode.
      * </p>
      * </note>
      */
@@ -552,7 +557,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.18 of
      * the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your
      * container instance, log in to your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code>
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      */
     private java.util.Map<String, String> dockerLabels;
@@ -564,7 +569,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid naming values are displayed in the
      * <a>Ulimit</a> data type. This parameter requires version 1.18 of the Docker Remote API or greater on your
      * container instance. To check the Docker Remote API version on your container instance, log in to your container
-     * instance and run the following command: <code>sudo docker version | grep "Server API version"</code>
+     * instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * <note>
      * <p>
@@ -578,14 +583,14 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * The log configuration specification for the container.
      * </p>
      * <p>
-     * If using the Fargate launch type, the only supported value is <code>awslogs</code>.
+     * If you are using the Fargate launch type, the only supported value is <code>awslogs</code>.
      * </p>
      * <p>
      * This parameter maps to <code>LogConfig</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code>
      * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the
-     * same logging driver that the Docker daemon uses; however the container may use a different logging driver than
+     * same logging driver that the Docker daemon uses. However the container may use a different logging driver than
      * the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
      * logging driver for a container, the log system must be configured properly on the container instance (or on a
      * different log server for remote logging options). For more information on the options for different supported log
@@ -602,7 +607,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * <note>
      * <p>
@@ -635,9 +640,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <note>
      * <p>
      * It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple
-     * containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes.
-     * When you do, the container that is started last will determine which <code>systemControls</code> parameters take
-     * effect.
+     * containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes. For
+     * tasks that use the <code>awsvpc</code> network mode, the container that is started last determines which
+     * <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it
+     * changes the container instance's namespaced kernel parameters as well as the containers.
      * </p>
      * </note>
      */
@@ -1102,7 +1108,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * On Linux container instances, the Docker daemon on the container instance uses the CPU value to calculate the
      * relative CPU share ratios for running containers. For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU share constraint</a> in the Docker
-     * documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is
+     * documentation. The minimum valid CPU share value that the Linux kernel allows is 2. However, the CPU parameter is
      * not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including
      * null), the behavior varies based on your Amazon ECS container agent version:
      * </p>
@@ -1166,7 +1172,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        On Linux container instances, the Docker daemon on the container instance uses the CPU value to calculate
      *        the relative CPU share ratios for running containers. For more information, see <a
      *        href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU share constraint</a> in the
-     *        Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the
+     *        Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2. However, the
      *        CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU
      *        values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:
      *        </p>
@@ -1233,7 +1239,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * On Linux container instances, the Docker daemon on the container instance uses the CPU value to calculate the
      * relative CPU share ratios for running containers. For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU share constraint</a> in the Docker
-     * documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is
+     * documentation. The minimum valid CPU share value that the Linux kernel allows is 2. However, the CPU parameter is
      * not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including
      * null), the behavior varies based on your Amazon ECS container agent version:
      * </p>
@@ -1296,7 +1302,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         On Linux container instances, the Docker daemon on the container instance uses the CPU value to calculate
      *         the relative CPU share ratios for running containers. For more information, see <a
      *         href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU share constraint</a> in the
-     *         Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the
+     *         Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2. However, the
      *         CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU
      *         values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:
      *         </p>
@@ -1363,7 +1369,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * On Linux container instances, the Docker daemon on the container instance uses the CPU value to calculate the
      * relative CPU share ratios for running containers. For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU share constraint</a> in the Docker
-     * documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the CPU parameter is
+     * documentation. The minimum valid CPU share value that the Linux kernel allows is 2. However, the CPU parameter is
      * not required, and you can use CPU values below 2 in your container definitions. For CPU values below 2 (including
      * null), the behavior varies based on your Amazon ECS container agent version:
      * </p>
@@ -1427,7 +1433,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        On Linux container instances, the Docker daemon on the container instance uses the CPU value to calculate
      *        the relative CPU share ratios for running containers. For more information, see <a
      *        href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU share constraint</a> in the
-     *        Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2; however, the
+     *        Docker documentation. The minimum valid CPU share value that the Linux kernel allows is 2. However, the
      *        CPU parameter is not required, and you can use CPU values below 2 in your container definitions. For CPU
      *        values below 2 (including null), the behavior varies based on your Amazon ECS container agent version:
      *        </p>
@@ -1475,7 +1481,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * both of <code>memory</code> or <code>memoryReservation</code> in container definitions. If you specify both,
      * <code>memory</code> must be greater than <code>memoryReservation</code>. If you specify
      * <code>memoryReservation</code>, then that value is subtracted from the available memory resources for the
-     * container instance on which the container is placed; otherwise, the value of <code>memory</code> is used.
+     * container instance on which the container is placed. Otherwise, the value of <code>memory</code> is used.
      * </p>
      * <p>
      * The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer than 4
@@ -1499,7 +1505,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        one or both of <code>memory</code> or <code>memoryReservation</code> in container definitions. If you
      *        specify both, <code>memory</code> must be greater than <code>memoryReservation</code>. If you specify
      *        <code>memoryReservation</code>, then that value is subtracted from the available memory resources for the
-     *        container instance on which the container is placed; otherwise, the value of <code>memory</code> is used.
+     *        container instance on which the container is placed. Otherwise, the value of <code>memory</code> is used.
      *        </p>
      *        <p>
      *        The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer
@@ -1528,7 +1534,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * both of <code>memory</code> or <code>memoryReservation</code> in container definitions. If you specify both,
      * <code>memory</code> must be greater than <code>memoryReservation</code>. If you specify
      * <code>memoryReservation</code>, then that value is subtracted from the available memory resources for the
-     * container instance on which the container is placed; otherwise, the value of <code>memory</code> is used.
+     * container instance on which the container is placed. Otherwise, the value of <code>memory</code> is used.
      * </p>
      * <p>
      * The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer than 4
@@ -1551,7 +1557,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         one or both of <code>memory</code> or <code>memoryReservation</code> in container definitions. If you
      *         specify both, <code>memory</code> must be greater than <code>memoryReservation</code>. If you specify
      *         <code>memoryReservation</code>, then that value is subtracted from the available memory resources for the
-     *         container instance on which the container is placed; otherwise, the value of <code>memory</code> is used.
+     *         container instance on which the container is placed. Otherwise, the value of <code>memory</code> is used.
      *         </p>
      *         <p>
      *         The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer
@@ -1580,7 +1586,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * both of <code>memory</code> or <code>memoryReservation</code> in container definitions. If you specify both,
      * <code>memory</code> must be greater than <code>memoryReservation</code>. If you specify
      * <code>memoryReservation</code>, then that value is subtracted from the available memory resources for the
-     * container instance on which the container is placed; otherwise, the value of <code>memory</code> is used.
+     * container instance on which the container is placed. Otherwise, the value of <code>memory</code> is used.
      * </p>
      * <p>
      * The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer than 4
@@ -1604,7 +1610,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        one or both of <code>memory</code> or <code>memoryReservation</code> in container definitions. If you
      *        specify both, <code>memory</code> must be greater than <code>memoryReservation</code>. If you specify
      *        <code>memoryReservation</code>, then that value is subtracted from the available memory resources for the
-     *        container instance on which the container is placed; otherwise, the value of <code>memory</code> is used.
+     *        container instance on which the container is placed. Otherwise, the value of <code>memory</code> is used.
      *        </p>
      *        <p>
      *        The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer
@@ -1620,7 +1626,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The soft limit (in MiB) of memory to reserve for the container. When system memory is under heavy contention,
-     * Docker attempts to keep the container memory to this soft limit; however, your container can consume more memory
+     * Docker attempts to keep the container memory to this soft limit. However, your container can consume more memory
      * when it needs to, up to either the hard limit specified with the <code>memory</code> parameter (if applicable),
      * or all of the available memory on the container instance, whichever comes first. This parameter maps to
      * <code>MemoryReservation</code> in the <a
@@ -1633,7 +1639,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * You must specify a non-zero integer for one or both of <code>memory</code> or <code>memoryReservation</code> in
      * container definitions. If you specify both, <code>memory</code> must be greater than
      * <code>memoryReservation</code>. If you specify <code>memoryReservation</code>, then that value is subtracted from
-     * the available memory resources for the container instance on which the container is placed; otherwise, the value
+     * the available memory resources for the container instance on which the container is placed. Otherwise, the value
      * of <code>memory</code> is used.
      * </p>
      * <p>
@@ -1650,7 +1656,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @param memoryReservation
      *        The soft limit (in MiB) of memory to reserve for the container. When system memory is under heavy
-     *        contention, Docker attempts to keep the container memory to this soft limit; however, your container can
+     *        contention, Docker attempts to keep the container memory to this soft limit. However, your container can
      *        consume more memory when it needs to, up to either the hard limit specified with the <code>memory</code>
      *        parameter (if applicable), or all of the available memory on the container instance, whichever comes
      *        first. This parameter maps to <code>MemoryReservation</code> in the <a
@@ -1663,7 +1669,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>memoryReservation</code> in container definitions. If you specify both, <code>memory</code> must be
      *        greater than <code>memoryReservation</code>. If you specify <code>memoryReservation</code>, then that
      *        value is subtracted from the available memory resources for the container instance on which the container
-     *        is placed; otherwise, the value of <code>memory</code> is used.
+     *        is placed. Otherwise, the value of <code>memory</code> is used.
      *        </p>
      *        <p>
      *        For example, if your container normally uses 128 MiB of memory, but occasionally bursts to 256 MiB of
@@ -1684,7 +1690,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The soft limit (in MiB) of memory to reserve for the container. When system memory is under heavy contention,
-     * Docker attempts to keep the container memory to this soft limit; however, your container can consume more memory
+     * Docker attempts to keep the container memory to this soft limit. However, your container can consume more memory
      * when it needs to, up to either the hard limit specified with the <code>memory</code> parameter (if applicable),
      * or all of the available memory on the container instance, whichever comes first. This parameter maps to
      * <code>MemoryReservation</code> in the <a
@@ -1697,7 +1703,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * You must specify a non-zero integer for one or both of <code>memory</code> or <code>memoryReservation</code> in
      * container definitions. If you specify both, <code>memory</code> must be greater than
      * <code>memoryReservation</code>. If you specify <code>memoryReservation</code>, then that value is subtracted from
-     * the available memory resources for the container instance on which the container is placed; otherwise, the value
+     * the available memory resources for the container instance on which the container is placed. Otherwise, the value
      * of <code>memory</code> is used.
      * </p>
      * <p>
@@ -1713,7 +1719,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @return The soft limit (in MiB) of memory to reserve for the container. When system memory is under heavy
-     *         contention, Docker attempts to keep the container memory to this soft limit; however, your container can
+     *         contention, Docker attempts to keep the container memory to this soft limit. However, your container can
      *         consume more memory when it needs to, up to either the hard limit specified with the <code>memory</code>
      *         parameter (if applicable), or all of the available memory on the container instance, whichever comes
      *         first. This parameter maps to <code>MemoryReservation</code> in the <a
@@ -1726,7 +1732,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         <code>memoryReservation</code> in container definitions. If you specify both, <code>memory</code> must be
      *         greater than <code>memoryReservation</code>. If you specify <code>memoryReservation</code>, then that
      *         value is subtracted from the available memory resources for the container instance on which the container
-     *         is placed; otherwise, the value of <code>memory</code> is used.
+     *         is placed. Otherwise, the value of <code>memory</code> is used.
      *         </p>
      *         <p>
      *         For example, if your container normally uses 128 MiB of memory, but occasionally bursts to 256 MiB of
@@ -1747,7 +1753,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The soft limit (in MiB) of memory to reserve for the container. When system memory is under heavy contention,
-     * Docker attempts to keep the container memory to this soft limit; however, your container can consume more memory
+     * Docker attempts to keep the container memory to this soft limit. However, your container can consume more memory
      * when it needs to, up to either the hard limit specified with the <code>memory</code> parameter (if applicable),
      * or all of the available memory on the container instance, whichever comes first. This parameter maps to
      * <code>MemoryReservation</code> in the <a
@@ -1760,7 +1766,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * You must specify a non-zero integer for one or both of <code>memory</code> or <code>memoryReservation</code> in
      * container definitions. If you specify both, <code>memory</code> must be greater than
      * <code>memoryReservation</code>. If you specify <code>memoryReservation</code>, then that value is subtracted from
-     * the available memory resources for the container instance on which the container is placed; otherwise, the value
+     * the available memory resources for the container instance on which the container is placed. Otherwise, the value
      * of <code>memory</code> is used.
      * </p>
      * <p>
@@ -1777,7 +1783,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @param memoryReservation
      *        The soft limit (in MiB) of memory to reserve for the container. When system memory is under heavy
-     *        contention, Docker attempts to keep the container memory to this soft limit; however, your container can
+     *        contention, Docker attempts to keep the container memory to this soft limit. However, your container can
      *        consume more memory when it needs to, up to either the hard limit specified with the <code>memory</code>
      *        parameter (if applicable), or all of the available memory on the container instance, whichever comes
      *        first. This parameter maps to <code>MemoryReservation</code> in the <a
@@ -1790,7 +1796,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>memoryReservation</code> in container definitions. If you specify both, <code>memory</code> must be
      *        greater than <code>memoryReservation</code>. If you specify <code>memoryReservation</code>, then that
      *        value is subtracted from the available memory resources for the container instance on which the container
-     *        is placed; otherwise, the value of <code>memory</code> is used.
+     *        is placed. Otherwise, the value of <code>memory</code> is used.
      *        </p>
      *        <p>
      *        For example, if your container normally uses 128 MiB of memory, but occasionally bursts to 256 MiB of
@@ -3219,6 +3225,79 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
+     * The secrets to pass to the container.
+     * </p>
+     * 
+     * @return The secrets to pass to the container.
+     */
+
+    public java.util.List<Secret> getSecrets() {
+        if (secrets == null) {
+            secrets = new com.amazonaws.internal.SdkInternalList<Secret>();
+        }
+        return secrets;
+    }
+
+    /**
+     * <p>
+     * The secrets to pass to the container.
+     * </p>
+     * 
+     * @param secrets
+     *        The secrets to pass to the container.
+     */
+
+    public void setSecrets(java.util.Collection<Secret> secrets) {
+        if (secrets == null) {
+            this.secrets = null;
+            return;
+        }
+
+        this.secrets = new com.amazonaws.internal.SdkInternalList<Secret>(secrets);
+    }
+
+    /**
+     * <p>
+     * The secrets to pass to the container.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecrets(java.util.Collection)} or {@link #withSecrets(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param secrets
+     *        The secrets to pass to the container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withSecrets(Secret... secrets) {
+        if (this.secrets == null) {
+            setSecrets(new com.amazonaws.internal.SdkInternalList<Secret>(secrets.length));
+        }
+        for (Secret ele : secrets) {
+            this.secrets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The secrets to pass to the container.
+     * </p>
+     * 
+     * @param secrets
+     *        The secrets to pass to the container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withSecrets(java.util.Collection<Secret> secrets) {
+        setSecrets(secrets);
+        return this;
+    }
+
+    /**
+     * <p>
      * The hostname to use for your container. This parameter maps to <code>Hostname</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--hostname</code> option
@@ -3226,7 +3305,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * The <code>hostname</code> parameter is not supported if using the <code>awsvpc</code> networkMode.
+     * The <code>hostname</code> parameter is not supported if you are using the <code>awsvpc</code> network mode.
      * </p>
      * </note>
      * 
@@ -3237,7 +3316,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--hostname</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p> <note>
      *        <p>
-     *        The <code>hostname</code> parameter is not supported if using the <code>awsvpc</code> networkMode.
+     *        The <code>hostname</code> parameter is not supported if you are using the <code>awsvpc</code> network
+     *        mode.
      *        </p>
      */
 
@@ -3254,7 +3334,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * The <code>hostname</code> parameter is not supported if using the <code>awsvpc</code> networkMode.
+     * The <code>hostname</code> parameter is not supported if you are using the <code>awsvpc</code> network mode.
      * </p>
      * </note>
      * 
@@ -3264,7 +3344,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         <code>--hostname</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>.</p> <note>
      *         <p>
-     *         The <code>hostname</code> parameter is not supported if using the <code>awsvpc</code> networkMode.
+     *         The <code>hostname</code> parameter is not supported if you are using the <code>awsvpc</code> network
+     *         mode.
      *         </p>
      */
 
@@ -3281,7 +3362,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * The <code>hostname</code> parameter is not supported if using the <code>awsvpc</code> networkMode.
+     * The <code>hostname</code> parameter is not supported if you are using the <code>awsvpc</code> network mode.
      * </p>
      * </note>
      * 
@@ -3292,7 +3373,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--hostname</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p> <note>
      *        <p>
-     *        The <code>hostname</code> parameter is not supported if using the <code>awsvpc</code> networkMode.
+     *        The <code>hostname</code> parameter is not supported if you are using the <code>awsvpc</code> network
+     *        mode.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -4071,8 +4153,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. If
-     * using the Fargate launch type, this may be used to list non-Fargate hosts to which the container can talk. This
+     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. This
      * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--add-host</code> option
@@ -4080,19 +4161,19 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers.
+     * This parameter is not supported for Windows containers or tasks that use the <code>awsvpc</code> network mode.
      * </p>
      * </note>
      * 
      * @return A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the
-     *         container. If using the Fargate launch type, this may be used to list non-Fargate hosts to which the
-     *         container can talk. This parameter maps to <code>ExtraHosts</code> in the <a
+     *         container. This parameter maps to <code>ExtraHosts</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *         of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *         <code>--add-host</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>.</p> <note>
      *         <p>
-     *         This parameter is not supported for Windows containers.
+     *         This parameter is not supported for Windows containers or tasks that use the <code>awsvpc</code> network
+     *         mode.
      *         </p>
      */
 
@@ -4105,8 +4186,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. If
-     * using the Fargate launch type, this may be used to list non-Fargate hosts to which the container can talk. This
+     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. This
      * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--add-host</code> option
@@ -4114,20 +4194,20 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers.
+     * This parameter is not supported for Windows containers or tasks that use the <code>awsvpc</code> network mode.
      * </p>
      * </note>
      * 
      * @param extraHosts
      *        A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the
-     *        container. If using the Fargate launch type, this may be used to list non-Fargate hosts to which the
-     *        container can talk. This parameter maps to <code>ExtraHosts</code> in the <a
+     *        container. This parameter maps to <code>ExtraHosts</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--add-host</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p> <note>
      *        <p>
-     *        This parameter is not supported for Windows containers.
+     *        This parameter is not supported for Windows containers or tasks that use the <code>awsvpc</code> network
+     *        mode.
      *        </p>
      */
 
@@ -4142,8 +4222,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. If
-     * using the Fargate launch type, this may be used to list non-Fargate hosts to which the container can talk. This
+     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. This
      * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--add-host</code> option
@@ -4151,7 +4230,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers.
+     * This parameter is not supported for Windows containers or tasks that use the <code>awsvpc</code> network mode.
      * </p>
      * </note>
      * <p>
@@ -4162,14 +4241,14 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @param extraHosts
      *        A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the
-     *        container. If using the Fargate launch type, this may be used to list non-Fargate hosts to which the
-     *        container can talk. This parameter maps to <code>ExtraHosts</code> in the <a
+     *        container. This parameter maps to <code>ExtraHosts</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--add-host</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p> <note>
      *        <p>
-     *        This parameter is not supported for Windows containers.
+     *        This parameter is not supported for Windows containers or tasks that use the <code>awsvpc</code> network
+     *        mode.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -4186,8 +4265,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. If
-     * using the Fargate launch type, this may be used to list non-Fargate hosts to which the container can talk. This
+     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. This
      * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--add-host</code> option
@@ -4195,20 +4273,20 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers.
+     * This parameter is not supported for Windows containers or tasks that use the <code>awsvpc</code> network mode.
      * </p>
      * </note>
      * 
      * @param extraHosts
      *        A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the
-     *        container. If using the Fargate launch type, this may be used to list non-Fargate hosts to which the
-     *        container can talk. This parameter maps to <code>ExtraHosts</code> in the <a
+     *        container. This parameter maps to <code>ExtraHosts</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--add-host</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p> <note>
      *        <p>
-     *        This parameter is not supported for Windows containers.
+     *        This parameter is not supported for Windows containers or tasks that use the <code>awsvpc</code> network
+     *        mode.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -4619,7 +4697,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.18 of
      * the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your
      * container instance, log in to your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code>
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @return A key/value map of labels to add to the container. This parameter maps to <code>Labels</code> in the <a
@@ -4628,7 +4706,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      *         This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
      *         check the Docker Remote API version on your container instance, log in to your container instance and run
-     *         the following command: <code>sudo docker version | grep "Server API version"</code>
+     *         the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      */
 
     public java.util.Map<String, String> getDockerLabels() {
@@ -4643,7 +4721,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.18 of
      * the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your
      * container instance, log in to your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code>
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @param dockerLabels
@@ -4653,7 +4731,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
      *        check the Docker Remote API version on your container instance, log in to your container instance and run
-     *        the following command: <code>sudo docker version | grep "Server API version"</code>
+     *        the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      */
 
     public void setDockerLabels(java.util.Map<String, String> dockerLabels) {
@@ -4668,7 +4746,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.18 of
      * the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your
      * container instance, log in to your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code>
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @param dockerLabels
@@ -4678,7 +4756,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
      *        check the Docker Remote API version on your container instance, log in to your container instance and run
-     *        the following command: <code>sudo docker version | grep "Server API version"</code>
+     *        the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4716,7 +4794,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid naming values are displayed in the
      * <a>Ulimit</a> data type. This parameter requires version 1.18 of the Docker Remote API or greater on your
      * container instance. To check the Docker Remote API version on your container instance, log in to your container
-     * instance and run the following command: <code>sudo docker version | grep "Server API version"</code>
+     * instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * <note>
      * <p>
@@ -4731,7 +4809,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         Valid naming values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of
      *         the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
      *         your container instance, log in to your container instance and run the following command:
-     *         <code>sudo docker version | grep "Server API version"</code> </p> <note>
+     *         <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> <note>
      *         <p>
      *         This parameter is not supported for Windows containers.
      *         </p>
@@ -4752,7 +4830,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid naming values are displayed in the
      * <a>Ulimit</a> data type. This parameter requires version 1.18 of the Docker Remote API or greater on your
      * container instance. To check the Docker Remote API version on your container instance, log in to your container
-     * instance and run the following command: <code>sudo docker version | grep "Server API version"</code>
+     * instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * <note>
      * <p>
@@ -4768,7 +4846,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        Valid naming values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of
      *        the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
      *        your container instance, log in to your container instance and run the following command:
-     *        <code>sudo docker version | grep "Server API version"</code> </p> <note>
+     *        <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> <note>
      *        <p>
      *        This parameter is not supported for Windows containers.
      *        </p>
@@ -4791,7 +4869,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid naming values are displayed in the
      * <a>Ulimit</a> data type. This parameter requires version 1.18 of the Docker Remote API or greater on your
      * container instance. To check the Docker Remote API version on your container instance, log in to your container
-     * instance and run the following command: <code>sudo docker version | grep "Server API version"</code>
+     * instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * <note>
      * <p>
@@ -4812,7 +4890,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        Valid naming values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of
      *        the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
      *        your container instance, log in to your container instance and run the following command:
-     *        <code>sudo docker version | grep "Server API version"</code> </p> <note>
+     *        <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> <note>
      *        <p>
      *        This parameter is not supported for Windows containers.
      *        </p>
@@ -4837,7 +4915,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid naming values are displayed in the
      * <a>Ulimit</a> data type. This parameter requires version 1.18 of the Docker Remote API or greater on your
      * container instance. To check the Docker Remote API version on your container instance, log in to your container
-     * instance and run the following command: <code>sudo docker version | grep "Server API version"</code>
+     * instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * <note>
      * <p>
@@ -4853,7 +4931,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        Valid naming values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of
      *        the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
      *        your container instance, log in to your container instance and run the following command:
-     *        <code>sudo docker version | grep "Server API version"</code> </p> <note>
+     *        <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> <note>
      *        <p>
      *        This parameter is not supported for Windows containers.
      *        </p>
@@ -4870,14 +4948,14 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * The log configuration specification for the container.
      * </p>
      * <p>
-     * If using the Fargate launch type, the only supported value is <code>awslogs</code>.
+     * If you are using the Fargate launch type, the only supported value is <code>awslogs</code>.
      * </p>
      * <p>
      * This parameter maps to <code>LogConfig</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code>
      * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the
-     * same logging driver that the Docker daemon uses; however the container may use a different logging driver than
+     * same logging driver that the Docker daemon uses. However the container may use a different logging driver than
      * the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
      * logging driver for a container, the log system must be configured properly on the container instance (or on a
      * different log server for remote logging options). For more information on the options for different supported log
@@ -4894,7 +4972,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * <note>
      * <p>
@@ -4909,14 +4987,14 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * @param logConfiguration
      *        The log configuration specification for the container.</p>
      *        <p>
-     *        If using the Fargate launch type, the only supported value is <code>awslogs</code>.
+     *        If you are using the Fargate launch type, the only supported value is <code>awslogs</code>.
      *        </p>
      *        <p>
      *        This parameter maps to <code>LogConfig</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>. By default, containers use the same logging driver that the Docker daemon uses; however the
+     *        run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the
      *        container may use a different logging driver than the Docker daemon by specifying a log driver with this
      *        parameter in the container definition. To use a different logging driver for a container, the log system
      *        must be configured properly on the container instance (or on a different log server for remote logging
@@ -4934,7 +5012,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
      *        check the Docker Remote API version on your container instance, log in to your container instance and run
-     *        the following command: <code>sudo docker version | grep "Server API version"</code>
+     *        the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      *        </p>
      *        <note>
      *        <p>
@@ -4955,14 +5033,14 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * The log configuration specification for the container.
      * </p>
      * <p>
-     * If using the Fargate launch type, the only supported value is <code>awslogs</code>.
+     * If you are using the Fargate launch type, the only supported value is <code>awslogs</code>.
      * </p>
      * <p>
      * This parameter maps to <code>LogConfig</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code>
      * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the
-     * same logging driver that the Docker daemon uses; however the container may use a different logging driver than
+     * same logging driver that the Docker daemon uses. However the container may use a different logging driver than
      * the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
      * logging driver for a container, the log system must be configured properly on the container instance (or on a
      * different log server for remote logging options). For more information on the options for different supported log
@@ -4979,7 +5057,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * <note>
      * <p>
@@ -4993,14 +5071,14 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @return The log configuration specification for the container.</p>
      *         <p>
-     *         If using the Fargate launch type, the only supported value is <code>awslogs</code>.
+     *         If you are using the Fargate launch type, the only supported value is <code>awslogs</code>.
      *         </p>
      *         <p>
      *         This parameter maps to <code>LogConfig</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *         of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *         <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>. By default, containers use the same logging driver that the Docker daemon uses; however the
+     *         run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the
      *         container may use a different logging driver than the Docker daemon by specifying a log driver with this
      *         parameter in the container definition. To use a different logging driver for a container, the log system
      *         must be configured properly on the container instance (or on a different log server for remote logging
@@ -5018,7 +5096,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         <p>
      *         This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
      *         check the Docker Remote API version on your container instance, log in to your container instance and run
-     *         the following command: <code>sudo docker version | grep "Server API version"</code>
+     *         the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      *         </p>
      *         <note>
      *         <p>
@@ -5039,14 +5117,14 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * The log configuration specification for the container.
      * </p>
      * <p>
-     * If using the Fargate launch type, the only supported value is <code>awslogs</code>.
+     * If you are using the Fargate launch type, the only supported value is <code>awslogs</code>.
      * </p>
      * <p>
      * This parameter maps to <code>LogConfig</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code>
      * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the
-     * same logging driver that the Docker daemon uses; however the container may use a different logging driver than
+     * same logging driver that the Docker daemon uses. However the container may use a different logging driver than
      * the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
      * logging driver for a container, the log system must be configured properly on the container instance (or on a
      * different log server for remote logging options). For more information on the options for different supported log
@@ -5063,7 +5141,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * <note>
      * <p>
@@ -5078,14 +5156,14 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * @param logConfiguration
      *        The log configuration specification for the container.</p>
      *        <p>
-     *        If using the Fargate launch type, the only supported value is <code>awslogs</code>.
+     *        If you are using the Fargate launch type, the only supported value is <code>awslogs</code>.
      *        </p>
      *        <p>
      *        This parameter maps to <code>LogConfig</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>. By default, containers use the same logging driver that the Docker daemon uses; however the
+     *        run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the
      *        container may use a different logging driver than the Docker daemon by specifying a log driver with this
      *        parameter in the container definition. To use a different logging driver for a container, the log system
      *        must be configured properly on the container instance (or on a different log server for remote logging
@@ -5103,7 +5181,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
      *        check the Docker Remote API version on your container instance, log in to your container instance and run
-     *        the following command: <code>sudo docker version | grep "Server API version"</code>
+     *        the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      *        </p>
      *        <note>
      *        <p>
@@ -5198,9 +5276,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <note>
      * <p>
      * It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple
-     * containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes.
-     * When you do, the container that is started last will determine which <code>systemControls</code> parameters take
-     * effect.
+     * containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes. For
+     * tasks that use the <code>awsvpc</code> network mode, the container that is started last determines which
+     * <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it
+     * changes the container instance's namespaced kernel parameters as well as the containers.
      * </p>
      * </note>
      * 
@@ -5213,8 +5292,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         <p>
      *         It is not recommended that you specify network-related <code>systemControls</code> parameters for
      *         multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code>
-     *         network modes. When you do, the container that is started last will determine which
-     *         <code>systemControls</code> parameters take effect.
+     *         network modes. For tasks that use the <code>awsvpc</code> network mode, the container that is started
+     *         last determines which <code>systemControls</code> parameters take effect. For tasks that use the
+     *         <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well
+     *         as the containers.
      *         </p>
      */
 
@@ -5235,9 +5316,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <note>
      * <p>
      * It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple
-     * containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes.
-     * When you do, the container that is started last will determine which <code>systemControls</code> parameters take
-     * effect.
+     * containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes. For
+     * tasks that use the <code>awsvpc</code> network mode, the container that is started last determines which
+     * <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it
+     * changes the container instance's namespaced kernel parameters as well as the containers.
      * </p>
      * </note>
      * 
@@ -5251,8 +5333,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <p>
      *        It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple
      *        containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network
-     *        modes. When you do, the container that is started last will determine which <code>systemControls</code>
-     *        parameters take effect.
+     *        modes. For tasks that use the <code>awsvpc</code> network mode, the container that is started last
+     *        determines which <code>systemControls</code> parameters take effect. For tasks that use the
+     *        <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well
+     *        as the containers.
      *        </p>
      */
 
@@ -5275,9 +5359,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <note>
      * <p>
      * It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple
-     * containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes.
-     * When you do, the container that is started last will determine which <code>systemControls</code> parameters take
-     * effect.
+     * containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes. For
+     * tasks that use the <code>awsvpc</code> network mode, the container that is started last determines which
+     * <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it
+     * changes the container instance's namespaced kernel parameters as well as the containers.
      * </p>
      * </note>
      * <p>
@@ -5296,8 +5381,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <p>
      *        It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple
      *        containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network
-     *        modes. When you do, the container that is started last will determine which <code>systemControls</code>
-     *        parameters take effect.
+     *        modes. For tasks that use the <code>awsvpc</code> network mode, the container that is started last
+     *        determines which <code>systemControls</code> parameters take effect. For tasks that use the
+     *        <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well
+     *        as the containers.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -5322,9 +5409,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <note>
      * <p>
      * It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple
-     * containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes.
-     * When you do, the container that is started last will determine which <code>systemControls</code> parameters take
-     * effect.
+     * containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes. For
+     * tasks that use the <code>awsvpc</code> network mode, the container that is started last determines which
+     * <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it
+     * changes the container instance's namespaced kernel parameters as well as the containers.
      * </p>
      * </note>
      * 
@@ -5338,8 +5426,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <p>
      *        It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple
      *        containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network
-     *        modes. When you do, the container that is started last will determine which <code>systemControls</code>
-     *        parameters take effect.
+     *        modes. For tasks that use the <code>awsvpc</code> network mode, the container that is started last
+     *        determines which <code>systemControls</code> parameters take effect. For tasks that use the
+     *        <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well
+     *        as the containers.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -5390,6 +5480,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             sb.append("VolumesFrom: ").append(getVolumesFrom()).append(",");
         if (getLinuxParameters() != null)
             sb.append("LinuxParameters: ").append(getLinuxParameters()).append(",");
+        if (getSecrets() != null)
+            sb.append("Secrets: ").append(getSecrets()).append(",");
         if (getHostname() != null)
             sb.append("Hostname: ").append(getHostname()).append(",");
         if (getUser() != null)
@@ -5498,6 +5590,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getLinuxParameters() != null && other.getLinuxParameters().equals(this.getLinuxParameters()) == false)
             return false;
+        if (other.getSecrets() == null ^ this.getSecrets() == null)
+            return false;
+        if (other.getSecrets() != null && other.getSecrets().equals(this.getSecrets()) == false)
+            return false;
         if (other.getHostname() == null ^ this.getHostname() == null)
             return false;
         if (other.getHostname() != null && other.getHostname().equals(this.getHostname()) == false)
@@ -5589,6 +5685,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getMountPoints() == null) ? 0 : getMountPoints().hashCode());
         hashCode = prime * hashCode + ((getVolumesFrom() == null) ? 0 : getVolumesFrom().hashCode());
         hashCode = prime * hashCode + ((getLinuxParameters() == null) ? 0 : getLinuxParameters().hashCode());
+        hashCode = prime * hashCode + ((getSecrets() == null) ? 0 : getSecrets().hashCode());
         hashCode = prime * hashCode + ((getHostname() == null) ? 0 : getHostname().hashCode());
         hashCode = prime * hashCode + ((getUser() == null) ? 0 : getUser().hashCode());
         hashCode = prime * hashCode + ((getWorkingDirectory() == null) ? 0 : getWorkingDirectory().hashCode());

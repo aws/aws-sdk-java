@@ -575,6 +575,33 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteUserEndpointsRequest, DeleteUserEndpointsResult> asyncHandler);
 
     /**
+     * Delete an Voice channel
+     * 
+     * @param deleteVoiceChannelRequest
+     * @return A Java Future containing the result of the DeleteVoiceChannel operation returned by the service.
+     * @sample AmazonPinpointAsync.DeleteVoiceChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceChannel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVoiceChannelResult> deleteVoiceChannelAsync(DeleteVoiceChannelRequest deleteVoiceChannelRequest);
+
+    /**
+     * Delete an Voice channel
+     * 
+     * @param deleteVoiceChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVoiceChannel operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.DeleteVoiceChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceChannel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVoiceChannelResult> deleteVoiceChannelAsync(DeleteVoiceChannelRequest deleteVoiceChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVoiceChannelRequest, DeleteVoiceChannelResult> asyncHandler);
+
+    /**
      * Get an ADM channel.
      * 
      * @param getAdmChannelRequest
@@ -1414,6 +1441,33 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetUserEndpointsRequest, GetUserEndpointsResult> asyncHandler);
 
     /**
+     * Get a Voice Channel
+     * 
+     * @param getVoiceChannelRequest
+     * @return A Java Future containing the result of the GetVoiceChannel operation returned by the service.
+     * @sample AmazonPinpointAsync.GetVoiceChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetVoiceChannelResult> getVoiceChannelAsync(GetVoiceChannelRequest getVoiceChannelRequest);
+
+    /**
+     * Get a Voice Channel
+     * 
+     * @param getVoiceChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVoiceChannel operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.GetVoiceChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetVoiceChannelResult> getVoiceChannelAsync(GetVoiceChannelRequest getVoiceChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVoiceChannelRequest, GetVoiceChannelResult> asyncHandler);
+
+    /**
      * Returns information about the specified phone number.
      * 
      * @param phoneNumberValidateRequest
@@ -1960,5 +2014,32 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      */
     java.util.concurrent.Future<UpdateSmsChannelResult> updateSmsChannelAsync(UpdateSmsChannelRequest updateSmsChannelRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateSmsChannelRequest, UpdateSmsChannelResult> asyncHandler);
+
+    /**
+     * Update an Voice channel
+     * 
+     * @param updateVoiceChannelRequest
+     * @return A Java Future containing the result of the UpdateVoiceChannel operation returned by the service.
+     * @sample AmazonPinpointAsync.UpdateVoiceChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceChannel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateVoiceChannelResult> updateVoiceChannelAsync(UpdateVoiceChannelRequest updateVoiceChannelRequest);
+
+    /**
+     * Update an Voice channel
+     * 
+     * @param updateVoiceChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateVoiceChannel operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.UpdateVoiceChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceChannel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateVoiceChannelResult> updateVoiceChannelAsync(UpdateVoiceChannelRequest updateVoiceChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateVoiceChannelRequest, UpdateVoiceChannelResult> asyncHandler);
 
 }

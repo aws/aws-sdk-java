@@ -108,6 +108,10 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                     context.nextToken();
                     containerDefinition.setLinuxParameters(LinuxParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("secrets", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setSecrets(new ListUnmarshaller<Secret>(SecretJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("hostname", targetDepth)) {
                     context.nextToken();
                     containerDefinition.setHostname(context.getUnmarshaller(String.class).unmarshall(context));

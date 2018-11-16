@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -75,6 +77,16 @@ public class RoleStaxUnmarshaller implements Unmarshaller<Role, StaxUnmarshaller
 
                 if (context.testExpression("Description", targetDepth)) {
                     role.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Tags", targetDepth)) {
+                    role.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("Tags/member", targetDepth)) {
+                    role.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

@@ -1526,6 +1526,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     }
 
     @Override
+    public java.util.concurrent.Future<ListRoleTagsResult> listRoleTagsAsync(ListRoleTagsRequest request) {
+
+        return listRoleTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRoleTagsResult> listRoleTagsAsync(ListRoleTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRoleTagsRequest, ListRoleTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListRolesResult> listRolesAsync(ListRolesRequest request) {
 
         return listRolesAsync(request, null);
@@ -1726,6 +1739,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     @Override
     public java.util.concurrent.Future<ListUserPoliciesResult> listUserPoliciesAsync(ListUserPoliciesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListUserPoliciesRequest, ListUserPoliciesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUserTagsResult> listUserTagsAsync(ListUserTagsRequest request) {
+
+        return listUserTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUserTagsResult> listUserTagsAsync(ListUserTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListUserTagsRequest, ListUserTagsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1968,6 +1994,58 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     @Override
     public java.util.concurrent.Future<SimulatePrincipalPolicyResult> simulatePrincipalPolicyAsync(SimulatePrincipalPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<SimulatePrincipalPolicyRequest, SimulatePrincipalPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagRoleResult> tagRoleAsync(TagRoleRequest request) {
+
+        return tagRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagRoleResult> tagRoleAsync(TagRoleRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagRoleRequest, TagRoleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagUserResult> tagUserAsync(TagUserRequest request) {
+
+        return tagUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagUserResult> tagUserAsync(TagUserRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagUserRequest, TagUserResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagRoleResult> untagRoleAsync(UntagRoleRequest request) {
+
+        return untagRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagRoleResult> untagRoleAsync(UntagRoleRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagRoleRequest, UntagRoleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagUserResult> untagUserAsync(UntagUserRequest request) {
+
+        return untagUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagUserResult> untagUserAsync(UntagUserRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagUserRequest, UntagUserResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

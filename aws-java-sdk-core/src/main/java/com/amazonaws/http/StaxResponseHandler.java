@@ -16,6 +16,7 @@ package com.amazonaws.http;
 
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ResponseMetadata;
+import com.amazonaws.internal.SdkFilterInputStream;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.VoidStaxUnmarshaller;
@@ -29,6 +30,7 @@ import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLStreamException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.http.impl.io.EmptyInputStream;
 
 /**
  * Default implementation of HttpResponseHandler that handles a successful
@@ -81,6 +83,9 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
         InputStream content = response.getContent();
 
         if (content == null) {
+            content = new ByteArrayInputStream("<eof/>".getBytes(StringUtils.UTF8));
+        } else if (content instanceof SdkFilterInputStream &&
+                   ((SdkFilterInputStream) content).getDelegateStream() instanceof EmptyInputStream) {
             content = new ByteArrayInputStream("<eof/>".getBytes(StringUtils.UTF8));
         }
 

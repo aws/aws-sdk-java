@@ -53,6 +53,11 @@ public class ClusterSnapshotCopyStatusStaxUnmarshaller implements Unmarshaller<C
                     continue;
                 }
 
+                if (context.testExpression("ManualSnapshotRetentionPeriod", targetDepth)) {
+                    clusterSnapshotCopyStatus.setManualSnapshotRetentionPeriod(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("SnapshotCopyGrantName", targetDepth)) {
                     clusterSnapshotCopyStatus.setSnapshotCopyGrantName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

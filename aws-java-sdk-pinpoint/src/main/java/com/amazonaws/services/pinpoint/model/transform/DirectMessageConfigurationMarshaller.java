@@ -43,6 +43,8 @@ public class DirectMessageConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GCMMessage").build();
     private static final MarshallingInfo<StructuredPojo> SMSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SMSMessage").build();
+    private static final MarshallingInfo<StructuredPojo> VOICEMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VoiceMessage").build();
 
     private static final DirectMessageConfigurationMarshaller instance = new DirectMessageConfigurationMarshaller();
 
@@ -68,6 +70,7 @@ public class DirectMessageConfigurationMarshaller {
             protocolMarshaller.marshall(directMessageConfiguration.getEmailMessage(), EMAILMESSAGE_BINDING);
             protocolMarshaller.marshall(directMessageConfiguration.getGCMMessage(), GCMMESSAGE_BINDING);
             protocolMarshaller.marshall(directMessageConfiguration.getSMSMessage(), SMSMESSAGE_BINDING);
+            protocolMarshaller.marshall(directMessageConfiguration.getVoiceMessage(), VOICEMESSAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

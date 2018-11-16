@@ -36,9 +36,9 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * The status of the deployment. Valid values are <code>PRIMARY</code> (for the most recent deployment),
-     * <code>ACTIVE</code> (for previous deployments that still have tasks running, but are being replaced with the
-     * <code>PRIMARY</code> deployment), and <code>INACTIVE</code> (for deployments that have been completely replaced).
+     * The status of the deployment. Valid values are <code>PRIMARY</code> for the most recent deployment,
+     * <code>ACTIVE</code> for previous deployments that still have tasks running, but are being replaced with the
+     * <code>PRIMARY</code> deployment, and <code>INACTIVE</code> for deployments that have been completely replaced.
      * </p>
      */
     private String status;
@@ -68,13 +68,13 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     private Integer runningCount;
     /**
      * <p>
-     * The Unix time stamp for when the service was created.
+     * The Unix timestamp for when the service was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The Unix time stamp for when the service was last updated.
+     * The Unix timestamp for when the service was last updated.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -140,16 +140,16 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the deployment. Valid values are <code>PRIMARY</code> (for the most recent deployment),
-     * <code>ACTIVE</code> (for previous deployments that still have tasks running, but are being replaced with the
-     * <code>PRIMARY</code> deployment), and <code>INACTIVE</code> (for deployments that have been completely replaced).
+     * The status of the deployment. Valid values are <code>PRIMARY</code> for the most recent deployment,
+     * <code>ACTIVE</code> for previous deployments that still have tasks running, but are being replaced with the
+     * <code>PRIMARY</code> deployment, and <code>INACTIVE</code> for deployments that have been completely replaced.
      * </p>
      * 
      * @param status
-     *        The status of the deployment. Valid values are <code>PRIMARY</code> (for the most recent deployment),
-     *        <code>ACTIVE</code> (for previous deployments that still have tasks running, but are being replaced with
-     *        the <code>PRIMARY</code> deployment), and <code>INACTIVE</code> (for deployments that have been completely
-     *        replaced).
+     *        The status of the deployment. Valid values are <code>PRIMARY</code> for the most recent deployment,
+     *        <code>ACTIVE</code> for previous deployments that still have tasks running, but are being replaced with
+     *        the <code>PRIMARY</code> deployment, and <code>INACTIVE</code> for deployments that have been completely
+     *        replaced.
      */
 
     public void setStatus(String status) {
@@ -158,15 +158,15 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the deployment. Valid values are <code>PRIMARY</code> (for the most recent deployment),
-     * <code>ACTIVE</code> (for previous deployments that still have tasks running, but are being replaced with the
-     * <code>PRIMARY</code> deployment), and <code>INACTIVE</code> (for deployments that have been completely replaced).
+     * The status of the deployment. Valid values are <code>PRIMARY</code> for the most recent deployment,
+     * <code>ACTIVE</code> for previous deployments that still have tasks running, but are being replaced with the
+     * <code>PRIMARY</code> deployment, and <code>INACTIVE</code> for deployments that have been completely replaced.
      * </p>
      * 
-     * @return The status of the deployment. Valid values are <code>PRIMARY</code> (for the most recent deployment),
-     *         <code>ACTIVE</code> (for previous deployments that still have tasks running, but are being replaced with
-     *         the <code>PRIMARY</code> deployment), and <code>INACTIVE</code> (for deployments that have been
-     *         completely replaced).
+     * @return The status of the deployment. Valid values are <code>PRIMARY</code> for the most recent deployment,
+     *         <code>ACTIVE</code> for previous deployments that still have tasks running, but are being replaced with
+     *         the <code>PRIMARY</code> deployment, and <code>INACTIVE</code> for deployments that have been completely
+     *         replaced.
      */
 
     public String getStatus() {
@@ -175,16 +175,16 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the deployment. Valid values are <code>PRIMARY</code> (for the most recent deployment),
-     * <code>ACTIVE</code> (for previous deployments that still have tasks running, but are being replaced with the
-     * <code>PRIMARY</code> deployment), and <code>INACTIVE</code> (for deployments that have been completely replaced).
+     * The status of the deployment. Valid values are <code>PRIMARY</code> for the most recent deployment,
+     * <code>ACTIVE</code> for previous deployments that still have tasks running, but are being replaced with the
+     * <code>PRIMARY</code> deployment, and <code>INACTIVE</code> for deployments that have been completely replaced.
      * </p>
      * 
      * @param status
-     *        The status of the deployment. Valid values are <code>PRIMARY</code> (for the most recent deployment),
-     *        <code>ACTIVE</code> (for previous deployments that still have tasks running, but are being replaced with
-     *        the <code>PRIMARY</code> deployment), and <code>INACTIVE</code> (for deployments that have been completely
-     *        replaced).
+     *        The status of the deployment. Valid values are <code>PRIMARY</code> for the most recent deployment,
+     *        <code>ACTIVE</code> for previous deployments that still have tasks running, but are being replaced with
+     *        the <code>PRIMARY</code> deployment, and <code>INACTIVE</code> for deployments that have been completely
+     *        replaced.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,11 +355,11 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the service was created.
+     * The Unix timestamp for when the service was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix time stamp for when the service was created.
+     *        The Unix timestamp for when the service was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -368,10 +368,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the service was created.
+     * The Unix timestamp for when the service was created.
      * </p>
      * 
-     * @return The Unix time stamp for when the service was created.
+     * @return The Unix timestamp for when the service was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -380,11 +380,11 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the service was created.
+     * The Unix timestamp for when the service was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix time stamp for when the service was created.
+     *        The Unix timestamp for when the service was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,11 +395,11 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the service was last updated.
+     * The Unix timestamp for when the service was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix time stamp for when the service was last updated.
+     *        The Unix timestamp for when the service was last updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -408,10 +408,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the service was last updated.
+     * The Unix timestamp for when the service was last updated.
      * </p>
      * 
-     * @return The Unix time stamp for when the service was last updated.
+     * @return The Unix timestamp for when the service was last updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -420,11 +420,11 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the service was last updated.
+     * The Unix timestamp for when the service was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix time stamp for when the service was last updated.
+     *        The Unix timestamp for when the service was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.identitymanagement.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -70,6 +72,16 @@ public class UserStaxUnmarshaller implements Unmarshaller<User, StaxUnmarshaller
 
                 if (context.testExpression("PasswordLastUsed", targetDepth)) {
                     user.setPasswordLastUsed(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Tags", targetDepth)) {
+                    user.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("Tags/member", targetDepth)) {
+                    user.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

@@ -92,6 +92,21 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String description;
     /**
      * <p>
+     * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
+     * associated value. For more information about tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire request
+     * fails and the role is not created.
+     * </p>
+     * </note>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
      * The maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a
      * value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to
      * 12 hours.
@@ -517,6 +532,143 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
+     * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
+     * associated value. For more information about tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire request
+     * fails and the role is not created.
+     * </p>
+     * </note>
+     * 
+     * @return A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
+     *         associated value. For more information about tagging, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *         <i>IAM User Guide</i>.</p> <note>
+     *         <p>
+     *         If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire
+     *         request fails and the role is not created.
+     *         </p>
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
+     * associated value. For more information about tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire request
+     * fails and the role is not created.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
+     *        associated value. For more information about tagging, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        <i>IAM User Guide</i>.</p> <note>
+     *        <p>
+     *        If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire
+     *        request fails and the role is not created.
+     *        </p>
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
+     * associated value. For more information about tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire request
+     * fails and the role is not created.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
+     *        associated value. For more information about tagging, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        <i>IAM User Guide</i>.</p> <note>
+     *        <p>
+     *        If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire
+     *        request fails and the role is not created.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRoleRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
+     * associated value. For more information about tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire request
+     * fails and the role is not created.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
+     *        associated value. For more information about tagging, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        <i>IAM User Guide</i>.</p> <note>
+     *        <p>
+     *        If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire
+     *        request fails and the role is not created.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRoleRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
      * The maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a
      * value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to
      * 12 hours.
@@ -686,6 +838,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
             sb.append("AssumeRolePolicyDocument: ").append(getAssumeRolePolicyDocument()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getMaxSessionDuration() != null)
             sb.append("MaxSessionDuration: ").append(getMaxSessionDuration()).append(",");
         if (getPermissionsBoundary() != null)
@@ -720,6 +874,10 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getMaxSessionDuration() == null ^ this.getMaxSessionDuration() == null)
             return false;
         if (other.getMaxSessionDuration() != null && other.getMaxSessionDuration().equals(this.getMaxSessionDuration()) == false)
@@ -740,6 +898,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
         hashCode = prime * hashCode + ((getAssumeRolePolicyDocument() == null) ? 0 : getAssumeRolePolicyDocument().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getMaxSessionDuration() == null) ? 0 : getMaxSessionDuration().hashCode());
         hashCode = prime * hashCode + ((getPermissionsBoundary() == null) ? 0 : getPermissionsBoundary().hashCode());
         return hashCode;

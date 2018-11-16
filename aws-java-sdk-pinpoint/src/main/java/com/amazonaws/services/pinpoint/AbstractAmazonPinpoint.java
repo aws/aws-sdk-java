@@ -138,6 +138,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public DeleteVoiceChannelResult deleteVoiceChannel(DeleteVoiceChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAdmChannelResult getAdmChannel(GetAdmChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -293,6 +298,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public GetVoiceChannelResult getVoiceChannel(GetVoiceChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PhoneNumberValidateResult phoneNumberValidate(PhoneNumberValidateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -389,6 +399,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public UpdateSmsChannelResult updateSmsChannel(UpdateSmsChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateVoiceChannelResult updateVoiceChannel(UpdateVoiceChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -129,6 +129,10 @@ public class BuildJsonUnmarshaller implements Unmarshaller<Build, JsonUnmarshall
                     context.nextToken();
                     build.setTimeoutInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("queuedTimeoutInMinutes", targetDepth)) {
+                    context.nextToken();
+                    build.setQueuedTimeoutInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("buildComplete", targetDepth)) {
                     context.nextToken();
                     build.setBuildComplete(context.getUnmarshaller(Boolean.class).unmarshall(context));

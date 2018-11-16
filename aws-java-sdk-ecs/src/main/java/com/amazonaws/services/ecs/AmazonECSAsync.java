@@ -293,6 +293,41 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
+     * Modifies the ARN and resource ID format of a resource for a specified IAM user, IAM role, or the root user for an
+     * account. You can specify whether the new ARN and resource ID format are disabled for new resources that are
+     * created.
+     * </p>
+     * 
+     * @param deleteAccountSettingRequest
+     * @return A Java Future containing the result of the DeleteAccountSetting operation returned by the service.
+     * @sample AmazonECSAsync.DeleteAccountSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAccountSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccountSettingResult> deleteAccountSettingAsync(DeleteAccountSettingRequest deleteAccountSettingRequest);
+
+    /**
+     * <p>
+     * Modifies the ARN and resource ID format of a resource for a specified IAM user, IAM role, or the root user for an
+     * account. You can specify whether the new ARN and resource ID format are disabled for new resources that are
+     * created.
+     * </p>
+     * 
+     * @param deleteAccountSettingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccountSetting operation returned by the service.
+     * @sample AmazonECSAsyncHandler.DeleteAccountSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAccountSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccountSettingResult> deleteAccountSettingAsync(DeleteAccountSettingRequest deleteAccountSettingRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccountSettingRequest, DeleteAccountSettingResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes one or more custom attributes from an Amazon ECS resource.
      * </p>
      * 
@@ -366,17 +401,17 @@ public interface AmazonECSAsync extends AmazonECS {
      * <note>
      * <p>
      * When you delete a service, if there are still running tasks that require cleanup, the service status moves from
-     * <code>ACTIVE</code> to <code>DRAINING</code>, and the service is no longer visible in the console or in
-     * <a>ListServices</a> API operations. After the tasks have stopped, then the service status moves from
+     * <code>ACTIVE</code> to <code>DRAINING</code>, and the service is no longer visible in the console or in the
+     * <a>ListServices</a> API operation. After the tasks have stopped, then the service status moves from
      * <code>DRAINING</code> to <code>INACTIVE</code>. Services in the <code>DRAINING</code> or <code>INACTIVE</code>
-     * status can still be viewed with <a>DescribeServices</a> API operations. However, in the future,
+     * status can still be viewed with the <a>DescribeServices</a> API operation. However, in the future,
      * <code>INACTIVE</code> services may be cleaned up and purged from Amazon ECS record keeping, and
-     * <a>DescribeServices</a> API operations on those services return a <code>ServiceNotFoundException</code> error.
+     * <a>DescribeServices</a> calls on those services return a <code>ServiceNotFoundException</code> error.
      * </p>
      * </note> <important>
      * <p>
      * If you attempt to create a new service with the same name as an existing service in either <code>ACTIVE</code> or
-     * <code>DRAINING</code> status, you will receive an error.
+     * <code>DRAINING</code> status, you receive an error.
      * </p>
      * </important>
      * 
@@ -397,17 +432,17 @@ public interface AmazonECSAsync extends AmazonECS {
      * <note>
      * <p>
      * When you delete a service, if there are still running tasks that require cleanup, the service status moves from
-     * <code>ACTIVE</code> to <code>DRAINING</code>, and the service is no longer visible in the console or in
-     * <a>ListServices</a> API operations. After the tasks have stopped, then the service status moves from
+     * <code>ACTIVE</code> to <code>DRAINING</code>, and the service is no longer visible in the console or in the
+     * <a>ListServices</a> API operation. After the tasks have stopped, then the service status moves from
      * <code>DRAINING</code> to <code>INACTIVE</code>. Services in the <code>DRAINING</code> or <code>INACTIVE</code>
-     * status can still be viewed with <a>DescribeServices</a> API operations. However, in the future,
+     * status can still be viewed with the <a>DescribeServices</a> API operation. However, in the future,
      * <code>INACTIVE</code> services may be cleaned up and purged from Amazon ECS record keeping, and
-     * <a>DescribeServices</a> API operations on those services return a <code>ServiceNotFoundException</code> error.
+     * <a>DescribeServices</a> calls on those services return a <code>ServiceNotFoundException</code> error.
      * </p>
      * </note> <important>
      * <p>
      * If you attempt to create a new service with the same name as an existing service in either <code>ACTIVE</code> or
-     * <code>DRAINING</code> status, you will receive an error.
+     * <code>DRAINING</code> status, you receive an error.
      * </p>
      * </important>
      * 
@@ -436,7 +471,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * <p>
      * Deregistering a container instance removes the instance from a cluster, but it does not terminate the EC2
-     * instance; if you are finished using the instance, be sure to terminate it in the Amazon EC2 console to stop
+     * instance. If you are finished using the instance, be sure to terminate it in the Amazon EC2 console to stop
      * billing.
      * </p>
      * <note>
@@ -468,7 +503,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * <p>
      * Deregistering a container instance removes the instance from a cluster, but it does not terminate the EC2
-     * instance; if you are finished using the instance, be sure to terminate it in the Amazon EC2 console to stop
+     * instance. If you are finished using the instance, be sure to terminate it in the Amazon EC2 console to stop
      * billing.
      * </p>
      * <note>
@@ -507,7 +542,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * <note>
      * <p>
-     * At this time, <code>INACTIVE</code> task definitions remain discoverable in your account indefinitely; however,
+     * At this time, <code>INACTIVE</code> task definitions remain discoverable in your account indefinitely. However,
      * this behavior is subject to change in the future, so you should not rely on <code>INACTIVE</code> task
      * definitions persisting beyond the lifecycle of any associated tasks and services.
      * </p>
@@ -535,7 +570,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * <note>
      * <p>
-     * At this time, <code>INACTIVE</code> task definitions remain discoverable in your account indefinitely; however,
+     * At this time, <code>INACTIVE</code> task definitions remain discoverable in your account indefinitely. However,
      * this behavior is subject to change in the future, so you should not rely on <code>INACTIVE</code> task
      * definitions persisting beyond the lifecycle of any associated tasks and services.
      * </p>
@@ -800,6 +835,37 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
+     * Lists the account settings for an Amazon ECS resource for a specified principal.
+     * </p>
+     * 
+     * @param listAccountSettingsRequest
+     * @return A Java Future containing the result of the ListAccountSettings operation returned by the service.
+     * @sample AmazonECSAsync.ListAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAccountSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccountSettingsResult> listAccountSettingsAsync(ListAccountSettingsRequest listAccountSettingsRequest);
+
+    /**
+     * <p>
+     * Lists the account settings for an Amazon ECS resource for a specified principal.
+     * </p>
+     * 
+     * @param listAccountSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAccountSettings operation returned by the service.
+     * @sample AmazonECSAsyncHandler.ListAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAccountSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccountSettingsResult> listAccountSettingsAsync(ListAccountSettingsRequest listAccountSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAccountSettingsRequest, ListAccountSettingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the attributes for Amazon ECS resources within a specified target type and cluster. When you specify a
      * target type and cluster, <code>ListAttributes</code> returns a list of attribute objects, one for each attribute
      * on each resource. You can filter the list of results to a single attribute name to only return results that have
@@ -983,6 +1049,37 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
+     * List the tags for an Amazon ECS resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonECSAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * List the tags for an Amazon ECS resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonECSAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of task definition families that are registered to your account (which may include task definition
      * families that no longer have any <code>ACTIVE</code> task definition revisions).
      * </p>
@@ -1145,6 +1242,41 @@ public interface AmazonECSAsync extends AmazonECS {
      * @see #listTasksAsync(ListTasksRequest, com.amazonaws.handlers.AsyncHandler)
      */
     java.util.concurrent.Future<ListTasksResult> listTasksAsync(com.amazonaws.handlers.AsyncHandler<ListTasksRequest, ListTasksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the ARN and resource ID format of a resource for a specified IAM user, IAM role, or the root user for an
+     * account. You can specify whether the new ARN and resource ID format are enabled for new resources that are
+     * created. Enabling this setting is required to use new Amazon ECS features such as resource tagging.
+     * </p>
+     * 
+     * @param putAccountSettingRequest
+     * @return A Java Future containing the result of the PutAccountSetting operation returned by the service.
+     * @sample AmazonECSAsync.PutAccountSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccountSettingResult> putAccountSettingAsync(PutAccountSettingRequest putAccountSettingRequest);
+
+    /**
+     * <p>
+     * Modifies the ARN and resource ID format of a resource for a specified IAM user, IAM role, or the root user for an
+     * account. You can specify whether the new ARN and resource ID format are enabled for new resources that are
+     * created. Enabling this setting is required to use new Amazon ECS features such as resource tagging.
+     * </p>
+     * 
+     * @param putAccountSettingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAccountSetting operation returned by the service.
+     * @sample AmazonECSAsyncHandler.PutAccountSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccountSettingResult> putAccountSettingAsync(PutAccountSettingRequest putAccountSettingRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAccountSettingRequest, PutAccountSettingResult> asyncHandler);
 
     /**
      * <p>
@@ -1318,8 +1450,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * <p>
      * The Amazon ECS API follows an eventual consistency model, due to the distributed nature of the system supporting
      * the API. This means that the result of an API command you run that affects your Amazon ECS resources might not be
-     * immediately visible to all subsequent commands you run. You should keep this in mind when you carry out an API
-     * command that immediately follows a previous API command.
+     * immediately visible to all subsequent commands you run. Keep this in mind when you carry out an API command that
+     * immediately follows a previous API command.
      * </p>
      * <p>
      * To manage eventual consistency, you can do the following:
@@ -1367,8 +1499,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * <p>
      * The Amazon ECS API follows an eventual consistency model, due to the distributed nature of the system supporting
      * the API. This means that the result of an API command you run that affects your Amazon ECS resources might not be
-     * immediately visible to all subsequent commands you run. You should keep this in mind when you carry out an API
-     * command that immediately follows a previous API command.
+     * immediately visible to all subsequent commands you run. Keep this in mind when you carry out an API command that
+     * immediately follows a previous API command.
      * </p>
      * <p>
      * To manage eventual consistency, you can do the following:
@@ -1447,7 +1579,7 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Stops a running task.
+     * Stops a running task. Any tags associated with the task will be deleted.
      * </p>
      * <p>
      * When <a>StopTask</a> is called on a task, the equivalent of <code>docker stop</code> is issued to the containers
@@ -1474,7 +1606,7 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Stops a running task.
+     * Stops a running task. Any tags associated with the task will be deleted.
      * </p>
      * <p>
      * When <a>StopTask</a> is called on a task, the equivalent of <code>docker stop</code> is issued to the containers
@@ -1605,6 +1737,72 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
+     * associated with that resource are deleted as well.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonECSAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
+     * associated with that resource are deleted as well.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonECSAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonECSAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Deletes specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonECSAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the Amazon ECS container agent on a specified container instance. Updating the Amazon ECS container agent
      * does not interrupt running tasks or services on the container instance. The process for updating the agent
      * differs depending on whether your container instance was launched with the Amazon ECS-optimized AMI or another
@@ -1699,7 +1897,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * </li>
      * </ul>
      * <p>
-     * Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not belong to a service are not affected; you must
+     * Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not belong to a service are not affected. You must
      * wait for them to finish or stop them manually.
      * </p>
      * <p>
@@ -1764,7 +1962,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * </li>
      * </ul>
      * <p>
-     * Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not belong to a service are not affected; you must
+     * Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not belong to a service are not affected. You must
      * wait for them to finish or stop them manually.
      * </p>
      * <p>

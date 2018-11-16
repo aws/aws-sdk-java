@@ -81,6 +81,8 @@ public enum RDSActions implements Action {
     DeleteDBClusterSnapshot("rds:DeleteDBClusterSnapshot"),
     /** Action for the DeleteDBInstance operation. */
     DeleteDBInstance("rds:DeleteDBInstance"),
+    /** Action for the DeleteDBInstanceAutomatedBackup operation. */
+    DeleteDBInstanceAutomatedBackup("rds:DeleteDBInstanceAutomatedBackup"),
     /** Action for the DeleteDBParameterGroup operation. */
     DeleteDBParameterGroup("rds:DeleteDBParameterGroup"),
     /** Action for the DeleteDBSecurityGroup operation. */
@@ -113,6 +115,8 @@ public enum RDSActions implements Action {
     DescribeDBClusters("rds:DescribeDBClusters"),
     /** Action for the DescribeDBEngineVersions operation. */
     DescribeDBEngineVersions("rds:DescribeDBEngineVersions"),
+    /** Action for the DescribeDBInstanceAutomatedBackups operation. */
+    DescribeDBInstanceAutomatedBackups("rds:DescribeDBInstanceAutomatedBackups"),
     /** Action for the DescribeDBInstances operation. */
     DescribeDBInstances("rds:DescribeDBInstances"),
     /** Action for the DescribeDBLogFiles operation. */

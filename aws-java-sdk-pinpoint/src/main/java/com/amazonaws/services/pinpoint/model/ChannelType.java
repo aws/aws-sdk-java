@@ -27,6 +27,7 @@ public enum ChannelType {
     APNS_VOIP_SANDBOX("APNS_VOIP_SANDBOX"),
     ADM("ADM"),
     SMS("SMS"),
+    VOICE("VOICE"),
     EMAIL("EMAIL"),
     BAIDU("BAIDU"),
     CUSTOM("CUSTOM");

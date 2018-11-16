@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * This parameter is specified when using Docker volumes. Docker volumes are only supported when using the EC2 launch
- * type. Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify a
- * <code>host</code> instead.
+ * This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you are using
+ * the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind mounts,
+ * specify a <code>host</code> instead.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DockerVolumeConfiguration" target="_top">AWS API
@@ -32,7 +32,7 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The scope for the Docker volume which determines it's lifecycle. Docker volumes that are scoped to a
+     * The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a
      * <code>task</code> are automatically provisioned when the task starts and destroyed when the task stops. Docker
      * volumes that are scoped as <code>shared</code> persist after the task stops.
      * </p>
@@ -66,7 +66,7 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
     private String driver;
     /**
      * <p>
-     * A map of Docker driver specific options passed through. This parameter maps to <code>DriverOpts</code> in the <a
+     * A map of Docker driver-specific options passed through. This parameter maps to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxopt</code> option to <a
      * href="https://docs.docker.com/engine/reference/commandline/volume_create/"> <code>docker volume create</code>
@@ -87,13 +87,13 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The scope for the Docker volume which determines it's lifecycle. Docker volumes that are scoped to a
+     * The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a
      * <code>task</code> are automatically provisioned when the task starts and destroyed when the task stops. Docker
      * volumes that are scoped as <code>shared</code> persist after the task stops.
      * </p>
      * 
      * @param scope
-     *        The scope for the Docker volume which determines it's lifecycle. Docker volumes that are scoped to a
+     *        The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a
      *        <code>task</code> are automatically provisioned when the task starts and destroyed when the task stops.
      *        Docker volumes that are scoped as <code>shared</code> persist after the task stops.
      * @see Scope
@@ -105,12 +105,12 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The scope for the Docker volume which determines it's lifecycle. Docker volumes that are scoped to a
+     * The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a
      * <code>task</code> are automatically provisioned when the task starts and destroyed when the task stops. Docker
      * volumes that are scoped as <code>shared</code> persist after the task stops.
      * </p>
      * 
-     * @return The scope for the Docker volume which determines it's lifecycle. Docker volumes that are scoped to a
+     * @return The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a
      *         <code>task</code> are automatically provisioned when the task starts and destroyed when the task stops.
      *         Docker volumes that are scoped as <code>shared</code> persist after the task stops.
      * @see Scope
@@ -122,13 +122,13 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The scope for the Docker volume which determines it's lifecycle. Docker volumes that are scoped to a
+     * The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a
      * <code>task</code> are automatically provisioned when the task starts and destroyed when the task stops. Docker
      * volumes that are scoped as <code>shared</code> persist after the task stops.
      * </p>
      * 
      * @param scope
-     *        The scope for the Docker volume which determines it's lifecycle. Docker volumes that are scoped to a
+     *        The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a
      *        <code>task</code> are automatically provisioned when the task starts and destroyed when the task stops.
      *        Docker volumes that are scoped as <code>shared</code> persist after the task stops.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -142,13 +142,13 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The scope for the Docker volume which determines it's lifecycle. Docker volumes that are scoped to a
+     * The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a
      * <code>task</code> are automatically provisioned when the task starts and destroyed when the task stops. Docker
      * volumes that are scoped as <code>shared</code> persist after the task stops.
      * </p>
      * 
      * @param scope
-     *        The scope for the Docker volume which determines it's lifecycle. Docker volumes that are scoped to a
+     *        The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a
      *        <code>task</code> are automatically provisioned when the task starts and destroyed when the task stops.
      *        Docker volumes that are scoped as <code>shared</code> persist after the task stops.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -341,14 +341,14 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A map of Docker driver specific options passed through. This parameter maps to <code>DriverOpts</code> in the <a
+     * A map of Docker driver-specific options passed through. This parameter maps to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxopt</code> option to <a
      * href="https://docs.docker.com/engine/reference/commandline/volume_create/"> <code>docker volume create</code>
      * </a>.
      * </p>
      * 
-     * @return A map of Docker driver specific options passed through. This parameter maps to <code>DriverOpts</code> in
+     * @return A map of Docker driver-specific options passed through. This parameter maps to <code>DriverOpts</code> in
      *         the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a>
      *         section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *         <code>xxopt</code> option to <a
@@ -362,7 +362,7 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A map of Docker driver specific options passed through. This parameter maps to <code>DriverOpts</code> in the <a
+     * A map of Docker driver-specific options passed through. This parameter maps to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxopt</code> option to <a
      * href="https://docs.docker.com/engine/reference/commandline/volume_create/"> <code>docker volume create</code>
@@ -370,7 +370,7 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param driverOpts
-     *        A map of Docker driver specific options passed through. This parameter maps to <code>DriverOpts</code> in
+     *        A map of Docker driver-specific options passed through. This parameter maps to <code>DriverOpts</code> in
      *        the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>xxopt</code> option to <a
@@ -384,7 +384,7 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A map of Docker driver specific options passed through. This parameter maps to <code>DriverOpts</code> in the <a
+     * A map of Docker driver-specific options passed through. This parameter maps to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxopt</code> option to <a
      * href="https://docs.docker.com/engine/reference/commandline/volume_create/"> <code>docker volume create</code>
@@ -392,7 +392,7 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param driverOpts
-     *        A map of Docker driver specific options passed through. This parameter maps to <code>DriverOpts</code> in
+     *        A map of Docker driver-specific options passed through. This parameter maps to <code>DriverOpts</code> in
      *        the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>xxopt</code> option to <a

@@ -1550,7 +1550,46 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted can't be associated with any DB
+     * Deletes automated backups based on the source instance's <code>DbiResourceId</code> value or the restorable
+     * instance's resource ID.
+     * </p>
+     * 
+     * @param deleteDBInstanceAutomatedBackupRequest
+     *        Parameter input for the <code>DeleteDBInstanceAutomatedBackup</code> operation.
+     * @return A Java Future containing the result of the DeleteDBInstanceAutomatedBackup operation returned by the
+     *         service.
+     * @sample AmazonRDSAsync.DeleteDBInstanceAutomatedBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstanceAutomatedBackup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DBInstanceAutomatedBackup> deleteDBInstanceAutomatedBackupAsync(
+            DeleteDBInstanceAutomatedBackupRequest deleteDBInstanceAutomatedBackupRequest);
+
+    /**
+     * <p>
+     * Deletes automated backups based on the source instance's <code>DbiResourceId</code> value or the restorable
+     * instance's resource ID.
+     * </p>
+     * 
+     * @param deleteDBInstanceAutomatedBackupRequest
+     *        Parameter input for the <code>DeleteDBInstanceAutomatedBackup</code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDBInstanceAutomatedBackup operation returned by the
+     *         service.
+     * @sample AmazonRDSAsyncHandler.DeleteDBInstanceAutomatedBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstanceAutomatedBackup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DBInstanceAutomatedBackup> deleteDBInstanceAutomatedBackupAsync(
+            DeleteDBInstanceAutomatedBackupRequest deleteDBInstanceAutomatedBackupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDBInstanceAutomatedBackupRequest, DBInstanceAutomatedBackup> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a specified DB parameter group. The DB parameter group to be deleted can't be associated with any DB
      * instances.
      * </p>
      * 
@@ -1564,7 +1603,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted can't be associated with any DB
+     * Deletes a specified DB parameter group. The DB parameter group to be deleted can't be associated with any DB
      * instances.
      * </p>
      * 
@@ -1624,11 +1663,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated.
+     * Deletes a DB snapshot. If the snapshot is being copied, the copy operation is terminated.
      * </p>
      * <note>
      * <p>
-     * The DBSnapshot must be in the <code>available</code> state to be deleted.
+     * The DB snapshot must be in the <code>available</code> state to be deleted.
      * </p>
      * </note>
      * 
@@ -1642,11 +1681,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated.
+     * Deletes a DB snapshot. If the snapshot is being copied, the copy operation is terminated.
      * </p>
      * <note>
      * <p>
-     * The DBSnapshot must be in the <code>available</code> state to be deleted.
+     * The DB snapshot must be in the <code>available</code> state to be deleted.
      * </p>
      * </note>
      * 
@@ -2268,6 +2307,55 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<DescribeDBEngineVersionsResult> describeDBEngineVersionsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeDBEngineVersionsRequest, DescribeDBEngineVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Displays backups for both current and deleted instances. For example, use this operation to find details about
+     * automated backups for previously deleted instances. Current instances with retention periods greater than zero
+     * (0) are returned for both the <code>DescribeDBInstanceAutomatedBackups</code> and
+     * <code>DescribeDBInstances</code> operations.
+     * </p>
+     * <p>
+     * All parameters are optional.
+     * </p>
+     * 
+     * @param describeDBInstanceAutomatedBackupsRequest
+     *        Parameter input for DescribeDBInstanceAutomatedBackups.
+     * @return A Java Future containing the result of the DescribeDBInstanceAutomatedBackups operation returned by the
+     *         service.
+     * @sample AmazonRDSAsync.DescribeDBInstanceAutomatedBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstanceAutomatedBackups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBInstanceAutomatedBackupsResult> describeDBInstanceAutomatedBackupsAsync(
+            DescribeDBInstanceAutomatedBackupsRequest describeDBInstanceAutomatedBackupsRequest);
+
+    /**
+     * <p>
+     * Displays backups for both current and deleted instances. For example, use this operation to find details about
+     * automated backups for previously deleted instances. Current instances with retention periods greater than zero
+     * (0) are returned for both the <code>DescribeDBInstanceAutomatedBackups</code> and
+     * <code>DescribeDBInstances</code> operations.
+     * </p>
+     * <p>
+     * All parameters are optional.
+     * </p>
+     * 
+     * @param describeDBInstanceAutomatedBackupsRequest
+     *        Parameter input for DescribeDBInstanceAutomatedBackups.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDBInstanceAutomatedBackups operation returned by the
+     *         service.
+     * @sample AmazonRDSAsyncHandler.DescribeDBInstanceAutomatedBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstanceAutomatedBackups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBInstanceAutomatedBackupsResult> describeDBInstanceAutomatedBackupsAsync(
+            DescribeDBInstanceAutomatedBackupsRequest describeDBInstanceAutomatedBackupsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDBInstanceAutomatedBackupsRequest, DescribeDBInstanceAutomatedBackupsResult> asyncHandler);
 
     /**
      * <p>
@@ -4801,7 +4889,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html"> Starting an Amazon RDS DB
-     * Instance That Was Previously Stopped</a> in the <i>Amazon RDS User Guide.</i>
+     * instance That Was Previously Stopped</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <note>
      * <p>
@@ -4826,7 +4914,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html"> Starting an Amazon RDS DB
-     * Instance That Was Previously Stopped</a> in the <i>Amazon RDS User Guide.</i>
+     * instance That Was Previously Stopped</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <note>
      * <p>

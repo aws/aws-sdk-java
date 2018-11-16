@@ -202,6 +202,10 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements
             request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.getDeletionProtection()));
         }
 
+        if (restoreDBInstanceToPointInTimeRequest.getSourceDbiResourceId() != null) {
+            request.addParameter("SourceDbiResourceId", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getSourceDbiResourceId()));
+        }
+
         return request;
     }
 

@@ -48,6 +48,23 @@ public class CreateUserRequestMarshaller implements Marshaller<Request<CreateUse
             request.addParameter("UserName", StringUtils.fromString(createUserRequest.getUserName()));
         }
 
+        if (!createUserRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<Tag>) createUserRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createUserRequest.getTags();
+            int tagsListIndex = 1;
+
+            for (Tag tagsListValue : tagsList) {
+
+                if (tagsListValue.getKey() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                }
+
+                if (tagsListValue.getValue() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                }
+                tagsListIndex++;
+            }
+        }
+
         if (createUserRequest.getPermissionsBoundary() != null) {
             request.addParameter("PermissionsBoundary", StringUtils.fromString(createUserRequest.getPermissionsBoundary()));
         }

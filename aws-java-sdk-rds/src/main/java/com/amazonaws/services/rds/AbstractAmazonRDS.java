@@ -179,6 +179,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public DBInstanceAutomatedBackup deleteDBInstanceAutomatedBackup(DeleteDBInstanceAutomatedBackupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDBParameterGroupResult deleteDBParameterGroup(DeleteDBParameterGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -286,6 +291,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     @Override
     public DescribeDBEngineVersionsResult describeDBEngineVersions() {
         return describeDBEngineVersions(new DescribeDBEngineVersionsRequest());
+    }
+
+    @Override
+    public DescribeDBInstanceAutomatedBackupsResult describeDBInstanceAutomatedBackups(DescribeDBInstanceAutomatedBackupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

@@ -156,6 +156,12 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private Boolean includePublic;
+    /**
+     * <p>
+     * A specific DB resource ID to describe.
+     * </p>
+     */
+    private String dbiResourceId;
 
     /**
      * <p>
@@ -1031,6 +1037,46 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * A specific DB resource ID to describe.
+     * </p>
+     * 
+     * @param dbiResourceId
+     *        A specific DB resource ID to describe.
+     */
+
+    public void setDbiResourceId(String dbiResourceId) {
+        this.dbiResourceId = dbiResourceId;
+    }
+
+    /**
+     * <p>
+     * A specific DB resource ID to describe.
+     * </p>
+     * 
+     * @return A specific DB resource ID to describe.
+     */
+
+    public String getDbiResourceId() {
+        return this.dbiResourceId;
+    }
+
+    /**
+     * <p>
+     * A specific DB resource ID to describe.
+     * </p>
+     * 
+     * @param dbiResourceId
+     *        A specific DB resource ID to describe.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDBSnapshotsRequest withDbiResourceId(String dbiResourceId) {
+        setDbiResourceId(dbiResourceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1056,7 +1102,9 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
         if (getIncludeShared() != null)
             sb.append("IncludeShared: ").append(getIncludeShared()).append(",");
         if (getIncludePublic() != null)
-            sb.append("IncludePublic: ").append(getIncludePublic());
+            sb.append("IncludePublic: ").append(getIncludePublic()).append(",");
+        if (getDbiResourceId() != null)
+            sb.append("DbiResourceId: ").append(getDbiResourceId());
         sb.append("}");
         return sb.toString();
     }
@@ -1103,6 +1151,10 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getIncludePublic() != null && other.getIncludePublic().equals(this.getIncludePublic()) == false)
             return false;
+        if (other.getDbiResourceId() == null ^ this.getDbiResourceId() == null)
+            return false;
+        if (other.getDbiResourceId() != null && other.getDbiResourceId().equals(this.getDbiResourceId()) == false)
+            return false;
         return true;
     }
 
@@ -1119,6 +1171,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         hashCode = prime * hashCode + ((getIncludeShared() == null) ? 0 : getIncludeShared().hashCode());
         hashCode = prime * hashCode + ((getIncludePublic() == null) ? 0 : getIncludePublic().hashCode());
+        hashCode = prime * hashCode + ((getDbiResourceId() == null) ? 0 : getDbiResourceId().hashCode());
         return hashCode;
     }
 

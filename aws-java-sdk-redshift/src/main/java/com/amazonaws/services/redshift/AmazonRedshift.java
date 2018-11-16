@@ -223,6 +223,40 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Deletes a set of cluster snapshots.
+     * </p>
+     * 
+     * @param batchDeleteClusterSnapshotsRequest
+     * @return Result of the BatchDeleteClusterSnapshots operation returned by the service.
+     * @throws BatchDeleteRequestSizeExceededException
+     *         The maximum number for a batch delete of snapshots has been reached. The limit is 100.
+     * @sample AmazonRedshift.BatchDeleteClusterSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/BatchDeleteClusterSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchDeleteClusterSnapshotsResult batchDeleteClusterSnapshots(BatchDeleteClusterSnapshotsRequest batchDeleteClusterSnapshotsRequest);
+
+    /**
+     * <p>
+     * Modifies the settings for a list of snapshots.
+     * </p>
+     * 
+     * @param batchModifyClusterSnapshotsRequest
+     * @return Result of the BatchModifyClusterSnapshots operation returned by the service.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
+     * @throws BatchModifyClusterSnapshotsLimitExceededException
+     *         The maximum number for snapshot identifiers has been reached. The limit is 100.
+     * @sample AmazonRedshift.BatchModifyClusterSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/BatchModifyClusterSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchModifyClusterSnapshotsResult batchModifyClusterSnapshots(BatchModifyClusterSnapshotsRequest batchModifyClusterSnapshotsRequest);
+
+    /**
+     * <p>
      * Cancels a resize operation.
      * </p>
      * 
@@ -270,6 +304,10 @@ public interface AmazonRedshift {
      *         authorized to access the snapshot.
      * @throws ClusterSnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of cluster snapshots.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.CopyClusterSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CopyClusterSnapshot" target="_top">AWS
      *      API Documentation</a>
@@ -327,8 +365,7 @@ public interface AmazonRedshift {
      * @throws InvalidElasticIpException
      *         The Elastic IP (EIP) is invalid or cannot be found.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @throws LimitExceededException
@@ -338,6 +375,12 @@ public interface AmazonRedshift {
      *         Redshift on your behalf. Wait and retry the request.
      * @throws InvalidClusterTrackException
      *         The provided cluster track name is not valid.
+     * @throws SnapshotScheduleNotFoundException
+     *         We could not find the specified snapshot schedule.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.CreateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster" target="_top">AWS API
      *      Documentation</a>
@@ -370,8 +413,7 @@ public interface AmazonRedshift {
      * @throws ClusterParameterGroupAlreadyExistsException
      *         A cluster parameter group with the same name already exists.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateClusterParameterGroup
@@ -400,8 +442,7 @@ public interface AmazonRedshift {
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon
      *         Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateClusterSecurityGroup
@@ -431,10 +472,13 @@ public interface AmazonRedshift {
      * @throws ClusterSnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of cluster snapshots.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.CreateClusterSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSnapshot" target="_top">AWS
      *      API Documentation</a>
@@ -471,8 +515,7 @@ public interface AmazonRedshift {
      * @throws UnauthorizedOperationException
      *         Your account is not authorized to perform the requested operation.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @throws DependentServiceRequestThrottlingException
@@ -534,8 +577,7 @@ public interface AmazonRedshift {
      * @throws SourceNotFoundException
      *         The specified Amazon Redshift event source could not be found.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateEventSubscription
@@ -566,8 +608,7 @@ public interface AmazonRedshift {
      *         to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon
      *         Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateHsmClientCertificate
@@ -597,8 +638,7 @@ public interface AmazonRedshift {
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon
      *         Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateHsmConfiguration
@@ -628,8 +668,7 @@ public interface AmazonRedshift {
      * @throws LimitExceededException
      *         The encryption key has exceeded its grant limit in AWS KMS.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @throws DependentServiceRequestThrottlingException
@@ -640,6 +679,29 @@ public interface AmazonRedshift {
      *      target="_top">AWS API Documentation</a>
      */
     SnapshotCopyGrant createSnapshotCopyGrant(CreateSnapshotCopyGrantRequest createSnapshotCopyGrantRequest);
+
+    /**
+     * <p>
+     * Creates a new snapshot schedule.
+     * </p>
+     * 
+     * @param createSnapshotScheduleRequest
+     * @return Result of the CreateSnapshotSchedule operation returned by the service.
+     * @throws SnapshotScheduleAlreadyExistsException
+     *         The specified snapshot schedule already exists.
+     * @throws InvalidScheduleException
+     *         The schedule you submitted isn't valid.
+     * @throws SnapshotScheduleQuotaExceededException
+     *         You have exceeded the quota of snapshot schedules.
+     * @throws TagLimitExceededException
+     *         You have exceeded the number of tags allowed.
+     * @throws ScheduleDefinitionTypeUnsupportedException
+     *         The definition you submitted is not supported.
+     * @sample AmazonRedshift.CreateSnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateSnapshotScheduleResult createSnapshotSchedule(CreateSnapshotScheduleRequest createSnapshotScheduleRequest);
 
     /**
      * <p>
@@ -658,8 +720,7 @@ public interface AmazonRedshift {
      *        Contains the output from the <code>CreateTags</code> action.
      * @return Result of the CreateTags operation returned by the service.
      * @throws TagLimitExceededException
-     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
-     *         cluster node type.
+     *         You have exceeded the number of tags allowed.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws InvalidTagException
@@ -701,6 +762,10 @@ public interface AmazonRedshift {
      *         The value specified as a snapshot identifier is already used by an existing snapshot.
      * @throws ClusterSnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of cluster snapshots.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.DeleteCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCluster" target="_top">AWS API
      *      Documentation</a>
@@ -874,6 +939,23 @@ public interface AmazonRedshift {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteSnapshotCopyGrantResult deleteSnapshotCopyGrant(DeleteSnapshotCopyGrantRequest deleteSnapshotCopyGrantRequest);
+
+    /**
+     * <p>
+     * Deletes a snapshot schedule.
+     * </p>
+     * 
+     * @param deleteSnapshotScheduleRequest
+     * @return Result of the DeleteSnapshotSchedule operation returned by the service.
+     * @throws InvalidClusterSnapshotScheduleStateException
+     *         The cluster snapshot schedule state is not valid.
+     * @throws SnapshotScheduleNotFoundException
+     *         We could not find the specified snapshot schedule.
+     * @sample AmazonRedshift.DeleteSnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteSnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteSnapshotScheduleResult deleteSnapshotSchedule(DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest);
 
     /**
      * <p>
@@ -1512,6 +1594,32 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Returns a list of snapshot schedules.
+     * </p>
+     * 
+     * @param describeSnapshotSchedulesRequest
+     * @return Result of the DescribeSnapshotSchedules operation returned by the service.
+     * @sample AmazonRedshift.DescribeSnapshotSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeSnapshotSchedulesResult describeSnapshotSchedules(DescribeSnapshotSchedulesRequest describeSnapshotSchedulesRequest);
+
+    /**
+     * <p>
+     * Returns the total amount of snapshot usage and provisioned storage for a user in megabytes.
+     * </p>
+     * 
+     * @param describeStorageRequest
+     * @return Result of the DescribeStorage operation returned by the service.
+     * @sample AmazonRedshift.DescribeStorage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeStorage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeStorageResult describeStorage(DescribeStorageRequest describeStorageRequest);
+
+    /**
+     * <p>
      * Lists the status of one or more table restore requests made using the <a>RestoreTableFromClusterSnapshot</a> API
      * action. If you don't specify a value for the <code>TableRestoreRequestId</code> parameter, then
      * <code>DescribeTableRestoreStatus</code> returns the status of all table restore requests ordered by the date and
@@ -1689,6 +1797,10 @@ public interface AmazonRedshift {
      * @throws DependentServiceRequestThrottlingException
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.EnableSnapshotCopy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableSnapshotCopy" target="_top">AWS
      *      API Documentation</a>
@@ -1822,6 +1934,10 @@ public interface AmazonRedshift {
      *         The number of tables in the cluster exceeds the limit for the requested new cluster node type.
      * @throws InvalidClusterTrackException
      *         The provided cluster track name is not valid.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.ModifyCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster" target="_top">AWS API
      *      Documentation</a>
@@ -1910,6 +2026,47 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Modifies the settings for a snapshot.
+     * </p>
+     * 
+     * @param modifyClusterSnapshotRequest
+     * @return Result of the ModifyClusterSnapshot operation returned by the service.
+     * @throws InvalidClusterSnapshotStateException
+     *         The specified cluster snapshot is not in the <code>available</code> state, or other accounts are
+     *         authorized to access the snapshot.
+     * @throws ClusterSnapshotNotFoundException
+     *         The snapshot identifier does not refer to an existing cluster snapshot.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
+     * @sample AmazonRedshift.ModifyClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSnapshot" target="_top">AWS
+     *      API Documentation</a>
+     */
+    Snapshot modifyClusterSnapshot(ModifyClusterSnapshotRequest modifyClusterSnapshotRequest);
+
+    /**
+     * <p>
+     * Modifies a snapshot schedule for a cluster.
+     * </p>
+     * 
+     * @param modifyClusterSnapshotScheduleRequest
+     * @return Result of the ModifyClusterSnapshotSchedule operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws SnapshotScheduleNotFoundException
+     *         We could not find the specified snapshot schedule.
+     * @throws InvalidClusterSnapshotScheduleStateException
+     *         The cluster snapshot schedule state is not valid.
+     * @sample AmazonRedshift.ModifyClusterSnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyClusterSnapshotScheduleResult modifyClusterSnapshotSchedule(ModifyClusterSnapshotScheduleRequest modifyClusterSnapshotScheduleRequest);
+
+    /**
+     * <p>
      * Modifies a cluster subnet group to include the specified list of VPC subnets. The operation replaces the existing
      * list of subnets with the new list of subnets.
      * </p>
@@ -1975,8 +2132,11 @@ public interface AmazonRedshift {
 
     /**
      * <p>
-     * Modifies the number of days to retain automated snapshots in the destination region after they are copied from
-     * the source region.
+     * Modifies the number of days to retain snapshots in the destination region after they are copied from the source
+     * region. By default, this only changes the retention period of copied automated snapshots. The retention periods
+     * for both new and existing copied automated snapshots will be updated with the new retention period. You can set
+     * the manual option to change only the retention periods of copied manual snapshots. If you set this option only
+     * newly copied manual snapshots will have the new retention period
      * </p>
      * 
      * @param modifySnapshotCopyRetentionPeriodRequest
@@ -1989,11 +2149,34 @@ public interface AmazonRedshift {
      *         Your account is not authorized to perform the requested operation.
      * @throws InvalidClusterStateException
      *         The specified cluster is not in the <code>available</code> state.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.ModifySnapshotCopyRetentionPeriod
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod"
      *      target="_top">AWS API Documentation</a>
      */
     Cluster modifySnapshotCopyRetentionPeriod(ModifySnapshotCopyRetentionPeriodRequest modifySnapshotCopyRetentionPeriodRequest);
+
+    /**
+     * <p>
+     * Modifies a snapshot schedule. Any schedule associate with a cluster will be modified asynchronously.
+     * </p>
+     * 
+     * @param modifySnapshotScheduleRequest
+     * @return Result of the ModifySnapshotSchedule operation returned by the service.
+     * @throws InvalidScheduleException
+     *         The schedule you submitted isn't valid.
+     * @throws SnapshotScheduleNotFoundException
+     *         We could not find the specified snapshot schedule.
+     * @throws SnapshotScheduleUpdateInProgressException
+     *         The specified snapshot schedule is already being updated.
+     * @sample AmazonRedshift.ModifySnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifySnapshotScheduleResult modifySnapshotSchedule(ModifySnapshotScheduleRequest modifySnapshotScheduleRequest);
 
     /**
      * <p>
@@ -2071,7 +2254,7 @@ public interface AmazonRedshift {
     /**
      * <p>
      * Changes the size of the cluster. You can change the cluster's type, or change the number or type of nodes. The
-     * default behavior is to use the elastic resize method. With an elastic resize your cluster is avaialble for read
+     * default behavior is to use the elastic resize method. With an elastic resize, your cluster is available for read
      * and write operations more quickly than with the classic resize method.
      * </p>
      * <p>
@@ -2107,7 +2290,7 @@ public interface AmazonRedshift {
      * </li>
      * <li>
      * <p>
-     * The type of nodes you add must match the node type for the cluster.
+     * The type of nodes that you add must match the node type for the cluster.
      * </p>
      * </li>
      * </ul>
@@ -2213,6 +2396,8 @@ public interface AmazonRedshift {
      *         Redshift on your behalf. Wait and retry the request.
      * @throws InvalidClusterTrackException
      *         The provided cluster track name is not valid.
+     * @throws SnapshotScheduleNotFoundException
+     *         We could not find the specified snapshot schedule.
      * @sample AmazonRedshift.RestoreFromClusterSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot"
      *      target="_top">AWS API Documentation</a>

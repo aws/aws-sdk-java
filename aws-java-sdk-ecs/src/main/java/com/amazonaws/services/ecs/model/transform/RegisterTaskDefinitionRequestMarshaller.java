@@ -48,6 +48,8 @@ public class RegisterTaskDefinitionRequestMarshaller {
             .marshallLocationName("cpu").build();
     private static final MarshallingInfo<String> MEMORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("memory").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final RegisterTaskDefinitionRequestMarshaller instance = new RegisterTaskDefinitionRequestMarshaller();
 
@@ -75,6 +77,7 @@ public class RegisterTaskDefinitionRequestMarshaller {
             protocolMarshaller.marshall(registerTaskDefinitionRequest.getRequiresCompatibilities(), REQUIRESCOMPATIBILITIES_BINDING);
             protocolMarshaller.marshall(registerTaskDefinitionRequest.getCpu(), CPU_BINDING);
             protocolMarshaller.marshall(registerTaskDefinitionRequest.getMemory(), MEMORY_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

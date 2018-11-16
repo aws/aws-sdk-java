@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS
- * clusters are region-specific.
+ * clusters are Region-specific.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

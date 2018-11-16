@@ -52,6 +52,10 @@ public class DeleteDBInstanceRequestMarshaller implements Marshaller<Request<Del
             request.addParameter("FinalDBSnapshotIdentifier", StringUtils.fromString(deleteDBInstanceRequest.getFinalDBSnapshotIdentifier()));
         }
 
+        if (deleteDBInstanceRequest.getDeleteAutomatedBackups() != null) {
+            request.addParameter("DeleteAutomatedBackups", StringUtils.fromBoolean(deleteDBInstanceRequest.getDeleteAutomatedBackups()));
+        }
+
         return request;
     }
 

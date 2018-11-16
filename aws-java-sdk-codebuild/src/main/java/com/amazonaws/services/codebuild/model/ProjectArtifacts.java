@@ -35,17 +35,17 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
+     * <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NO_ARTIFACTS</code>: The build project will not produce any build output.
+     * <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The build project will store build output in Amazon Simple Storage Service (Amazon S3).
+     * <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
      * </p>
      * </li>
      * </ul>
@@ -53,19 +53,19 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
     private String type;
     /**
      * <p>
-     * Information about the build output artifact location, as follows:
+     * Information about the build output artifact location:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output locations instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output locations instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
@@ -78,57 +78,57 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
     private String location;
     /**
      * <p>
-     * Along with <code>namespaceType</code> and <code>name</code>, the pattern that AWS CodeBuild will use to name and
-     * store the output artifact, as follows:
+     * Along with <code>namespaceType</code> and <code>name</code>, the pattern that AWS CodeBuild uses to name and
+     * store the output artifact:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
      * <p>
      * If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If <code>path</code> is
-     * not specified, then <code>path</code> will not be used.
+     * not specified, <code>path</code> is not used.
      * </p>
      * </li>
      * </ul>
      * <p>
      * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     * <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact would be
-     * stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.
+     * <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored in
+     * the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.
      * </p>
      */
     private String path;
     /**
      * <p>
-     * Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild will use to determine the name
-     * and location to store the output artifact, as follows:
+     * Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild uses to determine the name and
+     * location to store the output artifact:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>S3</code>, then valid values include:
+     * If <code>type</code> is set to <code>S3</code>, valid values include:
      * </p>
      * <ul>
      * <li>
@@ -147,33 +147,33 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * <p>
      * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact
-     * would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored
+     * in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      * </p>
      */
     private String namespaceType;
     /**
      * <p>
-     * Along with <code>path</code> and <code>namespaceType</code>, the pattern that AWS CodeBuild will use to name and
-     * store the output artifact, as follows:
+     * Along with <code>path</code> and <code>namespaceType</code>, the pattern that AWS CodeBuild uses to name and
+     * store the output artifact:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
      * <p>
      * If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set the
-     * name to be a forward slash ("/"), then the artifact is stored in the root of the output bucket.
+     * name to be a forward slash ("/"), the artifact is stored in the root of the output bucket.
      * </p>
      * </li>
      * </ul>
@@ -184,21 +184,21 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact
-     * would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact is
+     * stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is
-     * set to "<code>/</code>", then the output artifact would be stored in the root of the output bucket.
+     * set to "<code>/</code>", the output artifact is stored in the root of the output bucket.
      * </p>
      * </li>
      * <li>
      * <p>
      * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     * <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", then the output artifact would be stored
-     * in <code>MyArtifacts/<i>build-ID</i> </code>.
+     * <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in
+     * <code>MyArtifacts/<i>build-ID</i> </code>.
      * </p>
      * </li>
      * </ul>
@@ -206,19 +206,19 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
     private String name;
     /**
      * <p>
-     * The type of build output artifact to create, as follows:
+     * The type of build output artifact to create:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output artifacts instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output artifacts instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
@@ -228,13 +228,13 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code>: AWS CodeBuild will create in the output bucket a folder containing the build output. This is
+     * <code>NONE</code>: AWS CodeBuild creates in the output bucket a folder that contains the build output. This is
      * the default if <code>packaging</code> is not specified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ZIP</code>: AWS CodeBuild will create in the output bucket a ZIP file containing the build output.
+     * <code>ZIP</code>: AWS CodeBuild creates in the output bucket a ZIP file that contains the build output.
      * </p>
      * </li>
      * </ul>
@@ -244,16 +244,17 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
     private String packaging;
     /**
      * <p>
-     * If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a
-     * buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * If this flag is set, a name specified in the build spec file overrides the artifact name. The name specified in a
+     * build spec file is calculated at build time and uses the Shell Command Language. For example, you can append a
      * date and time to your artifact name so that it is always unique.
      * </p>
      */
     private Boolean overrideArtifactName;
     /**
      * <p>
-     * Set to true if you do not want your output artifacts encrypted. This option is only valid if your artifacts type
-     * is Amazon S3. If this is set with another artifacts type, an invalidInputException will be thrown.
+     * Set to true if you do not want your output artifacts encrypted. This option is valid only if your artifacts type
+     * is Amazon Simple Storage Service (Amazon S3). If this is set with another artifacts type, an
+     * invalidInputException is thrown.
      * </p>
      */
     private Boolean encryptionDisabled;
@@ -271,17 +272,17 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
+     * <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NO_ARTIFACTS</code>: The build project will not produce any build output.
+     * <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The build project will store build output in Amazon Simple Storage Service (Amazon S3).
+     * <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
      * </p>
      * </li>
      * </ul>
@@ -291,17 +292,17 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
+     *        <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NO_ARTIFACTS</code>: The build project will not produce any build output.
+     *        <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The build project will store build output in Amazon Simple Storage Service (Amazon S3).
+     *        <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
      *        </p>
      *        </li>
      * @see ArtifactsType
@@ -318,17 +319,17 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
+     * <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NO_ARTIFACTS</code>: The build project will not produce any build output.
+     * <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The build project will store build output in Amazon Simple Storage Service (Amazon S3).
+     * <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
      * </p>
      * </li>
      * </ul>
@@ -337,17 +338,17 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
+     *         <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NO_ARTIFACTS</code>: The build project will not produce any build output.
+     *         <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>S3</code>: The build project will store build output in Amazon Simple Storage Service (Amazon S3).
+     *         <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
      *         </p>
      *         </li>
      * @see ArtifactsType
@@ -364,17 +365,17 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
+     * <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NO_ARTIFACTS</code>: The build project will not produce any build output.
+     * <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The build project will store build output in Amazon Simple Storage Service (Amazon S3).
+     * <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
      * </p>
      * </li>
      * </ul>
@@ -384,17 +385,17 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
+     *        <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NO_ARTIFACTS</code>: The build project will not produce any build output.
+     *        <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The build project will store build output in Amazon Simple Storage Service (Amazon S3).
+     *        <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -413,17 +414,17 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
+     * <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NO_ARTIFACTS</code>: The build project will not produce any build output.
+     * <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The build project will store build output in Amazon Simple Storage Service (Amazon S3).
+     * <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
      * </p>
      * </li>
      * </ul>
@@ -433,17 +434,17 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
+     *        <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NO_ARTIFACTS</code>: The build project will not produce any build output.
+     *        <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The build project will store build output in Amazon Simple Storage Service (Amazon S3).
+     *        <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
      *        </p>
      *        </li>
      * @see ArtifactsType
@@ -460,17 +461,17 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
+     * <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NO_ARTIFACTS</code>: The build project will not produce any build output.
+     * <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The build project will store build output in Amazon Simple Storage Service (Amazon S3).
+     * <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
      * </p>
      * </li>
      * </ul>
@@ -480,17 +481,17 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CODEPIPELINE</code>: The build project will have build output generated through AWS CodePipeline.
+     *        <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NO_ARTIFACTS</code>: The build project will not produce any build output.
+     *        <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The build project will store build output in Amazon Simple Storage Service (Amazon S3).
+     *        <code>S3</code>: The build project stores build output in Amazon Simple Storage Service (Amazon S3).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -504,19 +505,19 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Information about the build output artifact location, as follows:
+     * Information about the build output artifact location:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output locations instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output locations instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
@@ -527,18 +528,18 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * 
      * @param location
-     *        Information about the build output artifact location, as follows:</p>
+     *        Information about the build output artifact location:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
+     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if
      *        specified. This is because AWS CodePipeline manages its build output locations instead of AWS CodeBuild.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified,
-     *        because no build output will be produced.
+     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     *        build output is produced.
      *        </p>
      *        </li>
      *        <li>
@@ -554,19 +555,19 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Information about the build output artifact location, as follows:
+     * Information about the build output artifact location:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output locations instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output locations instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
@@ -576,18 +577,18 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </li>
      * </ul>
      * 
-     * @return Information about the build output artifact location, as follows:</p>
+     * @return Information about the build output artifact location:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
+     *         If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if
      *         specified. This is because AWS CodePipeline manages its build output locations instead of AWS CodeBuild.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified,
-     *         because no build output will be produced.
+     *         If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     *         build output is produced.
      *         </p>
      *         </li>
      *         <li>
@@ -603,19 +604,19 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Information about the build output artifact location, as follows:
+     * Information about the build output artifact location:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output locations instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output locations instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
@@ -626,18 +627,18 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * 
      * @param location
-     *        Information about the build output artifact location, as follows:</p>
+     *        Information about the build output artifact location:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
+     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if
      *        specified. This is because AWS CodePipeline manages its build output locations instead of AWS CodeBuild.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified,
-     *        because no build output will be produced.
+     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     *        build output is produced.
      *        </p>
      *        </li>
      *        <li>
@@ -655,62 +656,62 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Along with <code>namespaceType</code> and <code>name</code>, the pattern that AWS CodeBuild will use to name and
-     * store the output artifact, as follows:
+     * Along with <code>namespaceType</code> and <code>name</code>, the pattern that AWS CodeBuild uses to name and
+     * store the output artifact:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
      * <p>
      * If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If <code>path</code> is
-     * not specified, then <code>path</code> will not be used.
+     * not specified, <code>path</code> is not used.
      * </p>
      * </li>
      * </ul>
      * <p>
      * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     * <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact would be
-     * stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.
+     * <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored in
+     * the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.
      * </p>
      * 
      * @param path
-     *        Along with <code>namespaceType</code> and <code>name</code>, the pattern that AWS CodeBuild will use to
-     *        name and store the output artifact, as follows:</p>
+     *        Along with <code>namespaceType</code> and <code>name</code>, the pattern that AWS CodeBuild uses to name
+     *        and store the output artifact:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
+     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if
      *        specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified,
-     *        because no build output will be produced.
+     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     *        build output is produced.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If
-     *        <code>path</code> is not specified, then <code>path</code> will not be used.
+     *        <code>path</code> is not specified, <code>path</code> is not used.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     *        <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact
-     *        would be stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.
+     *        <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is
+     *        stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.
      */
 
     public void setPath(String path) {
@@ -719,61 +720,61 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Along with <code>namespaceType</code> and <code>name</code>, the pattern that AWS CodeBuild will use to name and
-     * store the output artifact, as follows:
+     * Along with <code>namespaceType</code> and <code>name</code>, the pattern that AWS CodeBuild uses to name and
+     * store the output artifact:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
      * <p>
      * If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If <code>path</code> is
-     * not specified, then <code>path</code> will not be used.
+     * not specified, <code>path</code> is not used.
      * </p>
      * </li>
      * </ul>
      * <p>
      * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     * <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact would be
-     * stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.
+     * <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored in
+     * the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.
      * </p>
      * 
-     * @return Along with <code>namespaceType</code> and <code>name</code>, the pattern that AWS CodeBuild will use to
-     *         name and store the output artifact, as follows:</p>
+     * @return Along with <code>namespaceType</code> and <code>name</code>, the pattern that AWS CodeBuild uses to name
+     *         and store the output artifact:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
+     *         If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if
      *         specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified,
-     *         because no build output will be produced.
+     *         If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     *         build output is produced.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If
-     *         <code>path</code> is not specified, then <code>path</code> will not be used.
+     *         <code>path</code> is not specified, <code>path</code> is not used.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
      *         For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set
-     *         to <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output
-     *         artifact would be stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.
+     *         to <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is
+     *         stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.
      */
 
     public String getPath() {
@@ -782,62 +783,62 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Along with <code>namespaceType</code> and <code>name</code>, the pattern that AWS CodeBuild will use to name and
-     * store the output artifact, as follows:
+     * Along with <code>namespaceType</code> and <code>name</code>, the pattern that AWS CodeBuild uses to name and
+     * store the output artifact:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
      * <p>
      * If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If <code>path</code> is
-     * not specified, then <code>path</code> will not be used.
+     * not specified, <code>path</code> is not used.
      * </p>
      * </li>
      * </ul>
      * <p>
      * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     * <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact would be
-     * stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.
+     * <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored in
+     * the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.
      * </p>
      * 
      * @param path
-     *        Along with <code>namespaceType</code> and <code>name</code>, the pattern that AWS CodeBuild will use to
-     *        name and store the output artifact, as follows:</p>
+     *        Along with <code>namespaceType</code> and <code>name</code>, the pattern that AWS CodeBuild uses to name
+     *        and store the output artifact:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
+     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if
      *        specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified,
-     *        because no build output will be produced.
+     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     *        build output is produced.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If
-     *        <code>path</code> is not specified, then <code>path</code> will not be used.
+     *        <code>path</code> is not specified, <code>path</code> is not used.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     *        <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact
-     *        would be stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.
+     *        <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is
+     *        stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -848,25 +849,25 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild will use to determine the name
-     * and location to store the output artifact, as follows:
+     * Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild uses to determine the name and
+     * location to store the output artifact:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>S3</code>, then valid values include:
+     * If <code>type</code> is set to <code>S3</code>, valid values include:
      * </p>
      * <ul>
      * <li>
@@ -885,29 +886,29 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * <p>
      * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact
-     * would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored
+     * in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      * </p>
      * 
      * @param namespaceType
-     *        Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild will use to determine
-     *        the name and location to store the output artifact, as follows:</p>
+     *        Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild uses to determine the
+     *        name and location to store the output artifact:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
+     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if
      *        specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified,
-     *        because no build output will be produced.
+     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     *        build output is produced.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>S3</code>, then valid values include:
+     *        If <code>type</code> is set to <code>S3</code>, valid values include:
      *        </p>
      *        <ul>
      *        <li>
@@ -926,8 +927,8 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        </ul>
      *        <p>
      *        For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     *        <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output
-     *        artifact would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     *        <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is
+     *        stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      * @see ArtifactNamespace
      */
 
@@ -937,25 +938,25 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild will use to determine the name
-     * and location to store the output artifact, as follows:
+     * Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild uses to determine the name and
+     * location to store the output artifact:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>S3</code>, then valid values include:
+     * If <code>type</code> is set to <code>S3</code>, valid values include:
      * </p>
      * <ul>
      * <li>
@@ -974,28 +975,28 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * <p>
      * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact
-     * would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored
+     * in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      * </p>
      * 
-     * @return Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild will use to determine
-     *         the name and location to store the output artifact, as follows:</p>
+     * @return Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild uses to determine the
+     *         name and location to store the output artifact:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
+     *         If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if
      *         specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified,
-     *         because no build output will be produced.
+     *         If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     *         build output is produced.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If <code>type</code> is set to <code>S3</code>, then valid values include:
+     *         If <code>type</code> is set to <code>S3</code>, valid values include:
      *         </p>
      *         <ul>
      *         <li>
@@ -1014,8 +1015,8 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *         </ul>
      *         <p>
      *         For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set
-     *         to <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output
-     *         artifact would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     *         to <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output
+     *         artifact is stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      * @see ArtifactNamespace
      */
 
@@ -1025,25 +1026,25 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild will use to determine the name
-     * and location to store the output artifact, as follows:
+     * Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild uses to determine the name and
+     * location to store the output artifact:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>S3</code>, then valid values include:
+     * If <code>type</code> is set to <code>S3</code>, valid values include:
      * </p>
      * <ul>
      * <li>
@@ -1062,29 +1063,29 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * <p>
      * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact
-     * would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored
+     * in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      * </p>
      * 
      * @param namespaceType
-     *        Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild will use to determine
-     *        the name and location to store the output artifact, as follows:</p>
+     *        Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild uses to determine the
+     *        name and location to store the output artifact:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
+     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if
      *        specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified,
-     *        because no build output will be produced.
+     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     *        build output is produced.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>S3</code>, then valid values include:
+     *        If <code>type</code> is set to <code>S3</code>, valid values include:
      *        </p>
      *        <ul>
      *        <li>
@@ -1103,8 +1104,8 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        </ul>
      *        <p>
      *        For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     *        <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output
-     *        artifact would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     *        <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is
+     *        stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ArtifactNamespace
      */
@@ -1116,25 +1117,25 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild will use to determine the name
-     * and location to store the output artifact, as follows:
+     * Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild uses to determine the name and
+     * location to store the output artifact:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>S3</code>, then valid values include:
+     * If <code>type</code> is set to <code>S3</code>, valid values include:
      * </p>
      * <ul>
      * <li>
@@ -1153,29 +1154,29 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * <p>
      * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact
-     * would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored
+     * in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      * </p>
      * 
      * @param namespaceType
-     *        Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild will use to determine
-     *        the name and location to store the output artifact, as follows:</p>
+     *        Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild uses to determine the
+     *        name and location to store the output artifact:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
+     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if
      *        specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified,
-     *        because no build output will be produced.
+     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     *        build output is produced.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>S3</code>, then valid values include:
+     *        If <code>type</code> is set to <code>S3</code>, valid values include:
      *        </p>
      *        <ul>
      *        <li>
@@ -1194,8 +1195,8 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        </ul>
      *        <p>
      *        For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     *        <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output
-     *        artifact would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     *        <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is
+     *        stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      * @see ArtifactNamespace
      */
 
@@ -1205,25 +1206,25 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild will use to determine the name
-     * and location to store the output artifact, as follows:
+     * Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild uses to determine the name and
+     * location to store the output artifact:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>S3</code>, then valid values include:
+     * If <code>type</code> is set to <code>S3</code>, valid values include:
      * </p>
      * <ul>
      * <li>
@@ -1242,29 +1243,29 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * <p>
      * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact
-     * would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored
+     * in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      * </p>
      * 
      * @param namespaceType
-     *        Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild will use to determine
-     *        the name and location to store the output artifact, as follows:</p>
+     *        Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild uses to determine the
+     *        name and location to store the output artifact:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
+     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if
      *        specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified,
-     *        because no build output will be produced.
+     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     *        build output is produced.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>S3</code>, then valid values include:
+     *        If <code>type</code> is set to <code>S3</code>, valid values include:
      *        </p>
      *        <ul>
      *        <li>
@@ -1283,8 +1284,8 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        </ul>
      *        <p>
      *        For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     *        <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output
-     *        artifact would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     *        <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is
+     *        stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ArtifactNamespace
      */
@@ -1296,26 +1297,26 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Along with <code>path</code> and <code>namespaceType</code>, the pattern that AWS CodeBuild will use to name and
-     * store the output artifact, as follows:
+     * Along with <code>path</code> and <code>namespaceType</code>, the pattern that AWS CodeBuild uses to name and
+     * store the output artifact:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
      * <p>
      * If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set the
-     * name to be a forward slash ("/"), then the artifact is stored in the root of the output bucket.
+     * name to be a forward slash ("/"), the artifact is stored in the root of the output bucket.
      * </p>
      * </li>
      * </ul>
@@ -1326,45 +1327,45 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact
-     * would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact is
+     * stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is
-     * set to "<code>/</code>", then the output artifact would be stored in the root of the output bucket.
+     * set to "<code>/</code>", the output artifact is stored in the root of the output bucket.
      * </p>
      * </li>
      * <li>
      * <p>
      * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     * <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", then the output artifact would be stored
-     * in <code>MyArtifacts/<i>build-ID</i> </code>.
+     * <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in
+     * <code>MyArtifacts/<i>build-ID</i> </code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param name
-     *        Along with <code>path</code> and <code>namespaceType</code>, the pattern that AWS CodeBuild will use to
-     *        name and store the output artifact, as follows:</p>
+     *        Along with <code>path</code> and <code>namespaceType</code>, the pattern that AWS CodeBuild uses to name
+     *        and store the output artifact:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
+     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if
      *        specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified,
-     *        because no build output will be produced.
+     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     *        build output is produced.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set
-     *        the name to be a forward slash ("/"), then the artifact is stored in the root of the output bucket.
+     *        the name to be a forward slash ("/"), the artifact is stored in the root of the output bucket.
      *        </p>
      *        </li>
      *        </ul>
@@ -1376,21 +1377,21 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      *        <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output
-     *        artifact would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     *        artifact is stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and
-     *        <code>name</code> is set to "<code>/</code>", then the output artifact would be stored in the root of the
-     *        output bucket.
+     *        <code>name</code> is set to "<code>/</code>", the output artifact is stored in the root of the output
+     *        bucket.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     *        <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", then the output artifact would be
-     *        stored in <code>MyArtifacts/<i>build-ID</i> </code>.
+     *        <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in
+     *        <code>MyArtifacts/<i>build-ID</i> </code>.
      *        </p>
      *        </li>
      */
@@ -1401,26 +1402,26 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Along with <code>path</code> and <code>namespaceType</code>, the pattern that AWS CodeBuild will use to name and
-     * store the output artifact, as follows:
+     * Along with <code>path</code> and <code>namespaceType</code>, the pattern that AWS CodeBuild uses to name and
+     * store the output artifact:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
      * <p>
      * If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set the
-     * name to be a forward slash ("/"), then the artifact is stored in the root of the output bucket.
+     * name to be a forward slash ("/"), the artifact is stored in the root of the output bucket.
      * </p>
      * </li>
      * </ul>
@@ -1431,44 +1432,44 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact
-     * would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact is
+     * stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is
-     * set to "<code>/</code>", then the output artifact would be stored in the root of the output bucket.
+     * set to "<code>/</code>", the output artifact is stored in the root of the output bucket.
      * </p>
      * </li>
      * <li>
      * <p>
      * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     * <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", then the output artifact would be stored
-     * in <code>MyArtifacts/<i>build-ID</i> </code>.
+     * <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in
+     * <code>MyArtifacts/<i>build-ID</i> </code>.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Along with <code>path</code> and <code>namespaceType</code>, the pattern that AWS CodeBuild will use to
-     *         name and store the output artifact, as follows:</p>
+     * @return Along with <code>path</code> and <code>namespaceType</code>, the pattern that AWS CodeBuild uses to name
+     *         and store the output artifact:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
+     *         If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if
      *         specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified,
-     *         because no build output will be produced.
+     *         If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     *         build output is produced.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you
-     *         set the name to be a forward slash ("/"), then the artifact is stored in the root of the output bucket.
+     *         set the name to be a forward slash ("/"), the artifact is stored in the root of the output bucket.
      *         </p>
      *         </li>
      *         </ul>
@@ -1480,21 +1481,21 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *         <p>
      *         If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      *         <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output
-     *         artifact would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     *         artifact is stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and
-     *         <code>name</code> is set to "<code>/</code>", then the output artifact would be stored in the root of the
-     *         output bucket.
+     *         <code>name</code> is set to "<code>/</code>", the output artifact is stored in the root of the output
+     *         bucket.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     *         <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", then the output artifact would
-     *         be stored in <code>MyArtifacts/<i>build-ID</i> </code>.
+     *         <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in
+     *         <code>MyArtifacts/<i>build-ID</i> </code>.
      *         </p>
      *         </li>
      */
@@ -1505,26 +1506,26 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Along with <code>path</code> and <code>namespaceType</code>, the pattern that AWS CodeBuild will use to name and
-     * store the output artifact, as follows:
+     * Along with <code>path</code> and <code>namespaceType</code>, the pattern that AWS CodeBuild uses to name and
+     * store the output artifact:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
      * <p>
      * If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set the
-     * name to be a forward slash ("/"), then the artifact is stored in the root of the output bucket.
+     * name to be a forward slash ("/"), the artifact is stored in the root of the output bucket.
      * </p>
      * </li>
      * </ul>
@@ -1535,45 +1536,45 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact
-     * would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact is
+     * stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is
-     * set to "<code>/</code>", then the output artifact would be stored in the root of the output bucket.
+     * set to "<code>/</code>", the output artifact is stored in the root of the output bucket.
      * </p>
      * </li>
      * <li>
      * <p>
      * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     * <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", then the output artifact would be stored
-     * in <code>MyArtifacts/<i>build-ID</i> </code>.
+     * <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in
+     * <code>MyArtifacts/<i>build-ID</i> </code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param name
-     *        Along with <code>path</code> and <code>namespaceType</code>, the pattern that AWS CodeBuild will use to
-     *        name and store the output artifact, as follows:</p>
+     *        Along with <code>path</code> and <code>namespaceType</code>, the pattern that AWS CodeBuild uses to name
+     *        and store the output artifact:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
+     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if
      *        specified. This is because AWS CodePipeline manages its build output names instead of AWS CodeBuild.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified,
-     *        because no build output will be produced.
+     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     *        build output is produced.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set
-     *        the name to be a forward slash ("/"), then the artifact is stored in the root of the output bucket.
+     *        the name to be a forward slash ("/"), the artifact is stored in the root of the output bucket.
      *        </p>
      *        </li>
      *        </ul>
@@ -1585,21 +1586,21 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      *        <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output
-     *        artifact would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     *        artifact is stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and
-     *        <code>name</code> is set to "<code>/</code>", then the output artifact would be stored in the root of the
-     *        output bucket.
+     *        <code>name</code> is set to "<code>/</code>", the output artifact is stored in the root of the output
+     *        bucket.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
-     *        <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", then the output artifact would be
-     *        stored in <code>MyArtifacts/<i>build-ID</i> </code>.
+     *        <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in
+     *        <code>MyArtifacts/<i>build-ID</i> </code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1612,19 +1613,19 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of build output artifact to create, as follows:
+     * The type of build output artifact to create:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output artifacts instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output artifacts instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
@@ -1634,13 +1635,13 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code>: AWS CodeBuild will create in the output bucket a folder containing the build output. This is
+     * <code>NONE</code>: AWS CodeBuild creates in the output bucket a folder that contains the build output. This is
      * the default if <code>packaging</code> is not specified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ZIP</code>: AWS CodeBuild will create in the output bucket a ZIP file containing the build output.
+     * <code>ZIP</code>: AWS CodeBuild creates in the output bucket a ZIP file that contains the build output.
      * </p>
      * </li>
      * </ul>
@@ -1648,18 +1649,18 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * 
      * @param packaging
-     *        The type of build output artifact to create, as follows:</p>
+     *        The type of build output artifact to create:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
+     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if
      *        specified. This is because AWS CodePipeline manages its build output artifacts instead of AWS CodeBuild.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified,
-     *        because no build output will be produced.
+     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     *        build output is produced.
      *        </p>
      *        </li>
      *        <li>
@@ -1669,13 +1670,13 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NONE</code>: AWS CodeBuild will create in the output bucket a folder containing the build output.
+     *        <code>NONE</code>: AWS CodeBuild creates in the output bucket a folder that contains the build output.
      *        This is the default if <code>packaging</code> is not specified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ZIP</code>: AWS CodeBuild will create in the output bucket a ZIP file containing the build output.
+     *        <code>ZIP</code>: AWS CodeBuild creates in the output bucket a ZIP file that contains the build output.
      *        </p>
      *        </li>
      *        </ul>
@@ -1689,19 +1690,19 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of build output artifact to create, as follows:
+     * The type of build output artifact to create:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output artifacts instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output artifacts instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
@@ -1711,31 +1712,31 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code>: AWS CodeBuild will create in the output bucket a folder containing the build output. This is
+     * <code>NONE</code>: AWS CodeBuild creates in the output bucket a folder that contains the build output. This is
      * the default if <code>packaging</code> is not specified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ZIP</code>: AWS CodeBuild will create in the output bucket a ZIP file containing the build output.
+     * <code>ZIP</code>: AWS CodeBuild creates in the output bucket a ZIP file that contains the build output.
      * </p>
      * </li>
      * </ul>
      * </li>
      * </ul>
      * 
-     * @return The type of build output artifact to create, as follows:</p>
+     * @return The type of build output artifact to create:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
+     *         If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if
      *         specified. This is because AWS CodePipeline manages its build output artifacts instead of AWS CodeBuild.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified,
-     *         because no build output will be produced.
+     *         If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     *         build output is produced.
      *         </p>
      *         </li>
      *         <li>
@@ -1745,13 +1746,13 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>NONE</code>: AWS CodeBuild will create in the output bucket a folder containing the build output.
+     *         <code>NONE</code>: AWS CodeBuild creates in the output bucket a folder that contains the build output.
      *         This is the default if <code>packaging</code> is not specified.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ZIP</code>: AWS CodeBuild will create in the output bucket a ZIP file containing the build output.
+     *         <code>ZIP</code>: AWS CodeBuild creates in the output bucket a ZIP file that contains the build output.
      *         </p>
      *         </li>
      *         </ul>
@@ -1765,19 +1766,19 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of build output artifact to create, as follows:
+     * The type of build output artifact to create:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output artifacts instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output artifacts instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
@@ -1787,13 +1788,13 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code>: AWS CodeBuild will create in the output bucket a folder containing the build output. This is
+     * <code>NONE</code>: AWS CodeBuild creates in the output bucket a folder that contains the build output. This is
      * the default if <code>packaging</code> is not specified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ZIP</code>: AWS CodeBuild will create in the output bucket a ZIP file containing the build output.
+     * <code>ZIP</code>: AWS CodeBuild creates in the output bucket a ZIP file that contains the build output.
      * </p>
      * </li>
      * </ul>
@@ -1801,18 +1802,18 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * 
      * @param packaging
-     *        The type of build output artifact to create, as follows:</p>
+     *        The type of build output artifact to create:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
+     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if
      *        specified. This is because AWS CodePipeline manages its build output artifacts instead of AWS CodeBuild.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified,
-     *        because no build output will be produced.
+     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     *        build output is produced.
      *        </p>
      *        </li>
      *        <li>
@@ -1822,13 +1823,13 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NONE</code>: AWS CodeBuild will create in the output bucket a folder containing the build output.
+     *        <code>NONE</code>: AWS CodeBuild creates in the output bucket a folder that contains the build output.
      *        This is the default if <code>packaging</code> is not specified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ZIP</code>: AWS CodeBuild will create in the output bucket a ZIP file containing the build output.
+     *        <code>ZIP</code>: AWS CodeBuild creates in the output bucket a ZIP file that contains the build output.
      *        </p>
      *        </li>
      *        </ul>
@@ -1844,19 +1845,19 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of build output artifact to create, as follows:
+     * The type of build output artifact to create:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output artifacts instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output artifacts instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
@@ -1866,13 +1867,13 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code>: AWS CodeBuild will create in the output bucket a folder containing the build output. This is
+     * <code>NONE</code>: AWS CodeBuild creates in the output bucket a folder that contains the build output. This is
      * the default if <code>packaging</code> is not specified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ZIP</code>: AWS CodeBuild will create in the output bucket a ZIP file containing the build output.
+     * <code>ZIP</code>: AWS CodeBuild creates in the output bucket a ZIP file that contains the build output.
      * </p>
      * </li>
      * </ul>
@@ -1880,18 +1881,18 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * 
      * @param packaging
-     *        The type of build output artifact to create, as follows:</p>
+     *        The type of build output artifact to create:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
+     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if
      *        specified. This is because AWS CodePipeline manages its build output artifacts instead of AWS CodeBuild.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified,
-     *        because no build output will be produced.
+     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     *        build output is produced.
      *        </p>
      *        </li>
      *        <li>
@@ -1901,13 +1902,13 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NONE</code>: AWS CodeBuild will create in the output bucket a folder containing the build output.
+     *        <code>NONE</code>: AWS CodeBuild creates in the output bucket a folder that contains the build output.
      *        This is the default if <code>packaging</code> is not specified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ZIP</code>: AWS CodeBuild will create in the output bucket a ZIP file containing the build output.
+     *        <code>ZIP</code>: AWS CodeBuild creates in the output bucket a ZIP file that contains the build output.
      *        </p>
      *        </li>
      *        </ul>
@@ -1921,19 +1922,19 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of build output artifact to create, as follows:
+     * The type of build output artifact to create:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
-     * specified. This is because AWS CodePipeline manages its build output artifacts instead of AWS CodeBuild.
+     * If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified. This
+     * is because AWS CodePipeline manages its build output artifacts instead of AWS CodeBuild.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified, because
-     * no build output will be produced.
+     * If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.
      * </p>
      * </li>
      * <li>
@@ -1943,13 +1944,13 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code>: AWS CodeBuild will create in the output bucket a folder containing the build output. This is
+     * <code>NONE</code>: AWS CodeBuild creates in the output bucket a folder that contains the build output. This is
      * the default if <code>packaging</code> is not specified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ZIP</code>: AWS CodeBuild will create in the output bucket a ZIP file containing the build output.
+     * <code>ZIP</code>: AWS CodeBuild creates in the output bucket a ZIP file that contains the build output.
      * </p>
      * </li>
      * </ul>
@@ -1957,18 +1958,18 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * 
      * @param packaging
-     *        The type of build output artifact to create, as follows:</p>
+     *        The type of build output artifact to create:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline will ignore this value if
+     *        If <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if
      *        specified. This is because AWS CodePipeline manages its build output artifacts instead of AWS CodeBuild.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this value will be ignored if specified,
-     *        because no build output will be produced.
+     *        If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     *        build output is produced.
      *        </p>
      *        </li>
      *        <li>
@@ -1978,13 +1979,13 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NONE</code>: AWS CodeBuild will create in the output bucket a folder containing the build output.
+     *        <code>NONE</code>: AWS CodeBuild creates in the output bucket a folder that contains the build output.
      *        This is the default if <code>packaging</code> is not specified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ZIP</code>: AWS CodeBuild will create in the output bucket a ZIP file containing the build output.
+     *        <code>ZIP</code>: AWS CodeBuild creates in the output bucket a ZIP file that contains the build output.
      *        </p>
      *        </li>
      *        </ul>
@@ -2000,14 +2001,14 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a
-     * buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * If this flag is set, a name specified in the build spec file overrides the artifact name. The name specified in a
+     * build spec file is calculated at build time and uses the Shell Command Language. For example, you can append a
      * date and time to your artifact name so that it is always unique.
      * </p>
      * 
      * @param overrideArtifactName
-     *        If this flag is set, a name specified in the buildspec file overrides the artifact name. The name
-     *        specified in a buildspec file is calculated at build time and uses the Shell Command Language. For
+     *        If this flag is set, a name specified in the build spec file overrides the artifact name. The name
+     *        specified in a build spec file is calculated at build time and uses the Shell Command Language. For
      *        example, you can append a date and time to your artifact name so that it is always unique.
      */
 
@@ -2017,13 +2018,13 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a
-     * buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * If this flag is set, a name specified in the build spec file overrides the artifact name. The name specified in a
+     * build spec file is calculated at build time and uses the Shell Command Language. For example, you can append a
      * date and time to your artifact name so that it is always unique.
      * </p>
      * 
-     * @return If this flag is set, a name specified in the buildspec file overrides the artifact name. The name
-     *         specified in a buildspec file is calculated at build time and uses the Shell Command Language. For
+     * @return If this flag is set, a name specified in the build spec file overrides the artifact name. The name
+     *         specified in a build spec file is calculated at build time and uses the Shell Command Language. For
      *         example, you can append a date and time to your artifact name so that it is always unique.
      */
 
@@ -2033,14 +2034,14 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a
-     * buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * If this flag is set, a name specified in the build spec file overrides the artifact name. The name specified in a
+     * build spec file is calculated at build time and uses the Shell Command Language. For example, you can append a
      * date and time to your artifact name so that it is always unique.
      * </p>
      * 
      * @param overrideArtifactName
-     *        If this flag is set, a name specified in the buildspec file overrides the artifact name. The name
-     *        specified in a buildspec file is calculated at build time and uses the Shell Command Language. For
+     *        If this flag is set, a name specified in the build spec file overrides the artifact name. The name
+     *        specified in a build spec file is calculated at build time and uses the Shell Command Language. For
      *        example, you can append a date and time to your artifact name so that it is always unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2052,13 +2053,13 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a
-     * buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * If this flag is set, a name specified in the build spec file overrides the artifact name. The name specified in a
+     * build spec file is calculated at build time and uses the Shell Command Language. For example, you can append a
      * date and time to your artifact name so that it is always unique.
      * </p>
      * 
-     * @return If this flag is set, a name specified in the buildspec file overrides the artifact name. The name
-     *         specified in a buildspec file is calculated at build time and uses the Shell Command Language. For
+     * @return If this flag is set, a name specified in the build spec file overrides the artifact name. The name
+     *         specified in a build spec file is calculated at build time and uses the Shell Command Language. For
      *         example, you can append a date and time to your artifact name so that it is always unique.
      */
 
@@ -2068,14 +2069,15 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Set to true if you do not want your output artifacts encrypted. This option is only valid if your artifacts type
-     * is Amazon S3. If this is set with another artifacts type, an invalidInputException will be thrown.
+     * Set to true if you do not want your output artifacts encrypted. This option is valid only if your artifacts type
+     * is Amazon Simple Storage Service (Amazon S3). If this is set with another artifacts type, an
+     * invalidInputException is thrown.
      * </p>
      * 
      * @param encryptionDisabled
-     *        Set to true if you do not want your output artifacts encrypted. This option is only valid if your
-     *        artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException will be
-     *        thrown.
+     *        Set to true if you do not want your output artifacts encrypted. This option is valid only if your
+     *        artifacts type is Amazon Simple Storage Service (Amazon S3). If this is set with another artifacts type,
+     *        an invalidInputException is thrown.
      */
 
     public void setEncryptionDisabled(Boolean encryptionDisabled) {
@@ -2084,13 +2086,14 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Set to true if you do not want your output artifacts encrypted. This option is only valid if your artifacts type
-     * is Amazon S3. If this is set with another artifacts type, an invalidInputException will be thrown.
+     * Set to true if you do not want your output artifacts encrypted. This option is valid only if your artifacts type
+     * is Amazon Simple Storage Service (Amazon S3). If this is set with another artifacts type, an
+     * invalidInputException is thrown.
      * </p>
      * 
-     * @return Set to true if you do not want your output artifacts encrypted. This option is only valid if your
-     *         artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException will be
-     *         thrown.
+     * @return Set to true if you do not want your output artifacts encrypted. This option is valid only if your
+     *         artifacts type is Amazon Simple Storage Service (Amazon S3). If this is set with another artifacts type,
+     *         an invalidInputException is thrown.
      */
 
     public Boolean getEncryptionDisabled() {
@@ -2099,14 +2102,15 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Set to true if you do not want your output artifacts encrypted. This option is only valid if your artifacts type
-     * is Amazon S3. If this is set with another artifacts type, an invalidInputException will be thrown.
+     * Set to true if you do not want your output artifacts encrypted. This option is valid only if your artifacts type
+     * is Amazon Simple Storage Service (Amazon S3). If this is set with another artifacts type, an
+     * invalidInputException is thrown.
      * </p>
      * 
      * @param encryptionDisabled
-     *        Set to true if you do not want your output artifacts encrypted. This option is only valid if your
-     *        artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException will be
-     *        thrown.
+     *        Set to true if you do not want your output artifacts encrypted. This option is valid only if your
+     *        artifacts type is Amazon Simple Storage Service (Amazon S3). If this is set with another artifacts type,
+     *        an invalidInputException is thrown.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2117,13 +2121,14 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Set to true if you do not want your output artifacts encrypted. This option is only valid if your artifacts type
-     * is Amazon S3. If this is set with another artifacts type, an invalidInputException will be thrown.
+     * Set to true if you do not want your output artifacts encrypted. This option is valid only if your artifacts type
+     * is Amazon Simple Storage Service (Amazon S3). If this is set with another artifacts type, an
+     * invalidInputException is thrown.
      * </p>
      * 
-     * @return Set to true if you do not want your output artifacts encrypted. This option is only valid if your
-     *         artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException will be
-     *         thrown.
+     * @return Set to true if you do not want your output artifacts encrypted. This option is valid only if your
+     *         artifacts type is Amazon Simple Storage Service (Amazon S3). If this is set with another artifacts type,
+     *         an invalidInputException is thrown.
      */
 
     public Boolean isEncryptionDisabled() {

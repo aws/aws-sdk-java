@@ -133,6 +133,10 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
                     StringUtils.fromInteger(restoreFromClusterSnapshotRequest.getAutomatedSnapshotRetentionPeriod()));
         }
 
+        if (restoreFromClusterSnapshotRequest.getManualSnapshotRetentionPeriod() != null) {
+            request.addParameter("ManualSnapshotRetentionPeriod", StringUtils.fromInteger(restoreFromClusterSnapshotRequest.getManualSnapshotRetentionPeriod()));
+        }
+
         if (restoreFromClusterSnapshotRequest.getKmsKeyId() != null) {
             request.addParameter("KmsKeyId", StringUtils.fromString(restoreFromClusterSnapshotRequest.getKmsKeyId()));
         }
@@ -165,6 +169,10 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
 
         if (restoreFromClusterSnapshotRequest.getMaintenanceTrackName() != null) {
             request.addParameter("MaintenanceTrackName", StringUtils.fromString(restoreFromClusterSnapshotRequest.getMaintenanceTrackName()));
+        }
+
+        if (restoreFromClusterSnapshotRequest.getSnapshotScheduleIdentifier() != null) {
+            request.addParameter("SnapshotScheduleIdentifier", StringUtils.fromString(restoreFromClusterSnapshotRequest.getSnapshotScheduleIdentifier()));
         }
 
         return request;

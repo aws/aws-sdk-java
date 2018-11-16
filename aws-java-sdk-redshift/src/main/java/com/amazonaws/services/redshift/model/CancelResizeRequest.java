@@ -27,18 +27,18 @@ public class CancelResizeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The unique identifier for the cluster whose resize operation you wish to cancel.
+     * The unique identifier for the cluster that you want to cancel a resize operation for.
      * </p>
      */
     private String clusterIdentifier;
 
     /**
      * <p>
-     * The unique identifier for the cluster whose resize operation you wish to cancel.
+     * The unique identifier for the cluster that you want to cancel a resize operation for.
      * </p>
      * 
      * @param clusterIdentifier
-     *        The unique identifier for the cluster whose resize operation you wish to cancel.
+     *        The unique identifier for the cluster that you want to cancel a resize operation for.
      */
 
     public void setClusterIdentifier(String clusterIdentifier) {
@@ -47,10 +47,10 @@ public class CancelResizeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The unique identifier for the cluster whose resize operation you wish to cancel.
+     * The unique identifier for the cluster that you want to cancel a resize operation for.
      * </p>
      * 
-     * @return The unique identifier for the cluster whose resize operation you wish to cancel.
+     * @return The unique identifier for the cluster that you want to cancel a resize operation for.
      */
 
     public String getClusterIdentifier() {
@@ -59,11 +59,11 @@ public class CancelResizeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The unique identifier for the cluster whose resize operation you wish to cancel.
+     * The unique identifier for the cluster that you want to cancel a resize operation for.
      * </p>
      * 
      * @param clusterIdentifier
-     *        The unique identifier for the cluster whose resize operation you wish to cancel.
+     *        The unique identifier for the cluster that you want to cancel a resize operation for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

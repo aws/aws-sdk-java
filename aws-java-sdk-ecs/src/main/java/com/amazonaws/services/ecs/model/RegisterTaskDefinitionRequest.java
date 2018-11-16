@@ -53,12 +53,12 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
-     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
-     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
-     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
-     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.
+     * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you can't specify port mappings in your container definitions, and the task's containers do
+     * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack instead of the virtualized network
+     * stack provided by the <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
@@ -66,7 +66,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
      * <p>
-     * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
+     * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
      * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -100,7 +100,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints per
-     * task (this limit includes constraints in the task definition and those specified at run time).
+     * task (this limit includes constraints in the task definition and those specified at runtime).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TaskDefinitionPlacementConstraint> placementConstraints;
@@ -124,12 +124,12 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
-     * <code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * If you are using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
+     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>memory</code> parameter:
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of supported values for the <code>memory</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -176,11 +176,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If using the EC2 launch type, this field is optional.
+     * If you are using the EC2 launch type, this field is optional.
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>cpu</code> parameter:
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of supported values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -214,6 +214,14 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      */
     private String memory;
+    /**
+     * <p>
+     * The metadata that you apply to the task definition to help you categorize and organize them. Each tag consists of
+     * a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -378,12 +386,12 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
-     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
-     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
-     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
-     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.
+     * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you can't specify port mappings in your container definitions, and the task's containers do
+     * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack instead of the virtualized network
+     * stack provided by the <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
@@ -391,7 +399,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
      * <p>
-     * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
+     * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
      * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -412,9 +420,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *        <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     *        If using the EC2 launch type, any network mode can be used. If the network mode is set to
-     *        <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
+     *        required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
+     *        to <code>none</code>, you can't specify port mappings in your container definitions, and the task's
      *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
      *        offer the highest networking performance for containers because they use the EC2 network stack instead of
      *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
@@ -425,7 +433,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        host port mappings.
      *        </p>
      *        <p>
-     *        If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
      *        definition. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
@@ -453,12 +461,12 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
-     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
-     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
-     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
-     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.
+     * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you can't specify port mappings in your container definitions, and the task's containers do
+     * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack instead of the virtualized network
+     * stack provided by the <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
@@ -466,7 +474,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
      * <p>
-     * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
+     * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
      * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -486,9 +494,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * 
      * @return The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      *         <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *         <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     *         If using the EC2 launch type, any network mode can be used. If the network mode is set to
-     *         <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *         <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
+     *         required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
+     *         to <code>none</code>, you can't specify port mappings in your container definitions, and the task's
      *         containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
      *         offer the highest networking performance for containers because they use the EC2 network stack instead of
      *         the virtualized network stack provided by the <code>bridge</code> mode.</p>
@@ -499,7 +507,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *         dynamic host port mappings.
      *         </p>
      *         <p>
-     *         If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     *         If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *         must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
      *         definition. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
@@ -528,12 +536,12 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
-     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
-     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
-     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
-     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.
+     * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you can't specify port mappings in your container definitions, and the task's containers do
+     * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack instead of the virtualized network
+     * stack provided by the <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
@@ -541,7 +549,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
      * <p>
-     * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
+     * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
      * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -562,9 +570,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *        <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     *        If using the EC2 launch type, any network mode can be used. If the network mode is set to
-     *        <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
+     *        required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
+     *        to <code>none</code>, you can't specify port mappings in your container definitions, and the task's
      *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
      *        offer the highest networking performance for containers because they use the EC2 network stack instead of
      *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
@@ -575,7 +583,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        host port mappings.
      *        </p>
      *        <p>
-     *        If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
      *        definition. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
@@ -605,12 +613,12 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
-     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
-     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
-     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
-     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.
+     * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you can't specify port mappings in your container definitions, and the task's containers do
+     * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack instead of the virtualized network
+     * stack provided by the <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
@@ -618,7 +626,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
      * <p>
-     * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
+     * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
      * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -639,9 +647,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *        <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     *        If using the EC2 launch type, any network mode can be used. If the network mode is set to
-     *        <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
+     *        required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
+     *        to <code>none</code>, you can't specify port mappings in your container definitions, and the task's
      *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
      *        offer the highest networking performance for containers because they use the EC2 network stack instead of
      *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
@@ -652,7 +660,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        host port mappings.
      *        </p>
      *        <p>
-     *        If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
      *        definition. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
@@ -680,12 +688,12 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
-     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
-     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
-     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
-     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.
+     * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you can't specify port mappings in your container definitions, and the task's containers do
+     * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack instead of the virtualized network
+     * stack provided by the <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
@@ -693,7 +701,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
      * <p>
-     * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
+     * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
      * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -714,9 +722,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *        <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     *        If using the EC2 launch type, any network mode can be used. If the network mode is set to
-     *        <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
+     *        required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
+     *        to <code>none</code>, you can't specify port mappings in your container definitions, and the task's
      *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
      *        offer the highest networking performance for containers because they use the EC2 network stack instead of
      *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
@@ -727,7 +735,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        host port mappings.
      *        </p>
      *        <p>
-     *        If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
      *        definition. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
@@ -906,11 +914,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints per
-     * task (this limit includes constraints in the task definition and those specified at run time).
+     * task (this limit includes constraints in the task definition and those specified at runtime).
      * </p>
      * 
      * @return An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints
-     *         per task (this limit includes constraints in the task definition and those specified at run time).
+     *         per task (this limit includes constraints in the task definition and those specified at runtime).
      */
 
     public java.util.List<TaskDefinitionPlacementConstraint> getPlacementConstraints() {
@@ -923,12 +931,12 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints per
-     * task (this limit includes constraints in the task definition and those specified at run time).
+     * task (this limit includes constraints in the task definition and those specified at runtime).
      * </p>
      * 
      * @param placementConstraints
      *        An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints
-     *        per task (this limit includes constraints in the task definition and those specified at run time).
+     *        per task (this limit includes constraints in the task definition and those specified at runtime).
      */
 
     public void setPlacementConstraints(java.util.Collection<TaskDefinitionPlacementConstraint> placementConstraints) {
@@ -943,7 +951,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints per
-     * task (this limit includes constraints in the task definition and those specified at run time).
+     * task (this limit includes constraints in the task definition and those specified at runtime).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -953,7 +961,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param placementConstraints
      *        An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints
-     *        per task (this limit includes constraints in the task definition and those specified at run time).
+     *        per task (this limit includes constraints in the task definition and those specified at runtime).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -970,12 +978,12 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints per
-     * task (this limit includes constraints in the task definition and those specified at run time).
+     * task (this limit includes constraints in the task definition and those specified at runtime).
      * </p>
      * 
      * @param placementConstraints
      *        An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints
-     *        per task (this limit includes constraints in the task definition and those specified at run time).
+     *        per task (this limit includes constraints in the task definition and those specified at runtime).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1100,12 +1108,12 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
-     * <code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * If you are using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
+     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>memory</code> parameter:
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of supported values for the <code>memory</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -1149,12 +1157,13 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        </note>
      *        <p>
-     *        If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
-     *        units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     *        If you are using the EC2 launch type, this field is optional. Supported values are between
+     *        <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
+     *        vCPUs).
      *        </p>
      *        <p>
-     *        If using the Fargate launch type, this field is required and you must use one of the following values,
-     *        which determines your range of supported values for the <code>memory</code> parameter:
+     *        If you are using the Fargate launch type, this field is required and you must use one of the following
+     *        values, which determines your range of supported values for the <code>memory</code> parameter:
      *        </p>
      *        <ul>
      *        <li>
@@ -1205,12 +1214,12 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
-     * <code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * If you are using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
+     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>memory</code> parameter:
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of supported values for the <code>memory</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -1253,12 +1262,13 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         </note>
      *         <p>
-     *         If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
-     *         units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     *         If you are using the EC2 launch type, this field is optional. Supported values are between
+     *         <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
+     *         vCPUs).
      *         </p>
      *         <p>
-     *         If using the Fargate launch type, this field is required and you must use one of the following values,
-     *         which determines your range of supported values for the <code>memory</code> parameter:
+     *         If you are using the Fargate launch type, this field is required and you must use one of the following
+     *         values, which determines your range of supported values for the <code>memory</code> parameter:
      *         </p>
      *         <ul>
      *         <li>
@@ -1309,12 +1319,12 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
-     * <code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * If you are using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
+     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>memory</code> parameter:
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of supported values for the <code>memory</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -1358,12 +1368,13 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        </note>
      *        <p>
-     *        If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
-     *        units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     *        If you are using the EC2 launch type, this field is optional. Supported values are between
+     *        <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
+     *        vCPUs).
      *        </p>
      *        <p>
-     *        If using the Fargate launch type, this field is required and you must use one of the following values,
-     *        which determines your range of supported values for the <code>memory</code> parameter:
+     *        If you are using the Fargate launch type, this field is required and you must use one of the following
+     *        values, which determines your range of supported values for the <code>memory</code> parameter:
      *        </p>
      *        <ul>
      *        <li>
@@ -1415,11 +1426,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If using the EC2 launch type, this field is optional.
+     * If you are using the EC2 launch type, this field is optional.
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>cpu</code> parameter:
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of supported values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -1463,11 +1474,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        </note>
      *        <p>
-     *        If using the EC2 launch type, this field is optional.
+     *        If you are using the EC2 launch type, this field is optional.
      *        </p>
      *        <p>
-     *        If using the Fargate launch type, this field is required and you must use one of the following values,
-     *        which determines your range of supported values for the <code>cpu</code> parameter:
+     *        If you are using the Fargate launch type, this field is required and you must use one of the following
+     *        values, which determines your range of supported values for the <code>cpu</code> parameter:
      *        </p>
      *        <ul>
      *        <li>
@@ -1517,11 +1528,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If using the EC2 launch type, this field is optional.
+     * If you are using the EC2 launch type, this field is optional.
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>cpu</code> parameter:
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of supported values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -1564,11 +1575,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         </note>
      *         <p>
-     *         If using the EC2 launch type, this field is optional.
+     *         If you are using the EC2 launch type, this field is optional.
      *         </p>
      *         <p>
-     *         If using the Fargate launch type, this field is required and you must use one of the following values,
-     *         which determines your range of supported values for the <code>cpu</code> parameter:
+     *         If you are using the Fargate launch type, this field is required and you must use one of the following
+     *         values, which determines your range of supported values for the <code>cpu</code> parameter:
      *         </p>
      *         <ul>
      *         <li>
@@ -1618,11 +1629,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If using the EC2 launch type, this field is optional.
+     * If you are using the EC2 launch type, this field is optional.
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>cpu</code> parameter:
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of supported values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -1666,11 +1677,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        </note>
      *        <p>
-     *        If using the EC2 launch type, this field is optional.
+     *        If you are using the EC2 launch type, this field is optional.
      *        </p>
      *        <p>
-     *        If using the Fargate launch type, this field is required and you must use one of the following values,
-     *        which determines your range of supported values for the <code>cpu</code> parameter:
+     *        If you are using the Fargate launch type, this field is required and you must use one of the following
+     *        values, which determines your range of supported values for the <code>cpu</code> parameter:
      *        </p>
      *        <ul>
      *        <li>
@@ -1710,6 +1721,95 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The metadata that you apply to the task definition to help you categorize and organize them. Each tag consists of
+     * a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @return The metadata that you apply to the task definition to help you categorize and organize them. Each tag
+     *         consists of a key and an optional value, both of which you define. Tag keys can have a maximum character
+     *         length of 128 characters, and tag values can have a maximum length of 256 characters.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the task definition to help you categorize and organize them. Each tag consists of
+     * a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the task definition to help you categorize and organize them. Each tag
+     *        consists of a key and an optional value, both of which you define. Tag keys can have a maximum character
+     *        length of 128 characters, and tag values can have a maximum length of 256 characters.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the task definition to help you categorize and organize them. Each tag consists of
+     * a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the task definition to help you categorize and organize them. Each tag
+     *        consists of a key and an optional value, both of which you define. Tag keys can have a maximum character
+     *        length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterTaskDefinitionRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the task definition to help you categorize and organize them. Each tag consists of
+     * a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the task definition to help you categorize and organize them. Each tag
+     *        consists of a key and an optional value, both of which you define. Tag keys can have a maximum character
+     *        length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterTaskDefinitionRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1739,7 +1839,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
         if (getCpu() != null)
             sb.append("Cpu: ").append(getCpu()).append(",");
         if (getMemory() != null)
-            sb.append("Memory: ").append(getMemory());
+            sb.append("Memory: ").append(getMemory()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1794,6 +1896,10 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getMemory() != null && other.getMemory().equals(this.getMemory()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1812,6 +1918,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getRequiresCompatibilities() == null) ? 0 : getRequiresCompatibilities().hashCode());
         hashCode = prime * hashCode + ((getCpu() == null) ? 0 : getCpu().hashCode());
         hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

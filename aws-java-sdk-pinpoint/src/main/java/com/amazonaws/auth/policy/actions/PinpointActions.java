@@ -65,6 +65,8 @@ public enum PinpointActions implements Action {
     DeleteSmsChannel("pinpoint:DeleteSmsChannel"),
     /** Action for the DeleteUserEndpoints operation. */
     DeleteUserEndpoints("pinpoint:DeleteUserEndpoints"),
+    /** Action for the DeleteVoiceChannel operation. */
+    DeleteVoiceChannel("pinpoint:DeleteVoiceChannel"),
     /** Action for the GetAdmChannel operation. */
     GetAdmChannel("pinpoint:GetAdmChannel"),
     /** Action for the GetApnsChannel operation. */
@@ -127,6 +129,8 @@ public enum PinpointActions implements Action {
     GetSmsChannel("pinpoint:GetSmsChannel"),
     /** Action for the GetUserEndpoints operation. */
     GetUserEndpoints("pinpoint:GetUserEndpoints"),
+    /** Action for the GetVoiceChannel operation. */
+    GetVoiceChannel("pinpoint:GetVoiceChannel"),
     /** Action for the PhoneNumberValidate operation. */
     PhoneNumberValidate("pinpoint:PhoneNumberValidate"),
     /** Action for the PutEventStream operation. */
@@ -167,6 +171,8 @@ public enum PinpointActions implements Action {
     UpdateSegment("pinpoint:UpdateSegment"),
     /** Action for the UpdateSmsChannel operation. */
     UpdateSmsChannel("pinpoint:UpdateSmsChannel"),
+    /** Action for the UpdateVoiceChannel operation. */
+    UpdateVoiceChannel("pinpoint:UpdateVoiceChannel"),
 
     ;
 

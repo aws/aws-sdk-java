@@ -80,6 +80,14 @@ public class UserDetail implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<AttachedPolicy> attachedManagedPolicies;
     /**
      * <p>
+     * A list of tags that are associated with the specified user. For more information about tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
      * The ARN of the policy used to set the permissions boundary for the user.
      * </p>
      * <p>
@@ -527,6 +535,95 @@ public class UserDetail implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A list of tags that are associated with the specified user. For more information about tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * 
+     * @return A list of tags that are associated with the specified user. For more information about tagging, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *         <i>IAM User Guide</i>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags that are associated with the specified user. For more information about tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags that are associated with the specified user. For more information about tagging, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        <i>IAM User Guide</i>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of tags that are associated with the specified user. For more information about tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags that are associated with the specified user. For more information about tagging, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        <i>IAM User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserDetail withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tags that are associated with the specified user. For more information about tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags that are associated with the specified user. For more information about tagging, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        <i>IAM User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserDetail withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ARN of the policy used to set the permissions boundary for the user.
      * </p>
      * <p>
@@ -619,6 +716,8 @@ public class UserDetail implements Serializable, Cloneable {
             sb.append("GroupList: ").append(getGroupList()).append(",");
         if (getAttachedManagedPolicies() != null)
             sb.append("AttachedManagedPolicies: ").append(getAttachedManagedPolicies()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getPermissionsBoundary() != null)
             sb.append("PermissionsBoundary: ").append(getPermissionsBoundary());
         sb.append("}");
@@ -667,6 +766,10 @@ public class UserDetail implements Serializable, Cloneable {
             return false;
         if (other.getAttachedManagedPolicies() != null && other.getAttachedManagedPolicies().equals(this.getAttachedManagedPolicies()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getPermissionsBoundary() == null ^ this.getPermissionsBoundary() == null)
             return false;
         if (other.getPermissionsBoundary() != null && other.getPermissionsBoundary().equals(this.getPermissionsBoundary()) == false)
@@ -687,6 +790,7 @@ public class UserDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getUserPolicyList() == null) ? 0 : getUserPolicyList().hashCode());
         hashCode = prime * hashCode + ((getGroupList() == null) ? 0 : getGroupList().hashCode());
         hashCode = prime * hashCode + ((getAttachedManagedPolicies() == null) ? 0 : getAttachedManagedPolicies().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getPermissionsBoundary() == null) ? 0 : getPermissionsBoundary().hashCode());
         return hashCode;
     }

@@ -48,9 +48,9 @@ public class AWSDatabaseMigrationServiceWaiters {
      * in the waiters specification, and then polls until it determines whether the resource entered the desired state
      * or not, where polling criteria is bound by either default polling strategy or custom polling strategy.
      */
-    public Waiter<DescribeConnectionsRequest> testConnectionSucceeds() {
+    public Waiter<TestConnectionRequest> testConnectionSucceeds() {
 
-        return new WaiterBuilder<DescribeConnectionsRequest, DescribeConnectionsResult>().withSdkFunction(new DescribeConnectionsFunction(client))
+        return new WaiterBuilder<TestConnectionRequest, TestConnectionResult>().withSdkFunction(new TestConnectionFunction(client))
                 .withAcceptors(new TestConnectionSucceeds.IsSuccessfulMatcher(), new TestConnectionSucceeds.IsFailedMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(5)))
                 .withExecutorService(executorService).build();

@@ -14,6 +14,9 @@
  */
 package com.amazonaws.services.s3.model.transform;
 
+import static com.amazonaws.services.s3.model.transform.BucketConfigurationXmlFactoryFunctions.addParameterIfNotNull;
+import static com.amazonaws.services.s3.model.transform.BucketConfigurationXmlFactoryFunctions.writePrefix;
+
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.ServiceUtils;
@@ -39,6 +42,7 @@ import com.amazonaws.services.s3.model.Filter;
 import com.amazonaws.services.s3.model.FilterRule;
 import com.amazonaws.services.s3.model.LambdaConfiguration;
 import com.amazonaws.services.s3.model.NotificationConfiguration;
+import com.amazonaws.services.s3.model.PublicAccessBlockConfiguration;
 import com.amazonaws.services.s3.model.QueueConfiguration;
 import com.amazonaws.services.s3.model.RedirectRule;
 import com.amazonaws.services.s3.model.ReplicationDestinationConfig;
@@ -50,6 +54,7 @@ import com.amazonaws.services.s3.model.ServerSideEncryptionByDefault;
 import com.amazonaws.services.s3.model.ServerSideEncryptionConfiguration;
 import com.amazonaws.services.s3.model.ServerSideEncryptionRule;
 import com.amazonaws.services.s3.model.SseKmsEncryptedObjects;
+import com.amazonaws.services.s3.model.Tag;
 import com.amazonaws.services.s3.model.TagSet;
 import com.amazonaws.services.s3.model.TopicConfiguration;
 import com.amazonaws.services.s3.model.analytics.AnalyticsConfiguration;
@@ -69,20 +74,24 @@ import com.amazonaws.services.s3.model.inventory.InventoryS3BucketDestination;
 import com.amazonaws.services.s3.model.inventory.InventorySchedule;
 import com.amazonaws.services.s3.model.inventory.ServerSideEncryptionKMS;
 import com.amazonaws.services.s3.model.inventory.ServerSideEncryptionS3;
+import com.amazonaws.services.s3.model.lifecycle.LifecycleAndOperator;
 import com.amazonaws.services.s3.model.lifecycle.LifecycleFilter;
 import com.amazonaws.services.s3.model.lifecycle.LifecycleFilterPredicate;
+import com.amazonaws.services.s3.model.lifecycle.LifecyclePredicateVisitor;
+import com.amazonaws.services.s3.model.lifecycle.LifecyclePrefixPredicate;
+import com.amazonaws.services.s3.model.lifecycle.LifecycleTagPredicate;
+import com.amazonaws.services.s3.model.metrics.MetricsAndOperator;
 import com.amazonaws.services.s3.model.metrics.MetricsConfiguration;
 import com.amazonaws.services.s3.model.metrics.MetricsFilter;
 import com.amazonaws.services.s3.model.metrics.MetricsFilterPredicate;
+import com.amazonaws.services.s3.model.metrics.MetricsPredicateVisitor;
+import com.amazonaws.services.s3.model.metrics.MetricsPrefixPredicate;
+import com.amazonaws.services.s3.model.metrics.MetricsTagPredicate;
 import com.amazonaws.services.s3.model.replication.ReplicationFilter;
 import com.amazonaws.services.s3.model.replication.ReplicationFilterPredicate;
 import com.amazonaws.util.CollectionUtils;
-
 import java.util.List;
 import java.util.Map;
-
-import static com.amazonaws.services.s3.model.transform.BucketConfigurationXmlFactoryFunctions.addParameterIfNotNull;
-import static com.amazonaws.services.s3.model.transform.BucketConfigurationXmlFactoryFunctions.writePrefix;
 
 /**
  * Converts bucket configuration objects into XML byte arrays.
@@ -677,6 +686,44 @@ public class BucketConfigurationXmlFactory {
         xml.end();
     }
 
+    public byte[] convertToXmlByteArray(PublicAccessBlockConfiguration config) {
+        XmlWriter xml = new XmlWriter();
+        xml.start("PublicAccessBlockConfiguration", "xmlns", Constants.XML_NAMESPACE);
+        addBooleanParameterIfNotNull(xml, "BlockPublicAcls", config.getBlockPublicAcls());
+        addBooleanParameterIfNotNull(xml, "IgnorePublicAcls", config.getIgnorePublicAcls());
+        addBooleanParameterIfNotNull(xml, "BlockPublicPolicy", config.getBlockPublicPolicy());
+        addBooleanParameterIfNotNull(xml, "RestrictPublicBuckets", config.getRestrictPublicBuckets());
+        xml.end();
+        return xml.getBytes();
+    }
+
+    private class LifecyclePredicateVisitorImpl implements LifecyclePredicateVisitor {
+        private final XmlWriter xml;
+
+        public LifecyclePredicateVisitorImpl(XmlWriter xml) {
+            this.xml = xml;
+        }
+
+        @Override
+        public void visit(LifecyclePrefixPredicate lifecyclePrefixPredicate) {
+            writePrefix(xml, lifecyclePrefixPredicate.getPrefix());
+        }
+
+        @Override
+        public void visit(LifecycleTagPredicate lifecycleTagPredicate) {
+            writeTag(xml, lifecycleTagPredicate.getTag());
+        }
+
+        @Override
+        public void visit(LifecycleAndOperator lifecycleAndOperator) {
+            xml.start("And");
+            for (LifecycleFilterPredicate predicate : lifecycleAndOperator.getOperands()) {
+                predicate.accept(this);
+            }
+            xml.end(); // </And>
+        }
+    }
+
     /**
      * @param rule
      * @return True if rule has a current expiration (<Expiration/>) policy set
@@ -1104,4 +1151,48 @@ public class BucketConfigurationXmlFactory {
 
         predicate.accept(new MetricsPredicateVisitorImpl(xml));
     }
+
+    private class MetricsPredicateVisitorImpl implements MetricsPredicateVisitor {
+        private final XmlWriter xml;
+
+        public MetricsPredicateVisitorImpl(XmlWriter xml) {
+            this.xml = xml;
+        }
+
+        @Override
+        public void visit(MetricsPrefixPredicate metricsPrefixPredicate) {
+            writePrefix(xml, metricsPrefixPredicate.getPrefix());
+        }
+
+        @Override
+        public void visit(MetricsTagPredicate metricsTagPredicate) {
+            writeTag(xml, metricsTagPredicate.getTag());
+        }
+
+        @Override
+        public void visit(MetricsAndOperator metricsAndOperator) {
+            xml.start("And");
+            for (MetricsFilterPredicate predicate : metricsAndOperator.getOperands()) {
+                predicate.accept(this);
+            }
+            xml.end();
+        }
+    }
+
+    private void addBooleanParameterIfNotNull(XmlWriter xml, String xmlTagName, Boolean value) {
+        if (value != null) {
+            xml.start(xmlTagName).value(value.toString()).end();
+        }
+    }
+
+    private void writeTag(XmlWriter xml, Tag tag) {
+        if (tag == null) {
+            return;
+        }
+        xml.start("Tag");
+        xml.start("Key").value(tag.getKey()).end();
+        xml.start("Value").value(tag.getValue()).end();
+        xml.end();
+    }
+
 }

@@ -77,6 +77,14 @@ public class Role implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
+     * A list of tags that are attached to the specified role. For more information about tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
      * The maximum session duration (in seconds) for the specified role. Anyone who uses the AWS CLI or API to assume
      * the role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
      * <code>duration-seconds</code> CLI parameter.
@@ -419,6 +427,95 @@ public class Role implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A list of tags that are attached to the specified role. For more information about tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * 
+     * @return A list of tags that are attached to the specified role. For more information about tagging, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *         <i>IAM User Guide</i>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags that are attached to the specified role. For more information about tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags that are attached to the specified role. For more information about tagging, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        <i>IAM User Guide</i>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of tags that are attached to the specified role. For more information about tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags that are attached to the specified role. For more information about tagging, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        <i>IAM User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Role withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tags that are attached to the specified role. For more information about tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags that are attached to the specified role. For more information about tagging, see <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        <i>IAM User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Role withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
      * The maximum session duration (in seconds) for the specified role. Anyone who uses the AWS CLI or API to assume
      * the role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
      * <code>duration-seconds</code> CLI parameter.
@@ -561,6 +658,8 @@ public class Role implements Serializable, Cloneable {
             sb.append("AssumeRolePolicyDocument: ").append(getAssumeRolePolicyDocument()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getMaxSessionDuration() != null)
             sb.append("MaxSessionDuration: ").append(getMaxSessionDuration()).append(",");
         if (getPermissionsBoundary() != null)
@@ -607,6 +706,10 @@ public class Role implements Serializable, Cloneable {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getMaxSessionDuration() == null ^ this.getMaxSessionDuration() == null)
             return false;
         if (other.getMaxSessionDuration() != null && other.getMaxSessionDuration().equals(this.getMaxSessionDuration()) == false)
@@ -630,6 +733,7 @@ public class Role implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
         hashCode = prime * hashCode + ((getAssumeRolePolicyDocument() == null) ? 0 : getAssumeRolePolicyDocument().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getMaxSessionDuration() == null) ? 0 : getMaxSessionDuration().hashCode());
         hashCode = prime * hashCode + ((getPermissionsBoundary() == null) ? 0 : getPermissionsBoundary().hashCode());
         return hashCode;

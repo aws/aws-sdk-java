@@ -54,6 +54,11 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
+    public DeleteAccountSettingResult deleteAccountSetting(DeleteAccountSettingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteAttributesResult deleteAttributes(DeleteAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,6 +124,11 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
+    public ListAccountSettingsResult listAccountSettings(ListAccountSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAttributesResult listAttributes(ListAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -154,6 +164,11 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTaskDefinitionFamiliesResult listTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -181,6 +196,11 @@ public class AbstractAmazonECS implements AmazonECS {
     @Override
     public ListTasksResult listTasks() {
         return listTasks(new ListTasksRequest());
+    }
+
+    @Override
+    public PutAccountSettingResult putAccountSetting(PutAccountSettingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -225,6 +245,16 @@ public class AbstractAmazonECS implements AmazonECS {
 
     @Override
     public SubmitTaskStateChangeResult submitTaskStateChange(SubmitTaskStateChangeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

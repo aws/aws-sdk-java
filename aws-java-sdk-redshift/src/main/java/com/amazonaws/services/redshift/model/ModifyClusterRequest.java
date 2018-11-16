@@ -205,6 +205,20 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Integer automatedSnapshotRetentionPeriod;
     /**
      * <p>
+     * The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual
+     * snapshot is retained indefinitely. This value will not retroactively change the retention periods of existing
+     * manual snapshots
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     */
+    private Integer manualSnapshotRetentionPeriod;
+    /**
+     * <p>
      * The weekly time range (in UTC) during which system maintenance can occur, if necessary. If system maintenance is
      * necessary during the window, it may result in an outage.
      * </p>
@@ -1557,6 +1571,91 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual
+     * snapshot is retained indefinitely. This value will not retroactively change the retention periods of existing
+     * manual snapshots
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     * 
+     * @param manualSnapshotRetentionPeriod
+     *        The default for number of days that a newly created manual snapshot is retained. If the value is -1, the
+     *        manual snapshot is retained indefinitely. This value will not retroactively change the retention periods
+     *        of existing manual snapshots</p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653.
+     *        </p>
+     *        <p>
+     *        The default value is -1.
+     */
+
+    public void setManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
+        this.manualSnapshotRetentionPeriod = manualSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual
+     * snapshot is retained indefinitely. This value will not retroactively change the retention periods of existing
+     * manual snapshots
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     * 
+     * @return The default for number of days that a newly created manual snapshot is retained. If the value is -1, the
+     *         manual snapshot is retained indefinitely. This value will not retroactively change the retention periods
+     *         of existing manual snapshots</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
+     *         </p>
+     *         <p>
+     *         The default value is -1.
+     */
+
+    public Integer getManualSnapshotRetentionPeriod() {
+        return this.manualSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual
+     * snapshot is retained indefinitely. This value will not retroactively change the retention periods of existing
+     * manual snapshots
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     * 
+     * @param manualSnapshotRetentionPeriod
+     *        The default for number of days that a newly created manual snapshot is retained. If the value is -1, the
+     *        manual snapshot is retained indefinitely. This value will not retroactively change the retention periods
+     *        of existing manual snapshots</p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653.
+     *        </p>
+     *        <p>
+     *        The default value is -1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClusterRequest withManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
+        setManualSnapshotRetentionPeriod(manualSnapshotRetentionPeriod);
+        return this;
+    }
+
+    /**
+     * <p>
      * The weekly time range (in UTC) during which system maintenance can occur, if necessary. If system maintenance is
      * necessary during the window, it may result in an outage.
      * </p>
@@ -2673,6 +2772,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("ClusterParameterGroupName: ").append(getClusterParameterGroupName()).append(",");
         if (getAutomatedSnapshotRetentionPeriod() != null)
             sb.append("AutomatedSnapshotRetentionPeriod: ").append(getAutomatedSnapshotRetentionPeriod()).append(",");
+        if (getManualSnapshotRetentionPeriod() != null)
+            sb.append("ManualSnapshotRetentionPeriod: ").append(getManualSnapshotRetentionPeriod()).append(",");
         if (getPreferredMaintenanceWindow() != null)
             sb.append("PreferredMaintenanceWindow: ").append(getPreferredMaintenanceWindow()).append(",");
         if (getClusterVersion() != null)
@@ -2748,6 +2849,11 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (other.getAutomatedSnapshotRetentionPeriod() != null
                 && other.getAutomatedSnapshotRetentionPeriod().equals(this.getAutomatedSnapshotRetentionPeriod()) == false)
             return false;
+        if (other.getManualSnapshotRetentionPeriod() == null ^ this.getManualSnapshotRetentionPeriod() == null)
+            return false;
+        if (other.getManualSnapshotRetentionPeriod() != null
+                && other.getManualSnapshotRetentionPeriod().equals(this.getManualSnapshotRetentionPeriod()) == false)
+            return false;
         if (other.getPreferredMaintenanceWindow() == null ^ this.getPreferredMaintenanceWindow() == null)
             return false;
         if (other.getPreferredMaintenanceWindow() != null && other.getPreferredMaintenanceWindow().equals(this.getPreferredMaintenanceWindow()) == false)
@@ -2814,6 +2920,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getMasterUserPassword() == null) ? 0 : getMasterUserPassword().hashCode());
         hashCode = prime * hashCode + ((getClusterParameterGroupName() == null) ? 0 : getClusterParameterGroupName().hashCode());
         hashCode = prime * hashCode + ((getAutomatedSnapshotRetentionPeriod() == null) ? 0 : getAutomatedSnapshotRetentionPeriod().hashCode());
+        hashCode = prime * hashCode + ((getManualSnapshotRetentionPeriod() == null) ? 0 : getManualSnapshotRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode());
         hashCode = prime * hashCode + ((getClusterVersion() == null) ? 0 : getClusterVersion().hashCode());
         hashCode = prime * hashCode + ((getAllowVersionUpgrade() == null) ? 0 : getAllowVersionUpgrade().hashCode());

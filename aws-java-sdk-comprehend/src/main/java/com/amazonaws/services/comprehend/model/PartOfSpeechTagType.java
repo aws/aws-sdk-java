@@ -25,6 +25,7 @@ public enum PartOfSpeechTagType {
     ADV("ADV"),
     AUX("AUX"),
     CONJ("CONJ"),
+    CCONJ("CCONJ"),
     DET("DET"),
     INTJ("INTJ"),
     NOUN("NOUN"),

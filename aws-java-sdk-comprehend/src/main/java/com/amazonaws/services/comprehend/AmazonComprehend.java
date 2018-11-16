@@ -80,10 +80,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all APIs except
-     *         <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish text. For the
-     *         <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100 languages. For a list of
-     *         languages, see <a>how-languages</a>
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
+     *         Comprehend accepts only English or Spanish text.
      * @throws BatchSizeLimitExceededException
      *         The number of documents in the request exceeds the limit of 25. Try your request again with fewer
      *         documents.
@@ -107,10 +106,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all APIs except
-     *         <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish text. For the
-     *         <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100 languages. For a list of
-     *         languages, see <a>how-languages</a>
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
+     *         Comprehend accepts only English or Spanish text.
      * @throws BatchSizeLimitExceededException
      *         The number of documents in the request exceeds the limit of 25. Try your request again with fewer
      *         documents.
@@ -135,10 +133,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all APIs except
-     *         <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish text. For the
-     *         <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100 languages. For a list of
-     *         languages, see <a>how-languages</a>
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
+     *         Comprehend accepts only English or Spanish text.
      * @throws BatchSizeLimitExceededException
      *         The number of documents in the request exceeds the limit of 25. Try your request again with fewer
      *         documents.
@@ -163,10 +160,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all APIs except
-     *         <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish text. For the
-     *         <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100 languages. For a list of
-     *         languages, see <a>how-languages</a>
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
+     *         Comprehend accepts only English or Spanish text.
      * @throws BatchSizeLimitExceededException
      *         The number of documents in the request exceeds the limit of 25. Try your request again with fewer
      *         documents.
@@ -177,6 +173,113 @@ public interface AmazonComprehend {
      *      API Documentation</a>
      */
     BatchDetectSyntaxResult batchDetectSyntax(BatchDetectSyntaxRequest batchDetectSyntaxRequest);
+
+    /**
+     * <p>
+     * Creates a new document classifier that you can use to categorize documents. To create a classifier you provide a
+     * set of training documents that are labeled with the categories that you want to use. After the classifier is
+     * trained you can use it to categorize a set of unlabeled documents into those categories.
+     * </p>
+     * 
+     * @param createDocumentClassifierRequest
+     * @return Result of the CreateDocumentClassifier operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws ResourceInUseException
+     *         The specified name is already in use. Use a different name and try your request again.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceLimitExceededException
+     *         The maximum number of recognizers per account has been exceeded. Review the recognizers, perform cleanup,
+     *         and then try your request again.
+     * @throws UnsupportedLanguageException
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
+     *         Comprehend accepts only English or Spanish text.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.CreateDocumentClassifier
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateDocumentClassifierResult createDocumentClassifier(CreateDocumentClassifierRequest createDocumentClassifierRequest);
+
+    /**
+     * <p>
+     * Deletes a previously created document classifier
+     * </p>
+     * <p>
+     * Only those classifiers that are in terminated states (IN_ERROR, TRAINED) will be deleted. If an active inference
+     * job is using the model, a <code>ResourceInUseException</code> will be returned.
+     * </p>
+     * <p>
+     * This is an asynchronous action that puts the classifier into a DELETING state, and it is then removed by a
+     * background job. Once removed, the classifier disappears from your account and is no longer available for use.
+     * </p>
+     * 
+     * @param deleteDocumentClassifierRequest
+     * @return Result of the DeleteDocumentClassifier operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+     *         state and try your request again.
+     * @throws ResourceInUseException
+     *         The specified name is already in use. Use a different name and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DeleteDocumentClassifier
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteDocumentClassifier"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteDocumentClassifierResult deleteDocumentClassifier(DeleteDocumentClassifierRequest deleteDocumentClassifierRequest);
+
+    /**
+     * <p>
+     * Gets the properties associated with a document classification job. Use this operation to get the status of a
+     * classification job.
+     * </p>
+     * 
+     * @param describeDocumentClassificationJobRequest
+     * @return Result of the DescribeDocumentClassificationJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeDocumentClassificationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDocumentClassificationJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDocumentClassificationJobResult describeDocumentClassificationJob(DescribeDocumentClassificationJobRequest describeDocumentClassificationJobRequest);
+
+    /**
+     * <p>
+     * Gets the properties associated with a document classifier.
+     * </p>
+     * 
+     * @param describeDocumentClassifierRequest
+     * @return Result of the DescribeDocumentClassifier operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeDocumentClassifier
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDocumentClassifier"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDocumentClassifierResult describeDocumentClassifier(DescribeDocumentClassifierRequest describeDocumentClassifierRequest);
 
     /**
      * <p>
@@ -323,10 +426,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all APIs except
-     *         <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish text. For the
-     *         <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100 languages. For a list of
-     *         languages, see <a>how-languages</a>
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
+     *         Comprehend accepts only English or Spanish text.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DetectEntities
@@ -347,10 +449,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all APIs except
-     *         <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish text. For the
-     *         <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100 languages. For a list of
-     *         languages, see <a>how-languages</a>
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
+     *         Comprehend accepts only English or Spanish text.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DetectKeyPhrases
@@ -372,10 +473,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all APIs except
-     *         <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish text. For the
-     *         <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100 languages. For a list of
-     *         languages, see <a>how-languages</a>
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
+     *         Comprehend accepts only English or Spanish text.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DetectSentiment
@@ -397,10 +497,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all APIs except
-     *         <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish text. For the
-     *         <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100 languages. For a list of
-     *         languages, see <a>how-languages</a>
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
+     *         Comprehend accepts only English or Spanish text.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DetectSyntax
@@ -408,6 +507,50 @@ public interface AmazonComprehend {
      *      Documentation</a>
      */
     DetectSyntaxResult detectSyntax(DetectSyntaxRequest detectSyntaxRequest);
+
+    /**
+     * <p>
+     * Gets a list of the documentation classification jobs that you have submitted.
+     * </p>
+     * 
+     * @param listDocumentClassificationJobsRequest
+     * @return Result of the ListDocumentClassificationJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the <code>ListDocumentClassificationJobs</code> operation is invalid. Specify a
+     *         different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListDocumentClassificationJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassificationJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListDocumentClassificationJobsResult listDocumentClassificationJobs(ListDocumentClassificationJobsRequest listDocumentClassificationJobsRequest);
+
+    /**
+     * <p>
+     * Gets a list of the document classifiers that you have created.
+     * </p>
+     * 
+     * @param listDocumentClassifiersRequest
+     * @return Result of the ListDocumentClassifiers operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the <code>ListDocumentClassificationJobs</code> operation is invalid. Specify a
+     *         different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListDocumentClassifiers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifiers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListDocumentClassifiersResult listDocumentClassifiers(ListDocumentClassifiersRequest listDocumentClassifiersRequest);
 
     /**
      * <p>
@@ -421,7 +564,7 @@ public interface AmazonComprehend {
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws InvalidFilterException
-     *         The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid. Specify a
+     *         The filter specified for the <code>ListDocumentClassificationJobs</code> operation is invalid. Specify a
      *         different filter.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
@@ -443,7 +586,7 @@ public interface AmazonComprehend {
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws InvalidFilterException
-     *         The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid. Specify a
+     *         The filter specified for the <code>ListDocumentClassificationJobs</code> operation is invalid. Specify a
      *         different filter.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
@@ -465,7 +608,7 @@ public interface AmazonComprehend {
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws InvalidFilterException
-     *         The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid. Specify a
+     *         The filter specified for the <code>ListDocumentClassificationJobs</code> operation is invalid. Specify a
      *         different filter.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
@@ -487,7 +630,7 @@ public interface AmazonComprehend {
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws InvalidFilterException
-     *         The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid. Specify a
+     *         The filter specified for the <code>ListDocumentClassificationJobs</code> operation is invalid. Specify a
      *         different filter.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
@@ -509,7 +652,7 @@ public interface AmazonComprehend {
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws InvalidFilterException
-     *         The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid. Specify a
+     *         The filter specified for the <code>ListDocumentClassificationJobs</code> operation is invalid. Specify a
      *         different filter.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
@@ -518,6 +661,30 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     ListTopicsDetectionJobsResult listTopicsDetectionJobs(ListTopicsDetectionJobsRequest listTopicsDetectionJobsRequest);
+
+    /**
+     * <p>
+     * Starts an asynchronous document classification job. Use the operation to track the progress of the job.
+     * </p>
+     * 
+     * @param startDocumentClassificationJobRequest
+     * @return Result of the StartDocumentClassificationJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+     *         state and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StartDocumentClassificationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDocumentClassificationJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartDocumentClassificationJobResult startDocumentClassificationJob(StartDocumentClassificationJobRequest startDocumentClassificationJobRequest);
 
     /**
      * <p>

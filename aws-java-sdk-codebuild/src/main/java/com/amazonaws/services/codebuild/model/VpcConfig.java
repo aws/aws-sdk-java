@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the VPC configuration that AWS CodeBuild will access.
+ * Information about the VPC configuration that AWS CodeBuild accesses.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/VpcConfig" target="_top">AWS API

@@ -67,6 +67,16 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String snapshotCopyGrantName;
+    /**
+     * <p>
+     * The number of days to retain newly copied snapshots in the destination region after they are copied from the
+     * source region. If the value is -1, the manual snapshot is retained indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     */
+    private Integer manualSnapshotRetentionPeriod;
 
     /**
      * <p>
@@ -322,6 +332,67 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The number of days to retain newly copied snapshots in the destination region after they are copied from the
+     * source region. If the value is -1, the manual snapshot is retained indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * 
+     * @param manualSnapshotRetentionPeriod
+     *        The number of days to retain newly copied snapshots in the destination region after they are copied from
+     *        the source region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653.
+     */
+
+    public void setManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
+        this.manualSnapshotRetentionPeriod = manualSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The number of days to retain newly copied snapshots in the destination region after they are copied from the
+     * source region. If the value is -1, the manual snapshot is retained indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * 
+     * @return The number of days to retain newly copied snapshots in the destination region after they are copied from
+     *         the source region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
+     */
+
+    public Integer getManualSnapshotRetentionPeriod() {
+        return this.manualSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The number of days to retain newly copied snapshots in the destination region after they are copied from the
+     * source region. If the value is -1, the manual snapshot is retained indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * 
+     * @param manualSnapshotRetentionPeriod
+     *        The number of days to retain newly copied snapshots in the destination region after they are copied from
+     *        the source region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EnableSnapshotCopyRequest withManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
+        setManualSnapshotRetentionPeriod(manualSnapshotRetentionPeriod);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -339,7 +410,9 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
         if (getRetentionPeriod() != null)
             sb.append("RetentionPeriod: ").append(getRetentionPeriod()).append(",");
         if (getSnapshotCopyGrantName() != null)
-            sb.append("SnapshotCopyGrantName: ").append(getSnapshotCopyGrantName());
+            sb.append("SnapshotCopyGrantName: ").append(getSnapshotCopyGrantName()).append(",");
+        if (getManualSnapshotRetentionPeriod() != null)
+            sb.append("ManualSnapshotRetentionPeriod: ").append(getManualSnapshotRetentionPeriod());
         sb.append("}");
         return sb.toString();
     }
@@ -370,6 +443,11 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getSnapshotCopyGrantName() != null && other.getSnapshotCopyGrantName().equals(this.getSnapshotCopyGrantName()) == false)
             return false;
+        if (other.getManualSnapshotRetentionPeriod() == null ^ this.getManualSnapshotRetentionPeriod() == null)
+            return false;
+        if (other.getManualSnapshotRetentionPeriod() != null
+                && other.getManualSnapshotRetentionPeriod().equals(this.getManualSnapshotRetentionPeriod()) == false)
+            return false;
         return true;
     }
 
@@ -382,6 +460,7 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getDestinationRegion() == null) ? 0 : getDestinationRegion().hashCode());
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getSnapshotCopyGrantName() == null) ? 0 : getSnapshotCopyGrantName().hashCode());
+        hashCode = prime * hashCode + ((getManualSnapshotRetentionPeriod() == null) ? 0 : getManualSnapshotRetentionPeriod().hashCode());
         return hashCode;
     }
 

@@ -54,6 +54,8 @@ public class TaskMarshaller {
             .marshallLocationName("version").build();
     private static final MarshallingInfo<String> STOPPEDREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stoppedReason").build();
+    private static final MarshallingInfo<String> STOPCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("stopCode").build();
     private static final MarshallingInfo<String> CONNECTIVITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectivity").build();
     private static final MarshallingInfo<java.util.Date> CONNECTIVITYAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -82,6 +84,8 @@ public class TaskMarshaller {
             .marshallLocationName("attachments").build();
     private static final MarshallingInfo<String> HEALTHSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("healthStatus").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final TaskMarshaller instance = new TaskMarshaller();
 
@@ -112,6 +116,7 @@ public class TaskMarshaller {
             protocolMarshaller.marshall(task.getStartedBy(), STARTEDBY_BINDING);
             protocolMarshaller.marshall(task.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(task.getStoppedReason(), STOPPEDREASON_BINDING);
+            protocolMarshaller.marshall(task.getStopCode(), STOPCODE_BINDING);
             protocolMarshaller.marshall(task.getConnectivity(), CONNECTIVITY_BINDING);
             protocolMarshaller.marshall(task.getConnectivityAt(), CONNECTIVITYAT_BINDING);
             protocolMarshaller.marshall(task.getPullStartedAt(), PULLSTARTEDAT_BINDING);
@@ -126,6 +131,7 @@ public class TaskMarshaller {
             protocolMarshaller.marshall(task.getPlatformVersion(), PLATFORMVERSION_BINDING);
             protocolMarshaller.marshall(task.getAttachments(), ATTACHMENTS_BINDING);
             protocolMarshaller.marshall(task.getHealthStatus(), HEALTHSTATUS_BINDING);
+            protocolMarshaller.marshall(task.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

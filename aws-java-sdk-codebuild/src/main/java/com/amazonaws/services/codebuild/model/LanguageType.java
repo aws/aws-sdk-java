@@ -28,7 +28,8 @@ public enum LanguageType {
     DOCKER("DOCKER"),
     ANDROID("ANDROID"),
     DOTNET("DOTNET"),
-    BASE("BASE");
+    BASE("BASE"),
+    PHP("PHP");
 
     private String value;
 

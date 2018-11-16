@@ -201,6 +201,8 @@ public enum IdentityManagementActions implements Action {
     ListPolicyVersions("iam:ListPolicyVersions"),
     /** Action for the ListRolePolicies operation. */
     ListRolePolicies("iam:ListRolePolicies"),
+    /** Action for the ListRoleTags operation. */
+    ListRoleTags("iam:ListRoleTags"),
     /** Action for the ListRoles operation. */
     ListRoles("iam:ListRoles"),
     /** Action for the ListSAMLProviders operation. */
@@ -215,6 +217,8 @@ public enum IdentityManagementActions implements Action {
     ListSigningCertificates("iam:ListSigningCertificates"),
     /** Action for the ListUserPolicies operation. */
     ListUserPolicies("iam:ListUserPolicies"),
+    /** Action for the ListUserTags operation. */
+    ListUserTags("iam:ListUserTags"),
     /** Action for the ListUsers operation. */
     ListUsers("iam:ListUsers"),
     /** Action for the ListVirtualMFADevices operation. */
@@ -245,6 +249,14 @@ public enum IdentityManagementActions implements Action {
     SimulateCustomPolicy("iam:SimulateCustomPolicy"),
     /** Action for the SimulatePrincipalPolicy operation. */
     SimulatePrincipalPolicy("iam:SimulatePrincipalPolicy"),
+    /** Action for the TagRole operation. */
+    TagRole("iam:TagRole"),
+    /** Action for the TagUser operation. */
+    TagUser("iam:TagUser"),
+    /** Action for the UntagRole operation. */
+    UntagRole("iam:UntagRole"),
+    /** Action for the UntagUser operation. */
+    UntagUser("iam:UntagUser"),
     /** Action for the UpdateAccessKey operation. */
     UpdateAccessKey("iam:UpdateAccessKey"),
     /** Action for the UpdateAccountPasswordPolicy operation. */

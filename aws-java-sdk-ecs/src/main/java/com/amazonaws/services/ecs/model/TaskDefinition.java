@@ -74,12 +74,12 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
-     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
-     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
-     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
-     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.
+     * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you can't specify port mappings in your container definitions, and the task's containers do
+     * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack instead of the virtualized network
+     * stack provided by the <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
@@ -87,7 +87,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
      * <p>
-     * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
+     * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
      * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -116,7 +116,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The revision of the task in a particular family. The revision is a version number of a task definition in a
-     * family. When you register a task definition for the first time, the revision is <code>1</code>; each time you
+     * family. When you register a task definition for the first time, the revision is <code>1</code>. Each time you
      * register a new revision of a task definition in the same family, the revision value always increases by one (even
      * if you have deregistered previous revisions in this family).
      * </p>
@@ -173,9 +173,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<String> requiresCompatibilities;
     /**
      * <p>
-     * The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is optional and
-     * any value can be used. If using the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of valid values for the <code>memory</code> parameter:
+     * The number of <code>cpu</code> units used by the task. If you are using the EC2 launch type, this field is
+     * optional and any value can be used. If you are using the Fargate launch type, this field is required and you must
+     * use one of the following values, which determines your range of valid values for the <code>memory</code>
+     * parameter:
      * </p>
      * <ul>
      * <li>
@@ -211,9 +212,9 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     private String cpu;
     /**
      * <p>
-     * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
-     * value can be used. If using the Fargate launch type, this field is required and you must use one of the following
-     * values, which determines your range of valid values for the <code>cpu</code> parameter:
+     * The amount (in MiB) of memory used by the task. If you are using the EC2 launch type, this field is optional and
+     * any value can be used. If you are using the Fargate launch type, this field is required and you must use one of
+     * the following values, which determines your range of valid values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -560,12 +561,12 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
-     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
-     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
-     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
-     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.
+     * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you can't specify port mappings in your container definitions, and the task's containers do
+     * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack instead of the virtualized network
+     * stack provided by the <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
@@ -573,7 +574,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
      * <p>
-     * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
+     * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
      * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -601,9 +602,9 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *        <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     *        If using the EC2 launch type, any network mode can be used. If the network mode is set to
-     *        <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
+     *        required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
+     *        to <code>none</code>, you can't specify port mappings in your container definitions, and the task's
      *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
      *        offer the highest networking performance for containers because they use the EC2 network stack instead of
      *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
@@ -614,7 +615,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        host port mappings.
      *        </p>
      *        <p>
-     *        If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
      *        definition. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
@@ -649,12 +650,12 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
-     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
-     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
-     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
-     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.
+     * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you can't specify port mappings in your container definitions, and the task's containers do
+     * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack instead of the virtualized network
+     * stack provided by the <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
@@ -662,7 +663,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
      * <p>
-     * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
+     * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
      * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -689,9 +690,9 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      *         <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *         <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     *         If using the EC2 launch type, any network mode can be used. If the network mode is set to
-     *         <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *         <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
+     *         required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
+     *         to <code>none</code>, you can't specify port mappings in your container definitions, and the task's
      *         containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
      *         offer the highest networking performance for containers because they use the EC2 network stack instead of
      *         the virtualized network stack provided by the <code>bridge</code> mode.</p>
@@ -702,7 +703,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *         dynamic host port mappings.
      *         </p>
      *         <p>
-     *         If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     *         If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *         must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
      *         definition. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
@@ -739,12 +740,12 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
-     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
-     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
-     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
-     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.
+     * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you can't specify port mappings in your container definitions, and the task's containers do
+     * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack instead of the virtualized network
+     * stack provided by the <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
@@ -752,7 +753,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
      * <p>
-     * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
+     * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
      * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -780,9 +781,9 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *        <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     *        If using the EC2 launch type, any network mode can be used. If the network mode is set to
-     *        <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
+     *        required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
+     *        to <code>none</code>, you can't specify port mappings in your container definitions, and the task's
      *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
      *        offer the highest networking performance for containers because they use the EC2 network stack instead of
      *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
@@ -793,7 +794,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        host port mappings.
      *        </p>
      *        <p>
-     *        If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
      *        definition. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
@@ -830,12 +831,12 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
-     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
-     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
-     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
-     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.
+     * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you can't specify port mappings in your container definitions, and the task's containers do
+     * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack instead of the virtualized network
+     * stack provided by the <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
@@ -843,7 +844,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
      * <p>
-     * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
+     * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
      * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -871,9 +872,9 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *        <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     *        If using the EC2 launch type, any network mode can be used. If the network mode is set to
-     *        <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
+     *        required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
+     *        to <code>none</code>, you can't specify port mappings in your container definitions, and the task's
      *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
      *        offer the highest networking performance for containers because they use the EC2 network stack instead of
      *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
@@ -884,7 +885,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        host port mappings.
      *        </p>
      *        <p>
-     *        If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
      *        definition. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
@@ -919,12 +920,12 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
-     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
-     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
-     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
-     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
-     * <code>bridge</code> mode.
+     * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
+     * <code>none</code>, you can't specify port mappings in your container definitions, and the task's containers do
+     * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     * networking performance for containers because they use the EC2 network stack instead of the virtualized network
+     * stack provided by the <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
@@ -932,7 +933,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
      * <p>
-     * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
+     * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
      * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -960,9 +961,9 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
      *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *        <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     *        If using the EC2 launch type, any network mode can be used. If the network mode is set to
-     *        <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
+     *        required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
+     *        to <code>none</code>, you can't specify port mappings in your container definitions, and the task's
      *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
      *        offer the highest networking performance for containers because they use the EC2 network stack instead of
      *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
@@ -973,7 +974,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        host port mappings.
      *        </p>
      *        <p>
-     *        If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
      *        definition. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
@@ -1009,14 +1010,14 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The revision of the task in a particular family. The revision is a version number of a task definition in a
-     * family. When you register a task definition for the first time, the revision is <code>1</code>; each time you
+     * family. When you register a task definition for the first time, the revision is <code>1</code>. Each time you
      * register a new revision of a task definition in the same family, the revision value always increases by one (even
      * if you have deregistered previous revisions in this family).
      * </p>
      * 
      * @param revision
      *        The revision of the task in a particular family. The revision is a version number of a task definition in
-     *        a family. When you register a task definition for the first time, the revision is <code>1</code>; each
+     *        a family. When you register a task definition for the first time, the revision is <code>1</code>. Each
      *        time you register a new revision of a task definition in the same family, the revision value always
      *        increases by one (even if you have deregistered previous revisions in this family).
      */
@@ -1028,13 +1029,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The revision of the task in a particular family. The revision is a version number of a task definition in a
-     * family. When you register a task definition for the first time, the revision is <code>1</code>; each time you
+     * family. When you register a task definition for the first time, the revision is <code>1</code>. Each time you
      * register a new revision of a task definition in the same family, the revision value always increases by one (even
      * if you have deregistered previous revisions in this family).
      * </p>
      * 
      * @return The revision of the task in a particular family. The revision is a version number of a task definition in
-     *         a family. When you register a task definition for the first time, the revision is <code>1</code>; each
+     *         a family. When you register a task definition for the first time, the revision is <code>1</code>. Each
      *         time you register a new revision of a task definition in the same family, the revision value always
      *         increases by one (even if you have deregistered previous revisions in this family).
      */
@@ -1046,14 +1047,14 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The revision of the task in a particular family. The revision is a version number of a task definition in a
-     * family. When you register a task definition for the first time, the revision is <code>1</code>; each time you
+     * family. When you register a task definition for the first time, the revision is <code>1</code>. Each time you
      * register a new revision of a task definition in the same family, the revision value always increases by one (even
      * if you have deregistered previous revisions in this family).
      * </p>
      * 
      * @param revision
      *        The revision of the task in a particular family. The revision is a version number of a task definition in
-     *        a family. When you register a task definition for the first time, the revision is <code>1</code>; each
+     *        a family. When you register a task definition for the first time, the revision is <code>1</code>. Each
      *        time you register a new revision of a task definition in the same family, the revision value always
      *        increases by one (even if you have deregistered previous revisions in this family).
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1665,9 +1666,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is optional and
-     * any value can be used. If using the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of valid values for the <code>memory</code> parameter:
+     * The number of <code>cpu</code> units used by the task. If you are using the EC2 launch type, this field is
+     * optional and any value can be used. If you are using the Fargate launch type, this field is required and you must
+     * use one of the following values, which determines your range of valid values for the <code>memory</code>
+     * parameter:
      * </p>
      * <ul>
      * <li>
@@ -1701,10 +1703,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param cpu
-     *        The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is
-     *        optional and any value can be used. If using the Fargate launch type, this field is required and you must
-     *        use one of the following values, which determines your range of valid values for the <code>memory</code>
-     *        parameter:</p>
+     *        The number of <code>cpu</code> units used by the task. If you are using the EC2 launch type, this field is
+     *        optional and any value can be used. If you are using the Fargate launch type, this field is required and
+     *        you must use one of the following values, which determines your range of valid values for the
+     *        <code>memory</code> parameter:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1742,9 +1744,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is optional and
-     * any value can be used. If using the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of valid values for the <code>memory</code> parameter:
+     * The number of <code>cpu</code> units used by the task. If you are using the EC2 launch type, this field is
+     * optional and any value can be used. If you are using the Fargate launch type, this field is required and you must
+     * use one of the following values, which determines your range of valid values for the <code>memory</code>
+     * parameter:
      * </p>
      * <ul>
      * <li>
@@ -1777,10 +1780,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is
-     *         optional and any value can be used. If using the Fargate launch type, this field is required and you must
-     *         use one of the following values, which determines your range of valid values for the <code>memory</code>
-     *         parameter:</p>
+     * @return The number of <code>cpu</code> units used by the task. If you are using the EC2 launch type, this field
+     *         is optional and any value can be used. If you are using the Fargate launch type, this field is required
+     *         and you must use one of the following values, which determines your range of valid values for the
+     *         <code>memory</code> parameter:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1818,9 +1821,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is optional and
-     * any value can be used. If using the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of valid values for the <code>memory</code> parameter:
+     * The number of <code>cpu</code> units used by the task. If you are using the EC2 launch type, this field is
+     * optional and any value can be used. If you are using the Fargate launch type, this field is required and you must
+     * use one of the following values, which determines your range of valid values for the <code>memory</code>
+     * parameter:
      * </p>
      * <ul>
      * <li>
@@ -1854,10 +1858,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param cpu
-     *        The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is
-     *        optional and any value can be used. If using the Fargate launch type, this field is required and you must
-     *        use one of the following values, which determines your range of valid values for the <code>memory</code>
-     *        parameter:</p>
+     *        The number of <code>cpu</code> units used by the task. If you are using the EC2 launch type, this field is
+     *        optional and any value can be used. If you are using the Fargate launch type, this field is required and
+     *        you must use one of the following values, which determines your range of valid values for the
+     *        <code>memory</code> parameter:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1897,9 +1901,9 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
-     * value can be used. If using the Fargate launch type, this field is required and you must use one of the following
-     * values, which determines your range of valid values for the <code>cpu</code> parameter:
+     * The amount (in MiB) of memory used by the task. If you are using the EC2 launch type, this field is optional and
+     * any value can be used. If you are using the Fargate launch type, this field is required and you must use one of
+     * the following values, which determines your range of valid values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -1933,9 +1937,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param memory
-     *        The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and
-     *        any value can be used. If using the Fargate launch type, this field is required and you must use one of
-     *        the following values, which determines your range of valid values for the <code>cpu</code> parameter:</p>
+     *        The amount (in MiB) of memory used by the task. If you are using the EC2 launch type, this field is
+     *        optional and any value can be used. If you are using the Fargate launch type, this field is required and
+     *        you must use one of the following values, which determines your range of valid values for the
+     *        <code>cpu</code> parameter:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1973,9 +1978,9 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
-     * value can be used. If using the Fargate launch type, this field is required and you must use one of the following
-     * values, which determines your range of valid values for the <code>cpu</code> parameter:
+     * The amount (in MiB) of memory used by the task. If you are using the EC2 launch type, this field is optional and
+     * any value can be used. If you are using the Fargate launch type, this field is required and you must use one of
+     * the following values, which determines your range of valid values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -2008,9 +2013,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and
-     *         any value can be used. If using the Fargate launch type, this field is required and you must use one of
-     *         the following values, which determines your range of valid values for the <code>cpu</code> parameter:</p>
+     * @return The amount (in MiB) of memory used by the task. If you are using the EC2 launch type, this field is
+     *         optional and any value can be used. If you are using the Fargate launch type, this field is required and
+     *         you must use one of the following values, which determines your range of valid values for the
+     *         <code>cpu</code> parameter:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -2048,9 +2054,9 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
-     * value can be used. If using the Fargate launch type, this field is required and you must use one of the following
-     * values, which determines your range of valid values for the <code>cpu</code> parameter:
+     * The amount (in MiB) of memory used by the task. If you are using the EC2 launch type, this field is optional and
+     * any value can be used. If you are using the Fargate launch type, this field is required and you must use one of
+     * the following values, which determines your range of valid values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -2084,9 +2090,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param memory
-     *        The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and
-     *        any value can be used. If using the Fargate launch type, this field is required and you must use one of
-     *        the following values, which determines your range of valid values for the <code>cpu</code> parameter:</p>
+     *        The amount (in MiB) of memory used by the task. If you are using the EC2 launch type, this field is
+     *        optional and any value can be used. If you are using the Fargate launch type, this field is required and
+     *        you must use one of the following values, which determines your range of valid values for the
+     *        <code>cpu</code> parameter:</p>
      *        <ul>
      *        <li>
      *        <p>

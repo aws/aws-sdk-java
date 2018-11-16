@@ -50,6 +50,10 @@ public class ModifySnapshotCopyRetentionPeriodRequestMarshaller implements
             request.addParameter("RetentionPeriod", StringUtils.fromInteger(modifySnapshotCopyRetentionPeriodRequest.getRetentionPeriod()));
         }
 
+        if (modifySnapshotCopyRetentionPeriodRequest.getManual() != null) {
+            request.addParameter("Manual", StringUtils.fromBoolean(modifySnapshotCopyRetentionPeriodRequest.getManual()));
+        }
+
         return request;
     }
 

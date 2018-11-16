@@ -146,6 +146,12 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean jumboFrameCapable;
+    /**
+     * <p>
+     * Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).
+     * </p>
+     */
+    private String hasLogicalRedundancy;
 
     /**
      * <p>
@@ -1129,6 +1135,79 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).
+     * </p>
+     * 
+     * @param hasLogicalRedundancy
+     *        Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).
+     * @see HasLogicalRedundancy
+     */
+
+    public void setHasLogicalRedundancy(String hasLogicalRedundancy) {
+        this.hasLogicalRedundancy = hasLogicalRedundancy;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).
+     * </p>
+     * 
+     * @return Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).
+     * @see HasLogicalRedundancy
+     */
+
+    public String getHasLogicalRedundancy() {
+        return this.hasLogicalRedundancy;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).
+     * </p>
+     * 
+     * @param hasLogicalRedundancy
+     *        Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HasLogicalRedundancy
+     */
+
+    public Lag withHasLogicalRedundancy(String hasLogicalRedundancy) {
+        setHasLogicalRedundancy(hasLogicalRedundancy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).
+     * </p>
+     * 
+     * @param hasLogicalRedundancy
+     *        Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).
+     * @see HasLogicalRedundancy
+     */
+
+    public void setHasLogicalRedundancy(HasLogicalRedundancy hasLogicalRedundancy) {
+        withHasLogicalRedundancy(hasLogicalRedundancy);
+    }
+
+    /**
+     * <p>
+     * Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).
+     * </p>
+     * 
+     * @param hasLogicalRedundancy
+     *        Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HasLogicalRedundancy
+     */
+
+    public Lag withHasLogicalRedundancy(HasLogicalRedundancy hasLogicalRedundancy) {
+        this.hasLogicalRedundancy = hasLogicalRedundancy.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1166,7 +1245,9 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
         if (getAllowsHostedConnections() != null)
             sb.append("AllowsHostedConnections: ").append(getAllowsHostedConnections()).append(",");
         if (getJumboFrameCapable() != null)
-            sb.append("JumboFrameCapable: ").append(getJumboFrameCapable());
+            sb.append("JumboFrameCapable: ").append(getJumboFrameCapable()).append(",");
+        if (getHasLogicalRedundancy() != null)
+            sb.append("HasLogicalRedundancy: ").append(getHasLogicalRedundancy());
         sb.append("}");
         return sb.toString();
     }
@@ -1237,6 +1318,10 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getJumboFrameCapable() != null && other.getJumboFrameCapable().equals(this.getJumboFrameCapable()) == false)
             return false;
+        if (other.getHasLogicalRedundancy() == null ^ this.getHasLogicalRedundancy() == null)
+            return false;
+        if (other.getHasLogicalRedundancy() != null && other.getHasLogicalRedundancy().equals(this.getHasLogicalRedundancy()) == false)
+            return false;
         return true;
     }
 
@@ -1259,6 +1344,7 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getConnections() == null) ? 0 : getConnections().hashCode());
         hashCode = prime * hashCode + ((getAllowsHostedConnections() == null) ? 0 : getAllowsHostedConnections().hashCode());
         hashCode = prime * hashCode + ((getJumboFrameCapable() == null) ? 0 : getJumboFrameCapable().hashCode());
+        hashCode = prime * hashCode + ((getHasLogicalRedundancy() == null) ? 0 : getHasLogicalRedundancy().hashCode());
         return hashCode;
     }
 

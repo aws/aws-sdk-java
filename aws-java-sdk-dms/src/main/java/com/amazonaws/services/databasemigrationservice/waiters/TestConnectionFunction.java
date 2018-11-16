@@ -17,13 +17,13 @@ import javax.annotation.Generated;
 
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.SdkFunction;
-import com.amazonaws.services.databasemigrationservice.model.DescribeConnectionsRequest;
-import com.amazonaws.services.databasemigrationservice.model.DescribeConnectionsResult;
+import com.amazonaws.services.databasemigrationservice.model.TestConnectionRequest;
+import com.amazonaws.services.databasemigrationservice.model.TestConnectionResult;
 import com.amazonaws.services.databasemigrationservice.AWSDatabaseMigrationService;
 
 @SdkInternalApi
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeConnectionsFunction implements SdkFunction<DescribeConnectionsRequest, DescribeConnectionsResult> {
+public class TestConnectionFunction implements SdkFunction<TestConnectionRequest, TestConnectionResult> {
 
     /**
      * Represents the service client
@@ -31,12 +31,12 @@ public class DescribeConnectionsFunction implements SdkFunction<DescribeConnecti
     private final AWSDatabaseMigrationService client;
 
     /**
-     * Constructs a new DescribeConnectionsFunction with the given client
+     * Constructs a new TestConnectionFunction with the given client
      * 
      * @param client
      *        Service client
      */
-    public DescribeConnectionsFunction(AWSDatabaseMigrationService client) {
+    public TestConnectionFunction(AWSDatabaseMigrationService client) {
         this.client = client;
     }
 
@@ -44,12 +44,12 @@ public class DescribeConnectionsFunction implements SdkFunction<DescribeConnecti
      * Makes a call to the operation specified by the waiter by taking the corresponding request and returns the
      * corresponding result
      * 
-     * @param describeConnectionsRequest
+     * @param testConnectionRequest
      *        Corresponding request for the operation
      * @return Corresponding result of the operation
      */
     @Override
-    public DescribeConnectionsResult apply(DescribeConnectionsRequest describeConnectionsRequest) {
-        return client.describeConnections(describeConnectionsRequest);
+    public TestConnectionResult apply(TestConnectionRequest testConnectionRequest) {
+        return client.testConnection(testConnectionRequest);
     }
 }

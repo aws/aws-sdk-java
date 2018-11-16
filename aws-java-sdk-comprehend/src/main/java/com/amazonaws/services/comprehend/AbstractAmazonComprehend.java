@@ -53,6 +53,26 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
     }
 
     @Override
+    public CreateDocumentClassifierResult createDocumentClassifier(CreateDocumentClassifierRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDocumentClassifierResult deleteDocumentClassifier(DeleteDocumentClassifierRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDocumentClassificationJobResult describeDocumentClassificationJob(DescribeDocumentClassificationJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDocumentClassifierResult describeDocumentClassifier(DescribeDocumentClassifierRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDominantLanguageDetectionJobResult describeDominantLanguageDetectionJob(DescribeDominantLanguageDetectionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -103,6 +123,16 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
     }
 
     @Override
+    public ListDocumentClassificationJobsResult listDocumentClassificationJobs(ListDocumentClassificationJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDocumentClassifiersResult listDocumentClassifiers(ListDocumentClassifiersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDominantLanguageDetectionJobsResult listDominantLanguageDetectionJobs(ListDominantLanguageDetectionJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -124,6 +154,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
 
     @Override
     public ListTopicsDetectionJobsResult listTopicsDetectionJobs(ListTopicsDetectionJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartDocumentClassificationJobResult startDocumentClassificationJob(StartDocumentClassificationJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

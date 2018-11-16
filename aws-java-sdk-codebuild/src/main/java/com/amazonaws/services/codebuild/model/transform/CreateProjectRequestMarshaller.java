@@ -48,6 +48,8 @@ public class CreateProjectRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceRole").build();
     private static final MarshallingInfo<Integer> TIMEOUTINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutInMinutes").build();
+    private static final MarshallingInfo<Integer> QUEUEDTIMEOUTINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("queuedTimeoutInMinutes").build();
     private static final MarshallingInfo<String> ENCRYPTIONKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionKey").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -85,6 +87,7 @@ public class CreateProjectRequestMarshaller {
             protocolMarshaller.marshall(createProjectRequest.getEnvironment(), ENVIRONMENT_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getServiceRole(), SERVICEROLE_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getTimeoutInMinutes(), TIMEOUTINMINUTES_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getQueuedTimeoutInMinutes(), QUEUEDTIMEOUTINMINUTES_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getEncryptionKey(), ENCRYPTIONKEY_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getVpcConfig(), VPCCONFIG_BINDING);

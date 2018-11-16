@@ -33,9 +33,9 @@ public class CreateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String projectName;
     /**
      * <p>
-     * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
-     * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
-     * <code>branchFilter</code> is empty, then all branches are built.
+     * A regular expression used to determine which repository branches are built when a webhook is triggered. If the
+     * name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then
+     * all branches are built.
      * </p>
      */
     private String branchFilter;
@@ -82,15 +82,15 @@ public class CreateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
-     * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
-     * <code>branchFilter</code> is empty, then all branches are built.
+     * A regular expression used to determine which repository branches are built when a webhook is triggered. If the
+     * name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then
+     * all branches are built.
      * </p>
      * 
      * @param branchFilter
-     *        A regular expression used to determine which branches in a repository are built when a webhook is
-     *        triggered. If the name of a branch matches the regular expression, then it is built. If it doesn't match,
-     *        then it is not. If <code>branchFilter</code> is empty, then all branches are built.
+     *        A regular expression used to determine which repository branches are built when a webhook is triggered. If
+     *        the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is
+     *        empty, then all branches are built.
      */
 
     public void setBranchFilter(String branchFilter) {
@@ -99,14 +99,14 @@ public class CreateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
-     * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
-     * <code>branchFilter</code> is empty, then all branches are built.
+     * A regular expression used to determine which repository branches are built when a webhook is triggered. If the
+     * name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then
+     * all branches are built.
      * </p>
      * 
-     * @return A regular expression used to determine which branches in a repository are built when a webhook is
-     *         triggered. If the name of a branch matches the regular expression, then it is built. If it doesn't match,
-     *         then it is not. If <code>branchFilter</code> is empty, then all branches are built.
+     * @return A regular expression used to determine which repository branches are built when a webhook is triggered.
+     *         If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is
+     *         empty, then all branches are built.
      */
 
     public String getBranchFilter() {
@@ -115,15 +115,15 @@ public class CreateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
-     * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
-     * <code>branchFilter</code> is empty, then all branches are built.
+     * A regular expression used to determine which repository branches are built when a webhook is triggered. If the
+     * name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then
+     * all branches are built.
      * </p>
      * 
      * @param branchFilter
-     *        A regular expression used to determine which branches in a repository are built when a webhook is
-     *        triggered. If the name of a branch matches the regular expression, then it is built. If it doesn't match,
-     *        then it is not. If <code>branchFilter</code> is empty, then all branches are built.
+     *        A regular expression used to determine which repository branches are built when a webhook is triggered. If
+     *        the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is
+     *        empty, then all branches are built.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

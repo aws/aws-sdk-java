@@ -52,6 +52,10 @@ public class CopyClusterSnapshotRequestMarshaller implements Marshaller<Request<
             request.addParameter("TargetSnapshotIdentifier", StringUtils.fromString(copyClusterSnapshotRequest.getTargetSnapshotIdentifier()));
         }
 
+        if (copyClusterSnapshotRequest.getManualSnapshotRetentionPeriod() != null) {
+            request.addParameter("ManualSnapshotRetentionPeriod", StringUtils.fromInteger(copyClusterSnapshotRequest.getManualSnapshotRetentionPeriod()));
+        }
+
         return request;
     }
 

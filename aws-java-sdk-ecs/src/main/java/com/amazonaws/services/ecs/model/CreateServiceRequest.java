@@ -67,7 +67,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not
+     * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
      * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
      * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
      * associated with an elastic network interface, not an Amazon EC2 instance.
@@ -81,9 +81,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more information,
-     * see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     * Platform Versions</a>.
+     * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a>.
      * </p>
      * </note>
      */
@@ -150,7 +150,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10
-     * constraints per task (this limit includes constraints in the task definition and those specified at run time).
+     * constraints per task (this limit includes constraints in the task definition and those specified at runtime).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PlacementConstraint> placementConstraints;
@@ -164,7 +164,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The network configuration for the service. This parameter is required for task definitions that use the
-     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
      * <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -201,9 +201,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. When using this strategy,
-     * there is no need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling
-     * policies.
+     * that meets all of the task placement constraints that you specify in your cluster. When you are using this
+     * strategy, there is no need to specify a desired number of tasks, a task placement strategy, or use Service Auto
+     * Scaling policies.
      * </p>
      * <note>
      * <p>
@@ -213,6 +213,31 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      */
     private String schedulingStrategy;
+    /**
+     * <p>
+     * The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. When a service is deleted, the tags are deleted as well. Tag
+     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
+     * characters.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more information, see
+     * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging Your Amazon ECS
+     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     */
+    private Boolean enableECSManagedTags;
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the task definition or the service to the tasks. If no value is
+     * specified, the tags are not propagated. Tags can only be propagated to the tasks within the service during
+     * service creation. To add tags to a task after service creation, use the <a>TagResource</a> API action.
+     * </p>
+     */
+    private String propagateTags;
 
     /**
      * <p>
@@ -383,7 +408,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not
+     * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
      * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
      * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
      * associated with an elastic network interface, not an Amazon EC2 instance.
@@ -407,7 +432,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </p>
      *         <p>
      *         Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
-     *         launch type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers
+     *         launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
      *         are not supported. Also, when you create any target groups for these services, you must choose
      *         <code>ip</code> as the target type, not <code>instance</code>, because tasks that use the
      *         <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
@@ -440,7 +465,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not
+     * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
      * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
      * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
      * associated with an elastic network interface, not an Amazon EC2 instance.
@@ -465,7 +490,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        <p>
      *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
-     *        launch type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers
+     *        launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
      *        are not supported. Also, when you create any target groups for these services, you must choose
      *        <code>ip</code> as the target type, not <code>instance</code>, because tasks that use the
      *        <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
@@ -500,7 +525,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not
+     * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
      * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
      * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
      * associated with an elastic network interface, not an Amazon EC2 instance.
@@ -530,7 +555,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        <p>
      *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
-     *        launch type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers
+     *        launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
      *        are not supported. Also, when you create any target groups for these services, you must choose
      *        <code>ip</code> as the target type, not <code>instance</code>, because tasks that use the
      *        <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
@@ -567,7 +592,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not
+     * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
      * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
      * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
      * associated with an elastic network interface, not an Amazon EC2 instance.
@@ -592,7 +617,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        <p>
      *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
-     *        launch type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers
+     *        launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
      *        are not supported. Also, when you create any target groups for these services, you must choose
      *        <code>ip</code> as the target type, not <code>instance</code>, because tasks that use the
      *        <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
@@ -612,9 +637,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more information,
-     * see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     * Platform Versions</a>.
+     * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a>.
      * </p>
      * </note>
      * 
@@ -622,8 +647,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *         Discovery</a>.</p> <note>
      *         <p>
-     *         Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more
-     *         information, see <a
+     *         Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For
+     *         more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *         Platform Versions</a>.
      *         </p>
@@ -643,9 +668,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more information,
-     * see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     * Platform Versions</a>.
+     * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a>.
      * </p>
      * </note>
      * 
@@ -654,8 +679,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.</p> <note>
      *        <p>
-     *        Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more
-     *        information, see <a
+     *        Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For
+     *        more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a>.
      *        </p>
@@ -677,9 +702,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more information,
-     * see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     * Platform Versions</a>.
+     * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a>.
      * </p>
      * </note>
      * <p>
@@ -693,8 +718,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.</p> <note>
      *        <p>
-     *        Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more
-     *        information, see <a
+     *        Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For
+     *        more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a>.
      *        </p>
@@ -718,9 +743,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more information,
-     * see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     * Platform Versions</a>.
+     * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a>.
      * </p>
      * </note>
      * 
@@ -729,8 +754,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.</p> <note>
      *        <p>
-     *        Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more
-     *        information, see <a
+     *        Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For
+     *        more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a>.
      *        </p>
@@ -1142,12 +1167,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10
-     * constraints per task (this limit includes constraints in the task definition and those specified at run time).
+     * constraints per task (this limit includes constraints in the task definition and those specified at runtime).
      * </p>
      * 
      * @return An array of placement constraint objects to use for tasks in your service. You can specify a maximum of
      *         10 constraints per task (this limit includes constraints in the task definition and those specified at
-     *         run time).
+     *         runtime).
      */
 
     public java.util.List<PlacementConstraint> getPlacementConstraints() {
@@ -1160,13 +1185,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10
-     * constraints per task (this limit includes constraints in the task definition and those specified at run time).
+     * constraints per task (this limit includes constraints in the task definition and those specified at runtime).
      * </p>
      * 
      * @param placementConstraints
      *        An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10
-     *        constraints per task (this limit includes constraints in the task definition and those specified at run
-     *        time).
+     *        constraints per task (this limit includes constraints in the task definition and those specified at
+     *        runtime).
      */
 
     public void setPlacementConstraints(java.util.Collection<PlacementConstraint> placementConstraints) {
@@ -1181,7 +1206,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10
-     * constraints per task (this limit includes constraints in the task definition and those specified at run time).
+     * constraints per task (this limit includes constraints in the task definition and those specified at runtime).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1191,8 +1216,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param placementConstraints
      *        An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10
-     *        constraints per task (this limit includes constraints in the task definition and those specified at run
-     *        time).
+     *        constraints per task (this limit includes constraints in the task definition and those specified at
+     *        runtime).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1209,13 +1234,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10
-     * constraints per task (this limit includes constraints in the task definition and those specified at run time).
+     * constraints per task (this limit includes constraints in the task definition and those specified at runtime).
      * </p>
      * 
      * @param placementConstraints
      *        An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10
-     *        constraints per task (this limit includes constraints in the task definition and those specified at run
-     *        time).
+     *        constraints per task (this limit includes constraints in the task definition and those specified at
+     *        runtime).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1308,7 +1333,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The network configuration for the service. This parameter is required for task definitions that use the
-     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
      * <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -1316,7 +1341,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param networkConfiguration
      *        The network configuration for the service. This parameter is required for task definitions that use the
-     *        <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
+     *        <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
      *        for other network modes. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
      *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -1329,14 +1354,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The network configuration for the service. This parameter is required for task definitions that use the
-     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
      * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return The network configuration for the service. This parameter is required for task definitions that use the
-     *         <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
+     *         <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
      *         for other network modes. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      *         Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -1349,7 +1374,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The network configuration for the service. This parameter is required for task definitions that use the
-     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
      * <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -1357,7 +1382,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param networkConfiguration
      *        The network configuration for the service. This parameter is required for task definitions that use the
-     *        <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
+     *        <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
      *        for other network modes. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
      *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -1458,9 +1483,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. When using this strategy,
-     * there is no need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling
-     * policies.
+     * that meets all of the task placement constraints that you specify in your cluster. When you are using this
+     * strategy, there is no need to specify a desired number of tasks, a task placement strategy, or use Service Auto
+     * Scaling policies.
      * </p>
      * <note>
      * <p>
@@ -1486,9 +1511,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <li>
      *        <p>
      *        <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container
-     *        instance that meets all of the task placement constraints that you specify in your cluster. When using
-     *        this strategy, there is no need to specify a desired number of tasks, a task placement strategy, or use
-     *        Service Auto Scaling policies.
+     *        instance that meets all of the task placement constraints that you specify in your cluster. When you are
+     *        using this strategy, there is no need to specify a desired number of tasks, a task placement strategy, or
+     *        use Service Auto Scaling policies.
      *        </p>
      *        <note>
      *        <p>
@@ -1521,9 +1546,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. When using this strategy,
-     * there is no need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling
-     * policies.
+     * that meets all of the task placement constraints that you specify in your cluster. When you are using this
+     * strategy, there is no need to specify a desired number of tasks, a task placement strategy, or use Service Auto
+     * Scaling policies.
      * </p>
      * <note>
      * <p>
@@ -1548,9 +1573,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <li>
      *         <p>
      *         <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container
-     *         instance that meets all of the task placement constraints that you specify in your cluster. When using
-     *         this strategy, there is no need to specify a desired number of tasks, a task placement strategy, or use
-     *         Service Auto Scaling policies.
+     *         instance that meets all of the task placement constraints that you specify in your cluster. When you are
+     *         using this strategy, there is no need to specify a desired number of tasks, a task placement strategy, or
+     *         use Service Auto Scaling policies.
      *         </p>
      *         <note>
      *         <p>
@@ -1583,9 +1608,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. When using this strategy,
-     * there is no need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling
-     * policies.
+     * that meets all of the task placement constraints that you specify in your cluster. When you are using this
+     * strategy, there is no need to specify a desired number of tasks, a task placement strategy, or use Service Auto
+     * Scaling policies.
      * </p>
      * <note>
      * <p>
@@ -1611,9 +1636,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <li>
      *        <p>
      *        <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container
-     *        instance that meets all of the task placement constraints that you specify in your cluster. When using
-     *        this strategy, there is no need to specify a desired number of tasks, a task placement strategy, or use
-     *        Service Auto Scaling policies.
+     *        instance that meets all of the task placement constraints that you specify in your cluster. When you are
+     *        using this strategy, there is no need to specify a desired number of tasks, a task placement strategy, or
+     *        use Service Auto Scaling policies.
      *        </p>
      *        <note>
      *        <p>
@@ -1648,9 +1673,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. When using this strategy,
-     * there is no need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling
-     * policies.
+     * that meets all of the task placement constraints that you specify in your cluster. When you are using this
+     * strategy, there is no need to specify a desired number of tasks, a task placement strategy, or use Service Auto
+     * Scaling policies.
      * </p>
      * <note>
      * <p>
@@ -1676,9 +1701,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <li>
      *        <p>
      *        <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container
-     *        instance that meets all of the task placement constraints that you specify in your cluster. When using
-     *        this strategy, there is no need to specify a desired number of tasks, a task placement strategy, or use
-     *        Service Auto Scaling policies.
+     *        instance that meets all of the task placement constraints that you specify in your cluster. When you are
+     *        using this strategy, there is no need to specify a desired number of tasks, a task placement strategy, or
+     *        use Service Auto Scaling policies.
      *        </p>
      *        <note>
      *        <p>
@@ -1691,6 +1716,254 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public CreateServiceRequest withSchedulingStrategy(SchedulingStrategy schedulingStrategy) {
         this.schedulingStrategy = schedulingStrategy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. When a service is deleted, the tags are deleted as well. Tag
+     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
+     * characters.
+     * </p>
+     * 
+     * @return The metadata that you apply to the service to help you categorize and organize them. Each tag consists of
+     *         a key and an optional value, both of which you define. When a service is deleted, the tags are deleted as
+     *         well. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum
+     *         length of 256 characters.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. When a service is deleted, the tags are deleted as well. Tag
+     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
+     * characters.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the service to help you categorize and organize them. Each tag consists of
+     *        a key and an optional value, both of which you define. When a service is deleted, the tags are deleted as
+     *        well. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum
+     *        length of 256 characters.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. When a service is deleted, the tags are deleted as well. Tag
+     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
+     * characters.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the service to help you categorize and organize them. Each tag consists of
+     *        a key and an optional value, both of which you define. When a service is deleted, the tags are deleted as
+     *        well. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum
+     *        length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateServiceRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. When a service is deleted, the tags are deleted as well. Tag
+     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
+     * characters.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the service to help you categorize and organize them. Each tag consists of
+     *        a key and an optional value, both of which you define. When a service is deleted, the tags are deleted as
+     *        well. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum
+     *        length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateServiceRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more information, see
+     * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging Your Amazon ECS
+     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param enableECSManagedTags
+     *        Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging Your Amazon ECS
+     *        Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public void setEnableECSManagedTags(Boolean enableECSManagedTags) {
+        this.enableECSManagedTags = enableECSManagedTags;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more information, see
+     * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging Your Amazon ECS
+     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging Your Amazon ECS
+     *         Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public Boolean getEnableECSManagedTags() {
+        return this.enableECSManagedTags;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more information, see
+     * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging Your Amazon ECS
+     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param enableECSManagedTags
+     *        Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging Your Amazon ECS
+     *        Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateServiceRequest withEnableECSManagedTags(Boolean enableECSManagedTags) {
+        setEnableECSManagedTags(enableECSManagedTags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more information, see
+     * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging Your Amazon ECS
+     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging Your Amazon ECS
+     *         Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public Boolean isEnableECSManagedTags() {
+        return this.enableECSManagedTags;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the task definition or the service to the tasks. If no value is
+     * specified, the tags are not propagated. Tags can only be propagated to the tasks within the service during
+     * service creation. To add tags to a task after service creation, use the <a>TagResource</a> API action.
+     * </p>
+     * 
+     * @param propagateTags
+     *        Specifies whether to propagate the tags from the task definition or the service to the tasks. If no value
+     *        is specified, the tags are not propagated. Tags can only be propagated to the tasks within the service
+     *        during service creation. To add tags to a task after service creation, use the <a>TagResource</a> API
+     *        action.
+     * @see PropagateTags
+     */
+
+    public void setPropagateTags(String propagateTags) {
+        this.propagateTags = propagateTags;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the task definition or the service to the tasks. If no value is
+     * specified, the tags are not propagated. Tags can only be propagated to the tasks within the service during
+     * service creation. To add tags to a task after service creation, use the <a>TagResource</a> API action.
+     * </p>
+     * 
+     * @return Specifies whether to propagate the tags from the task definition or the service to the tasks. If no value
+     *         is specified, the tags are not propagated. Tags can only be propagated to the tasks within the service
+     *         during service creation. To add tags to a task after service creation, use the <a>TagResource</a> API
+     *         action.
+     * @see PropagateTags
+     */
+
+    public String getPropagateTags() {
+        return this.propagateTags;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the task definition or the service to the tasks. If no value is
+     * specified, the tags are not propagated. Tags can only be propagated to the tasks within the service during
+     * service creation. To add tags to a task after service creation, use the <a>TagResource</a> API action.
+     * </p>
+     * 
+     * @param propagateTags
+     *        Specifies whether to propagate the tags from the task definition or the service to the tasks. If no value
+     *        is specified, the tags are not propagated. Tags can only be propagated to the tasks within the service
+     *        during service creation. To add tags to a task after service creation, use the <a>TagResource</a> API
+     *        action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PropagateTags
+     */
+
+    public CreateServiceRequest withPropagateTags(String propagateTags) {
+        setPropagateTags(propagateTags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the task definition or the service to the tasks. If no value is
+     * specified, the tags are not propagated. Tags can only be propagated to the tasks within the service during
+     * service creation. To add tags to a task after service creation, use the <a>TagResource</a> API action.
+     * </p>
+     * 
+     * @param propagateTags
+     *        Specifies whether to propagate the tags from the task definition or the service to the tasks. If no value
+     *        is specified, the tags are not propagated. Tags can only be propagated to the tasks within the service
+     *        during service creation. To add tags to a task after service creation, use the <a>TagResource</a> API
+     *        action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PropagateTags
+     */
+
+    public CreateServiceRequest withPropagateTags(PropagateTags propagateTags) {
+        this.propagateTags = propagateTags.toString();
         return this;
     }
 
@@ -1736,7 +2009,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getHealthCheckGracePeriodSeconds() != null)
             sb.append("HealthCheckGracePeriodSeconds: ").append(getHealthCheckGracePeriodSeconds()).append(",");
         if (getSchedulingStrategy() != null)
-            sb.append("SchedulingStrategy: ").append(getSchedulingStrategy());
+            sb.append("SchedulingStrategy: ").append(getSchedulingStrategy()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getEnableECSManagedTags() != null)
+            sb.append("EnableECSManagedTags: ").append(getEnableECSManagedTags()).append(",");
+        if (getPropagateTags() != null)
+            sb.append("PropagateTags: ").append(getPropagateTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1816,6 +2095,18 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getSchedulingStrategy() != null && other.getSchedulingStrategy().equals(this.getSchedulingStrategy()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getEnableECSManagedTags() == null ^ this.getEnableECSManagedTags() == null)
+            return false;
+        if (other.getEnableECSManagedTags() != null && other.getEnableECSManagedTags().equals(this.getEnableECSManagedTags()) == false)
+            return false;
+        if (other.getPropagateTags() == null ^ this.getPropagateTags() == null)
+            return false;
+        if (other.getPropagateTags() != null && other.getPropagateTags().equals(this.getPropagateTags()) == false)
+            return false;
         return true;
     }
 
@@ -1840,6 +2131,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckGracePeriodSeconds() == null) ? 0 : getHealthCheckGracePeriodSeconds().hashCode());
         hashCode = prime * hashCode + ((getSchedulingStrategy() == null) ? 0 : getSchedulingStrategy().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getEnableECSManagedTags() == null) ? 0 : getEnableECSManagedTags().hashCode());
+        hashCode = prime * hashCode + ((getPropagateTags() == null) ? 0 : getPropagateTags().hashCode());
         return hashCode;
     }
 

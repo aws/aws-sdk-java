@@ -196,6 +196,12 @@ public class DBSnapshot implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeatures;
+    /**
+     * <p>
+     * The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * </p>
+     */
+    private String dbiResourceId;
 
     /**
      * <p>
@@ -1373,6 +1379,46 @@ public class DBSnapshot implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * </p>
+     * 
+     * @param dbiResourceId
+     *        The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     */
+
+    public void setDbiResourceId(String dbiResourceId) {
+        this.dbiResourceId = dbiResourceId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * </p>
+     * 
+     * @return The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     */
+
+    public String getDbiResourceId() {
+        return this.dbiResourceId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * </p>
+     * 
+     * @param dbiResourceId
+     *        The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBSnapshot withDbiResourceId(String dbiResourceId) {
+        setDbiResourceId(dbiResourceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1436,7 +1482,9 @@ public class DBSnapshot implements Serializable, Cloneable {
         if (getIAMDatabaseAuthenticationEnabled() != null)
             sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled()).append(",");
         if (getProcessorFeatures() != null)
-            sb.append("ProcessorFeatures: ").append(getProcessorFeatures());
+            sb.append("ProcessorFeatures: ").append(getProcessorFeatures()).append(",");
+        if (getDbiResourceId() != null)
+            sb.append("DbiResourceId: ").append(getDbiResourceId());
         sb.append("}");
         return sb.toString();
     }
@@ -1560,6 +1608,10 @@ public class DBSnapshot implements Serializable, Cloneable {
             return false;
         if (other.getProcessorFeatures() != null && other.getProcessorFeatures().equals(this.getProcessorFeatures()) == false)
             return false;
+        if (other.getDbiResourceId() == null ^ this.getDbiResourceId() == null)
+            return false;
+        if (other.getDbiResourceId() != null && other.getDbiResourceId().equals(this.getDbiResourceId()) == false)
+            return false;
         return true;
     }
 
@@ -1595,6 +1647,7 @@ public class DBSnapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
         hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
         hashCode = prime * hashCode + ((getProcessorFeatures() == null) ? 0 : getProcessorFeatures().hashCode());
+        hashCode = prime * hashCode + ((getDbiResourceId() == null) ? 0 : getDbiResourceId().hashCode());
         return hashCode;
     }
 

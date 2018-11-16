@@ -54,6 +54,16 @@ public class StartEntitiesDetectionJobResult extends com.amazonaws.AmazonWebServ
      * FAILED - The job did not complete. To get details, use the operation.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * STOPPED - The job was successfully stopped without completing.
+     * </p>
+     * </li>
      * </ul>
      */
     private String jobStatus;
@@ -123,6 +133,16 @@ public class StartEntitiesDetectionJobResult extends com.amazonaws.AmazonWebServ
      * FAILED - The job did not complete. To get details, use the operation.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * STOPPED - The job was successfully stopped without completing.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param jobStatus
@@ -146,6 +166,16 @@ public class StartEntitiesDetectionJobResult extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        FAILED - The job did not complete. To get details, use the operation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STOPPED - The job was successfully stopped without completing.
      *        </p>
      *        </li>
      * @see JobStatus
@@ -180,6 +210,16 @@ public class StartEntitiesDetectionJobResult extends com.amazonaws.AmazonWebServ
      * FAILED - The job did not complete. To get details, use the operation.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * STOPPED - The job was successfully stopped without completing.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The status of the job. </p>
@@ -202,6 +242,16 @@ public class StartEntitiesDetectionJobResult extends com.amazonaws.AmazonWebServ
      *         <li>
      *         <p>
      *         FAILED - The job did not complete. To get details, use the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         STOPPED - The job was successfully stopped without completing.
      *         </p>
      *         </li>
      * @see JobStatus
@@ -236,6 +286,16 @@ public class StartEntitiesDetectionJobResult extends com.amazonaws.AmazonWebServ
      * FAILED - The job did not complete. To get details, use the operation.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * STOPPED - The job was successfully stopped without completing.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param jobStatus
@@ -259,6 +319,16 @@ public class StartEntitiesDetectionJobResult extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        FAILED - The job did not complete. To get details, use the operation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STOPPED - The job was successfully stopped without completing.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -295,6 +365,16 @@ public class StartEntitiesDetectionJobResult extends com.amazonaws.AmazonWebServ
      * FAILED - The job did not complete. To get details, use the operation.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * STOPPED - The job was successfully stopped without completing.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param jobStatus
@@ -318,6 +398,16 @@ public class StartEntitiesDetectionJobResult extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        FAILED - The job did not complete. To get details, use the operation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STOPPED - The job was successfully stopped without completing.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

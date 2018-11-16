@@ -554,6 +554,11 @@ public class AbstractAmazonIdentityManagement implements AmazonIdentityManagemen
     }
 
     @Override
+    public ListRoleTagsResult listRoleTags(ListRoleTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListRolesResult listRoles(ListRolesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -610,6 +615,11 @@ public class AbstractAmazonIdentityManagement implements AmazonIdentityManagemen
 
     @Override
     public ListUserPoliciesResult listUserPolicies(ListUserPoliciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListUserTagsResult listUserTags(ListUserTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -695,6 +705,26 @@ public class AbstractAmazonIdentityManagement implements AmazonIdentityManagemen
 
     @Override
     public SimulatePrincipalPolicyResult simulatePrincipalPolicy(SimulatePrincipalPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagRoleResult tagRole(TagRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagUserResult tagUser(TagUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagRoleResult untagRole(UntagRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagUserResult untagUser(UntagUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

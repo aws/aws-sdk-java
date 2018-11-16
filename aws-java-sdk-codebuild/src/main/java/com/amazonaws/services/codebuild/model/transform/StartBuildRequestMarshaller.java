@@ -72,6 +72,8 @@ public class StartBuildRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("privilegedModeOverride").build();
     private static final MarshallingInfo<Integer> TIMEOUTINMINUTESOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutInMinutesOverride").build();
+    private static final MarshallingInfo<Integer> QUEUEDTIMEOUTINMINUTESOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("queuedTimeoutInMinutesOverride").build();
     private static final MarshallingInfo<String> IDEMPOTENCYTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("idempotencyToken").build();
     private static final MarshallingInfo<StructuredPojo> LOGSCONFIGOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -115,6 +117,7 @@ public class StartBuildRequestMarshaller {
             protocolMarshaller.marshall(startBuildRequest.getServiceRoleOverride(), SERVICEROLEOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getPrivilegedModeOverride(), PRIVILEGEDMODEOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getTimeoutInMinutesOverride(), TIMEOUTINMINUTESOVERRIDE_BINDING);
+            protocolMarshaller.marshall(startBuildRequest.getQueuedTimeoutInMinutesOverride(), QUEUEDTIMEOUTINMINUTESOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getIdempotencyToken(), IDEMPOTENCYTOKEN_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getLogsConfigOverride(), LOGSCONFIGOVERRIDE_BINDING);
         } catch (Exception e) {

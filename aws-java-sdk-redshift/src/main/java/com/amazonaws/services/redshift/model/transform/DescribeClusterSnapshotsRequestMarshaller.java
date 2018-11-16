@@ -105,6 +105,27 @@ public class DescribeClusterSnapshotsRequestMarshaller implements Marshaller<Req
             request.addParameter("ClusterExists", StringUtils.fromBoolean(describeClusterSnapshotsRequest.getClusterExists()));
         }
 
+        if (!describeClusterSnapshotsRequest.getSortingEntities().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<SnapshotSortingEntity>) describeClusterSnapshotsRequest.getSortingEntities()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<SnapshotSortingEntity> sortingEntitiesList = (com.amazonaws.internal.SdkInternalList<SnapshotSortingEntity>) describeClusterSnapshotsRequest
+                    .getSortingEntities();
+            int sortingEntitiesListIndex = 1;
+
+            for (SnapshotSortingEntity sortingEntitiesListValue : sortingEntitiesList) {
+
+                if (sortingEntitiesListValue.getAttribute() != null) {
+                    request.addParameter("SortingEntities.SnapshotSortingEntity." + sortingEntitiesListIndex + ".Attribute",
+                            StringUtils.fromString(sortingEntitiesListValue.getAttribute()));
+                }
+
+                if (sortingEntitiesListValue.getSortOrder() != null) {
+                    request.addParameter("SortingEntities.SnapshotSortingEntity." + sortingEntitiesListIndex + ".SortOrder",
+                            StringUtils.fromString(sortingEntitiesListValue.getSortOrder()));
+                }
+                sortingEntitiesListIndex++;
+            }
+        }
+
         return request;
     }
 

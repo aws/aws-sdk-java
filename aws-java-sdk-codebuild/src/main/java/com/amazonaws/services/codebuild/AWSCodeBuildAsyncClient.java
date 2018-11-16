@@ -36,9 +36,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * tests, and produces artifacts that are ready to deploy. AWS CodeBuild eliminates the need to provision, manage, and
  * scale your own build servers. It provides prepackaged build environments for the most popular programming languages
  * and build tools, such as Apache Maven, Gradle, and more. You can also fully customize build environments in AWS
- * CodeBuild to use your own build tools. AWS CodeBuild scales automatically to meet peak build requests, and you pay
- * only for the build time you consume. For more information about AWS CodeBuild, see the <i>AWS CodeBuild User
- * Guide</i>.
+ * CodeBuild to use your own build tools. AWS CodeBuild scales automatically to meet peak build requests. You pay only
+ * for the build time you consume. For more information about AWS CodeBuild, see the <i>AWS CodeBuild User Guide</i>.
  * </p>
  * <p>
  * AWS CodeBuild supports these operations:
@@ -52,10 +51,10 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <code>BatchGetProjects</code>: Gets information about one or more build projects. A <i>build project</i> defines how
- * AWS CodeBuild will run a build. This includes information such as where to get the source code to build, the build
- * environment to use, the build commands to run, and where to store the build output. A <i>build environment</i>
- * represents a combination of operating system, programming language runtime, and tools that AWS CodeBuild will use to
- * run a build. Also, you can add tags to build projects to help manage your resources and costs.
+ * AWS CodeBuild runs a build. This includes information such as where to get the source code to build, the build
+ * environment to use, the build commands to run, and where to store the build output. A <i>build environment</i> is a
+ * representation of operating system, programming language runtime, and tools that AWS CodeBuild uses to run a build.
+ * You can add tags to build projects to help manage your resources and costs.
  * </p>
  * </li>
  * <li>
@@ -66,8 +65,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
- * or Bitbucket repository, enables AWS CodeBuild to begin automatically rebuilding the source code every time a code
- * change is pushed to the repository.
+ * or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed
+ * to the repository.
  * </p>
  * </li>
  * <li>
@@ -83,8 +82,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
- * or Bitbucket repository, stops AWS CodeBuild from automatically rebuilding the source code every time a code change
- * is pushed to the repository.
+ * or Bitbucket repository, stops AWS CodeBuild from rebuilding the source code every time a code change is pushed to
+ * the repository.
  * </p>
  * </li>
  * <li>

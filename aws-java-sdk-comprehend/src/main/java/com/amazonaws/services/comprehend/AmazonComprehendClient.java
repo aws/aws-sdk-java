@@ -79,6 +79,9 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
+                                    com.amazonaws.services.comprehend.model.ResourceInUseException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
                                     com.amazonaws.services.comprehend.model.InvalidRequestException.class))
                     .addErrorMetadata(
@@ -97,11 +100,20 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withModeledClass(
                                     com.amazonaws.services.comprehend.model.InternalServerException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.comprehend.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceUnavailableException").withModeledClass(
+                                    com.amazonaws.services.comprehend.model.ResourceUnavailableException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("JobNotFoundException").withModeledClass(
                                     com.amazonaws.services.comprehend.model.JobNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withModeledClass(
                                     com.amazonaws.services.comprehend.model.TooManyRequestsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.comprehend.model.ResourceLimitExceededException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.comprehend.model.AmazonComprehendException.class));
 
     public static AmazonComprehendClientBuilder builder() {
@@ -230,10 +242,9 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all APIs except
-     *         <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish text. For the
-     *         <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100 languages. For a list of
-     *         languages, see <a>how-languages</a>
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
+     *         Comprehend accepts only English or Spanish text.
      * @throws BatchSizeLimitExceededException
      *         The number of documents in the request exceeds the limit of 25. Try your request again with fewer
      *         documents.
@@ -298,10 +309,9 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all APIs except
-     *         <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish text. For the
-     *         <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100 languages. For a list of
-     *         languages, see <a>how-languages</a>
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
+     *         Comprehend accepts only English or Spanish text.
      * @throws BatchSizeLimitExceededException
      *         The number of documents in the request exceeds the limit of 25. Try your request again with fewer
      *         documents.
@@ -368,10 +378,9 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all APIs except
-     *         <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish text. For the
-     *         <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100 languages. For a list of
-     *         languages, see <a>how-languages</a>
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
+     *         Comprehend accepts only English or Spanish text.
      * @throws BatchSizeLimitExceededException
      *         The number of documents in the request exceeds the limit of 25. Try your request again with fewer
      *         documents.
@@ -437,10 +446,9 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all APIs except
-     *         <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish text. For the
-     *         <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100 languages. For a list of
-     *         languages, see <a>how-languages</a>
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
+     *         Comprehend accepts only English or Spanish text.
      * @throws BatchSizeLimitExceededException
      *         The number of documents in the request exceeds the limit of 25. Try your request again with fewer
      *         documents.
@@ -483,6 +491,286 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<BatchDetectSyntaxResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchDetectSyntaxResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new document classifier that you can use to categorize documents. To create a classifier you provide a
+     * set of training documents that are labeled with the categories that you want to use. After the classifier is
+     * trained you can use it to categorize a set of unlabeled documents into those categories.
+     * </p>
+     * 
+     * @param createDocumentClassifierRequest
+     * @return Result of the CreateDocumentClassifier operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws ResourceInUseException
+     *         The specified name is already in use. Use a different name and try your request again.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceLimitExceededException
+     *         The maximum number of recognizers per account has been exceeded. Review the recognizers, perform cleanup,
+     *         and then try your request again.
+     * @throws UnsupportedLanguageException
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
+     *         Comprehend accepts only English or Spanish text.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.CreateDocumentClassifier
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateDocumentClassifierResult createDocumentClassifier(CreateDocumentClassifierRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDocumentClassifier(request);
+    }
+
+    @SdkInternalApi
+    final CreateDocumentClassifierResult executeCreateDocumentClassifier(CreateDocumentClassifierRequest createDocumentClassifierRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createDocumentClassifierRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDocumentClassifierRequest> request = null;
+        Response<CreateDocumentClassifierResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDocumentClassifierRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createDocumentClassifierRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDocumentClassifier");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDocumentClassifierResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateDocumentClassifierResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a previously created document classifier
+     * </p>
+     * <p>
+     * Only those classifiers that are in terminated states (IN_ERROR, TRAINED) will be deleted. If an active inference
+     * job is using the model, a <code>ResourceInUseException</code> will be returned.
+     * </p>
+     * <p>
+     * This is an asynchronous action that puts the classifier into a DELETING state, and it is then removed by a
+     * background job. Once removed, the classifier disappears from your account and is no longer available for use.
+     * </p>
+     * 
+     * @param deleteDocumentClassifierRequest
+     * @return Result of the DeleteDocumentClassifier operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+     *         state and try your request again.
+     * @throws ResourceInUseException
+     *         The specified name is already in use. Use a different name and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DeleteDocumentClassifier
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteDocumentClassifier"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteDocumentClassifierResult deleteDocumentClassifier(DeleteDocumentClassifierRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDocumentClassifier(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDocumentClassifierResult executeDeleteDocumentClassifier(DeleteDocumentClassifierRequest deleteDocumentClassifierRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDocumentClassifierRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDocumentClassifierRequest> request = null;
+        Response<DeleteDocumentClassifierResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDocumentClassifierRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteDocumentClassifierRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDocumentClassifier");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDocumentClassifierResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteDocumentClassifierResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the properties associated with a document classification job. Use this operation to get the status of a
+     * classification job.
+     * </p>
+     * 
+     * @param describeDocumentClassificationJobRequest
+     * @return Result of the DescribeDocumentClassificationJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeDocumentClassificationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDocumentClassificationJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeDocumentClassificationJobResult describeDocumentClassificationJob(DescribeDocumentClassificationJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDocumentClassificationJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDocumentClassificationJobResult executeDescribeDocumentClassificationJob(
+            DescribeDocumentClassificationJobRequest describeDocumentClassificationJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDocumentClassificationJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDocumentClassificationJobRequest> request = null;
+        Response<DescribeDocumentClassificationJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDocumentClassificationJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeDocumentClassificationJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDocumentClassificationJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDocumentClassificationJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeDocumentClassificationJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the properties associated with a document classifier.
+     * </p>
+     * 
+     * @param describeDocumentClassifierRequest
+     * @return Result of the DescribeDocumentClassifier operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeDocumentClassifier
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDocumentClassifier"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeDocumentClassifierResult describeDocumentClassifier(DescribeDocumentClassifierRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDocumentClassifier(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDocumentClassifierResult executeDescribeDocumentClassifier(DescribeDocumentClassifierRequest describeDocumentClassifierRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDocumentClassifierRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDocumentClassifierRequest> request = null;
+        Response<DescribeDocumentClassifierResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDocumentClassifierRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeDocumentClassifierRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDocumentClassifier");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDocumentClassifierResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeDocumentClassifierResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -895,10 +1183,9 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all APIs except
-     *         <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish text. For the
-     *         <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100 languages. For a list of
-     *         languages, see <a>how-languages</a>
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
+     *         Comprehend accepts only English or Spanish text.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DetectEntities
@@ -960,10 +1247,9 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all APIs except
-     *         <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish text. For the
-     *         <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100 languages. For a list of
-     *         languages, see <a>how-languages</a>
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
+     *         Comprehend accepts only English or Spanish text.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DetectKeyPhrases
@@ -1026,10 +1312,9 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all APIs except
-     *         <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish text. For the
-     *         <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100 languages. For a list of
-     *         languages, see <a>how-languages</a>
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
+     *         Comprehend accepts only English or Spanish text.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DetectSentiment
@@ -1092,10 +1377,9 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all APIs except
-     *         <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish text. For the
-     *         <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100 languages. For a list of
-     *         languages, see <a>how-languages</a>
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
+     *         Comprehend accepts only English or Spanish text.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DetectSyntax
@@ -1147,6 +1431,136 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets a list of the documentation classification jobs that you have submitted.
+     * </p>
+     * 
+     * @param listDocumentClassificationJobsRequest
+     * @return Result of the ListDocumentClassificationJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the <code>ListDocumentClassificationJobs</code> operation is invalid. Specify a
+     *         different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListDocumentClassificationJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassificationJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDocumentClassificationJobsResult listDocumentClassificationJobs(ListDocumentClassificationJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDocumentClassificationJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListDocumentClassificationJobsResult executeListDocumentClassificationJobs(ListDocumentClassificationJobsRequest listDocumentClassificationJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDocumentClassificationJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDocumentClassificationJobsRequest> request = null;
+        Response<ListDocumentClassificationJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDocumentClassificationJobsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listDocumentClassificationJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDocumentClassificationJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDocumentClassificationJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListDocumentClassificationJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a list of the document classifiers that you have created.
+     * </p>
+     * 
+     * @param listDocumentClassifiersRequest
+     * @return Result of the ListDocumentClassifiers operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the <code>ListDocumentClassificationJobs</code> operation is invalid. Specify a
+     *         different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListDocumentClassifiers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifiers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDocumentClassifiersResult listDocumentClassifiers(ListDocumentClassifiersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDocumentClassifiers(request);
+    }
+
+    @SdkInternalApi
+    final ListDocumentClassifiersResult executeListDocumentClassifiers(ListDocumentClassifiersRequest listDocumentClassifiersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDocumentClassifiersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDocumentClassifiersRequest> request = null;
+        Response<ListDocumentClassifiersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDocumentClassifiersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listDocumentClassifiersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDocumentClassifiers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDocumentClassifiersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListDocumentClassifiersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a list of the dominant language detection jobs that you have submitted.
      * </p>
      * 
@@ -1157,7 +1571,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws InvalidFilterException
-     *         The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid. Specify a
+     *         The filter specified for the <code>ListDocumentClassificationJobs</code> operation is invalid. Specify a
      *         different filter.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
@@ -1223,7 +1637,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws InvalidFilterException
-     *         The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid. Specify a
+     *         The filter specified for the <code>ListDocumentClassificationJobs</code> operation is invalid. Specify a
      *         different filter.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
@@ -1288,7 +1702,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws InvalidFilterException
-     *         The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid. Specify a
+     *         The filter specified for the <code>ListDocumentClassificationJobs</code> operation is invalid. Specify a
      *         different filter.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
@@ -1353,7 +1767,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws InvalidFilterException
-     *         The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid. Specify a
+     *         The filter specified for the <code>ListDocumentClassificationJobs</code> operation is invalid. Specify a
      *         different filter.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
@@ -1418,7 +1832,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws InvalidFilterException
-     *         The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid. Specify a
+     *         The filter specified for the <code>ListDocumentClassificationJobs</code> operation is invalid. Specify a
      *         different filter.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
@@ -1461,6 +1875,73 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<ListTopicsDetectionJobsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListTopicsDetectionJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts an asynchronous document classification job. Use the operation to track the progress of the job.
+     * </p>
+     * 
+     * @param startDocumentClassificationJobRequest
+     * @return Result of the StartDocumentClassificationJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+     *         state and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StartDocumentClassificationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDocumentClassificationJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartDocumentClassificationJobResult startDocumentClassificationJob(StartDocumentClassificationJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartDocumentClassificationJob(request);
+    }
+
+    @SdkInternalApi
+    final StartDocumentClassificationJobResult executeStartDocumentClassificationJob(StartDocumentClassificationJobRequest startDocumentClassificationJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startDocumentClassificationJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartDocumentClassificationJobRequest> request = null;
+        Response<StartDocumentClassificationJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartDocumentClassificationJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startDocumentClassificationJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDocumentClassificationJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartDocumentClassificationJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartDocumentClassificationJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

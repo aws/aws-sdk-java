@@ -61,7 +61,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      */
     private Boolean initProcessEnabled;
@@ -310,7 +310,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @param initProcessEnabled
@@ -319,7 +319,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
      *        of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
      *        your container instance, log in to your container instance and run the following command:
-     *        <code>sudo docker version | grep "Server API version"</code>
+     *        <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      */
 
     public void setInitProcessEnabled(Boolean initProcessEnabled) {
@@ -332,7 +332,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @return Run an <code>init</code> process inside the container that forwards signals and reaps processes. This
@@ -340,7 +340,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *         href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
      *         of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
      *         your container instance, log in to your container instance and run the following command:
-     *         <code>sudo docker version | grep "Server API version"</code>
+     *         <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      */
 
     public Boolean getInitProcessEnabled() {
@@ -353,7 +353,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @param initProcessEnabled
@@ -362,7 +362,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
      *        of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
      *        your container instance, log in to your container instance and run the following command:
-     *        <code>sudo docker version | grep "Server API version"</code>
+     *        <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,7 +377,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @return Run an <code>init</code> process inside the container that forwards signals and reaps processes. This
@@ -385,7 +385,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *         href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
      *         of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
      *         your container instance, log in to your container instance and run the following command:
-     *         <code>sudo docker version | grep "Server API version"</code>
+     *         <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      */
 
     public Boolean isInitProcessEnabled() {

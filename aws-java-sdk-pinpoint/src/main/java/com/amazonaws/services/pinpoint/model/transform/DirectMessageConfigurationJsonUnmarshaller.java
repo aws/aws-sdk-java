@@ -81,6 +81,10 @@ public class DirectMessageConfigurationJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     directMessageConfiguration.setSMSMessage(SMSMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("VoiceMessage", targetDepth)) {
+                    context.nextToken();
+                    directMessageConfiguration.setVoiceMessage(VoiceMessageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

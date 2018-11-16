@@ -27,8 +27,8 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job. You can't use the strings "." or ".." in the job name. The name must be unique within an AWS
-     * account.
+     * The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The name must
+     * also be unique within an AWS account.
      * </p>
      */
     private String transcriptionJobName;
@@ -84,13 +84,13 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job. You can't use the strings "." or ".." in the job name. The name must be unique within an AWS
-     * account.
+     * The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The name must
+     * also be unique within an AWS account.
      * </p>
      * 
      * @param transcriptionJobName
-     *        The name of the job. You can't use the strings "." or ".." in the job name. The name must be unique within
-     *        an AWS account.
+     *        The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The
+     *        name must also be unique within an AWS account.
      */
 
     public void setTranscriptionJobName(String transcriptionJobName) {
@@ -99,12 +99,12 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job. You can't use the strings "." or ".." in the job name. The name must be unique within an AWS
-     * account.
+     * The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The name must
+     * also be unique within an AWS account.
      * </p>
      * 
-     * @return The name of the job. You can't use the strings "." or ".." in the job name. The name must be unique
-     *         within an AWS account.
+     * @return The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The
+     *         name must also be unique within an AWS account.
      */
 
     public String getTranscriptionJobName() {
@@ -113,13 +113,13 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job. You can't use the strings "." or ".." in the job name. The name must be unique within an AWS
-     * account.
+     * The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The name must
+     * also be unique within an AWS account.
      * </p>
      * 
      * @param transcriptionJobName
-     *        The name of the job. You can't use the strings "." or ".." in the job name. The name must be unique within
-     *        an AWS account.
+     *        The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The
+     *        name must also be unique within an AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

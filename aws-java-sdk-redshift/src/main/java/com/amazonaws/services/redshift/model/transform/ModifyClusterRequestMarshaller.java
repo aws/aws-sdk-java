@@ -98,6 +98,10 @@ public class ModifyClusterRequestMarshaller implements Marshaller<Request<Modify
             request.addParameter("AutomatedSnapshotRetentionPeriod", StringUtils.fromInteger(modifyClusterRequest.getAutomatedSnapshotRetentionPeriod()));
         }
 
+        if (modifyClusterRequest.getManualSnapshotRetentionPeriod() != null) {
+            request.addParameter("ManualSnapshotRetentionPeriod", StringUtils.fromInteger(modifyClusterRequest.getManualSnapshotRetentionPeriod()));
+        }
+
         if (modifyClusterRequest.getPreferredMaintenanceWindow() != null) {
             request.addParameter("PreferredMaintenanceWindow", StringUtils.fromString(modifyClusterRequest.getPreferredMaintenanceWindow()));
         }

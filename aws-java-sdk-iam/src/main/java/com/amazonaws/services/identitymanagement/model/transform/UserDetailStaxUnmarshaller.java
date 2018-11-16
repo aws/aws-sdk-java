@@ -100,6 +100,16 @@ public class UserDetailStaxUnmarshaller implements Unmarshaller<UserDetail, Stax
                     continue;
                 }
 
+                if (context.testExpression("Tags", targetDepth)) {
+                    userDetail.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("Tags/member", targetDepth)) {
+                    userDetail.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("PermissionsBoundary", targetDepth)) {
                     userDetail.setPermissionsBoundary(AttachedPermissionsBoundaryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

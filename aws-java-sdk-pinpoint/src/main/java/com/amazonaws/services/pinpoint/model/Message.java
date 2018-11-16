@@ -46,7 +46,7 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
     private String imageUrl;
     /** The JSON payload used for a silent push. */
     private String jsonBody;
-    /** The URL that points to the media resource, for example a .mp4 or .gif file. */
+    /** A URL that refers to the location of an image or video that you want to display in the push notification. */
     private String mediaUrl;
     /** The Raw JSON formatted string to be used as the payload. This value overrides the message. */
     private String rawContent;
@@ -372,10 +372,10 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL that points to the media resource, for example a .mp4 or .gif file.
+     * A URL that refers to the location of an image or video that you want to display in the push notification.
      * 
      * @param mediaUrl
-     *        The URL that points to the media resource, for example a .mp4 or .gif file.
+     *        A URL that refers to the location of an image or video that you want to display in the push notification.
      */
 
     public void setMediaUrl(String mediaUrl) {
@@ -383,9 +383,9 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL that points to the media resource, for example a .mp4 or .gif file.
+     * A URL that refers to the location of an image or video that you want to display in the push notification.
      * 
-     * @return The URL that points to the media resource, for example a .mp4 or .gif file.
+     * @return A URL that refers to the location of an image or video that you want to display in the push notification.
      */
 
     public String getMediaUrl() {
@@ -393,10 +393,10 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL that points to the media resource, for example a .mp4 or .gif file.
+     * A URL that refers to the location of an image or video that you want to display in the push notification.
      * 
      * @param mediaUrl
-     *        The URL that points to the media resource, for example a .mp4 or .gif file.
+     *        A URL that refers to the location of an image or video that you want to display in the push notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

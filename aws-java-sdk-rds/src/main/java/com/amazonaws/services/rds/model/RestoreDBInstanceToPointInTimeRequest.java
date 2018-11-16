@@ -442,6 +442,12 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      */
     private Boolean deletionProtection;
+    /**
+     * <p>
+     * The resource ID of the source DB instance from which to restore.
+     * </p>
+     */
+    private String sourceDbiResourceId;
 
     /**
      * Default constructor for RestoreDBInstanceToPointInTimeRequest object. Callers should use the setter or fluent
@@ -3337,6 +3343,46 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * The resource ID of the source DB instance from which to restore.
+     * </p>
+     * 
+     * @param sourceDbiResourceId
+     *        The resource ID of the source DB instance from which to restore.
+     */
+
+    public void setSourceDbiResourceId(String sourceDbiResourceId) {
+        this.sourceDbiResourceId = sourceDbiResourceId;
+    }
+
+    /**
+     * <p>
+     * The resource ID of the source DB instance from which to restore.
+     * </p>
+     * 
+     * @return The resource ID of the source DB instance from which to restore.
+     */
+
+    public String getSourceDbiResourceId() {
+        return this.sourceDbiResourceId;
+    }
+
+    /**
+     * <p>
+     * The resource ID of the source DB instance from which to restore.
+     * </p>
+     * 
+     * @param sourceDbiResourceId
+     *        The resource ID of the source DB instance from which to restore.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBInstanceToPointInTimeRequest withSourceDbiResourceId(String sourceDbiResourceId) {
+        setSourceDbiResourceId(sourceDbiResourceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -3404,7 +3450,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
         if (getDBParameterGroupName() != null)
             sb.append("DBParameterGroupName: ").append(getDBParameterGroupName()).append(",");
         if (getDeletionProtection() != null)
-            sb.append("DeletionProtection: ").append(getDeletionProtection());
+            sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
+        if (getSourceDbiResourceId() != null)
+            sb.append("SourceDbiResourceId: ").append(getSourceDbiResourceId());
         sb.append("}");
         return sb.toString();
     }
@@ -3536,6 +3584,10 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
             return false;
         if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
             return false;
+        if (other.getSourceDbiResourceId() == null ^ this.getSourceDbiResourceId() == null)
+            return false;
+        if (other.getSourceDbiResourceId() != null && other.getSourceDbiResourceId().equals(this.getSourceDbiResourceId()) == false)
+            return false;
         return true;
     }
 
@@ -3573,6 +3625,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
         hashCode = prime * hashCode + ((getUseDefaultProcessorFeatures() == null) ? 0 : getUseDefaultProcessorFeatures().hashCode());
         hashCode = prime * hashCode + ((getDBParameterGroupName() == null) ? 0 : getDBParameterGroupName().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
+        hashCode = prime * hashCode + ((getSourceDbiResourceId() == null) ? 0 : getSourceDbiResourceId().hashCode());
         return hashCode;
     }
 

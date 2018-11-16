@@ -56,6 +56,23 @@ public class CreateRoleRequestMarshaller implements Marshaller<Request<CreateRol
             request.addParameter("Description", StringUtils.fromString(createRoleRequest.getDescription()));
         }
 
+        if (!createRoleRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<Tag>) createRoleRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createRoleRequest.getTags();
+            int tagsListIndex = 1;
+
+            for (Tag tagsListValue : tagsList) {
+
+                if (tagsListValue.getKey() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                }
+
+                if (tagsListValue.getValue() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                }
+                tagsListIndex++;
+            }
+        }
+
         if (createRoleRequest.getMaxSessionDuration() != null) {
             request.addParameter("MaxSessionDuration", StringUtils.fromInteger(createRoleRequest.getMaxSessionDuration()));
         }

@@ -52,6 +52,10 @@ public class DeleteClusterRequestMarshaller implements Marshaller<Request<Delete
             request.addParameter("FinalClusterSnapshotIdentifier", StringUtils.fromString(deleteClusterRequest.getFinalClusterSnapshotIdentifier()));
         }
 
+        if (deleteClusterRequest.getFinalClusterSnapshotRetentionPeriod() != null) {
+            request.addParameter("FinalClusterSnapshotRetentionPeriod", StringUtils.fromInteger(deleteClusterRequest.getFinalClusterSnapshotRetentionPeriod()));
+        }
+
         return request;
     }
 

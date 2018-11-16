@@ -31,7 +31,7 @@ public class MetricDimension implements Serializable, Cloneable, StructuredPojo 
      * GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL
      */
     private String comparisonOperator;
-    /** Value to be compared. */
+    /** The value to be compared. */
     private Double value;
 
     /**
@@ -75,10 +75,10 @@ public class MetricDimension implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Value to be compared.
+     * The value to be compared.
      * 
      * @param value
-     *        Value to be compared.
+     *        The value to be compared.
      */
 
     public void setValue(Double value) {
@@ -86,9 +86,9 @@ public class MetricDimension implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Value to be compared.
+     * The value to be compared.
      * 
-     * @return Value to be compared.
+     * @return The value to be compared.
      */
 
     public Double getValue() {
@@ -96,10 +96,10 @@ public class MetricDimension implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Value to be compared.
+     * The value to be compared.
      * 
      * @param value
-     *        Value to be compared.
+     *        The value to be compared.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

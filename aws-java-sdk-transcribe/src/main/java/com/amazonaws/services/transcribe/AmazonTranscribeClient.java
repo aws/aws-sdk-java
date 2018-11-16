@@ -150,7 +150,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @return Result of the CreateVocabulary operation returned by the service.
      * @throws BadRequestException
      *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
-     *         delete doesn't exist of if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
@@ -212,7 +212,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Deletes a previously submitted transcription job as well as any other generated results such as the
+     * Deletes a previously submitted transcription job along with any other generated results such as the
      * transcription, models, and so on.
      * </p>
      * 
@@ -223,7 +223,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      *         request, or use a smaller file and resend the request.
      * @throws BadRequestException
      *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
-     *         delete doesn't exist of if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
@@ -289,7 +289,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      *         request, or use a smaller file and resend the request.
      * @throws BadRequestException
      *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
-     *         delete doesn't exist of if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
@@ -351,7 +351,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @return Result of the GetTranscriptionJob operation returned by the service.
      * @throws BadRequestException
      *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
-     *         delete doesn't exist of if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
@@ -425,7 +425,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      *         There was an internal error. Check the error message and try your request again.
      * @throws BadRequestException
      *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
-     *         delete doesn't exist of if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @sample AmazonTranscribe.GetVocabulary
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabulary" target="_top">AWS API
@@ -483,7 +483,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @return Result of the ListTranscriptionJobs operation returned by the service.
      * @throws BadRequestException
      *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
-     *         delete doesn't exist of if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
@@ -548,7 +548,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @return Result of the ListVocabularies operation returned by the service.
      * @throws BadRequestException
      *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
-     *         delete doesn't exist of if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
@@ -612,7 +612,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @return Result of the StartTranscriptionJob operation returned by the service.
      * @throws BadRequestException
      *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
-     *         delete doesn't exist of if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
@@ -685,7 +685,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @return Result of the UpdateVocabulary operation returned by the service.
      * @throws BadRequestException
      *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
-     *         delete doesn't exist of if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your

@@ -30,6 +30,12 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The ID of the BGP peer.
+     * </p>
+     */
+    private String bgpPeerId;
+    /**
+     * <p>
      * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
      * </p>
      */
@@ -122,6 +128,46 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String awsDeviceV2;
+
+    /**
+     * <p>
+     * The ID of the BGP peer.
+     * </p>
+     * 
+     * @param bgpPeerId
+     *        The ID of the BGP peer.
+     */
+
+    public void setBgpPeerId(String bgpPeerId) {
+        this.bgpPeerId = bgpPeerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the BGP peer.
+     * </p>
+     * 
+     * @return The ID of the BGP peer.
+     */
+
+    public String getBgpPeerId() {
+        return this.bgpPeerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the BGP peer.
+     * </p>
+     * 
+     * @param bgpPeerId
+     *        The ID of the BGP peer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BGPPeer withBgpPeerId(String bgpPeerId) {
+        setBgpPeerId(bgpPeerId);
+        return this;
+    }
 
     /**
      * <p>
@@ -1008,6 +1054,8 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getBgpPeerId() != null)
+            sb.append("BgpPeerId: ").append(getBgpPeerId()).append(",");
         if (getAsn() != null)
             sb.append("Asn: ").append(getAsn()).append(",");
         if (getAuthKey() != null)
@@ -1038,6 +1086,10 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof BGPPeer == false)
             return false;
         BGPPeer other = (BGPPeer) obj;
+        if (other.getBgpPeerId() == null ^ this.getBgpPeerId() == null)
+            return false;
+        if (other.getBgpPeerId() != null && other.getBgpPeerId().equals(this.getBgpPeerId()) == false)
+            return false;
         if (other.getAsn() == null ^ this.getAsn() == null)
             return false;
         if (other.getAsn() != null && other.getAsn().equals(this.getAsn()) == false)
@@ -1078,6 +1130,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getBgpPeerId() == null) ? 0 : getBgpPeerId().hashCode());
         hashCode = prime * hashCode + ((getAsn() == null) ? 0 : getAsn().hashCode());
         hashCode = prime * hashCode + ((getAuthKey() == null) ? 0 : getAuthKey().hashCode());
         hashCode = prime * hashCode + ((getAddressFamily() == null) ? 0 : getAddressFamily().hashCode());

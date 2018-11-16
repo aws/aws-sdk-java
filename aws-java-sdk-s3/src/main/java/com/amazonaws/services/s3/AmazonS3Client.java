@@ -149,6 +149,8 @@ import com.amazonaws.services.s3.model.DeleteObjectTaggingRequest;
 import com.amazonaws.services.s3.model.DeleteObjectTaggingResult;
 import com.amazonaws.services.s3.model.DeleteObjectsRequest;
 import com.amazonaws.services.s3.model.DeleteObjectsResult;
+import com.amazonaws.services.s3.model.DeletePublicAccessBlockRequest;
+import com.amazonaws.services.s3.model.DeletePublicAccessBlockResult;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.GenericBucketRequest;
@@ -168,6 +170,8 @@ import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketNotificationConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketPolicyRequest;
+import com.amazonaws.services.s3.model.GetBucketPolicyStatusRequest;
+import com.amazonaws.services.s3.model.GetBucketPolicyStatusResult;
 import com.amazonaws.services.s3.model.GetBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketTaggingConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketVersioningConfigurationRequest;
@@ -177,6 +181,8 @@ import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.GetObjectTaggingRequest;
 import com.amazonaws.services.s3.model.GetObjectTaggingResult;
+import com.amazonaws.services.s3.model.GetPublicAccessBlockRequest;
+import com.amazonaws.services.s3.model.GetPublicAccessBlockResult;
 import com.amazonaws.services.s3.model.GetRequestPaymentConfigurationRequest;
 import com.amazonaws.services.s3.model.GetS3AccountOwnerRequest;
 import com.amazonaws.services.s3.model.Grant;
@@ -211,6 +217,7 @@ import com.amazonaws.services.s3.model.Owner;
 import com.amazonaws.services.s3.model.PartETag;
 import com.amazonaws.services.s3.model.PartListing;
 import com.amazonaws.services.s3.model.Permission;
+import com.amazonaws.services.s3.model.PublicAccessBlockConfiguration;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.Region;
@@ -241,6 +248,8 @@ import com.amazonaws.services.s3.model.SetBucketEncryptionResult;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest;
+import com.amazonaws.services.s3.model.SetPublicAccessBlockRequest;
+import com.amazonaws.services.s3.model.SetPublicAccessBlockResult;
 import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationResult;
@@ -267,11 +276,13 @@ import com.amazonaws.services.s3.model.transform.AclXmlFactory;
 import com.amazonaws.services.s3.model.transform.BucketConfigurationXmlFactory;
 import com.amazonaws.services.s3.model.transform.BucketNotificationConfigurationStaxUnmarshaller;
 import com.amazonaws.services.s3.model.transform.GetBucketEncryptionStaxUnmarshaller;
+import com.amazonaws.services.s3.model.transform.GetBucketPolicyStatusStaxUnmarshaller;
 import com.amazonaws.services.s3.model.transform.HeadBucketResultHandler;
 import com.amazonaws.services.s3.model.transform.MultiObjectDeleteXmlFactory;
 import com.amazonaws.services.s3.model.transform.ObjectTaggingXmlFactory;
 import com.amazonaws.services.s3.model.transform.RequestPaymentConfigurationXmlFactory;
 import com.amazonaws.services.s3.model.transform.RequestXmlFactory;
+import com.amazonaws.services.s3.model.transform.GetPublicAccessBlockStaxUnmarshaller;
 import com.amazonaws.services.s3.model.transform.Unmarshallers;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CompleteMultipartUploadHandler;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjectResultHandler;
@@ -2952,6 +2963,83 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.setContent(new ByteArrayInputStream(bytes));
 
         return invoke(request, new Unmarshallers.SetBucketEncryptionUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public SetPublicAccessBlockResult setPublicAccessBlock(SetPublicAccessBlockRequest setPublicAccessBlockRequest) {
+        setPublicAccessBlockRequest = beforeClientExecution(setPublicAccessBlockRequest);
+        rejectNull(setPublicAccessBlockRequest, "The request object must be specified.");
+
+        String bucketName = setPublicAccessBlockRequest.getBucketName();
+        PublicAccessBlockConfiguration config = setPublicAccessBlockRequest.getPublicAccessBlockConfiguration();
+        rejectNull(bucketName,
+                   "The bucket name parameter must be specified when setting public block configuration.");
+        rejectNull(config,
+                   "The PublicAccessBlockConfiguration parameter must be specified when setting public block");
+
+
+        Request<SetPublicAccessBlockRequest> request = createRequest(bucketName, null, setPublicAccessBlockRequest, HttpMethodName.PUT);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPublicAccessBlock");
+        request.addParameter("publicAccessBlock", null);
+
+        byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(config);
+        request.setContent(new ByteArrayInputStream(bytes));
+
+        return invoke(request, new Unmarshallers.SetPublicAccessBlockUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public GetPublicAccessBlockResult getPublicAccessBlock(GetPublicAccessBlockRequest getPublicAccessBlockRequest) {
+        getPublicAccessBlockRequest = beforeClientExecution(getPublicAccessBlockRequest);
+        rejectNull(getPublicAccessBlockRequest, "The request object must be specified.");
+
+        String bucketName = getPublicAccessBlockRequest.getBucketName();
+        rejectNull(bucketName,
+                   "The bucket name parameter must be specified when getting public block configuration.");
+
+
+        Request<GetPublicAccessBlockRequest> request = createRequest(bucketName, null, getPublicAccessBlockRequest, HttpMethodName.GET);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPublicAccessBlock");
+        request.addParameter("publicAccessBlock", null);
+
+
+        return invoke(request, GetPublicAccessBlockStaxUnmarshaller.getInstance(), bucketName, null);
+    }
+
+    @Override
+    public DeletePublicAccessBlockResult deletePublicAccessBlock(DeletePublicAccessBlockRequest deletePublicAccessBlockRequest) {
+        deletePublicAccessBlockRequest = beforeClientExecution(deletePublicAccessBlockRequest);
+        rejectNull(deletePublicAccessBlockRequest, "The request object must be specified.");
+
+        String bucketName = deletePublicAccessBlockRequest.getBucketName();
+        rejectNull(bucketName,
+                   "The bucket name parameter must be specified when deleting public block configuration.");
+
+
+        Request<DeletePublicAccessBlockRequest> request = createRequest(bucketName, null, deletePublicAccessBlockRequest, HttpMethodName.DELETE);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePublicAccessBlock");
+        request.addParameter("publicAccessBlock", null);
+
+
+        return invoke(request, new Unmarshallers.DeletePublicAccessBlockUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public GetBucketPolicyStatusResult getBucketPolicyStatus(GetBucketPolicyStatusRequest getBucketPolicyStatusRequest) {
+        getBucketPolicyStatusRequest = beforeClientExecution(getBucketPolicyStatusRequest);
+        rejectNull(getBucketPolicyStatusRequest, "The request object must be specified.");
+
+        String bucketName = getBucketPolicyStatusRequest.getBucketName();
+        rejectNull(bucketName,
+                   "The bucket name parameter must be specified when getting bucket policy status");
+
+
+        Request<GetBucketPolicyStatusRequest> request = createRequest(bucketName, null, getBucketPolicyStatusRequest, HttpMethodName.GET);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBucketPolicyStatus");
+        request.addParameter("policyStatus", null);
+
+
+        return invoke(request, GetBucketPolicyStatusStaxUnmarshaller.getInstance(), bucketName, null);
     }
 
     @Override

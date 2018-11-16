@@ -56,7 +56,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not
+     * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
      * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
      * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
      * associated with an elastic network interface, not an Amazon EC2 instance.
@@ -141,7 +141,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<ServiceEvent> events;
     /**
      * <p>
-     * The Unix time stamp for when the service was created.
+     * The Unix timestamp for when the service was created.
      * </p>
      */
     private java.util.Date createdAt;
@@ -190,7 +190,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each container instance in your
-     * cluster. When using this strategy, do not specify a desired number of tasks or any task placement strategies.
+     * cluster. When you are using this strategy, do not specify a desired number of tasks or any task placement
+     * strategies.
      * </p>
      * <note>
      * <p>
@@ -200,6 +201,35 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      */
     private String schedulingStrategy;
+    /**
+     * <p>
+     * The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters,
+     * and tag values can have a maximum length of 256 characters.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The principal that created the service.
+     * </p>
+     */
+    private String createdBy;
+    /**
+     * <p>
+     * Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging Your Amazon ECS
+     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     */
+    private Boolean enableECSManagedTags;
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
+     * specified, the tags are not propagated.
+     * </p>
+     */
+    private String propagateTags;
 
     /**
      * <p>
@@ -355,7 +385,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not
+     * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
      * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
      * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
      * associated with an elastic network interface, not an Amazon EC2 instance.
@@ -366,7 +396,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *         balancer.</p>
      *         <p>
      *         Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
-     *         launch type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers
+     *         launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
      *         are not supported. Also, when you create any target groups for these services, you must choose
      *         <code>ip</code> as the target type, not <code>instance</code>, because tasks that use the
      *         <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
@@ -387,7 +417,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not
+     * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
      * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
      * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
      * associated with an elastic network interface, not an Amazon EC2 instance.
@@ -399,7 +429,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *        balancer.</p>
      *        <p>
      *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
-     *        launch type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers
+     *        launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
      *        are not supported. Also, when you create any target groups for these services, you must choose
      *        <code>ip</code> as the target type, not <code>instance</code>, because tasks that use the
      *        <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
@@ -422,7 +452,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not
+     * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
      * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
      * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
      * associated with an elastic network interface, not an Amazon EC2 instance.
@@ -439,7 +469,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *        balancer.</p>
      *        <p>
      *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
-     *        launch type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers
+     *        launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
      *        are not supported. Also, when you create any target groups for these services, you must choose
      *        <code>ip</code> as the target type, not <code>instance</code>, because tasks that use the
      *        <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
@@ -464,7 +494,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not
+     * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
      * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
      * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
      * associated with an elastic network interface, not an Amazon EC2 instance.
@@ -476,7 +506,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *        balancer.</p>
      *        <p>
      *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
-     *        launch type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers
+     *        launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
      *        are not supported. Also, when you create any target groups for these services, you must choose
      *        <code>ip</code> as the target type, not <code>instance</code>, because tasks that use the
      *        <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
@@ -1126,11 +1156,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the service was created.
+     * The Unix timestamp for when the service was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix time stamp for when the service was created.
+     *        The Unix timestamp for when the service was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -1139,10 +1169,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the service was created.
+     * The Unix timestamp for when the service was created.
      * </p>
      * 
-     * @return The Unix time stamp for when the service was created.
+     * @return The Unix timestamp for when the service was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -1151,11 +1181,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the service was created.
+     * The Unix timestamp for when the service was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix time stamp for when the service was created.
+     *        The Unix timestamp for when the service was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1421,7 +1451,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each container instance in your
-     * cluster. When using this strategy, do not specify a desired number of tasks or any task placement strategies.
+     * cluster. When you are using this strategy, do not specify a desired number of tasks or any task placement
+     * strategies.
      * </p>
      * <note>
      * <p>
@@ -1447,8 +1478,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each container instance in
-     *        your cluster. When using this strategy, do not specify a desired number of tasks or any task placement
-     *        strategies.
+     *        your cluster. When you are using this strategy, do not specify a desired number of tasks or any task
+     *        placement strategies.
      *        </p>
      *        <note>
      *        <p>
@@ -1481,7 +1512,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each container instance in your
-     * cluster. When using this strategy, do not specify a desired number of tasks or any task placement strategies.
+     * cluster. When you are using this strategy, do not specify a desired number of tasks or any task placement
+     * strategies.
      * </p>
      * <note>
      * <p>
@@ -1506,8 +1538,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each container instance in
-     *         your cluster. When using this strategy, do not specify a desired number of tasks or any task placement
-     *         strategies.
+     *         your cluster. When you are using this strategy, do not specify a desired number of tasks or any task
+     *         placement strategies.
      *         </p>
      *         <note>
      *         <p>
@@ -1540,7 +1572,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each container instance in your
-     * cluster. When using this strategy, do not specify a desired number of tasks or any task placement strategies.
+     * cluster. When you are using this strategy, do not specify a desired number of tasks or any task placement
+     * strategies.
      * </p>
      * <note>
      * <p>
@@ -1566,8 +1599,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each container instance in
-     *        your cluster. When using this strategy, do not specify a desired number of tasks or any task placement
-     *        strategies.
+     *        your cluster. When you are using this strategy, do not specify a desired number of tasks or any task
+     *        placement strategies.
      *        </p>
      *        <note>
      *        <p>
@@ -1602,7 +1635,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each container instance in your
-     * cluster. When using this strategy, do not specify a desired number of tasks or any task placement strategies.
+     * cluster. When you are using this strategy, do not specify a desired number of tasks or any task placement
+     * strategies.
      * </p>
      * <note>
      * <p>
@@ -1628,8 +1662,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each container instance in
-     *        your cluster. When using this strategy, do not specify a desired number of tasks or any task placement
-     *        strategies.
+     *        your cluster. When you are using this strategy, do not specify a desired number of tasks or any task
+     *        placement strategies.
      *        </p>
      *        <note>
      *        <p>
@@ -1642,6 +1676,270 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     public Service withSchedulingStrategy(SchedulingStrategy schedulingStrategy) {
         this.schedulingStrategy = schedulingStrategy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters,
+     * and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @return The metadata that you apply to the service to help you categorize and organize them. Each tag consists of
+     *         a key and an optional value, both of which you define. Tag keys can have a maximum character length of
+     *         128 characters, and tag values can have a maximum length of 256 characters.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters,
+     * and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the service to help you categorize and organize them. Each tag consists of
+     *        a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
+     *        characters, and tag values can have a maximum length of 256 characters.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters,
+     * and tag values can have a maximum length of 256 characters.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the service to help you categorize and organize them. Each tag consists of
+     *        a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
+     *        characters, and tag values can have a maximum length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters,
+     * and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the service to help you categorize and organize them. Each tag consists of
+     *        a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
+     *        characters, and tag values can have a maximum length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The principal that created the service.
+     * </p>
+     * 
+     * @param createdBy
+     *        The principal that created the service.
+     */
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    /**
+     * <p>
+     * The principal that created the service.
+     * </p>
+     * 
+     * @return The principal that created the service.
+     */
+
+    public String getCreatedBy() {
+        return this.createdBy;
+    }
+
+    /**
+     * <p>
+     * The principal that created the service.
+     * </p>
+     * 
+     * @param createdBy
+     *        The principal that created the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withCreatedBy(String createdBy) {
+        setCreatedBy(createdBy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging Your Amazon ECS
+     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param enableECSManagedTags
+     *        Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging Your
+     *        Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public void setEnableECSManagedTags(Boolean enableECSManagedTags) {
+        this.enableECSManagedTags = enableECSManagedTags;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging Your Amazon ECS
+     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information,
+     *         see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging Your
+     *         Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public Boolean getEnableECSManagedTags() {
+        return this.enableECSManagedTags;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging Your Amazon ECS
+     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param enableECSManagedTags
+     *        Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging Your
+     *        Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withEnableECSManagedTags(Boolean enableECSManagedTags) {
+        setEnableECSManagedTags(enableECSManagedTags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging Your Amazon ECS
+     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information,
+     *         see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging Your
+     *         Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public Boolean isEnableECSManagedTags() {
+        return this.enableECSManagedTags;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
+     * specified, the tags are not propagated.
+     * </p>
+     * 
+     * @param propagateTags
+     *        Specifies whether to propagate the tags from the task definition or the service to the task. If no value
+     *        is specified, the tags are not propagated.
+     * @see PropagateTags
+     */
+
+    public void setPropagateTags(String propagateTags) {
+        this.propagateTags = propagateTags;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
+     * specified, the tags are not propagated.
+     * </p>
+     * 
+     * @return Specifies whether to propagate the tags from the task definition or the service to the task. If no value
+     *         is specified, the tags are not propagated.
+     * @see PropagateTags
+     */
+
+    public String getPropagateTags() {
+        return this.propagateTags;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
+     * specified, the tags are not propagated.
+     * </p>
+     * 
+     * @param propagateTags
+     *        Specifies whether to propagate the tags from the task definition or the service to the task. If no value
+     *        is specified, the tags are not propagated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PropagateTags
+     */
+
+    public Service withPropagateTags(String propagateTags) {
+        setPropagateTags(propagateTags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
+     * specified, the tags are not propagated.
+     * </p>
+     * 
+     * @param propagateTags
+     *        Specifies whether to propagate the tags from the task definition or the service to the task. If no value
+     *        is specified, the tags are not propagated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PropagateTags
+     */
+
+    public Service withPropagateTags(PropagateTags propagateTags) {
+        this.propagateTags = propagateTags.toString();
         return this;
     }
 
@@ -1699,7 +1997,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         if (getHealthCheckGracePeriodSeconds() != null)
             sb.append("HealthCheckGracePeriodSeconds: ").append(getHealthCheckGracePeriodSeconds()).append(",");
         if (getSchedulingStrategy() != null)
-            sb.append("SchedulingStrategy: ").append(getSchedulingStrategy());
+            sb.append("SchedulingStrategy: ").append(getSchedulingStrategy()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getCreatedBy() != null)
+            sb.append("CreatedBy: ").append(getCreatedBy()).append(",");
+        if (getEnableECSManagedTags() != null)
+            sb.append("EnableECSManagedTags: ").append(getEnableECSManagedTags()).append(",");
+        if (getPropagateTags() != null)
+            sb.append("PropagateTags: ").append(getPropagateTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1803,6 +2109,22 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSchedulingStrategy() != null && other.getSchedulingStrategy().equals(this.getSchedulingStrategy()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getCreatedBy() == null ^ this.getCreatedBy() == null)
+            return false;
+        if (other.getCreatedBy() != null && other.getCreatedBy().equals(this.getCreatedBy()) == false)
+            return false;
+        if (other.getEnableECSManagedTags() == null ^ this.getEnableECSManagedTags() == null)
+            return false;
+        if (other.getEnableECSManagedTags() != null && other.getEnableECSManagedTags().equals(this.getEnableECSManagedTags()) == false)
+            return false;
+        if (other.getPropagateTags() == null ^ this.getPropagateTags() == null)
+            return false;
+        if (other.getPropagateTags() != null && other.getPropagateTags().equals(this.getPropagateTags()) == false)
+            return false;
         return true;
     }
 
@@ -1833,6 +2155,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckGracePeriodSeconds() == null) ? 0 : getHealthCheckGracePeriodSeconds().hashCode());
         hashCode = prime * hashCode + ((getSchedulingStrategy() == null) ? 0 : getSchedulingStrategy().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
+        hashCode = prime * hashCode + ((getEnableECSManagedTags() == null) ? 0 : getEnableECSManagedTags().hashCode());
+        hashCode = prime * hashCode + ((getPropagateTags() == null) ? 0 : getPropagateTags().hashCode());
         return hashCode;
     }
 

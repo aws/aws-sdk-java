@@ -139,6 +139,10 @@ public class ReplicationInstanceJsonUnmarshaller implements Unmarshaller<Replica
                     context.nextToken();
                     replicationInstance.setFreeUntil(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("DnsNameServers", targetDepth)) {
+                    context.nextToken();
+                    replicationInstance.setDnsNameServers(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

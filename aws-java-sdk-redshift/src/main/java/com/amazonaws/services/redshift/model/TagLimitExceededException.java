@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger cluster node
- * type.
+ * You have exceeded the number of tags allowed.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

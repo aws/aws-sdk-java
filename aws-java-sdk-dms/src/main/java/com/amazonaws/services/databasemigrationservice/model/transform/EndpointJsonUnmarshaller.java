@@ -132,6 +132,14 @@ public class EndpointJsonUnmarshaller implements Unmarshaller<Endpoint, JsonUnma
                     context.nextToken();
                     endpoint.setMongoDbSettings(MongoDbSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("KinesisSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setKinesisSettings(KinesisSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ElasticsearchSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setElasticsearchSettings(ElasticsearchSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

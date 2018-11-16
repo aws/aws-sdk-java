@@ -97,6 +97,10 @@ public class DescribeDBSnapshotsRequestMarshaller implements Marshaller<Request<
             request.addParameter("IncludePublic", StringUtils.fromBoolean(describeDBSnapshotsRequest.getIncludePublic()));
         }
 
+        if (describeDBSnapshotsRequest.getDbiResourceId() != null) {
+            request.addParameter("DbiResourceId", StringUtils.fromString(describeDBSnapshotsRequest.getDbiResourceId()));
+        }
+
         return request;
     }
 

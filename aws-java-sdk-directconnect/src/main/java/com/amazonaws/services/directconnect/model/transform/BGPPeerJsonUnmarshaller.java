@@ -48,6 +48,10 @@ public class BGPPeerJsonUnmarshaller implements Unmarshaller<BGPPeer, JsonUnmars
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("bgpPeerId", targetDepth)) {
+                    context.nextToken();
+                    bGPPeer.setBgpPeerId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("asn", targetDepth)) {
                     context.nextToken();
                     bGPPeer.setAsn(context.getUnmarshaller(Integer.class).unmarshall(context));

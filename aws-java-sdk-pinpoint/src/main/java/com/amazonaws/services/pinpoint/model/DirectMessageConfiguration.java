@@ -42,6 +42,8 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
     private GCMMessage gCMMessage;
     /** The message to SMS channels. Overrides the default message. */
     private SMSMessage sMSMessage;
+    /** The message to Voice channels. Overrides the default message. */
+    private VoiceMessage voiceMessage;
 
     /**
      * The message to ADM channels. Overrides the default push notification message.
@@ -316,6 +318,40 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
     }
 
     /**
+     * The message to Voice channels. Overrides the default message.
+     * 
+     * @param voiceMessage
+     *        The message to Voice channels. Overrides the default message.
+     */
+
+    public void setVoiceMessage(VoiceMessage voiceMessage) {
+        this.voiceMessage = voiceMessage;
+    }
+
+    /**
+     * The message to Voice channels. Overrides the default message.
+     * 
+     * @return The message to Voice channels. Overrides the default message.
+     */
+
+    public VoiceMessage getVoiceMessage() {
+        return this.voiceMessage;
+    }
+
+    /**
+     * The message to Voice channels. Overrides the default message.
+     * 
+     * @param voiceMessage
+     *        The message to Voice channels. Overrides the default message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DirectMessageConfiguration withVoiceMessage(VoiceMessage voiceMessage) {
+        setVoiceMessage(voiceMessage);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -341,7 +377,9 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
         if (getGCMMessage() != null)
             sb.append("GCMMessage: ").append(getGCMMessage()).append(",");
         if (getSMSMessage() != null)
-            sb.append("SMSMessage: ").append(getSMSMessage());
+            sb.append("SMSMessage: ").append(getSMSMessage()).append(",");
+        if (getVoiceMessage() != null)
+            sb.append("VoiceMessage: ").append(getVoiceMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -389,6 +427,10 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
             return false;
         if (other.getSMSMessage() != null && other.getSMSMessage().equals(this.getSMSMessage()) == false)
             return false;
+        if (other.getVoiceMessage() == null ^ this.getVoiceMessage() == null)
+            return false;
+        if (other.getVoiceMessage() != null && other.getVoiceMessage().equals(this.getVoiceMessage()) == false)
+            return false;
         return true;
     }
 
@@ -405,6 +447,7 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getEmailMessage() == null) ? 0 : getEmailMessage().hashCode());
         hashCode = prime * hashCode + ((getGCMMessage() == null) ? 0 : getGCMMessage().hashCode());
         hashCode = prime * hashCode + ((getSMSMessage() == null) ? 0 : getSMSMessage().hashCode());
+        hashCode = prime * hashCode + ((getVoiceMessage() == null) ? 0 : getVoiceMessage().hashCode());
         return hashCode;
     }
 

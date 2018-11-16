@@ -127,6 +127,8 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
      */
     private Boolean clusterExists;
 
+    private com.amazonaws.internal.SdkInternalList<SnapshotSortingEntity> sortingEntities;
+
     /**
      * <p>
      * The identifier of the cluster for which information about snapshots is requested.
@@ -871,6 +873,61 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<SnapshotSortingEntity> getSortingEntities() {
+        if (sortingEntities == null) {
+            sortingEntities = new com.amazonaws.internal.SdkInternalList<SnapshotSortingEntity>();
+        }
+        return sortingEntities;
+    }
+
+    /**
+     * @param sortingEntities
+     */
+
+    public void setSortingEntities(java.util.Collection<SnapshotSortingEntity> sortingEntities) {
+        if (sortingEntities == null) {
+            this.sortingEntities = null;
+            return;
+        }
+
+        this.sortingEntities = new com.amazonaws.internal.SdkInternalList<SnapshotSortingEntity>(sortingEntities);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSortingEntities(java.util.Collection)} or {@link #withSortingEntities(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param sortingEntities
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeClusterSnapshotsRequest withSortingEntities(SnapshotSortingEntity... sortingEntities) {
+        if (this.sortingEntities == null) {
+            setSortingEntities(new com.amazonaws.internal.SdkInternalList<SnapshotSortingEntity>(sortingEntities.length));
+        }
+        for (SnapshotSortingEntity ele : sortingEntities) {
+            this.sortingEntities.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param sortingEntities
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeClusterSnapshotsRequest withSortingEntities(java.util.Collection<SnapshotSortingEntity> sortingEntities) {
+        setSortingEntities(sortingEntities);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -902,7 +959,9 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
         if (getTagValues() != null)
             sb.append("TagValues: ").append(getTagValues()).append(",");
         if (getClusterExists() != null)
-            sb.append("ClusterExists: ").append(getClusterExists());
+            sb.append("ClusterExists: ").append(getClusterExists()).append(",");
+        if (getSortingEntities() != null)
+            sb.append("SortingEntities: ").append(getSortingEntities());
         sb.append("}");
         return sb.toString();
     }
@@ -961,6 +1020,10 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getClusterExists() != null && other.getClusterExists().equals(this.getClusterExists()) == false)
             return false;
+        if (other.getSortingEntities() == null ^ this.getSortingEntities() == null)
+            return false;
+        if (other.getSortingEntities() != null && other.getSortingEntities().equals(this.getSortingEntities()) == false)
+            return false;
         return true;
     }
 
@@ -980,6 +1043,7 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getTagKeys() == null) ? 0 : getTagKeys().hashCode());
         hashCode = prime * hashCode + ((getTagValues() == null) ? 0 : getTagValues().hashCode());
         hashCode = prime * hashCode + ((getClusterExists() == null) ? 0 : getClusterExists().hashCode());
+        hashCode = prime * hashCode + ((getSortingEntities() == null) ? 0 : getSortingEntities().hashCode());
         return hashCode;
     }
 

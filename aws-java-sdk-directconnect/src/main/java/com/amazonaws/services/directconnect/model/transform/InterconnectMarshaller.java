@@ -49,6 +49,8 @@ public class InterconnectMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jumboFrameCapable").build();
     private static final MarshallingInfo<String> AWSDEVICEV2_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsDeviceV2").build();
+    private static final MarshallingInfo<String> HASLOGICALREDUNDANCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hasLogicalRedundancy").build();
 
     private static final InterconnectMarshaller instance = new InterconnectMarshaller();
 
@@ -77,6 +79,7 @@ public class InterconnectMarshaller {
             protocolMarshaller.marshall(interconnect.getAwsDevice(), AWSDEVICE_BINDING);
             protocolMarshaller.marshall(interconnect.getJumboFrameCapable(), JUMBOFRAMECAPABLE_BINDING);
             protocolMarshaller.marshall(interconnect.getAwsDeviceV2(), AWSDEVICEV2_BINDING);
+            protocolMarshaller.marshall(interconnect.getHasLogicalRedundancy(), HASLOGICALREDUNDANCY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

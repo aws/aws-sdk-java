@@ -90,9 +90,10 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
-     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
-     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
+     * The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify
+     * a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
+     * AWS Region.
      * </p>
      */
     private String kmsKeyId;
@@ -154,37 +155,36 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     private S3Settings s3Settings;
     /**
      * <p>
-     * The settings in JSON format for the DMS Transfer type source endpoint.
+     * The settings in JSON format for the DMS transfer type of source endpoint.
      * </p>
      * <p>
-     * Attributes include:
+     * Possible attributes include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     * <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
      * </p>
      * </li>
      * <li>
      * <p>
-     * bucketName - The name of the S3 bucket to use.
+     * <code>bucketName</code> - The name of the S3 bucket to use.
      * </p>
      * </li>
      * <li>
      * <p>
-     * compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the default) or do
-     * not use to leave the files uncompressed.
+     * <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use GZIP, set
+     * this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this value.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     * Shorthand syntax for these attributes is as follows:
+     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      * </p>
      * <p>
-     * JSON syntax:
-     * </p>
-     * <p>
-     * { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     * JSON syntax for these attributes is as follows:
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
      * </p>
      */
     private DmsTransferSettings dmsTransferSettings;
@@ -195,6 +195,20 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private MongoDbSettings mongoDbSettings;
+    /**
+     * <p>
+     * The settings for the Amazon Kinesis source endpoint. For more information, see the <code>KinesisSettings</code>
+     * structure.
+     * </p>
+     */
+    private KinesisSettings kinesisSettings;
+    /**
+     * <p>
+     * The settings for the Elasticsearch source endpoint. For more information, see the
+     * <code>ElasticsearchSettings</code> structure.
+     * </p>
+     */
+    private ElasticsearchSettings elasticsearchSettings;
 
     /**
      * <p>
@@ -652,16 +666,17 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
-     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
-     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
+     * The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify
+     * a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
+     * AWS Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a
-     *        value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the
-     *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
-     *        each AWS region.
+     *        The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't
+     *        specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key.
+     *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     *        encryption key for each AWS Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -670,15 +685,16 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
-     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
-     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
+     * The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify
+     * a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
+     * AWS Region.
      * </p>
      * 
-     * @return The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a
-     *         value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the
-     *         default encryption key for your AWS account. Your AWS account has a different default encryption key for
-     *         each AWS region.
+     * @return The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't
+     *         specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key.
+     *         AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     *         encryption key for each AWS Region.
      */
 
     public String getKmsKeyId() {
@@ -687,16 +703,17 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
-     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
-     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
+     * The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify
+     * a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
+     * AWS Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a
-     *        value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the
-     *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
-     *        each AWS region.
+     *        The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't
+     *        specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key.
+     *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     *        encryption key for each AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1127,70 +1144,69 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings in JSON format for the DMS Transfer type source endpoint.
+     * The settings in JSON format for the DMS transfer type of source endpoint.
      * </p>
      * <p>
-     * Attributes include:
+     * Possible attributes include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     * <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
      * </p>
      * </li>
      * <li>
      * <p>
-     * bucketName - The name of the S3 bucket to use.
+     * <code>bucketName</code> - The name of the S3 bucket to use.
      * </p>
      * </li>
      * <li>
      * <p>
-     * compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the default) or do
-     * not use to leave the files uncompressed.
+     * <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use GZIP, set
+     * this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this value.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     * Shorthand syntax for these attributes is as follows:
+     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      * </p>
      * <p>
-     * JSON syntax:
-     * </p>
-     * <p>
-     * { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     * JSON syntax for these attributes is as follows:
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
      * </p>
      * 
      * @param dmsTransferSettings
-     *        The settings in JSON format for the DMS Transfer type source endpoint. </p>
+     *        The settings in JSON format for the DMS transfer type of source endpoint. </p>
      *        <p>
-     *        Attributes include:
+     *        Possible attributes include the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     *        <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        bucketName - The name of the S3 bucket to use.
+     *        <code>bucketName</code> - The name of the S3 bucket to use.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the
-     *        default) or do not use to leave the files uncompressed.
+     *        <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use
+     *        GZIP, set this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this
+     *        value.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     *        Shorthand syntax for these attributes is as follows:
+     *        <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      *        </p>
      *        <p>
-     *        JSON syntax:
-     *        </p>
-     *        <p>
-     *        { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     *        JSON syntax for these attributes is as follows:
+     *        <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
      */
 
     public void setDmsTransferSettings(DmsTransferSettings dmsTransferSettings) {
@@ -1199,69 +1215,68 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings in JSON format for the DMS Transfer type source endpoint.
+     * The settings in JSON format for the DMS transfer type of source endpoint.
      * </p>
      * <p>
-     * Attributes include:
+     * Possible attributes include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     * <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
      * </p>
      * </li>
      * <li>
      * <p>
-     * bucketName - The name of the S3 bucket to use.
+     * <code>bucketName</code> - The name of the S3 bucket to use.
      * </p>
      * </li>
      * <li>
      * <p>
-     * compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the default) or do
-     * not use to leave the files uncompressed.
+     * <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use GZIP, set
+     * this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this value.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     * Shorthand syntax for these attributes is as follows:
+     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      * </p>
      * <p>
-     * JSON syntax:
-     * </p>
-     * <p>
-     * { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     * JSON syntax for these attributes is as follows:
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
      * </p>
      * 
-     * @return The settings in JSON format for the DMS Transfer type source endpoint. </p>
+     * @return The settings in JSON format for the DMS transfer type of source endpoint. </p>
      *         <p>
-     *         Attributes include:
+     *         Possible attributes include the following:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     *         <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         bucketName - The name of the S3 bucket to use.
+     *         <code>bucketName</code> - The name of the S3 bucket to use.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the
-     *         default) or do not use to leave the files uncompressed.
+     *         <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use
+     *         GZIP, set this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this
+     *         value.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     *         Shorthand syntax for these attributes is as follows:
+     *         <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      *         </p>
      *         <p>
-     *         JSON syntax:
-     *         </p>
-     *         <p>
-     *         { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     *         JSON syntax for these attributes is as follows:
+     *         <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
      */
 
     public DmsTransferSettings getDmsTransferSettings() {
@@ -1270,70 +1285,69 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings in JSON format for the DMS Transfer type source endpoint.
+     * The settings in JSON format for the DMS transfer type of source endpoint.
      * </p>
      * <p>
-     * Attributes include:
+     * Possible attributes include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     * <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
      * </p>
      * </li>
      * <li>
      * <p>
-     * bucketName - The name of the S3 bucket to use.
+     * <code>bucketName</code> - The name of the S3 bucket to use.
      * </p>
      * </li>
      * <li>
      * <p>
-     * compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the default) or do
-     * not use to leave the files uncompressed.
+     * <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use GZIP, set
+     * this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this value.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     * Shorthand syntax for these attributes is as follows:
+     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      * </p>
      * <p>
-     * JSON syntax:
-     * </p>
-     * <p>
-     * { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     * JSON syntax for these attributes is as follows:
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
      * </p>
      * 
      * @param dmsTransferSettings
-     *        The settings in JSON format for the DMS Transfer type source endpoint. </p>
+     *        The settings in JSON format for the DMS transfer type of source endpoint. </p>
      *        <p>
-     *        Attributes include:
+     *        Possible attributes include the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     *        <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        bucketName - The name of the S3 bucket to use.
+     *        <code>bucketName</code> - The name of the S3 bucket to use.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the
-     *        default) or do not use to leave the files uncompressed.
+     *        <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use
+     *        GZIP, set this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this
+     *        value.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     *        Shorthand syntax for these attributes is as follows:
+     *        <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      *        </p>
      *        <p>
-     *        JSON syntax:
-     *        </p>
-     *        <p>
-     *        { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     *        JSON syntax for these attributes is as follows:
+     *        <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1389,6 +1403,98 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The settings for the Amazon Kinesis source endpoint. For more information, see the <code>KinesisSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param kinesisSettings
+     *        The settings for the Amazon Kinesis source endpoint. For more information, see the
+     *        <code>KinesisSettings</code> structure.
+     */
+
+    public void setKinesisSettings(KinesisSettings kinesisSettings) {
+        this.kinesisSettings = kinesisSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the Amazon Kinesis source endpoint. For more information, see the <code>KinesisSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @return The settings for the Amazon Kinesis source endpoint. For more information, see the
+     *         <code>KinesisSettings</code> structure.
+     */
+
+    public KinesisSettings getKinesisSettings() {
+        return this.kinesisSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the Amazon Kinesis source endpoint. For more information, see the <code>KinesisSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param kinesisSettings
+     *        The settings for the Amazon Kinesis source endpoint. For more information, see the
+     *        <code>KinesisSettings</code> structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withKinesisSettings(KinesisSettings kinesisSettings) {
+        setKinesisSettings(kinesisSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the Elasticsearch source endpoint. For more information, see the
+     * <code>ElasticsearchSettings</code> structure.
+     * </p>
+     * 
+     * @param elasticsearchSettings
+     *        The settings for the Elasticsearch source endpoint. For more information, see the
+     *        <code>ElasticsearchSettings</code> structure.
+     */
+
+    public void setElasticsearchSettings(ElasticsearchSettings elasticsearchSettings) {
+        this.elasticsearchSettings = elasticsearchSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the Elasticsearch source endpoint. For more information, see the
+     * <code>ElasticsearchSettings</code> structure.
+     * </p>
+     * 
+     * @return The settings for the Elasticsearch source endpoint. For more information, see the
+     *         <code>ElasticsearchSettings</code> structure.
+     */
+
+    public ElasticsearchSettings getElasticsearchSettings() {
+        return this.elasticsearchSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the Elasticsearch source endpoint. For more information, see the
+     * <code>ElasticsearchSettings</code> structure.
+     * </p>
+     * 
+     * @param elasticsearchSettings
+     *        The settings for the Elasticsearch source endpoint. For more information, see the
+     *        <code>ElasticsearchSettings</code> structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withElasticsearchSettings(ElasticsearchSettings elasticsearchSettings) {
+        setElasticsearchSettings(elasticsearchSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1440,7 +1546,11 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         if (getDmsTransferSettings() != null)
             sb.append("DmsTransferSettings: ").append(getDmsTransferSettings()).append(",");
         if (getMongoDbSettings() != null)
-            sb.append("MongoDbSettings: ").append(getMongoDbSettings());
+            sb.append("MongoDbSettings: ").append(getMongoDbSettings()).append(",");
+        if (getKinesisSettings() != null)
+            sb.append("KinesisSettings: ").append(getKinesisSettings()).append(",");
+        if (getElasticsearchSettings() != null)
+            sb.append("ElasticsearchSettings: ").append(getElasticsearchSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -1539,6 +1649,14 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMongoDbSettings() != null && other.getMongoDbSettings().equals(this.getMongoDbSettings()) == false)
             return false;
+        if (other.getKinesisSettings() == null ^ this.getKinesisSettings() == null)
+            return false;
+        if (other.getKinesisSettings() != null && other.getKinesisSettings().equals(this.getKinesisSettings()) == false)
+            return false;
+        if (other.getElasticsearchSettings() == null ^ this.getElasticsearchSettings() == null)
+            return false;
+        if (other.getElasticsearchSettings() != null && other.getElasticsearchSettings().equals(this.getElasticsearchSettings()) == false)
+            return false;
         return true;
     }
 
@@ -1568,6 +1686,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getS3Settings() == null) ? 0 : getS3Settings().hashCode());
         hashCode = prime * hashCode + ((getDmsTransferSettings() == null) ? 0 : getDmsTransferSettings().hashCode());
         hashCode = prime * hashCode + ((getMongoDbSettings() == null) ? 0 : getMongoDbSettings().hashCode());
+        hashCode = prime * hashCode + ((getKinesisSettings() == null) ? 0 : getKinesisSettings().hashCode());
+        hashCode = prime * hashCode + ((getElasticsearchSettings() == null) ? 0 : getElasticsearchSettings().hashCode());
         return hashCode;
     }
 

@@ -32,6 +32,8 @@ public class DescribeServicesRequestMarshaller {
             .marshallLocationName("cluster").build();
     private static final MarshallingInfo<List> SERVICES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("services").build();
+    private static final MarshallingInfo<List> INCLUDE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("include").build();
 
     private static final DescribeServicesRequestMarshaller instance = new DescribeServicesRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class DescribeServicesRequestMarshaller {
         try {
             protocolMarshaller.marshall(describeServicesRequest.getCluster(), CLUSTER_BINDING);
             protocolMarshaller.marshall(describeServicesRequest.getServices(), SERVICES_BINDING);
+            protocolMarshaller.marshall(describeServicesRequest.getInclude(), INCLUDE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -48,21 +48,21 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      * <p>
      * For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the
      * source code you want to build. If a pull request ID is specified, it must use the format
-     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's
-     * HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.
+     * <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
      * </p>
      * </li>
      * <li>
      * <p>
      * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
-     * want to build. If a branch name is specified, the branch's HEAD commit ID will be used. If not specified, the
-     * default branch's HEAD commit ID will be used.
+     * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
+     * branch's HEAD commit ID is used.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing the build input ZIP file
-     * to use.
+     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
+     * file to use.
      * </p>
      * </li>
      * </ul>
@@ -123,21 +123,21 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      * <p>
      * For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the
      * source code you want to build. If a pull request ID is specified, it must use the format
-     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's
-     * HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.
+     * <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
      * </p>
      * </li>
      * <li>
      * <p>
      * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
-     * want to build. If a branch name is specified, the branch's HEAD commit ID will be used. If not specified, the
-     * default branch's HEAD commit ID will be used.
+     * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
+     * branch's HEAD commit ID is used.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing the build input ZIP file
-     * to use.
+     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
+     * file to use.
      * </p>
      * </li>
      * </ul>
@@ -154,21 +154,21 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      *        <p>
      *        For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of
      *        the source code you want to build. If a pull request ID is specified, it must use the format
-     *        <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
-     *        branch's HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.
+     *        <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the
+     *        branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code
-     *        you want to build. If a branch name is specified, the branch's HEAD commit ID will be used. If not
-     *        specified, the default branch's HEAD commit ID will be used.
+     *        you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified,
+     *        the default branch's HEAD commit ID is used.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing the build input
-     *        ZIP file to use.
+     *        For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build
+     *        input ZIP file to use.
      *        </p>
      *        </li>
      */
@@ -191,21 +191,21 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      * <p>
      * For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the
      * source code you want to build. If a pull request ID is specified, it must use the format
-     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's
-     * HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.
+     * <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
      * </p>
      * </li>
      * <li>
      * <p>
      * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
-     * want to build. If a branch name is specified, the branch's HEAD commit ID will be used. If not specified, the
-     * default branch's HEAD commit ID will be used.
+     * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
+     * branch's HEAD commit ID is used.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing the build input ZIP file
-     * to use.
+     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
+     * file to use.
      * </p>
      * </li>
      * </ul>
@@ -221,21 +221,21 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      *         <p>
      *         For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of
      *         the source code you want to build. If a pull request ID is specified, it must use the format
-     *         <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
-     *         branch's HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.
+     *         <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the
+     *         branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code
-     *         you want to build. If a branch name is specified, the branch's HEAD commit ID will be used. If not
-     *         specified, the default branch's HEAD commit ID will be used.
+     *         you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified,
+     *         the default branch's HEAD commit ID is used.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing the build input
-     *         ZIP file to use.
+     *         For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build
+     *         input ZIP file to use.
      *         </p>
      *         </li>
      */
@@ -258,21 +258,21 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      * <p>
      * For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the
      * source code you want to build. If a pull request ID is specified, it must use the format
-     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's
-     * HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.
+     * <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
      * </p>
      * </li>
      * <li>
      * <p>
      * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
-     * want to build. If a branch name is specified, the branch's HEAD commit ID will be used. If not specified, the
-     * default branch's HEAD commit ID will be used.
+     * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
+     * branch's HEAD commit ID is used.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing the build input ZIP file
-     * to use.
+     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
+     * file to use.
      * </p>
      * </li>
      * </ul>
@@ -289,21 +289,21 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      *        <p>
      *        For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of
      *        the source code you want to build. If a pull request ID is specified, it must use the format
-     *        <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
-     *        branch's HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.
+     *        <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the
+     *        branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code
-     *        you want to build. If a branch name is specified, the branch's HEAD commit ID will be used. If not
-     *        specified, the default branch's HEAD commit ID will be used.
+     *        you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified,
+     *        the default branch's HEAD commit ID is used.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing the build input
-     *        ZIP file to use.
+     *        For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build
+     *        input ZIP file to use.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

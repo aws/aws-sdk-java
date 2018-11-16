@@ -230,6 +230,140 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDocumentClassifierResult> createDocumentClassifierAsync(CreateDocumentClassifierRequest request) {
+
+        return createDocumentClassifierAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDocumentClassifierResult> createDocumentClassifierAsync(final CreateDocumentClassifierRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDocumentClassifierRequest, CreateDocumentClassifierResult> asyncHandler) {
+        final CreateDocumentClassifierRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDocumentClassifierResult>() {
+            @Override
+            public CreateDocumentClassifierResult call() throws Exception {
+                CreateDocumentClassifierResult result = null;
+
+                try {
+                    result = executeCreateDocumentClassifier(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDocumentClassifierResult> deleteDocumentClassifierAsync(DeleteDocumentClassifierRequest request) {
+
+        return deleteDocumentClassifierAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDocumentClassifierResult> deleteDocumentClassifierAsync(final DeleteDocumentClassifierRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDocumentClassifierRequest, DeleteDocumentClassifierResult> asyncHandler) {
+        final DeleteDocumentClassifierRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDocumentClassifierResult>() {
+            @Override
+            public DeleteDocumentClassifierResult call() throws Exception {
+                DeleteDocumentClassifierResult result = null;
+
+                try {
+                    result = executeDeleteDocumentClassifier(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDocumentClassificationJobResult> describeDocumentClassificationJobAsync(
+            DescribeDocumentClassificationJobRequest request) {
+
+        return describeDocumentClassificationJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDocumentClassificationJobResult> describeDocumentClassificationJobAsync(
+            final DescribeDocumentClassificationJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDocumentClassificationJobRequest, DescribeDocumentClassificationJobResult> asyncHandler) {
+        final DescribeDocumentClassificationJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDocumentClassificationJobResult>() {
+            @Override
+            public DescribeDocumentClassificationJobResult call() throws Exception {
+                DescribeDocumentClassificationJobResult result = null;
+
+                try {
+                    result = executeDescribeDocumentClassificationJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDocumentClassifierResult> describeDocumentClassifierAsync(DescribeDocumentClassifierRequest request) {
+
+        return describeDocumentClassifierAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDocumentClassifierResult> describeDocumentClassifierAsync(final DescribeDocumentClassifierRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDocumentClassifierRequest, DescribeDocumentClassifierResult> asyncHandler) {
+        final DescribeDocumentClassifierRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDocumentClassifierResult>() {
+            @Override
+            public DescribeDocumentClassifierResult call() throws Exception {
+                DescribeDocumentClassifierResult result = null;
+
+                try {
+                    result = executeDescribeDocumentClassifier(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDominantLanguageDetectionJobResult> describeDominantLanguageDetectionJobAsync(
             DescribeDominantLanguageDetectionJobRequest request) {
 
@@ -564,6 +698,73 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListDocumentClassificationJobsResult> listDocumentClassificationJobsAsync(ListDocumentClassificationJobsRequest request) {
+
+        return listDocumentClassificationJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDocumentClassificationJobsResult> listDocumentClassificationJobsAsync(
+            final ListDocumentClassificationJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDocumentClassificationJobsRequest, ListDocumentClassificationJobsResult> asyncHandler) {
+        final ListDocumentClassificationJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDocumentClassificationJobsResult>() {
+            @Override
+            public ListDocumentClassificationJobsResult call() throws Exception {
+                ListDocumentClassificationJobsResult result = null;
+
+                try {
+                    result = executeListDocumentClassificationJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDocumentClassifiersResult> listDocumentClassifiersAsync(ListDocumentClassifiersRequest request) {
+
+        return listDocumentClassifiersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDocumentClassifiersResult> listDocumentClassifiersAsync(final ListDocumentClassifiersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDocumentClassifiersRequest, ListDocumentClassifiersResult> asyncHandler) {
+        final ListDocumentClassifiersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDocumentClassifiersResult>() {
+            @Override
+            public ListDocumentClassifiersResult call() throws Exception {
+                ListDocumentClassifiersResult result = null;
+
+                try {
+                    result = executeListDocumentClassifiers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDominantLanguageDetectionJobsResult> listDominantLanguageDetectionJobsAsync(
             ListDominantLanguageDetectionJobsRequest request) {
 
@@ -715,6 +916,40 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
 
                 try {
                     result = executeListTopicsDetectionJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDocumentClassificationJobResult> startDocumentClassificationJobAsync(StartDocumentClassificationJobRequest request) {
+
+        return startDocumentClassificationJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDocumentClassificationJobResult> startDocumentClassificationJobAsync(
+            final StartDocumentClassificationJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartDocumentClassificationJobRequest, StartDocumentClassificationJobResult> asyncHandler) {
+        final StartDocumentClassificationJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartDocumentClassificationJobResult>() {
+            @Override
+            public StartDocumentClassificationJobResult call() throws Exception {
+                StartDocumentClassificationJobResult result = null;
+
+                try {
+                    result = executeStartDocumentClassificationJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

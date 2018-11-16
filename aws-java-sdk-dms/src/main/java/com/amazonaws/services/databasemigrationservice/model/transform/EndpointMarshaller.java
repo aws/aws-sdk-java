@@ -69,6 +69,10 @@ public class EndpointMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DmsTransferSettings").build();
     private static final MarshallingInfo<StructuredPojo> MONGODBSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MongoDbSettings").build();
+    private static final MarshallingInfo<StructuredPojo> KINESISSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KinesisSettings").build();
+    private static final MarshallingInfo<StructuredPojo> ELASTICSEARCHSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ElasticsearchSettings").build();
 
     private static final EndpointMarshaller instance = new EndpointMarshaller();
 
@@ -107,6 +111,8 @@ public class EndpointMarshaller {
             protocolMarshaller.marshall(endpoint.getS3Settings(), S3SETTINGS_BINDING);
             protocolMarshaller.marshall(endpoint.getDmsTransferSettings(), DMSTRANSFERSETTINGS_BINDING);
             protocolMarshaller.marshall(endpoint.getMongoDbSettings(), MONGODBSETTINGS_BINDING);
+            protocolMarshaller.marshall(endpoint.getKinesisSettings(), KINESISSETTINGS_BINDING);
+            protocolMarshaller.marshall(endpoint.getElasticsearchSettings(), ELASTICSEARCHSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

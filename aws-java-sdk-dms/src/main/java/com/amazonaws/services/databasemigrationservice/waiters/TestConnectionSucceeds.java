@@ -30,7 +30,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 class TestConnectionSucceeds {
 
-    static class IsSuccessfulMatcher extends WaiterAcceptor<DescribeConnectionsResult> {
+    static class IsSuccessfulMatcher extends WaiterAcceptor<TestConnectionResult> {
         private static final JsonNode expectedResult;
 
         static {
@@ -41,7 +41,7 @@ class TestConnectionSucceeds {
             }
         }
 
-        private static final JmesPathExpression ast = new JmesPathProjection(new JmesPathFlatten(new JmesPathField("Connections")), new JmesPathField("Status"));
+        private static final JmesPathExpression ast = new JmesPathSubExpression(new JmesPathField("Connection"), new JmesPathField("Status"));
 
         /**
          * Takes the result and determines whether the state of the resource matches the expected state. To determine
@@ -52,10 +52,10 @@ class TestConnectionSucceeds {
          * @return True if current state of the resource matches the expected state, False otherwise
          */
         @Override
-        public boolean matches(DescribeConnectionsResult result) {
+        public boolean matches(TestConnectionResult result) {
             JsonNode queryNode = ObjectMapperSingleton.getObjectMapper().valueToTree(result);
             JsonNode finalResult = ast.accept(new JmesPathEvaluationVisitor(), queryNode);
-            return AcceptorPathMatcher.pathAll(expectedResult, finalResult);
+            return AcceptorPathMatcher.path(expectedResult, finalResult);
         }
 
         /**
@@ -69,7 +69,7 @@ class TestConnectionSucceeds {
         }
     }
 
-    static class IsFailedMatcher extends WaiterAcceptor<DescribeConnectionsResult> {
+    static class IsFailedMatcher extends WaiterAcceptor<TestConnectionResult> {
         private static final JsonNode expectedResult;
 
         static {
@@ -80,7 +80,7 @@ class TestConnectionSucceeds {
             }
         }
 
-        private static final JmesPathExpression ast = new JmesPathProjection(new JmesPathFlatten(new JmesPathField("Connections")), new JmesPathField("Status"));
+        private static final JmesPathExpression ast = new JmesPathSubExpression(new JmesPathField("Connection"), new JmesPathField("Status"));
 
         /**
          * Takes the result and determines whether the state of the resource matches the expected state. To determine
@@ -91,10 +91,10 @@ class TestConnectionSucceeds {
          * @return True if current state of the resource matches the expected state, False otherwise
          */
         @Override
-        public boolean matches(DescribeConnectionsResult result) {
+        public boolean matches(TestConnectionResult result) {
             JsonNode queryNode = ObjectMapperSingleton.getObjectMapper().valueToTree(result);
             JsonNode finalResult = ast.accept(new JmesPathEvaluationVisitor(), queryNode);
-            return AcceptorPathMatcher.pathAny(expectedResult, finalResult);
+            return AcceptorPathMatcher.path(expectedResult, finalResult);
         }
 
         /**

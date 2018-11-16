@@ -52,7 +52,7 @@ public class ResizeClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide
-     * this parameter or set the value to <code>false</code> the resize type is elastic.
+     * this parameter or set the value to <code>false</code>, the resize type is elastic.
      * </p>
      */
     private Boolean classic;
@@ -220,12 +220,12 @@ public class ResizeClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide
-     * this parameter or set the value to <code>false</code> the resize type is elastic.
+     * this parameter or set the value to <code>false</code>, the resize type is elastic.
      * </p>
      * 
      * @param classic
      *        A boolean value indicating whether the resize operation is using the classic resize process. If you don't
-     *        provide this parameter or set the value to <code>false</code> the resize type is elastic.
+     *        provide this parameter or set the value to <code>false</code>, the resize type is elastic.
      */
 
     public void setClassic(Boolean classic) {
@@ -235,11 +235,11 @@ public class ResizeClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide
-     * this parameter or set the value to <code>false</code> the resize type is elastic.
+     * this parameter or set the value to <code>false</code>, the resize type is elastic.
      * </p>
      * 
      * @return A boolean value indicating whether the resize operation is using the classic resize process. If you don't
-     *         provide this parameter or set the value to <code>false</code> the resize type is elastic.
+     *         provide this parameter or set the value to <code>false</code>, the resize type is elastic.
      */
 
     public Boolean getClassic() {
@@ -249,12 +249,12 @@ public class ResizeClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide
-     * this parameter or set the value to <code>false</code> the resize type is elastic.
+     * this parameter or set the value to <code>false</code>, the resize type is elastic.
      * </p>
      * 
      * @param classic
      *        A boolean value indicating whether the resize operation is using the classic resize process. If you don't
-     *        provide this parameter or set the value to <code>false</code> the resize type is elastic.
+     *        provide this parameter or set the value to <code>false</code>, the resize type is elastic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,11 +266,11 @@ public class ResizeClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide
-     * this parameter or set the value to <code>false</code> the resize type is elastic.
+     * this parameter or set the value to <code>false</code>, the resize type is elastic.
      * </p>
      * 
      * @return A boolean value indicating whether the resize operation is using the classic resize process. If you don't
-     *         provide this parameter or set the value to <code>false</code> the resize type is elastic.
+     *         provide this parameter or set the value to <code>false</code>, the resize type is elastic.
      */
 
     public Boolean isClassic() {
