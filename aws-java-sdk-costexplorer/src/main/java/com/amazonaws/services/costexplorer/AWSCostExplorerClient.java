@@ -230,6 +230,65 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the forecast time period
+     * that you select, based on your past costs.
+     * </p>
+     * 
+     * @param getCostForecastRequest
+     * @return Result of the GetCostForecast operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @sample AWSCostExplorer.GetCostForecast
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostForecast" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetCostForecastResult getCostForecast(GetCostForecastRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCostForecast(request);
+    }
+
+    @SdkInternalApi
+    final GetCostForecastResult executeGetCostForecast(GetCostForecastRequest getCostForecastRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCostForecastRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCostForecastRequest> request = null;
+        Response<GetCostForecastResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCostForecastRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCostForecastRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCostForecast");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCostForecastResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCostForecastResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves all available filter values for a specified filter over a period of time. You can search the dimension
      * values for an arbitrary string.
      * </p>

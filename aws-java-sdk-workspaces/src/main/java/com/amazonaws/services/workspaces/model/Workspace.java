@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a WorkSpace.
+ * Describes a WorkSpace.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/Workspace" target="_top">AWS API
@@ -72,13 +72,13 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
     private String subnetId;
     /**
      * <p>
-     * If the WorkSpace could not be created, contains a textual error message that describes the failure.
+     * The text of the error message that is returned if the WorkSpace cannot be created.
      * </p>
      */
     private String errorMessage;
     /**
      * <p>
-     * If the WorkSpace could not be created, contains the error code.
+     * The error code that is returned if the WorkSpace cannot be created.
      * </p>
      */
     private String errorCode;
@@ -434,11 +434,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the WorkSpace could not be created, contains a textual error message that describes the failure.
+     * The text of the error message that is returned if the WorkSpace cannot be created.
      * </p>
      * 
      * @param errorMessage
-     *        If the WorkSpace could not be created, contains a textual error message that describes the failure.
+     *        The text of the error message that is returned if the WorkSpace cannot be created.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -447,10 +447,10 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the WorkSpace could not be created, contains a textual error message that describes the failure.
+     * The text of the error message that is returned if the WorkSpace cannot be created.
      * </p>
      * 
-     * @return If the WorkSpace could not be created, contains a textual error message that describes the failure.
+     * @return The text of the error message that is returned if the WorkSpace cannot be created.
      */
 
     public String getErrorMessage() {
@@ -459,11 +459,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the WorkSpace could not be created, contains a textual error message that describes the failure.
+     * The text of the error message that is returned if the WorkSpace cannot be created.
      * </p>
      * 
      * @param errorMessage
-     *        If the WorkSpace could not be created, contains a textual error message that describes the failure.
+     *        The text of the error message that is returned if the WorkSpace cannot be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -474,11 +474,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the WorkSpace could not be created, contains the error code.
+     * The error code that is returned if the WorkSpace cannot be created.
      * </p>
      * 
      * @param errorCode
-     *        If the WorkSpace could not be created, contains the error code.
+     *        The error code that is returned if the WorkSpace cannot be created.
      */
 
     public void setErrorCode(String errorCode) {
@@ -487,10 +487,10 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the WorkSpace could not be created, contains the error code.
+     * The error code that is returned if the WorkSpace cannot be created.
      * </p>
      * 
-     * @return If the WorkSpace could not be created, contains the error code.
+     * @return The error code that is returned if the WorkSpace cannot be created.
      */
 
     public String getErrorCode() {
@@ -499,11 +499,11 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the WorkSpace could not be created, contains the error code.
+     * The error code that is returned if the WorkSpace cannot be created.
      * </p>
      * 
      * @param errorCode
-     *        If the WorkSpace could not be created, contains the error code.
+     *        The error code that is returned if the WorkSpace cannot be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

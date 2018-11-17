@@ -55,7 +55,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
      * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
      * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
-     * <code>none</code>, you can't specify port mappings in your container definitions, and the task's containers do
+     * <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks containers do
      * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
      * networking performance for containers because they use the EC2 network stack instead of the virtualized network
      * stack provided by the <code>bridge</code> mode.
@@ -67,17 +67,25 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
-     * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
      * <p>
-     * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
+     * Currently, only Amazon ECS-optimized AMIs, other Amazon Linux variants with the <code>ecs-init</code> package, or
+     * AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     * </p>
+     * </note>
+     * <p>
+     * If the network mode is <code>host</code>, you cannot run multiple instantiations of the same task on a single
      * container instance when port mappings are used.
      * </p>
      * <p>
      * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
-     * Windows containers, you must not specify a network mode.
+     * Windows containers, you must not specify a network mode. If you use the console to register a task definition
+     * with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -176,11 +184,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If you are using the EC2 launch type, this field is optional.
+     * If using the EC2 launch type, this field is optional.
      * </p>
      * <p>
-     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
-     * which determines your range of supported values for the <code>cpu</code> parameter:
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -222,6 +230,72 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The process namespace to use for the containers in the task. The valid values are <code>host</code> or
+     * <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the
+     * <code>host</code> PID mode on the same container instance share the same IPC resources with the host Amazon EC2
+     * instance. If <code>task</code> is specified, all containers within the specified task share the same process
+     * namespace. If no value is specified, the default is a private namespace. For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run
+     * reference</i>.
+     * </p>
+     * <p>
+     * If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
+     * namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+     * security</a>.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * </p>
+     * </note>
+     */
+    private String pidMode;
+    /**
+     * <p>
+     * The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>,
+     * <code>task</code>, or <code>none</code>. If <code>host</code> is specified, then all containers within the tasks
+     * that specified the <code>host</code> IPC mode on the same container instance share the same IPC resources with
+     * the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share
+     * the same IPC resources. If <code>none</code> is specified, then IPC resources within the containers of a task are
+     * private and not shared with other containers in a task or on the container instance. If no value is specified,
+     * then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more
+     * information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in
+     * the <i>Docker run reference</i>.
+     * </p>
+     * <p>
+     * If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of undesired IPC namespace
+     * expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+     * security</a>.
+     * </p>
+     * <p>
+     * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
+     * the following will apply to your IPC resource namespace. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For tasks that use the <code>host</code> IPC mode, IPC namespace related <code>systemControls</code> are not
+     * supported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For tasks that use the <code>task</code> IPC mode, IPC namespace related <code>systemControls</code> will apply
+     * to all containers within a task.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * </p>
+     * </note>
+     */
+    private String ipcMode;
 
     /**
      * <p>
@@ -388,7 +462,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
      * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
      * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
-     * <code>none</code>, you can't specify port mappings in your container definitions, and the task's containers do
+     * <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks containers do
      * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
      * networking performance for containers because they use the EC2 network stack instead of the virtualized network
      * stack provided by the <code>bridge</code> mode.
@@ -400,17 +474,25 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
-     * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
      * <p>
-     * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
+     * Currently, only Amazon ECS-optimized AMIs, other Amazon Linux variants with the <code>ecs-init</code> package, or
+     * AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     * </p>
+     * </note>
+     * <p>
+     * If the network mode is <code>host</code>, you cannot run multiple instantiations of the same task on a single
      * container instance when port mappings are used.
      * </p>
      * <p>
      * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
-     * Windows containers, you must not specify a network mode.
+     * Windows containers, you must not specify a network mode. If you use the console to register a task definition
+     * with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -422,7 +504,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
      *        <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
      *        required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
-     *        to <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        to <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks
      *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
      *        offer the highest networking performance for containers because they use the EC2 network stack instead of
      *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
@@ -434,18 +516,25 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
-     *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
+     *        must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
      *        definition. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
      *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
+     *        <note>
      *        <p>
-     *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
+     *        Currently, only Amazon ECS-optimized AMIs, other Amazon Linux variants with the <code>ecs-init</code>
+     *        package, or AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        If the network mode is <code>host</code>, you cannot run multiple instantiations of the same task on a
      *        single container instance when port mappings are used.
      *        </p>
      *        <p>
      *        Docker for Windows uses different network modes than Docker for Linux. When you register a task definition
-     *        with Windows containers, you must not specify a network mode.
+     *        with Windows containers, you must not specify a network mode. If you use the console to register a task
+     *        definition with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -463,7 +552,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
      * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
      * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
-     * <code>none</code>, you can't specify port mappings in your container definitions, and the task's containers do
+     * <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks containers do
      * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
      * networking performance for containers because they use the EC2 network stack instead of the virtualized network
      * stack provided by the <code>bridge</code> mode.
@@ -475,17 +564,25 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
-     * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
      * <p>
-     * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
+     * Currently, only Amazon ECS-optimized AMIs, other Amazon Linux variants with the <code>ecs-init</code> package, or
+     * AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     * </p>
+     * </note>
+     * <p>
+     * If the network mode is <code>host</code>, you cannot run multiple instantiations of the same task on a single
      * container instance when port mappings are used.
      * </p>
      * <p>
      * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
-     * Windows containers, you must not specify a network mode.
+     * Windows containers, you must not specify a network mode. If you use the console to register a task definition
+     * with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -496,7 +593,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *         <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
      *         <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
      *         required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
-     *         to <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *         to <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks
      *         containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
      *         offer the highest networking performance for containers because they use the EC2 network stack instead of
      *         the virtualized network stack provided by the <code>bridge</code> mode.</p>
@@ -508,18 +605,26 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         <p>
      *         If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
-     *         must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
+     *         must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
      *         definition. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      *         Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
+     *         <note>
      *         <p>
-     *         If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
+     *         Currently, only Amazon ECS-optimized AMIs, other Amazon Linux variants with the <code>ecs-init</code>
+     *         package, or AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         If the network mode is <code>host</code>, you cannot run multiple instantiations of the same task on a
      *         single container instance when port mappings are used.
      *         </p>
      *         <p>
      *         Docker for Windows uses different network modes than Docker for Linux. When you register a task
-     *         definition with Windows containers, you must not specify a network mode.
+     *         definition with Windows containers, you must not specify a network mode. If you use the console to
+     *         register a task definition with Windows containers, you must choose the <code>&lt;default&gt;</code>
+     *         network mode object.
      *         </p>
      *         <p>
      *         For more information, see <a
@@ -538,7 +643,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
      * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
      * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
-     * <code>none</code>, you can't specify port mappings in your container definitions, and the task's containers do
+     * <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks containers do
      * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
      * networking performance for containers because they use the EC2 network stack instead of the virtualized network
      * stack provided by the <code>bridge</code> mode.
@@ -550,17 +655,25 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
-     * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
      * <p>
-     * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
+     * Currently, only Amazon ECS-optimized AMIs, other Amazon Linux variants with the <code>ecs-init</code> package, or
+     * AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     * </p>
+     * </note>
+     * <p>
+     * If the network mode is <code>host</code>, you cannot run multiple instantiations of the same task on a single
      * container instance when port mappings are used.
      * </p>
      * <p>
      * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
-     * Windows containers, you must not specify a network mode.
+     * Windows containers, you must not specify a network mode. If you use the console to register a task definition
+     * with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -572,7 +685,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
      *        <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
      *        required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
-     *        to <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        to <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks
      *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
      *        offer the highest networking performance for containers because they use the EC2 network stack instead of
      *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
@@ -584,18 +697,25 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
-     *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
+     *        must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
      *        definition. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
      *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
+     *        <note>
      *        <p>
-     *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
+     *        Currently, only Amazon ECS-optimized AMIs, other Amazon Linux variants with the <code>ecs-init</code>
+     *        package, or AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        If the network mode is <code>host</code>, you cannot run multiple instantiations of the same task on a
      *        single container instance when port mappings are used.
      *        </p>
      *        <p>
      *        Docker for Windows uses different network modes than Docker for Linux. When you register a task definition
-     *        with Windows containers, you must not specify a network mode.
+     *        with Windows containers, you must not specify a network mode. If you use the console to register a task
+     *        definition with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -615,7 +735,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
      * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
      * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
-     * <code>none</code>, you can't specify port mappings in your container definitions, and the task's containers do
+     * <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks containers do
      * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
      * networking performance for containers because they use the EC2 network stack instead of the virtualized network
      * stack provided by the <code>bridge</code> mode.
@@ -627,17 +747,25 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
-     * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
      * <p>
-     * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
+     * Currently, only Amazon ECS-optimized AMIs, other Amazon Linux variants with the <code>ecs-init</code> package, or
+     * AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     * </p>
+     * </note>
+     * <p>
+     * If the network mode is <code>host</code>, you cannot run multiple instantiations of the same task on a single
      * container instance when port mappings are used.
      * </p>
      * <p>
      * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
-     * Windows containers, you must not specify a network mode.
+     * Windows containers, you must not specify a network mode. If you use the console to register a task definition
+     * with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -649,7 +777,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
      *        <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
      *        required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
-     *        to <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        to <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks
      *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
      *        offer the highest networking performance for containers because they use the EC2 network stack instead of
      *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
@@ -661,18 +789,25 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
-     *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
+     *        must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
      *        definition. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
      *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
+     *        <note>
      *        <p>
-     *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
+     *        Currently, only Amazon ECS-optimized AMIs, other Amazon Linux variants with the <code>ecs-init</code>
+     *        package, or AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        If the network mode is <code>host</code>, you cannot run multiple instantiations of the same task on a
      *        single container instance when port mappings are used.
      *        </p>
      *        <p>
      *        Docker for Windows uses different network modes than Docker for Linux. When you register a task definition
-     *        with Windows containers, you must not specify a network mode.
+     *        with Windows containers, you must not specify a network mode. If you use the console to register a task
+     *        definition with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -690,7 +825,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
      * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
      * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
-     * <code>none</code>, you can't specify port mappings in your container definitions, and the task's containers do
+     * <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks containers do
      * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
      * networking performance for containers because they use the EC2 network stack instead of the virtualized network
      * stack provided by the <code>bridge</code> mode.
@@ -702,17 +837,25 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
-     * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
      * <p>
-     * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
+     * Currently, only Amazon ECS-optimized AMIs, other Amazon Linux variants with the <code>ecs-init</code> package, or
+     * AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     * </p>
+     * </note>
+     * <p>
+     * If the network mode is <code>host</code>, you cannot run multiple instantiations of the same task on a single
      * container instance when port mappings are used.
      * </p>
      * <p>
      * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
-     * Windows containers, you must not specify a network mode.
+     * Windows containers, you must not specify a network mode. If you use the console to register a task definition
+     * with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -724,7 +867,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
      *        <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
      *        required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
-     *        to <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        to <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks
      *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
      *        offer the highest networking performance for containers because they use the EC2 network stack instead of
      *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
@@ -736,18 +879,25 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
-     *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
+     *        must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
      *        definition. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
      *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
+     *        <note>
      *        <p>
-     *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
+     *        Currently, only Amazon ECS-optimized AMIs, other Amazon Linux variants with the <code>ecs-init</code>
+     *        package, or AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        If the network mode is <code>host</code>, you cannot run multiple instantiations of the same task on a
      *        single container instance when port mappings are used.
      *        </p>
      *        <p>
      *        Docker for Windows uses different network modes than Docker for Linux. When you register a task definition
-     *        with Windows containers, you must not specify a network mode.
+     *        with Windows containers, you must not specify a network mode. If you use the console to register a task
+     *        definition with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -1426,11 +1576,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If you are using the EC2 launch type, this field is optional.
+     * If using the EC2 launch type, this field is optional.
      * </p>
      * <p>
-     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
-     * which determines your range of supported values for the <code>cpu</code> parameter:
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -1474,11 +1624,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        </note>
      *        <p>
-     *        If you are using the EC2 launch type, this field is optional.
+     *        If using the EC2 launch type, this field is optional.
      *        </p>
      *        <p>
-     *        If you are using the Fargate launch type, this field is required and you must use one of the following
-     *        values, which determines your range of supported values for the <code>cpu</code> parameter:
+     *        If using the Fargate launch type, this field is required and you must use one of the following values,
+     *        which determines your range of supported values for the <code>cpu</code> parameter:
      *        </p>
      *        <ul>
      *        <li>
@@ -1528,11 +1678,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If you are using the EC2 launch type, this field is optional.
+     * If using the EC2 launch type, this field is optional.
      * </p>
      * <p>
-     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
-     * which determines your range of supported values for the <code>cpu</code> parameter:
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -1575,11 +1725,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         </note>
      *         <p>
-     *         If you are using the EC2 launch type, this field is optional.
+     *         If using the EC2 launch type, this field is optional.
      *         </p>
      *         <p>
-     *         If you are using the Fargate launch type, this field is required and you must use one of the following
-     *         values, which determines your range of supported values for the <code>cpu</code> parameter:
+     *         If using the Fargate launch type, this field is required and you must use one of the following values,
+     *         which determines your range of supported values for the <code>cpu</code> parameter:
      *         </p>
      *         <ul>
      *         <li>
@@ -1629,11 +1779,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If you are using the EC2 launch type, this field is optional.
+     * If using the EC2 launch type, this field is optional.
      * </p>
      * <p>
-     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
-     * which determines your range of supported values for the <code>cpu</code> parameter:
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -1677,11 +1827,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        </note>
      *        <p>
-     *        If you are using the EC2 launch type, this field is optional.
+     *        If using the EC2 launch type, this field is optional.
      *        </p>
      *        <p>
-     *        If you are using the Fargate launch type, this field is required and you must use one of the following
-     *        values, which determines your range of supported values for the <code>cpu</code> parameter:
+     *        If using the Fargate launch type, this field is required and you must use one of the following values,
+     *        which determines your range of supported values for the <code>cpu</code> parameter:
      *        </p>
      *        <ul>
      *        <li>
@@ -1810,6 +1960,687 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The process namespace to use for the containers in the task. The valid values are <code>host</code> or
+     * <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the
+     * <code>host</code> PID mode on the same container instance share the same IPC resources with the host Amazon EC2
+     * instance. If <code>task</code> is specified, all containers within the specified task share the same process
+     * namespace. If no value is specified, the default is a private namespace. For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run
+     * reference</i>.
+     * </p>
+     * <p>
+     * If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
+     * namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+     * security</a>.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * </p>
+     * </note>
+     * 
+     * @param pidMode
+     *        The process namespace to use for the containers in the task. The valid values are <code>host</code> or
+     *        <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified
+     *        the <code>host</code> PID mode on the same container instance share the same IPC resources with the host
+     *        Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share the
+     *        same process namespace. If no value is specified, the default is a private namespace. For more
+     *        information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
+     *        settings</a> in the <i>Docker run reference</i>.</p>
+     *        <p>
+     *        If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
+     *        namespace expose. For more information, see <a
+     *        href="https://docs.docker.com/engine/security/security/">Docker security</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        </p>
+     * @see PidMode
+     */
+
+    public void setPidMode(String pidMode) {
+        this.pidMode = pidMode;
+    }
+
+    /**
+     * <p>
+     * The process namespace to use for the containers in the task. The valid values are <code>host</code> or
+     * <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the
+     * <code>host</code> PID mode on the same container instance share the same IPC resources with the host Amazon EC2
+     * instance. If <code>task</code> is specified, all containers within the specified task share the same process
+     * namespace. If no value is specified, the default is a private namespace. For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run
+     * reference</i>.
+     * </p>
+     * <p>
+     * If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
+     * namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+     * security</a>.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * </p>
+     * </note>
+     * 
+     * @return The process namespace to use for the containers in the task. The valid values are <code>host</code> or
+     *         <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified
+     *         the <code>host</code> PID mode on the same container instance share the same IPC resources with the host
+     *         Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share
+     *         the same process namespace. If no value is specified, the default is a private namespace. For more
+     *         information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
+     *         settings</a> in the <i>Docker run reference</i>.</p>
+     *         <p>
+     *         If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
+     *         namespace expose. For more information, see <a
+     *         href="https://docs.docker.com/engine/security/security/">Docker security</a>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *         </p>
+     * @see PidMode
+     */
+
+    public String getPidMode() {
+        return this.pidMode;
+    }
+
+    /**
+     * <p>
+     * The process namespace to use for the containers in the task. The valid values are <code>host</code> or
+     * <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the
+     * <code>host</code> PID mode on the same container instance share the same IPC resources with the host Amazon EC2
+     * instance. If <code>task</code> is specified, all containers within the specified task share the same process
+     * namespace. If no value is specified, the default is a private namespace. For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run
+     * reference</i>.
+     * </p>
+     * <p>
+     * If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
+     * namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+     * security</a>.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * </p>
+     * </note>
+     * 
+     * @param pidMode
+     *        The process namespace to use for the containers in the task. The valid values are <code>host</code> or
+     *        <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified
+     *        the <code>host</code> PID mode on the same container instance share the same IPC resources with the host
+     *        Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share the
+     *        same process namespace. If no value is specified, the default is a private namespace. For more
+     *        information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
+     *        settings</a> in the <i>Docker run reference</i>.</p>
+     *        <p>
+     *        If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
+     *        namespace expose. For more information, see <a
+     *        href="https://docs.docker.com/engine/security/security/">Docker security</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PidMode
+     */
+
+    public RegisterTaskDefinitionRequest withPidMode(String pidMode) {
+        setPidMode(pidMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The process namespace to use for the containers in the task. The valid values are <code>host</code> or
+     * <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the
+     * <code>host</code> PID mode on the same container instance share the same IPC resources with the host Amazon EC2
+     * instance. If <code>task</code> is specified, all containers within the specified task share the same process
+     * namespace. If no value is specified, the default is a private namespace. For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run
+     * reference</i>.
+     * </p>
+     * <p>
+     * If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
+     * namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+     * security</a>.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * </p>
+     * </note>
+     * 
+     * @param pidMode
+     *        The process namespace to use for the containers in the task. The valid values are <code>host</code> or
+     *        <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified
+     *        the <code>host</code> PID mode on the same container instance share the same IPC resources with the host
+     *        Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share the
+     *        same process namespace. If no value is specified, the default is a private namespace. For more
+     *        information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
+     *        settings</a> in the <i>Docker run reference</i>.</p>
+     *        <p>
+     *        If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
+     *        namespace expose. For more information, see <a
+     *        href="https://docs.docker.com/engine/security/security/">Docker security</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        </p>
+     * @see PidMode
+     */
+
+    public void setPidMode(PidMode pidMode) {
+        withPidMode(pidMode);
+    }
+
+    /**
+     * <p>
+     * The process namespace to use for the containers in the task. The valid values are <code>host</code> or
+     * <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the
+     * <code>host</code> PID mode on the same container instance share the same IPC resources with the host Amazon EC2
+     * instance. If <code>task</code> is specified, all containers within the specified task share the same process
+     * namespace. If no value is specified, the default is a private namespace. For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run
+     * reference</i>.
+     * </p>
+     * <p>
+     * If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
+     * namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+     * security</a>.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * </p>
+     * </note>
+     * 
+     * @param pidMode
+     *        The process namespace to use for the containers in the task. The valid values are <code>host</code> or
+     *        <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified
+     *        the <code>host</code> PID mode on the same container instance share the same IPC resources with the host
+     *        Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share the
+     *        same process namespace. If no value is specified, the default is a private namespace. For more
+     *        information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
+     *        settings</a> in the <i>Docker run reference</i>.</p>
+     *        <p>
+     *        If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
+     *        namespace expose. For more information, see <a
+     *        href="https://docs.docker.com/engine/security/security/">Docker security</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PidMode
+     */
+
+    public RegisterTaskDefinitionRequest withPidMode(PidMode pidMode) {
+        this.pidMode = pidMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>,
+     * <code>task</code>, or <code>none</code>. If <code>host</code> is specified, then all containers within the tasks
+     * that specified the <code>host</code> IPC mode on the same container instance share the same IPC resources with
+     * the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share
+     * the same IPC resources. If <code>none</code> is specified, then IPC resources within the containers of a task are
+     * private and not shared with other containers in a task or on the container instance. If no value is specified,
+     * then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more
+     * information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in
+     * the <i>Docker run reference</i>.
+     * </p>
+     * <p>
+     * If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of undesired IPC namespace
+     * expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+     * security</a>.
+     * </p>
+     * <p>
+     * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
+     * the following will apply to your IPC resource namespace. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For tasks that use the <code>host</code> IPC mode, IPC namespace related <code>systemControls</code> are not
+     * supported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For tasks that use the <code>task</code> IPC mode, IPC namespace related <code>systemControls</code> will apply
+     * to all containers within a task.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * </p>
+     * </note>
+     * 
+     * @param ipcMode
+     *        The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>,
+     *        <code>task</code>, or <code>none</code>. If <code>host</code> is specified, then all containers within the
+     *        tasks that specified the <code>host</code> IPC mode on the same container instance share the same IPC
+     *        resources with the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the
+     *        specified task share the same IPC resources. If <code>none</code> is specified, then IPC resources within
+     *        the containers of a task are private and not shared with other containers in a task or on the container
+     *        instance. If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon
+     *        setting on the container instance. For more information, see <a
+     *        href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the <i>Docker
+     *        run reference</i>.</p>
+     *        <p>
+     *        If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of undesired IPC
+     *        namespace expose. For more information, see <a
+     *        href="https://docs.docker.com/engine/security/security/">Docker security</a>.
+     *        </p>
+     *        <p>
+     *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
+     *        the task, the following will apply to your IPC resource namespace. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For tasks that use the <code>host</code> IPC mode, IPC namespace related <code>systemControls</code> are
+     *        not supported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For tasks that use the <code>task</code> IPC mode, IPC namespace related <code>systemControls</code> will
+     *        apply to all containers within a task.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        </p>
+     * @see IpcMode
+     */
+
+    public void setIpcMode(String ipcMode) {
+        this.ipcMode = ipcMode;
+    }
+
+    /**
+     * <p>
+     * The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>,
+     * <code>task</code>, or <code>none</code>. If <code>host</code> is specified, then all containers within the tasks
+     * that specified the <code>host</code> IPC mode on the same container instance share the same IPC resources with
+     * the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share
+     * the same IPC resources. If <code>none</code> is specified, then IPC resources within the containers of a task are
+     * private and not shared with other containers in a task or on the container instance. If no value is specified,
+     * then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more
+     * information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in
+     * the <i>Docker run reference</i>.
+     * </p>
+     * <p>
+     * If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of undesired IPC namespace
+     * expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+     * security</a>.
+     * </p>
+     * <p>
+     * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
+     * the following will apply to your IPC resource namespace. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For tasks that use the <code>host</code> IPC mode, IPC namespace related <code>systemControls</code> are not
+     * supported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For tasks that use the <code>task</code> IPC mode, IPC namespace related <code>systemControls</code> will apply
+     * to all containers within a task.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * </p>
+     * </note>
+     * 
+     * @return The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>,
+     *         <code>task</code>, or <code>none</code>. If <code>host</code> is specified, then all containers within
+     *         the tasks that specified the <code>host</code> IPC mode on the same container instance share the same IPC
+     *         resources with the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the
+     *         specified task share the same IPC resources. If <code>none</code> is specified, then IPC resources within
+     *         the containers of a task are private and not shared with other containers in a task or on the container
+     *         instance. If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon
+     *         setting on the container instance. For more information, see <a
+     *         href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the <i>Docker
+     *         run reference</i>.</p>
+     *         <p>
+     *         If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of undesired IPC
+     *         namespace expose. For more information, see <a
+     *         href="https://docs.docker.com/engine/security/security/">Docker security</a>.
+     *         </p>
+     *         <p>
+     *         If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
+     *         the task, the following will apply to your IPC resource namespace. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     *         Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For tasks that use the <code>host</code> IPC mode, IPC namespace related <code>systemControls</code> are
+     *         not supported.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For tasks that use the <code>task</code> IPC mode, IPC namespace related <code>systemControls</code> will
+     *         apply to all containers within a task.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *         </p>
+     * @see IpcMode
+     */
+
+    public String getIpcMode() {
+        return this.ipcMode;
+    }
+
+    /**
+     * <p>
+     * The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>,
+     * <code>task</code>, or <code>none</code>. If <code>host</code> is specified, then all containers within the tasks
+     * that specified the <code>host</code> IPC mode on the same container instance share the same IPC resources with
+     * the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share
+     * the same IPC resources. If <code>none</code> is specified, then IPC resources within the containers of a task are
+     * private and not shared with other containers in a task or on the container instance. If no value is specified,
+     * then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more
+     * information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in
+     * the <i>Docker run reference</i>.
+     * </p>
+     * <p>
+     * If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of undesired IPC namespace
+     * expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+     * security</a>.
+     * </p>
+     * <p>
+     * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
+     * the following will apply to your IPC resource namespace. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For tasks that use the <code>host</code> IPC mode, IPC namespace related <code>systemControls</code> are not
+     * supported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For tasks that use the <code>task</code> IPC mode, IPC namespace related <code>systemControls</code> will apply
+     * to all containers within a task.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * </p>
+     * </note>
+     * 
+     * @param ipcMode
+     *        The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>,
+     *        <code>task</code>, or <code>none</code>. If <code>host</code> is specified, then all containers within the
+     *        tasks that specified the <code>host</code> IPC mode on the same container instance share the same IPC
+     *        resources with the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the
+     *        specified task share the same IPC resources. If <code>none</code> is specified, then IPC resources within
+     *        the containers of a task are private and not shared with other containers in a task or on the container
+     *        instance. If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon
+     *        setting on the container instance. For more information, see <a
+     *        href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the <i>Docker
+     *        run reference</i>.</p>
+     *        <p>
+     *        If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of undesired IPC
+     *        namespace expose. For more information, see <a
+     *        href="https://docs.docker.com/engine/security/security/">Docker security</a>.
+     *        </p>
+     *        <p>
+     *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
+     *        the task, the following will apply to your IPC resource namespace. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For tasks that use the <code>host</code> IPC mode, IPC namespace related <code>systemControls</code> are
+     *        not supported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For tasks that use the <code>task</code> IPC mode, IPC namespace related <code>systemControls</code> will
+     *        apply to all containers within a task.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpcMode
+     */
+
+    public RegisterTaskDefinitionRequest withIpcMode(String ipcMode) {
+        setIpcMode(ipcMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>,
+     * <code>task</code>, or <code>none</code>. If <code>host</code> is specified, then all containers within the tasks
+     * that specified the <code>host</code> IPC mode on the same container instance share the same IPC resources with
+     * the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share
+     * the same IPC resources. If <code>none</code> is specified, then IPC resources within the containers of a task are
+     * private and not shared with other containers in a task or on the container instance. If no value is specified,
+     * then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more
+     * information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in
+     * the <i>Docker run reference</i>.
+     * </p>
+     * <p>
+     * If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of undesired IPC namespace
+     * expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+     * security</a>.
+     * </p>
+     * <p>
+     * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
+     * the following will apply to your IPC resource namespace. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For tasks that use the <code>host</code> IPC mode, IPC namespace related <code>systemControls</code> are not
+     * supported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For tasks that use the <code>task</code> IPC mode, IPC namespace related <code>systemControls</code> will apply
+     * to all containers within a task.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * </p>
+     * </note>
+     * 
+     * @param ipcMode
+     *        The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>,
+     *        <code>task</code>, or <code>none</code>. If <code>host</code> is specified, then all containers within the
+     *        tasks that specified the <code>host</code> IPC mode on the same container instance share the same IPC
+     *        resources with the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the
+     *        specified task share the same IPC resources. If <code>none</code> is specified, then IPC resources within
+     *        the containers of a task are private and not shared with other containers in a task or on the container
+     *        instance. If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon
+     *        setting on the container instance. For more information, see <a
+     *        href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the <i>Docker
+     *        run reference</i>.</p>
+     *        <p>
+     *        If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of undesired IPC
+     *        namespace expose. For more information, see <a
+     *        href="https://docs.docker.com/engine/security/security/">Docker security</a>.
+     *        </p>
+     *        <p>
+     *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
+     *        the task, the following will apply to your IPC resource namespace. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For tasks that use the <code>host</code> IPC mode, IPC namespace related <code>systemControls</code> are
+     *        not supported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For tasks that use the <code>task</code> IPC mode, IPC namespace related <code>systemControls</code> will
+     *        apply to all containers within a task.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        </p>
+     * @see IpcMode
+     */
+
+    public void setIpcMode(IpcMode ipcMode) {
+        withIpcMode(ipcMode);
+    }
+
+    /**
+     * <p>
+     * The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>,
+     * <code>task</code>, or <code>none</code>. If <code>host</code> is specified, then all containers within the tasks
+     * that specified the <code>host</code> IPC mode on the same container instance share the same IPC resources with
+     * the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share
+     * the same IPC resources. If <code>none</code> is specified, then IPC resources within the containers of a task are
+     * private and not shared with other containers in a task or on the container instance. If no value is specified,
+     * then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more
+     * information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in
+     * the <i>Docker run reference</i>.
+     * </p>
+     * <p>
+     * If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of undesired IPC namespace
+     * expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+     * security</a>.
+     * </p>
+     * <p>
+     * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
+     * the following will apply to your IPC resource namespace. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For tasks that use the <code>host</code> IPC mode, IPC namespace related <code>systemControls</code> are not
+     * supported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For tasks that use the <code>task</code> IPC mode, IPC namespace related <code>systemControls</code> will apply
+     * to all containers within a task.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * </p>
+     * </note>
+     * 
+     * @param ipcMode
+     *        The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>,
+     *        <code>task</code>, or <code>none</code>. If <code>host</code> is specified, then all containers within the
+     *        tasks that specified the <code>host</code> IPC mode on the same container instance share the same IPC
+     *        resources with the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the
+     *        specified task share the same IPC resources. If <code>none</code> is specified, then IPC resources within
+     *        the containers of a task are private and not shared with other containers in a task or on the container
+     *        instance. If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon
+     *        setting on the container instance. For more information, see <a
+     *        href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the <i>Docker
+     *        run reference</i>.</p>
+     *        <p>
+     *        If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of undesired IPC
+     *        namespace expose. For more information, see <a
+     *        href="https://docs.docker.com/engine/security/security/">Docker security</a>.
+     *        </p>
+     *        <p>
+     *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
+     *        the task, the following will apply to your IPC resource namespace. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For tasks that use the <code>host</code> IPC mode, IPC namespace related <code>systemControls</code> are
+     *        not supported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For tasks that use the <code>task</code> IPC mode, IPC namespace related <code>systemControls</code> will
+     *        apply to all containers within a task.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpcMode
+     */
+
+    public RegisterTaskDefinitionRequest withIpcMode(IpcMode ipcMode) {
+        this.ipcMode = ipcMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1841,7 +2672,11 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
         if (getMemory() != null)
             sb.append("Memory: ").append(getMemory()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getPidMode() != null)
+            sb.append("PidMode: ").append(getPidMode()).append(",");
+        if (getIpcMode() != null)
+            sb.append("IpcMode: ").append(getIpcMode());
         sb.append("}");
         return sb.toString();
     }
@@ -1900,6 +2735,14 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getPidMode() == null ^ this.getPidMode() == null)
+            return false;
+        if (other.getPidMode() != null && other.getPidMode().equals(this.getPidMode()) == false)
+            return false;
+        if (other.getIpcMode() == null ^ this.getIpcMode() == null)
+            return false;
+        if (other.getIpcMode() != null && other.getIpcMode().equals(this.getIpcMode()) == false)
+            return false;
         return true;
     }
 
@@ -1919,6 +2762,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getCpu() == null) ? 0 : getCpu().hashCode());
         hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getPidMode() == null) ? 0 : getPidMode().hashCode());
+        hashCode = prime * hashCode + ((getIpcMode() == null) ? 0 : getIpcMode().hashCode());
         return hashCode;
     }
 

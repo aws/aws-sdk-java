@@ -19,9 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a WorkSpace that could not be rebooted (<a>RebootWorkspaces</a>), rebuilt
- * (<a>RebuildWorkspaces</a>), terminated (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped
- * (<a>StopWorkspaces</a>).
+ * Describes a WorkSpace that could not be rebooted. (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>),
+ * terminated (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/FailedWorkspaceChangeRequest"
@@ -38,13 +37,13 @@ public class FailedWorkspaceChangeRequest implements Serializable, Cloneable, St
     private String workspaceId;
     /**
      * <p>
-     * The error code.
+     * The error code that is returned if the WorkSpace cannot be rebooted.
      * </p>
      */
     private String errorCode;
     /**
      * <p>
-     * The textual error message.
+     * The text of the error message that is returned if the WorkSpace cannot be rebooted.
      * </p>
      */
     private String errorMessage;
@@ -91,11 +90,11 @@ public class FailedWorkspaceChangeRequest implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The error code.
+     * The error code that is returned if the WorkSpace cannot be rebooted.
      * </p>
      * 
      * @param errorCode
-     *        The error code.
+     *        The error code that is returned if the WorkSpace cannot be rebooted.
      */
 
     public void setErrorCode(String errorCode) {
@@ -104,10 +103,10 @@ public class FailedWorkspaceChangeRequest implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The error code.
+     * The error code that is returned if the WorkSpace cannot be rebooted.
      * </p>
      * 
-     * @return The error code.
+     * @return The error code that is returned if the WorkSpace cannot be rebooted.
      */
 
     public String getErrorCode() {
@@ -116,11 +115,11 @@ public class FailedWorkspaceChangeRequest implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The error code.
+     * The error code that is returned if the WorkSpace cannot be rebooted.
      * </p>
      * 
      * @param errorCode
-     *        The error code.
+     *        The error code that is returned if the WorkSpace cannot be rebooted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,11 +130,11 @@ public class FailedWorkspaceChangeRequest implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The textual error message.
+     * The text of the error message that is returned if the WorkSpace cannot be rebooted.
      * </p>
      * 
      * @param errorMessage
-     *        The textual error message.
+     *        The text of the error message that is returned if the WorkSpace cannot be rebooted.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -144,10 +143,10 @@ public class FailedWorkspaceChangeRequest implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The textual error message.
+     * The text of the error message that is returned if the WorkSpace cannot be rebooted.
      * </p>
      * 
-     * @return The textual error message.
+     * @return The text of the error message that is returned if the WorkSpace cannot be rebooted.
      */
 
     public String getErrorMessage() {
@@ -156,11 +155,11 @@ public class FailedWorkspaceChangeRequest implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The textual error message.
+     * The text of the error message that is returned if the WorkSpace cannot be rebooted.
      * </p>
      * 
      * @param errorMessage
-     *        The textual error message.
+     *        The text of the error message that is returned if the WorkSpace cannot be rebooted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

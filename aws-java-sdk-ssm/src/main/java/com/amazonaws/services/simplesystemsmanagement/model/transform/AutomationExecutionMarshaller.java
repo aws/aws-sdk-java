@@ -75,6 +75,10 @@ public class AutomationExecutionMarshaller {
             .marshallLocationName("MaxErrors").build();
     private static final MarshallingInfo<String> TARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Target").build();
+    private static final MarshallingInfo<List> TARGETLOCATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetLocations").build();
+    private static final MarshallingInfo<StructuredPojo> PROGRESSCOUNTERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProgressCounters").build();
 
     private static final AutomationExecutionMarshaller instance = new AutomationExecutionMarshaller();
 
@@ -115,6 +119,8 @@ public class AutomationExecutionMarshaller {
             protocolMarshaller.marshall(automationExecution.getMaxConcurrency(), MAXCONCURRENCY_BINDING);
             protocolMarshaller.marshall(automationExecution.getMaxErrors(), MAXERRORS_BINDING);
             protocolMarshaller.marshall(automationExecution.getTarget(), TARGET_BINDING);
+            protocolMarshaller.marshall(automationExecution.getTargetLocations(), TARGETLOCATIONS_BINDING);
+            protocolMarshaller.marshall(automationExecution.getProgressCounters(), PROGRESSCOUNTERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

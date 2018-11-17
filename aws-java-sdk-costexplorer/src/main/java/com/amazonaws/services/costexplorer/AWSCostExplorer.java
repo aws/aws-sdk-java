@@ -91,6 +91,24 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
+     * Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the forecast time period
+     * that you select, based on your past costs.
+     * </p>
+     * 
+     * @param getCostForecastRequest
+     * @return Result of the GetCostForecast operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @sample AWSCostExplorer.GetCostForecast
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostForecast" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetCostForecastResult getCostForecast(GetCostForecastRequest getCostForecastRequest);
+
+    /**
+     * <p>
      * Retrieves all available filter values for a specified filter over a period of time. You can search the dimension
      * values for an arbitrary string.
      * </p>

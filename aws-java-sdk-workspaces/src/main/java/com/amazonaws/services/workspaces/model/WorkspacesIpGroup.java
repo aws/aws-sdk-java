@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about an IP access control group.
+ * Describes an IP access control group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspacesIpGroup" target="_top">AWS API
@@ -30,7 +30,7 @@ public class WorkspacesIpGroup implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the group.
+     * The identifier of the group.
      * </p>
      */
     private String groupId;
@@ -55,11 +55,11 @@ public class WorkspacesIpGroup implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the group.
+     * The identifier of the group.
      * </p>
      * 
      * @param groupId
-     *        The ID of the group.
+     *        The identifier of the group.
      */
 
     public void setGroupId(String groupId) {
@@ -68,10 +68,10 @@ public class WorkspacesIpGroup implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the group.
+     * The identifier of the group.
      * </p>
      * 
-     * @return The ID of the group.
+     * @return The identifier of the group.
      */
 
     public String getGroupId() {
@@ -80,11 +80,11 @@ public class WorkspacesIpGroup implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the group.
+     * The identifier of the group.
      * </p>
      * 
      * @param groupId
-     *        The ID of the group.
+     *        The identifier of the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

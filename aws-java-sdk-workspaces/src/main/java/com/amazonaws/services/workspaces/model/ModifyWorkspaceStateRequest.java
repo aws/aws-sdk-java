@@ -27,7 +27,7 @@ public class ModifyWorkspaceStateRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the WorkSpace.
+     * The identifier of the WorkSpace.
      * </p>
      */
     private String workspaceId;
@@ -40,11 +40,11 @@ public class ModifyWorkspaceStateRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the WorkSpace.
+     * The identifier of the WorkSpace.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the WorkSpace.
+     *        The identifier of the WorkSpace.
      */
 
     public void setWorkspaceId(String workspaceId) {
@@ -53,10 +53,10 @@ public class ModifyWorkspaceStateRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the WorkSpace.
+     * The identifier of the WorkSpace.
      * </p>
      * 
-     * @return The ID of the WorkSpace.
+     * @return The identifier of the WorkSpace.
      */
 
     public String getWorkspaceId() {
@@ -65,11 +65,11 @@ public class ModifyWorkspaceStateRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the WorkSpace.
+     * The identifier of the WorkSpace.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the WorkSpace.
+     *        The identifier of the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

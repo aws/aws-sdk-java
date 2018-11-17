@@ -504,8 +504,8 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
     /**
      * <p>
      * Creates a new document classifier that you can use to categorize documents. To create a classifier you provide a
-     * set of training documents that are labeled with the categories that you want to use. After the classifier is
-     * trained you can use it to categorize a set of unlabeled documents into those categories.
+     * set of training documents that labeled with the categories that you want to use. After the classifier is trained
+     * you can use it to categorize a set of labeled documents into the categories.
      * </p>
      * 
      * @param createDocumentClassifierRequest
@@ -564,6 +564,77 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<CreateDocumentClassifierResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateDocumentClassifierResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an entity recognizer using submitted files. After your <code>CreateEntityRecognizer</code> request is
+     * submitted, you can check job status using the API.
+     * </p>
+     * 
+     * @param createEntityRecognizerRequest
+     * @return Result of the CreateEntityRecognizer operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws ResourceInUseException
+     *         The specified name is already in use. Use a different name and try your request again.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceLimitExceededException
+     *         The maximum number of recognizers per account has been exceeded. Review the recognizers, perform cleanup,
+     *         and then try your request again.
+     * @throws UnsupportedLanguageException
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, Amazon
+     *         Comprehend accepts only English or Spanish text.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.CreateEntityRecognizer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEntityRecognizer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateEntityRecognizerResult createEntityRecognizer(CreateEntityRecognizerRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateEntityRecognizer(request);
+    }
+
+    @SdkInternalApi
+    final CreateEntityRecognizerResult executeCreateEntityRecognizer(CreateEntityRecognizerRequest createEntityRecognizerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createEntityRecognizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateEntityRecognizerRequest> request = null;
+        Response<CreateEntityRecognizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateEntityRecognizerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createEntityRecognizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEntityRecognizer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateEntityRecognizerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateEntityRecognizerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -641,6 +712,82 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDocumentClassifierResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteDocumentClassifierResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an entity recognizer.
+     * </p>
+     * <p>
+     * Only those recognizers that are in terminated states (IN_ERROR, TRAINED) will be deleted. If an active inference
+     * job is using the model, a <code>ResourceInUseException</code> will be returned.
+     * </p>
+     * <p>
+     * This is an asynchronous action that puts the recognizer into a DELETING state, and it is then removed by a
+     * background job. Once removed, the recognizer disappears from your account and is no longer available for use.
+     * </p>
+     * 
+     * @param deleteEntityRecognizerRequest
+     * @return Result of the DeleteEntityRecognizer operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+     *         state and try your request again.
+     * @throws ResourceInUseException
+     *         The specified name is already in use. Use a different name and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DeleteEntityRecognizer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteEntityRecognizer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteEntityRecognizerResult deleteEntityRecognizer(DeleteEntityRecognizerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEntityRecognizer(request);
+    }
+
+    @SdkInternalApi
+    final DeleteEntityRecognizerResult executeDeleteEntityRecognizer(DeleteEntityRecognizerRequest deleteEntityRecognizerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteEntityRecognizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteEntityRecognizerRequest> request = null;
+        Response<DeleteEntityRecognizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteEntityRecognizerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEntityRecognizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEntityRecognizer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteEntityRecognizerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteEntityRecognizerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -902,6 +1049,71 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<DescribeEntitiesDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeEntitiesDetectionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides details about an entity recognizer including status, S3 buckets containing training data, recognizer
+     * metadata, metrics, and so on.
+     * </p>
+     * 
+     * @param describeEntityRecognizerRequest
+     * @return Result of the DescribeEntityRecognizer operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeEntityRecognizer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEntityRecognizer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeEntityRecognizerResult describeEntityRecognizer(DescribeEntityRecognizerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEntityRecognizer(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEntityRecognizerResult executeDescribeEntityRecognizer(DescribeEntityRecognizerRequest describeEntityRecognizerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeEntityRecognizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEntityRecognizerRequest> request = null;
+        Response<DescribeEntityRecognizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEntityRecognizerRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeEntityRecognizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEntityRecognizer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeEntityRecognizerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeEntityRecognizerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1692,6 +1904,75 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets a list of the properties of all entity recognizers that you created, including recognizers currently in
+     * training. Allows you to filter the list of recognizers based on criteria such as status and submission time. This
+     * call returns up to 500 entity recognizers in the list, with a default number of 100 recognizers in the list.
+     * </p>
+     * <p>
+     * The results of this list are not in any particular order. Please get the list and sort locally if needed.
+     * </p>
+     * 
+     * @param listEntityRecognizersRequest
+     * @return Result of the ListEntityRecognizers operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the <code>ListDocumentClassificationJobs</code> operation is invalid. Specify a
+     *         different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListEntityRecognizers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListEntityRecognizersResult listEntityRecognizers(ListEntityRecognizersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListEntityRecognizers(request);
+    }
+
+    @SdkInternalApi
+    final ListEntityRecognizersResult executeListEntityRecognizers(ListEntityRecognizersRequest listEntityRecognizersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listEntityRecognizersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListEntityRecognizersRequest> request = null;
+        Response<ListEntityRecognizersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListEntityRecognizersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEntityRecognizersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEntityRecognizers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListEntityRecognizersResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListEntityRecognizersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Get a list of key phrase detection jobs that you have submitted.
      * </p>
      * 
@@ -2021,6 +2302,11 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * Starts an asynchronous entity detection job for a collection of documents. Use the operation to track the status
      * of a job.
      * </p>
+     * <p>
+     * This API can be used for either standard entity detection or custom entity recognition. In order to be used for
+     * custom entity recognition, the optional <code>EntityRecognizerArn</code> must be used in order to provide access
+     * to the recognizer being used to detect the custom entity.
+     * </p>
      * 
      * @param startEntitiesDetectionJobRequest
      * @return Result of the StartEntitiesDetectionJob operation returned by the service.
@@ -2028,6 +2314,11 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      *         The request is invalid.
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+     *         state and try your request again.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.StartEntitiesDetectionJob

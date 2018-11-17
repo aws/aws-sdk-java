@@ -58,6 +58,10 @@ public class TaskDefinitionMarshaller {
             .marshallLocationName("cpu").build();
     private static final MarshallingInfo<String> MEMORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("memory").build();
+    private static final MarshallingInfo<String> PIDMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("pidMode").build();
+    private static final MarshallingInfo<String> IPCMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ipcMode").build();
 
     private static final TaskDefinitionMarshaller instance = new TaskDefinitionMarshaller();
 
@@ -90,6 +94,8 @@ public class TaskDefinitionMarshaller {
             protocolMarshaller.marshall(taskDefinition.getRequiresCompatibilities(), REQUIRESCOMPATIBILITIES_BINDING);
             protocolMarshaller.marshall(taskDefinition.getCpu(), CPU_BINDING);
             protocolMarshaller.marshall(taskDefinition.getMemory(), MEMORY_BINDING);
+            protocolMarshaller.marshall(taskDefinition.getPidMode(), PIDMODE_BINDING);
+            protocolMarshaller.marshall(taskDefinition.getIpcMode(), IPCMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

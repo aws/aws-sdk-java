@@ -33,7 +33,8 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
     private com.amazonaws.internal.SdkInternalList<String> workspaceIds;
     /**
      * <p>
-     * The token for the next set of results. (You received this token from a previous call.)
+     * If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive
+     * the next set of results.
      * </p>
      */
     private String nextToken;
@@ -113,11 +114,13 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The token for the next set of results. (You received this token from a previous call.)
+     * If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive
+     * the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results. (You received this token from a previous call.)
+     *        If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to
+     *        receive the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -126,10 +129,12 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The token for the next set of results. (You received this token from a previous call.)
+     * If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive
+     * the next set of results.
      * </p>
      * 
-     * @return The token for the next set of results. (You received this token from a previous call.)
+     * @return If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to
+     *         receive the next set of results.
      */
 
     public String getNextToken() {
@@ -138,11 +143,13 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The token for the next set of results. (You received this token from a previous call.)
+     * If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive
+     * the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results. (You received this token from a previous call.)
+     *        If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to
+     *        receive the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

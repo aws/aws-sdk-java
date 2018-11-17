@@ -31,8 +31,7 @@ public class DescribeWorkspaceDirectoriesResult extends com.amazonaws.AmazonWebS
     private com.amazonaws.internal.SdkInternalList<WorkspaceDirectory> directories;
     /**
      * <p>
-     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
-     * is valid for one day and must be used within that time frame.
+     * The token to use to retrieve the next set of results, or null if no more results are available.
      * </p>
      */
     private String nextToken;
@@ -112,13 +111,11 @@ public class DescribeWorkspaceDirectoriesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
-     * is valid for one day and must be used within that time frame.
+     * The token to use to retrieve the next set of results, or null if no more results are available.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next set of results, or null if there are no more results available. This
-     *        token is valid for one day and must be used within that time frame.
+     *        The token to use to retrieve the next set of results, or null if no more results are available.
      */
 
     public void setNextToken(String nextToken) {
@@ -127,12 +124,10 @@ public class DescribeWorkspaceDirectoriesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
-     * is valid for one day and must be used within that time frame.
+     * The token to use to retrieve the next set of results, or null if no more results are available.
      * </p>
      * 
-     * @return The token to use to retrieve the next set of results, or null if there are no more results available.
-     *         This token is valid for one day and must be used within that time frame.
+     * @return The token to use to retrieve the next set of results, or null if no more results are available.
      */
 
     public String getNextToken() {
@@ -141,13 +136,11 @@ public class DescribeWorkspaceDirectoriesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
-     * is valid for one day and must be used within that time frame.
+     * The token to use to retrieve the next set of results, or null if no more results are available.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next set of results, or null if there are no more results available. This
-     *        token is valid for one day and must be used within that time frame.
+     *        The token to use to retrieve the next set of results, or null if no more results are available.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

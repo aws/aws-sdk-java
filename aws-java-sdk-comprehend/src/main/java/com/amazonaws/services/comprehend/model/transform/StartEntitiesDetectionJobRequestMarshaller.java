@@ -37,6 +37,8 @@ public class StartEntitiesDetectionJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataAccessRoleArn").build();
     private static final MarshallingInfo<String> JOBNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("JobName").build();
+    private static final MarshallingInfo<String> ENTITYRECOGNIZERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EntityRecognizerArn").build();
     private static final MarshallingInfo<String> LANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageCode").build();
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -63,6 +65,7 @@ public class StartEntitiesDetectionJobRequestMarshaller {
             protocolMarshaller.marshall(startEntitiesDetectionJobRequest.getOutputDataConfig(), OUTPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(startEntitiesDetectionJobRequest.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(startEntitiesDetectionJobRequest.getJobName(), JOBNAME_BINDING);
+            protocolMarshaller.marshall(startEntitiesDetectionJobRequest.getEntityRecognizerArn(), ENTITYRECOGNIZERARN_BINDING);
             protocolMarshaller.marshall(startEntitiesDetectionJobRequest.getLanguageCode(), LANGUAGECODE_BINDING);
             protocolMarshaller.marshall(startEntitiesDetectionJobRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
         } catch (Exception e) {

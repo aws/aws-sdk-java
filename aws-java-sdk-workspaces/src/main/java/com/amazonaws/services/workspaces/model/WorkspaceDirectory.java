@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about an AWS Directory Service directory for use with Amazon WorkSpaces.
+ * Describes an AWS Directory Service directory that is used with Amazon WorkSpaces.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceDirectory" target="_top">AWS API

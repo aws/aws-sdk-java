@@ -27,24 +27,24 @@ public class DisassociateIpGroupsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the directory.
+     * The identifier of the directory.
      * </p>
      */
     private String directoryId;
     /**
      * <p>
-     * The IDs of one or more IP access control groups.
+     * The identifiers of one or more IP access control groups.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> groupIds;
 
     /**
      * <p>
-     * The ID of the directory.
+     * The identifier of the directory.
      * </p>
      * 
      * @param directoryId
-     *        The ID of the directory.
+     *        The identifier of the directory.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -53,10 +53,10 @@ public class DisassociateIpGroupsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the directory.
+     * The identifier of the directory.
      * </p>
      * 
-     * @return The ID of the directory.
+     * @return The identifier of the directory.
      */
 
     public String getDirectoryId() {
@@ -65,11 +65,11 @@ public class DisassociateIpGroupsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the directory.
+     * The identifier of the directory.
      * </p>
      * 
      * @param directoryId
-     *        The ID of the directory.
+     *        The identifier of the directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class DisassociateIpGroupsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The IDs of one or more IP access control groups.
+     * The identifiers of one or more IP access control groups.
      * </p>
      * 
-     * @return The IDs of one or more IP access control groups.
+     * @return The identifiers of one or more IP access control groups.
      */
 
     public java.util.List<String> getGroupIds() {
@@ -95,11 +95,11 @@ public class DisassociateIpGroupsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The IDs of one or more IP access control groups.
+     * The identifiers of one or more IP access control groups.
      * </p>
      * 
      * @param groupIds
-     *        The IDs of one or more IP access control groups.
+     *        The identifiers of one or more IP access control groups.
      */
 
     public void setGroupIds(java.util.Collection<String> groupIds) {
@@ -113,7 +113,7 @@ public class DisassociateIpGroupsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The IDs of one or more IP access control groups.
+     * The identifiers of one or more IP access control groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class DisassociateIpGroupsRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param groupIds
-     *        The IDs of one or more IP access control groups.
+     *        The identifiers of one or more IP access control groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class DisassociateIpGroupsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The IDs of one or more IP access control groups.
+     * The identifiers of one or more IP access control groups.
      * </p>
      * 
      * @param groupIds
-     *        The IDs of one or more IP access control groups.
+     *        The identifiers of one or more IP access control groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

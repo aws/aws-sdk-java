@@ -153,6 +153,18 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> validNextSteps;
+    /**
+     * <p>
+     * The targets for the step execution.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Target> targets;
+    /**
+     * <p>
+     * The combination of AWS Regions and accounts targeted by the current Automation execution.
+     * </p>
+     */
+    private TargetLocation targetLocation;
 
     /**
      * <p>
@@ -1154,6 +1166,119 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The targets for the step execution.
+     * </p>
+     * 
+     * @return The targets for the step execution.
+     */
+
+    public java.util.List<Target> getTargets() {
+        if (targets == null) {
+            targets = new com.amazonaws.internal.SdkInternalList<Target>();
+        }
+        return targets;
+    }
+
+    /**
+     * <p>
+     * The targets for the step execution.
+     * </p>
+     * 
+     * @param targets
+     *        The targets for the step execution.
+     */
+
+    public void setTargets(java.util.Collection<Target> targets) {
+        if (targets == null) {
+            this.targets = null;
+            return;
+        }
+
+        this.targets = new com.amazonaws.internal.SdkInternalList<Target>(targets);
+    }
+
+    /**
+     * <p>
+     * The targets for the step execution.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param targets
+     *        The targets for the step execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StepExecution withTargets(Target... targets) {
+        if (this.targets == null) {
+            setTargets(new com.amazonaws.internal.SdkInternalList<Target>(targets.length));
+        }
+        for (Target ele : targets) {
+            this.targets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The targets for the step execution.
+     * </p>
+     * 
+     * @param targets
+     *        The targets for the step execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StepExecution withTargets(java.util.Collection<Target> targets) {
+        setTargets(targets);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The combination of AWS Regions and accounts targeted by the current Automation execution.
+     * </p>
+     * 
+     * @param targetLocation
+     *        The combination of AWS Regions and accounts targeted by the current Automation execution.
+     */
+
+    public void setTargetLocation(TargetLocation targetLocation) {
+        this.targetLocation = targetLocation;
+    }
+
+    /**
+     * <p>
+     * The combination of AWS Regions and accounts targeted by the current Automation execution.
+     * </p>
+     * 
+     * @return The combination of AWS Regions and accounts targeted by the current Automation execution.
+     */
+
+    public TargetLocation getTargetLocation() {
+        return this.targetLocation;
+    }
+
+    /**
+     * <p>
+     * The combination of AWS Regions and accounts targeted by the current Automation execution.
+     * </p>
+     * 
+     * @param targetLocation
+     *        The combination of AWS Regions and accounts targeted by the current Automation execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StepExecution withTargetLocation(TargetLocation targetLocation) {
+        setTargetLocation(targetLocation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1203,7 +1328,11 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
         if (getIsCritical() != null)
             sb.append("IsCritical: ").append(getIsCritical()).append(",");
         if (getValidNextSteps() != null)
-            sb.append("ValidNextSteps: ").append(getValidNextSteps());
+            sb.append("ValidNextSteps: ").append(getValidNextSteps()).append(",");
+        if (getTargets() != null)
+            sb.append("Targets: ").append(getTargets()).append(",");
+        if (getTargetLocation() != null)
+            sb.append("TargetLocation: ").append(getTargetLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -1298,6 +1427,14 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getValidNextSteps() != null && other.getValidNextSteps().equals(this.getValidNextSteps()) == false)
             return false;
+        if (other.getTargets() == null ^ this.getTargets() == null)
+            return false;
+        if (other.getTargets() != null && other.getTargets().equals(this.getTargets()) == false)
+            return false;
+        if (other.getTargetLocation() == null ^ this.getTargetLocation() == null)
+            return false;
+        if (other.getTargetLocation() != null && other.getTargetLocation().equals(this.getTargetLocation()) == false)
+            return false;
         return true;
     }
 
@@ -1326,6 +1463,8 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getNextStep() == null) ? 0 : getNextStep().hashCode());
         hashCode = prime * hashCode + ((getIsCritical() == null) ? 0 : getIsCritical().hashCode());
         hashCode = prime * hashCode + ((getValidNextSteps() == null) ? 0 : getValidNextSteps().hashCode());
+        hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
+        hashCode = prime * hashCode + ((getTargetLocation() == null) ? 0 : getTargetLocation().hashCode());
         return hashCode;
     }
 

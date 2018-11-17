@@ -26,7 +26,8 @@ public enum AutomationExecutionFilterKey {
     ParentExecutionId("ParentExecutionId"),
     CurrentAction("CurrentAction"),
     StartTimeBefore("StartTimeBefore"),
-    StartTimeAfter("StartTimeAfter");
+    StartTimeAfter("StartTimeAfter"),
+    AutomationType("AutomationType");
 
     private String value;
 

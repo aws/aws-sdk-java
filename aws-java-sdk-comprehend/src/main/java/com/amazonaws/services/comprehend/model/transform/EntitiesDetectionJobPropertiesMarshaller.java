@@ -39,6 +39,8 @@ public class EntitiesDetectionJobPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubmitTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> ENTITYRECOGNIZERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EntityRecognizerArn").build();
     private static final MarshallingInfo<StructuredPojo> INPUTDATACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InputDataConfig").build();
     private static final MarshallingInfo<StructuredPojo> OUTPUTDATACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -70,6 +72,7 @@ public class EntitiesDetectionJobPropertiesMarshaller {
             protocolMarshaller.marshall(entitiesDetectionJobProperties.getMessage(), MESSAGE_BINDING);
             protocolMarshaller.marshall(entitiesDetectionJobProperties.getSubmitTime(), SUBMITTIME_BINDING);
             protocolMarshaller.marshall(entitiesDetectionJobProperties.getEndTime(), ENDTIME_BINDING);
+            protocolMarshaller.marshall(entitiesDetectionJobProperties.getEntityRecognizerArn(), ENTITYRECOGNIZERARN_BINDING);
             protocolMarshaller.marshall(entitiesDetectionJobProperties.getInputDataConfig(), INPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(entitiesDetectionJobProperties.getOutputDataConfig(), OUTPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(entitiesDetectionJobProperties.getLanguageCode(), LANGUAGECODE_BINDING);

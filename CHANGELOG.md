@@ -1,4 +1,25 @@
-# __1.11.451__ __2018-11-16__
+# __1.11.452__ __2018-11-16__
+## __AWS Cost Explorer Service__
+  - ### Features
+    - This release introduces a new operation called GetCostForecast operation, which allows you to programmatically access AWS Cost Explorer's forecasting engine and is now generally available.
+
+## __Amazon Comprehend__
+  - ### Features
+    - Amazon Comprehend Custom Entities automatically trains entity recognition models using your entities and noun-based phrases. 
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - This release of Amazon Elastic Container Service (Amazon ECS) introduces support for additional Docker flags as Task Definition parameters. Customers can now configure their ECS Tasks to use pidMode (pid) and ipcMode (ipc) Docker flags.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - AWS Systems Manager Automation now allows you to execute and manage Automation workflows across multiple accounts and regions. 
+
+## __Amazon WorkSpaces__
+  - ### Features
+    - Added new Bring Your Own License (BYOL) automation APIs. With the new APIs, you can list available management CIDR ranges for dedicated tenancy, enable your account for BYOL, describe BYOL status of your account, and import BYOL images. Added new APIs to also describe and delete WorkSpaces images. 
+
+# __1.11.451__ __2018-11-15__
 ## __AWS CodeBuild__
   - ### Features
     - Adding queue phase and configurable queue timeout to CodeBuild.

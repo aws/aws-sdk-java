@@ -27,7 +27,7 @@ public class AuthorizeIpRulesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the group.
+     * The identifier of the group.
      * </p>
      */
     private String groupId;
@@ -40,11 +40,11 @@ public class AuthorizeIpRulesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the group.
+     * The identifier of the group.
      * </p>
      * 
      * @param groupId
-     *        The ID of the group.
+     *        The identifier of the group.
      */
 
     public void setGroupId(String groupId) {
@@ -53,10 +53,10 @@ public class AuthorizeIpRulesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the group.
+     * The identifier of the group.
      * </p>
      * 
-     * @return The ID of the group.
+     * @return The identifier of the group.
      */
 
     public String getGroupId() {
@@ -65,11 +65,11 @@ public class AuthorizeIpRulesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the group.
+     * The identifier of the group.
      * </p>
      * 
      * @param groupId
-     *        The ID of the group.
+     *        The identifier of the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

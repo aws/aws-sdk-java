@@ -131,6 +131,14 @@ public class StepExecutionJsonUnmarshaller implements Unmarshaller<StepExecution
                     context.nextToken();
                     stepExecution.setValidNextSteps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("Targets", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("TargetLocation", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setTargetLocation(TargetLocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

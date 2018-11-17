@@ -67,6 +67,12 @@ public class EntitiesDetectionJobProperties implements Serializable, Cloneable, 
     private java.util.Date endTime;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) that identifies the entity recognizer.
+     * </p>
+     */
+    private String entityRecognizerArn;
+    /**
+     * <p>
      * The input data configuration that you supplied when you created the entities detection job.
      * </p>
      */
@@ -359,6 +365,46 @@ public class EntitiesDetectionJobProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) that identifies the entity recognizer.
+     * </p>
+     * 
+     * @param entityRecognizerArn
+     *        The Amazon Resource Name (ARN) that identifies the entity recognizer.
+     */
+
+    public void setEntityRecognizerArn(String entityRecognizerArn) {
+        this.entityRecognizerArn = entityRecognizerArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies the entity recognizer.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) that identifies the entity recognizer.
+     */
+
+    public String getEntityRecognizerArn() {
+        return this.entityRecognizerArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies the entity recognizer.
+     * </p>
+     * 
+     * @param entityRecognizerArn
+     *        The Amazon Resource Name (ARN) that identifies the entity recognizer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntitiesDetectionJobProperties withEntityRecognizerArn(String entityRecognizerArn) {
+        setEntityRecognizerArn(entityRecognizerArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The input data configuration that you supplied when you created the entities detection job.
      * </p>
      * 
@@ -559,6 +605,8 @@ public class EntitiesDetectionJobProperties implements Serializable, Cloneable, 
             sb.append("SubmitTime: ").append(getSubmitTime()).append(",");
         if (getEndTime() != null)
             sb.append("EndTime: ").append(getEndTime()).append(",");
+        if (getEntityRecognizerArn() != null)
+            sb.append("EntityRecognizerArn: ").append(getEntityRecognizerArn()).append(",");
         if (getInputDataConfig() != null)
             sb.append("InputDataConfig: ").append(getInputDataConfig()).append(",");
         if (getOutputDataConfig() != null)
@@ -605,6 +653,10 @@ public class EntitiesDetectionJobProperties implements Serializable, Cloneable, 
             return false;
         if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
             return false;
+        if (other.getEntityRecognizerArn() == null ^ this.getEntityRecognizerArn() == null)
+            return false;
+        if (other.getEntityRecognizerArn() != null && other.getEntityRecognizerArn().equals(this.getEntityRecognizerArn()) == false)
+            return false;
         if (other.getInputDataConfig() == null ^ this.getInputDataConfig() == null)
             return false;
         if (other.getInputDataConfig() != null && other.getInputDataConfig().equals(this.getInputDataConfig()) == false)
@@ -635,6 +687,7 @@ public class EntitiesDetectionJobProperties implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         hashCode = prime * hashCode + ((getSubmitTime() == null) ? 0 : getSubmitTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode + ((getEntityRecognizerArn() == null) ? 0 : getEntityRecognizerArn().hashCode());
         hashCode = prime * hashCode + ((getInputDataConfig() == null) ? 0 : getInputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getOutputDataConfig() == null) ? 0 : getOutputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());

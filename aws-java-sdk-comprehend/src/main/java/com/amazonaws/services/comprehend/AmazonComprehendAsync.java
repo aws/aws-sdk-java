@@ -204,8 +204,8 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
     /**
      * <p>
      * Creates a new document classifier that you can use to categorize documents. To create a classifier you provide a
-     * set of training documents that are labeled with the categories that you want to use. After the classifier is
-     * trained you can use it to categorize a set of unlabeled documents into those categories.
+     * set of training documents that labeled with the categories that you want to use. After the classifier is trained
+     * you can use it to categorize a set of labeled documents into the categories.
      * </p>
      * 
      * @param createDocumentClassifierRequest
@@ -219,8 +219,8 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
     /**
      * <p>
      * Creates a new document classifier that you can use to categorize documents. To create a classifier you provide a
-     * set of training documents that are labeled with the categories that you want to use. After the classifier is
-     * trained you can use it to categorize a set of unlabeled documents into those categories.
+     * set of training documents that labeled with the categories that you want to use. After the classifier is trained
+     * you can use it to categorize a set of labeled documents into the categories.
      * </p>
      * 
      * @param createDocumentClassifierRequest
@@ -235,6 +235,39 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      */
     java.util.concurrent.Future<CreateDocumentClassifierResult> createDocumentClassifierAsync(CreateDocumentClassifierRequest createDocumentClassifierRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDocumentClassifierRequest, CreateDocumentClassifierResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an entity recognizer using submitted files. After your <code>CreateEntityRecognizer</code> request is
+     * submitted, you can check job status using the API.
+     * </p>
+     * 
+     * @param createEntityRecognizerRequest
+     * @return A Java Future containing the result of the CreateEntityRecognizer operation returned by the service.
+     * @sample AmazonComprehendAsync.CreateEntityRecognizer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEntityRecognizer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEntityRecognizerResult> createEntityRecognizerAsync(CreateEntityRecognizerRequest createEntityRecognizerRequest);
+
+    /**
+     * <p>
+     * Creates an entity recognizer using submitted files. After your <code>CreateEntityRecognizer</code> request is
+     * submitted, you can check job status using the API.
+     * </p>
+     * 
+     * @param createEntityRecognizerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateEntityRecognizer operation returned by the service.
+     * @sample AmazonComprehendAsyncHandler.CreateEntityRecognizer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEntityRecognizer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEntityRecognizerResult> createEntityRecognizerAsync(CreateEntityRecognizerRequest createEntityRecognizerRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateEntityRecognizerRequest, CreateEntityRecognizerResult> asyncHandler);
 
     /**
      * <p>
@@ -282,6 +315,53 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      */
     java.util.concurrent.Future<DeleteDocumentClassifierResult> deleteDocumentClassifierAsync(DeleteDocumentClassifierRequest deleteDocumentClassifierRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDocumentClassifierRequest, DeleteDocumentClassifierResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an entity recognizer.
+     * </p>
+     * <p>
+     * Only those recognizers that are in terminated states (IN_ERROR, TRAINED) will be deleted. If an active inference
+     * job is using the model, a <code>ResourceInUseException</code> will be returned.
+     * </p>
+     * <p>
+     * This is an asynchronous action that puts the recognizer into a DELETING state, and it is then removed by a
+     * background job. Once removed, the recognizer disappears from your account and is no longer available for use.
+     * </p>
+     * 
+     * @param deleteEntityRecognizerRequest
+     * @return A Java Future containing the result of the DeleteEntityRecognizer operation returned by the service.
+     * @sample AmazonComprehendAsync.DeleteEntityRecognizer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteEntityRecognizer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEntityRecognizerResult> deleteEntityRecognizerAsync(DeleteEntityRecognizerRequest deleteEntityRecognizerRequest);
+
+    /**
+     * <p>
+     * Deletes an entity recognizer.
+     * </p>
+     * <p>
+     * Only those recognizers that are in terminated states (IN_ERROR, TRAINED) will be deleted. If an active inference
+     * job is using the model, a <code>ResourceInUseException</code> will be returned.
+     * </p>
+     * <p>
+     * This is an asynchronous action that puts the recognizer into a DELETING state, and it is then removed by a
+     * background job. Once removed, the recognizer disappears from your account and is no longer available for use.
+     * </p>
+     * 
+     * @param deleteEntityRecognizerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEntityRecognizer operation returned by the service.
+     * @sample AmazonComprehendAsyncHandler.DeleteEntityRecognizer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteEntityRecognizer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEntityRecognizerResult> deleteEntityRecognizerAsync(DeleteEntityRecognizerRequest deleteEntityRecognizerRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEntityRecognizerRequest, DeleteEntityRecognizerResult> asyncHandler);
 
     /**
      * <p>
@@ -426,6 +506,39 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
     java.util.concurrent.Future<DescribeEntitiesDetectionJobResult> describeEntitiesDetectionJobAsync(
             DescribeEntitiesDetectionJobRequest describeEntitiesDetectionJobRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeEntitiesDetectionJobRequest, DescribeEntitiesDetectionJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides details about an entity recognizer including status, S3 buckets containing training data, recognizer
+     * metadata, metrics, and so on.
+     * </p>
+     * 
+     * @param describeEntityRecognizerRequest
+     * @return A Java Future containing the result of the DescribeEntityRecognizer operation returned by the service.
+     * @sample AmazonComprehendAsync.DescribeEntityRecognizer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEntityRecognizer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEntityRecognizerResult> describeEntityRecognizerAsync(DescribeEntityRecognizerRequest describeEntityRecognizerRequest);
+
+    /**
+     * <p>
+     * Provides details about an entity recognizer including status, S3 buckets containing training data, recognizer
+     * metadata, metrics, and so on.
+     * </p>
+     * 
+     * @param describeEntityRecognizerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEntityRecognizer operation returned by the service.
+     * @sample AmazonComprehendAsyncHandler.DescribeEntityRecognizer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEntityRecognizer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEntityRecognizerResult> describeEntityRecognizerAsync(DescribeEntityRecognizerRequest describeEntityRecognizerRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEntityRecognizerRequest, DescribeEntityRecognizerResult> asyncHandler);
 
     /**
      * <p>
@@ -837,6 +950,47 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
 
     /**
      * <p>
+     * Gets a list of the properties of all entity recognizers that you created, including recognizers currently in
+     * training. Allows you to filter the list of recognizers based on criteria such as status and submission time. This
+     * call returns up to 500 entity recognizers in the list, with a default number of 100 recognizers in the list.
+     * </p>
+     * <p>
+     * The results of this list are not in any particular order. Please get the list and sort locally if needed.
+     * </p>
+     * 
+     * @param listEntityRecognizersRequest
+     * @return A Java Future containing the result of the ListEntityRecognizers operation returned by the service.
+     * @sample AmazonComprehendAsync.ListEntityRecognizers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEntityRecognizersResult> listEntityRecognizersAsync(ListEntityRecognizersRequest listEntityRecognizersRequest);
+
+    /**
+     * <p>
+     * Gets a list of the properties of all entity recognizers that you created, including recognizers currently in
+     * training. Allows you to filter the list of recognizers based on criteria such as status and submission time. This
+     * call returns up to 500 entity recognizers in the list, with a default number of 100 recognizers in the list.
+     * </p>
+     * <p>
+     * The results of this list are not in any particular order. Please get the list and sort locally if needed.
+     * </p>
+     * 
+     * @param listEntityRecognizersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListEntityRecognizers operation returned by the service.
+     * @sample AmazonComprehendAsyncHandler.ListEntityRecognizers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEntityRecognizersResult> listEntityRecognizersAsync(ListEntityRecognizersRequest listEntityRecognizersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListEntityRecognizersRequest, ListEntityRecognizersResult> asyncHandler);
+
+    /**
+     * <p>
      * Get a list of key phrase detection jobs that you have submitted.
      * </p>
      * 
@@ -1009,6 +1163,11 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * Starts an asynchronous entity detection job for a collection of documents. Use the operation to track the status
      * of a job.
      * </p>
+     * <p>
+     * This API can be used for either standard entity detection or custom entity recognition. In order to be used for
+     * custom entity recognition, the optional <code>EntityRecognizerArn</code> must be used in order to provide access
+     * to the recognizer being used to detect the custom entity.
+     * </p>
      * 
      * @param startEntitiesDetectionJobRequest
      * @return A Java Future containing the result of the StartEntitiesDetectionJob operation returned by the service.
@@ -1023,6 +1182,11 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * <p>
      * Starts an asynchronous entity detection job for a collection of documents. Use the operation to track the status
      * of a job.
+     * </p>
+     * <p>
+     * This API can be used for either standard entity detection or custom entity recognition. In order to be used for
+     * custom entity recognition, the optional <code>EntityRecognizerArn</code> must be used in order to provide access
+     * to the recognizer being used to detect the custom entity.
      * </p>
      * 
      * @param startEntitiesDetectionJobRequest

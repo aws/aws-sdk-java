@@ -94,6 +94,39 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
+     * Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the forecast time period
+     * that you select, based on your past costs.
+     * </p>
+     * 
+     * @param getCostForecastRequest
+     * @return A Java Future containing the result of the GetCostForecast operation returned by the service.
+     * @sample AWSCostExplorerAsync.GetCostForecast
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostForecast" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCostForecastResult> getCostForecastAsync(GetCostForecastRequest getCostForecastRequest);
+
+    /**
+     * <p>
+     * Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the forecast time period
+     * that you select, based on your past costs.
+     * </p>
+     * 
+     * @param getCostForecastRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCostForecast operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.GetCostForecast
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostForecast" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCostForecastResult> getCostForecastAsync(GetCostForecastRequest getCostForecastRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCostForecastRequest, GetCostForecastResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves all available filter values for a specified filter over a period of time. You can search the dimension
      * values for an arbitrary string.
      * </p>

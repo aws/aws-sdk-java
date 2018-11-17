@@ -69,6 +69,10 @@ public class StepExecutionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsCritical").build();
     private static final MarshallingInfo<List> VALIDNEXTSTEPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidNextSteps").build();
+    private static final MarshallingInfo<List> TARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Targets").build();
+    private static final MarshallingInfo<StructuredPojo> TARGETLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetLocation").build();
 
     private static final StepExecutionMarshaller instance = new StepExecutionMarshaller();
 
@@ -106,6 +110,8 @@ public class StepExecutionMarshaller {
             protocolMarshaller.marshall(stepExecution.getNextStep(), NEXTSTEP_BINDING);
             protocolMarshaller.marshall(stepExecution.getIsCritical(), ISCRITICAL_BINDING);
             protocolMarshaller.marshall(stepExecution.getValidNextSteps(), VALIDNEXTSTEPS_BINDING);
+            protocolMarshaller.marshall(stepExecution.getTargets(), TARGETS_BINDING);
+            protocolMarshaller.marshall(stepExecution.getTargetLocation(), TARGETLOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

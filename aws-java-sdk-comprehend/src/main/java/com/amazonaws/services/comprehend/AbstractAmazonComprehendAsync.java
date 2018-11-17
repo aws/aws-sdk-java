@@ -106,6 +106,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateEntityRecognizerResult> createEntityRecognizerAsync(CreateEntityRecognizerRequest request) {
+
+        return createEntityRecognizerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEntityRecognizerResult> createEntityRecognizerAsync(CreateEntityRecognizerRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateEntityRecognizerRequest, CreateEntityRecognizerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDocumentClassifierResult> deleteDocumentClassifierAsync(DeleteDocumentClassifierRequest request) {
 
         return deleteDocumentClassifierAsync(request, null);
@@ -114,6 +127,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     @Override
     public java.util.concurrent.Future<DeleteDocumentClassifierResult> deleteDocumentClassifierAsync(DeleteDocumentClassifierRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDocumentClassifierRequest, DeleteDocumentClassifierResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEntityRecognizerResult> deleteEntityRecognizerAsync(DeleteEntityRecognizerRequest request) {
+
+        return deleteEntityRecognizerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEntityRecognizerResult> deleteEntityRecognizerAsync(DeleteEntityRecognizerRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteEntityRecognizerRequest, DeleteEntityRecognizerResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -170,6 +196,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     @Override
     public java.util.concurrent.Future<DescribeEntitiesDetectionJobResult> describeEntitiesDetectionJobAsync(DescribeEntitiesDetectionJobRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEntitiesDetectionJobRequest, DescribeEntitiesDetectionJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEntityRecognizerResult> describeEntityRecognizerAsync(DescribeEntityRecognizerRequest request) {
+
+        return describeEntityRecognizerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEntityRecognizerResult> describeEntityRecognizerAsync(DescribeEntityRecognizerRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEntityRecognizerRequest, DescribeEntityRecognizerResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -328,6 +367,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     @Override
     public java.util.concurrent.Future<ListEntitiesDetectionJobsResult> listEntitiesDetectionJobsAsync(ListEntitiesDetectionJobsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListEntitiesDetectionJobsRequest, ListEntitiesDetectionJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEntityRecognizersResult> listEntityRecognizersAsync(ListEntityRecognizersRequest request) {
+
+        return listEntityRecognizersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEntityRecognizersResult> listEntityRecognizersAsync(ListEntityRecognizersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListEntityRecognizersRequest, ListEntityRecognizersResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

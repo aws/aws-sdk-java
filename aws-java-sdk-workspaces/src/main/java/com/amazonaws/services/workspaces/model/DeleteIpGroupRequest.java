@@ -27,18 +27,18 @@ public class DeleteIpGroupRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the IP access control group.
+     * The identifier of the IP access control group.
      * </p>
      */
     private String groupId;
 
     /**
      * <p>
-     * The ID of the IP access control group.
+     * The identifier of the IP access control group.
      * </p>
      * 
      * @param groupId
-     *        The ID of the IP access control group.
+     *        The identifier of the IP access control group.
      */
 
     public void setGroupId(String groupId) {
@@ -47,10 +47,10 @@ public class DeleteIpGroupRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the IP access control group.
+     * The identifier of the IP access control group.
      * </p>
      * 
-     * @return The ID of the IP access control group.
+     * @return The identifier of the IP access control group.
      */
 
     public String getGroupId() {
@@ -59,11 +59,11 @@ public class DeleteIpGroupRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the IP access control group.
+     * The identifier of the IP access control group.
      * </p>
      * 
      * @param groupId
-     *        The ID of the IP access control group.
+     *        The identifier of the IP access control group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

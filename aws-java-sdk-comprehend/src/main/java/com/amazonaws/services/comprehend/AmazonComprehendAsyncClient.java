@@ -263,6 +263,39 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateEntityRecognizerResult> createEntityRecognizerAsync(CreateEntityRecognizerRequest request) {
+
+        return createEntityRecognizerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEntityRecognizerResult> createEntityRecognizerAsync(final CreateEntityRecognizerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateEntityRecognizerRequest, CreateEntityRecognizerResult> asyncHandler) {
+        final CreateEntityRecognizerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateEntityRecognizerResult>() {
+            @Override
+            public CreateEntityRecognizerResult call() throws Exception {
+                CreateEntityRecognizerResult result = null;
+
+                try {
+                    result = executeCreateEntityRecognizer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDocumentClassifierResult> deleteDocumentClassifierAsync(DeleteDocumentClassifierRequest request) {
 
         return deleteDocumentClassifierAsync(request, null);
@@ -280,6 +313,39 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
 
                 try {
                     result = executeDeleteDocumentClassifier(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEntityRecognizerResult> deleteEntityRecognizerAsync(DeleteEntityRecognizerRequest request) {
+
+        return deleteEntityRecognizerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEntityRecognizerResult> deleteEntityRecognizerAsync(final DeleteEntityRecognizerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteEntityRecognizerRequest, DeleteEntityRecognizerResult> asyncHandler) {
+        final DeleteEntityRecognizerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteEntityRecognizerResult>() {
+            @Override
+            public DeleteEntityRecognizerResult call() throws Exception {
+                DeleteEntityRecognizerResult result = null;
+
+                try {
+                    result = executeDeleteEntityRecognizer(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -416,6 +482,39 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
 
                 try {
                     result = executeDescribeEntitiesDetectionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEntityRecognizerResult> describeEntityRecognizerAsync(DescribeEntityRecognizerRequest request) {
+
+        return describeEntityRecognizerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEntityRecognizerResult> describeEntityRecognizerAsync(final DescribeEntityRecognizerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEntityRecognizerRequest, DescribeEntityRecognizerResult> asyncHandler) {
+        final DescribeEntityRecognizerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEntityRecognizerResult>() {
+            @Override
+            public DescribeEntityRecognizerResult call() throws Exception {
+                DescribeEntityRecognizerResult result = null;
+
+                try {
+                    result = executeDescribeEntityRecognizer(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -817,6 +916,39 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
 
                 try {
                     result = executeListEntitiesDetectionJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEntityRecognizersResult> listEntityRecognizersAsync(ListEntityRecognizersRequest request) {
+
+        return listEntityRecognizersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEntityRecognizersResult> listEntityRecognizersAsync(final ListEntityRecognizersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListEntityRecognizersRequest, ListEntityRecognizersResult> asyncHandler) {
+        final ListEntityRecognizersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListEntityRecognizersResult>() {
+            @Override
+            public ListEntityRecognizersResult call() throws Exception {
+                ListEntityRecognizersResult result = null;
+
+                try {
+                    result = executeListEntityRecognizers(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

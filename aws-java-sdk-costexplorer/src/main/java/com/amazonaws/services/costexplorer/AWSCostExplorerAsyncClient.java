@@ -115,6 +115,39 @@ public class AWSCostExplorerAsyncClient extends AWSCostExplorerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetCostForecastResult> getCostForecastAsync(GetCostForecastRequest request) {
+
+        return getCostForecastAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCostForecastResult> getCostForecastAsync(final GetCostForecastRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCostForecastRequest, GetCostForecastResult> asyncHandler) {
+        final GetCostForecastRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCostForecastResult>() {
+            @Override
+            public GetCostForecastResult call() throws Exception {
+                GetCostForecastResult result = null;
+
+                try {
+                    result = executeGetCostForecast(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDimensionValuesResult> getDimensionValuesAsync(GetDimensionValuesRequest request) {
 
         return getDimensionValuesAsync(request, null);

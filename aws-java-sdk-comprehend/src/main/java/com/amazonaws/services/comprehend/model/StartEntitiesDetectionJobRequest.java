@@ -55,6 +55,14 @@ public class StartEntitiesDetectionJobRequest extends com.amazonaws.AmazonWebSer
     private String jobName;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by the
+     * <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a custom entity recognition
+     * job.
+     * </p>
+     */
+    private String entityRecognizerArn;
+    /**
+     * <p>
      * The language of the input documents. All documents must be in the same language. You can specify any of the
      * languages supported by Amazon Comprehend: English ("en"), Spanish ("es"), French ("fr"), German ("de"), Italian
      * ("it"), or Portuguese ("pt"). If custom entities recognition is used, this parameter is ignored and the language
@@ -255,6 +263,58 @@ public class StartEntitiesDetectionJobRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by the
+     * <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a custom entity recognition
+     * job.
+     * </p>
+     * 
+     * @param entityRecognizerArn
+     *        The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by the
+     *        <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a custom entity
+     *        recognition job.
+     */
+
+    public void setEntityRecognizerArn(String entityRecognizerArn) {
+        this.entityRecognizerArn = entityRecognizerArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by the
+     * <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a custom entity recognition
+     * job.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by the
+     *         <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a custom entity
+     *         recognition job.
+     */
+
+    public String getEntityRecognizerArn() {
+        return this.entityRecognizerArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by the
+     * <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a custom entity recognition
+     * job.
+     * </p>
+     * 
+     * @param entityRecognizerArn
+     *        The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by the
+     *        <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a custom entity
+     *        recognition job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartEntitiesDetectionJobRequest withEntityRecognizerArn(String entityRecognizerArn) {
+        setEntityRecognizerArn(entityRecognizerArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The language of the input documents. All documents must be in the same language. You can specify any of the
      * languages supported by Amazon Comprehend: English ("en"), Spanish ("es"), French ("fr"), German ("de"), Italian
      * ("it"), or Portuguese ("pt"). If custom entities recognition is used, this parameter is ignored and the language
@@ -398,6 +458,8 @@ public class StartEntitiesDetectionJobRequest extends com.amazonaws.AmazonWebSer
             sb.append("DataAccessRoleArn: ").append(getDataAccessRoleArn()).append(",");
         if (getJobName() != null)
             sb.append("JobName: ").append(getJobName()).append(",");
+        if (getEntityRecognizerArn() != null)
+            sb.append("EntityRecognizerArn: ").append(getEntityRecognizerArn()).append(",");
         if (getLanguageCode() != null)
             sb.append("LanguageCode: ").append(getLanguageCode()).append(",");
         if (getClientRequestToken() != null)
@@ -432,6 +494,10 @@ public class StartEntitiesDetectionJobRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getJobName() != null && other.getJobName().equals(this.getJobName()) == false)
             return false;
+        if (other.getEntityRecognizerArn() == null ^ this.getEntityRecognizerArn() == null)
+            return false;
+        if (other.getEntityRecognizerArn() != null && other.getEntityRecognizerArn().equals(this.getEntityRecognizerArn()) == false)
+            return false;
         if (other.getLanguageCode() == null ^ this.getLanguageCode() == null)
             return false;
         if (other.getLanguageCode() != null && other.getLanguageCode().equals(this.getLanguageCode()) == false)
@@ -452,6 +518,7 @@ public class StartEntitiesDetectionJobRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getOutputDataConfig() == null) ? 0 : getOutputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getDataAccessRoleArn() == null) ? 0 : getDataAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getJobName() == null) ? 0 : getJobName().hashCode());
+        hashCode = prime * hashCode + ((getEntityRecognizerArn() == null) ? 0 : getEntityRecognizerArn().hashCode());
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         return hashCode;

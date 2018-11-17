@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about defaults used to create a WorkSpace.
+ * Describes the default values used to create a WorkSpace.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DefaultWorkspaceCreationProperties"
@@ -30,7 +30,7 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * Indicates whether the directory is enabled for Amazon WorkDocs.
+     * Specifies whether the directory is enabled for Amazon WorkDocs.
      * </p>
      */
     private Boolean enableWorkDocs;
@@ -54,18 +54,18 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
     private String customSecurityGroupId;
     /**
      * <p>
-     * Indicates whether the WorkSpace user is an administrator on the WorkSpace.
+     * Specifies whether the WorkSpace user is an administrator on the WorkSpace.
      * </p>
      */
     private Boolean userEnabledAsLocalAdministrator;
 
     /**
      * <p>
-     * Indicates whether the directory is enabled for Amazon WorkDocs.
+     * Specifies whether the directory is enabled for Amazon WorkDocs.
      * </p>
      * 
      * @param enableWorkDocs
-     *        Indicates whether the directory is enabled for Amazon WorkDocs.
+     *        Specifies whether the directory is enabled for Amazon WorkDocs.
      */
 
     public void setEnableWorkDocs(Boolean enableWorkDocs) {
@@ -74,10 +74,10 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * Indicates whether the directory is enabled for Amazon WorkDocs.
+     * Specifies whether the directory is enabled for Amazon WorkDocs.
      * </p>
      * 
-     * @return Indicates whether the directory is enabled for Amazon WorkDocs.
+     * @return Specifies whether the directory is enabled for Amazon WorkDocs.
      */
 
     public Boolean getEnableWorkDocs() {
@@ -86,11 +86,11 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * Indicates whether the directory is enabled for Amazon WorkDocs.
+     * Specifies whether the directory is enabled for Amazon WorkDocs.
      * </p>
      * 
      * @param enableWorkDocs
-     *        Indicates whether the directory is enabled for Amazon WorkDocs.
+     *        Specifies whether the directory is enabled for Amazon WorkDocs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,10 +101,10 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * Indicates whether the directory is enabled for Amazon WorkDocs.
+     * Specifies whether the directory is enabled for Amazon WorkDocs.
      * </p>
      * 
-     * @return Indicates whether the directory is enabled for Amazon WorkDocs.
+     * @return Specifies whether the directory is enabled for Amazon WorkDocs.
      */
 
     public Boolean isEnableWorkDocs() {
@@ -245,11 +245,11 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * Indicates whether the WorkSpace user is an administrator on the WorkSpace.
+     * Specifies whether the WorkSpace user is an administrator on the WorkSpace.
      * </p>
      * 
      * @param userEnabledAsLocalAdministrator
-     *        Indicates whether the WorkSpace user is an administrator on the WorkSpace.
+     *        Specifies whether the WorkSpace user is an administrator on the WorkSpace.
      */
 
     public void setUserEnabledAsLocalAdministrator(Boolean userEnabledAsLocalAdministrator) {
@@ -258,10 +258,10 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * Indicates whether the WorkSpace user is an administrator on the WorkSpace.
+     * Specifies whether the WorkSpace user is an administrator on the WorkSpace.
      * </p>
      * 
-     * @return Indicates whether the WorkSpace user is an administrator on the WorkSpace.
+     * @return Specifies whether the WorkSpace user is an administrator on the WorkSpace.
      */
 
     public Boolean getUserEnabledAsLocalAdministrator() {
@@ -270,11 +270,11 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * Indicates whether the WorkSpace user is an administrator on the WorkSpace.
+     * Specifies whether the WorkSpace user is an administrator on the WorkSpace.
      * </p>
      * 
      * @param userEnabledAsLocalAdministrator
-     *        Indicates whether the WorkSpace user is an administrator on the WorkSpace.
+     *        Specifies whether the WorkSpace user is an administrator on the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,10 +285,10 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * Indicates whether the WorkSpace user is an administrator on the WorkSpace.
+     * Specifies whether the WorkSpace user is an administrator on the WorkSpace.
      * </p>
      * 
-     * @return Indicates whether the WorkSpace user is an administrator on the WorkSpace.
+     * @return Specifies whether the WorkSpace user is an administrator on the WorkSpace.
      */
 
     public Boolean isUserEnabledAsLocalAdministrator() {

@@ -27,13 +27,13 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The IDs of the bundles. This parameter cannot be combined with any other filter.
+     * The identifiers of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> bundleIds;
     /**
      * <p>
-     * The owner of the bundles. This parameter cannot be combined with any other filter.
+     * The owner of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * <p>
      * Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that belong
@@ -50,10 +50,10 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The IDs of the bundles. This parameter cannot be combined with any other filter.
+     * The identifiers of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * 
-     * @return The IDs of the bundles. This parameter cannot be combined with any other filter.
+     * @return The identifiers of the bundles. You cannot combine this parameter with any other filter.
      */
 
     public java.util.List<String> getBundleIds() {
@@ -65,11 +65,11 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The IDs of the bundles. This parameter cannot be combined with any other filter.
+     * The identifiers of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * 
      * @param bundleIds
-     *        The IDs of the bundles. This parameter cannot be combined with any other filter.
+     *        The identifiers of the bundles. You cannot combine this parameter with any other filter.
      */
 
     public void setBundleIds(java.util.Collection<String> bundleIds) {
@@ -83,7 +83,7 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The IDs of the bundles. This parameter cannot be combined with any other filter.
+     * The identifiers of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -92,7 +92,7 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param bundleIds
-     *        The IDs of the bundles. This parameter cannot be combined with any other filter.
+     *        The identifiers of the bundles. You cannot combine this parameter with any other filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +108,11 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The IDs of the bundles. This parameter cannot be combined with any other filter.
+     * The identifiers of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * 
      * @param bundleIds
-     *        The IDs of the bundles. This parameter cannot be combined with any other filter.
+     *        The identifiers of the bundles. You cannot combine this parameter with any other filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,7 +123,7 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The owner of the bundles. This parameter cannot be combined with any other filter.
+     * The owner of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * <p>
      * Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that belong
@@ -131,7 +131,7 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param owner
-     *        The owner of the bundles. This parameter cannot be combined with any other filter.</p>
+     *        The owner of the bundles. You cannot combine this parameter with any other filter.</p>
      *        <p>
      *        Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that
      *        belong to your account.
@@ -143,14 +143,14 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The owner of the bundles. This parameter cannot be combined with any other filter.
+     * The owner of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * <p>
      * Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that belong
      * to your account.
      * </p>
      * 
-     * @return The owner of the bundles. This parameter cannot be combined with any other filter.</p>
+     * @return The owner of the bundles. You cannot combine this parameter with any other filter.</p>
      *         <p>
      *         Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that
      *         belong to your account.
@@ -162,7 +162,7 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The owner of the bundles. This parameter cannot be combined with any other filter.
+     * The owner of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * <p>
      * Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that belong
@@ -170,7 +170,7 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param owner
-     *        The owner of the bundles. This parameter cannot be combined with any other filter.</p>
+     *        The owner of the bundles. You cannot combine this parameter with any other filter.</p>
      *        <p>
      *        Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that
      *        belong to your account.

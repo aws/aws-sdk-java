@@ -136,6 +136,10 @@ public class AutomationExecutionMetadataJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     automationExecutionMetadata.setTarget(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AutomationType", targetDepth)) {
+                    context.nextToken();
+                    automationExecutionMetadata.setAutomationType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

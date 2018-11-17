@@ -27,18 +27,18 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
+     * The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
      * </p>
      */
     private String resourceId;
 
     /**
      * <p>
-     * The ID of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
+     * The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
+     *        The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
      */
 
     public void setResourceId(String resourceId) {
@@ -47,10 +47,10 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
+     * The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
      * </p>
      * 
-     * @return The ID of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
+     * @return The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
      */
 
     public String getResourceId() {
@@ -59,11 +59,11 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
+     * The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
+     *        The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

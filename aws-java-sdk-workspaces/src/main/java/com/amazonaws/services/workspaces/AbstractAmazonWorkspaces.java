@@ -73,6 +73,21 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     }
 
     @Override
+    public DeleteWorkspaceImageResult deleteWorkspaceImage(DeleteWorkspaceImageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAccountResult describeAccount(DescribeAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAccountModificationsResult describeAccountModifications(DescribeAccountModificationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeIpGroupsResult describeIpGroups(DescribeIpGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -103,6 +118,11 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     }
 
     @Override
+    public DescribeWorkspaceImagesResult describeWorkspaceImages(DescribeWorkspaceImagesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeWorkspacesResult describeWorkspaces(DescribeWorkspacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,6 +139,21 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
 
     @Override
     public DisassociateIpGroupsResult disassociateIpGroups(DisassociateIpGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ImportWorkspaceImageResult importWorkspaceImage(ImportWorkspaceImageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAvailableManagementCidrRangesResult listAvailableManagementCidrRanges(ListAvailableManagementCidrRangesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyAccountResult modifyAccount(ModifyAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

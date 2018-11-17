@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the user storage for a WorkSpace bundle.
+ * Describes the user storage for a WorkSpace bundle.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UserStorage" target="_top">AWS API

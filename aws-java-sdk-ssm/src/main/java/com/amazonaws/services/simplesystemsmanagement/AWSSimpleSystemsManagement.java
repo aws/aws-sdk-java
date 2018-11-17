@@ -242,7 +242,7 @@ public interface AWSSimpleSystemsManagement {
      * instance processes the document and configures the instance as specified.
      * </p>
      * <p>
-     * If you associate a document with an instance that already has an associated document, the system throws the
+     * If you associate a document with an instance that already has an associated document, the system returns the
      * AssociationAlreadyExists exception.
      * </p>
      * 
@@ -302,7 +302,7 @@ public interface AWSSimpleSystemsManagement {
      * instance processes the document and configures the instance as specified.
      * </p>
      * <p>
-     * If you associate a document with an instance that already has an associated document, the system throws the
+     * If you associate a document with an instance that already has an associated document, the system returns the
      * AssociationAlreadyExists exception.
      * </p>
      * 

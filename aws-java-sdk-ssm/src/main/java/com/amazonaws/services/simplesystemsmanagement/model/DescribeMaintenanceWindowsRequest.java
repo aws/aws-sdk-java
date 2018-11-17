@@ -28,7 +28,7 @@ public class DescribeMaintenanceWindowsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys are
-     * Name and Enabled.
+     * <b>Name</b> and <b>Enabled</b>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MaintenanceWindowFilter> filters;
@@ -49,11 +49,11 @@ public class DescribeMaintenanceWindowsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys are
-     * Name and Enabled.
+     * <b>Name</b> and <b>Enabled</b>.
      * </p>
      * 
      * @return Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys
-     *         are Name and Enabled.
+     *         are <b>Name</b> and <b>Enabled</b>.
      */
 
     public java.util.List<MaintenanceWindowFilter> getFilters() {
@@ -66,12 +66,12 @@ public class DescribeMaintenanceWindowsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys are
-     * Name and Enabled.
+     * <b>Name</b> and <b>Enabled</b>.
      * </p>
      * 
      * @param filters
      *        Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys
-     *        are Name and Enabled.
+     *        are <b>Name</b> and <b>Enabled</b>.
      */
 
     public void setFilters(java.util.Collection<MaintenanceWindowFilter> filters) {
@@ -86,7 +86,7 @@ public class DescribeMaintenanceWindowsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys are
-     * Name and Enabled.
+     * <b>Name</b> and <b>Enabled</b>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -96,7 +96,7 @@ public class DescribeMaintenanceWindowsRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param filters
      *        Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys
-     *        are Name and Enabled.
+     *        are <b>Name</b> and <b>Enabled</b>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,12 +113,12 @@ public class DescribeMaintenanceWindowsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys are
-     * Name and Enabled.
+     * <b>Name</b> and <b>Enabled</b>.
      * </p>
      * 
      * @param filters
      *        Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys
-     *        are Name and Enabled.
+     *        are <b>Name</b> and <b>Enabled</b>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -100,7 +100,7 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
     private String serviceRoleArn;
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it doesn not execute.
+     * If this time is reached and the command has not already started executing, it doesn't run.
      * </p>
      */
     private Integer timeoutSeconds;
@@ -470,11 +470,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it doesn not execute.
+     * If this time is reached and the command has not already started executing, it doesn't run.
      * </p>
      * 
      * @param timeoutSeconds
-     *        If this time is reached and the command has not already started executing, it doesn not execute.
+     *        If this time is reached and the command has not already started executing, it doesn't run.
      */
 
     public void setTimeoutSeconds(Integer timeoutSeconds) {
@@ -483,10 +483,10 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it doesn not execute.
+     * If this time is reached and the command has not already started executing, it doesn't run.
      * </p>
      * 
-     * @return If this time is reached and the command has not already started executing, it doesn not execute.
+     * @return If this time is reached and the command has not already started executing, it doesn't run.
      */
 
     public Integer getTimeoutSeconds() {
@@ -495,11 +495,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it doesn not execute.
+     * If this time is reached and the command has not already started executing, it doesn't run.
      * </p>
      * 
      * @param timeoutSeconds
-     *        If this time is reached and the command has not already started executing, it doesn not execute.
+     *        If this time is reached and the command has not already started executing, it doesn't run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -14,7 +14,8 @@
 /**
  * <fullname>Amazon WorkSpaces Service</fullname>
  * <p>
- * Amazon WorkSpaces enables you to provision virtual, cloud-based Microsoft Windows desktops for your users.
+ * Amazon WorkSpaces enables you to provision virtual, cloud-based Microsoft Windows and Amazon Linux desktops for your
+ * users.
  * </p>
  */
 package com.amazonaws.services.workspaces;

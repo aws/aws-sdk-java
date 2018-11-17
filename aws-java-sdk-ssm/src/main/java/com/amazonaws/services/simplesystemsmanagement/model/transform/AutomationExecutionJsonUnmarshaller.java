@@ -145,6 +145,15 @@ public class AutomationExecutionJsonUnmarshaller implements Unmarshaller<Automat
                     context.nextToken();
                     automationExecution.setTarget(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TargetLocations", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setTargetLocations(new ListUnmarshaller<TargetLocation>(TargetLocationJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
+                if (context.testExpression("ProgressCounters", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setProgressCounters(ProgressCountersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

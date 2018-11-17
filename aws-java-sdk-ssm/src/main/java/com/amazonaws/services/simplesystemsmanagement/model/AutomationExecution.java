@@ -168,6 +168,19 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String target;
+    /**
+     * <p>
+     * The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TargetLocation> targetLocations;
+    /**
+     * <p>
+     * An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
+     * Automation execution.
+     * </p>
+     */
+    private ProgressCounters progressCounters;
 
     /**
      * <p>
@@ -1325,6 +1338,125 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+     * </p>
+     * 
+     * @return The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+     */
+
+    public java.util.List<TargetLocation> getTargetLocations() {
+        if (targetLocations == null) {
+            targetLocations = new com.amazonaws.internal.SdkInternalList<TargetLocation>();
+        }
+        return targetLocations;
+    }
+
+    /**
+     * <p>
+     * The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+     * </p>
+     * 
+     * @param targetLocations
+     *        The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+     */
+
+    public void setTargetLocations(java.util.Collection<TargetLocation> targetLocations) {
+        if (targetLocations == null) {
+            this.targetLocations = null;
+            return;
+        }
+
+        this.targetLocations = new com.amazonaws.internal.SdkInternalList<TargetLocation>(targetLocations);
+    }
+
+    /**
+     * <p>
+     * The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargetLocations(java.util.Collection)} or {@link #withTargetLocations(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param targetLocations
+     *        The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withTargetLocations(TargetLocation... targetLocations) {
+        if (this.targetLocations == null) {
+            setTargetLocations(new com.amazonaws.internal.SdkInternalList<TargetLocation>(targetLocations.length));
+        }
+        for (TargetLocation ele : targetLocations) {
+            this.targetLocations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+     * </p>
+     * 
+     * @param targetLocations
+     *        The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withTargetLocations(java.util.Collection<TargetLocation> targetLocations) {
+        setTargetLocations(targetLocations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
+     * Automation execution.
+     * </p>
+     * 
+     * @param progressCounters
+     *        An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
+     *        Automation execution.
+     */
+
+    public void setProgressCounters(ProgressCounters progressCounters) {
+        this.progressCounters = progressCounters;
+    }
+
+    /**
+     * <p>
+     * An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
+     * Automation execution.
+     * </p>
+     * 
+     * @return An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
+     *         Automation execution.
+     */
+
+    public ProgressCounters getProgressCounters() {
+        return this.progressCounters;
+    }
+
+    /**
+     * <p>
+     * An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
+     * Automation execution.
+     * </p>
+     * 
+     * @param progressCounters
+     *        An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
+     *        Automation execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withProgressCounters(ProgressCounters progressCounters) {
+        setProgressCounters(progressCounters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1380,7 +1512,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
         if (getMaxErrors() != null)
             sb.append("MaxErrors: ").append(getMaxErrors()).append(",");
         if (getTarget() != null)
-            sb.append("Target: ").append(getTarget());
+            sb.append("Target: ").append(getTarget()).append(",");
+        if (getTargetLocations() != null)
+            sb.append("TargetLocations: ").append(getTargetLocations()).append(",");
+        if (getProgressCounters() != null)
+            sb.append("ProgressCounters: ").append(getProgressCounters());
         sb.append("}");
         return sb.toString();
     }
@@ -1487,6 +1623,14 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getTarget() != null && other.getTarget().equals(this.getTarget()) == false)
             return false;
+        if (other.getTargetLocations() == null ^ this.getTargetLocations() == null)
+            return false;
+        if (other.getTargetLocations() != null && other.getTargetLocations().equals(this.getTargetLocations()) == false)
+            return false;
+        if (other.getProgressCounters() == null ^ this.getProgressCounters() == null)
+            return false;
+        if (other.getProgressCounters() != null && other.getProgressCounters().equals(this.getProgressCounters()) == false)
+            return false;
         return true;
     }
 
@@ -1518,6 +1662,8 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
         hashCode = prime * hashCode + ((getMaxErrors() == null) ? 0 : getMaxErrors().hashCode());
         hashCode = prime * hashCode + ((getTarget() == null) ? 0 : getTarget().hashCode());
+        hashCode = prime * hashCode + ((getTargetLocations() == null) ? 0 : getTargetLocations().hashCode());
+        hashCode = prime * hashCode + ((getProgressCounters() == null) ? 0 : getProgressCounters().hashCode());
         return hashCode;
     }
 

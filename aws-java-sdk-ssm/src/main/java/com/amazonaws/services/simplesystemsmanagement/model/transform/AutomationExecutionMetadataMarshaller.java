@@ -71,6 +71,8 @@ public class AutomationExecutionMetadataMarshaller {
             .marshallLocationName("MaxErrors").build();
     private static final MarshallingInfo<String> TARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Target").build();
+    private static final MarshallingInfo<String> AUTOMATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomationType").build();
 
     private static final AutomationExecutionMetadataMarshaller instance = new AutomationExecutionMetadataMarshaller();
 
@@ -109,6 +111,7 @@ public class AutomationExecutionMetadataMarshaller {
             protocolMarshaller.marshall(automationExecutionMetadata.getMaxConcurrency(), MAXCONCURRENCY_BINDING);
             protocolMarshaller.marshall(automationExecutionMetadata.getMaxErrors(), MAXERRORS_BINDING);
             protocolMarshaller.marshall(automationExecutionMetadata.getTarget(), TARGET_BINDING);
+            protocolMarshaller.marshall(automationExecutionMetadata.getAutomationType(), AUTOMATIONTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

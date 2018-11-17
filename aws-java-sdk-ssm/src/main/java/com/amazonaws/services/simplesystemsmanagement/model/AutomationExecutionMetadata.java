@@ -154,6 +154,16 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
      * </p>
      */
     private String target;
+    /**
+     * <p>
+     * Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount. CrossAccount is an
+     * Automation that executes in multiple AWS Regions and accounts. For more information, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     * >Concurrently Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User
+     * Guide</i>.
+     * </p>
+     */
+    private String automationType;
 
     /**
      * <p>
@@ -1149,6 +1159,124 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount. CrossAccount is an
+     * Automation that executes in multiple AWS Regions and accounts. For more information, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     * >Concurrently Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param automationType
+     *        Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount.
+     *        CrossAccount is an Automation that executes in multiple AWS Regions and accounts. For more information,
+     *        see <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     *        >Concurrently Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager
+     *        User Guide</i>.
+     * @see AutomationType
+     */
+
+    public void setAutomationType(String automationType) {
+        this.automationType = automationType;
+    }
+
+    /**
+     * <p>
+     * Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount. CrossAccount is an
+     * Automation that executes in multiple AWS Regions and accounts. For more information, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     * >Concurrently Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User
+     * Guide</i>.
+     * </p>
+     * 
+     * @return Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount.
+     *         CrossAccount is an Automation that executes in multiple AWS Regions and accounts. For more information,
+     *         see <a href=
+     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     *         >Concurrently Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
+     *         Manager User Guide</i>.
+     * @see AutomationType
+     */
+
+    public String getAutomationType() {
+        return this.automationType;
+    }
+
+    /**
+     * <p>
+     * Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount. CrossAccount is an
+     * Automation that executes in multiple AWS Regions and accounts. For more information, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     * >Concurrently Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param automationType
+     *        Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount.
+     *        CrossAccount is an Automation that executes in multiple AWS Regions and accounts. For more information,
+     *        see <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     *        >Concurrently Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager
+     *        User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutomationType
+     */
+
+    public AutomationExecutionMetadata withAutomationType(String automationType) {
+        setAutomationType(automationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount. CrossAccount is an
+     * Automation that executes in multiple AWS Regions and accounts. For more information, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     * >Concurrently Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param automationType
+     *        Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount.
+     *        CrossAccount is an Automation that executes in multiple AWS Regions and accounts. For more information,
+     *        see <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     *        >Concurrently Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager
+     *        User Guide</i>.
+     * @see AutomationType
+     */
+
+    public void setAutomationType(AutomationType automationType) {
+        withAutomationType(automationType);
+    }
+
+    /**
+     * <p>
+     * Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount. CrossAccount is an
+     * Automation that executes in multiple AWS Regions and accounts. For more information, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     * >Concurrently Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param automationType
+     *        Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount.
+     *        CrossAccount is an Automation that executes in multiple AWS Regions and accounts. For more information,
+     *        see <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     *        >Concurrently Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager
+     *        User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutomationType
+     */
+
+    public AutomationExecutionMetadata withAutomationType(AutomationType automationType) {
+        this.automationType = automationType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1200,7 +1328,9 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
         if (getMaxErrors() != null)
             sb.append("MaxErrors: ").append(getMaxErrors()).append(",");
         if (getTarget() != null)
-            sb.append("Target: ").append(getTarget());
+            sb.append("Target: ").append(getTarget()).append(",");
+        if (getAutomationType() != null)
+            sb.append("AutomationType: ").append(getAutomationType());
         sb.append("}");
         return sb.toString();
     }
@@ -1299,6 +1429,10 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
             return false;
         if (other.getTarget() != null && other.getTarget().equals(this.getTarget()) == false)
             return false;
+        if (other.getAutomationType() == null ^ this.getAutomationType() == null)
+            return false;
+        if (other.getAutomationType() != null && other.getAutomationType().equals(this.getAutomationType()) == false)
+            return false;
         return true;
     }
 
@@ -1328,6 +1462,7 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
         hashCode = prime * hashCode + ((getMaxErrors() == null) ? 0 : getMaxErrors().hashCode());
         hashCode = prime * hashCode + ((getTarget() == null) ? 0 : getTarget().hashCode());
+        hashCode = prime * hashCode + ((getAutomationType() == null) ? 0 : getAutomationType().hashCode());
         return hashCode;
     }
 

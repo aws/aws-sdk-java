@@ -72,6 +72,10 @@ public class EntitiesDetectionJobPropertiesJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     entitiesDetectionJobProperties.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("EntityRecognizerArn", targetDepth)) {
+                    context.nextToken();
+                    entitiesDetectionJobProperties.setEntityRecognizerArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("InputDataConfig", targetDepth)) {
                     context.nextToken();
                     entitiesDetectionJobProperties.setInputDataConfig(InputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
