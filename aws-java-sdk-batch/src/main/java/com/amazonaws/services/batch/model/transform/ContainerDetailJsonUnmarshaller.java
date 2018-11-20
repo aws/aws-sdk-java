@@ -116,6 +116,15 @@ public class ContainerDetailJsonUnmarshaller implements Unmarshaller<ContainerDe
                     context.nextToken();
                     containerDetail.setLogStreamName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("instanceType", targetDepth)) {
+                    context.nextToken();
+                    containerDetail.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("networkInterfaces", targetDepth)) {
+                    context.nextToken();
+                    containerDetail.setNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

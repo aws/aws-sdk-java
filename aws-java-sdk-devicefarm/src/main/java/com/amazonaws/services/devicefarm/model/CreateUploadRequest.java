@@ -131,6 +131,46 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an
@@ -331,6 +371,46 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an
@@ -421,6 +501,46 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
      *        </p>
      *        </li>
      *        </ul>
@@ -522,6 +642,46 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an
@@ -611,6 +771,46 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
      *         </p>
      *         </li>
      *         </ul>
@@ -712,6 +912,46 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an
@@ -802,6 +1042,46 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
      *        </p>
      *        </li>
      *        </ul>
@@ -905,6 +1185,46 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an
@@ -995,6 +1315,46 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
      *        </p>
      *        </li>
      *        </ul>
@@ -1096,6 +1456,46 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an
@@ -1186,6 +1586,46 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
      *        </p>
      *        </li>
      *        </ul>

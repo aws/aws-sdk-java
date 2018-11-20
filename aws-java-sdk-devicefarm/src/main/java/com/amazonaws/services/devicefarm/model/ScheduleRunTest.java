@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents additional test settings.
+ * Represents test settings. This data structure is passed in as the "test" parameter to ScheduleRun. For an example of
+ * the JSON request syntax, see <a>ScheduleRun</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRunTest" target="_top">AWS API
@@ -130,8 +131,20 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
     private String filter;
     /**
      * <p>
-     * The test's parameters, such as the following test framework parameters and fixture settings:
+     * The test's parameters, such as test framework parameters and fixture settings. Parameters are represented by
+     * name-value pairs of strings.
      * </p>
+     * <p>
+     * For all tests:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * app_performance_monitoring: Performance monitoring is enabled by default. Set this parameter to "false" to
+     * disable it.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For Calabash tests:
      * </p>
@@ -154,18 +167,19 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * appium_version: The Appium version. Currently supported values are "1.4.16", "1.6.3", "latest", and "default".
+     * appium_version: The Appium version. Currently supported values are "1.7.2", "1.7.1", "1.6.5", "latest", and
+     * "default".
      * </p>
      * <ul>
      * <li>
      * <p>
-     * “latest” will run the latest Appium version supported by Device Farm (1.6.3).
+     * “latest” will run the latest Appium version supported by Device Farm (1.7.2).
      * </p>
      * </li>
      * <li>
      * <p>
      * For “default”, Device Farm will choose a compatible version of Appium for the device. The current behavior is to
-     * run 1.4.16 on Android devices and iOS 9 and earlier, 1.6.3 for iOS 10 and later.
+     * run 1.7.2 on Android devices and iOS 9 and earlier, 1.7.2 for iOS 10 and later.
      * </p>
      * </li>
      * <li>
@@ -1253,8 +1267,20 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The test's parameters, such as the following test framework parameters and fixture settings:
+     * The test's parameters, such as test framework parameters and fixture settings. Parameters are represented by
+     * name-value pairs of strings.
      * </p>
+     * <p>
+     * For all tests:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * app_performance_monitoring: Performance monitoring is enabled by default. Set this parameter to "false" to
+     * disable it.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For Calabash tests:
      * </p>
@@ -1277,18 +1303,19 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * appium_version: The Appium version. Currently supported values are "1.4.16", "1.6.3", "latest", and "default".
+     * appium_version: The Appium version. Currently supported values are "1.7.2", "1.7.1", "1.6.5", "latest", and
+     * "default".
      * </p>
      * <ul>
      * <li>
      * <p>
-     * “latest” will run the latest Appium version supported by Device Farm (1.6.3).
+     * “latest” will run the latest Appium version supported by Device Farm (1.7.2).
      * </p>
      * </li>
      * <li>
      * <p>
      * For “default”, Device Farm will choose a compatible version of Appium for the device. The current behavior is to
-     * run 1.4.16 on Android devices and iOS 9 and earlier, 1.6.3 for iOS 10 and later.
+     * run 1.7.2 on Android devices and iOS 9 and earlier, 1.7.2 for iOS 10 and later.
      * </p>
      * </li>
      * <li>
@@ -1424,7 +1451,19 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * 
-     * @return The test's parameters, such as the following test framework parameters and fixture settings:</p>
+     * @return The test's parameters, such as test framework parameters and fixture settings. Parameters are represented
+     *         by name-value pairs of strings.</p>
+     *         <p>
+     *         For all tests:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         app_performance_monitoring: Performance monitoring is enabled by default. Set this parameter to "false"
+     *         to disable it.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         For Calabash tests:
      *         </p>
@@ -1447,19 +1486,19 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         appium_version: The Appium version. Currently supported values are "1.4.16", "1.6.3", "latest", and
-     *         "default".
+     *         appium_version: The Appium version. Currently supported values are "1.7.2", "1.7.1", "1.6.5", "latest",
+     *         and "default".
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         “latest” will run the latest Appium version supported by Device Farm (1.6.3).
+     *         “latest” will run the latest Appium version supported by Device Farm (1.7.2).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         For “default”, Device Farm will choose a compatible version of Appium for the device. The current
-     *         behavior is to run 1.4.16 on Android devices and iOS 9 and earlier, 1.6.3 for iOS 10 and later.
+     *         behavior is to run 1.7.2 on Android devices and iOS 9 and earlier, 1.7.2 for iOS 10 and later.
      *         </p>
      *         </li>
      *         <li>
@@ -1601,8 +1640,20 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The test's parameters, such as the following test framework parameters and fixture settings:
+     * The test's parameters, such as test framework parameters and fixture settings. Parameters are represented by
+     * name-value pairs of strings.
      * </p>
+     * <p>
+     * For all tests:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * app_performance_monitoring: Performance monitoring is enabled by default. Set this parameter to "false" to
+     * disable it.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For Calabash tests:
      * </p>
@@ -1625,18 +1676,19 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * appium_version: The Appium version. Currently supported values are "1.4.16", "1.6.3", "latest", and "default".
+     * appium_version: The Appium version. Currently supported values are "1.7.2", "1.7.1", "1.6.5", "latest", and
+     * "default".
      * </p>
      * <ul>
      * <li>
      * <p>
-     * “latest” will run the latest Appium version supported by Device Farm (1.6.3).
+     * “latest” will run the latest Appium version supported by Device Farm (1.7.2).
      * </p>
      * </li>
      * <li>
      * <p>
      * For “default”, Device Farm will choose a compatible version of Appium for the device. The current behavior is to
-     * run 1.4.16 on Android devices and iOS 9 and earlier, 1.6.3 for iOS 10 and later.
+     * run 1.7.2 on Android devices and iOS 9 and earlier, 1.7.2 for iOS 10 and later.
      * </p>
      * </li>
      * <li>
@@ -1773,7 +1825,19 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param parameters
-     *        The test's parameters, such as the following test framework parameters and fixture settings:</p>
+     *        The test's parameters, such as test framework parameters and fixture settings. Parameters are represented
+     *        by name-value pairs of strings.</p>
+     *        <p>
+     *        For all tests:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        app_performance_monitoring: Performance monitoring is enabled by default. Set this parameter to "false" to
+     *        disable it.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        For Calabash tests:
      *        </p>
@@ -1796,19 +1860,19 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        appium_version: The Appium version. Currently supported values are "1.4.16", "1.6.3", "latest", and
-     *        "default".
+     *        appium_version: The Appium version. Currently supported values are "1.7.2", "1.7.1", "1.6.5", "latest",
+     *        and "default".
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        “latest” will run the latest Appium version supported by Device Farm (1.6.3).
+     *        “latest” will run the latest Appium version supported by Device Farm (1.7.2).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For “default”, Device Farm will choose a compatible version of Appium for the device. The current behavior
-     *        is to run 1.4.16 on Android devices and iOS 9 and earlier, 1.6.3 for iOS 10 and later.
+     *        is to run 1.7.2 on Android devices and iOS 9 and earlier, 1.7.2 for iOS 10 and later.
      *        </p>
      *        </li>
      *        <li>
@@ -1950,8 +2014,20 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The test's parameters, such as the following test framework parameters and fixture settings:
+     * The test's parameters, such as test framework parameters and fixture settings. Parameters are represented by
+     * name-value pairs of strings.
      * </p>
+     * <p>
+     * For all tests:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * app_performance_monitoring: Performance monitoring is enabled by default. Set this parameter to "false" to
+     * disable it.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For Calabash tests:
      * </p>
@@ -1974,18 +2050,19 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * appium_version: The Appium version. Currently supported values are "1.4.16", "1.6.3", "latest", and "default".
+     * appium_version: The Appium version. Currently supported values are "1.7.2", "1.7.1", "1.6.5", "latest", and
+     * "default".
      * </p>
      * <ul>
      * <li>
      * <p>
-     * “latest” will run the latest Appium version supported by Device Farm (1.6.3).
+     * “latest” will run the latest Appium version supported by Device Farm (1.7.2).
      * </p>
      * </li>
      * <li>
      * <p>
      * For “default”, Device Farm will choose a compatible version of Appium for the device. The current behavior is to
-     * run 1.4.16 on Android devices and iOS 9 and earlier, 1.6.3 for iOS 10 and later.
+     * run 1.7.2 on Android devices and iOS 9 and earlier, 1.7.2 for iOS 10 and later.
      * </p>
      * </li>
      * <li>
@@ -2122,7 +2199,19 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param parameters
-     *        The test's parameters, such as the following test framework parameters and fixture settings:</p>
+     *        The test's parameters, such as test framework parameters and fixture settings. Parameters are represented
+     *        by name-value pairs of strings.</p>
+     *        <p>
+     *        For all tests:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        app_performance_monitoring: Performance monitoring is enabled by default. Set this parameter to "false" to
+     *        disable it.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        For Calabash tests:
      *        </p>
@@ -2145,19 +2234,19 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        appium_version: The Appium version. Currently supported values are "1.4.16", "1.6.3", "latest", and
-     *        "default".
+     *        appium_version: The Appium version. Currently supported values are "1.7.2", "1.7.1", "1.6.5", "latest",
+     *        and "default".
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        “latest” will run the latest Appium version supported by Device Farm (1.6.3).
+     *        “latest” will run the latest Appium version supported by Device Farm (1.7.2).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For “default”, Device Farm will choose a compatible version of Appium for the device. The current behavior
-     *        is to run 1.4.16 on Android devices and iOS 9 and earlier, 1.6.3 for iOS 10 and later.
+     *        is to run 1.7.2 on Android devices and iOS 9 and earlier, 1.7.2 for iOS 10 and later.
      *        </p>
      *        </li>
      *        <li>

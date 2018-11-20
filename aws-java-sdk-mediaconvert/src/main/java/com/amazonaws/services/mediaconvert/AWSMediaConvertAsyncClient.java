@@ -60,6 +60,39 @@ public class AWSMediaConvertAsyncClient extends AWSMediaConvertClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateCertificateResult> associateCertificateAsync(AssociateCertificateRequest request) {
+
+        return associateCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateCertificateResult> associateCertificateAsync(final AssociateCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateCertificateRequest, AssociateCertificateResult> asyncHandler) {
+        final AssociateCertificateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateCertificateResult>() {
+            @Override
+            public AssociateCertificateResult call() throws Exception {
+                AssociateCertificateResult result = null;
+
+                try {
+                    result = executeAssociateCertificate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelJobResult> cancelJobAsync(CancelJobRequest request) {
 
         return cancelJobAsync(request, null);
@@ -341,6 +374,39 @@ public class AWSMediaConvertAsyncClient extends AWSMediaConvertClient implements
 
                 try {
                     result = executeDescribeEndpoints(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateCertificateResult> disassociateCertificateAsync(DisassociateCertificateRequest request) {
+
+        return disassociateCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateCertificateResult> disassociateCertificateAsync(final DisassociateCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateCertificateRequest, DisassociateCertificateResult> asyncHandler) {
+        final DisassociateCertificateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateCertificateResult>() {
+            @Override
+            public DisassociateCertificateResult call() throws Exception {
+                DisassociateCertificateResult result = null;
+
+                try {
+                    result = executeDisassociateCertificate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

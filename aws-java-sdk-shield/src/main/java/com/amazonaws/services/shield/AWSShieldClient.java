@@ -392,8 +392,6 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AssociateDRTLogBucketResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new AssociateDRTLogBucketResultJsonUnmarshaller());
@@ -498,8 +496,6 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AssociateDRTRoleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociateDRTRoleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -584,8 +580,6 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateProtectionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateProtectionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -653,8 +647,6 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateSubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateSubscriptionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -714,8 +706,6 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteProtectionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteProtectionResultJsonUnmarshaller());
@@ -780,8 +770,6 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteSubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteSubscriptionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -837,8 +825,6 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAttackResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeAttackResultJsonUnmarshaller());
@@ -897,8 +883,6 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeDRTAccessResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeDRTAccessResultJsonUnmarshaller());
@@ -959,8 +943,6 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeEmergencyContactSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeEmergencyContactSettingsResultJsonUnmarshaller());
@@ -1019,8 +1001,6 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeProtectionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeProtectionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1077,8 +1057,6 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeSubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeSubscriptionResultJsonUnmarshaller());
@@ -1158,8 +1136,6 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateDRTLogBucketResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DisassociateDRTLogBucketResultJsonUnmarshaller());
@@ -1230,8 +1206,6 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateDRTRoleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DisassociateDRTRoleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1286,8 +1260,6 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetSubscriptionStateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSubscriptionStateResultJsonUnmarshaller());
@@ -1348,8 +1320,6 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListAttacksResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAttacksResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1409,8 +1379,6 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListProtectionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListProtectionsResultJsonUnmarshaller());
@@ -1474,8 +1442,6 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateEmergencyContactSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1545,8 +1511,6 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateSubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateSubscriptionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1583,18 +1547,18 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -1604,7 +1568,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -1612,11 +1576,13 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

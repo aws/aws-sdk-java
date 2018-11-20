@@ -38,6 +38,8 @@ public class JobMarshaller {
             .marshallLocationName("status").build();
     private static final MarshallingInfo<Boolean> FORCECANCELED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("forceCanceled").build();
+    private static final MarshallingInfo<String> REASONCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("reasonCode").build();
     private static final MarshallingInfo<String> COMMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("comment").build();
     private static final MarshallingInfo<List> TARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -48,6 +50,8 @@ public class JobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("presignedUrlConfig").build();
     private static final MarshallingInfo<StructuredPojo> JOBEXECUTIONSROLLOUTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobExecutionsRolloutConfig").build();
+    private static final MarshallingInfo<StructuredPojo> ABORTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("abortConfig").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -80,11 +84,13 @@ public class JobMarshaller {
             protocolMarshaller.marshall(job.getTargetSelection(), TARGETSELECTION_BINDING);
             protocolMarshaller.marshall(job.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(job.getForceCanceled(), FORCECANCELED_BINDING);
+            protocolMarshaller.marshall(job.getReasonCode(), REASONCODE_BINDING);
             protocolMarshaller.marshall(job.getComment(), COMMENT_BINDING);
             protocolMarshaller.marshall(job.getTargets(), TARGETS_BINDING);
             protocolMarshaller.marshall(job.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(job.getPresignedUrlConfig(), PRESIGNEDURLCONFIG_BINDING);
             protocolMarshaller.marshall(job.getJobExecutionsRolloutConfig(), JOBEXECUTIONSROLLOUTCONFIG_BINDING);
+            protocolMarshaller.marshall(job.getAbortConfig(), ABORTCONFIG_BINDING);
             protocolMarshaller.marshall(job.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(job.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
             protocolMarshaller.marshall(job.getCompletedAt(), COMPLETEDAT_BINDING);

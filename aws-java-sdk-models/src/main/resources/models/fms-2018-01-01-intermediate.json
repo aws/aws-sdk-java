@@ -94,6 +94,7 @@
       "documentation" : "<p>Sets the AWS Firewall Manager administrator account. AWS Firewall Manager must be associated with the master account your AWS organization or associated with a member account that has the appropriate permissions. If the account ID that you submit is not an AWS Organizations master account, AWS Firewall Manager will set the appropriate permissions for the given member account.</p> <p>The account that you associate with AWS Firewall Manager is called the AWS Firewall Manager administrator account. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidOperationException",
         "documentation" : "<p>The operation failed because there was nothing to do. For example, you might have submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the AWS Firewall Manager administrator.</p>",
@@ -112,6 +113,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "AssociateAdminAccountRequest",
@@ -140,6 +142,7 @@
       "documentation" : "<p>Deletes an AWS Firewall Manager association with the IAM role and the Amazon Simple Notification Service (SNS) topic that is used to record AWS Firewall Manager SNS logs.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource was not found.</p>",
@@ -154,6 +157,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteNotificationChannelRequest",
@@ -182,6 +186,7 @@
       "documentation" : "<p>Permanently deletes an AWS Firewall Manager policy. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource was not found.</p>",
@@ -196,6 +201,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeletePolicyRequest",
@@ -224,6 +230,7 @@
       "documentation" : "<p>Disassociates the account that has been set as the AWS Firewall Manager administrator account. You will need to submit an <code>AssociateAdminAccount</code> request to set a new account as the AWS Firewall administrator.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidOperationException",
         "documentation" : "<p>The operation failed because there was nothing to do. For example, you might have submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the AWS Firewall Manager administrator.</p>",
@@ -238,6 +245,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateAdminAccountRequest",
@@ -266,6 +274,7 @@
       "documentation" : "<p>Returns the AWS Organizations master account that is associated with AWS Firewall Manager as the AWS Firewall Manager administrator.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidOperationException",
         "documentation" : "<p>The operation failed because there was nothing to do. For example, you might have submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the AWS Firewall Manager administrator.</p>",
@@ -280,6 +289,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetAdminAccountRequest",
@@ -308,6 +318,7 @@
       "documentation" : "<p>Returns detailed compliance information about the specified member account. Details include resources that are in and out of compliance with the specified policy. Resources are considered non-compliant if the specified policy has not been applied to them.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource was not found.</p>",
@@ -318,6 +329,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetComplianceDetailRequest",
@@ -346,6 +358,7 @@
       "documentation" : "<p>Returns information about the Amazon Simple Notification Service (SNS) topic that is used to record AWS Firewall Manager SNS logs.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource was not found.</p>",
@@ -360,6 +373,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetNotificationChannelRequest",
@@ -388,6 +402,7 @@
       "documentation" : "<p>Returns information about the specified AWS Firewall Manager policy.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource was not found.</p>",
@@ -406,6 +421,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetPolicyRequest",
@@ -434,6 +450,7 @@
       "documentation" : "<p>Returns an array of <code>PolicyComplianceStatus</code> objects in the response. Use <code>PolicyComplianceStatus</code> to get a summary of which member accounts are protected by the specified policy. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource was not found.</p>",
@@ -444,6 +461,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListComplianceStatusRequest",
@@ -472,6 +490,7 @@
       "documentation" : "<p>Returns a <code>MemberAccounts</code> object that lists the member accounts in the administrator's AWS organization.</p> <p>The <code>ListMemberAccounts</code> must be submitted by the account that is set as the AWS Firewall Manager administrator.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource was not found.</p>",
@@ -482,6 +501,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListMemberAccountsRequest",
@@ -510,6 +530,7 @@
       "documentation" : "<p>Returns an array of <code>PolicySummary</code> objects in the response.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource was not found.</p>",
@@ -528,6 +549,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListPoliciesRequest",
@@ -556,6 +578,7 @@
       "documentation" : "<p>Designates the IAM role and Amazon Simple Notification Service (SNS) topic that AWS Firewall Manager uses to record SNS logs.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource was not found.</p>",
@@ -570,6 +593,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutNotificationChannelRequest",
@@ -598,6 +622,7 @@
       "documentation" : "<p>Creates an AWS Firewall Manager policy.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource was not found.</p>",
@@ -624,6 +649,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutPolicyRequest",

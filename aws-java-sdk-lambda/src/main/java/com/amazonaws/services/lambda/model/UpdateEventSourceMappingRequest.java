@@ -27,13 +27,13 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The event source mapping identifier.
+     * The identifier of the event source mapping.
      * </p>
      */
     private String uUID;
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -61,33 +61,48 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
      * characters in length.
      * </p>
      */
     private String functionName;
     /**
      * <p>
-     * Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not poll the
-     * stream.
+     * Disables the event source mapping to pause polling and invocation.
      * </p>
      */
     private Boolean enabled;
     /**
      * <p>
-     * The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your
-     * function. Your function receives an event with all the retrieved records.
+     * The maximum number of items to retrieve in a single batch.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer batchSize;
 
     /**
      * <p>
-     * The event source mapping identifier.
+     * The identifier of the event source mapping.
      * </p>
      * 
      * @param uUID
-     *        The event source mapping identifier.
+     *        The identifier of the event source mapping.
      */
 
     public void setUUID(String uUID) {
@@ -96,10 +111,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The event source mapping identifier.
+     * The identifier of the event source mapping.
      * </p>
      * 
-     * @return The event source mapping identifier.
+     * @return The identifier of the event source mapping.
      */
 
     public String getUUID() {
@@ -108,11 +123,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The event source mapping identifier.
+     * The identifier of the event source mapping.
      * </p>
      * 
      * @param uUID
-     *        The event source mapping identifier.
+     *        The identifier of the event source mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,7 +138,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -151,12 +166,12 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
      * characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the lambda function.</p>
+     *        The name of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
@@ -183,8 +198,8 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        </ul>
      *        <p>
-     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
-     *        to 64 characters in length.
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it's limited to
+     *        64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -193,7 +208,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -221,11 +236,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
      * characters in length.
      * </p>
      * 
-     * @return The name of the lambda function.</p>
+     * @return The name of the Lambda function.</p>
      *         <p class="title">
      *         <b>Name formats</b>
      *         </p>
@@ -253,7 +268,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *         </li>
      *         </ul>
      *         <p>
-     *         The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *         The length constraint applies only to the full ARN. If you specify only the function name, it's limited
      *         to 64 characters in length.
      */
 
@@ -263,7 +278,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -291,12 +306,12 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
      * characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the lambda function.</p>
+     *        The name of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
@@ -323,8 +338,8 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        </ul>
      *        <p>
-     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
-     *        to 64 characters in length.
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it's limited to
+     *        64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,13 +350,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not poll the
-     * stream.
+     * Disables the event source mapping to pause polling and invocation.
      * </p>
      * 
      * @param enabled
-     *        Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not poll
-     *        the stream.
+     *        Disables the event source mapping to pause polling and invocation.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -350,12 +363,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not poll the
-     * stream.
+     * Disables the event source mapping to pause polling and invocation.
      * </p>
      * 
-     * @return Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not
-     *         poll the stream.
+     * @return Disables the event source mapping to pause polling and invocation.
      */
 
     public Boolean getEnabled() {
@@ -364,13 +375,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not poll the
-     * stream.
+     * Disables the event source mapping to pause polling and invocation.
      * </p>
      * 
      * @param enabled
-     *        Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not poll
-     *        the stream.
+     *        Disables the event source mapping to pause polling and invocation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -381,12 +390,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not poll the
-     * stream.
+     * Disables the event source mapping to pause polling and invocation.
      * </p>
      * 
-     * @return Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not
-     *         poll the stream.
+     * @return Disables the event source mapping to pause polling and invocation.
      */
 
     public Boolean isEnabled() {
@@ -395,13 +402,44 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your
-     * function. Your function receives an event with all the retrieved records.
+     * The maximum number of items to retrieve in a single batch.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param batchSize
-     *        The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking
-     *        your function. Your function receives an event with all the retrieved records.
+     *        The maximum number of items to retrieve in a single batch.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     *        </p>
+     *        </li>
      */
 
     public void setBatchSize(Integer batchSize) {
@@ -410,12 +448,43 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your
-     * function. Your function receives an event with all the retrieved records.
+     * The maximum number of items to retrieve in a single batch.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The largest number of records that AWS Lambda will retrieve from your event source at the time of
-     *         invoking your function. Your function receives an event with all the retrieved records.
+     * @return The maximum number of items to retrieve in a single batch.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     *         </p>
+     *         </li>
      */
 
     public Integer getBatchSize() {
@@ -424,13 +493,44 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your
-     * function. Your function receives an event with all the retrieved records.
+     * The maximum number of items to retrieve in a single batch.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param batchSize
-     *        The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking
-     *        your function. Your function receives an event with all the retrieved records.
+     *        The maximum number of items to retrieve in a single batch.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

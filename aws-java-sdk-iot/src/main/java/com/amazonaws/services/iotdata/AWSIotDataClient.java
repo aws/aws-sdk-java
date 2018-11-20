@@ -373,8 +373,6 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteThingShadowResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(false).withHasStreamingSuccessResponse(false), new DeleteThingShadowResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -447,8 +445,6 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetThingShadowResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(false).withHasStreamingSuccessResponse(false), new GetThingShadowResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -511,8 +507,6 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<PublishResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new PublishResultJsonUnmarshaller());
@@ -588,8 +582,6 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateThingShadowResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(false).withHasStreamingSuccessResponse(false), new UpdateThingShadowResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -626,18 +618,18 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -647,7 +639,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -655,11 +647,13 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

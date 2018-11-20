@@ -180,8 +180,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AcceptQualificationRequestResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AcceptQualificationRequestResultJsonUnmarshaller());
@@ -264,8 +262,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ApproveAssignmentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ApproveAssignmentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -338,8 +334,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AssociateQualificationWithWorkerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -423,8 +417,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateAdditionalAssignmentsForHITResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateAdditionalAssignmentsForHITResultJsonUnmarshaller());
@@ -505,8 +497,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateHITResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateHITResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -564,8 +554,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateHITTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateHITTypeResultJsonUnmarshaller());
@@ -639,8 +627,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateHITWithHITTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateHITWithHITTypeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -699,8 +685,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateQualificationTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateQualificationTypeResultJsonUnmarshaller());
@@ -758,8 +742,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateWorkerBlockResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateWorkerBlockResultJsonUnmarshaller());
@@ -849,8 +831,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteHITResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteHITResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -922,8 +902,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteQualificationTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteQualificationTypeResultJsonUnmarshaller());
@@ -983,8 +961,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteWorkerBlockResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteWorkerBlockResultJsonUnmarshaller());
@@ -1049,8 +1025,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateQualificationFromWorkerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DisassociateQualificationFromWorkerResultJsonUnmarshaller());
@@ -1109,8 +1083,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetAccountBalanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAccountBalanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1166,8 +1138,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetAssignmentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAssignmentResultJsonUnmarshaller());
@@ -1231,8 +1201,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetFileUploadURLResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetFileUploadURLResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1288,8 +1256,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetHITResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetHITResultJsonUnmarshaller());
@@ -1355,8 +1321,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetQualificationScoreResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new GetQualificationScoreResultJsonUnmarshaller());
@@ -1413,8 +1377,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetQualificationTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetQualificationTypeResultJsonUnmarshaller());
@@ -1491,8 +1453,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListAssignmentsForHITResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ListAssignmentsForHITResultJsonUnmarshaller());
@@ -1551,8 +1511,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListBonusPaymentsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListBonusPaymentsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1609,8 +1567,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListHITsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListHITsResultJsonUnmarshaller());
@@ -1670,8 +1626,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListHITsForQualificationTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1733,8 +1687,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListQualificationRequestsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListQualificationRequestsResultJsonUnmarshaller());
@@ -1792,8 +1744,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListQualificationTypesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1856,8 +1806,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListReviewPolicyResultsForHITResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListReviewPolicyResultsForHITResultJsonUnmarshaller());
@@ -1916,8 +1864,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListReviewableHITsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListReviewableHITsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1974,8 +1920,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListWorkerBlocksResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListWorkerBlocksResultJsonUnmarshaller());
@@ -2036,8 +1980,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListWorkersWithQualificationTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListWorkersWithQualificationTypeResultJsonUnmarshaller());
@@ -2097,8 +2039,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<NotifyWorkersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new NotifyWorkersResultJsonUnmarshaller());
@@ -2164,8 +2104,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<RejectAssignmentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RejectAssignmentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2226,8 +2164,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<RejectQualificationRequestResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2291,8 +2227,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<SendBonusResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendBonusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2353,8 +2287,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<SendTestEventNotificationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new SendTestEventNotificationResultJsonUnmarshaller());
@@ -2412,8 +2344,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateExpirationForHITResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2473,8 +2403,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateHITReviewStatusResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new UpdateHITReviewStatusResultJsonUnmarshaller());
@@ -2533,8 +2461,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateHITTypeOfHITResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateHITTypeOfHITResultJsonUnmarshaller());
@@ -2599,8 +2525,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateNotificationSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2690,8 +2614,6 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateQualificationTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateQualificationTypeResultJsonUnmarshaller());
@@ -2729,18 +2651,18 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -2750,7 +2672,7 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -2758,11 +2680,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

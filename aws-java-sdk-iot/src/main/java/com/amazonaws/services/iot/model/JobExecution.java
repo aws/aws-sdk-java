@@ -90,7 +90,9 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The estimated number of seconds that remain before the job execution status will be changed to
-     * <code>TIMED_OUT</code>.
+     * <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes).
+     * The actual job execution timeout can occur up to 60 seconds later than the estimated duration. This value will
+     * not be included if the job execution has reached a terminal status.
      * </p>
      */
     private Long approximateSecondsBeforeTimedOut;
@@ -550,12 +552,16 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The estimated number of seconds that remain before the job execution status will be changed to
-     * <code>TIMED_OUT</code>.
+     * <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes).
+     * The actual job execution timeout can occur up to 60 seconds later than the estimated duration. This value will
+     * not be included if the job execution has reached a terminal status.
      * </p>
      * 
      * @param approximateSecondsBeforeTimedOut
      *        The estimated number of seconds that remain before the job execution status will be changed to
-     *        <code>TIMED_OUT</code>.
+     *        <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080
+     *        minutes). The actual job execution timeout can occur up to 60 seconds later than the estimated duration.
+     *        This value will not be included if the job execution has reached a terminal status.
      */
 
     public void setApproximateSecondsBeforeTimedOut(Long approximateSecondsBeforeTimedOut) {
@@ -565,11 +571,15 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The estimated number of seconds that remain before the job execution status will be changed to
-     * <code>TIMED_OUT</code>.
+     * <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes).
+     * The actual job execution timeout can occur up to 60 seconds later than the estimated duration. This value will
+     * not be included if the job execution has reached a terminal status.
      * </p>
      * 
      * @return The estimated number of seconds that remain before the job execution status will be changed to
-     *         <code>TIMED_OUT</code>.
+     *         <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080
+     *         minutes). The actual job execution timeout can occur up to 60 seconds later than the estimated duration.
+     *         This value will not be included if the job execution has reached a terminal status.
      */
 
     public Long getApproximateSecondsBeforeTimedOut() {
@@ -579,12 +589,16 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The estimated number of seconds that remain before the job execution status will be changed to
-     * <code>TIMED_OUT</code>.
+     * <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes).
+     * The actual job execution timeout can occur up to 60 seconds later than the estimated duration. This value will
+     * not be included if the job execution has reached a terminal status.
      * </p>
      * 
      * @param approximateSecondsBeforeTimedOut
      *        The estimated number of seconds that remain before the job execution status will be changed to
-     *        <code>TIMED_OUT</code>.
+     *        <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080
+     *        minutes). The actual job execution timeout can occur up to 60 seconds later than the estimated duration.
+     *        This value will not be included if the job execution has reached a terminal status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

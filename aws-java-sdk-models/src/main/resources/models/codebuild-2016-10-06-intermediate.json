@@ -101,12 +101,14 @@
       "documentation" : "<p>Deletes one or more builds.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The input value that was provided is not valid.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "BatchDeleteBuildsRequest",
@@ -135,12 +137,14 @@
       "documentation" : "<p>Gets information about builds.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The input value that was provided is not valid.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "BatchGetBuildsRequest",
@@ -169,12 +173,14 @@
       "documentation" : "<p>Gets information about build projects.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The input value that was provided is not valid.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "BatchGetProjectsRequest",
@@ -203,6 +209,7 @@
       "documentation" : "<p>Creates a build project.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The input value that was provided is not valid.</p>",
@@ -217,6 +224,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateProjectRequest",
@@ -245,6 +253,7 @@
       "documentation" : "<p>For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed to the repository.</p> <important> <p>If you enable webhooks for an AWS CodeBuild project, and the project is used as a build step in AWS CodePipeline, then two identical builds are created for each commit. One build is triggered through webhooks, and one through AWS CodePipeline. Because billing is on a per-build basis, you are billed for both builds. Therefore, if you are using AWS CodePipeline, we recommend that you disable webhooks in AWS CodeBuild. In the AWS CodeBuild console, clear the Webhook box. For more information, see step 5 in <a href=\"http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console\">Change a Build Project's Settings</a>.</p> </important>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The input value that was provided is not valid.</p>",
@@ -263,6 +272,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateWebhookRequest",
@@ -291,12 +301,14 @@
       "documentation" : "<p>Deletes a build project.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The input value that was provided is not valid.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteProjectRequest",
@@ -325,6 +337,7 @@
       "documentation" : "<p>For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, stops AWS CodeBuild from rebuilding the source code every time a code change is pushed to the repository.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The input value that was provided is not valid.</p>",
@@ -339,6 +352,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteWebhookRequest",
@@ -367,6 +381,7 @@
       "documentation" : "<p>Resets the cache for a project.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The input value that was provided is not valid.</p>",
@@ -377,6 +392,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "InvalidateProjectCacheRequest",
@@ -405,12 +421,14 @@
       "documentation" : "<p>Gets a list of build IDs, with each build ID representing a single build.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The input value that was provided is not valid.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListBuildsRequest",
@@ -439,6 +457,7 @@
       "documentation" : "<p>Gets a list of build IDs for the specified build project, with each build ID representing a single build.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The input value that was provided is not valid.</p>",
@@ -449,6 +468,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListBuildsForProjectRequest",
@@ -477,8 +497,10 @@
       "documentation" : "<p>Gets information about Docker images that are managed by AWS CodeBuild.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListCuratedEnvironmentImagesRequest",
@@ -507,12 +529,14 @@
       "documentation" : "<p>Gets a list of build project names, with each build project name representing a single build project.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The input value that was provided is not valid.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListProjectsRequest",
@@ -541,6 +565,7 @@
       "documentation" : "<p>Starts running a build.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The input value that was provided is not valid.</p>",
@@ -555,6 +580,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "StartBuildRequest",
@@ -583,6 +609,7 @@
       "documentation" : "<p>Attempts to stop running a build.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The input value that was provided is not valid.</p>",
@@ -593,6 +620,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "StopBuildRequest",
@@ -621,6 +649,7 @@
       "documentation" : "<p>Changes the settings of a build project.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The input value that was provided is not valid.</p>",
@@ -631,6 +660,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateProjectRequest",
@@ -659,6 +689,7 @@
       "documentation" : "<p> Updates the webhook associated with an AWS CodeBuild build project. </p> <note> <p> If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p> </note>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>The input value that was provided is not valid.</p>",
@@ -673,6 +704,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateWebhookRequest",

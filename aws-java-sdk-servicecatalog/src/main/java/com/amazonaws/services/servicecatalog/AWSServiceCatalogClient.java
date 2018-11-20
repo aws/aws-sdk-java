@@ -354,8 +354,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AcceptPortfolioShareResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AcceptPortfolioShareResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -417,8 +415,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AssociatePrincipalWithPortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AssociatePrincipalWithPortfolioResultJsonUnmarshaller());
@@ -479,8 +475,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AssociateProductWithPortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -545,8 +539,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AssociateServiceActionWithProvisioningArtifactResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -618,8 +610,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AssociateTagOptionWithResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AssociateTagOptionWithResourceResultJsonUnmarshaller());
@@ -679,8 +669,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<BatchAssociateServiceActionWithProvisioningArtifactResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new BatchAssociateServiceActionWithProvisioningArtifactResultJsonUnmarshaller());
@@ -739,8 +727,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<BatchDisassociateServiceActionFromProvisioningArtifactResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -807,8 +793,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CopyProductResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CopyProductResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -870,8 +854,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateConstraintResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateConstraintResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -932,8 +914,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreatePortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreatePortfolioResultJsonUnmarshaller());
@@ -998,8 +978,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreatePortfolioShareResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreatePortfolioShareResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1060,8 +1038,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateProductResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateProductResultJsonUnmarshaller());
@@ -1132,8 +1108,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateProvisionedProductPlanResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateProvisionedProductPlanResultJsonUnmarshaller());
@@ -1198,8 +1172,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateProvisioningArtifactResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateProvisioningArtifactResultJsonUnmarshaller());
@@ -1257,8 +1229,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateServiceActionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateServiceActionResultJsonUnmarshaller());
@@ -1321,8 +1291,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateTagOptionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateTagOptionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1378,8 +1346,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteConstraintResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteConstraintResultJsonUnmarshaller());
@@ -1447,8 +1413,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeletePortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeletePortfolioResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1507,8 +1471,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeletePortfolioShareResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeletePortfolioShareResultJsonUnmarshaller());
@@ -1575,8 +1537,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteProductResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteProductResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1633,8 +1593,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteProvisionedProductPlanResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1700,8 +1658,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteProvisioningArtifactResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteProvisioningArtifactResultJsonUnmarshaller());
@@ -1758,8 +1714,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteServiceActionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteServiceActionResultJsonUnmarshaller());
@@ -1824,8 +1778,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteTagOptionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTagOptionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1879,8 +1831,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeConstraintResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeConstraintResultJsonUnmarshaller());
@@ -1937,8 +1887,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeCopyProductStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeCopyProductStatusResultJsonUnmarshaller());
@@ -1993,8 +1941,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribePortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribePortfolioResultJsonUnmarshaller());
@@ -2056,8 +2002,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribePortfolioShareStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribePortfolioShareStatusResultJsonUnmarshaller());
@@ -2115,8 +2059,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeProductResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeProductResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2170,8 +2112,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeProductAsAdminResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2230,8 +2170,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeProductViewResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeProductViewResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2286,8 +2224,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeProvisionedProductResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2347,8 +2283,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeProvisionedProductPlanResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeProvisionedProductPlanResultJsonUnmarshaller());
@@ -2404,8 +2338,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeProvisioningArtifactResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2473,8 +2405,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeProvisioningParametersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeProvisioningParametersResultJsonUnmarshaller());
@@ -2534,8 +2464,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeRecordResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeRecordResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2589,8 +2517,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeServiceActionResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2650,8 +2576,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeTagOptionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeTagOptionResultJsonUnmarshaller());
@@ -2716,8 +2640,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DisableAWSOrganizationsAccessResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DisableAWSOrganizationsAccessResultJsonUnmarshaller());
@@ -2777,8 +2699,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DisassociatePrincipalFromPortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2841,8 +2761,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateProductFromPortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DisassociateProductFromPortfolioResultJsonUnmarshaller());
@@ -2901,8 +2819,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateServiceActionFromProvisioningArtifactResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2964,8 +2880,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateTagOptionFromResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3034,8 +2948,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<EnableAWSOrganizationsAccessResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new EnableAWSOrganizationsAccessResultJsonUnmarshaller());
@@ -3096,8 +3008,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ExecuteProvisionedProductPlanResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3162,8 +3072,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ExecuteProvisionedProductServiceActionResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ExecuteProvisionedProductServiceActionResultJsonUnmarshaller());
@@ -3224,8 +3132,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetAWSOrganizationsAccessStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetAWSOrganizationsAccessStatusResultJsonUnmarshaller());
@@ -3283,8 +3189,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListAcceptedPortfolioSharesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3344,8 +3248,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListConstraintsForPortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListConstraintsForPortfolioResultJsonUnmarshaller());
@@ -3403,8 +3305,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListLaunchPathsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListLaunchPathsResultJsonUnmarshaller());
@@ -3467,8 +3367,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListOrganizationPortfolioAccessResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListOrganizationPortfolioAccessResultJsonUnmarshaller());
@@ -3524,8 +3422,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListPortfolioAccessResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListPortfolioAccessResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3579,8 +3475,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListPortfoliosResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListPortfoliosResultJsonUnmarshaller());
@@ -3638,8 +3532,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListPortfoliosForProductResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3699,8 +3591,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListPrincipalsForPortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListPrincipalsForPortfolioResultJsonUnmarshaller());
@@ -3759,8 +3649,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListProvisionedProductPlansResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListProvisionedProductPlansResultJsonUnmarshaller());
@@ -3818,8 +3706,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListProvisioningArtifactsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3881,8 +3767,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListProvisioningArtifactsForServiceActionResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ListProvisioningArtifactsForServiceActionResultJsonUnmarshaller());
@@ -3937,8 +3821,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListRecordHistoryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListRecordHistoryResultJsonUnmarshaller());
@@ -4001,8 +3883,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListResourcesForTagOptionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListResourcesForTagOptionResultJsonUnmarshaller());
@@ -4057,8 +3937,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListServiceActionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListServiceActionsResultJsonUnmarshaller());
@@ -4120,8 +3998,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListServiceActionsForProvisioningArtifactResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ListServiceActionsForProvisioningArtifactResultJsonUnmarshaller());
@@ -4180,8 +4056,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagOptionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagOptionsResultJsonUnmarshaller());
@@ -4251,8 +4125,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ProvisionProductResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ProvisionProductResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4306,8 +4178,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<RejectPortfolioShareResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RejectPortfolioShareResultJsonUnmarshaller());
@@ -4367,8 +4237,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ScanProvisionedProductsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ScanProvisionedProductsResultJsonUnmarshaller());
@@ -4423,8 +4291,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<SearchProductsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchProductsResultJsonUnmarshaller());
@@ -4482,8 +4348,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<SearchProductsAsAdminResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new SearchProductsAsAdminResultJsonUnmarshaller());
@@ -4539,8 +4403,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<SearchProvisionedProductsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -4604,8 +4466,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<TerminateProvisionedProductResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new TerminateProvisionedProductResultJsonUnmarshaller());
@@ -4662,8 +4522,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateConstraintResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateConstraintResultJsonUnmarshaller());
@@ -4731,8 +4589,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdatePortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdatePortfolioResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4792,8 +4648,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateProductResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateProductResultJsonUnmarshaller());
@@ -4860,8 +4714,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateProvisionedProductResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateProvisionedProductResultJsonUnmarshaller());
@@ -4923,8 +4775,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateProvisioningArtifactResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateProvisioningArtifactResultJsonUnmarshaller());
@@ -4981,8 +4831,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateServiceActionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateServiceActionResultJsonUnmarshaller());
@@ -5046,8 +4894,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateTagOptionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateTagOptionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5084,18 +4930,18 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -5105,7 +4951,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -5113,11 +4959,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

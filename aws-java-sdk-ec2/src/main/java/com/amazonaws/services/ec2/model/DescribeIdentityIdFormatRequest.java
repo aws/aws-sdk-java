@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeIdentityIdFormatRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeIdentityIdFormat.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

@@ -792,8 +792,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AcceptHandshakeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AcceptHandshakeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1159,8 +1157,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AttachPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AttachPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1344,8 +1340,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CancelHandshakeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CancelHandshakeResultJsonUnmarshaller());
@@ -1732,8 +1726,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateAccountResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAccountResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2054,8 +2046,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateOrganizationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateOrganizationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2374,8 +2364,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateOrganizationalUnitResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2703,8 +2691,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreatePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreatePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2890,8 +2876,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeclineHandshakeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeclineHandshakeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3065,8 +3049,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteOrganizationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteOrganizationResultJsonUnmarshaller());
@@ -3248,8 +3230,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteOrganizationalUnitResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteOrganizationalUnitResultJsonUnmarshaller());
@@ -3430,8 +3410,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeletePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeletePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3606,8 +3584,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAccountResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeAccountResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3781,8 +3757,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeCreateAccountStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3962,8 +3936,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeHandshakeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeHandshakeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4039,8 +4011,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeOrganizationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeOrganizationResultJsonUnmarshaller());
@@ -4216,8 +4186,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeOrganizationalUnitResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeOrganizationalUnitResultJsonUnmarshaller());
@@ -4391,8 +4359,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribePolicyResultJsonUnmarshaller());
@@ -4720,8 +4686,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DetachPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DetachPolicyResultJsonUnmarshaller());
@@ -5056,8 +5020,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DisableAWSServiceAccessResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DisableAWSServiceAccessResultJsonUnmarshaller());
@@ -5382,8 +5344,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DisablePolicyTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DisablePolicyTypeResultJsonUnmarshaller());
@@ -5712,8 +5672,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<EnableAWSServiceAccessResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new EnableAWSServiceAccessResultJsonUnmarshaller());
@@ -5978,8 +5936,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<EnableAllFeaturesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new EnableAllFeaturesResultJsonUnmarshaller());
@@ -6306,8 +6262,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<EnablePolicyTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new EnablePolicyTypeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6582,8 +6536,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<InviteAccountToOrganizationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -6934,8 +6886,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<LeaveOrganizationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new LeaveOrganizationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7251,8 +7201,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListAWSServiceAccessForOrganizationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListAWSServiceAccessForOrganizationResultJsonUnmarshaller());
@@ -7433,8 +7381,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListAccountsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAccountsResultJsonUnmarshaller());
@@ -7620,8 +7566,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListAccountsForParentResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ListAccountsForParentResultJsonUnmarshaller());
@@ -7805,8 +7749,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListChildrenResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListChildrenResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7987,8 +7929,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListCreateAccountStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -8173,8 +8113,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListHandshakesForAccountResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -8365,8 +8303,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListHandshakesForOrganizationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListHandshakesForOrganizationResultJsonUnmarshaller());
@@ -8550,8 +8486,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListOrganizationalUnitsForParentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -8743,8 +8677,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListParentsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListParentsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -8923,8 +8855,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListPoliciesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListPoliciesResultJsonUnmarshaller());
@@ -9107,8 +9037,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListPoliciesForTargetResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -9298,8 +9226,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListRootsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListRootsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -9480,8 +9406,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTargetsForPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTargetsForPolicyResultJsonUnmarshaller());
@@ -9665,8 +9589,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<MoveAccountResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new MoveAccountResultJsonUnmarshaller());
@@ -10002,8 +9924,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<RemoveAccountFromOrganizationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new RemoveAccountFromOrganizationResultJsonUnmarshaller());
@@ -10183,8 +10103,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateOrganizationalUnitResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -10503,8 +10421,6 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdatePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdatePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -10541,18 +10457,18 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -10562,7 +10478,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -10570,11 +10486,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

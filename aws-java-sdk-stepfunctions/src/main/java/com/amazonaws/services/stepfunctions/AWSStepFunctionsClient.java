@@ -398,8 +398,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateActivityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateActivityResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -468,8 +466,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateStateMachineResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateStateMachineResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -523,8 +519,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteActivityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteActivityResultJsonUnmarshaller());
@@ -587,8 +581,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteStateMachineResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteStateMachineResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -644,8 +636,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeActivityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeActivityResultJsonUnmarshaller());
@@ -703,8 +693,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeExecutionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -760,8 +748,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeStateMachineResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeStateMachineResultJsonUnmarshaller());
@@ -820,8 +806,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeStateMachineForExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -892,8 +876,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetActivityTaskResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetActivityTaskResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -959,8 +941,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetExecutionHistoryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetExecutionHistoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1019,8 +999,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListActivitiesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListActivitiesResultJsonUnmarshaller());
@@ -1085,8 +1063,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListExecutionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListExecutionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1146,8 +1122,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListStateMachinesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListStateMachinesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1203,8 +1177,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<SendTaskFailureResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendTaskFailureResultJsonUnmarshaller());
@@ -1276,8 +1248,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<SendTaskHeartbeatResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendTaskHeartbeatResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1335,8 +1305,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<SendTaskSuccessResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendTaskSuccessResultJsonUnmarshaller());
@@ -1409,8 +1377,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<StartExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartExecutionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1466,8 +1432,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<StopExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopExecutionResultJsonUnmarshaller());
@@ -1542,8 +1506,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateStateMachineResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateStateMachineResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1580,18 +1542,18 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -1601,7 +1563,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -1609,11 +1571,13 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

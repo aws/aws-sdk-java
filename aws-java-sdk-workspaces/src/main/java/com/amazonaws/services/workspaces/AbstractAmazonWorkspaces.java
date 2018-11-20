@@ -88,6 +88,11 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     }
 
     @Override
+    public DescribeClientPropertiesResult describeClientProperties(DescribeClientPropertiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeIpGroupsResult describeIpGroups(DescribeIpGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -154,6 +159,11 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
 
     @Override
     public ModifyAccountResult modifyAccount(ModifyAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyClientPropertiesResult modifyClientProperties(ModifyClientPropertiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -577,6 +577,39 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeClientPropertiesResult> describeClientPropertiesAsync(DescribeClientPropertiesRequest request) {
+
+        return describeClientPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClientPropertiesResult> describeClientPropertiesAsync(final DescribeClientPropertiesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeClientPropertiesRequest, DescribeClientPropertiesResult> asyncHandler) {
+        final DescribeClientPropertiesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeClientPropertiesResult>() {
+            @Override
+            public DescribeClientPropertiesResult call() throws Exception {
+                DescribeClientPropertiesResult result = null;
+
+                try {
+                    result = executeDescribeClientProperties(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeIpGroupsResult> describeIpGroupsAsync(DescribeIpGroupsRequest request) {
 
         return describeIpGroupsAsync(request, null);
@@ -997,6 +1030,39 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
 
                 try {
                     result = executeModifyAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyClientPropertiesResult> modifyClientPropertiesAsync(ModifyClientPropertiesRequest request) {
+
+        return modifyClientPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyClientPropertiesResult> modifyClientPropertiesAsync(final ModifyClientPropertiesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyClientPropertiesRequest, ModifyClientPropertiesResult> asyncHandler) {
+        final ModifyClientPropertiesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyClientPropertiesResult>() {
+            @Override
+            public ModifyClientPropertiesResult call() throws Exception {
+                ModifyClientPropertiesResult result = null;
+
+                try {
+                    result = executeModifyClientProperties(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

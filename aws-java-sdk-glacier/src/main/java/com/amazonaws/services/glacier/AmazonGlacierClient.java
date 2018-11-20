@@ -417,8 +417,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AbortMultipartUploadResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AbortMultipartUploadResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -494,8 +492,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AbortVaultLockResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AbortVaultLockResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -560,8 +556,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AddTagsToVaultResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AddTagsToVaultResultJsonUnmarshaller());
@@ -667,8 +661,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CompleteMultipartUploadResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CompleteMultipartUploadResultJsonUnmarshaller());
@@ -743,8 +735,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CompleteVaultLockResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CompleteVaultLockResultJsonUnmarshaller());
@@ -838,8 +828,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateVaultResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateVaultResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -931,8 +919,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteArchiveResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteArchiveResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1016,8 +1002,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteVaultResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteVaultResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1085,8 +1069,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteVaultAccessPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1164,8 +1146,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteVaultNotificationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1251,8 +1231,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1333,8 +1311,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeVaultResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeVaultResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1394,8 +1370,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetDataRetrievalPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1501,8 +1475,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetJobOutputResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(false).withHasStreamingSuccessResponse(true), new GetJobOutputResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1576,8 +1548,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetVaultAccessPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetVaultAccessPolicyResultJsonUnmarshaller());
@@ -1673,8 +1643,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetVaultLockResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetVaultLockResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1755,8 +1723,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetVaultNotificationsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new GetVaultNotificationsResultJsonUnmarshaller());
@@ -1824,8 +1790,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<InitiateJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new InitiateJobResultJsonUnmarshaller());
@@ -1924,8 +1888,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<InitiateMultipartUploadResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2030,8 +1992,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<InitiateVaultLockResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new InitiateVaultLockResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2125,8 +2085,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListJobsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListJobsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2215,8 +2173,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListMultipartUploadsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListMultipartUploadsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2302,8 +2258,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListPartsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListPartsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2360,8 +2314,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListProvisionedCapacityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2424,8 +2376,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForVaultResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForVaultResultJsonUnmarshaller());
@@ -2509,8 +2459,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListVaultsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListVaultsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2569,8 +2517,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<PurchaseProvisionedCapacityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2634,8 +2580,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<RemoveTagsFromVaultResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RemoveTagsFromVaultResultJsonUnmarshaller());
@@ -2702,8 +2646,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<SetDataRetrievalPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new SetDataRetrievalPolicyResultJsonUnmarshaller());
@@ -2768,8 +2710,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<SetVaultAccessPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetVaultAccessPolicyResultJsonUnmarshaller());
@@ -2870,8 +2810,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<SetVaultNotificationsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new SetVaultNotificationsResultJsonUnmarshaller());
@@ -2970,8 +2908,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UploadArchiveResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UploadArchiveResultJsonUnmarshaller());
@@ -3088,8 +3024,6 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UploadMultipartPartResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UploadMultipartPartResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3126,18 +3060,18 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -3147,7 +3081,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -3155,11 +3089,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

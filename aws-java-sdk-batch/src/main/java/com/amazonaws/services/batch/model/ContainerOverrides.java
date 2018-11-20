@@ -49,6 +49,13 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
     private java.util.List<String> command;
     /**
      * <p>
+     * The instance type to use for a multi-node parallel job. This parameter is not valid for single-node container
+     * jobs.
+     * </p>
+     */
+    private String instanceType;
+    /**
+     * <p>
      * The environment variables to send to the container. You can add new environment variables, which are added to the
      * container at launch, or you can override the existing environment variables from the Docker image or the job
      * definition.
@@ -228,6 +235,52 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
+     * The instance type to use for a multi-node parallel job. This parameter is not valid for single-node container
+     * jobs.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type to use for a multi-node parallel job. This parameter is not valid for single-node
+     *        container jobs.
+     */
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type to use for a multi-node parallel job. This parameter is not valid for single-node container
+     * jobs.
+     * </p>
+     * 
+     * @return The instance type to use for a multi-node parallel job. This parameter is not valid for single-node
+     *         container jobs.
+     */
+
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type to use for a multi-node parallel job. This parameter is not valid for single-node container
+     * jobs.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type to use for a multi-node parallel job. This parameter is not valid for single-node
+     *        container jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerOverrides withInstanceType(String instanceType) {
+        setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
+     * <p>
      * The environment variables to send to the container. You can add new environment variables, which are added to the
      * container at launch, or you can override the existing environment variables from the Docker image or the job
      * definition.
@@ -369,6 +422,8 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
             sb.append("Memory: ").append(getMemory()).append(",");
         if (getCommand() != null)
             sb.append("Command: ").append(getCommand()).append(",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment());
         sb.append("}");
@@ -397,6 +452,10 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getCommand() != null && other.getCommand().equals(this.getCommand()) == false)
             return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
+            return false;
         if (other.getEnvironment() == null ^ this.getEnvironment() == null)
             return false;
         if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
@@ -412,6 +471,7 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getVcpus() == null) ? 0 : getVcpus().hashCode());
         hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
         hashCode = prime * hashCode + ((getCommand() == null) ? 0 : getCommand().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         return hashCode;
     }

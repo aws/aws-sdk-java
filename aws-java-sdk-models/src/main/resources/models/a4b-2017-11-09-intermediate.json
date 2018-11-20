@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -94,6 +94,7 @@
       "documentation" : "<p>Associates a skill with the organization under the customer's AWS account. If a skill is private, the user implicitly accepts access to this skill during enablement.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>You are performing an action that would put you beyond your account's limits.</p>",
@@ -108,6 +109,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ApproveSkillRequest",
@@ -136,12 +138,14 @@
       "documentation" : "<p>Associates a contact with a given address book.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>You are performing an action that would put you beyond your account's limits.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "AssociateContactWithAddressBookRequest",
@@ -170,6 +174,7 @@
       "documentation" : "<p>Associates a device with a given room. This applies all the settings from the room profile to the device, and all the skills in any skill groups added to that room. This operation requires the device to be online, or else a manual sync is required. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>You are performing an action that would put you beyond your account's limits.</p>",
@@ -184,6 +189,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "AssociateDeviceWithRoomRequest",
@@ -212,12 +218,14 @@
       "documentation" : "<p>Associates a skill group with a given room. This enables all skills in the associated skill group on all devices in the room.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "AssociateSkillGroupWithRoomRequest",
@@ -246,6 +254,7 @@
       "documentation" : "<p>Associates a skill with a skill group.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
@@ -256,6 +265,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "AssociateSkillWithSkillGroupRequest",
@@ -284,6 +294,7 @@
       "documentation" : "<p>Creates an address book with the specified details.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AlreadyExistsException",
         "documentation" : "<p>The resource being created already exists.</p>",
@@ -294,6 +305,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateAddressBookRequest",
@@ -322,12 +334,14 @@
       "documentation" : "<p>Adds a new conference provider under the user's AWS account.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AlreadyExistsException",
         "documentation" : "<p>The resource being created already exists.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateConferenceProviderRequest",
@@ -356,6 +370,7 @@
       "documentation" : "<p>Creates a contact with the specified details.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AlreadyExistsException",
         "documentation" : "<p>The resource being created already exists.</p>",
@@ -366,6 +381,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateContactRequest",
@@ -394,6 +410,7 @@
       "documentation" : "<p>Creates a new room profile with the specified details.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>You are performing an action that would put you beyond your account's limits.</p>",
@@ -408,6 +425,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateProfileRequest",
@@ -436,6 +454,7 @@
       "documentation" : "<p>Creates a room with the specified details.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AlreadyExistsException",
         "documentation" : "<p>The resource being created already exists.</p>",
@@ -446,6 +465,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateRoomRequest",
@@ -474,6 +494,7 @@
       "documentation" : "<p>Creates a skill group with a specified name and description.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AlreadyExistsException",
         "documentation" : "<p>The resource being created already exists.</p>",
@@ -488,6 +509,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateSkillGroupRequest",
@@ -516,6 +538,7 @@
       "documentation" : "<p>Creates a user.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceInUseException",
         "documentation" : "<p>The resource in the request is already in use.</p>",
@@ -530,6 +553,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateUserRequest",
@@ -558,6 +582,7 @@
       "documentation" : "<p>Deletes an address book by the address book ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
@@ -568,6 +593,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteAddressBookRequest",
@@ -596,12 +622,14 @@
       "documentation" : "<p>Deletes a conference provider.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteConferenceProviderRequest",
@@ -630,6 +658,7 @@
       "documentation" : "<p>Deletes a contact by the contact ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
@@ -640,6 +669,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteContactRequest",
@@ -668,6 +698,7 @@
       "documentation" : "<p>Removes a device from Alexa For Business.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
@@ -682,6 +713,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteDeviceRequest",
@@ -710,6 +742,7 @@
       "documentation" : "<p>Deletes a room profile by the profile ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
@@ -720,6 +753,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteProfileRequest",
@@ -748,6 +782,7 @@
       "documentation" : "<p>Deletes a room by the room ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
@@ -758,6 +793,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteRoomRequest",
@@ -786,12 +822,14 @@
       "documentation" : "<p>Deletes room skill parameter details by room, skill, and parameter key ID.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteRoomSkillParameterRequest",
@@ -820,6 +858,7 @@
       "documentation" : "<p>Unlinks a third-party account from a skill.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
@@ -830,6 +869,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteSkillAuthorizationRequest",
@@ -858,6 +898,7 @@
       "documentation" : "<p>Deletes a skill group by skill group ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
@@ -868,6 +909,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteSkillGroupRequest",
@@ -896,6 +938,7 @@
       "documentation" : "<p>Deletes a specified user by user ARN and enrollment ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
@@ -906,6 +949,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteUserRequest",
@@ -934,8 +978,10 @@
       "documentation" : "<p>Disassociates a contact from a given address book.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateContactFromAddressBookRequest",
@@ -964,6 +1010,7 @@
       "documentation" : "<p>Disassociates a device from its current room. The device continues to be connected to the Wi-Fi network and is still registered to the account. The device settings and skills are removed from the room.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
@@ -974,6 +1021,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateDeviceFromRoomRequest",
@@ -1002,6 +1050,7 @@
       "documentation" : "<p>Disassociates a skill from a skill group.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
@@ -1012,6 +1061,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateSkillFromSkillGroupRequest",
@@ -1040,12 +1090,14 @@
       "documentation" : "<p>Disassociates a skill group from a specified room. This disables all skills in the skill group on all devices in the room.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateSkillGroupFromRoomRequest",
@@ -1074,12 +1126,14 @@
       "documentation" : "<p>Forgets smart home appliances associated to a room.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ForgetSmartHomeAppliancesRequest",
@@ -1108,12 +1162,14 @@
       "documentation" : "<p>Gets address the book details by the address book ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetAddressBookRequest",
@@ -1142,12 +1198,14 @@
       "documentation" : "<p>Retrieves the existing conference preferences.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetConferencePreferenceRequest",
@@ -1176,12 +1234,14 @@
       "documentation" : "<p>Gets details about a specific conference provider.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetConferenceProviderRequest",
@@ -1210,12 +1270,14 @@
       "documentation" : "<p>Gets the contact details by the contact ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetContactRequest",
@@ -1244,12 +1306,14 @@
       "documentation" : "<p>Gets the details of a device by device ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetDeviceRequest",
@@ -1278,12 +1342,14 @@
       "documentation" : "<p>Gets the details of a room profile by profile ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetProfileRequest",
@@ -1312,12 +1378,14 @@
       "documentation" : "<p>Gets room details by room ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetRoomRequest",
@@ -1346,12 +1414,14 @@
       "documentation" : "<p>Gets room skill parameter details by room, skill, and parameter key ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetRoomSkillParameterRequest",
@@ -1380,12 +1450,14 @@
       "documentation" : "<p>Gets skill group details by skill group ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetSkillGroupRequest",
@@ -1414,8 +1486,10 @@
       "documentation" : "<p>Lists conference providers under a specific AWS account.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListConferenceProvidersRequest",
@@ -1444,12 +1518,14 @@
       "documentation" : "<p>Lists the device event history, including device connection status, for up to 30 days.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListDeviceEventsRequest",
@@ -1478,8 +1554,10 @@
       "documentation" : "<p>Lists all enabled skills in a specific skill group.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListSkillsRequest",
@@ -1508,8 +1586,10 @@
       "documentation" : "<p>Lists all categories in the Alexa skill store.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListSkillsStoreCategoriesRequest",
@@ -1538,8 +1618,10 @@
       "documentation" : "<p>Lists all skills in the Alexa skill store by category.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListSkillsStoreSkillsByCategoryRequest",
@@ -1568,12 +1650,14 @@
       "documentation" : "<p>Lists all of the smart home appliances associated with a room.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListSmartHomeAppliancesRequest",
@@ -1602,12 +1686,14 @@
       "documentation" : "<p>Lists all tags for the specified resource.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListTagsRequest",
@@ -1636,12 +1722,14 @@
       "documentation" : "<p>Sets the conference preferences on a specific conference provider at the account level.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutConferencePreferenceRequest",
@@ -1670,12 +1758,14 @@
       "documentation" : "<p>Updates room skill parameter details by room, skill, and parameter key ID. Not all skills have a room skill parameter.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutRoomSkillParameterRequest",
@@ -1704,6 +1794,7 @@
       "documentation" : "<p>Links a user's account to a third-party skill provider. If this API operation is called by an assumed IAM role, the skill being linked must be a private skill. Also, the skill must be owned by the AWS account that assumed the IAM role.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedException",
         "documentation" : "<p>The caller has no permissions to operate on the resource involved in the API call.</p>",
@@ -1714,6 +1805,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutSkillAuthorizationRequest",
@@ -1742,6 +1834,7 @@
       "documentation" : "<p>Registers an Alexa-enabled device built by an Original Equipment Manufacturer (OEM) using Alexa Voice Service (AVS).</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>You are performing an action that would put you beyond your account's limits.</p>",
@@ -1756,6 +1849,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "RegisterAVSDeviceRequest",
@@ -1784,6 +1878,7 @@
       "documentation" : "<p>Disassociates a skill from the organization under a user's AWS account. If the skill is a private skill, it moves to an AcceptStatus of PENDING. Any private or public skill that is rejected can be added later by calling the ApproveSkill API. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "Concurrent modification of resources. HTTP Status Code: 400.",
@@ -1794,6 +1889,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "RejectSkillRequest",
@@ -1822,12 +1918,14 @@
       "documentation" : "<p>Determines the details for the room from which a skill request was invoked. This operation is used by skill developers.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ResolveRoomRequest",
@@ -1856,6 +1954,7 @@
       "documentation" : "<p>Revokes an invitation and invalidates the enrollment URL.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
@@ -1866,6 +1965,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "RevokeInvitationRequest",
@@ -1894,8 +1994,10 @@
       "documentation" : "<p>Searches address books and lists the ones that meet a set of filter and sort criteria.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "SearchAddressBooksRequest",
@@ -1924,8 +2026,10 @@
       "documentation" : "<p>Searches contacts and lists the ones that meet a set of filter and sort criteria.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "SearchContactsRequest",
@@ -1954,8 +2058,10 @@
       "documentation" : "<p>Searches devices and lists the ones that meet a set of filter criteria.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "SearchDevicesRequest",
@@ -1984,8 +2090,10 @@
       "documentation" : "<p>Searches room profiles and lists the ones that meet a set of filter criteria.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "SearchProfilesRequest",
@@ -2014,8 +2122,10 @@
       "documentation" : "<p>Searches rooms and lists the ones that meet a set of filter and sort criteria.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "SearchRoomsRequest",
@@ -2044,8 +2154,10 @@
       "documentation" : "<p>Searches skill groups and lists the ones that meet a set of filter and sort criteria.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "SearchSkillGroupsRequest",
@@ -2074,8 +2186,10 @@
       "documentation" : "<p>Searches users and lists the ones that meet a set of filter and sort criteria.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "SearchUsersRequest",
@@ -2104,6 +2218,7 @@
       "documentation" : "<p>Sends an enrollment invitation email with a URL to a user. The URL is valid for 72 hours or until you call this operation again, whichever comes first. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
@@ -2118,6 +2233,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "SendInvitationRequest",
@@ -2146,12 +2262,14 @@
       "documentation" : "<p>Resets a device and its account to the known default settings, by clearing all information and settings set by previous users.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "DeviceNotRegisteredException",
         "documentation" : "<p>The request failed because this device is no longer registered and therefore no longer managed by this account.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "StartDeviceSyncRequest",
@@ -2180,12 +2298,14 @@
       "documentation" : "<p>Initiates the discovery of any smart home appliances associated with the room.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "StartSmartHomeApplianceDiscoveryRequest",
@@ -2214,12 +2334,14 @@
       "documentation" : "<p>Adds metadata tags to a specified resource.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "TagResourceRequest",
@@ -2248,12 +2370,14 @@
       "documentation" : "<p>Removes metadata tags from a specified resource.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UntagResourceRequest",
@@ -2282,6 +2406,7 @@
       "documentation" : "<p>Updates address book details by the address book ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
@@ -2296,6 +2421,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateAddressBookRequest",
@@ -2324,12 +2450,14 @@
       "documentation" : "<p>Updates an existing conference provider's settings.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateConferenceProviderRequest",
@@ -2358,6 +2486,7 @@
       "documentation" : "<p>Updates the contact details by the contact ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
@@ -2368,6 +2497,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateContactRequest",
@@ -2396,6 +2526,7 @@
       "documentation" : "<p>Updates the device name by device ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
@@ -2410,6 +2541,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateDeviceRequest",
@@ -2438,6 +2570,7 @@
       "documentation" : "<p>Updates an existing room profile by room profile ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
@@ -2452,6 +2585,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateProfileRequest",
@@ -2480,6 +2614,7 @@
       "documentation" : "<p>Updates room details by room ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
@@ -2490,6 +2625,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateRoomRequest",
@@ -2518,6 +2654,7 @@
       "documentation" : "<p>Updates skill group details by skill group ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found.</p>",
@@ -2532,6 +2669,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateSkillGroupRequest",

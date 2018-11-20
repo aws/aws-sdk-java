@@ -485,8 +485,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<AddRoleToDBClusterResult> responseHandler = new StaxResponseHandler<AddRoleToDBClusterResult>(
                     new AddRoleToDBClusterResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -542,8 +540,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -608,8 +604,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<AddTagsToResourceResult> responseHandler = new StaxResponseHandler<AddTagsToResourceResult>(
                     new AddTagsToResourceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -667,8 +661,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ResourcePendingMaintenanceActions> responseHandler = new StaxResponseHandler<ResourcePendingMaintenanceActions>(
                     new ResourcePendingMaintenanceActionsStaxUnmarshaller());
@@ -745,8 +737,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBSecurityGroup> responseHandler = new StaxResponseHandler<DBSecurityGroup>(new DBSecurityGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -807,8 +797,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<BacktrackDBClusterResult> responseHandler = new StaxResponseHandler<BacktrackDBClusterResult>(
                     new BacktrackDBClusterResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -866,8 +854,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DBClusterParameterGroup> responseHandler = new StaxResponseHandler<DBClusterParameterGroup>(
                     new DBClusterParameterGroupStaxUnmarshaller());
@@ -1020,8 +1006,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBClusterSnapshot> responseHandler = new StaxResponseHandler<DBClusterSnapshot>(new DBClusterSnapshotStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1078,8 +1062,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DBParameterGroup> responseHandler = new StaxResponseHandler<DBParameterGroup>(new DBParameterGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1151,8 +1133,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBSnapshot> responseHandler = new StaxResponseHandler<DBSnapshot>(new DBSnapshotStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1209,8 +1189,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<OptionGroup> responseHandler = new StaxResponseHandler<OptionGroup>(new OptionGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1308,8 +1286,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1372,8 +1348,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateDBClusterEndpointResult> responseHandler = new StaxResponseHandler<CreateDBClusterEndpointResult>(
                     new CreateDBClusterEndpointResultStaxUnmarshaller());
@@ -1459,8 +1433,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBClusterParameterGroup> responseHandler = new StaxResponseHandler<DBClusterParameterGroup>(
                     new DBClusterParameterGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1524,8 +1496,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DBClusterSnapshot> responseHandler = new StaxResponseHandler<DBClusterSnapshot>(new DBClusterSnapshotStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1619,8 +1589,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1730,8 +1698,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1806,8 +1772,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBParameterGroup> responseHandler = new StaxResponseHandler<DBParameterGroup>(new DBParameterGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1870,8 +1834,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBSecurityGroup> responseHandler = new StaxResponseHandler<DBSecurityGroup>(new DBSecurityGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1930,8 +1892,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DBSnapshot> responseHandler = new StaxResponseHandler<DBSnapshot>(new DBSnapshotStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1995,8 +1955,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DBSubnetGroup> responseHandler = new StaxResponseHandler<DBSubnetGroup>(new DBSubnetGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2078,8 +2036,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2134,8 +2090,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<OptionGroup> responseHandler = new StaxResponseHandler<OptionGroup>(new OptionGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2206,8 +2160,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2264,8 +2216,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteDBClusterEndpointResult> responseHandler = new StaxResponseHandler<DeleteDBClusterEndpointResult>(
                     new DeleteDBClusterEndpointResultStaxUnmarshaller());
@@ -2329,8 +2279,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteDBClusterParameterGroupResult> responseHandler = new StaxResponseHandler<DeleteDBClusterParameterGroupResult>(
                     new DeleteDBClusterParameterGroupResultStaxUnmarshaller());
@@ -2397,8 +2345,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DBClusterSnapshot> responseHandler = new StaxResponseHandler<DBClusterSnapshot>(new DBClusterSnapshotStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2497,8 +2443,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2557,8 +2501,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBInstanceAutomatedBackup> responseHandler = new StaxResponseHandler<DBInstanceAutomatedBackup>(
                     new DBInstanceAutomatedBackupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2616,8 +2558,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteDBParameterGroupResult> responseHandler = new StaxResponseHandler<DeleteDBParameterGroupResult>(
                     new DeleteDBParameterGroupResultStaxUnmarshaller());
@@ -2680,8 +2620,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteDBSecurityGroupResult> responseHandler = new StaxResponseHandler<DeleteDBSecurityGroupResult>(
                     new DeleteDBSecurityGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2742,8 +2680,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DBSnapshot> responseHandler = new StaxResponseHandler<DBSnapshot>(new DBSnapshotStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2807,8 +2743,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteDBSubnetGroupResult> responseHandler = new StaxResponseHandler<DeleteDBSubnetGroupResult>(
                     new DeleteDBSubnetGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2865,8 +2799,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2921,8 +2853,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteOptionGroupResult> responseHandler = new StaxResponseHandler<DeleteOptionGroupResult>(
                     new DeleteOptionGroupResultStaxUnmarshaller());
@@ -2980,8 +2910,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeAccountAttributesResult> responseHandler = new StaxResponseHandler<DescribeAccountAttributesResult>(
                     new DescribeAccountAttributesResultStaxUnmarshaller());
@@ -3041,8 +2969,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeCertificatesResult> responseHandler = new StaxResponseHandler<DescribeCertificatesResult>(
                     new DescribeCertificatesResultStaxUnmarshaller());
@@ -3110,8 +3036,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeDBClusterBacktracksResult> responseHandler = new StaxResponseHandler<DescribeDBClusterBacktracksResult>(
                     new DescribeDBClusterBacktracksResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3165,8 +3089,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeDBClusterEndpointsResult> responseHandler = new StaxResponseHandler<DescribeDBClusterEndpointsResult>(
                     new DescribeDBClusterEndpointsResultStaxUnmarshaller());
@@ -3229,8 +3151,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeDBClusterParameterGroupsResult> responseHandler = new StaxResponseHandler<DescribeDBClusterParameterGroupsResult>(
                     new DescribeDBClusterParameterGroupsResultStaxUnmarshaller());
@@ -3295,8 +3215,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeDBClusterParametersResult> responseHandler = new StaxResponseHandler<DescribeDBClusterParametersResult>(
                     new DescribeDBClusterParametersResultStaxUnmarshaller());
@@ -3364,8 +3282,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBClusterSnapshotAttributesResult> responseHandler = new StaxResponseHandler<DBClusterSnapshotAttributesResult>(
                     new DBClusterSnapshotAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3424,8 +3340,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeDBClusterSnapshotsResult> responseHandler = new StaxResponseHandler<DescribeDBClusterSnapshotsResult>(
                     new DescribeDBClusterSnapshotsResultStaxUnmarshaller());
@@ -3491,8 +3405,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeDBClustersResult> responseHandler = new StaxResponseHandler<DescribeDBClustersResult>(
                     new DescribeDBClustersResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3549,8 +3461,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeDBEngineVersionsResult> responseHandler = new StaxResponseHandler<DescribeDBEngineVersionsResult>(
                     new DescribeDBEngineVersionsResultStaxUnmarshaller());
@@ -3620,8 +3530,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeDBInstanceAutomatedBackupsResult> responseHandler = new StaxResponseHandler<DescribeDBInstanceAutomatedBackupsResult>(
                     new DescribeDBInstanceAutomatedBackupsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3675,8 +3583,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeDBInstancesResult> responseHandler = new StaxResponseHandler<DescribeDBInstancesResult>(
                     new DescribeDBInstancesResultStaxUnmarshaller());
@@ -3737,8 +3643,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeDBLogFilesResult> responseHandler = new StaxResponseHandler<DescribeDBLogFilesResult>(
                     new DescribeDBLogFilesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3793,8 +3697,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeDBParameterGroupsResult> responseHandler = new StaxResponseHandler<DescribeDBParameterGroupsResult>(
                     new DescribeDBParameterGroupsResultStaxUnmarshaller());
@@ -3855,8 +3757,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeDBParametersResult> responseHandler = new StaxResponseHandler<DescribeDBParametersResult>(
                     new DescribeDBParametersResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3911,8 +3811,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeDBSecurityGroupsResult> responseHandler = new StaxResponseHandler<DescribeDBSecurityGroupsResult>(
                     new DescribeDBSecurityGroupsResultStaxUnmarshaller());
@@ -3983,8 +3881,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBSnapshotAttributesResult> responseHandler = new StaxResponseHandler<DBSnapshotAttributesResult>(
                     new DBSnapshotAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4043,8 +3939,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeDBSnapshotsResult> responseHandler = new StaxResponseHandler<DescribeDBSnapshotsResult>(
                     new DescribeDBSnapshotsResultStaxUnmarshaller());
@@ -4110,8 +4004,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeDBSubnetGroupsResult> responseHandler = new StaxResponseHandler<DescribeDBSubnetGroupsResult>(
                     new DescribeDBSubnetGroupsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4176,8 +4068,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<EngineDefaults> responseHandler = new StaxResponseHandler<EngineDefaults>(new EngineDefaultsStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -4228,8 +4118,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<EngineDefaults> responseHandler = new StaxResponseHandler<EngineDefaults>(new EngineDefaultsStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4284,8 +4172,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeEventCategoriesResult> responseHandler = new StaxResponseHandler<DescribeEventCategoriesResult>(
                     new DescribeEventCategoriesResultStaxUnmarshaller());
@@ -4350,8 +4236,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeEventSubscriptionsResult> responseHandler = new StaxResponseHandler<DescribeEventSubscriptionsResult>(
                     new DescribeEventSubscriptionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4411,8 +4295,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeEventsResult> responseHandler = new StaxResponseHandler<DescribeEventsResult>(
                     new DescribeEventsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4470,8 +4352,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeOptionGroupOptionsResult> responseHandler = new StaxResponseHandler<DescribeOptionGroupOptionsResult>(
                     new DescribeOptionGroupOptionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4525,8 +4405,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeOptionGroupsResult> responseHandler = new StaxResponseHandler<DescribeOptionGroupsResult>(
                     new DescribeOptionGroupsResultStaxUnmarshaller());
@@ -4587,8 +4465,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeOrderableDBInstanceOptionsResult> responseHandler = new StaxResponseHandler<DescribeOrderableDBInstanceOptionsResult>(
                     new DescribeOrderableDBInstanceOptionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4643,8 +4519,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribePendingMaintenanceActionsResult> responseHandler = new StaxResponseHandler<DescribePendingMaintenanceActionsResult>(
                     new DescribePendingMaintenanceActionsResultStaxUnmarshaller());
@@ -4704,8 +4578,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeReservedDBInstancesResult> responseHandler = new StaxResponseHandler<DescribeReservedDBInstancesResult>(
                     new DescribeReservedDBInstancesResultStaxUnmarshaller());
@@ -4768,8 +4640,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeReservedDBInstancesOfferingsResult> responseHandler = new StaxResponseHandler<DescribeReservedDBInstancesOfferingsResult>(
                     new DescribeReservedDBInstancesOfferingsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4827,8 +4697,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeSourceRegionsResult> responseHandler = new StaxResponseHandler<DescribeSourceRegionsResult>(
                     new DescribeSourceRegionsResultStaxUnmarshaller());
@@ -4889,8 +4757,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ValidDBInstanceModificationsMessage> responseHandler = new StaxResponseHandler<ValidDBInstanceModificationsMessage>(
                     new ValidDBInstanceModificationsMessageStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4946,8 +4812,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DownloadDBLogFilePortionResult> responseHandler = new StaxResponseHandler<DownloadDBLogFilePortionResult>(
                     new DownloadDBLogFilePortionResultStaxUnmarshaller());
@@ -5022,8 +4886,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -5090,8 +4952,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListTagsForResourceResult> responseHandler = new StaxResponseHandler<ListTagsForResourceResult>(
                     new ListTagsForResourceResultStaxUnmarshaller());
@@ -5176,8 +5036,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ModifyCurrentDBClusterCapacityResult> responseHandler = new StaxResponseHandler<ModifyCurrentDBClusterCapacityResult>(
                     new ModifyCurrentDBClusterCapacityResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5256,8 +5114,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -5318,8 +5174,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ModifyDBClusterEndpointResult> responseHandler = new StaxResponseHandler<ModifyDBClusterEndpointResult>(
                     new ModifyDBClusterEndpointResultStaxUnmarshaller());
@@ -5402,8 +5256,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ModifyDBClusterParameterGroupResult> responseHandler = new StaxResponseHandler<ModifyDBClusterParameterGroupResult>(
                     new ModifyDBClusterParameterGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5476,8 +5328,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DBClusterSnapshotAttributesResult> responseHandler = new StaxResponseHandler<DBClusterSnapshotAttributesResult>(
                     new DBClusterSnapshotAttributesResultStaxUnmarshaller());
@@ -5570,8 +5420,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -5646,8 +5494,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ModifyDBParameterGroupResult> responseHandler = new StaxResponseHandler<ModifyDBParameterGroupResult>(
                     new ModifyDBParameterGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5704,8 +5550,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DBSnapshot> responseHandler = new StaxResponseHandler<DBSnapshot>(new DBSnapshotStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5778,8 +5622,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBSnapshotAttributesResult> responseHandler = new StaxResponseHandler<DBSnapshotAttributesResult>(
                     new DBSnapshotAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5843,8 +5685,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DBSubnetGroup> responseHandler = new StaxResponseHandler<DBSubnetGroup>(new DBSubnetGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5916,8 +5756,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -5972,8 +5810,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<OptionGroup> responseHandler = new StaxResponseHandler<OptionGroup>(new OptionGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6048,8 +5884,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -6104,8 +5938,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6164,8 +5996,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ReservedDBInstance> responseHandler = new StaxResponseHandler<ReservedDBInstance>(new ReservedDBInstanceStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6233,8 +6063,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -6295,8 +6123,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<RemoveRoleFromDBClusterResult> responseHandler = new StaxResponseHandler<RemoveRoleFromDBClusterResult>(
                     new RemoveRoleFromDBClusterResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6354,8 +6180,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6418,8 +6242,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<RemoveTagsFromResourceResult> responseHandler = new StaxResponseHandler<RemoveTagsFromResourceResult>(
                     new RemoveTagsFromResourceResultStaxUnmarshaller());
@@ -6492,8 +6314,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ResetDBClusterParameterGroupResult> responseHandler = new StaxResponseHandler<ResetDBClusterParameterGroupResult>(
                     new ResetDBClusterParameterGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6555,8 +6375,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ResetDBParameterGroupResult> responseHandler = new StaxResponseHandler<ResetDBParameterGroupResult>(
                     new ResetDBParameterGroupResultStaxUnmarshaller());
@@ -6643,8 +6461,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6751,8 +6567,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -6856,8 +6670,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6976,8 +6788,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -7072,8 +6882,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7189,8 +6997,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -7252,8 +7058,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DBSecurityGroup> responseHandler = new StaxResponseHandler<DBSecurityGroup>(new DBSecurityGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7317,8 +7121,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7409,8 +7211,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -7474,8 +7274,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7550,8 +7348,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -7587,18 +7383,18 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -7608,7 +7404,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -7616,11 +7412,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

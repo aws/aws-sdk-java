@@ -35,6 +35,8 @@ public class AddThingToThingGroupRequestMarshaller {
             .marshallLocationName("thingName").build();
     private static final MarshallingInfo<String> THINGARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("thingArn").build();
+    private static final MarshallingInfo<Boolean> OVERRIDEDYNAMICGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("overrideDynamicGroups").build();
 
     private static final AddThingToThingGroupRequestMarshaller instance = new AddThingToThingGroupRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class AddThingToThingGroupRequestMarshaller {
             protocolMarshaller.marshall(addThingToThingGroupRequest.getThingGroupArn(), THINGGROUPARN_BINDING);
             protocolMarshaller.marshall(addThingToThingGroupRequest.getThingName(), THINGNAME_BINDING);
             protocolMarshaller.marshall(addThingToThingGroupRequest.getThingArn(), THINGARN_BINDING);
+            protocolMarshaller.marshall(addThingToThingGroupRequest.getOverrideDynamicGroups(), OVERRIDEDYNAMICGROUPS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

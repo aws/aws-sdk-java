@@ -71,6 +71,12 @@ public class DescribeThingResult extends com.amazonaws.AmazonWebServiceResult<co
      * </note>
      */
     private Long version;
+    /**
+     * <p>
+     * The name of the billing group the thing belongs to.
+     * </p>
+     */
+    private String billingGroupName;
 
     /**
      * <p>
@@ -407,6 +413,46 @@ public class DescribeThingResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The name of the billing group the thing belongs to.
+     * </p>
+     * 
+     * @param billingGroupName
+     *        The name of the billing group the thing belongs to.
+     */
+
+    public void setBillingGroupName(String billingGroupName) {
+        this.billingGroupName = billingGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the billing group the thing belongs to.
+     * </p>
+     * 
+     * @return The name of the billing group the thing belongs to.
+     */
+
+    public String getBillingGroupName() {
+        return this.billingGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the billing group the thing belongs to.
+     * </p>
+     * 
+     * @param billingGroupName
+     *        The name of the billing group the thing belongs to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeThingResult withBillingGroupName(String billingGroupName) {
+        setBillingGroupName(billingGroupName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -430,7 +476,9 @@ public class DescribeThingResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getAttributes() != null)
             sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getVersion() != null)
-            sb.append("Version: ").append(getVersion());
+            sb.append("Version: ").append(getVersion()).append(",");
+        if (getBillingGroupName() != null)
+            sb.append("BillingGroupName: ").append(getBillingGroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -473,6 +521,10 @@ public class DescribeThingResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
+        if (other.getBillingGroupName() == null ^ this.getBillingGroupName() == null)
+            return false;
+        if (other.getBillingGroupName() != null && other.getBillingGroupName().equals(this.getBillingGroupName()) == false)
+            return false;
         return true;
     }
 
@@ -488,6 +540,7 @@ public class DescribeThingResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getThingTypeName() == null) ? 0 : getThingTypeName().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getBillingGroupName() == null) ? 0 : getBillingGroupName().hashCode());
         return hashCode;
     }
 

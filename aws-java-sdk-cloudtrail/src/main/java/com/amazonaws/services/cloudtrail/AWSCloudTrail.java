@@ -173,6 +173,12 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
+     * @throws NotOrganizationMasterAccountException
+     *         This exception is thrown when the AWS account making the request to create or update an organization
+     *         trail is not the master account for an organization in AWS Organizations. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
      * @sample AWSCloudTrail.AddTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags" target="_top">AWS API
      *      Documentation</a>
@@ -260,6 +266,35 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
+     * @throws CloudTrailAccessNotEnabledException
+     *         This exception is thrown when trusted access has not been enabled between AWS CloudTrail and AWS
+     *         Organizations. For more information, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
+     *         Trusted Access with Other AWS Services</a> and <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws InsufficientDependencyServiceAccessPermissionException
+     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
+     *         lacking one or more required permissions for creating an organization trail in a required service. For
+     *         more information, see <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws NotOrganizationMasterAccountException
+     *         This exception is thrown when the AWS account making the request to create or update an organization
+     *         trail is not the master account for an organization in AWS Organizations. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws OrganizationsNotInUseException
+     *         This exception is thrown when the request is made from an AWS account that is not a member of an
+     *         organization. To make this request, sign in using the credentials of an account that belongs to an
+     *         organization.
+     * @throws OrganizationNotInAllFeaturesModeException
+     *         This exception is thrown when AWS Organizations is not configured to support all features. All features
+     *         must be enabled in AWS Organization to support creating an organization trail. For more information, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
      * @sample AWSCloudTrail.CreateTrail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail" target="_top">AWS API
      *      Documentation</a>
@@ -311,6 +346,22 @@ public interface AWSCloudTrail {
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @throws NotOrganizationMasterAccountException
+     *         This exception is thrown when the AWS account making the request to create or update an organization
+     *         trail is not the master account for an organization in AWS Organizations. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws InsufficientDependencyServiceAccessPermissionException
+     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
+     *         lacking one or more required permissions for creating an organization trail in a required service. For
+     *         more information, see <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
      * @sample AWSCloudTrail.DeleteTrail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail" target="_top">AWS API
      *      Documentation</a>
@@ -777,6 +828,18 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
+     * @throws NotOrganizationMasterAccountException
+     *         This exception is thrown when the AWS account making the request to create or update an organization
+     *         trail is not the master account for an organization in AWS Organizations. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws InsufficientDependencyServiceAccessPermissionException
+     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
+     *         lacking one or more required permissions for creating an organization trail in a required service. For
+     *         more information, see <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
      * @sample AWSCloudTrail.PutEventSelectors
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors" target="_top">AWS
      *      API Documentation</a>
@@ -838,6 +901,12 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
+     * @throws NotOrganizationMasterAccountException
+     *         This exception is thrown when the AWS account making the request to create or update an organization
+     *         trail is not the master account for an organization in AWS Organizations. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
      * @sample AWSCloudTrail.RemoveTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags" target="_top">AWS API
      *      Documentation</a>
@@ -889,6 +958,22 @@ public interface AWSCloudTrail {
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @throws NotOrganizationMasterAccountException
+     *         This exception is thrown when the AWS account making the request to create or update an organization
+     *         trail is not the master account for an organization in AWS Organizations. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws InsufficientDependencyServiceAccessPermissionException
+     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
+     *         lacking one or more required permissions for creating an organization trail in a required service. For
+     *         more information, see <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
      * @sample AWSCloudTrail.StartLogging
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging" target="_top">AWS API
      *      Documentation</a>
@@ -942,6 +1027,22 @@ public interface AWSCloudTrail {
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @throws NotOrganizationMasterAccountException
+     *         This exception is thrown when the AWS account making the request to create or update an organization
+     *         trail is not the master account for an organization in AWS Organizations. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws InsufficientDependencyServiceAccessPermissionException
+     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
+     *         lacking one or more required permissions for creating an organization trail in a required service. For
+     *         more information, see <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
      * @sample AWSCloudTrail.StopLogging
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging" target="_top">AWS API
      *      Documentation</a>
@@ -1033,6 +1134,35 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
+     * @throws CloudTrailAccessNotEnabledException
+     *         This exception is thrown when trusted access has not been enabled between AWS CloudTrail and AWS
+     *         Organizations. For more information, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
+     *         Trusted Access with Other AWS Services</a> and <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws InsufficientDependencyServiceAccessPermissionException
+     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
+     *         lacking one or more required permissions for creating an organization trail in a required service. For
+     *         more information, see <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws OrganizationsNotInUseException
+     *         This exception is thrown when the request is made from an AWS account that is not a member of an
+     *         organization. To make this request, sign in using the credentials of an account that belongs to an
+     *         organization.
+     * @throws NotOrganizationMasterAccountException
+     *         This exception is thrown when the AWS account making the request to create or update an organization
+     *         trail is not the master account for an organization in AWS Organizations. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws OrganizationNotInAllFeaturesModeException
+     *         This exception is thrown when AWS Organizations is not configured to support all features. All features
+     *         must be enabled in AWS Organization to support creating an organization trail. For more information, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
      * @sample AWSCloudTrail.UpdateTrail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail" target="_top">AWS API
      *      Documentation</a>

@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : {
       "Activity" : [ "Type" ],
       "Comment" : [ "Status", "Visibility" ],
@@ -118,6 +118,7 @@
       "documentation" : "<p>Aborts the upload of the specified document version that was previously initiated by <a>InitiateDocumentVersionUpload</a>. The client should make this call only when it no longer intends to upload the document version, or fails to do so.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -144,6 +145,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "AbortDocumentVersionUploadRequest",
@@ -172,6 +174,7 @@
       "documentation" : "<p>Activates the specified user. Only active users can access Amazon WorkDocs.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -194,6 +197,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ActivateUserRequest",
@@ -222,6 +226,7 @@
       "documentation" : "<p>Creates a set of permissions for the specified folder or document. The resource permissions are overwritten if the principals already have different permissions.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedOperationException",
         "documentation" : "<p>The operation is not permitted.</p>",
@@ -240,6 +245,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "AddResourcePermissionsRequest",
@@ -268,6 +274,7 @@
       "documentation" : "<p>Adds a new comment to the specified document version.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -296,8 +303,13 @@
         "exceptionName" : "DocumentLockedForCommentsException",
         "documentation" : "<p>This exception is thrown when the document is locked for comments and user tries to create or delete a comment on that document.</p>",
         "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "InvalidCommentOperationException",
+        "documentation" : "<p>The requested operation is not allowed on the specified comment object.</p>",
+        "httpStatusCode" : 409
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateCommentRequest",
@@ -326,6 +338,7 @@
       "documentation" : "<p>Adds one or more custom properties to the specified resource (a folder, document, or version).</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -356,6 +369,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateCustomMetadataRequest",
@@ -384,6 +398,7 @@
       "documentation" : "<p>Creates a folder with the specified name and parent folder.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -395,6 +410,10 @@
       }, {
         "exceptionName" : "ProhibitedStateException",
         "documentation" : "<p>The specified document version is not in the INITIALIZED state.</p>",
+        "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "ConflictingOperationException",
+        "documentation" : "<p>Another operation is in progress on the resource that conflicts with the current operation.</p>",
         "httpStatusCode" : 409
       }, {
         "exceptionName" : "LimitExceededException",
@@ -418,6 +437,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateFolderRequest",
@@ -446,6 +466,7 @@
       "documentation" : "<p>Adds the specified list of labels to the given resource (a document or folder)</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -472,6 +493,7 @@
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateLabelsRequest",
@@ -497,9 +519,10 @@
       "asyncReturnType" : "CreateNotificationSubscriptionResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Configure WorkDocs to use Amazon SNS notifications.</p> <p>The endpoint receives a confirmation message, and must confirm the subscription. For more information, see <a href=\"http://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm\">Confirm the Subscription</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.</p>",
+      "documentation" : "<p>Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint receives a confirmation message, and must confirm the subscription.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html\">Subscribe to Notifications</a> in the <i>Amazon WorkDocs Developer Guide</i>.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedResourceAccessException",
         "documentation" : "<p>The caller does not have access to perform the action on the resource.</p>",
@@ -514,6 +537,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateNotificationSubscriptionRequest",
@@ -542,6 +566,7 @@
       "documentation" : "<p>Creates a user in a Simple AD or Microsoft AD directory. The status of a newly created user is \"ACTIVE\". New users can access Amazon WorkDocs.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityAlreadyExistsException",
         "documentation" : "<p>The resource already exists.</p>",
@@ -564,6 +589,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateUserRequest",
@@ -592,6 +618,7 @@
       "documentation" : "<p>Deactivates the specified user, which revokes the user's access to Amazon WorkDocs.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -614,6 +641,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeactivateUserRequest",
@@ -642,6 +670,7 @@
       "documentation" : "<p>Deletes the specified comment from the document version.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -672,6 +701,7 @@
         "httpStatusCode" : 409
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteCommentRequest",
@@ -700,6 +730,7 @@
       "documentation" : "<p>Deletes custom metadata from the specified resource.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -726,6 +757,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteCustomMetadataRequest",
@@ -754,6 +786,7 @@
       "documentation" : "<p>Permanently deletes the specified document and its associated metadata.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -761,6 +794,10 @@
       }, {
         "exceptionName" : "ProhibitedStateException",
         "documentation" : "<p>The specified document version is not in the INITIALIZED state.</p>",
+        "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "ConflictingOperationException",
+        "documentation" : "<p>Another operation is in progress on the resource that conflicts with the current operation.</p>",
         "httpStatusCode" : 409
       }, {
         "exceptionName" : "ConcurrentModificationException",
@@ -784,6 +821,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteDocumentRequest",
@@ -812,6 +850,7 @@
       "documentation" : "<p>Permanently deletes the specified folder and its contents.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -819,6 +858,10 @@
       }, {
         "exceptionName" : "ProhibitedStateException",
         "documentation" : "<p>The specified document version is not in the INITIALIZED state.</p>",
+        "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "ConflictingOperationException",
+        "documentation" : "<p>Another operation is in progress on the resource that conflicts with the current operation.</p>",
         "httpStatusCode" : 409
       }, {
         "exceptionName" : "ConcurrentModificationException",
@@ -842,6 +885,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteFolderRequest",
@@ -870,10 +914,19 @@
       "documentation" : "<p>Deletes the contents of the specified folder.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
         "httpStatusCode" : 404
+      }, {
+        "exceptionName" : "ProhibitedStateException",
+        "documentation" : "<p>The specified document version is not in the INITIALIZED state.</p>",
+        "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "ConflictingOperationException",
+        "documentation" : "<p>Another operation is in progress on the resource that conflicts with the current operation.</p>",
+        "httpStatusCode" : 409
       }, {
         "exceptionName" : "UnauthorizedOperationException",
         "documentation" : "<p>The operation is not permitted.</p>",
@@ -892,6 +945,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteFolderContentsRequest",
@@ -920,6 +974,7 @@
       "documentation" : "<p>Deletes the specified list of labels from a resource.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -942,6 +997,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteLabelsRequest",
@@ -970,6 +1026,7 @@
       "documentation" : "<p>Deletes the specified subscription from the specified organization.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedResourceAccessException",
         "documentation" : "<p>The caller does not have access to perform the action on the resource.</p>",
@@ -988,6 +1045,7 @@
         "httpStatusCode" : 409
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteNotificationSubscriptionRequest",
@@ -1016,6 +1074,7 @@
       "documentation" : "<p>Deletes the specified user from a Simple AD or Microsoft AD directory.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1038,6 +1097,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteUserRequest",
@@ -1066,6 +1126,7 @@
       "documentation" : "<p>Describes the user activities in a specified time period.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedOperationException",
         "documentation" : "<p>The operation is not permitted.</p>",
@@ -1088,6 +1149,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeActivitiesRequest",
@@ -1116,6 +1178,7 @@
       "documentation" : "<p>List all the comments for the specified document version.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1142,6 +1205,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeCommentsRequest",
@@ -1170,6 +1234,7 @@
       "documentation" : "<p>Retrieves the document versions for the specified document.</p> <p>By default, only active versions are returned.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1200,6 +1265,7 @@
         "httpStatusCode" : 409
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeDocumentVersionsRequest",
@@ -1228,6 +1294,7 @@
       "documentation" : "<p>Describes the contents of the specified folder, including its documents and subfolders.</p> <p>By default, Amazon WorkDocs returns the first 100 active document and folder metadata items. If there are more results, the response includes a marker that you can use to request the next set of results. You can also request initialized documents.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1254,6 +1321,7 @@
         "httpStatusCode" : 409
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeFolderContentsRequest",
@@ -1279,9 +1347,10 @@
       "asyncReturnType" : "DescribeGroupsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Describes the groups specified by query.</p>",
+      "documentation" : "<p>Describes the groups specified by the query. Groups are defined by the underlying Active Directory.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedOperationException",
         "documentation" : "<p>The operation is not permitted.</p>",
@@ -1300,6 +1369,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeGroupsRequest",
@@ -1328,6 +1398,7 @@
       "documentation" : "<p>Lists the specified notification subscriptions.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedResourceAccessException",
         "documentation" : "<p>The caller does not have access to perform the action on the resource.</p>",
@@ -1342,6 +1413,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeNotificationSubscriptionsRequest",
@@ -1370,6 +1442,7 @@
       "documentation" : "<p>Describes the permissions of a specified resource.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedOperationException",
         "documentation" : "<p>The operation is not permitted.</p>",
@@ -1388,6 +1461,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeResourcePermissionsRequest",
@@ -1413,9 +1487,10 @@
       "asyncReturnType" : "DescribeRootFoldersResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Describes the current user's special folders; the <code>RootFolder</code> and the <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files and folders and <code>RecycleBin</code> is the root of recycled items. This is not a valid action for SigV4 (administrative API) clients.</p>",
+      "documentation" : "<p>Describes the current user's special folders; the <code>RootFolder</code> and the <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files and folders and <code>RecycleBin</code> is the root of recycled items. This is not a valid action for SigV4 (administrative API) clients.</p> <p>This action requires an authentication token. To get an authentication token, register an application with Amazon WorkDocs. For more information, see <a href=\"http://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html\">Authentication and Access Control for User Applications</a> in the <i>Amazon WorkDocs Developer Guide</i>.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedOperationException",
         "documentation" : "<p>The operation is not permitted.</p>",
@@ -1438,6 +1513,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeRootFoldersRequest",
@@ -1466,7 +1542,12 @@
       "documentation" : "<p>Describes the specified users. You can describe all users or filter the results (for example, by status or organization).</p> <p>By default, Amazon WorkDocs returns the first 24 active or pending users. If there are more results, the response includes a marker that you can use to request the next set of results.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "EntityNotExistsException",
+        "documentation" : "<p>The resource does not exist.</p>",
+        "httpStatusCode" : 404
+      }, {
         "exceptionName" : "UnauthorizedOperationException",
         "documentation" : "<p>The operation is not permitted.</p>",
         "httpStatusCode" : 403
@@ -1486,8 +1567,13 @@
         "exceptionName" : "InvalidArgumentException",
         "documentation" : "<p>The pagination marker or limit fields are not valid.</p>",
         "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "RequestedEntityTooLargeException",
+        "documentation" : "<p>The response is too large to return. The request must include a filter to reduce the size of the response.</p>",
+        "httpStatusCode" : 413
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeUsersRequest",
@@ -1516,6 +1602,7 @@
       "documentation" : "<p>Retrieves details of the current user for whom the authentication token was generated. This is not a valid action for SigV4 (administrative API) clients.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1538,6 +1625,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetCurrentUserRequest",
@@ -1566,6 +1654,7 @@
       "documentation" : "<p>Retrieves details of a document.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1596,6 +1685,7 @@
         "httpStatusCode" : 401
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetDocumentRequest",
@@ -1624,6 +1714,7 @@
       "documentation" : "<p>Retrieves the path information (the hierarchy from the root folder) for the requested document.</p> <p>By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested document and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the names of the parent folders.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1646,6 +1737,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetDocumentPathRequest",
@@ -1674,6 +1766,7 @@
       "documentation" : "<p>Retrieves version metadata for the specified document.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1704,6 +1797,7 @@
         "httpStatusCode" : 401
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetDocumentVersionRequest",
@@ -1732,6 +1826,7 @@
       "documentation" : "<p>Retrieves the metadata of the specified folder.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1762,6 +1857,7 @@
         "httpStatusCode" : 409
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetFolderRequest",
@@ -1790,6 +1886,7 @@
       "documentation" : "<p>Retrieves the path information (the hierarchy from the root folder) for the specified folder.</p> <p>By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested folder and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the parent folder names.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1812,6 +1909,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetFolderPathRequest",
@@ -1830,6 +1928,58 @@
       },
       "syncReturnType" : "GetFolderPathResult"
     },
+    "GetResources" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<GetResourcesResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<GetResourcesResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetResourcesRequest, GetResourcesResult>",
+      "asyncReturnType" : "GetResourcesResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Retrieves a collection of resources, including folders and documents. The only <code>CollectionType</code> supported is <code>SHARED_WITH_ME</code>.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "UnauthorizedResourceAccessException",
+        "documentation" : "<p>The caller does not have access to perform the action on the resource.</p>",
+        "httpStatusCode" : 404
+      }, {
+        "exceptionName" : "UnauthorizedOperationException",
+        "documentation" : "<p>The operation is not permitted.</p>",
+        "httpStatusCode" : 403
+      }, {
+        "exceptionName" : "InvalidArgumentException",
+        "documentation" : "<p>The pagination marker or limit fields are not valid.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "FailedDependencyException",
+        "documentation" : "<p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>",
+        "httpStatusCode" : 424
+      }, {
+        "exceptionName" : "ServiceUnavailableException",
+        "documentation" : "<p>One or more of the dependencies is unavailable.</p>",
+        "httpStatusCode" : 503
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "GetResourcesRequest",
+        "variableName" : "getResourcesRequest",
+        "variableType" : "GetResourcesRequest",
+        "documentation" : "",
+        "simpleType" : "GetResourcesRequest",
+        "variableSetterType" : "GetResourcesRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "getResources",
+      "operationName" : "GetResources",
+      "returnType" : {
+        "returnType" : "GetResourcesResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "GetResourcesResult"
+    },
     "InitiateDocumentVersionUpload" : {
       "asyncCallableType" : "java.util.concurrent.Callable<InitiateDocumentVersionUploadResult>",
       "asyncFutureType" : "java.util.concurrent.Future<InitiateDocumentVersionUploadResult>",
@@ -1840,6 +1990,7 @@
       "documentation" : "<p>Creates a new document object and version object.</p> <p>The client specifies the parent folder ID and name of the document to upload. The ID is optionally specified when creating a new version of an existing document. This is the first step to upload a document. Next, upload the document to the URL returned from the call, and then call <a>UpdateDocumentVersion</a>.</p> <p>To cancel the document upload, call <a>AbortDocumentVersionUpload</a>.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1886,6 +2037,7 @@
         "httpStatusCode" : 409
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "InitiateDocumentVersionUploadRequest",
@@ -1914,6 +2066,7 @@
       "documentation" : "<p>Removes all the permissions from the specified resource.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedOperationException",
         "documentation" : "<p>The operation is not permitted.</p>",
@@ -1932,6 +2085,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "RemoveAllResourcePermissionsRequest",
@@ -1960,6 +2114,7 @@
       "documentation" : "<p>Removes the permission for the specified principal from the specified resource.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedOperationException",
         "documentation" : "<p>The operation is not permitted.</p>",
@@ -1978,6 +2133,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "RemoveResourcePermissionRequest",
@@ -2006,6 +2162,7 @@
       "documentation" : "<p>Updates the specified attributes of a document. The user must have access to both the document and its parent folder, if applicable.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -2021,6 +2178,10 @@
       }, {
         "exceptionName" : "ProhibitedStateException",
         "documentation" : "<p>The specified document version is not in the INITIALIZED state.</p>",
+        "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "ConflictingOperationException",
+        "documentation" : "<p>Another operation is in progress on the resource that conflicts with the current operation.</p>",
         "httpStatusCode" : 409
       }, {
         "exceptionName" : "ConcurrentModificationException",
@@ -2044,6 +2205,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateDocumentRequest",
@@ -2072,6 +2234,7 @@
       "documentation" : "<p>Changes the status of the document version to ACTIVE. </p> <p>Amazon WorkDocs also sets its document container to ACTIVE. This is the last step in a document upload, after the client uploads the document to an S3-presigned URL returned by <a>InitiateDocumentVersionUpload</a>. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -2106,6 +2269,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateDocumentVersionRequest",
@@ -2134,6 +2298,7 @@
       "documentation" : "<p>Updates the specified attributes of the specified folder. The user must have access to both the folder and its parent folder, if applicable.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -2145,6 +2310,10 @@
       }, {
         "exceptionName" : "ProhibitedStateException",
         "documentation" : "<p>The specified document version is not in the INITIALIZED state.</p>",
+        "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "ConflictingOperationException",
+        "documentation" : "<p>Another operation is in progress on the resource that conflicts with the current operation.</p>",
         "httpStatusCode" : 409
       }, {
         "exceptionName" : "ConcurrentModificationException",
@@ -2172,6 +2341,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateFolderRequest",
@@ -2200,6 +2370,7 @@
       "documentation" : "<p>Updates the specified attributes of the specified user, and grants or revokes administrative privileges to the Amazon WorkDocs site.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -2234,6 +2405,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateUserRequest",
@@ -3359,6 +3531,71 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "IsIndirectActivity",
+        "c2jShape" : "BooleanType",
+        "deprecated" : false,
+        "documentation" : "<p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>\n@param isIndirectActivity Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withIsIndirectActivity",
+        "getterDocumentation" : "/**<p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>\n@return Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).*/",
+        "getterMethodName" : "getIsIndirectActivity",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "IsIndirectActivity",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "IsIndirectActivity",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "IsIndirectActivity",
+        "setterDocumentation" : "/**<p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>\n@param isIndirectActivity Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).*/",
+        "setterMethodName" : "setIsIndirectActivity",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "isIndirectActivity",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : true,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>\n@param isIndirectActivity Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "isIndirectActivity",
+          "variableType" : "Boolean",
+          "documentation" : "<p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "OrganizationId",
         "c2jShape" : "IdType",
         "deprecated" : false,
@@ -3882,6 +4119,72 @@
           },
           "xmlNameSpaceUri" : null
         },
+        "IsIndirectActivity" : {
+          "c2jName" : "IsIndirectActivity",
+          "c2jShape" : "BooleanType",
+          "deprecated" : false,
+          "documentation" : "<p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>\n@param isIndirectActivity Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withIsIndirectActivity",
+          "getterDocumentation" : "/**<p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>\n@return Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).*/",
+          "getterMethodName" : "getIsIndirectActivity",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "IsIndirectActivity",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "IsIndirectActivity",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "IsIndirectActivity",
+          "setterDocumentation" : "/**<p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>\n@param isIndirectActivity Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).*/",
+          "setterMethodName" : "setIsIndirectActivity",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "isIndirectActivity",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : true,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>\n@param isIndirectActivity Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "isIndirectActivity",
+            "variableType" : "Boolean",
+            "documentation" : "<p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "OrganizationId" : {
           "c2jName" : "OrganizationId",
           "c2jShape" : "IdType",
@@ -4325,6 +4628,12 @@
       }, {
         "name" : "DOCUMENT_VERSION_DELETED",
         "value" : "DOCUMENT_VERSION_DELETED"
+      }, {
+        "name" : "DOCUMENT_VERSION_VIEWED",
+        "value" : "DOCUMENT_VERSION_VIEWED"
+      }, {
+        "name" : "DOCUMENT_VERSION_DOWNLOADED",
+        "value" : "DOCUMENT_VERSION_DOWNLOADED"
       }, {
         "name" : "DOCUMENT_RECYCLED",
         "value" : "DOCUMENT_RECYCLED"
@@ -7585,6 +7894,43 @@
         "documentation" : null,
         "simpleType" : "ConcurrentModificationException",
         "variableSetterType" : "ConcurrentModificationException"
+      },
+      "wrapper" : false
+    },
+    "ConflictingOperationException" : {
+      "c2jName" : "ConflictingOperationException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Another operation is in progress on the resource that conflicts with the current operation.</p>",
+      "enums" : null,
+      "errorCode" : "ConflictingOperationException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ConflictingOperationException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ConflictingOperationException",
+        "variableName" : "conflictingOperationException",
+        "variableType" : "ConflictingOperationException",
+        "documentation" : null,
+        "simpleType" : "ConflictingOperationException",
+        "variableSetterType" : "ConflictingOperationException"
       },
       "wrapper" : false
     },
@@ -17726,6 +18072,136 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "ActivityTypes",
+        "c2jShape" : "ActivityNamesFilterType",
+        "deprecated" : false,
+        "documentation" : "<p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>\n@param activityTypes Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withActivityTypes",
+        "getterDocumentation" : "/**<p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>\n@return Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.*/",
+        "getterMethodName" : "getActivityTypes",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "querystring",
+          "marshallLocation" : "QUERY_PARAM",
+          "marshallLocationName" : "activityTypes",
+          "queryString" : true,
+          "statusCode" : false,
+          "unmarshallLocationName" : "activityTypes",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ActivityTypes",
+        "setterDocumentation" : "/**<p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>\n@param activityTypes Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.*/",
+        "setterMethodName" : "setActivityTypes",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "activityTypes",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>\n@param activityTypes Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "activityTypes",
+          "variableType" : "String",
+          "documentation" : "<p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ResourceId",
+        "c2jShape" : "IdType",
+        "deprecated" : false,
+        "documentation" : "<p>The document or folder ID for which to describe activity types.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The document or folder ID for which to describe activity types.</p>\n@param resourceId The document or folder ID for which to describe activity types.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withResourceId",
+        "getterDocumentation" : "/**<p>The document or folder ID for which to describe activity types.</p>\n@return The document or folder ID for which to describe activity types.*/",
+        "getterMethodName" : "getResourceId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "querystring",
+          "marshallLocation" : "QUERY_PARAM",
+          "marshallLocationName" : "resourceId",
+          "queryString" : true,
+          "statusCode" : false,
+          "unmarshallLocationName" : "resourceId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ResourceId",
+        "setterDocumentation" : "/**<p>The document or folder ID for which to describe activity types.</p>\n@param resourceId The document or folder ID for which to describe activity types.*/",
+        "setterMethodName" : "setResourceId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "resourceId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The document or folder ID for which to describe activity types.</p>\n@param resourceId The document or folder ID for which to describe activity types.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "resourceId",
+          "variableType" : "String",
+          "documentation" : "<p>The document or folder ID for which to describe activity types.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "UserId",
         "c2jShape" : "IdType",
         "deprecated" : false,
@@ -17788,6 +18264,71 @@
           "documentation" : "<p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "IncludeIndirectActivities",
+        "c2jShape" : "BooleanType",
+        "deprecated" : false,
+        "documentation" : "<p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>\n@param includeIndirectActivities Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withIncludeIndirectActivities",
+        "getterDocumentation" : "/**<p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>\n@return Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).*/",
+        "getterMethodName" : "getIncludeIndirectActivities",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "querystring",
+          "marshallLocation" : "QUERY_PARAM",
+          "marshallLocationName" : "includeIndirectActivities",
+          "queryString" : true,
+          "statusCode" : false,
+          "unmarshallLocationName" : "includeIndirectActivities",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "IncludeIndirectActivities",
+        "setterDocumentation" : "/**<p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>\n@param includeIndirectActivities Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).*/",
+        "setterMethodName" : "setIncludeIndirectActivities",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "includeIndirectActivities",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>\n@param includeIndirectActivities Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "includeIndirectActivities",
+          "variableType" : "Boolean",
+          "documentation" : "<p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
         },
         "xmlNameSpaceUri" : null
       }, {
@@ -17922,6 +18463,72 @@
         "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "ActivityTypes" : {
+          "c2jName" : "ActivityTypes",
+          "c2jShape" : "ActivityNamesFilterType",
+          "deprecated" : false,
+          "documentation" : "<p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>\n@param activityTypes Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withActivityTypes",
+          "getterDocumentation" : "/**<p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>\n@return Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.*/",
+          "getterMethodName" : "getActivityTypes",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "querystring",
+            "marshallLocation" : "QUERY_PARAM",
+            "marshallLocationName" : "activityTypes",
+            "queryString" : true,
+            "statusCode" : false,
+            "unmarshallLocationName" : "activityTypes",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ActivityTypes",
+          "setterDocumentation" : "/**<p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>\n@param activityTypes Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.*/",
+          "setterMethodName" : "setActivityTypes",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "activityTypes",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>\n@param activityTypes Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "activityTypes",
+            "variableType" : "String",
+            "documentation" : "<p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "AuthenticationToken" : {
           "c2jName" : "AuthenticationToken",
           "c2jShape" : "AuthenticationHeaderType",
@@ -18051,6 +18658,72 @@
             "documentation" : "<p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>",
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "IncludeIndirectActivities" : {
+          "c2jName" : "IncludeIndirectActivities",
+          "c2jShape" : "BooleanType",
+          "deprecated" : false,
+          "documentation" : "<p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>\n@param includeIndirectActivities Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withIncludeIndirectActivities",
+          "getterDocumentation" : "/**<p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>\n@return Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).*/",
+          "getterMethodName" : "getIncludeIndirectActivities",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "querystring",
+            "marshallLocation" : "QUERY_PARAM",
+            "marshallLocationName" : "includeIndirectActivities",
+            "queryString" : true,
+            "statusCode" : false,
+            "unmarshallLocationName" : "includeIndirectActivities",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "IncludeIndirectActivities",
+          "setterDocumentation" : "/**<p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>\n@param includeIndirectActivities Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).*/",
+          "setterMethodName" : "setIncludeIndirectActivities",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "includeIndirectActivities",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>\n@param includeIndirectActivities Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "includeIndirectActivities",
+            "variableType" : "Boolean",
+            "documentation" : "<p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "xmlNameSpaceUri" : null
         },
@@ -18247,6 +18920,72 @@
             "variableName" : "organizationId",
             "variableType" : "String",
             "documentation" : "<p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ResourceId" : {
+          "c2jName" : "ResourceId",
+          "c2jShape" : "IdType",
+          "deprecated" : false,
+          "documentation" : "<p>The document or folder ID for which to describe activity types.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The document or folder ID for which to describe activity types.</p>\n@param resourceId The document or folder ID for which to describe activity types.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withResourceId",
+          "getterDocumentation" : "/**<p>The document or folder ID for which to describe activity types.</p>\n@return The document or folder ID for which to describe activity types.*/",
+          "getterMethodName" : "getResourceId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "querystring",
+            "marshallLocation" : "QUERY_PARAM",
+            "marshallLocationName" : "resourceId",
+            "queryString" : true,
+            "statusCode" : false,
+            "unmarshallLocationName" : "resourceId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ResourceId",
+          "setterDocumentation" : "/**<p>The document or folder ID for which to describe activity types.</p>\n@param resourceId The document or folder ID for which to describe activity types.*/",
+          "setterMethodName" : "setResourceId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "resourceId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The document or folder ID for which to describe activity types.</p>\n@param resourceId The document or folder ID for which to describe activity types.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "resourceId",
+            "variableType" : "String",
+            "documentation" : "<p>The document or folder ID for which to describe activity types.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -40229,6 +40968,1460 @@
       },
       "wrapper" : false
     },
+    "GetResourcesRequest" : {
+      "c2jName" : "GetResourcesRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : true,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "GetResources",
+        "locationName" : null,
+        "requestUri" : "/api/v1/resources",
+        "target" : null,
+        "verb" : "GET",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "AuthenticationToken",
+        "c2jShape" : "AuthenticationHeaderType",
+        "deprecated" : false,
+        "documentation" : "<p>The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.</p>\n@param authenticationToken The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withAuthenticationToken",
+        "getterDocumentation" : "/**<p>The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.</p>\n@return The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.*/",
+        "getterMethodName" : "getAuthenticationToken",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : true,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "header",
+          "marshallLocation" : "HEADER",
+          "marshallLocationName" : "Authentication",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Authentication",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "AuthenticationToken",
+        "setterDocumentation" : "/**<p>The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.</p>\n@param authenticationToken The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.*/",
+        "setterMethodName" : "setAuthenticationToken",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "authenticationToken",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.</p>\n@param authenticationToken The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "authenticationToken",
+          "variableType" : "String",
+          "documentation" : "<p>The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "UserId",
+        "c2jShape" : "IdType",
+        "deprecated" : false,
+        "documentation" : "<p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>\n@param userId The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withUserId",
+        "getterDocumentation" : "/**<p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>\n@return The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.*/",
+        "getterMethodName" : "getUserId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "querystring",
+          "marshallLocation" : "QUERY_PARAM",
+          "marshallLocationName" : "userId",
+          "queryString" : true,
+          "statusCode" : false,
+          "unmarshallLocationName" : "userId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "UserId",
+        "setterDocumentation" : "/**<p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>\n@param userId The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.*/",
+        "setterMethodName" : "setUserId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "userId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>\n@param userId The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "userId",
+          "variableType" : "String",
+          "documentation" : "<p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "CollectionType",
+        "c2jShape" : "ResourceCollectionType",
+        "deprecated" : false,
+        "documentation" : "<p>The collection type.</p>",
+        "enumType" : "ResourceCollectionType",
+        "fluentSetterDocumentation" : "/**<p>The collection type.</p>\n@param collectionType The collection type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceCollectionType*/",
+        "fluentSetterMethodName" : "withCollectionType",
+        "getterDocumentation" : "/**<p>The collection type.</p>\n@return The collection type.\n@see ResourceCollectionType*/",
+        "getterMethodName" : "getCollectionType",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "querystring",
+          "marshallLocation" : "QUERY_PARAM",
+          "marshallLocationName" : "collectionType",
+          "queryString" : true,
+          "statusCode" : false,
+          "unmarshallLocationName" : "collectionType",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "CollectionType",
+        "setterDocumentation" : "/**<p>The collection type.</p>\n@param collectionType The collection type.\n@see ResourceCollectionType*/",
+        "setterMethodName" : "setCollectionType",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "collectionType",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The collection type.</p>\n@param collectionType The collection type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceCollectionType*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "collectionType",
+          "variableType" : "String",
+          "documentation" : "<p>The collection type.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Limit",
+        "c2jShape" : "LimitType",
+        "deprecated" : false,
+        "documentation" : "<p>The maximum number of resources to return.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The maximum number of resources to return.</p>\n@param limit The maximum number of resources to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withLimit",
+        "getterDocumentation" : "/**<p>The maximum number of resources to return.</p>\n@return The maximum number of resources to return.*/",
+        "getterMethodName" : "getLimit",
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "querystring",
+          "marshallLocation" : "QUERY_PARAM",
+          "marshallLocationName" : "limit",
+          "queryString" : true,
+          "statusCode" : false,
+          "unmarshallLocationName" : "limit",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Integer",
+        "marshallingType" : "INTEGER",
+        "name" : "Limit",
+        "setterDocumentation" : "/**<p>The maximum number of resources to return.</p>\n@param limit The maximum number of resources to return.*/",
+        "setterMethodName" : "setLimit",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Integer",
+          "variableName" : "limit",
+          "variableType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The maximum number of resources to return.</p>\n@param limit The maximum number of resources to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Integer",
+          "variableName" : "limit",
+          "variableType" : "Integer",
+          "documentation" : "<p>The maximum number of resources to return.</p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Marker",
+        "c2jShape" : "PageMarkerType",
+        "deprecated" : false,
+        "documentation" : "<p>The marker for the next set of results. This marker was received from a previous call.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The marker for the next set of results. This marker was received from a previous call.</p>\n@param marker The marker for the next set of results. This marker was received from a previous call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withMarker",
+        "getterDocumentation" : "/**<p>The marker for the next set of results. This marker was received from a previous call.</p>\n@return The marker for the next set of results. This marker was received from a previous call.*/",
+        "getterMethodName" : "getMarker",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "querystring",
+          "marshallLocation" : "QUERY_PARAM",
+          "marshallLocationName" : "marker",
+          "queryString" : true,
+          "statusCode" : false,
+          "unmarshallLocationName" : "marker",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "Marker",
+        "setterDocumentation" : "/**<p>The marker for the next set of results. This marker was received from a previous call.</p>\n@param marker The marker for the next set of results. This marker was received from a previous call.*/",
+        "setterMethodName" : "setMarker",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "marker",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The marker for the next set of results. This marker was received from a previous call.</p>\n@param marker The marker for the next set of results. This marker was received from a previous call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "marker",
+          "variableType" : "String",
+          "documentation" : "<p>The marker for the next set of results. This marker was received from a previous call.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "AuthenticationToken" : {
+          "c2jName" : "AuthenticationToken",
+          "c2jShape" : "AuthenticationHeaderType",
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.</p>\n@param authenticationToken The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withAuthenticationToken",
+          "getterDocumentation" : "/**<p>The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.</p>\n@return The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.*/",
+          "getterMethodName" : "getAuthenticationToken",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : true,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "header",
+            "marshallLocation" : "HEADER",
+            "marshallLocationName" : "Authentication",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Authentication",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "AuthenticationToken",
+          "setterDocumentation" : "/**<p>The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.</p>\n@param authenticationToken The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.*/",
+          "setterMethodName" : "setAuthenticationToken",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "authenticationToken",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.</p>\n@param authenticationToken The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "authenticationToken",
+            "variableType" : "String",
+            "documentation" : "<p>The Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API operation using AWS credentials.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "CollectionType" : {
+          "c2jName" : "CollectionType",
+          "c2jShape" : "ResourceCollectionType",
+          "deprecated" : false,
+          "documentation" : "<p>The collection type.</p>",
+          "enumType" : "ResourceCollectionType",
+          "fluentSetterDocumentation" : "/**<p>The collection type.</p>\n@param collectionType The collection type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceCollectionType*/",
+          "fluentSetterMethodName" : "withCollectionType",
+          "getterDocumentation" : "/**<p>The collection type.</p>\n@return The collection type.\n@see ResourceCollectionType*/",
+          "getterMethodName" : "getCollectionType",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "querystring",
+            "marshallLocation" : "QUERY_PARAM",
+            "marshallLocationName" : "collectionType",
+            "queryString" : true,
+            "statusCode" : false,
+            "unmarshallLocationName" : "collectionType",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "CollectionType",
+          "setterDocumentation" : "/**<p>The collection type.</p>\n@param collectionType The collection type.\n@see ResourceCollectionType*/",
+          "setterMethodName" : "setCollectionType",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "collectionType",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The collection type.</p>\n@param collectionType The collection type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceCollectionType*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "collectionType",
+            "variableType" : "String",
+            "documentation" : "<p>The collection type.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Limit" : {
+          "c2jName" : "Limit",
+          "c2jShape" : "LimitType",
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of resources to return.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The maximum number of resources to return.</p>\n@param limit The maximum number of resources to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withLimit",
+          "getterDocumentation" : "/**<p>The maximum number of resources to return.</p>\n@return The maximum number of resources to return.*/",
+          "getterMethodName" : "getLimit",
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "querystring",
+            "marshallLocation" : "QUERY_PARAM",
+            "marshallLocationName" : "limit",
+            "queryString" : true,
+            "statusCode" : false,
+            "unmarshallLocationName" : "limit",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Integer",
+          "marshallingType" : "INTEGER",
+          "name" : "Limit",
+          "setterDocumentation" : "/**<p>The maximum number of resources to return.</p>\n@param limit The maximum number of resources to return.*/",
+          "setterMethodName" : "setLimit",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Integer",
+            "variableName" : "limit",
+            "variableType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The maximum number of resources to return.</p>\n@param limit The maximum number of resources to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Integer",
+            "variableName" : "limit",
+            "variableType" : "Integer",
+            "documentation" : "<p>The maximum number of resources to return.</p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Marker" : {
+          "c2jName" : "Marker",
+          "c2jShape" : "PageMarkerType",
+          "deprecated" : false,
+          "documentation" : "<p>The marker for the next set of results. This marker was received from a previous call.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The marker for the next set of results. This marker was received from a previous call.</p>\n@param marker The marker for the next set of results. This marker was received from a previous call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withMarker",
+          "getterDocumentation" : "/**<p>The marker for the next set of results. This marker was received from a previous call.</p>\n@return The marker for the next set of results. This marker was received from a previous call.*/",
+          "getterMethodName" : "getMarker",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "querystring",
+            "marshallLocation" : "QUERY_PARAM",
+            "marshallLocationName" : "marker",
+            "queryString" : true,
+            "statusCode" : false,
+            "unmarshallLocationName" : "marker",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "Marker",
+          "setterDocumentation" : "/**<p>The marker for the next set of results. This marker was received from a previous call.</p>\n@param marker The marker for the next set of results. This marker was received from a previous call.*/",
+          "setterMethodName" : "setMarker",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "marker",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The marker for the next set of results. This marker was received from a previous call.</p>\n@param marker The marker for the next set of results. This marker was received from a previous call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "marker",
+            "variableType" : "String",
+            "documentation" : "<p>The marker for the next set of results. This marker was received from a previous call.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "UserId" : {
+          "c2jName" : "UserId",
+          "c2jShape" : "IdType",
+          "deprecated" : false,
+          "documentation" : "<p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>\n@param userId The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withUserId",
+          "getterDocumentation" : "/**<p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>\n@return The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.*/",
+          "getterMethodName" : "getUserId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "querystring",
+            "marshallLocation" : "QUERY_PARAM",
+            "marshallLocationName" : "userId",
+            "queryString" : true,
+            "statusCode" : false,
+            "unmarshallLocationName" : "userId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "UserId",
+          "setterDocumentation" : "/**<p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>\n@param userId The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.*/",
+          "setterMethodName" : "setUserId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "userId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>\n@param userId The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "userId",
+            "variableType" : "String",
+            "documentation" : "<p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "GetResourcesRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "GetResourcesRequest",
+        "variableName" : "getResourcesRequest",
+        "variableType" : "GetResourcesRequest",
+        "documentation" : null,
+        "simpleType" : "GetResourcesRequest",
+        "variableSetterType" : "GetResourcesRequest"
+      },
+      "wrapper" : false
+    },
+    "GetResourcesResult" : {
+      "c2jName" : "GetResourcesResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "Folders",
+        "c2jShape" : "FolderMetadataList",
+        "deprecated" : false,
+        "documentation" : "<p>The folders in the specified folder.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The folders in the specified folder.</p>\n@param folders The folders in the specified folder.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withFolders",
+        "getterDocumentation" : "/**<p>The folders in the specified folder.</p>\n@return The folders in the specified folder.*/",
+        "getterMethodName" : "getFolders",
+        "getterModel" : {
+          "returnType" : "java.util.List<FolderMetadata>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Folders",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Folders",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "java.util.ArrayList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "FolderMetadata",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "fluentSetterMethodName" : "withMember",
+            "getterDocumentation" : "/**\n@return */",
+            "getterMethodName" : "getMember",
+            "getterModel" : {
+              "returnType" : "FolderMetadata",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "greedy" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocation" : "PAYLOAD",
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "marshallingTargetClass" : "StructuredPojo",
+            "marshallingType" : "STRUCTURED",
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member */",
+            "setterMethodName" : "setMember",
+            "setterModel" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "FolderMetadata",
+              "variableName" : "member",
+              "variableType" : "FolderMetadata",
+              "documentation" : "",
+              "simpleType" : "FolderMetadata",
+              "variableSetterType" : "FolderMetadata"
+            },
+            "shouldEmitLegacyEnumSetter" : false,
+            "simple" : false,
+            "unmarshallingType" : null,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "FolderMetadata",
+              "variableName" : "member",
+              "variableType" : "FolderMetadata",
+              "documentation" : "",
+              "simpleType" : "FolderMetadata",
+              "variableSetterType" : "FolderMetadata"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "FolderMetadata",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "FolderMetadata",
+          "templateImplType" : "java.util.ArrayList<FolderMetadata>",
+          "templateType" : "java.util.List<FolderMetadata>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
+        "name" : "Folders",
+        "setterDocumentation" : "/**<p>The folders in the specified folder.</p>\n@param folders The folders in the specified folder.*/",
+        "setterMethodName" : "setFolders",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<FolderMetadata>",
+          "variableName" : "folders",
+          "variableType" : "java.util.List<FolderMetadata>",
+          "documentation" : "",
+          "simpleType" : "List<FolderMetadata>",
+          "variableSetterType" : "java.util.Collection<FolderMetadata>"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The folders in the specified folder.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFolders(java.util.Collection)} or {@link #withFolders(java.util.Collection)} if you want to override the existing values.</p>\n@param folders The folders in the specified folder.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<FolderMetadata>",
+          "variableName" : "folders",
+          "variableType" : "java.util.List<FolderMetadata>",
+          "documentation" : "<p>The folders in the specified folder.</p>",
+          "simpleType" : "List<FolderMetadata>",
+          "variableSetterType" : "java.util.Collection<FolderMetadata>"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Documents",
+        "c2jShape" : "DocumentMetadataList",
+        "deprecated" : false,
+        "documentation" : "<p>The documents in the specified collection.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The documents in the specified collection.</p>\n@param documents The documents in the specified collection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withDocuments",
+        "getterDocumentation" : "/**<p>The documents in the specified collection.</p>\n@return The documents in the specified collection.*/",
+        "getterMethodName" : "getDocuments",
+        "getterModel" : {
+          "returnType" : "java.util.List<DocumentMetadata>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Documents",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Documents",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "java.util.ArrayList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "DocumentMetadata",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "fluentSetterMethodName" : "withMember",
+            "getterDocumentation" : "/**\n@return */",
+            "getterMethodName" : "getMember",
+            "getterModel" : {
+              "returnType" : "DocumentMetadata",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "greedy" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocation" : "PAYLOAD",
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "marshallingTargetClass" : "StructuredPojo",
+            "marshallingType" : "STRUCTURED",
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member */",
+            "setterMethodName" : "setMember",
+            "setterModel" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "DocumentMetadata",
+              "variableName" : "member",
+              "variableType" : "DocumentMetadata",
+              "documentation" : "",
+              "simpleType" : "DocumentMetadata",
+              "variableSetterType" : "DocumentMetadata"
+            },
+            "shouldEmitLegacyEnumSetter" : false,
+            "simple" : false,
+            "unmarshallingType" : null,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "DocumentMetadata",
+              "variableName" : "member",
+              "variableType" : "DocumentMetadata",
+              "documentation" : "",
+              "simpleType" : "DocumentMetadata",
+              "variableSetterType" : "DocumentMetadata"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "DocumentMetadata",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "DocumentMetadata",
+          "templateImplType" : "java.util.ArrayList<DocumentMetadata>",
+          "templateType" : "java.util.List<DocumentMetadata>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
+        "name" : "Documents",
+        "setterDocumentation" : "/**<p>The documents in the specified collection.</p>\n@param documents The documents in the specified collection.*/",
+        "setterMethodName" : "setDocuments",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<DocumentMetadata>",
+          "variableName" : "documents",
+          "variableType" : "java.util.List<DocumentMetadata>",
+          "documentation" : "",
+          "simpleType" : "List<DocumentMetadata>",
+          "variableSetterType" : "java.util.Collection<DocumentMetadata>"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The documents in the specified collection.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDocuments(java.util.Collection)} or {@link #withDocuments(java.util.Collection)} if you want to override the existing values.</p>\n@param documents The documents in the specified collection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<DocumentMetadata>",
+          "variableName" : "documents",
+          "variableType" : "java.util.List<DocumentMetadata>",
+          "documentation" : "<p>The documents in the specified collection.</p>",
+          "simpleType" : "List<DocumentMetadata>",
+          "variableSetterType" : "java.util.Collection<DocumentMetadata>"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Marker",
+        "c2jShape" : "PageMarkerType",
+        "deprecated" : false,
+        "documentation" : "<p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>\n@param marker The marker to use when requesting the next set of results. If there are no additional results, the string is empty.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withMarker",
+        "getterDocumentation" : "/**<p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>\n@return The marker to use when requesting the next set of results. If there are no additional results, the string is empty.*/",
+        "getterMethodName" : "getMarker",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Marker",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Marker",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "Marker",
+        "setterDocumentation" : "/**<p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>\n@param marker The marker to use when requesting the next set of results. If there are no additional results, the string is empty.*/",
+        "setterMethodName" : "setMarker",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "marker",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>\n@param marker The marker to use when requesting the next set of results. If there are no additional results, the string is empty.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "marker",
+          "variableType" : "String",
+          "documentation" : "<p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "Documents" : {
+          "c2jName" : "Documents",
+          "c2jShape" : "DocumentMetadataList",
+          "deprecated" : false,
+          "documentation" : "<p>The documents in the specified collection.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The documents in the specified collection.</p>\n@param documents The documents in the specified collection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withDocuments",
+          "getterDocumentation" : "/**<p>The documents in the specified collection.</p>\n@return The documents in the specified collection.*/",
+          "getterMethodName" : "getDocuments",
+          "getterModel" : {
+            "returnType" : "java.util.List<DocumentMetadata>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Documents",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Documents",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "java.util.ArrayList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "DocumentMetadata",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "fluentSetterMethodName" : "withMember",
+              "getterDocumentation" : "/**\n@return */",
+              "getterMethodName" : "getMember",
+              "getterModel" : {
+                "returnType" : "DocumentMetadata",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "greedy" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocation" : "PAYLOAD",
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "marshallingTargetClass" : "StructuredPojo",
+              "marshallingType" : "STRUCTURED",
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member */",
+              "setterMethodName" : "setMember",
+              "setterModel" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "DocumentMetadata",
+                "variableName" : "member",
+                "variableType" : "DocumentMetadata",
+                "documentation" : "",
+                "simpleType" : "DocumentMetadata",
+                "variableSetterType" : "DocumentMetadata"
+              },
+              "shouldEmitLegacyEnumSetter" : false,
+              "simple" : false,
+              "unmarshallingType" : null,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "DocumentMetadata",
+                "variableName" : "member",
+                "variableType" : "DocumentMetadata",
+                "documentation" : "",
+                "simpleType" : "DocumentMetadata",
+                "variableSetterType" : "DocumentMetadata"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "DocumentMetadata",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "DocumentMetadata",
+            "templateImplType" : "java.util.ArrayList<DocumentMetadata>",
+            "templateType" : "java.util.List<DocumentMetadata>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
+          "name" : "Documents",
+          "setterDocumentation" : "/**<p>The documents in the specified collection.</p>\n@param documents The documents in the specified collection.*/",
+          "setterMethodName" : "setDocuments",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<DocumentMetadata>",
+            "variableName" : "documents",
+            "variableType" : "java.util.List<DocumentMetadata>",
+            "documentation" : "",
+            "simpleType" : "List<DocumentMetadata>",
+            "variableSetterType" : "java.util.Collection<DocumentMetadata>"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The documents in the specified collection.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDocuments(java.util.Collection)} or {@link #withDocuments(java.util.Collection)} if you want to override the existing values.</p>\n@param documents The documents in the specified collection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<DocumentMetadata>",
+            "variableName" : "documents",
+            "variableType" : "java.util.List<DocumentMetadata>",
+            "documentation" : "<p>The documents in the specified collection.</p>",
+            "simpleType" : "List<DocumentMetadata>",
+            "variableSetterType" : "java.util.Collection<DocumentMetadata>"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Folders" : {
+          "c2jName" : "Folders",
+          "c2jShape" : "FolderMetadataList",
+          "deprecated" : false,
+          "documentation" : "<p>The folders in the specified folder.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The folders in the specified folder.</p>\n@param folders The folders in the specified folder.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withFolders",
+          "getterDocumentation" : "/**<p>The folders in the specified folder.</p>\n@return The folders in the specified folder.*/",
+          "getterMethodName" : "getFolders",
+          "getterModel" : {
+            "returnType" : "java.util.List<FolderMetadata>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Folders",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Folders",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "java.util.ArrayList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "FolderMetadata",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "fluentSetterMethodName" : "withMember",
+              "getterDocumentation" : "/**\n@return */",
+              "getterMethodName" : "getMember",
+              "getterModel" : {
+                "returnType" : "FolderMetadata",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "greedy" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocation" : "PAYLOAD",
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "marshallingTargetClass" : "StructuredPojo",
+              "marshallingType" : "STRUCTURED",
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member */",
+              "setterMethodName" : "setMember",
+              "setterModel" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "FolderMetadata",
+                "variableName" : "member",
+                "variableType" : "FolderMetadata",
+                "documentation" : "",
+                "simpleType" : "FolderMetadata",
+                "variableSetterType" : "FolderMetadata"
+              },
+              "shouldEmitLegacyEnumSetter" : false,
+              "simple" : false,
+              "unmarshallingType" : null,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "FolderMetadata",
+                "variableName" : "member",
+                "variableType" : "FolderMetadata",
+                "documentation" : "",
+                "simpleType" : "FolderMetadata",
+                "variableSetterType" : "FolderMetadata"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "FolderMetadata",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "FolderMetadata",
+            "templateImplType" : "java.util.ArrayList<FolderMetadata>",
+            "templateType" : "java.util.List<FolderMetadata>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
+          "name" : "Folders",
+          "setterDocumentation" : "/**<p>The folders in the specified folder.</p>\n@param folders The folders in the specified folder.*/",
+          "setterMethodName" : "setFolders",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<FolderMetadata>",
+            "variableName" : "folders",
+            "variableType" : "java.util.List<FolderMetadata>",
+            "documentation" : "",
+            "simpleType" : "List<FolderMetadata>",
+            "variableSetterType" : "java.util.Collection<FolderMetadata>"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The folders in the specified folder.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFolders(java.util.Collection)} or {@link #withFolders(java.util.Collection)} if you want to override the existing values.</p>\n@param folders The folders in the specified folder.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<FolderMetadata>",
+            "variableName" : "folders",
+            "variableType" : "java.util.List<FolderMetadata>",
+            "documentation" : "<p>The folders in the specified folder.</p>",
+            "simpleType" : "List<FolderMetadata>",
+            "variableSetterType" : "java.util.Collection<FolderMetadata>"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Marker" : {
+          "c2jName" : "Marker",
+          "c2jShape" : "PageMarkerType",
+          "deprecated" : false,
+          "documentation" : "<p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>\n@param marker The marker to use when requesting the next set of results. If there are no additional results, the string is empty.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withMarker",
+          "getterDocumentation" : "/**<p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>\n@return The marker to use when requesting the next set of results. If there are no additional results, the string is empty.*/",
+          "getterMethodName" : "getMarker",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Marker",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Marker",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "Marker",
+          "setterDocumentation" : "/**<p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>\n@param marker The marker to use when requesting the next set of results. If there are no additional results, the string is empty.*/",
+          "setterMethodName" : "setMarker",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "marker",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>\n@param marker The marker to use when requesting the next set of results. If there are no additional results, the string is empty.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "marker",
+            "variableType" : "String",
+            "documentation" : "<p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "GetResourcesResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "GetResourcesResult",
+        "variableName" : "getResourcesResult",
+        "variableType" : "GetResourcesResult",
+        "documentation" : null,
+        "simpleType" : "GetResourcesResult",
+        "variableSetterType" : "GetResourcesResult"
+      },
+      "wrapper" : false
+    },
     "GroupMetadata" : {
       "c2jName" : "GroupMetadata",
       "customization" : {
@@ -41999,6 +44192,43 @@
         "documentation" : null,
         "simpleType" : "InvalidArgumentException",
         "variableSetterType" : "InvalidArgumentException"
+      },
+      "wrapper" : false
+    },
+    "InvalidCommentOperationException" : {
+      "c2jName" : "InvalidCommentOperationException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The requested operation is not allowed on the specified comment object.</p>",
+      "enums" : null,
+      "errorCode" : "InvalidCommentOperationException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "InvalidCommentOperationException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "InvalidCommentOperationException",
+        "variableName" : "invalidCommentOperationException",
+        "variableType" : "InvalidCommentOperationException",
+        "documentation" : null,
+        "simpleType" : "InvalidCommentOperationException",
+        "variableSetterType" : "InvalidCommentOperationException"
       },
       "wrapper" : false
     },
@@ -45103,6 +47333,43 @@
       },
       "wrapper" : false
     },
+    "RequestedEntityTooLargeException" : {
+      "c2jName" : "RequestedEntityTooLargeException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The response is too large to return. The request must include a filter to reduce the size of the response.</p>",
+      "enums" : null,
+      "errorCode" : "RequestedEntityTooLargeException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "RequestedEntityTooLargeException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "RequestedEntityTooLargeException",
+        "variableName" : "requestedEntityTooLargeException",
+        "variableType" : "RequestedEntityTooLargeException",
+        "documentation" : null,
+        "simpleType" : "RequestedEntityTooLargeException",
+        "variableSetterType" : "RequestedEntityTooLargeException"
+      },
+      "wrapper" : false
+    },
     "ResourceAlreadyCheckedOutException" : {
       "c2jName" : "ResourceAlreadyCheckedOutException",
       "customization" : {
@@ -45137,6 +47404,49 @@
         "documentation" : null,
         "simpleType" : "ResourceAlreadyCheckedOutException",
         "variableSetterType" : "ResourceAlreadyCheckedOutException"
+      },
+      "wrapper" : false
+    },
+    "ResourceCollectionType" : {
+      "c2jName" : "ResourceCollectionType",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : [ {
+        "name" : "SHARED_WITH_ME",
+        "value" : "SHARED_WITH_ME"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ResourceCollectionType",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ResourceCollectionType",
+        "variableName" : "resourceCollectionType",
+        "variableType" : "ResourceCollectionType",
+        "documentation" : null,
+        "simpleType" : "ResourceCollectionType",
+        "variableSetterType" : "ResourceCollectionType"
       },
       "wrapper" : false
     },
@@ -47529,6 +49839,71 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "InviteePrincipalId",
+        "c2jShape" : "IdType",
+        "deprecated" : false,
+        "documentation" : "<p>The ID of the invited user.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The ID of the invited user.</p>\n@param inviteePrincipalId The ID of the invited user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withInviteePrincipalId",
+        "getterDocumentation" : "/**<p>The ID of the invited user.</p>\n@return The ID of the invited user.*/",
+        "getterMethodName" : "getInviteePrincipalId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "InviteePrincipalId",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "InviteePrincipalId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "InviteePrincipalId",
+        "setterDocumentation" : "/**<p>The ID of the invited user.</p>\n@param inviteePrincipalId The ID of the invited user.*/",
+        "setterMethodName" : "setInviteePrincipalId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "inviteePrincipalId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : true,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The ID of the invited user.</p>\n@param inviteePrincipalId The ID of the invited user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "inviteePrincipalId",
+          "variableType" : "String",
+          "documentation" : "<p>The ID of the invited user.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "Role",
         "c2jShape" : "RoleType",
         "deprecated" : false,
@@ -47790,6 +50165,72 @@
         "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "InviteePrincipalId" : {
+          "c2jName" : "InviteePrincipalId",
+          "c2jShape" : "IdType",
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the invited user.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The ID of the invited user.</p>\n@param inviteePrincipalId The ID of the invited user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withInviteePrincipalId",
+          "getterDocumentation" : "/**<p>The ID of the invited user.</p>\n@return The ID of the invited user.*/",
+          "getterMethodName" : "getInviteePrincipalId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "InviteePrincipalId",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "InviteePrincipalId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "InviteePrincipalId",
+          "setterDocumentation" : "/**<p>The ID of the invited user.</p>\n@param inviteePrincipalId The ID of the invited user.*/",
+          "setterMethodName" : "setInviteePrincipalId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "inviteePrincipalId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : true,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The ID of the invited user.</p>\n@param inviteePrincipalId The ID of the invited user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "inviteePrincipalId",
+            "variableType" : "String",
+            "documentation" : "<p>The ID of the invited user.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "PrincipalId" : {
           "c2jName" : "PrincipalId",
           "c2jShape" : "IdType",

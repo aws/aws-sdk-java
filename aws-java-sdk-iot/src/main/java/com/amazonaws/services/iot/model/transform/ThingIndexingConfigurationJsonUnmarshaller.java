@@ -52,6 +52,10 @@ public class ThingIndexingConfigurationJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     thingIndexingConfiguration.setThingIndexingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("thingConnectivityIndexingMode", targetDepth)) {
+                    context.nextToken();
+                    thingIndexingConfiguration.setThingConnectivityIndexingMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

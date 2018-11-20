@@ -1100,7 +1100,7 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about samples, given an AWS Device Farm project ARN
+     * Gets information about samples, given an AWS Device Farm job ARN.
      * </p>
      * 
      * @param listSamplesRequest

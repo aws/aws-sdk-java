@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -94,6 +94,7 @@
       "documentation" : "Accepts the invitation to be monitored by a master GuardDuty account.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -104,6 +105,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "AcceptInvitationRequest",
@@ -132,6 +134,7 @@
       "documentation" : "Archives Amazon GuardDuty findings specified by the list of finding IDs.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -142,6 +145,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ArchiveFindingsRequest",
@@ -170,6 +174,7 @@
       "documentation" : "Creates a single Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A detector must be created in order for GuardDuty to become operational.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -180,6 +185,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateDetectorRequest",
@@ -208,6 +214,7 @@
       "documentation" : "Creates a filter using the specified finding criteria.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -218,6 +225,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateFilterRequest",
@@ -246,6 +254,7 @@
       "documentation" : "Creates a new IPSet - a list of trusted IP addresses that have been whitelisted for secure communication with AWS infrastructure and applications.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -256,6 +265,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateIPSetRequest",
@@ -284,6 +294,7 @@
       "documentation" : "Creates member accounts of the current AWS account by specifying a list of AWS account IDs. The current AWS account can then invite these members to manage GuardDuty in their accounts.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -294,6 +305,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateMembersRequest",
@@ -322,6 +334,7 @@
       "documentation" : "Generates example findings of types specified by the list of finding types. If 'NULL' is specified for findingTypes, the API generates example findings of all supported finding types.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -332,6 +345,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateSampleFindingsRequest",
@@ -360,6 +374,7 @@
       "documentation" : "Create a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates findings based on ThreatIntelSets.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -370,6 +385,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateThreatIntelSetRequest",
@@ -398,6 +414,7 @@
       "documentation" : "Declines invitations sent to the current member account by AWS account specified by their account IDs.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -408,6 +425,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeclineInvitationsRequest",
@@ -436,6 +454,7 @@
       "documentation" : "Deletes a Amazon GuardDuty detector specified by the detector ID.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -446,6 +465,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteDetectorRequest",
@@ -474,6 +494,7 @@
       "documentation" : "Deletes the filter specified by the filter name.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -484,6 +505,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteFilterRequest",
@@ -512,6 +534,7 @@
       "documentation" : "Deletes the IPSet specified by the IPSet ID.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -522,6 +545,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteIPSetRequest",
@@ -550,6 +574,7 @@
       "documentation" : "Deletes invitations sent to the current member account by AWS accounts specified by their account IDs.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -560,6 +585,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteInvitationsRequest",
@@ -588,6 +614,7 @@
       "documentation" : "Deletes GuardDuty member accounts (to the current GuardDuty master account) specified by the account IDs.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -598,6 +625,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteMembersRequest",
@@ -626,6 +654,7 @@
       "documentation" : "Deletes ThreatIntelSet specified by the ThreatIntelSet ID.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -636,6 +665,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteThreatIntelSetRequest",
@@ -664,6 +694,7 @@
       "documentation" : "Disassociates the current GuardDuty member account from its master account.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -674,6 +705,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateFromMasterAccountRequest",
@@ -702,6 +734,7 @@
       "documentation" : "Disassociates GuardDuty member accounts (to the current GuardDuty master account) specified by the account IDs.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -712,6 +745,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateMembersRequest",
@@ -740,6 +774,7 @@
       "documentation" : "Retrieves an Amazon GuardDuty detector specified by the detectorId.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -750,6 +785,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetDetectorRequest",
@@ -778,6 +814,7 @@
       "documentation" : "Returns the details of the filter specified by the filter name.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -788,6 +825,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetFilterRequest",
@@ -816,6 +854,7 @@
       "documentation" : "Describes Amazon GuardDuty findings specified by finding IDs.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -826,6 +865,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetFindingsRequest",
@@ -854,6 +894,7 @@
       "documentation" : "Lists Amazon GuardDuty findings' statistics for the specified detector ID.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -864,6 +905,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetFindingsStatisticsRequest",
@@ -892,6 +934,7 @@
       "documentation" : "Retrieves the IPSet specified by the IPSet ID.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -902,6 +945,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetIPSetRequest",
@@ -930,6 +974,7 @@
       "documentation" : "Returns the count of all GuardDuty membership invitations that were sent to the current member account except the currently accepted invitation.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -940,6 +985,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetInvitationsCountRequest",
@@ -968,6 +1014,7 @@
       "documentation" : "Provides the details for the GuardDuty master account to the current GuardDuty member account.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -978,6 +1025,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetMasterAccountRequest",
@@ -1006,6 +1054,7 @@
       "documentation" : "Retrieves GuardDuty member accounts (to the current GuardDuty master account) specified by the account IDs.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -1016,6 +1065,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetMembersRequest",
@@ -1044,6 +1094,7 @@
       "documentation" : "Retrieves the ThreatIntelSet that is specified by the ThreatIntelSet ID.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -1054,6 +1105,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetThreatIntelSetRequest",
@@ -1082,6 +1134,7 @@
       "documentation" : "Invites other AWS accounts (created as members of the current AWS account by CreateMembers) to enable GuardDuty and allow the current AWS account to view and manage these accounts' GuardDuty findings on their behalf as the master account.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -1092,6 +1145,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "InviteMembersRequest",
@@ -1120,6 +1174,7 @@
       "documentation" : "Lists detectorIds of all the existing Amazon GuardDuty detector resources.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -1130,6 +1185,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListDetectorsRequest",
@@ -1158,6 +1214,7 @@
       "documentation" : "Returns a paginated list of the current filters.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -1168,6 +1225,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListFiltersRequest",
@@ -1196,6 +1254,7 @@
       "documentation" : "Lists Amazon GuardDuty findings for the specified detector ID.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -1206,6 +1265,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListFindingsRequest",
@@ -1234,6 +1294,7 @@
       "documentation" : "Lists the IPSets of the GuardDuty service specified by the detector ID.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -1244,6 +1305,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListIPSetsRequest",
@@ -1272,6 +1334,7 @@
       "documentation" : "Lists all GuardDuty membership invitations that were sent to the current AWS account.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -1282,6 +1345,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListInvitationsRequest",
@@ -1310,6 +1374,7 @@
       "documentation" : "Lists details about all member accounts for the current GuardDuty master account.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -1320,6 +1385,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListMembersRequest",
@@ -1348,6 +1414,7 @@
       "documentation" : "Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -1358,6 +1425,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListThreatIntelSetsRequest",
@@ -1386,6 +1454,7 @@
       "documentation" : "Re-enables GuardDuty to monitor findings of the member accounts specified by the account IDs. A master GuardDuty account can run this command after disabling GuardDuty from monitoring these members' findings by running StopMonitoringMembers.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -1396,6 +1465,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "StartMonitoringMembersRequest",
@@ -1424,6 +1494,7 @@
       "documentation" : "Disables GuardDuty from monitoring findings of the member accounts specified by the account IDs. After running this command, a master GuardDuty account can run StartMonitoringMembers to re-enable GuardDuty to monitor these members’ findings.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -1434,6 +1505,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "StopMonitoringMembersRequest",
@@ -1462,6 +1534,7 @@
       "documentation" : "Unarchives Amazon GuardDuty findings specified by the list of finding IDs.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -1472,6 +1545,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UnarchiveFindingsRequest",
@@ -1500,6 +1574,7 @@
       "documentation" : "Updates an Amazon GuardDuty detector specified by the detectorId.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -1510,6 +1585,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateDetectorRequest",
@@ -1538,6 +1614,7 @@
       "documentation" : "Updates the filter specified by the filter name.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -1548,6 +1625,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateFilterRequest",
@@ -1576,6 +1654,7 @@
       "documentation" : "Marks specified Amazon GuardDuty findings as useful or not useful.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -1586,6 +1665,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateFindingsFeedbackRequest",
@@ -1614,6 +1694,7 @@
       "documentation" : "Updates the IPSet specified by the IPSet ID.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -1624,6 +1705,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateIPSetRequest",
@@ -1652,6 +1734,7 @@
       "documentation" : "Updates the ThreatIntelSet specified by ThreatIntelSet ID.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "400 response",
@@ -1662,6 +1745,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateThreatIntelSetRequest",

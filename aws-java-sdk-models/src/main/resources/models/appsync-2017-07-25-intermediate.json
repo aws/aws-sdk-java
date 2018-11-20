@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -94,6 +94,7 @@
       "documentation" : "<p>Creates a unique key that you can distribute to clients who are executing your API.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -128,6 +129,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateApiKeyRequest",
@@ -156,6 +158,7 @@
       "documentation" : "<p>Creates a <code>DataSource</code> object.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -178,6 +181,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateDataSourceRequest",
@@ -206,6 +210,7 @@
       "documentation" : "<p>Creates a <code>GraphqlApi</code> object.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -232,6 +237,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateGraphqlApiRequest",
@@ -260,6 +266,7 @@
       "documentation" : "<p>Creates a <code>Resolver</code> object.</p> <p>A resolver converts incoming requests into a format that a data source can understand and converts the data source's responses into GraphQL.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "<p>Another modification is being made. That modification must complete before you can make your change. </p>",
@@ -278,6 +285,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateResolverRequest",
@@ -306,6 +314,7 @@
       "documentation" : "<p>Creates a <code>Type</code> object.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -328,6 +337,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateTypeRequest",
@@ -356,6 +366,7 @@
       "documentation" : "<p>Deletes an API key.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -374,6 +385,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteApiKeyRequest",
@@ -402,6 +414,7 @@
       "documentation" : "<p>Deletes a <code>DataSource</code> object.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -424,6 +437,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteDataSourceRequest",
@@ -452,6 +466,7 @@
       "documentation" : "<p>Deletes a <code>GraphqlApi</code> object.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -474,6 +489,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteGraphqlApiRequest",
@@ -502,6 +518,7 @@
       "documentation" : "<p>Deletes a <code>Resolver</code> object.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "<p>Another modification is being made. That modification must complete before you can make your change. </p>",
@@ -520,6 +537,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteResolverRequest",
@@ -548,6 +566,7 @@
       "documentation" : "<p>Deletes a <code>Type</code> object.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -570,6 +589,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteTypeRequest",
@@ -598,6 +618,7 @@
       "documentation" : "<p>Retrieves a <code>DataSource</code> object.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -620,6 +641,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetDataSourceRequest",
@@ -648,6 +670,7 @@
       "documentation" : "<p>Retrieves a <code>GraphqlApi</code> object.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -666,6 +689,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetGraphqlApiRequest",
@@ -694,6 +718,7 @@
       "documentation" : "<p>Retrieves the introspection schema for a GraphQL API.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "GraphQLSchemaException",
         "documentation" : "<p>The GraphQL schema is not valid.</p>",
@@ -712,6 +737,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : true,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetIntrospectionSchemaRequest",
@@ -740,6 +766,7 @@
       "documentation" : "<p>Retrieves a <code>Resolver</code> object.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "<p>Another modification is being made. That modification must complete before you can make your change. </p>",
@@ -754,6 +781,7 @@
         "httpStatusCode" : 401
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetResolverRequest",
@@ -782,6 +810,7 @@
       "documentation" : "<p>Retrieves the current status of a schema creation operation.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -800,6 +829,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetSchemaCreationStatusRequest",
@@ -828,6 +858,7 @@
       "documentation" : "<p>Retrieves a <code>Type</code> object.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -850,6 +881,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetTypeRequest",
@@ -878,6 +910,7 @@
       "documentation" : "<p>Lists the API keys for a given API.</p> <note> <p>API keys are deleted automatically sometime after they expire. However, they may still be included in the response until they have actually been deleted. You can safely call <code>DeleteApiKey</code> to manually delete a key before it's automatically deleted.</p> </note>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -896,6 +929,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListApiKeysRequest",
@@ -924,6 +958,7 @@
       "documentation" : "<p>Lists the data sources for a given API.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -942,6 +977,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListDataSourcesRequest",
@@ -970,6 +1006,7 @@
       "documentation" : "<p>Lists your GraphQL APIs.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -984,6 +1021,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListGraphqlApisRequest",
@@ -1012,6 +1050,7 @@
       "documentation" : "<p>Lists the resolvers for a given API and type.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -1030,6 +1069,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListResolversRequest",
@@ -1058,6 +1098,7 @@
       "documentation" : "<p>Lists the types for a given API.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -1080,6 +1121,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListTypesRequest",
@@ -1108,6 +1150,7 @@
       "documentation" : "<p>Adds a new schema to your GraphQL API.</p> <p>This operation is asynchronous. Use to determine when it has completed.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -1130,6 +1173,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "StartSchemaCreationRequest",
@@ -1158,6 +1202,7 @@
       "documentation" : "<p>Updates an API key.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -1184,6 +1229,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateApiKeyRequest",
@@ -1212,6 +1258,7 @@
       "documentation" : "<p>Updates a <code>DataSource</code> object.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -1234,6 +1281,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateDataSourceRequest",
@@ -1262,6 +1310,7 @@
       "documentation" : "<p>Updates a <code>GraphqlApi</code> object.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -1284,6 +1333,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateGraphqlApiRequest",
@@ -1312,6 +1362,7 @@
       "documentation" : "<p>Updates a <code>Resolver</code> object.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "<p>Another modification is being made. That modification must complete before you can make your change. </p>",
@@ -1330,6 +1381,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateResolverRequest",
@@ -1358,6 +1410,7 @@
       "documentation" : "<p>Updates a <code>Type</code> object.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -1380,6 +1433,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateTypeRequest",

@@ -459,6 +459,19 @@ public class AbstractAmazonWorkDocsAsync extends AbstractAmazonWorkDocs implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourcesResult> getResourcesAsync(GetResourcesRequest request) {
+
+        return getResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcesResult> getResourcesAsync(GetResourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetResourcesRequest, GetResourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<InitiateDocumentVersionUploadResult> initiateDocumentVersionUploadAsync(InitiateDocumentVersionUploadRequest request) {
 
         return initiateDocumentVersionUploadAsync(request, null);

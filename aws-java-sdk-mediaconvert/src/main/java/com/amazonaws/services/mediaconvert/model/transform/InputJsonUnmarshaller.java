@@ -67,6 +67,10 @@ public class InputJsonUnmarshaller implements Unmarshaller<Input, JsonUnmarshall
                     context.nextToken();
                     input.setDeblockFilter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("decryptionSettings", targetDepth)) {
+                    context.nextToken();
+                    input.setDecryptionSettings(InputDecryptionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("denoiseFilter", targetDepth)) {
                     context.nextToken();
                     input.setDenoiseFilter(context.getUnmarshaller(String.class).unmarshall(context));
@@ -82,6 +86,10 @@ public class InputJsonUnmarshaller implements Unmarshaller<Input, JsonUnmarshall
                 if (context.testExpression("filterStrength", targetDepth)) {
                     context.nextToken();
                     input.setFilterStrength(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("imageInserter", targetDepth)) {
+                    context.nextToken();
+                    input.setImageInserter(ImageInserterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("inputClippings", targetDepth)) {
                     context.nextToken();

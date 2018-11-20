@@ -27,13 +27,30 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream. (This parameter is optional.)
+     * The Amazon Resource Name (ARN) of the event source.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String eventSourceArn;
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -61,33 +78,64 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
      * characters in length.
      * </p>
      */
     private String functionName;
     /**
      * <p>
-     * Optional string. An opaque pagination token returned from a previous <code>ListEventSourceMappings</code>
-     * operation. If present, specifies to continue the list from where the returning call left off.
+     * A pagination token returned by a previous call.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Optional integer. Specifies the maximum number of event sources to return in response. This value must be greater
-     * than 0.
+     * The maximum number of event source mappings to return.
      * </p>
      */
     private Integer maxItems;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream. (This parameter is optional.)
+     * The Amazon Resource Name (ARN) of the event source.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param eventSourceArn
-     *        The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream. (This parameter is optional.)
+     *        The Amazon Resource Name (ARN) of the event source.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     *        </p>
+     *        </li>
      */
 
     public void setEventSourceArn(String eventSourceArn) {
@@ -96,10 +144,43 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream. (This parameter is optional.)
+     * The Amazon Resource Name (ARN) of the event source.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream. (This parameter is optional.)
+     * @return The Amazon Resource Name (ARN) of the event source.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     *         </p>
+     *         </li>
      */
 
     public String getEventSourceArn() {
@@ -108,11 +189,44 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream. (This parameter is optional.)
+     * The Amazon Resource Name (ARN) of the event source.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param eventSourceArn
-     *        The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream. (This parameter is optional.)
+     *        The Amazon Resource Name (ARN) of the event source.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,7 +237,7 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -151,12 +265,12 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
      * characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the lambda function.</p>
+     *        The name of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
@@ -183,8 +297,8 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        </ul>
      *        <p>
-     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
-     *        to 64 characters in length.
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it's limited to
+     *        64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -193,7 +307,7 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -221,11 +335,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
      * characters in length.
      * </p>
      * 
-     * @return The name of the lambda function.</p>
+     * @return The name of the Lambda function.</p>
      *         <p class="title">
      *         <b>Name formats</b>
      *         </p>
@@ -253,7 +367,7 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *         </li>
      *         </ul>
      *         <p>
-     *         The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *         The length constraint applies only to the full ARN. If you specify only the function name, it's limited
      *         to 64 characters in length.
      */
 
@@ -263,7 +377,7 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -291,12 +405,12 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
      * characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the lambda function.</p>
+     *        The name of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
@@ -323,8 +437,8 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        </ul>
      *        <p>
-     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
-     *        to 64 characters in length.
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it's limited to
+     *        64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,13 +449,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Optional string. An opaque pagination token returned from a previous <code>ListEventSourceMappings</code>
-     * operation. If present, specifies to continue the list from where the returning call left off.
+     * A pagination token returned by a previous call.
      * </p>
      * 
      * @param marker
-     *        Optional string. An opaque pagination token returned from a previous <code>ListEventSourceMappings</code>
-     *        operation. If present, specifies to continue the list from where the returning call left off.
+     *        A pagination token returned by a previous call.
      */
 
     public void setMarker(String marker) {
@@ -350,12 +462,10 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Optional string. An opaque pagination token returned from a previous <code>ListEventSourceMappings</code>
-     * operation. If present, specifies to continue the list from where the returning call left off.
+     * A pagination token returned by a previous call.
      * </p>
      * 
-     * @return Optional string. An opaque pagination token returned from a previous <code>ListEventSourceMappings</code>
-     *         operation. If present, specifies to continue the list from where the returning call left off.
+     * @return A pagination token returned by a previous call.
      */
 
     public String getMarker() {
@@ -364,13 +474,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Optional string. An opaque pagination token returned from a previous <code>ListEventSourceMappings</code>
-     * operation. If present, specifies to continue the list from where the returning call left off.
+     * A pagination token returned by a previous call.
      * </p>
      * 
      * @param marker
-     *        Optional string. An opaque pagination token returned from a previous <code>ListEventSourceMappings</code>
-     *        operation. If present, specifies to continue the list from where the returning call left off.
+     *        A pagination token returned by a previous call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -381,13 +489,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Optional integer. Specifies the maximum number of event sources to return in response. This value must be greater
-     * than 0.
+     * The maximum number of event source mappings to return.
      * </p>
      * 
      * @param maxItems
-     *        Optional integer. Specifies the maximum number of event sources to return in response. This value must be
-     *        greater than 0.
+     *        The maximum number of event source mappings to return.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -396,12 +502,10 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Optional integer. Specifies the maximum number of event sources to return in response. This value must be greater
-     * than 0.
+     * The maximum number of event source mappings to return.
      * </p>
      * 
-     * @return Optional integer. Specifies the maximum number of event sources to return in response. This value must be
-     *         greater than 0.
+     * @return The maximum number of event source mappings to return.
      */
 
     public Integer getMaxItems() {
@@ -410,13 +514,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Optional integer. Specifies the maximum number of event sources to return in response. This value must be greater
-     * than 0.
+     * The maximum number of event source mappings to return.
      * </p>
      * 
      * @param maxItems
-     *        Optional integer. Specifies the maximum number of event sources to return in response. This value must be
-     *        greater than 0.
+     *        The maximum number of event source mappings to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

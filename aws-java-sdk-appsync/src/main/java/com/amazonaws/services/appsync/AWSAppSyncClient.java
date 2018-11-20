@@ -213,8 +213,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateApiKeyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateApiKeyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -277,8 +275,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateDataSourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDataSourceResultJsonUnmarshaller());
@@ -345,8 +341,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateGraphqlApiResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateGraphqlApiResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -411,8 +405,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateResolverResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateResolverResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -476,8 +468,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateTypeResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateTypeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -538,8 +528,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteApiKeyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteApiKeyResultJsonUnmarshaller());
@@ -604,8 +592,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDataSourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDataSourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -669,8 +655,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteGraphqlApiResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteGraphqlApiResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -730,8 +714,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteResolverResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteResolverResultJsonUnmarshaller());
@@ -796,8 +778,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteTypeResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTypeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -861,8 +841,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetDataSourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDataSourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -924,8 +902,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetGraphqlApiResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetGraphqlApiResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -986,8 +962,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetIntrospectionSchemaResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(false).withHasStreamingSuccessResponse(false),
                     new GetIntrospectionSchemaResultJsonUnmarshaller());
@@ -1046,8 +1020,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetResolverResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetResolverResultJsonUnmarshaller());
@@ -1110,8 +1082,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetSchemaCreationStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1176,8 +1146,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetTypeResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetTypeResultJsonUnmarshaller());
@@ -1247,8 +1215,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListApiKeysResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListApiKeysResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1310,8 +1276,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListDataSourcesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDataSourcesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1370,8 +1334,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListGraphqlApisResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListGraphqlApisResultJsonUnmarshaller());
@@ -1433,8 +1395,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListResolversResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListResolversResultJsonUnmarshaller());
@@ -1498,8 +1458,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTypesResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTypesResultJsonUnmarshaller());
@@ -1567,8 +1525,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<StartSchemaCreationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartSchemaCreationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1635,8 +1591,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateApiKeyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateApiKeyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1699,8 +1653,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDataSourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDataSourceResultJsonUnmarshaller());
@@ -1765,8 +1717,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateGraphqlApiResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateGraphqlApiResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1826,8 +1776,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateResolverResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateResolverResultJsonUnmarshaller());
@@ -1892,8 +1840,6 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateTypeResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateTypeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1930,18 +1876,18 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -1951,7 +1897,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -1959,11 +1905,13 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

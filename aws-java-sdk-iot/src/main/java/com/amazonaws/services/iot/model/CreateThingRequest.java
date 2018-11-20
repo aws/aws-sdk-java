@@ -46,6 +46,12 @@ public class CreateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private AttributePayload attributePayload;
+    /**
+     * <p>
+     * The name of the billing group the thing will be added to.
+     * </p>
+     */
+    private String billingGroupName;
 
     /**
      * <p>
@@ -184,6 +190,46 @@ public class CreateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The name of the billing group the thing will be added to.
+     * </p>
+     * 
+     * @param billingGroupName
+     *        The name of the billing group the thing will be added to.
+     */
+
+    public void setBillingGroupName(String billingGroupName) {
+        this.billingGroupName = billingGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the billing group the thing will be added to.
+     * </p>
+     * 
+     * @return The name of the billing group the thing will be added to.
+     */
+
+    public String getBillingGroupName() {
+        return this.billingGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the billing group the thing will be added to.
+     * </p>
+     * 
+     * @param billingGroupName
+     *        The name of the billing group the thing will be added to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateThingRequest withBillingGroupName(String billingGroupName) {
+        setBillingGroupName(billingGroupName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -199,7 +245,9 @@ public class CreateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getThingTypeName() != null)
             sb.append("ThingTypeName: ").append(getThingTypeName()).append(",");
         if (getAttributePayload() != null)
-            sb.append("AttributePayload: ").append(getAttributePayload());
+            sb.append("AttributePayload: ").append(getAttributePayload()).append(",");
+        if (getBillingGroupName() != null)
+            sb.append("BillingGroupName: ").append(getBillingGroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -226,6 +274,10 @@ public class CreateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getAttributePayload() != null && other.getAttributePayload().equals(this.getAttributePayload()) == false)
             return false;
+        if (other.getBillingGroupName() == null ^ this.getBillingGroupName() == null)
+            return false;
+        if (other.getBillingGroupName() != null && other.getBillingGroupName().equals(this.getBillingGroupName()) == false)
+            return false;
         return true;
     }
 
@@ -237,6 +289,7 @@ public class CreateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getThingName() == null) ? 0 : getThingName().hashCode());
         hashCode = prime * hashCode + ((getThingTypeName() == null) ? 0 : getThingTypeName().hashCode());
         hashCode = prime * hashCode + ((getAttributePayload() == null) ? 0 : getAttributePayload().hashCode());
+        hashCode = prime * hashCode + ((getBillingGroupName() == null) ? 0 : getBillingGroupName().hashCode());
         return hashCode;
     }
 

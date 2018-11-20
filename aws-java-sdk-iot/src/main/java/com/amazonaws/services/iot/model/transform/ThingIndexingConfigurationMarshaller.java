@@ -29,6 +29,8 @@ public class ThingIndexingConfigurationMarshaller {
 
     private static final MarshallingInfo<String> THINGINDEXINGMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("thingIndexingMode").build();
+    private static final MarshallingInfo<String> THINGCONNECTIVITYINDEXINGMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("thingConnectivityIndexingMode").build();
 
     private static final ThingIndexingConfigurationMarshaller instance = new ThingIndexingConfigurationMarshaller();
 
@@ -47,6 +49,7 @@ public class ThingIndexingConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(thingIndexingConfiguration.getThingIndexingMode(), THINGINDEXINGMODE_BINDING);
+            protocolMarshaller.marshall(thingIndexingConfiguration.getThingConnectivityIndexingMode(), THINGCONNECTIVITYINDEXINGMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

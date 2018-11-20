@@ -109,6 +109,7 @@
       "documentation" : "<p>Creates a budget and, if included, notifications and subscribers. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>An error on the client occurred. Typically, the cause is an invalid input value.</p>",
@@ -127,6 +128,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateBudgetRequest",
@@ -155,6 +157,7 @@
       "documentation" : "<p>Creates a notification. You must create the budget before you create the associated notification.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -177,6 +180,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateNotificationRequest",
@@ -205,6 +209,7 @@
       "documentation" : "<p>Creates a subscriber. You must create the associated budget and notification before you create the subscriber.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -227,6 +232,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateSubscriberRequest",
@@ -255,6 +261,7 @@
       "documentation" : "<p>Deletes a budget. You can delete your budget at any time.</p> <important> <p>Deleting a budget also deletes the notifications and subscribers that are associated with that budget.</p> </important>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -269,6 +276,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteBudgetRequest",
@@ -297,6 +305,7 @@
       "documentation" : "<p>Deletes a notification.</p> <important> <p>Deleting a notification also deletes the subscribers that are associated with the notification.</p> </important>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>An error on the client occurred. Typically, the cause is an invalid input value.</p>",
@@ -311,6 +320,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteNotificationRequest",
@@ -339,6 +349,7 @@
       "documentation" : "<p>Deletes a subscriber.</p> <important> <p>Deleting the last subscriber to a notification also deletes the notification.</p> </important>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -353,6 +364,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteSubscriberRequest",
@@ -381,6 +393,7 @@
       "documentation" : "<p>Describes a budget.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -395,6 +408,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeBudgetRequest",
@@ -423,6 +437,7 @@
       "documentation" : "<p>Describes the history for <code>DAILY</code>, <code>MONTHLY</code>, and <code>QUARTERLY</code> budgets. Budget history isn't available for <code>ANNUAL</code> budgets.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -445,6 +460,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeBudgetPerformanceHistoryRequest",
@@ -473,6 +489,7 @@
       "documentation" : "<p>Lists the budgets that are associated with an account.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -495,6 +512,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeBudgetsRequest",
@@ -523,6 +541,7 @@
       "documentation" : "<p>Lists the notifications that are associated with a budget.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -545,6 +564,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeNotificationsForBudgetRequest",
@@ -573,6 +593,7 @@
       "documentation" : "<p>Lists the subscribers that are associated with a notification.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -595,6 +616,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeSubscribersForNotificationRequest",
@@ -623,6 +645,7 @@
       "documentation" : "<p>Updates a budget. You can change every part of a budget except for the <code>budgetName</code> and the <code>calculatedSpend</code>. When you modify a budget, the <code>calculatedSpend</code> drops to zero until AWS has new usage data to use for forecasting.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -637,6 +660,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateBudgetRequest",
@@ -665,6 +689,7 @@
       "documentation" : "<p>Updates a notification.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -683,6 +708,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateNotificationRequest",
@@ -711,6 +737,7 @@
       "documentation" : "<p>Updates a subscriber.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -729,6 +756,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateSubscriberRequest",

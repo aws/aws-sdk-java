@@ -53,7 +53,17 @@ public enum OperationType {
     DetachDisk("DetachDisk"),
     CreateDiskSnapshot("CreateDiskSnapshot"),
     DeleteDiskSnapshot("DeleteDiskSnapshot"),
-    CreateDiskFromSnapshot("CreateDiskFromSnapshot");
+    CreateDiskFromSnapshot("CreateDiskFromSnapshot"),
+    CreateRelationalDatabase("CreateRelationalDatabase"),
+    UpdateRelationalDatabase("UpdateRelationalDatabase"),
+    DeleteRelationalDatabase("DeleteRelationalDatabase"),
+    CreateRelationalDatabaseFromSnapshot("CreateRelationalDatabaseFromSnapshot"),
+    CreateRelationalDatabaseSnapshot("CreateRelationalDatabaseSnapshot"),
+    DeleteRelationalDatabaseSnapshot("DeleteRelationalDatabaseSnapshot"),
+    UpdateRelationalDatabaseParameters("UpdateRelationalDatabaseParameters"),
+    StartRelationalDatabase("StartRelationalDatabase"),
+    RebootRelationalDatabase("RebootRelationalDatabase"),
+    StopRelationalDatabase("StopRelationalDatabase");
 
     private String value;
 

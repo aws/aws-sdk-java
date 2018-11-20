@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -94,6 +94,7 @@
       "documentation" : "<p>Create a configuration set. <i>Configuration sets</i> are groups of rules that you can apply to the emails you send using Amazon Pinpoint. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AlreadyExistsException",
         "documentation" : "<p>The resource specified in your request already exists.</p>",
@@ -116,6 +117,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateConfigurationSetRequest",
@@ -144,6 +146,7 @@
       "documentation" : "<p>Create an event destination. In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p> <p>A single configuration set can include more than one event destination.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource you attempted to access doesn't exist.</p>",
@@ -166,6 +169,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateConfigurationSetEventDestinationRequest",
@@ -194,6 +198,7 @@
       "documentation" : "<p>Create a new pool of dedicated IP addresses. A pool can include one or more dedicated IP addresses that are associated with your Amazon Pinpoint account. You can associate a pool with a configuration set. When you send an email that uses that configuration set, Amazon Pinpoint sends it using only the IP addresses in the associated pool.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AlreadyExistsException",
         "documentation" : "<p>The resource specified in your request already exists.</p>",
@@ -212,6 +217,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateDedicatedIpPoolRequest",
@@ -240,6 +246,7 @@
       "documentation" : "<p>Verifies an email identity for use with Amazon Pinpoint. In Amazon Pinpoint, an identity is an email address or domain that you use when you send email. Before you can use an identity to send email with Amazon Pinpoint, you first have to verify it. By verifying an address, you demonstrate that you're the owner of the address, and that you've given Amazon Pinpoint permission to send email from the address.</p> <p>When you verify an email address, Amazon Pinpoint sends an email to the address. Your email address is verified as soon as you follow the link in the verification email. </p> <p>When you verify a domain, this operation provides a set of DKIM tokens, which you can convert into CNAME tokens. You add these CNAME tokens to the DNS configuration for your domain. Your domain is verified when Amazon Pinpoint detects these records in the DNS configuration for your domain. It usually takes around 72 hours to complete the domain verification process.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>There are too many instances of the specified resource type.</p>",
@@ -254,6 +261,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateEmailIdentityRequest",
@@ -282,6 +290,7 @@
       "documentation" : "<p>Delete an existing configuration set.</p> <p>In Amazon Pinpoint, <i>configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource you attempted to access doesn't exist.</p>",
@@ -296,6 +305,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteConfigurationSetRequest",
@@ -324,6 +334,7 @@
       "documentation" : "<p>Delete an event destination.</p> <p>In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource you attempted to access doesn't exist.</p>",
@@ -338,6 +349,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteConfigurationSetEventDestinationRequest",
@@ -366,6 +378,7 @@
       "documentation" : "<p>Delete a dedicated IP pool.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource you attempted to access doesn't exist.</p>",
@@ -380,6 +393,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteDedicatedIpPoolRequest",
@@ -408,6 +422,7 @@
       "documentation" : "<p>Deletes an email identity that you previously verified for use with Amazon Pinpoint. An identity can be either an email address or a domain name.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource you attempted to access doesn't exist.</p>",
@@ -422,6 +437,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteEmailIdentityRequest",
@@ -450,6 +466,7 @@
       "documentation" : "<p>Obtain information about the email-sending status and capabilities of your Amazon Pinpoint account in the current AWS Region.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TooManyRequestsException",
         "documentation" : "<p>Too many requests have been made to the operation.</p>",
@@ -460,6 +477,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetAccountRequest",
@@ -488,6 +506,7 @@
       "documentation" : "<p>Get information about an existing configuration set, including the dedicated IP pool that it's associated with, whether or not it's enabled for sending email, and more.</p> <p>In Amazon Pinpoint, <i>configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource you attempted to access doesn't exist.</p>",
@@ -502,6 +521,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetConfigurationSetRequest",
@@ -530,6 +550,7 @@
       "documentation" : "<p>Retrieve a list of event destinations that are associated with a configuration set.</p> <p>In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource you attempted to access doesn't exist.</p>",
@@ -544,6 +565,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetConfigurationSetEventDestinationsRequest",
@@ -572,6 +594,7 @@
       "documentation" : "<p>Get information about a dedicated IP address, including the name of the dedicated IP pool that it's associated with, as well information about the automatic warm-up process for the address.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TooManyRequestsException",
         "documentation" : "<p>Too many requests have been made to the operation.</p>",
@@ -586,6 +609,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetDedicatedIpRequest",
@@ -614,6 +638,7 @@
       "documentation" : "<p>List the dedicated IP addresses that are associated with your Amazon Pinpoint account.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TooManyRequestsException",
         "documentation" : "<p>Too many requests have been made to the operation.</p>",
@@ -628,6 +653,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetDedicatedIpsRequest",
@@ -656,6 +682,7 @@
       "documentation" : "<p>Provides information about a specific identity associated with your Amazon Pinpoint account, including the identity's verification status, its DKIM authentication status, and its custom Mail-From settings.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource you attempted to access doesn't exist.</p>",
@@ -670,6 +697,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetEmailIdentityRequest",
@@ -698,6 +726,7 @@
       "documentation" : "<p>List all of the configuration sets associated with your Amazon Pinpoint account in the current region.</p> <p>In Amazon Pinpoint, <i>configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TooManyRequestsException",
         "documentation" : "<p>Too many requests have been made to the operation.</p>",
@@ -708,6 +737,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListConfigurationSetsRequest",
@@ -736,6 +766,7 @@
       "documentation" : "<p>List all of the dedicated IP pools that exist in your Amazon Pinpoint account in the current AWS Region.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TooManyRequestsException",
         "documentation" : "<p>Too many requests have been made to the operation.</p>",
@@ -746,6 +777,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListDedicatedIpPoolsRequest",
@@ -774,6 +806,7 @@
       "documentation" : "<p>Returns a list of all of the email identities that are associated with your Amazon Pinpoint account. An identity can be either an email address or a domain. This operation returns identities that are verified as well as those that aren't.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TooManyRequestsException",
         "documentation" : "<p>Too many requests have been made to the operation.</p>",
@@ -784,6 +817,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListEmailIdentitiesRequest",
@@ -812,6 +846,7 @@
       "documentation" : "<p>Enable or disable the automatic warm-up feature for dedicated IP addresses.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TooManyRequestsException",
         "documentation" : "<p>Too many requests have been made to the operation.</p>",
@@ -822,6 +857,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutAccountDedicatedIpWarmupAttributesRequest",
@@ -850,6 +886,7 @@
       "documentation" : "<p>Enable or disable the ability of your account to send email.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TooManyRequestsException",
         "documentation" : "<p>Too many requests have been made to the operation.</p>",
@@ -860,6 +897,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutAccountSendingAttributesRequest",
@@ -888,6 +926,7 @@
       "documentation" : "<p>Associate a configuration set with a dedicated IP pool. You can use dedicated IP pools to create groups of dedicated IP addresses for sending specific types of email.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource you attempted to access doesn't exist.</p>",
@@ -902,6 +941,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutConfigurationSetDeliveryOptionsRequest",
@@ -930,6 +970,7 @@
       "documentation" : "<p>Enable or disable collection of reputation metrics for emails that you send using a particular configuration set in a specific AWS Region.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource you attempted to access doesn't exist.</p>",
@@ -944,6 +985,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutConfigurationSetReputationOptionsRequest",
@@ -972,6 +1014,7 @@
       "documentation" : "<p>Enable or disable email sending for messages that use a particular configuration set in a specific AWS Region.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource you attempted to access doesn't exist.</p>",
@@ -986,6 +1029,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutConfigurationSetSendingOptionsRequest",
@@ -1014,6 +1058,7 @@
       "documentation" : "<p>Specify a custom domain to use for open and click tracking elements in email that you send using Amazon Pinpoint.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource you attempted to access doesn't exist.</p>",
@@ -1028,6 +1073,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutConfigurationSetTrackingOptionsRequest",
@@ -1056,6 +1102,7 @@
       "documentation" : "<p>Move a dedicated IP address to an existing dedicated IP pool.</p> <note> <p>The dedicated IP address that you specify must already exist, and must be associated with your Amazon Pinpoint account. </p> <p>The dedicated IP pool you specify must already exist. You can create a new pool by using the <code>CreateDedicatedIpPool</code> operation.</p> </note>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource you attempted to access doesn't exist.</p>",
@@ -1070,6 +1117,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutDedicatedIpInPoolRequest",
@@ -1098,6 +1146,7 @@
       "documentation" : "<p/>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource you attempted to access doesn't exist.</p>",
@@ -1112,6 +1161,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutDedicatedIpWarmupAttributesRequest",
@@ -1140,6 +1190,7 @@
       "documentation" : "<p>Used to enable or disable DKIM authentication for an email identity.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource you attempted to access doesn't exist.</p>",
@@ -1154,6 +1205,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutEmailIdentityDkimAttributesRequest",
@@ -1182,6 +1234,7 @@
       "documentation" : "<p>Used to enable or disable feedback forwarding for an identity. This setting determines what happens when an identity is used to send an email that results in a bounce or complaint event.</p> <p>When you enable feedback forwarding, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p> <p>When you disable feedback forwarding, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource you attempted to access doesn't exist.</p>",
@@ -1196,6 +1249,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutEmailIdentityFeedbackAttributesRequest",
@@ -1224,6 +1278,7 @@
       "documentation" : "<p>Used to enable or disable the custom Mail-From domain configuration for an email identity.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource you attempted to access doesn't exist.</p>",
@@ -1238,6 +1293,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutEmailIdentityMailFromAttributesRequest",
@@ -1266,6 +1322,7 @@
       "documentation" : "<p>Sends an email message. You can use the Amazon Pinpoint Email API to send two types of messages:</p> <ul> <li> <p> <b>Simple</b> – A standard email message. When you create this type of message, you specify the sender, the recipient, and the message body, and Amazon Pinpoint assembles the message for you.</p> </li> <li> <p> <b>Raw</b> – A raw, MIME-formatted email message. When you send this type of email, you have to specify all of the message headers, as well as the message body. You can use this message type to send messages that contain attachments. The message that you specify has to be a valid MIME message.</p> </li> </ul>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TooManyRequestsException",
         "documentation" : "<p>Too many requests have been made to the operation.</p>",
@@ -1300,6 +1357,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "SendEmailRequest",
@@ -1328,6 +1386,7 @@
       "documentation" : "<p>Update the configuration of an event destination for a configuration set.</p> <p>In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource you attempted to access doesn't exist.</p>",
@@ -1342,6 +1401,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateConfigurationSetEventDestinationRequest",

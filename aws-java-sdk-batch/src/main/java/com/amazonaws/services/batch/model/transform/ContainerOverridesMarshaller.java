@@ -34,6 +34,8 @@ public class ContainerOverridesMarshaller {
             .marshallLocationName("memory").build();
     private static final MarshallingInfo<List> COMMAND_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("command").build();
+    private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceType").build();
     private static final MarshallingInfo<List> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("environment").build();
 
@@ -56,6 +58,7 @@ public class ContainerOverridesMarshaller {
             protocolMarshaller.marshall(containerOverrides.getVcpus(), VCPUS_BINDING);
             protocolMarshaller.marshall(containerOverrides.getMemory(), MEMORY_BINDING);
             protocolMarshaller.marshall(containerOverrides.getCommand(), COMMAND_BINDING);
+            protocolMarshaller.marshall(containerOverrides.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(containerOverrides.getEnvironment(), ENVIRONMENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -36,6 +36,12 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
     private String principalId;
     /**
      * <p>
+     * The ID of the invited user.
+     * </p>
+     */
+    private String inviteePrincipalId;
+    /**
+     * <p>
      * The role.
      * </p>
      */
@@ -96,6 +102,46 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
 
     public ShareResult withPrincipalId(String principalId) {
         setPrincipalId(principalId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the invited user.
+     * </p>
+     * 
+     * @param inviteePrincipalId
+     *        The ID of the invited user.
+     */
+
+    public void setInviteePrincipalId(String inviteePrincipalId) {
+        this.inviteePrincipalId = inviteePrincipalId;
+    }
+
+    /**
+     * <p>
+     * The ID of the invited user.
+     * </p>
+     * 
+     * @return The ID of the invited user.
+     */
+
+    public String getInviteePrincipalId() {
+        return this.inviteePrincipalId;
+    }
+
+    /**
+     * <p>
+     * The ID of the invited user.
+     * </p>
+     * 
+     * @param inviteePrincipalId
+     *        The ID of the invited user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ShareResult withInviteePrincipalId(String inviteePrincipalId) {
+        setInviteePrincipalId(inviteePrincipalId);
         return this;
     }
 
@@ -338,6 +384,8 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getPrincipalId() != null)
             sb.append("PrincipalId: ").append(getPrincipalId()).append(",");
+        if (getInviteePrincipalId() != null)
+            sb.append("InviteePrincipalId: ").append(getInviteePrincipalId()).append(",");
         if (getRole() != null)
             sb.append("Role: ").append(getRole()).append(",");
         if (getStatus() != null)
@@ -364,6 +412,10 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPrincipalId() != null && other.getPrincipalId().equals(this.getPrincipalId()) == false)
             return false;
+        if (other.getInviteePrincipalId() == null ^ this.getInviteePrincipalId() == null)
+            return false;
+        if (other.getInviteePrincipalId() != null && other.getInviteePrincipalId().equals(this.getInviteePrincipalId()) == false)
+            return false;
         if (other.getRole() == null ^ this.getRole() == null)
             return false;
         if (other.getRole() != null && other.getRole().equals(this.getRole()) == false)
@@ -389,6 +441,7 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPrincipalId() == null) ? 0 : getPrincipalId().hashCode());
+        hashCode = prime * hashCode + ((getInviteePrincipalId() == null) ? 0 : getInviteePrincipalId().hashCode());
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getShareId() == null) ? 0 : getShareId().hashCode());

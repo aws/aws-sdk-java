@@ -110,6 +110,7 @@
       "documentation" : "<p>Adds one or more tags to a trail, up to a limit of 50. Tags must be unique per trail. Overwrites an existing tag's value when a new value is specified for an existing tag key. If you specify a key without a value, the tag will be created with the specified key and a value of null. You can tag a trail that applies to all regions only from the region in which the trail was created (that is, from its home region).</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>This exception is thrown when the specified resource is not found.</p>",
@@ -142,8 +143,13 @@
         "exceptionName" : "OperationNotPermittedException",
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NotOrganizationMasterAccountException",
+        "documentation" : "<p>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an organization in AWS Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "AddTagsRequest",
@@ -172,6 +178,7 @@
       "documentation" : "<p>Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. A maximum of five trails can exist in a region, irrespective of the region in which they were created.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "MaximumNumberOfTrailsExceededException",
         "documentation" : "<p>This exception is thrown when the maximum number of trails is reached.</p>",
@@ -256,8 +263,29 @@
         "exceptionName" : "OperationNotPermittedException",
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudTrailAccessNotEnabledException",
+        "documentation" : "<p>This exception is thrown when trusted access has not been enabled between AWS CloudTrail and AWS Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html\">Enabling Trusted Access with Other AWS Services</a> and <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>. </p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InsufficientDependencyServiceAccessPermissionException",
+        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NotOrganizationMasterAccountException",
+        "documentation" : "<p>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an organization in AWS Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "OrganizationsNotInUseException",
+        "documentation" : "<p>This exception is thrown when the request is made from an AWS account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "OrganizationNotInAllFeaturesModeException",
+        "documentation" : "<p>This exception is thrown when AWS Organizations is not configured to support all features. All features must be enabled in AWS Organization to support creating an organization trail. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateTrailRequest",
@@ -286,6 +314,7 @@
       "documentation" : "<p>Deletes a trail. This operation must be called from the region in which the trail was created. <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled in all regions.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TrailNotFoundException",
         "documentation" : "<p>This exception is thrown when the trail with the given name is not found.</p>",
@@ -298,8 +327,25 @@
         "exceptionName" : "InvalidHomeRegionException",
         "documentation" : "<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "UnsupportedOperationException",
+        "documentation" : "<p>This exception is thrown when the requested operation is not supported.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "OperationNotPermittedException",
+        "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NotOrganizationMasterAccountException",
+        "documentation" : "<p>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an organization in AWS Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InsufficientDependencyServiceAccessPermissionException",
+        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteTrailRequest",
@@ -328,6 +374,7 @@
       "documentation" : "<p>Retrieves settings for the trail associated with the current region for your account.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnsupportedOperationException",
         "documentation" : "<p>This exception is thrown when the requested operation is not supported.</p>",
@@ -338,6 +385,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeTrailsRequest",
@@ -366,6 +414,7 @@
       "documentation" : "<p>Describes the settings for the event selectors that you configured for your trail. The information returned for your event selectors includes the following:</p> <ul> <li> <p>If your event selector includes read-only events, write-only events, or all events. This applies to both management events and data events.</p> </li> <li> <p>If your event selector includes management events.</p> </li> <li> <p>If your event selector includes data events, the Amazon S3 objects or AWS Lambda functions that you are logging for data events.</p> </li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html\">Logging Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TrailNotFoundException",
         "documentation" : "<p>This exception is thrown when the trail with the given name is not found.</p>",
@@ -384,6 +433,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetEventSelectorsRequest",
@@ -412,6 +462,7 @@
       "documentation" : "<p>Returns a JSON-formatted list of information about the specified trail. Fields include information on delivery errors, Amazon SNS and Amazon S3 errors, and start and stop logging times for each trail. This operation returns trail status from a single region. To return trail status from all regions, you must call the operation on each region.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TrailNotFoundException",
         "documentation" : "<p>This exception is thrown when the trail with the given name is not found.</p>",
@@ -422,6 +473,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetTrailStatusRequest",
@@ -450,6 +502,7 @@
       "documentation" : "<p>Returns all public keys whose private keys were used to sign the digest files within the specified time range. The public key is needed to validate digest files that were signed with its corresponding private key.</p> <note> <p>CloudTrail uses different private/public key pairs per region. Each digest file is signed with a private key unique to its region. Therefore, when you validate a digest file from a particular region, you must look in the same region for its corresponding public key.</p> </note>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidTimeRangeException",
         "documentation" : "<p>Occurs if the timestamp values are invalid. Either the start time occurs after the end time or the time range is outside the range of possible values.</p>",
@@ -468,6 +521,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListPublicKeysRequest",
@@ -496,6 +550,7 @@
       "documentation" : "<p>Lists the tags for the trail in the current region.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>This exception is thrown when the specified resource is not found.</p>",
@@ -526,6 +581,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListTagsRequest",
@@ -554,6 +610,7 @@
       "documentation" : "<p>Looks up <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events\">management events</a> captured by CloudTrail. Events for a region can be looked up in that region during the last 90 days. Lookup supports the following attributes:</p> <ul> <li> <p>AWS access key</p> </li> <li> <p>Event ID</p> </li> <li> <p>Event name</p> </li> <li> <p>Event source</p> </li> <li> <p>Read only</p> </li> <li> <p>Resource name</p> </li> <li> <p>Resource type</p> </li> <li> <p>User name</p> </li> </ul> <p>All attributes are optional. The default number of results returned is 50, with a maximum of 50 possible. The response includes a token that you can use to get the next page of results.</p> <important> <p>The rate of lookup requests is limited to one per second per account. If this limit is exceeded, a throttling error occurs.</p> </important> <important> <p>Events that occurred during the selected time range will not be available for lookup if CloudTrail logging was not enabled when the events occurred.</p> </important>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidLookupAttributesException",
         "documentation" : "<p>Occurs when an invalid lookup attribute is specified.</p>",
@@ -572,6 +629,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "LookupEventsRequest",
@@ -600,6 +658,7 @@
       "documentation" : "<p>Configures an event selector for your trail. Use event selectors to further specify the management and data event settings for your trail. By default, trails created without specific event selectors will be configured to log all read and write management events, and no data events. </p> <p>When an event occurs in your account, CloudTrail evaluates the event selectors in all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't match any event selector, the trail doesn't log the event. </p> <p>Example</p> <ol> <li> <p>You create an event selector for a trail and specify that you want write-only events.</p> </li> <li> <p>The EC2 <code>GetConsoleOutput</code> and <code>RunInstances</code> API operations occur in your account.</p> </li> <li> <p>CloudTrail evaluates whether the events match your event selectors.</p> </li> <li> <p>The <code>RunInstances</code> is a write-only event and it matches your event selector. The trail logs the event.</p> </li> <li> <p>The <code>GetConsoleOutput</code> is a read-only event but it doesn't match your event selector. The trail doesn't log the event. </p> </li> </ol> <p>The <code>PutEventSelectors</code> operation must be called from the region in which the trail was created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.</p> <p>You can configure up to five event selectors for each trail. For more information, see <a href=\"http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html\">Logging Data and Management Events for Trails </a> and <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html\">Limits in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TrailNotFoundException",
         "documentation" : "<p>This exception is thrown when the trail with the given name is not found.</p>",
@@ -624,8 +683,17 @@
         "exceptionName" : "OperationNotPermittedException",
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NotOrganizationMasterAccountException",
+        "documentation" : "<p>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an organization in AWS Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InsufficientDependencyServiceAccessPermissionException",
+        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutEventSelectorsRequest",
@@ -654,6 +722,7 @@
       "documentation" : "<p>Removes the specified tags from a trail.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>This exception is thrown when the specified resource is not found.</p>",
@@ -682,8 +751,13 @@
         "exceptionName" : "OperationNotPermittedException",
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NotOrganizationMasterAccountException",
+        "documentation" : "<p>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an organization in AWS Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "RemoveTagsRequest",
@@ -712,6 +786,7 @@
       "documentation" : "<p>Starts the recording of AWS API calls and log file delivery for a trail. For a trail that is enabled in all regions, this operation must be called from the region in which the trail was created. This operation cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled in all regions.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TrailNotFoundException",
         "documentation" : "<p>This exception is thrown when the trail with the given name is not found.</p>",
@@ -724,8 +799,25 @@
         "exceptionName" : "InvalidHomeRegionException",
         "documentation" : "<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "UnsupportedOperationException",
+        "documentation" : "<p>This exception is thrown when the requested operation is not supported.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "OperationNotPermittedException",
+        "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NotOrganizationMasterAccountException",
+        "documentation" : "<p>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an organization in AWS Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InsufficientDependencyServiceAccessPermissionException",
+        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "StartLoggingRequest",
@@ -754,6 +846,7 @@
       "documentation" : "<p>Suspends the recording of AWS API calls and log file delivery for the specified trail. Under most circumstances, there is no need to use this action. You can update a trail without stopping it first. This action is the only way to stop recording. For a trail enabled in all regions, this operation must be called from the region in which the trail was created, or an <code>InvalidHomeRegionException</code> will occur. This operation cannot be called on the shadow trails (replicated trails in other regions) of a trail enabled in all regions.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TrailNotFoundException",
         "documentation" : "<p>This exception is thrown when the trail with the given name is not found.</p>",
@@ -766,8 +859,25 @@
         "exceptionName" : "InvalidHomeRegionException",
         "documentation" : "<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "UnsupportedOperationException",
+        "documentation" : "<p>This exception is thrown when the requested operation is not supported.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "OperationNotPermittedException",
+        "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NotOrganizationMasterAccountException",
+        "documentation" : "<p>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an organization in AWS Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InsufficientDependencyServiceAccessPermissionException",
+        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "StopLoggingRequest",
@@ -796,6 +906,7 @@
       "documentation" : "<p>Updates the settings that specify delivery of log files. Changes to a trail do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery. If the existing bucket has previously been a target for CloudTrail log files, an IAM policy exists for the bucket. <code>UpdateTrail</code> must be called from the region in which the trail was created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "S3BucketDoesNotExistException",
         "documentation" : "<p>This exception is thrown when the specified S3 bucket does not exist.</p>",
@@ -880,8 +991,29 @@
         "exceptionName" : "OperationNotPermittedException",
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudTrailAccessNotEnabledException",
+        "documentation" : "<p>This exception is thrown when trusted access has not been enabled between AWS CloudTrail and AWS Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html\">Enabling Trusted Access with Other AWS Services</a> and <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>. </p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InsufficientDependencyServiceAccessPermissionException",
+        "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "OrganizationsNotInUseException",
+        "documentation" : "<p>This exception is thrown when the request is made from an AWS account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NotOrganizationMasterAccountException",
+        "documentation" : "<p>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an organization in AWS Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "OrganizationNotInAllFeaturesModeException",
+        "documentation" : "<p>This exception is thrown when AWS Organizations is not configured to support all features. All features must be enabled in AWS Organization to support creating an organization trail. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateTrailRequest",
@@ -1443,6 +1575,43 @@
         "documentation" : null,
         "simpleType" : "CloudTrailARNInvalidException",
         "variableSetterType" : "CloudTrailARNInvalidException"
+      },
+      "wrapper" : false
+    },
+    "CloudTrailAccessNotEnabledException" : {
+      "c2jName" : "CloudTrailAccessNotEnabledException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>This exception is thrown when trusted access has not been enabled between AWS CloudTrail and AWS Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html\">Enabling Trusted Access with Other AWS Services</a> and <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>. </p>",
+      "enums" : null,
+      "errorCode" : "CloudTrailAccessNotEnabledException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "CloudTrailAccessNotEnabledException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "CloudTrailAccessNotEnabledException",
+        "variableName" : "cloudTrailAccessNotEnabledException",
+        "variableType" : "CloudTrailAccessNotEnabledException",
+        "documentation" : null,
+        "simpleType" : "CloudTrailAccessNotEnabledException",
+        "variableSetterType" : "CloudTrailAccessNotEnabledException"
       },
       "wrapper" : false
     },
@@ -2157,6 +2326,71 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "IsOrganizationTrail",
+        "c2jShape" : "Boolean",
+        "deprecated" : false,
+        "documentation" : "<p>Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.</p>\n@param isOrganizationTrail Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withIsOrganizationTrail",
+        "getterDocumentation" : "/**<p>Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.</p>\n@return Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.*/",
+        "getterMethodName" : "getIsOrganizationTrail",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "IsOrganizationTrail",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "IsOrganizationTrail",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "IsOrganizationTrail",
+        "setterDocumentation" : "/**<p>Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.</p>\n@param isOrganizationTrail Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.*/",
+        "setterMethodName" : "setIsOrganizationTrail",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "isOrganizationTrail",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.</p>\n@param isOrganizationTrail Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "isOrganizationTrail",
+          "variableType" : "Boolean",
+          "documentation" : "<p>Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "CloudWatchLogsLogGroupArn" : {
@@ -2484,6 +2718,72 @@
             "variableName" : "isMultiRegionTrail",
             "variableType" : "Boolean",
             "documentation" : "<p>Specifies whether the trail is created in the current region or in all regions. The default is false.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "IsOrganizationTrail" : {
+          "c2jName" : "IsOrganizationTrail",
+          "c2jShape" : "Boolean",
+          "deprecated" : false,
+          "documentation" : "<p>Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.</p>\n@param isOrganizationTrail Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withIsOrganizationTrail",
+          "getterDocumentation" : "/**<p>Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.</p>\n@return Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.*/",
+          "getterMethodName" : "getIsOrganizationTrail",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "IsOrganizationTrail",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "IsOrganizationTrail",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "IsOrganizationTrail",
+          "setterDocumentation" : "/**<p>Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.</p>\n@param isOrganizationTrail Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.*/",
+          "setterMethodName" : "setIsOrganizationTrail",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "isOrganizationTrail",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.</p>\n@param isOrganizationTrail Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "isOrganizationTrail",
+            "variableType" : "Boolean",
+            "documentation" : "<p>Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.</p>",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -3635,6 +3935,71 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "IsOrganizationTrail",
+        "c2jShape" : "Boolean",
+        "deprecated" : false,
+        "documentation" : "<p>Specifies whether the trail is an organization trail.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@param isOrganizationTrail Specifies whether the trail is an organization trail.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withIsOrganizationTrail",
+        "getterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@return Specifies whether the trail is an organization trail.*/",
+        "getterMethodName" : "getIsOrganizationTrail",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "IsOrganizationTrail",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "IsOrganizationTrail",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "IsOrganizationTrail",
+        "setterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@param isOrganizationTrail Specifies whether the trail is an organization trail.*/",
+        "setterMethodName" : "setIsOrganizationTrail",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "isOrganizationTrail",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@param isOrganizationTrail Specifies whether the trail is an organization trail.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "isOrganizationTrail",
+          "variableType" : "Boolean",
+          "documentation" : "<p>Specifies whether the trail is an organization trail.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "CloudWatchLogsLogGroupArn" : {
@@ -3896,6 +4261,72 @@
             "variableName" : "isMultiRegionTrail",
             "variableType" : "Boolean",
             "documentation" : "<p>Specifies whether the trail exists in one region or in all regions.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "IsOrganizationTrail" : {
+          "c2jName" : "IsOrganizationTrail",
+          "c2jShape" : "Boolean",
+          "deprecated" : false,
+          "documentation" : "<p>Specifies whether the trail is an organization trail.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@param isOrganizationTrail Specifies whether the trail is an organization trail.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withIsOrganizationTrail",
+          "getterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@return Specifies whether the trail is an organization trail.*/",
+          "getterMethodName" : "getIsOrganizationTrail",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "IsOrganizationTrail",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "IsOrganizationTrail",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "IsOrganizationTrail",
+          "setterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@param isOrganizationTrail Specifies whether the trail is an organization trail.*/",
+          "setterMethodName" : "setIsOrganizationTrail",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "isOrganizationTrail",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@param isOrganizationTrail Specifies whether the trail is an organization trail.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "isOrganizationTrail",
+            "variableType" : "Boolean",
+            "documentation" : "<p>Specifies whether the trail is an organization trail.</p>",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -5303,11 +5734,11 @@
         "c2jName" : "includeShadowTrails",
         "c2jShape" : "Boolean",
         "deprecated" : false,
-        "documentation" : "<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.</p>",
+        "documentation" : "<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.</p>\n@param includeShadowTrails Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>\n@param includeShadowTrails Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withIncludeShadowTrails",
-        "getterDocumentation" : "/**<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.</p>\n@return Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.*/",
+        "getterDocumentation" : "/**<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>\n@return Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.*/",
         "getterMethodName" : "getIncludeShadowTrails",
         "getterModel" : {
           "returnType" : "Boolean",
@@ -5339,7 +5770,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "IncludeShadowTrails",
-        "setterDocumentation" : "/**<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.</p>\n@param includeShadowTrails Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.*/",
+        "setterDocumentation" : "/**<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>\n@param includeShadowTrails Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.*/",
         "setterMethodName" : "setIncludeShadowTrails",
         "setterModel" : {
           "timestampFormat" : null,
@@ -5353,13 +5784,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.</p>\n@param includeShadowTrails Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>\n@param includeShadowTrails Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "includeShadowTrails",
           "variableType" : "Boolean",
-          "documentation" : "<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.</p>",
+          "documentation" : "<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -5370,11 +5801,11 @@
           "c2jName" : "includeShadowTrails",
           "c2jShape" : "Boolean",
           "deprecated" : false,
-          "documentation" : "<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.</p>",
+          "documentation" : "<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.</p>\n@param includeShadowTrails Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>\n@param includeShadowTrails Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withIncludeShadowTrails",
-          "getterDocumentation" : "/**<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.</p>\n@return Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.*/",
+          "getterDocumentation" : "/**<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>\n@return Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.*/",
           "getterMethodName" : "getIncludeShadowTrails",
           "getterModel" : {
             "returnType" : "Boolean",
@@ -5406,7 +5837,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "IncludeShadowTrails",
-          "setterDocumentation" : "/**<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.</p>\n@param includeShadowTrails Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.*/",
+          "setterDocumentation" : "/**<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>\n@param includeShadowTrails Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.*/",
           "setterMethodName" : "setIncludeShadowTrails",
           "setterModel" : {
             "timestampFormat" : null,
@@ -5420,13 +5851,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.</p>\n@param includeShadowTrails Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>\n@param includeShadowTrails Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "includeShadowTrails",
             "variableType" : "Boolean",
-            "documentation" : "<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.</p>",
+            "documentation" : "<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -10986,6 +11417,43 @@
       },
       "wrapper" : false
     },
+    "InsufficientDependencyServiceAccessPermissionException" : {
+      "c2jName" : "InsufficientDependencyServiceAccessPermissionException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+      "enums" : null,
+      "errorCode" : "InsufficientDependencyServiceAccessPermissionException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "InsufficientDependencyServiceAccessPermissionException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "InsufficientDependencyServiceAccessPermissionException",
+        "variableName" : "insufficientDependencyServiceAccessPermissionException",
+        "variableType" : "InsufficientDependencyServiceAccessPermissionException",
+        "documentation" : null,
+        "simpleType" : "InsufficientDependencyServiceAccessPermissionException",
+        "variableSetterType" : "InsufficientDependencyServiceAccessPermissionException"
+      },
+      "wrapper" : false
+    },
     "InsufficientEncryptionPolicyException" : {
       "c2jName" : "InsufficientEncryptionPolicyException",
       "customization" : {
@@ -15358,6 +15826,43 @@
       },
       "wrapper" : false
     },
+    "NotOrganizationMasterAccountException" : {
+      "c2jName" : "NotOrganizationMasterAccountException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an organization in AWS Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+      "enums" : null,
+      "errorCode" : "NotOrganizationMasterAccountException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "NotOrganizationMasterAccountException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "NotOrganizationMasterAccountException",
+        "variableName" : "notOrganizationMasterAccountException",
+        "variableType" : "NotOrganizationMasterAccountException",
+        "documentation" : null,
+        "simpleType" : "NotOrganizationMasterAccountException",
+        "variableSetterType" : "NotOrganizationMasterAccountException"
+      },
+      "wrapper" : false
+    },
     "OperationNotPermittedException" : {
       "c2jName" : "OperationNotPermittedException",
       "customization" : {
@@ -15392,6 +15897,80 @@
         "documentation" : null,
         "simpleType" : "OperationNotPermittedException",
         "variableSetterType" : "OperationNotPermittedException"
+      },
+      "wrapper" : false
+    },
+    "OrganizationNotInAllFeaturesModeException" : {
+      "c2jName" : "OrganizationNotInAllFeaturesModeException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>This exception is thrown when AWS Organizations is not configured to support all features. All features must be enabled in AWS Organization to support creating an organization trail. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+      "enums" : null,
+      "errorCode" : "OrganizationNotInAllFeaturesModeException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "OrganizationNotInAllFeaturesModeException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "OrganizationNotInAllFeaturesModeException",
+        "variableName" : "organizationNotInAllFeaturesModeException",
+        "variableType" : "OrganizationNotInAllFeaturesModeException",
+        "documentation" : null,
+        "simpleType" : "OrganizationNotInAllFeaturesModeException",
+        "variableSetterType" : "OrganizationNotInAllFeaturesModeException"
+      },
+      "wrapper" : false
+    },
+    "OrganizationsNotInUseException" : {
+      "c2jName" : "OrganizationsNotInUseException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>This exception is thrown when the request is made from an AWS account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>",
+      "enums" : null,
+      "errorCode" : "OrganizationsNotInUseException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "OrganizationsNotInUseException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "OrganizationsNotInUseException",
+        "variableName" : "organizationsNotInUseException",
+        "variableType" : "OrganizationsNotInUseException",
+        "documentation" : null,
+        "simpleType" : "OrganizationsNotInUseException",
+        "variableSetterType" : "OrganizationsNotInUseException"
       },
       "wrapper" : false
     },
@@ -20022,6 +20601,71 @@
           "variableSetterType" : "Boolean"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "IsOrganizationTrail",
+        "c2jShape" : "Boolean",
+        "deprecated" : false,
+        "documentation" : "<p>Specifies whether the trail is an organization trail.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@param isOrganizationTrail Specifies whether the trail is an organization trail.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withIsOrganizationTrail",
+        "getterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@return Specifies whether the trail is an organization trail.*/",
+        "getterMethodName" : "getIsOrganizationTrail",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "IsOrganizationTrail",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "IsOrganizationTrail",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "IsOrganizationTrail",
+        "setterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@param isOrganizationTrail Specifies whether the trail is an organization trail.*/",
+        "setterMethodName" : "setIsOrganizationTrail",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "isOrganizationTrail",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@param isOrganizationTrail Specifies whether the trail is an organization trail.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "isOrganizationTrail",
+          "variableType" : "Boolean",
+          "documentation" : "<p>Specifies whether the trail is an organization trail.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "CloudWatchLogsLogGroupArn" : {
@@ -20415,6 +21059,72 @@
             "variableName" : "isMultiRegionTrail",
             "variableType" : "Boolean",
             "documentation" : "<p>Specifies whether the trail belongs only to one region or exists in all regions.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "IsOrganizationTrail" : {
+          "c2jName" : "IsOrganizationTrail",
+          "c2jShape" : "Boolean",
+          "deprecated" : false,
+          "documentation" : "<p>Specifies whether the trail is an organization trail.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@param isOrganizationTrail Specifies whether the trail is an organization trail.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withIsOrganizationTrail",
+          "getterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@return Specifies whether the trail is an organization trail.*/",
+          "getterMethodName" : "getIsOrganizationTrail",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "IsOrganizationTrail",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "IsOrganizationTrail",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "IsOrganizationTrail",
+          "setterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@param isOrganizationTrail Specifies whether the trail is an organization trail.*/",
+          "setterMethodName" : "setIsOrganizationTrail",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "isOrganizationTrail",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@param isOrganizationTrail Specifies whether the trail is an organization trail.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "isOrganizationTrail",
+            "variableType" : "Boolean",
+            "documentation" : "<p>Specifies whether the trail is an organization trail.</p>",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -21792,6 +22502,71 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "IsOrganizationTrail",
+        "c2jShape" : "Boolean",
+        "deprecated" : false,
+        "documentation" : "<p>Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.</p>\n@param isOrganizationTrail Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withIsOrganizationTrail",
+        "getterDocumentation" : "/**<p>Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.</p>\n@return Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.*/",
+        "getterMethodName" : "getIsOrganizationTrail",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "IsOrganizationTrail",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "IsOrganizationTrail",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "IsOrganizationTrail",
+        "setterDocumentation" : "/**<p>Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.</p>\n@param isOrganizationTrail Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.*/",
+        "setterMethodName" : "setIsOrganizationTrail",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "isOrganizationTrail",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.</p>\n@param isOrganizationTrail Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "isOrganizationTrail",
+          "variableType" : "Boolean",
+          "documentation" : "<p>Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "CloudWatchLogsLogGroupArn" : {
@@ -22119,6 +22894,72 @@
             "variableName" : "isMultiRegionTrail",
             "variableType" : "Boolean",
             "documentation" : "<p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true, shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region where it was created, and its shadow trails in other regions will be deleted.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "IsOrganizationTrail" : {
+          "c2jName" : "IsOrganizationTrail",
+          "c2jShape" : "Boolean",
+          "deprecated" : false,
+          "documentation" : "<p>Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.</p>\n@param isOrganizationTrail Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withIsOrganizationTrail",
+          "getterDocumentation" : "/**<p>Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.</p>\n@return Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.*/",
+          "getterMethodName" : "getIsOrganizationTrail",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "IsOrganizationTrail",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "IsOrganizationTrail",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "IsOrganizationTrail",
+          "setterDocumentation" : "/**<p>Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.</p>\n@param isOrganizationTrail Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.*/",
+          "setterMethodName" : "setIsOrganizationTrail",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "isOrganizationTrail",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.</p>\n@param isOrganizationTrail Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "isOrganizationTrail",
+            "variableType" : "Boolean",
+            "documentation" : "<p>Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.</p>",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -23270,6 +24111,71 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "IsOrganizationTrail",
+        "c2jShape" : "Boolean",
+        "deprecated" : false,
+        "documentation" : "<p>Specifies whether the trail is an organization trail.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@param isOrganizationTrail Specifies whether the trail is an organization trail.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withIsOrganizationTrail",
+        "getterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@return Specifies whether the trail is an organization trail.*/",
+        "getterMethodName" : "getIsOrganizationTrail",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "IsOrganizationTrail",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "IsOrganizationTrail",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "IsOrganizationTrail",
+        "setterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@param isOrganizationTrail Specifies whether the trail is an organization trail.*/",
+        "setterMethodName" : "setIsOrganizationTrail",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "isOrganizationTrail",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@param isOrganizationTrail Specifies whether the trail is an organization trail.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "isOrganizationTrail",
+          "variableType" : "Boolean",
+          "documentation" : "<p>Specifies whether the trail is an organization trail.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "CloudWatchLogsLogGroupArn" : {
@@ -23531,6 +24437,72 @@
             "variableName" : "isMultiRegionTrail",
             "variableType" : "Boolean",
             "documentation" : "<p>Specifies whether the trail exists in one region or in all regions.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "IsOrganizationTrail" : {
+          "c2jName" : "IsOrganizationTrail",
+          "c2jShape" : "Boolean",
+          "deprecated" : false,
+          "documentation" : "<p>Specifies whether the trail is an organization trail.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@param isOrganizationTrail Specifies whether the trail is an organization trail.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withIsOrganizationTrail",
+          "getterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@return Specifies whether the trail is an organization trail.*/",
+          "getterMethodName" : "getIsOrganizationTrail",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "IsOrganizationTrail",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "IsOrganizationTrail",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "IsOrganizationTrail",
+          "setterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@param isOrganizationTrail Specifies whether the trail is an organization trail.*/",
+          "setterMethodName" : "setIsOrganizationTrail",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "isOrganizationTrail",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Specifies whether the trail is an organization trail.</p>\n@param isOrganizationTrail Specifies whether the trail is an organization trail.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "isOrganizationTrail",
+            "variableType" : "Boolean",
+            "documentation" : "<p>Specifies whether the trail is an organization trail.</p>",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },

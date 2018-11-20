@@ -81,7 +81,7 @@ final class AddInputShapes extends AddShapes implements IntermediateModelShapePr
      */
     @Override
     protected String getDefaultTimeFormatIfNull(Member c2jMemberDefinition, Map<String, Shape> allC2jShapes,
-                                                String protocolString) {
+                                                String protocolString, Shape parentShape) {
 
         validateTimestampProtocol(protocolString, c2jMemberDefinition.getTimestampFormat(), c2jMemberDefinition.getShape());
 
@@ -90,7 +90,7 @@ final class AddInputShapes extends AddShapes implements IntermediateModelShapePr
 
         validateTimestampProtocol(protocolString, shape.getTimestampFormat(), shapeName);
 
-        return super.getDefaultTimeFormatIfNull(c2jMemberDefinition, allC2jShapes, protocolString);
+        return super.getDefaultTimeFormatIfNull(c2jMemberDefinition, allC2jShapes, protocolString, parentShape);
     }
 
     /**

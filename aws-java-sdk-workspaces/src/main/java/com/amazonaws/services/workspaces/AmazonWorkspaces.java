@@ -315,6 +315,25 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
+     * Retrieves a list that describes one or more specified Amazon WorkSpaces clients.
+     * </p>
+     * 
+     * @param describeClientPropertiesRequest
+     * @return Result of the DescribeClientProperties operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.DescribeClientProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeClientPropertiesResult describeClientProperties(DescribeClientPropertiesRequest describeClientPropertiesRequest);
+
+    /**
+     * <p>
      * Describes one or more of your IP access control groups.
      * </p>
      * 
@@ -542,6 +561,25 @@ public interface AmazonWorkspaces {
      *      Documentation</a>
      */
     ModifyAccountResult modifyAccount(ModifyAccountRequest modifyAccountRequest);
+
+    /**
+     * <p>
+     * Modifies the properties of the specified Amazon WorkSpaces client.
+     * </p>
+     * 
+     * @param modifyClientPropertiesRequest
+     * @return Result of the ModifyClientProperties operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.ModifyClientProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyClientProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyClientPropertiesResult modifyClientProperties(ModifyClientPropertiesRequest modifyClientPropertiesRequest);
 
     /**
      * <p>

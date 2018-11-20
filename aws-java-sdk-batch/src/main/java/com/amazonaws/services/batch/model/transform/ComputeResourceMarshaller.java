@@ -51,6 +51,8 @@ public class ComputeResourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceRole").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> PLACEMENTGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("placementGroup").build();
     private static final MarshallingInfo<Integer> BIDPERCENTAGE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bidPercentage").build();
     private static final MarshallingInfo<String> SPOTIAMFLEETROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -85,6 +87,7 @@ public class ComputeResourceMarshaller {
             protocolMarshaller.marshall(computeResource.getEc2KeyPair(), EC2KEYPAIR_BINDING);
             protocolMarshaller.marshall(computeResource.getInstanceRole(), INSTANCEROLE_BINDING);
             protocolMarshaller.marshall(computeResource.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(computeResource.getPlacementGroup(), PLACEMENTGROUP_BINDING);
             protocolMarshaller.marshall(computeResource.getBidPercentage(), BIDPERCENTAGE_BINDING);
             protocolMarshaller.marshall(computeResource.getSpotIamFleetRole(), SPOTIAMFLEETROLE_BINDING);
             protocolMarshaller.marshall(computeResource.getLaunchTemplate(), LAUNCHTEMPLATE_BINDING);

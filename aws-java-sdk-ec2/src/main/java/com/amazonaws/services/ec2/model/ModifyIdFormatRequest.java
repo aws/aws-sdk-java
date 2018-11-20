@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ModifyIdFormatRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters of ModifyIdFormat.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ModifyIdFormatRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ModifyIdFormatRequest> {

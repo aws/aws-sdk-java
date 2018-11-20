@@ -23,10 +23,12 @@ public enum CaptionSourceType {
     ANCILLARY("ANCILLARY"),
     DVB_SUB("DVB_SUB"),
     EMBEDDED("EMBEDDED"),
+    SCTE20("SCTE20"),
     SCC("SCC"),
     TTML("TTML"),
     STL("STL"),
     SRT("SRT"),
+    SMI("SMI"),
     TELETEXT("TELETEXT"),
     NULL_SOURCE("NULL_SOURCE");
 

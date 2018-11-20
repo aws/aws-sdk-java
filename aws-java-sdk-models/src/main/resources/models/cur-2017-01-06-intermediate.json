@@ -96,6 +96,7 @@
       "documentation" : "Delete a specified report definition",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "This exception is thrown on a known dependency failure.",
@@ -106,6 +107,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteReportDefinitionRequest",
@@ -134,12 +136,14 @@
       "documentation" : "Describe a list of report definitions owned by the account",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "This exception is thrown on a known dependency failure.",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeReportDefinitionsRequest",
@@ -168,6 +172,7 @@
       "documentation" : "Create a new report definition",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "DuplicateReportNameException",
         "documentation" : "This exception is thrown when putting a report preference with a name that already exists.",
@@ -186,6 +191,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutReportDefinitionRequest",

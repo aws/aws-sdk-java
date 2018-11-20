@@ -28,6 +28,21 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetAggregateResourceConfigResult> batchGetAggregateResourceConfigAsync(
+            BatchGetAggregateResourceConfigRequest request) {
+
+        return batchGetAggregateResourceConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetAggregateResourceConfigResult> batchGetAggregateResourceConfigAsync(
+            BatchGetAggregateResourceConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetAggregateResourceConfigRequest, BatchGetAggregateResourceConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetResourceConfigResult> batchGetResourceConfigAsync(BatchGetResourceConfigRequest request) {
 
         return batchGetResourceConfigAsync(request, null);
@@ -577,6 +592,34 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetAggregateDiscoveredResourceCountsResult> getAggregateDiscoveredResourceCountsAsync(
+            GetAggregateDiscoveredResourceCountsRequest request) {
+
+        return getAggregateDiscoveredResourceCountsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAggregateDiscoveredResourceCountsResult> getAggregateDiscoveredResourceCountsAsync(
+            GetAggregateDiscoveredResourceCountsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAggregateDiscoveredResourceCountsRequest, GetAggregateDiscoveredResourceCountsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAggregateResourceConfigResult> getAggregateResourceConfigAsync(GetAggregateResourceConfigRequest request) {
+
+        return getAggregateResourceConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAggregateResourceConfigResult> getAggregateResourceConfigAsync(GetAggregateResourceConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAggregateResourceConfigRequest, GetAggregateResourceConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetComplianceDetailsByConfigRuleResult> getComplianceDetailsByConfigRuleAsync(
             GetComplianceDetailsByConfigRuleRequest request) {
 
@@ -704,6 +747,21 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
     @Override
     public java.util.concurrent.Future<GetResourceConfigHistoryResult> getResourceConfigHistoryAsync(GetResourceConfigHistoryRequest request,
             com.amazonaws.handlers.AsyncHandler<GetResourceConfigHistoryRequest, GetResourceConfigHistoryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAggregateDiscoveredResourcesResult> listAggregateDiscoveredResourcesAsync(
+            ListAggregateDiscoveredResourcesRequest request) {
+
+        return listAggregateDiscoveredResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAggregateDiscoveredResourcesResult> listAggregateDiscoveredResourcesAsync(
+            ListAggregateDiscoveredResourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAggregateDiscoveredResourcesRequest, ListAggregateDiscoveredResourcesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

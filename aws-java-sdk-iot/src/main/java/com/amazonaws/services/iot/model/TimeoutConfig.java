@@ -29,36 +29,28 @@ public class TimeoutConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the amount of time, in minutes, this device has to finish execution of this job. A timer is started, or
-     * restarted, whenever this job's execution status is specified as <code>IN_PROGRESS</code> with this field
-     * populated. If the job execution status is not set to a terminal state before the timer expires, or before another
-     * job execution status update is sent with this field populated, the status will be automatically set to
-     * <code>TIMED_OUT</code>. Note that setting/resetting this timer has no effect on the job execution timeout timer
-     * which may have been specified when the job was created (<code>CreateJobExecution</code> using the field
-     * <code>timeoutConfig</code>).
+     * Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout interval
+     * can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be updated and will
+     * apply to all job executions for the job. Whenever a job execution remains in the IN_PROGRESS status for longer
+     * than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code> status.
      * </p>
      */
     private Long inProgressTimeoutInMinutes;
 
     /**
      * <p>
-     * Specifies the amount of time, in minutes, this device has to finish execution of this job. A timer is started, or
-     * restarted, whenever this job's execution status is specified as <code>IN_PROGRESS</code> with this field
-     * populated. If the job execution status is not set to a terminal state before the timer expires, or before another
-     * job execution status update is sent with this field populated, the status will be automatically set to
-     * <code>TIMED_OUT</code>. Note that setting/resetting this timer has no effect on the job execution timeout timer
-     * which may have been specified when the job was created (<code>CreateJobExecution</code> using the field
-     * <code>timeoutConfig</code>).
+     * Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout interval
+     * can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be updated and will
+     * apply to all job executions for the job. Whenever a job execution remains in the IN_PROGRESS status for longer
+     * than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code> status.
      * </p>
      * 
      * @param inProgressTimeoutInMinutes
-     *        Specifies the amount of time, in minutes, this device has to finish execution of this job. A timer is
-     *        started, or restarted, whenever this job's execution status is specified as <code>IN_PROGRESS</code> with
-     *        this field populated. If the job execution status is not set to a terminal state before the timer expires,
-     *        or before another job execution status update is sent with this field populated, the status will be
-     *        automatically set to <code>TIMED_OUT</code>. Note that setting/resetting this timer has no effect on the
-     *        job execution timeout timer which may have been specified when the job was created (
-     *        <code>CreateJobExecution</code> using the field <code>timeoutConfig</code>).
+     *        Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout
+     *        interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be
+     *        updated and will apply to all job executions for the job. Whenever a job execution remains in the
+     *        IN_PROGRESS status for longer than this interval, the job execution will fail and switch to the terminal
+     *        <code>TIMED_OUT</code> status.
      */
 
     public void setInProgressTimeoutInMinutes(Long inProgressTimeoutInMinutes) {
@@ -67,22 +59,17 @@ public class TimeoutConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the amount of time, in minutes, this device has to finish execution of this job. A timer is started, or
-     * restarted, whenever this job's execution status is specified as <code>IN_PROGRESS</code> with this field
-     * populated. If the job execution status is not set to a terminal state before the timer expires, or before another
-     * job execution status update is sent with this field populated, the status will be automatically set to
-     * <code>TIMED_OUT</code>. Note that setting/resetting this timer has no effect on the job execution timeout timer
-     * which may have been specified when the job was created (<code>CreateJobExecution</code> using the field
-     * <code>timeoutConfig</code>).
+     * Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout interval
+     * can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be updated and will
+     * apply to all job executions for the job. Whenever a job execution remains in the IN_PROGRESS status for longer
+     * than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code> status.
      * </p>
      * 
-     * @return Specifies the amount of time, in minutes, this device has to finish execution of this job. A timer is
-     *         started, or restarted, whenever this job's execution status is specified as <code>IN_PROGRESS</code> with
-     *         this field populated. If the job execution status is not set to a terminal state before the timer
-     *         expires, or before another job execution status update is sent with this field populated, the status will
-     *         be automatically set to <code>TIMED_OUT</code>. Note that setting/resetting this timer has no effect on
-     *         the job execution timeout timer which may have been specified when the job was created (
-     *         <code>CreateJobExecution</code> using the field <code>timeoutConfig</code>).
+     * @return Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout
+     *         interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be
+     *         updated and will apply to all job executions for the job. Whenever a job execution remains in the
+     *         IN_PROGRESS status for longer than this interval, the job execution will fail and switch to the terminal
+     *         <code>TIMED_OUT</code> status.
      */
 
     public Long getInProgressTimeoutInMinutes() {
@@ -91,23 +78,18 @@ public class TimeoutConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the amount of time, in minutes, this device has to finish execution of this job. A timer is started, or
-     * restarted, whenever this job's execution status is specified as <code>IN_PROGRESS</code> with this field
-     * populated. If the job execution status is not set to a terminal state before the timer expires, or before another
-     * job execution status update is sent with this field populated, the status will be automatically set to
-     * <code>TIMED_OUT</code>. Note that setting/resetting this timer has no effect on the job execution timeout timer
-     * which may have been specified when the job was created (<code>CreateJobExecution</code> using the field
-     * <code>timeoutConfig</code>).
+     * Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout interval
+     * can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be updated and will
+     * apply to all job executions for the job. Whenever a job execution remains in the IN_PROGRESS status for longer
+     * than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code> status.
      * </p>
      * 
      * @param inProgressTimeoutInMinutes
-     *        Specifies the amount of time, in minutes, this device has to finish execution of this job. A timer is
-     *        started, or restarted, whenever this job's execution status is specified as <code>IN_PROGRESS</code> with
-     *        this field populated. If the job execution status is not set to a terminal state before the timer expires,
-     *        or before another job execution status update is sent with this field populated, the status will be
-     *        automatically set to <code>TIMED_OUT</code>. Note that setting/resetting this timer has no effect on the
-     *        job execution timeout timer which may have been specified when the job was created (
-     *        <code>CreateJobExecution</code> using the field <code>timeoutConfig</code>).
+     *        Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout
+     *        interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be
+     *        updated and will apply to all job executions for the job. Whenever a job execution remains in the
+     *        IN_PROGRESS status for longer than this interval, the job execution will fail and switch to the terminal
+     *        <code>TIMED_OUT</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

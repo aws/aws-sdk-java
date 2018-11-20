@@ -40,8 +40,8 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
-     * <code>priority</code> parameter) are evaluated first when associated with same compute environment. Priority is
-     * determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
+     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>.
      * </p>
      */
@@ -170,14 +170,14 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
-     * <code>priority</code> parameter) are evaluated first when associated with same compute environment. Priority is
-     * determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
+     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>.
      * </p>
      * 
      * @param priority
      *        The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
-     *        <code>priority</code> parameter) are evaluated first when associated with same compute environment.
+     *        <code>priority</code> parameter) are evaluated first when associated with the same compute environment.
      *        Priority is determined in descending order, for example, a job queue with a priority value of
      *        <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      */
@@ -189,13 +189,13 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
-     * <code>priority</code> parameter) are evaluated first when associated with same compute environment. Priority is
-     * determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
+     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>.
      * </p>
      * 
      * @return The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
-     *         <code>priority</code> parameter) are evaluated first when associated with same compute environment.
+     *         <code>priority</code> parameter) are evaluated first when associated with the same compute environment.
      *         Priority is determined in descending order, for example, a job queue with a priority value of
      *         <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      */
@@ -207,14 +207,14 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
-     * <code>priority</code> parameter) are evaluated first when associated with same compute environment. Priority is
-     * determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
+     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>.
      * </p>
      * 
      * @param priority
      *        The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
-     *        <code>priority</code> parameter) are evaluated first when associated with same compute environment.
+     *        <code>priority</code> parameter) are evaluated first when associated with the same compute environment.
      *        Priority is determined in descending order, for example, a job queue with a priority value of
      *        <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -52,6 +52,73 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * Returns the current configuration items for resources that are present in your AWS Config aggregator. The
+     * operation also returns a list of resources that are not processed in the current request. If there are no
+     * unprocessed resources, the operation returns an empty <code>unprocessedResourceIdentifiers</code> list.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * The API does not return results for deleted resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The API does not return tags and relationships.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param batchGetAggregateResourceConfigRequest
+     * @return A Java Future containing the result of the BatchGetAggregateResourceConfig operation returned by the
+     *         service.
+     * @sample AmazonConfigAsync.BatchGetAggregateResourceConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetAggregateResourceConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetAggregateResourceConfigResult> batchGetAggregateResourceConfigAsync(
+            BatchGetAggregateResourceConfigRequest batchGetAggregateResourceConfigRequest);
+
+    /**
+     * <p>
+     * Returns the current configuration items for resources that are present in your AWS Config aggregator. The
+     * operation also returns a list of resources that are not processed in the current request. If there are no
+     * unprocessed resources, the operation returns an empty <code>unprocessedResourceIdentifiers</code> list.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * The API does not return results for deleted resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The API does not return tags and relationships.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param batchGetAggregateResourceConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchGetAggregateResourceConfig operation returned by the
+     *         service.
+     * @sample AmazonConfigAsyncHandler.BatchGetAggregateResourceConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetAggregateResourceConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetAggregateResourceConfigResult> batchGetAggregateResourceConfigAsync(
+            BatchGetAggregateResourceConfigRequest batchGetAggregateResourceConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchGetAggregateResourceConfigRequest, BatchGetAggregateResourceConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the current configuration for one or more requested resources. The operation also returns a list of
      * resources that are not processed in the current request. If there are no unprocessed resources, the operation
      * returns an empty unprocessedResourceKeys list.
@@ -1435,6 +1502,86 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * Returns the resource counts across accounts and regions that are present in your AWS Config aggregator. You can
+     * request the resource counts by providing filters and GroupByKey.
+     * </p>
+     * <p>
+     * For example, if the input contains accountID 12345678910 and region us-east-1 in filters, the API returns the
+     * count of resources in account ID 12345678910 and region us-east-1. If the input contains ACCOUNT_ID as a
+     * GroupByKey, the API returns resource counts for all source accounts that are present in your aggregator.
+     * </p>
+     * 
+     * @param getAggregateDiscoveredResourceCountsRequest
+     * @return A Java Future containing the result of the GetAggregateDiscoveredResourceCounts operation returned by the
+     *         service.
+     * @sample AmazonConfigAsync.GetAggregateDiscoveredResourceCounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateDiscoveredResourceCounts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAggregateDiscoveredResourceCountsResult> getAggregateDiscoveredResourceCountsAsync(
+            GetAggregateDiscoveredResourceCountsRequest getAggregateDiscoveredResourceCountsRequest);
+
+    /**
+     * <p>
+     * Returns the resource counts across accounts and regions that are present in your AWS Config aggregator. You can
+     * request the resource counts by providing filters and GroupByKey.
+     * </p>
+     * <p>
+     * For example, if the input contains accountID 12345678910 and region us-east-1 in filters, the API returns the
+     * count of resources in account ID 12345678910 and region us-east-1. If the input contains ACCOUNT_ID as a
+     * GroupByKey, the API returns resource counts for all source accounts that are present in your aggregator.
+     * </p>
+     * 
+     * @param getAggregateDiscoveredResourceCountsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAggregateDiscoveredResourceCounts operation returned by the
+     *         service.
+     * @sample AmazonConfigAsyncHandler.GetAggregateDiscoveredResourceCounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateDiscoveredResourceCounts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAggregateDiscoveredResourceCountsResult> getAggregateDiscoveredResourceCountsAsync(
+            GetAggregateDiscoveredResourceCountsRequest getAggregateDiscoveredResourceCountsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAggregateDiscoveredResourceCountsRequest, GetAggregateDiscoveredResourceCountsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns configuration item that is aggregated for your specific resource in a specific source account and region.
+     * </p>
+     * 
+     * @param getAggregateResourceConfigRequest
+     * @return A Java Future containing the result of the GetAggregateResourceConfig operation returned by the service.
+     * @sample AmazonConfigAsync.GetAggregateResourceConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateResourceConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAggregateResourceConfigResult> getAggregateResourceConfigAsync(
+            GetAggregateResourceConfigRequest getAggregateResourceConfigRequest);
+
+    /**
+     * <p>
+     * Returns configuration item that is aggregated for your specific resource in a specific source account and region.
+     * </p>
+     * 
+     * @param getAggregateResourceConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAggregateResourceConfig operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.GetAggregateResourceConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateResourceConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAggregateResourceConfigResult> getAggregateResourceConfigAsync(
+            GetAggregateResourceConfigRequest getAggregateResourceConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAggregateResourceConfigRequest, GetAggregateResourceConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the evaluation results for the specified AWS Config rule. The results indicate which AWS resources were
      * evaluated by the rule, when each resource was last evaluated, and whether each resource complies with the rule.
      * </p>
@@ -1844,6 +1991,57 @@ public interface AmazonConfigAsync extends AmazonConfig {
      */
     java.util.concurrent.Future<GetResourceConfigHistoryResult> getResourceConfigHistoryAsync(GetResourceConfigHistoryRequest getResourceConfigHistoryRequest,
             com.amazonaws.handlers.AsyncHandler<GetResourceConfigHistoryRequest, GetResourceConfigHistoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Accepts a resource type and returns a list of resource identifiers that are aggregated for a specific resource
+     * type across accounts and regions. A resource identifier includes the resource type, ID, (if available) the custom
+     * resource name, source account, and source region. You can narrow the results to include only resources that have
+     * specific resource IDs, or a resource name, or source account ID, or source region.
+     * </p>
+     * <p>
+     * For example, if the input consists of accountID 12345678910 and the region is us-east-1 for resource type
+     * <code>AWS::EC2::Instance</code> then the API returns all the EC2 instance identifiers of accountID 12345678910
+     * and region us-east-1.
+     * </p>
+     * 
+     * @param listAggregateDiscoveredResourcesRequest
+     * @return A Java Future containing the result of the ListAggregateDiscoveredResources operation returned by the
+     *         service.
+     * @sample AmazonConfigAsync.ListAggregateDiscoveredResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListAggregateDiscoveredResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAggregateDiscoveredResourcesResult> listAggregateDiscoveredResourcesAsync(
+            ListAggregateDiscoveredResourcesRequest listAggregateDiscoveredResourcesRequest);
+
+    /**
+     * <p>
+     * Accepts a resource type and returns a list of resource identifiers that are aggregated for a specific resource
+     * type across accounts and regions. A resource identifier includes the resource type, ID, (if available) the custom
+     * resource name, source account, and source region. You can narrow the results to include only resources that have
+     * specific resource IDs, or a resource name, or source account ID, or source region.
+     * </p>
+     * <p>
+     * For example, if the input consists of accountID 12345678910 and the region is us-east-1 for resource type
+     * <code>AWS::EC2::Instance</code> then the API returns all the EC2 instance identifiers of accountID 12345678910
+     * and region us-east-1.
+     * </p>
+     * 
+     * @param listAggregateDiscoveredResourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAggregateDiscoveredResources operation returned by the
+     *         service.
+     * @sample AmazonConfigAsyncHandler.ListAggregateDiscoveredResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListAggregateDiscoveredResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAggregateDiscoveredResourcesResult> listAggregateDiscoveredResourcesAsync(
+            ListAggregateDiscoveredResourcesRequest listAggregateDiscoveredResourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAggregateDiscoveredResourcesRequest, ListAggregateDiscoveredResourcesResult> asyncHandler);
 
     /**
      * <p>

@@ -168,6 +168,10 @@ public class RunJsonUnmarshaller implements Unmarshaller<Run, JsonUnmarshallerCo
                     context.nextToken();
                     run.setTestSpecArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("deviceSelectionResult", targetDepth)) {
+                    context.nextToken();
+                    run.setDeviceSelectionResult(DeviceSelectionResultJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

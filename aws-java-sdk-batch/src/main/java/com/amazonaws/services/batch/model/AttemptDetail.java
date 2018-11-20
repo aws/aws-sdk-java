@@ -36,14 +36,14 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
     private AttemptContainerDetail container;
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the attempt was started (when the attempt transitioned
+     * The Unix timestamp (in seconds and milliseconds) for when the attempt was started (when the attempt transitioned
      * from the <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      */
     private Long startedAt;
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the attempt was stopped (when the attempt transitioned
+     * The Unix timestamp (in seconds and milliseconds) for when the attempt was stopped (when the attempt transitioned
      * from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      */
@@ -97,12 +97,12 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the attempt was started (when the attempt transitioned
+     * The Unix timestamp (in seconds and milliseconds) for when the attempt was started (when the attempt transitioned
      * from the <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      * 
      * @param startedAt
-     *        The Unix time stamp (in seconds and milliseconds) for when the attempt was started (when the attempt
+     *        The Unix timestamp (in seconds and milliseconds) for when the attempt was started (when the attempt
      *        transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).
      */
 
@@ -112,11 +112,11 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the attempt was started (when the attempt transitioned
+     * The Unix timestamp (in seconds and milliseconds) for when the attempt was started (when the attempt transitioned
      * from the <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      * 
-     * @return The Unix time stamp (in seconds and milliseconds) for when the attempt was started (when the attempt
+     * @return The Unix timestamp (in seconds and milliseconds) for when the attempt was started (when the attempt
      *         transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).
      */
 
@@ -126,12 +126,12 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the attempt was started (when the attempt transitioned
+     * The Unix timestamp (in seconds and milliseconds) for when the attempt was started (when the attempt transitioned
      * from the <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      * 
      * @param startedAt
-     *        The Unix time stamp (in seconds and milliseconds) for when the attempt was started (when the attempt
+     *        The Unix timestamp (in seconds and milliseconds) for when the attempt was started (when the attempt
      *        transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -143,12 +143,12 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the attempt was stopped (when the attempt transitioned
+     * The Unix timestamp (in seconds and milliseconds) for when the attempt was stopped (when the attempt transitioned
      * from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      * 
      * @param stoppedAt
-     *        The Unix time stamp (in seconds and milliseconds) for when the attempt was stopped (when the attempt
+     *        The Unix timestamp (in seconds and milliseconds) for when the attempt was stopped (when the attempt
      *        transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or
      *        <code>FAILED</code>).
      */
@@ -159,11 +159,11 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the attempt was stopped (when the attempt transitioned
+     * The Unix timestamp (in seconds and milliseconds) for when the attempt was stopped (when the attempt transitioned
      * from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      * 
-     * @return The Unix time stamp (in seconds and milliseconds) for when the attempt was stopped (when the attempt
+     * @return The Unix timestamp (in seconds and milliseconds) for when the attempt was stopped (when the attempt
      *         transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or
      *         <code>FAILED</code>).
      */
@@ -174,12 +174,12 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the attempt was stopped (when the attempt transitioned
+     * The Unix timestamp (in seconds and milliseconds) for when the attempt was stopped (when the attempt transitioned
      * from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      * 
      * @param stoppedAt
-     *        The Unix time stamp (in seconds and milliseconds) for when the attempt was stopped (when the attempt
+     *        The Unix timestamp (in seconds and milliseconds) for when the attempt was stopped (when the attempt
      *        transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or
      *        <code>FAILED</code>).
      * @return Returns a reference to this object so that method calls can be chained together.

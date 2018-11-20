@@ -364,8 +364,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CancelUpdateStackResult> responseHandler = new StaxResponseHandler<CancelUpdateStackResult>(
                     new CancelUpdateStackResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -431,8 +429,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ContinueUpdateRollbackResult> responseHandler = new StaxResponseHandler<ContinueUpdateRollbackResult>(
                     new ContinueUpdateRollbackResultStaxUnmarshaller());
@@ -514,8 +510,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CreateChangeSetResult> responseHandler = new StaxResponseHandler<CreateChangeSetResult>(
                     new CreateChangeSetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -581,8 +575,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateStackResult> responseHandler = new StaxResponseHandler<CreateStackResult>(new CreateStackResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -654,8 +646,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CreateStackInstancesResult> responseHandler = new StaxResponseHandler<CreateStackInstancesResult>(
                     new CreateStackInstancesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -718,8 +708,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CreateStackSetResult> responseHandler = new StaxResponseHandler<CreateStackSetResult>(
                     new CreateStackSetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -779,8 +767,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteChangeSetResult> responseHandler = new StaxResponseHandler<DeleteChangeSetResult>(
                     new DeleteChangeSetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -836,8 +822,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteStackResult> responseHandler = new StaxResponseHandler<DeleteStackResult>(new DeleteStackResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -901,8 +885,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteStackInstancesResult> responseHandler = new StaxResponseHandler<DeleteStackInstancesResult>(
                     new DeleteStackInstancesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -962,8 +944,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteStackSetResult> responseHandler = new StaxResponseHandler<DeleteStackSetResult>(
                     new DeleteStackSetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1017,8 +997,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeAccountLimitsResult> responseHandler = new StaxResponseHandler<DescribeAccountLimitsResult>(
                     new DescribeAccountLimitsResultStaxUnmarshaller());
@@ -1078,8 +1056,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeChangeSetResult> responseHandler = new StaxResponseHandler<DescribeChangeSetResult>(
                     new DescribeChangeSetResultStaxUnmarshaller());
@@ -1145,8 +1121,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeStackDriftDetectionStatusResult> responseHandler = new StaxResponseHandler<DescribeStackDriftDetectionStatusResult>(
                     new DescribeStackDriftDetectionStatusResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1209,8 +1183,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeStackEventsResult> responseHandler = new StaxResponseHandler<DescribeStackEventsResult>(
                     new DescribeStackEventsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1270,8 +1242,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeStackInstanceResult> responseHandler = new StaxResponseHandler<DescribeStackInstanceResult>(
                     new DescribeStackInstanceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1328,8 +1298,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeStackResourceResult> responseHandler = new StaxResponseHandler<DescribeStackResourceResult>(
                     new DescribeStackResourceResultStaxUnmarshaller());
@@ -1396,8 +1364,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeStackResourceDriftsResult> responseHandler = new StaxResponseHandler<DescribeStackResourceDriftsResult>(
                     new DescribeStackResourceDriftsResultStaxUnmarshaller());
@@ -1476,8 +1442,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeStackResourcesResult> responseHandler = new StaxResponseHandler<DescribeStackResourcesResult>(
                     new DescribeStackResourcesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1531,8 +1495,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeStackSetResult> responseHandler = new StaxResponseHandler<DescribeStackSetResult>(
                     new DescribeStackSetResultStaxUnmarshaller());
@@ -1589,8 +1551,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeStackSetOperationResult> responseHandler = new StaxResponseHandler<DescribeStackSetOperationResult>(
                     new DescribeStackSetOperationResultStaxUnmarshaller());
@@ -1650,8 +1610,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeStacksResult> responseHandler = new StaxResponseHandler<DescribeStacksResult>(
                     new DescribeStacksResultStaxUnmarshaller());
@@ -1736,8 +1694,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DetectStackDriftResult> responseHandler = new StaxResponseHandler<DetectStackDriftResult>(
                     new DetectStackDriftResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1806,8 +1762,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DetectStackResourceDriftResult> responseHandler = new StaxResponseHandler<DetectStackResourceDriftResult>(
                     new DetectStackResourceDriftResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1861,8 +1815,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<EstimateTemplateCostResult> responseHandler = new StaxResponseHandler<EstimateTemplateCostResult>(
                     new EstimateTemplateCostResultStaxUnmarshaller());
@@ -1942,8 +1894,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ExecuteChangeSetResult> responseHandler = new StaxResponseHandler<ExecuteChangeSetResult>(
                     new ExecuteChangeSetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1996,8 +1946,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetStackPolicyResult> responseHandler = new StaxResponseHandler<GetStackPolicyResult>(
                     new GetStackPolicyResultStaxUnmarshaller());
@@ -2063,8 +2011,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetTemplateResult> responseHandler = new StaxResponseHandler<GetTemplateResult>(new GetTemplateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2129,8 +2075,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetTemplateSummaryResult> responseHandler = new StaxResponseHandler<GetTemplateSummaryResult>(
                     new GetTemplateSummaryResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2189,8 +2133,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListChangeSetsResult> responseHandler = new StaxResponseHandler<ListChangeSetsResult>(
                     new ListChangeSetsResultStaxUnmarshaller());
@@ -2252,8 +2194,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListExportsResult> responseHandler = new StaxResponseHandler<ListExportsResult>(new ListExportsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2312,8 +2252,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListImportsResult> responseHandler = new StaxResponseHandler<ListImportsResult>(new ListImportsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2367,8 +2305,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListStackInstancesResult> responseHandler = new StaxResponseHandler<ListStackInstancesResult>(
                     new ListStackInstancesResultStaxUnmarshaller());
@@ -2427,8 +2363,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListStackResourcesResult> responseHandler = new StaxResponseHandler<ListStackResourcesResult>(
                     new ListStackResourcesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2485,8 +2419,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListStackSetOperationResultsResult> responseHandler = new StaxResponseHandler<ListStackSetOperationResultsResult>(
                     new ListStackSetOperationResultsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2541,8 +2473,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListStackSetOperationsResult> responseHandler = new StaxResponseHandler<ListStackSetOperationsResult>(
                     new ListStackSetOperationsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2594,8 +2524,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListStackSetsResult> responseHandler = new StaxResponseHandler<ListStackSetsResult>(new ListStackSetsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2651,8 +2579,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListStacksResult> responseHandler = new StaxResponseHandler<ListStacksResult>(new ListStacksResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2711,8 +2637,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<SetStackPolicyResult> responseHandler = new StaxResponseHandler<SetStackPolicyResult>(
                     new SetStackPolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2769,8 +2693,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<SignalResourceResult> responseHandler = new StaxResponseHandler<SignalResourceResult>(
                     new SignalResourceResultStaxUnmarshaller());
@@ -2829,8 +2751,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<StopStackSetOperationResult> responseHandler = new StaxResponseHandler<StopStackSetOperationResult>(
                     new StopStackSetOperationResultStaxUnmarshaller());
@@ -2898,8 +2818,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<UpdateStackResult> responseHandler = new StaxResponseHandler<UpdateStackResult>(new UpdateStackResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2987,8 +2905,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<UpdateStackInstancesResult> responseHandler = new StaxResponseHandler<UpdateStackInstancesResult>(
                     new UpdateStackInstancesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3059,8 +2975,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<UpdateStackSetResult> responseHandler = new StaxResponseHandler<UpdateStackSetResult>(
                     new UpdateStackSetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3120,8 +3034,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<UpdateTerminationProtectionResult> responseHandler = new StaxResponseHandler<UpdateTerminationProtectionResult>(
                     new UpdateTerminationProtectionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3177,8 +3089,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ValidateTemplateResult> responseHandler = new StaxResponseHandler<ValidateTemplateResult>(
                     new ValidateTemplateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3215,18 +3125,18 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -3236,7 +3146,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -3244,11 +3154,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

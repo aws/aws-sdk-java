@@ -45,6 +45,12 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private java.util.Map<String, AlertTarget> alertTargets;
+    /**
+     * <p>
+     * Metadata which can be used to manage the security profile.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -264,6 +270,76 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Metadata which can be used to manage the security profile.
+     * </p>
+     * 
+     * @return Metadata which can be used to manage the security profile.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the security profile.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the security profile.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the security profile.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the security profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSecurityProfileRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the security profile.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the security profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSecurityProfileRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -281,7 +357,9 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
         if (getBehaviors() != null)
             sb.append("Behaviors: ").append(getBehaviors()).append(",");
         if (getAlertTargets() != null)
-            sb.append("AlertTargets: ").append(getAlertTargets());
+            sb.append("AlertTargets: ").append(getAlertTargets()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -312,6 +390,10 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getAlertTargets() != null && other.getAlertTargets().equals(this.getAlertTargets()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -324,6 +406,7 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getSecurityProfileDescription() == null) ? 0 : getSecurityProfileDescription().hashCode());
         hashCode = prime * hashCode + ((getBehaviors() == null) ? 0 : getBehaviors().hashCode());
         hashCode = prime * hashCode + ((getAlertTargets() == null) ? 0 : getAlertTargets().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

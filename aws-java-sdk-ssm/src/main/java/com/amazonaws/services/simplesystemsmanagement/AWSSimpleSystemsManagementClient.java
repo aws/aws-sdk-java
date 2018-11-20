@@ -665,8 +665,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AddTagsToResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AddTagsToResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -741,8 +739,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CancelCommandResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CancelCommandResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -807,8 +803,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CancelMaintenanceWindowExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CancelMaintenanceWindowExecutionResultJsonUnmarshaller());
@@ -867,8 +861,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateActivationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateActivationResultJsonUnmarshaller());
@@ -969,8 +961,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAssociationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1070,8 +1060,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateAssociationBatchResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateAssociationBatchResultJsonUnmarshaller());
@@ -1140,8 +1128,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateDocumentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDocumentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1206,8 +1192,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateMaintenanceWindowResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1281,8 +1265,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreatePatchBaselineResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreatePatchBaselineResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1353,8 +1335,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateResourceDataSyncResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateResourceDataSyncResultJsonUnmarshaller());
@@ -1419,8 +1399,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteActivationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteActivationResultJsonUnmarshaller());
@@ -1503,8 +1481,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAssociationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1570,8 +1546,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDocumentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDocumentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1636,8 +1610,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteInventoryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteInventoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1692,8 +1664,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteMaintenanceWindowResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1752,8 +1722,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteParameterResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteParameterResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1807,8 +1775,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteParametersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteParametersResultJsonUnmarshaller());
@@ -1865,8 +1831,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeletePatchBaselineResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeletePatchBaselineResultJsonUnmarshaller());
@@ -1925,8 +1889,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteResourceDataSyncResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2001,8 +1963,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeregisterManagedInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeregisterManagedInstanceResultJsonUnmarshaller());
@@ -2061,8 +2021,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeregisterPatchBaselineForPatchGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2131,8 +2089,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeregisterTargetFromMaintenanceWindowResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeregisterTargetFromMaintenanceWindowResultJsonUnmarshaller());
@@ -2197,8 +2153,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeregisterTaskFromMaintenanceWindowResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeregisterTaskFromMaintenanceWindowResultJsonUnmarshaller());
@@ -2258,8 +2212,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeActivationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeActivationsResultJsonUnmarshaller());
@@ -2342,8 +2294,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeAssociationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2406,8 +2356,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAssociationExecutionTargetsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeAssociationExecutionTargetsResultJsonUnmarshaller());
@@ -2467,8 +2415,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAssociationExecutionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2531,8 +2477,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAutomationExecutionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2599,8 +2543,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAutomationStepExecutionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeAutomationStepExecutionsResultJsonUnmarshaller());
@@ -2656,8 +2598,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAvailablePatchesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2717,8 +2657,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeDocumentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeDocumentResultJsonUnmarshaller());
@@ -2780,8 +2718,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeDocumentPermissionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2858,8 +2794,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeEffectiveInstanceAssociationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeEffectiveInstanceAssociationsResultJsonUnmarshaller());
@@ -2929,8 +2863,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeEffectivePatchesForPatchBaselineResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3006,8 +2938,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeInstanceAssociationsStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3097,8 +3027,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeInstanceInformationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeInstanceInformationResultJsonUnmarshaller());
@@ -3156,8 +3084,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeInstancePatchStatesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3219,8 +3145,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeInstancePatchStatesForPatchGroupResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3299,8 +3223,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeInstancePatchesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeInstancePatchesResultJsonUnmarshaller());
@@ -3360,8 +3282,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeInventoryDeletionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3430,8 +3350,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeMaintenanceWindowExecutionTaskInvocationsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DescribeMaintenanceWindowExecutionTaskInvocationsResultJsonUnmarshaller());
@@ -3496,8 +3414,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeMaintenanceWindowExecutionTasksResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DescribeMaintenanceWindowExecutionTasksResultJsonUnmarshaller());
@@ -3555,8 +3471,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeMaintenanceWindowExecutionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3622,8 +3536,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeMaintenanceWindowScheduleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeMaintenanceWindowScheduleResultJsonUnmarshaller());
@@ -3688,8 +3600,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeMaintenanceWindowTargetsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeMaintenanceWindowTargetsResultJsonUnmarshaller());
@@ -3753,8 +3663,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeMaintenanceWindowTasksResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeMaintenanceWindowTasksResultJsonUnmarshaller());
@@ -3810,8 +3718,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeMaintenanceWindowsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3869,8 +3775,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeMaintenanceWindowsForTargetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3943,8 +3847,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeParametersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeParametersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3998,8 +3900,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribePatchBaselinesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -4059,8 +3959,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribePatchGroupStateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribePatchGroupStateResultJsonUnmarshaller());
@@ -4115,8 +4013,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribePatchGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribePatchGroupsResultJsonUnmarshaller());
@@ -4177,8 +4073,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeSessionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeSessionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4234,8 +4128,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetAutomationExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -4314,8 +4206,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetCommandInvocationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCommandInvocationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4370,8 +4260,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetConnectionStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetConnectionStatusResultJsonUnmarshaller());
@@ -4431,8 +4319,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetDefaultPatchBaselineResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -4495,8 +4381,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetDeployablePatchSnapshotForInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetDeployablePatchSnapshotForInstanceResultJsonUnmarshaller());
@@ -4555,8 +4439,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetDocumentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDocumentResultJsonUnmarshaller());
@@ -4625,8 +4507,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetInventoryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetInventoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4685,8 +4565,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetInventorySchemaResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetInventorySchemaResultJsonUnmarshaller());
@@ -4749,8 +4627,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetMaintenanceWindowResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetMaintenanceWindowResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4812,8 +4688,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetMaintenanceWindowExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -4878,8 +4752,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetMaintenanceWindowExecutionTaskResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -4947,8 +4819,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetMaintenanceWindowExecutionTaskInvocationResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new GetMaintenanceWindowExecutionTaskInvocationResultJsonUnmarshaller());
@@ -5012,8 +4882,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetMaintenanceWindowTaskResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetMaintenanceWindowTaskResultJsonUnmarshaller());
@@ -5076,8 +4944,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetParameterResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetParameterResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5138,8 +5004,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetParameterHistoryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetParameterHistoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5195,8 +5059,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetParametersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetParametersResultJsonUnmarshaller());
@@ -5277,8 +5139,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetParametersByPathResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetParametersByPathResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5342,8 +5202,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetPatchBaselineResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetPatchBaselineResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5398,8 +5256,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetPatchBaselineForPatchGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -5516,8 +5372,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<LabelParameterVersionResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new LabelParameterVersionResultJsonUnmarshaller());
@@ -5578,8 +5432,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListAssociationVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListAssociationVersionsResultJsonUnmarshaller());
@@ -5636,8 +5488,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListAssociationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAssociationsResultJsonUnmarshaller());
@@ -5717,8 +5567,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListCommandInvocationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListCommandInvocationsResultJsonUnmarshaller());
@@ -5795,8 +5643,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListCommandsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListCommandsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5862,8 +5708,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListComplianceItemsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListComplianceItemsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5925,8 +5769,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListComplianceSummariesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListComplianceSummariesResultJsonUnmarshaller());
@@ -5986,8 +5828,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListDocumentVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDocumentVersionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6045,8 +5885,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListDocumentsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDocumentsResultJsonUnmarshaller());
@@ -6129,8 +5967,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListInventoryEntriesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListInventoryEntriesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6191,8 +6027,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListResourceComplianceSummariesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -6259,8 +6093,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListResourceDataSyncResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListResourceDataSyncResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6319,8 +6151,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
@@ -6388,8 +6218,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ModifyDocumentPermissionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -6543,8 +6371,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<PutComplianceItemsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutComplianceItemsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6640,8 +6466,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<PutInventoryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutInventoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6720,8 +6544,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<PutParameterResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutParameterResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6785,8 +6607,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<RegisterDefaultPatchBaselineResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -6865,8 +6685,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<RegisterPatchBaselineForPatchGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new RegisterPatchBaselineForPatchGroupResultJsonUnmarshaller());
@@ -6941,8 +6759,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<RegisterTargetWithMaintenanceWindowResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -7022,8 +6838,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<RegisterTaskWithMaintenanceWindowResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new RegisterTaskWithMaintenanceWindowResultJsonUnmarshaller());
@@ -7085,8 +6899,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<RemoveTagsFromResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -7157,8 +6969,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ResumeSessionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ResumeSessionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7218,8 +7028,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<SendAutomationSignalResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendAutomationSignalResultJsonUnmarshaller());
@@ -7316,8 +7124,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<SendCommandResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendCommandResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7374,8 +7180,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<StartAssociationsOnceResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -7448,8 +7252,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<StartAutomationExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new StartAutomationExecutionResultJsonUnmarshaller());
@@ -7521,8 +7323,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<StartSessionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartSessionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7581,8 +7381,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<StopAutomationExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -7646,8 +7444,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<TerminateSessionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TerminateSessionResultJsonUnmarshaller());
@@ -7731,8 +7527,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAssociationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7812,8 +7606,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateAssociationStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateAssociationStatusResultJsonUnmarshaller());
@@ -7884,8 +7676,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDocumentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDocumentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7946,8 +7736,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDocumentDefaultVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -8011,8 +7799,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateMaintenanceWindowResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -8098,8 +7884,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateMaintenanceWindowTargetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -8202,8 +7986,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateMaintenanceWindowTaskResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateMaintenanceWindowTaskResultJsonUnmarshaller());
@@ -8276,8 +8058,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateManagedInstanceRoleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateManagedInstanceRoleResultJsonUnmarshaller());
@@ -8347,8 +8127,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdatePatchBaselineResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdatePatchBaselineResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -8385,18 +8163,18 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -8406,7 +8184,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -8414,11 +8192,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

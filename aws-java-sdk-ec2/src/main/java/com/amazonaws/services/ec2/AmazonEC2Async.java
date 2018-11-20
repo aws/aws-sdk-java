@@ -5483,7 +5483,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </ul>
      * 
      * @param describeAccountAttributesRequest
-     *        Contains the parameters for DescribeAccountAttributes.
      * @return A Java Future containing the result of the DescribeAccountAttributes operation returned by the service.
      * @sample AmazonEC2Async.DescribeAccountAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes" target="_top">AWS
@@ -5534,7 +5533,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </ul>
      * 
      * @param describeAccountAttributesRequest
-     *        Contains the parameters for DescribeAccountAttributes.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -5699,7 +5697,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeAvailabilityZonesRequest
-     *        Contains the parameters for DescribeAvailabilityZones.
      * @return A Java Future containing the result of the DescribeAvailabilityZones operation returned by the service.
      * @sample AmazonEC2Async.DescribeAvailabilityZones
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones" target="_top">AWS
@@ -5721,7 +5718,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeAvailabilityZonesRequest
-     *        Contains the parameters for DescribeAvailabilityZones.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -6637,7 +6633,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeIdFormatRequest
-     *        Contains the parameters for DescribeIdFormat.
      * @return A Java Future containing the result of the DescribeIdFormat operation returned by the service.
      * @sample AmazonEC2Async.DescribeIdFormat
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdFormat" target="_top">AWS API
@@ -6672,7 +6667,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeIdFormatRequest
-     *        Contains the parameters for DescribeIdFormat.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -6726,7 +6720,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeIdentityIdFormatRequest
-     *        Contains the parameters for DescribeIdentityIdFormat.
      * @return A Java Future containing the result of the DescribeIdentityIdFormat operation returned by the service.
      * @sample AmazonEC2Async.DescribeIdentityIdFormat
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdentityIdFormat" target="_top">AWS
@@ -6760,7 +6753,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeIdentityIdFormatRequest
-     *        Contains the parameters for DescribeIdentityIdFormat.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -7927,7 +7919,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeRegionsRequest
-     *        Contains the parameters for DescribeRegions.
      * @return A Java Future containing the result of the DescribeRegions operation returned by the service.
      * @sample AmazonEC2Async.DescribeRegions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions" target="_top">AWS API
@@ -7945,7 +7936,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeRegionsRequest
-     *        Contains the parameters for DescribeRegions.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -11465,7 +11455,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyIdFormatRequest
-     *        Contains the parameters of ModifyIdFormat.
      * @return A Java Future containing the result of the ModifyIdFormat operation returned by the service.
      * @sample AmazonEC2Async.ModifyIdFormat
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdFormat" target="_top">AWS API
@@ -11504,7 +11493,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyIdFormatRequest
-     *        Contains the parameters of ModifyIdFormat.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -11549,7 +11537,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyIdentityIdFormatRequest
-     *        Contains the parameters of ModifyIdentityIdFormat.
      * @return A Java Future containing the result of the ModifyIdentityIdFormat operation returned by the service.
      * @sample AmazonEC2Async.ModifyIdentityIdFormat
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdentityIdFormat" target="_top">AWS API
@@ -11589,7 +11576,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyIdentityIdFormatRequest
-     *        Contains the parameters of ModifyIdentityIdFormat.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -12553,10 +12539,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </li>
      * </ul>
      * <p>
-     * If the peered VPCs are in different accounts, each owner must initiate a separate request to modify the peering
-     * connection options, depending on whether their VPC was the requester or accepter for the VPC peering connection.
-     * If the peered VPCs are in the same account, you can modify the requester and accepter options in the same
-     * request. To confirm which VPC is the accepter and requester for a VPC peering connection, use the
+     * If the peered VPCs are in the same AWS account, you can enable DNS resolution for queries from the local VPC.
+     * This ensures that queries from the local VPC resolve to private IP addresses in the peer VPC. This option is not
+     * available if the peered VPCs are in different AWS accounts or different regions. For peered VPCs in different AWS
+     * accounts, each AWS account owner must initiate a separate request to modify the peering connection options. For
+     * inter-region peering connections, you must use the region for the requester VPC to modify the requester VPC
+     * peering options and the region for the accepter VPC to modify the accepter VPC peering options. To verify which
+     * VPCs are the accepter and the requester for a VPC peering connection, use the
      * <a>DescribeVpcPeeringConnections</a> command.
      * </p>
      * 
@@ -12595,10 +12584,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </li>
      * </ul>
      * <p>
-     * If the peered VPCs are in different accounts, each owner must initiate a separate request to modify the peering
-     * connection options, depending on whether their VPC was the requester or accepter for the VPC peering connection.
-     * If the peered VPCs are in the same account, you can modify the requester and accepter options in the same
-     * request. To confirm which VPC is the accepter and requester for a VPC peering connection, use the
+     * If the peered VPCs are in the same AWS account, you can enable DNS resolution for queries from the local VPC.
+     * This ensures that queries from the local VPC resolve to private IP addresses in the peer VPC. This option is not
+     * available if the peered VPCs are in different AWS accounts or different regions. For peered VPCs in different AWS
+     * accounts, each AWS account owner must initiate a separate request to modify the peering connection options. For
+     * inter-region peering connections, you must use the region for the requester VPC to modify the requester VPC
+     * peering options and the region for the accepter VPC to modify the accepter VPC peering options. To verify which
+     * VPCs are the accepter and the requester for a VPC peering connection, use the
      * <a>DescribeVpcPeeringConnections</a> command.
      * </p>
      * 

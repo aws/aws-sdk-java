@@ -60,6 +60,10 @@ public class JobSettingsJsonUnmarshaller implements Unmarshaller<JobSettings, Js
                     context.nextToken();
                     jobSettings.setInputs(new ListUnmarshaller<Input>(InputJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("motionImageInserter", targetDepth)) {
+                    context.nextToken();
+                    jobSettings.setMotionImageInserter(MotionImageInserterJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("nielsenConfiguration", targetDepth)) {
                     context.nextToken();
                     jobSettings.setNielsenConfiguration(NielsenConfigurationJsonUnmarshaller.getInstance().unmarshall(context));

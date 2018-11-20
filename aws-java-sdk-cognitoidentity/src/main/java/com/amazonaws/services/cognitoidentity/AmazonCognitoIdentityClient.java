@@ -427,8 +427,6 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateIdentityPoolResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateIdentityPoolResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -490,8 +488,6 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteIdentitiesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteIdentitiesResultJsonUnmarshaller());
@@ -558,8 +554,6 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteIdentityPoolResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteIdentityPoolResultJsonUnmarshaller());
@@ -628,8 +622,6 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeIdentityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeIdentityResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -696,8 +688,6 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeIdentityPoolResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeIdentityPoolResultJsonUnmarshaller());
@@ -775,8 +765,6 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetCredentialsForIdentityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetCredentialsForIdentityResultJsonUnmarshaller());
@@ -850,8 +838,6 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetIdResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetIdResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -919,8 +905,6 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetIdentityPoolRolesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetIdentityPoolRolesResultJsonUnmarshaller());
@@ -995,8 +979,6 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetOpenIdTokenResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetOpenIdTokenResultJsonUnmarshaller());
@@ -1081,8 +1063,6 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetOpenIdTokenForDeveloperIdentityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetOpenIdTokenForDeveloperIdentityResultJsonUnmarshaller());
@@ -1150,8 +1130,6 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListIdentitiesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListIdentitiesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1215,8 +1193,6 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListIdentityPoolsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListIdentityPoolsResultJsonUnmarshaller());
@@ -1293,8 +1269,6 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<LookupDeveloperIdentityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new LookupDeveloperIdentityResultJsonUnmarshaller());
@@ -1370,8 +1344,6 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<MergeDeveloperIdentitiesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new MergeDeveloperIdentitiesResultJsonUnmarshaller());
@@ -1444,8 +1416,6 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<SetIdentityPoolRolesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetIdentityPoolRolesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1516,8 +1486,6 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UnlinkDeveloperIdentityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1591,8 +1559,6 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UnlinkIdentityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UnlinkIdentityResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1665,8 +1631,6 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateIdentityPoolResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateIdentityPoolResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1703,18 +1667,18 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -1724,7 +1688,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -1732,11 +1696,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

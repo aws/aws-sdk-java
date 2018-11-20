@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable this
- * feature for each output individually. This setting is disabled by default.
+ * feature for each input or output individually. This setting is disabled by default.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ImageInserter" target="_top">AWS API
  *      Documentation</a>
@@ -27,13 +27,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ImageInserter implements Serializable, Cloneable, StructuredPojo {
 
-    /** Image to insert. Must be 32 bit windows BMP, PNG, or TGA file. Must not be larger than the output frames. */
+    /** Specify the images that you want to overlay on your video. The images must be PNG or TGA files. */
     private java.util.List<InsertableImage> insertableImages;
 
     /**
-     * Image to insert. Must be 32 bit windows BMP, PNG, or TGA file. Must not be larger than the output frames.
+     * Specify the images that you want to overlay on your video. The images must be PNG or TGA files.
      * 
-     * @return Image to insert. Must be 32 bit windows BMP, PNG, or TGA file. Must not be larger than the output frames.
+     * @return Specify the images that you want to overlay on your video. The images must be PNG or TGA files.
      */
 
     public java.util.List<InsertableImage> getInsertableImages() {
@@ -41,10 +41,10 @@ public class ImageInserter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Image to insert. Must be 32 bit windows BMP, PNG, or TGA file. Must not be larger than the output frames.
+     * Specify the images that you want to overlay on your video. The images must be PNG or TGA files.
      * 
      * @param insertableImages
-     *        Image to insert. Must be 32 bit windows BMP, PNG, or TGA file. Must not be larger than the output frames.
+     *        Specify the images that you want to overlay on your video. The images must be PNG or TGA files.
      */
 
     public void setInsertableImages(java.util.Collection<InsertableImage> insertableImages) {
@@ -57,7 +57,7 @@ public class ImageInserter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Image to insert. Must be 32 bit windows BMP, PNG, or TGA file. Must not be larger than the output frames.
+     * Specify the images that you want to overlay on your video. The images must be PNG or TGA files.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInsertableImages(java.util.Collection)} or {@link #withInsertableImages(java.util.Collection)} if you
@@ -65,7 +65,7 @@ public class ImageInserter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param insertableImages
-     *        Image to insert. Must be 32 bit windows BMP, PNG, or TGA file. Must not be larger than the output frames.
+     *        Specify the images that you want to overlay on your video. The images must be PNG or TGA files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class ImageInserter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Image to insert. Must be 32 bit windows BMP, PNG, or TGA file. Must not be larger than the output frames.
+     * Specify the images that you want to overlay on your video. The images must be PNG or TGA files.
      * 
      * @param insertableImages
-     *        Image to insert. Must be 32 bit windows BMP, PNG, or TGA file. Must not be larger than the output frames.
+     *        Specify the images that you want to overlay on your video. The images must be PNG or TGA files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

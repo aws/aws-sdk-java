@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -94,6 +94,7 @@
       "documentation" : "Creates a broker. Note: This API is asynchronous.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.",
@@ -116,6 +117,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateBrokerRequest",
@@ -144,6 +146,7 @@
       "documentation" : "Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version).",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.",
@@ -162,6 +165,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateConfigurationRequest",
@@ -190,6 +194,7 @@
       "documentation" : "Creates an ActiveMQ user.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -212,6 +217,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateUserRequest",
@@ -240,6 +246,7 @@
       "documentation" : "Deletes a broker. Note: This API is asynchronous.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -258,6 +265,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteBrokerRequest",
@@ -286,6 +294,7 @@
       "documentation" : "Deletes an ActiveMQ user.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -304,6 +313,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteUserRequest",
@@ -332,6 +342,7 @@
       "documentation" : "Returns information about the specified broker.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -350,6 +361,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeBrokerRequest",
@@ -378,6 +390,7 @@
       "documentation" : "Returns information about the specified configuration.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -396,6 +409,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeConfigurationRequest",
@@ -424,6 +438,7 @@
       "documentation" : "Returns the specified configuration revision for the specified configuration.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -442,6 +457,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeConfigurationRevisionRequest",
@@ -470,6 +486,7 @@
       "documentation" : "Returns information about an ActiveMQ user.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -488,6 +505,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeUserRequest",
@@ -516,6 +534,7 @@
       "documentation" : "Returns a list of all brokers.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.",
@@ -530,6 +549,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListBrokersRequest",
@@ -558,6 +578,7 @@
       "documentation" : "Returns a list of all revisions for the specified configuration.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -576,6 +597,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListConfigurationRevisionsRequest",
@@ -604,6 +626,7 @@
       "documentation" : "Returns a list of all configurations.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.",
@@ -618,6 +641,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListConfigurationsRequest",
@@ -646,6 +670,7 @@
       "documentation" : "Returns a list of all ActiveMQ users.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -664,6 +689,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListUsersRequest",
@@ -692,6 +718,7 @@
       "documentation" : "Reboots a broker. Note: This API is asynchronous.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -710,6 +737,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "RebootBrokerRequest",
@@ -738,6 +766,7 @@
       "documentation" : "Adds a pending configuration change to a broker.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -760,6 +789,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateBrokerRequest",
@@ -788,6 +818,7 @@
       "documentation" : "Updates the specified configuration.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -810,6 +841,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateConfigurationRequest",
@@ -838,6 +870,7 @@
       "documentation" : "Updates the information for an ActiveMQ user.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -860,6 +893,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateUserRequest",

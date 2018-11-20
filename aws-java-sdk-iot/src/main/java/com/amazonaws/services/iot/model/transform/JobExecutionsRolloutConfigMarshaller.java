@@ -29,6 +29,8 @@ public class JobExecutionsRolloutConfigMarshaller {
 
     private static final MarshallingInfo<Integer> MAXIMUMPERMINUTE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maximumPerMinute").build();
+    private static final MarshallingInfo<StructuredPojo> EXPONENTIALRATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exponentialRate").build();
 
     private static final JobExecutionsRolloutConfigMarshaller instance = new JobExecutionsRolloutConfigMarshaller();
 
@@ -47,6 +49,7 @@ public class JobExecutionsRolloutConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(jobExecutionsRolloutConfig.getMaximumPerMinute(), MAXIMUMPERMINUTE_BINDING);
+            protocolMarshaller.marshall(jobExecutionsRolloutConfig.getExponentialRate(), EXPONENTIALRATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

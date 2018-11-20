@@ -116,6 +116,9 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                             new JsonErrorShapeMetadata().withErrorCode("InvalidResultTokenException").withModeledClass(
                                     com.amazonaws.services.config.model.InvalidResultTokenException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OversizedConfigurationItemException").withModeledClass(
+                                    com.amazonaws.services.config.model.OversizedConfigurationItemException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfConfigurationRecordersExceededException").withModeledClass(
                                     com.amazonaws.services.config.model.MaxNumberOfConfigurationRecordersExceededException.class))
                     .addErrorMetadata(
@@ -399,6 +402,81 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Returns the current configuration items for resources that are present in your AWS Config aggregator. The
+     * operation also returns a list of resources that are not processed in the current request. If there are no
+     * unprocessed resources, the operation returns an empty <code>unprocessedResourceIdentifiers</code> list.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * The API does not return results for deleted resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The API does not return tags and relationships.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param batchGetAggregateResourceConfigRequest
+     * @return Result of the BatchGetAggregateResourceConfig operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.
+     * @throws NoSuchConfigurationAggregatorException
+     *         You have specified a configuration aggregator that does not exist.
+     * @sample AmazonConfig.BatchGetAggregateResourceConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetAggregateResourceConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchGetAggregateResourceConfigResult batchGetAggregateResourceConfig(BatchGetAggregateResourceConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetAggregateResourceConfig(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetAggregateResourceConfigResult executeBatchGetAggregateResourceConfig(
+            BatchGetAggregateResourceConfigRequest batchGetAggregateResourceConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetAggregateResourceConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetAggregateResourceConfigRequest> request = null;
+        Response<BatchGetAggregateResourceConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetAggregateResourceConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchGetAggregateResourceConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetAggregateResourceConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetAggregateResourceConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchGetAggregateResourceConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the current configuration for one or more requested resources. The operation also returns a list of
      * resources that are not processed in the current request. If there are no unprocessed resources, the operation
      * returns an empty unprocessedResourceKeys list.
@@ -459,8 +537,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<BatchGetResourceConfigResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new BatchGetResourceConfigResultJsonUnmarshaller());
@@ -516,8 +592,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteAggregationAuthorizationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -586,8 +660,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteConfigRuleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteConfigRuleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -642,8 +714,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteConfigurationAggregatorResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -712,8 +782,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteConfigurationRecorderResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteConfigurationRecorderResultJsonUnmarshaller());
@@ -777,8 +845,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDeliveryChannelResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DeleteDeliveryChannelResultJsonUnmarshaller());
@@ -841,8 +907,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteEvaluationResultsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteEvaluationResultsResultJsonUnmarshaller());
@@ -899,8 +963,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeletePendingAggregationRequestResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -959,8 +1021,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteRetentionConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1042,8 +1102,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeliverConfigSnapshotResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DeliverConfigSnapshotResultJsonUnmarshaller());
@@ -1115,8 +1173,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAggregateComplianceByConfigRulesResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DescribeAggregateComplianceByConfigRulesResultJsonUnmarshaller());
@@ -1178,8 +1234,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAggregationAuthorizationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1274,8 +1328,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeComplianceByConfigRuleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1373,8 +1425,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeComplianceByResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeComplianceByResourceResultJsonUnmarshaller());
@@ -1445,8 +1495,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeConfigRuleEvaluationStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeConfigRuleEvaluationStatusResultJsonUnmarshaller());
@@ -1510,8 +1558,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeConfigRulesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeConfigRulesResultJsonUnmarshaller());
@@ -1585,8 +1631,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeConfigurationAggregatorSourcesStatusResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DescribeConfigurationAggregatorSourcesStatusResultJsonUnmarshaller());
@@ -1652,8 +1696,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeConfigurationAggregatorsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeConfigurationAggregatorsResultJsonUnmarshaller());
@@ -1717,8 +1759,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeConfigurationRecorderStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1788,8 +1828,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeConfigurationRecordersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeConfigurationRecordersResultJsonUnmarshaller());
@@ -1857,8 +1895,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeDeliveryChannelStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1928,8 +1964,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeDeliveryChannelsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeDeliveryChannelsResultJsonUnmarshaller());
@@ -1996,8 +2030,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribePendingAggregationRequestsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2066,8 +2098,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeRetentionConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2141,8 +2171,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetAggregateComplianceDetailsByConfigRuleResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new GetAggregateComplianceDetailsByConfigRuleResultJsonUnmarshaller());
@@ -2213,11 +2241,141 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetAggregateConfigRuleComplianceSummaryResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new GetAggregateConfigRuleComplianceSummaryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the resource counts across accounts and regions that are present in your AWS Config aggregator. You can
+     * request the resource counts by providing filters and GroupByKey.
+     * </p>
+     * <p>
+     * For example, if the input contains accountID 12345678910 and region us-east-1 in filters, the API returns the
+     * count of resources in account ID 12345678910 and region us-east-1. If the input contains ACCOUNT_ID as a
+     * GroupByKey, the API returns resource counts for all source accounts that are present in your aggregator.
+     * </p>
+     * 
+     * @param getAggregateDiscoveredResourceCountsRequest
+     * @return Result of the GetAggregateDiscoveredResourceCounts operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws NoSuchConfigurationAggregatorException
+     *         You have specified a configuration aggregator that does not exist.
+     * @sample AmazonConfig.GetAggregateDiscoveredResourceCounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateDiscoveredResourceCounts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAggregateDiscoveredResourceCountsResult getAggregateDiscoveredResourceCounts(GetAggregateDiscoveredResourceCountsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAggregateDiscoveredResourceCounts(request);
+    }
+
+    @SdkInternalApi
+    final GetAggregateDiscoveredResourceCountsResult executeGetAggregateDiscoveredResourceCounts(
+            GetAggregateDiscoveredResourceCountsRequest getAggregateDiscoveredResourceCountsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAggregateDiscoveredResourceCountsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAggregateDiscoveredResourceCountsRequest> request = null;
+        Response<GetAggregateDiscoveredResourceCountsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAggregateDiscoveredResourceCountsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getAggregateDiscoveredResourceCountsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAggregateDiscoveredResourceCounts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAggregateDiscoveredResourceCountsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetAggregateDiscoveredResourceCountsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns configuration item that is aggregated for your specific resource in a specific source account and region.
+     * </p>
+     * 
+     * @param getAggregateResourceConfigRequest
+     * @return Result of the GetAggregateResourceConfig operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.
+     * @throws NoSuchConfigurationAggregatorException
+     *         You have specified a configuration aggregator that does not exist.
+     * @throws OversizedConfigurationItemException
+     *         The configuration item size is outside the allowable range.
+     * @throws ResourceNotDiscoveredException
+     *         You have specified a resource that is either unknown or has not been discovered.
+     * @sample AmazonConfig.GetAggregateResourceConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateResourceConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAggregateResourceConfigResult getAggregateResourceConfig(GetAggregateResourceConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAggregateResourceConfig(request);
+    }
+
+    @SdkInternalApi
+    final GetAggregateResourceConfigResult executeGetAggregateResourceConfig(GetAggregateResourceConfigRequest getAggregateResourceConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAggregateResourceConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAggregateResourceConfigRequest> request = null;
+        Response<GetAggregateResourceConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAggregateResourceConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getAggregateResourceConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAggregateResourceConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAggregateResourceConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetAggregateResourceConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2279,8 +2437,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetComplianceDetailsByConfigRuleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetComplianceDetailsByConfigRuleResultJsonUnmarshaller());
@@ -2338,8 +2494,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetComplianceDetailsByResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetComplianceDetailsByResourceResultJsonUnmarshaller());
@@ -2394,8 +2548,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetComplianceSummaryByConfigRuleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2459,8 +2611,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetComplianceSummaryByResourceTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2596,8 +2746,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetDiscoveredResourceCountsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetDiscoveredResourceCountsResultJsonUnmarshaller());
@@ -2683,11 +2831,81 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetResourceConfigHistoryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetResourceConfigHistoryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Accepts a resource type and returns a list of resource identifiers that are aggregated for a specific resource
+     * type across accounts and regions. A resource identifier includes the resource type, ID, (if available) the custom
+     * resource name, source account, and source region. You can narrow the results to include only resources that have
+     * specific resource IDs, or a resource name, or source account ID, or source region.
+     * </p>
+     * <p>
+     * For example, if the input consists of accountID 12345678910 and the region is us-east-1 for resource type
+     * <code>AWS::EC2::Instance</code> then the API returns all the EC2 instance identifiers of accountID 12345678910
+     * and region us-east-1.
+     * </p>
+     * 
+     * @param listAggregateDiscoveredResourcesRequest
+     * @return Result of the ListAggregateDiscoveredResources operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws NoSuchConfigurationAggregatorException
+     *         You have specified a configuration aggregator that does not exist.
+     * @sample AmazonConfig.ListAggregateDiscoveredResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListAggregateDiscoveredResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAggregateDiscoveredResourcesResult listAggregateDiscoveredResources(ListAggregateDiscoveredResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAggregateDiscoveredResources(request);
+    }
+
+    @SdkInternalApi
+    final ListAggregateDiscoveredResourcesResult executeListAggregateDiscoveredResources(
+            ListAggregateDiscoveredResourcesRequest listAggregateDiscoveredResourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAggregateDiscoveredResourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAggregateDiscoveredResourcesRequest> request = null;
+        Response<ListAggregateDiscoveredResourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAggregateDiscoveredResourcesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAggregateDiscoveredResourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAggregateDiscoveredResources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAggregateDiscoveredResourcesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAggregateDiscoveredResourcesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2762,8 +2980,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListDiscoveredResourcesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListDiscoveredResourcesResultJsonUnmarshaller());
@@ -2819,8 +3035,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<PutAggregationAuthorizationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2942,8 +3156,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<PutConfigRuleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutConfigRuleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3024,8 +3236,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<PutConfigurationAggregatorResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new PutConfigurationAggregatorResultJsonUnmarshaller());
@@ -3102,8 +3312,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<PutConfigurationRecorderResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3189,8 +3397,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<PutDeliveryChannelResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutDeliveryChannelResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3250,8 +3456,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<PutEvaluationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutEvaluationsResultJsonUnmarshaller());
@@ -3318,8 +3522,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<PutRetentionConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3437,8 +3639,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<StartConfigRulesEvaluationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new StartConfigRulesEvaluationResultJsonUnmarshaller());
@@ -3501,8 +3701,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<StartConfigurationRecorderResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new StartConfigurationRecorderResultJsonUnmarshaller());
@@ -3560,8 +3758,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<StopConfigurationRecorderResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new StopConfigurationRecorderResultJsonUnmarshaller());
@@ -3599,18 +3795,18 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -3620,7 +3816,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -3628,11 +3824,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

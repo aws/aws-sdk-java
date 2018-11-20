@@ -34,6 +34,8 @@ public class JobSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("availBlanking").build();
     private static final MarshallingInfo<List> INPUTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("inputs").build();
+    private static final MarshallingInfo<StructuredPojo> MOTIONIMAGEINSERTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("motionImageInserter").build();
     private static final MarshallingInfo<StructuredPojo> NIELSENCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nielsenConfiguration").build();
     private static final MarshallingInfo<List> OUTPUTGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -62,6 +64,7 @@ public class JobSettingsMarshaller {
             protocolMarshaller.marshall(jobSettings.getAdAvailOffset(), ADAVAILOFFSET_BINDING);
             protocolMarshaller.marshall(jobSettings.getAvailBlanking(), AVAILBLANKING_BINDING);
             protocolMarshaller.marshall(jobSettings.getInputs(), INPUTS_BINDING);
+            protocolMarshaller.marshall(jobSettings.getMotionImageInserter(), MOTIONIMAGEINSERTER_BINDING);
             protocolMarshaller.marshall(jobSettings.getNielsenConfiguration(), NIELSENCONFIGURATION_BINDING);
             protocolMarshaller.marshall(jobSettings.getOutputGroups(), OUTPUTGROUPS_BINDING);
             protocolMarshaller.marshall(jobSettings.getTimecodeConfig(), TIMECODECONFIG_BINDING);

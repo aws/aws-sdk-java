@@ -68,6 +68,11 @@ public class AttemptContainerDetailJsonUnmarshaller implements Unmarshaller<Atte
                     context.nextToken();
                     attemptContainerDetail.setLogStreamName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("networkInterfaces", targetDepth)) {
+                    context.nextToken();
+                    attemptContainerDetail.setNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

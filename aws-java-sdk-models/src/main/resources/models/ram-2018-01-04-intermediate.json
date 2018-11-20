@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -94,6 +94,7 @@
       "documentation" : "<p>Accepts an invitation to a resource share from another AWS account.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "MalformedArnException",
         "documentation" : "<p>The format of an Amazon Resource Name (ARN) is not valid.</p>",
@@ -128,6 +129,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "AcceptResourceShareInvitationRequest",
@@ -156,6 +158,7 @@
       "documentation" : "<p>Associates the specified resource share with the specified principals and resources.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "IdempotentParameterMismatchException",
         "documentation" : "<p>A client token input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>",
@@ -206,6 +209,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "AssociateResourceShareRequest",
@@ -234,6 +238,7 @@
       "documentation" : "<p>Creates a resource share.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "IdempotentParameterMismatchException",
         "documentation" : "<p>A client token input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>",
@@ -276,6 +281,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateResourceShareRequest",
@@ -304,6 +310,7 @@
       "documentation" : "<p>Deletes the specified resource share.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "OperationNotPermittedException",
         "documentation" : "<p>The requested operation is not permitted.</p>",
@@ -342,6 +349,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteResourceShareRequest",
@@ -370,6 +378,7 @@
       "documentation" : "<p>Disassociates the specified principals or resources from the specified resource share.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "IdempotentParameterMismatchException",
         "documentation" : "<p>A client token input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>",
@@ -412,6 +421,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateResourceShareRequest",
@@ -440,6 +450,7 @@
       "documentation" : "<p>Enables resource sharing within your organization.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "OperationNotPermittedException",
         "documentation" : "<p>The requested operation is not permitted.</p>",
@@ -454,6 +465,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "EnableSharingWithAwsOrganizationRequest",
@@ -482,6 +494,7 @@
       "documentation" : "<p>Gets the policies for the specifies resources.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "MalformedArnException",
         "documentation" : "<p>The format of an Amazon Resource Name (ARN) is not valid.</p>",
@@ -504,6 +517,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetResourcePoliciesRequest",
@@ -532,6 +546,7 @@
       "documentation" : "<p>Gets the associations for the specified resource share.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnknownResourceException",
         "documentation" : "<p>A specified resource was not found.</p>",
@@ -562,6 +577,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetResourceShareAssociationsRequest",
@@ -590,6 +606,7 @@
       "documentation" : "<p>Gets the specified invitations for resource sharing.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceShareInvitationArnNotFoundException",
         "documentation" : "<p>The Amazon Resource Name (ARN) for an invitation was not found.</p>",
@@ -620,6 +637,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetResourceShareInvitationsRequest",
@@ -648,6 +666,7 @@
       "documentation" : "<p>Gets the specified resource shares or all of your resource shares.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnknownResourceException",
         "documentation" : "<p>A specified resource was not found.</p>",
@@ -674,6 +693,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetResourceSharesRequest",
@@ -702,6 +722,7 @@
       "documentation" : "<p>Lists the principals with access to the specified resource.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "MalformedArnException",
         "documentation" : "<p>The format of an Amazon Resource Name (ARN) is not valid.</p>",
@@ -728,6 +749,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListPrincipalsRequest",
@@ -756,6 +778,7 @@
       "documentation" : "<p>Lists the resources that the specified principal can access.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidResourceTypeException",
         "documentation" : "<p>The specified resource type is not valid.</p>",
@@ -786,6 +809,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListResourcesRequest",
@@ -814,6 +838,7 @@
       "documentation" : "<p>Rejects an invitation to a resource share from another AWS account.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "MalformedArnException",
         "documentation" : "<p>The format of an Amazon Resource Name (ARN) is not valid.</p>",
@@ -848,6 +873,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "RejectResourceShareInvitationRequest",
@@ -876,6 +902,7 @@
       "documentation" : "<p>Adds the specified tags to the specified resource share.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>A parameter is not valid.</p>",
@@ -902,6 +929,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "TagResourceRequest",
@@ -930,6 +958,7 @@
       "documentation" : "<p>Removes the specified tags from the specified resource share.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>A parameter is not valid.</p>",
@@ -944,6 +973,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UntagResourceRequest",
@@ -972,6 +1002,7 @@
       "documentation" : "<p>Updates the specified resource share.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "IdempotentParameterMismatchException",
         "documentation" : "<p>A client token input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>",
@@ -1010,6 +1041,7 @@
         "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateResourceShareRequest",

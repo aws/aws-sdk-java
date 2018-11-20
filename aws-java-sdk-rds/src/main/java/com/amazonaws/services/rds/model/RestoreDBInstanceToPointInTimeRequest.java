@@ -345,6 +345,15 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     private String tdeCredentialPassword;
     /**
      * <p>
+     * A list of EC2 VPC security groups to associate with this DB instance.
+     * </p>
+     * <p>
+     * Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIds;
+    /**
+     * <p>
      * Specify the Active Directory Domain to restore the instance in.
      * </p>
      */
@@ -2573,6 +2582,99 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
+     * A list of EC2 VPC security groups to associate with this DB instance.
+     * </p>
+     * <p>
+     * Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * </p>
+     * 
+     * @return A list of EC2 VPC security groups to associate with this DB instance. </p>
+     *         <p>
+     *         Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     */
+
+    public java.util.List<String> getVpcSecurityGroupIds() {
+        if (vpcSecurityGroupIds == null) {
+            vpcSecurityGroupIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return vpcSecurityGroupIds;
+    }
+
+    /**
+     * <p>
+     * A list of EC2 VPC security groups to associate with this DB instance.
+     * </p>
+     * <p>
+     * Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * </p>
+     * 
+     * @param vpcSecurityGroupIds
+     *        A list of EC2 VPC security groups to associate with this DB instance. </p>
+     *        <p>
+     *        Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     */
+
+    public void setVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
+        if (vpcSecurityGroupIds == null) {
+            this.vpcSecurityGroupIds = null;
+            return;
+        }
+
+        this.vpcSecurityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(vpcSecurityGroupIds);
+    }
+
+    /**
+     * <p>
+     * A list of EC2 VPC security groups to associate with this DB instance.
+     * </p>
+     * <p>
+     * Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcSecurityGroupIds(java.util.Collection)} or {@link #withVpcSecurityGroupIds(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param vpcSecurityGroupIds
+     *        A list of EC2 VPC security groups to associate with this DB instance. </p>
+     *        <p>
+     *        Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBInstanceToPointInTimeRequest withVpcSecurityGroupIds(String... vpcSecurityGroupIds) {
+        if (this.vpcSecurityGroupIds == null) {
+            setVpcSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(vpcSecurityGroupIds.length));
+        }
+        for (String ele : vpcSecurityGroupIds) {
+            this.vpcSecurityGroupIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of EC2 VPC security groups to associate with this DB instance.
+     * </p>
+     * <p>
+     * Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * </p>
+     * 
+     * @param vpcSecurityGroupIds
+     *        A list of EC2 VPC security groups to associate with this DB instance. </p>
+     *        <p>
+     *        Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBInstanceToPointInTimeRequest withVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
+        setVpcSecurityGroupIds(vpcSecurityGroupIds);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specify the Active Directory Domain to restore the instance in.
      * </p>
      * 
@@ -3435,6 +3537,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
             sb.append("TdeCredentialArn: ").append(getTdeCredentialArn()).append(",");
         if (getTdeCredentialPassword() != null)
             sb.append("TdeCredentialPassword: ").append(getTdeCredentialPassword()).append(",");
+        if (getVpcSecurityGroupIds() != null)
+            sb.append("VpcSecurityGroupIds: ").append(getVpcSecurityGroupIds()).append(",");
         if (getDomain() != null)
             sb.append("Domain: ").append(getDomain()).append(",");
         if (getDomainIAMRoleName() != null)
@@ -3551,6 +3655,10 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
             return false;
         if (other.getTdeCredentialPassword() != null && other.getTdeCredentialPassword().equals(this.getTdeCredentialPassword()) == false)
             return false;
+        if (other.getVpcSecurityGroupIds() == null ^ this.getVpcSecurityGroupIds() == null)
+            return false;
+        if (other.getVpcSecurityGroupIds() != null && other.getVpcSecurityGroupIds().equals(this.getVpcSecurityGroupIds()) == false)
+            return false;
         if (other.getDomain() == null ^ this.getDomain() == null)
             return false;
         if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
@@ -3617,6 +3725,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
         hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
         hashCode = prime * hashCode + ((getTdeCredentialArn() == null) ? 0 : getTdeCredentialArn().hashCode());
         hashCode = prime * hashCode + ((getTdeCredentialPassword() == null) ? 0 : getTdeCredentialPassword().hashCode());
+        hashCode = prime * hashCode + ((getVpcSecurityGroupIds() == null) ? 0 : getVpcSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getDomainIAMRoleName() == null) ? 0 : getDomainIAMRoleName().hashCode());
         hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());

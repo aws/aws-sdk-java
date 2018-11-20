@@ -48,11 +48,23 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
     private java.util.Map<String, String> parameters;
     /**
      * <p>
-     * An object with various properties specific for container-based jobs. This parameter is required if the
-     * <code>type</code> parameter is <code>container</code>.
+     * An object with various properties specific to single-node container-based jobs. If the job definition's
+     * <code>type</code> parameter is <code>container</code>, then you must specify either
+     * <code>containerProperties</code> or <code>nodeProperties</code>.
      * </p>
      */
     private ContainerProperties containerProperties;
+    /**
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
+     * it becomes a multi-node parallel job. For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
+     * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
+     * <code>container</code>, then you must specify either <code>containerProperties</code> or
+     * <code>nodeProperties</code>.
+     * </p>
+     */
+    private NodeProperties nodeProperties;
     /**
      * <p>
      * The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that is
@@ -267,13 +279,15 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object with various properties specific for container-based jobs. This parameter is required if the
-     * <code>type</code> parameter is <code>container</code>.
+     * An object with various properties specific to single-node container-based jobs. If the job definition's
+     * <code>type</code> parameter is <code>container</code>, then you must specify either
+     * <code>containerProperties</code> or <code>nodeProperties</code>.
      * </p>
      * 
      * @param containerProperties
-     *        An object with various properties specific for container-based jobs. This parameter is required if the
-     *        <code>type</code> parameter is <code>container</code>.
+     *        An object with various properties specific to single-node container-based jobs. If the job definition's
+     *        <code>type</code> parameter is <code>container</code>, then you must specify either
+     *        <code>containerProperties</code> or <code>nodeProperties</code>.
      */
 
     public void setContainerProperties(ContainerProperties containerProperties) {
@@ -282,12 +296,14 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object with various properties specific for container-based jobs. This parameter is required if the
-     * <code>type</code> parameter is <code>container</code>.
+     * An object with various properties specific to single-node container-based jobs. If the job definition's
+     * <code>type</code> parameter is <code>container</code>, then you must specify either
+     * <code>containerProperties</code> or <code>nodeProperties</code>.
      * </p>
      * 
-     * @return An object with various properties specific for container-based jobs. This parameter is required if the
-     *         <code>type</code> parameter is <code>container</code>.
+     * @return An object with various properties specific to single-node container-based jobs. If the job definition's
+     *         <code>type</code> parameter is <code>container</code>, then you must specify either
+     *         <code>containerProperties</code> or <code>nodeProperties</code>.
      */
 
     public ContainerProperties getContainerProperties() {
@@ -296,18 +312,90 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object with various properties specific for container-based jobs. This parameter is required if the
-     * <code>type</code> parameter is <code>container</code>.
+     * An object with various properties specific to single-node container-based jobs. If the job definition's
+     * <code>type</code> parameter is <code>container</code>, then you must specify either
+     * <code>containerProperties</code> or <code>nodeProperties</code>.
      * </p>
      * 
      * @param containerProperties
-     *        An object with various properties specific for container-based jobs. This parameter is required if the
-     *        <code>type</code> parameter is <code>container</code>.
+     *        An object with various properties specific to single-node container-based jobs. If the job definition's
+     *        <code>type</code> parameter is <code>container</code>, then you must specify either
+     *        <code>containerProperties</code> or <code>nodeProperties</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RegisterJobDefinitionRequest withContainerProperties(ContainerProperties containerProperties) {
         setContainerProperties(containerProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
+     * it becomes a multi-node parallel job. For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
+     * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
+     * <code>container</code>, then you must specify either <code>containerProperties</code> or
+     * <code>nodeProperties</code>.
+     * </p>
+     * 
+     * @param nodeProperties
+     *        An object with various properties specific to multi-node parallel jobs. If you specify node properties for
+     *        a job, it becomes a multi-node parallel job. For more information, see <a
+     *        href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
+     *        Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
+     *        <code>container</code>, then you must specify either <code>containerProperties</code> or
+     *        <code>nodeProperties</code>.
+     */
+
+    public void setNodeProperties(NodeProperties nodeProperties) {
+        this.nodeProperties = nodeProperties;
+    }
+
+    /**
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
+     * it becomes a multi-node parallel job. For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
+     * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
+     * <code>container</code>, then you must specify either <code>containerProperties</code> or
+     * <code>nodeProperties</code>.
+     * </p>
+     * 
+     * @return An object with various properties specific to multi-node parallel jobs. If you specify node properties
+     *         for a job, it becomes a multi-node parallel job. For more information, see <a
+     *         href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
+     *         Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter
+     *         is <code>container</code>, then you must specify either <code>containerProperties</code> or
+     *         <code>nodeProperties</code>.
+     */
+
+    public NodeProperties getNodeProperties() {
+        return this.nodeProperties;
+    }
+
+    /**
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
+     * it becomes a multi-node parallel job. For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
+     * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
+     * <code>container</code>, then you must specify either <code>containerProperties</code> or
+     * <code>nodeProperties</code>.
+     * </p>
+     * 
+     * @param nodeProperties
+     *        An object with various properties specific to multi-node parallel jobs. If you specify node properties for
+     *        a job, it becomes a multi-node parallel job. For more information, see <a
+     *        href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
+     *        Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
+     *        <code>container</code>, then you must specify either <code>containerProperties</code> or
+     *        <code>nodeProperties</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterJobDefinitionRequest withNodeProperties(NodeProperties nodeProperties) {
+        setNodeProperties(nodeProperties);
         return this;
     }
 
@@ -455,6 +543,8 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
             sb.append("Parameters: ").append(getParameters()).append(",");
         if (getContainerProperties() != null)
             sb.append("ContainerProperties: ").append(getContainerProperties()).append(",");
+        if (getNodeProperties() != null)
+            sb.append("NodeProperties: ").append(getNodeProperties()).append(",");
         if (getRetryStrategy() != null)
             sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
         if (getTimeout() != null)
@@ -489,6 +579,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getContainerProperties() != null && other.getContainerProperties().equals(this.getContainerProperties()) == false)
             return false;
+        if (other.getNodeProperties() == null ^ this.getNodeProperties() == null)
+            return false;
+        if (other.getNodeProperties() != null && other.getNodeProperties().equals(this.getNodeProperties()) == false)
+            return false;
         if (other.getRetryStrategy() == null ^ this.getRetryStrategy() == null)
             return false;
         if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
@@ -509,6 +603,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getContainerProperties() == null) ? 0 : getContainerProperties().hashCode());
+        hashCode = prime * hashCode + ((getNodeProperties() == null) ? 0 : getNodeProperties().hashCode());
         hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         return hashCode;

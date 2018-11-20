@@ -66,6 +66,7 @@ final class AddOperations {
             operationModel.setIsAuthenticated(isAuthenticated(op));
             operationModel.setEndpointDiscovery(op.getEndpointdiscovery());
             operationModel.setEndpointOperation(op.isEndpointoperation());
+            operationModel.setEndpointTrait(op.getEndpoint());
 
             final Input input = op.getInput();
             if (input != null) {

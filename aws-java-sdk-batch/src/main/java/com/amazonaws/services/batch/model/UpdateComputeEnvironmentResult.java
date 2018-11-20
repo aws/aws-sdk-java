@@ -25,7 +25,7 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of compute environment.
+     * The name of the compute environment.
      * </p>
      */
     private String computeEnvironmentName;
@@ -38,11 +38,11 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of compute environment.
+     * The name of the compute environment.
      * </p>
      * 
      * @param computeEnvironmentName
-     *        The name of compute environment.
+     *        The name of the compute environment.
      */
 
     public void setComputeEnvironmentName(String computeEnvironmentName) {
@@ -51,10 +51,10 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of compute environment.
+     * The name of the compute environment.
      * </p>
      * 
-     * @return The name of compute environment.
+     * @return The name of the compute environment.
      */
 
     public String getComputeEnvironmentName() {
@@ -63,11 +63,11 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of compute environment.
+     * The name of the compute environment.
      * </p>
      * 
      * @param computeEnvironmentName
-     *        The name of compute environment.
+     *        The name of the compute environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -37,6 +37,8 @@ public class InputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("captionSelectors").build();
     private static final MarshallingInfo<String> DEBLOCKFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deblockFilter").build();
+    private static final MarshallingInfo<StructuredPojo> DECRYPTIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("decryptionSettings").build();
     private static final MarshallingInfo<String> DENOISEFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("denoiseFilter").build();
     private static final MarshallingInfo<String> FILEINPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -45,6 +47,8 @@ public class InputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filterEnable").build();
     private static final MarshallingInfo<Integer> FILTERSTRENGTH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filterStrength").build();
+    private static final MarshallingInfo<StructuredPojo> IMAGEINSERTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageInserter").build();
     private static final MarshallingInfo<List> INPUTCLIPPINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputClippings").build();
     private static final MarshallingInfo<Integer> PROGRAMNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -76,10 +80,12 @@ public class InputMarshaller {
             protocolMarshaller.marshall(input.getAudioSelectors(), AUDIOSELECTORS_BINDING);
             protocolMarshaller.marshall(input.getCaptionSelectors(), CAPTIONSELECTORS_BINDING);
             protocolMarshaller.marshall(input.getDeblockFilter(), DEBLOCKFILTER_BINDING);
+            protocolMarshaller.marshall(input.getDecryptionSettings(), DECRYPTIONSETTINGS_BINDING);
             protocolMarshaller.marshall(input.getDenoiseFilter(), DENOISEFILTER_BINDING);
             protocolMarshaller.marshall(input.getFileInput(), FILEINPUT_BINDING);
             protocolMarshaller.marshall(input.getFilterEnable(), FILTERENABLE_BINDING);
             protocolMarshaller.marshall(input.getFilterStrength(), FILTERSTRENGTH_BINDING);
+            protocolMarshaller.marshall(input.getImageInserter(), IMAGEINSERTER_BINDING);
             protocolMarshaller.marshall(input.getInputClippings(), INPUTCLIPPINGS_BINDING);
             protocolMarshaller.marshall(input.getProgramNumber(), PROGRAMNUMBER_BINDING);
             protocolMarshaller.marshall(input.getPsiControl(), PSICONTROL_BINDING);

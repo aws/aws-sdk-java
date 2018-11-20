@@ -81,6 +81,19 @@ public class DescribeAvailabilityZonesRequestMarshaller implements Marshaller<Re
             }
         }
 
+        com.amazonaws.internal.SdkInternalList<String> describeAvailabilityZonesRequestZoneIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeAvailabilityZonesRequest
+                .getZoneIds();
+        if (!describeAvailabilityZonesRequestZoneIdsList.isEmpty() || !describeAvailabilityZonesRequestZoneIdsList.isAutoConstruct()) {
+            int zoneIdsListIndex = 1;
+
+            for (String describeAvailabilityZonesRequestZoneIdsListValue : describeAvailabilityZonesRequestZoneIdsList) {
+                if (describeAvailabilityZonesRequestZoneIdsListValue != null) {
+                    request.addParameter("ZoneId." + zoneIdsListIndex, StringUtils.fromString(describeAvailabilityZonesRequestZoneIdsListValue));
+                }
+                zoneIdsListIndex++;
+            }
+        }
+
         return request;
     }
 

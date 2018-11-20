@@ -398,8 +398,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<AddTagsToResourceResult> responseHandler = new StaxResponseHandler<AddTagsToResourceResult>(
                     new AddTagsToResourceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -470,8 +468,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<CacheSecurityGroup> responseHandler = new StaxResponseHandler<CacheSecurityGroup>(new CacheSecurityGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -641,8 +637,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<Snapshot> responseHandler = new StaxResponseHandler<Snapshot>(new SnapshotStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -729,8 +723,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CacheCluster> responseHandler = new StaxResponseHandler<CacheCluster>(new CacheClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -814,8 +806,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CacheParameterGroup> responseHandler = new StaxResponseHandler<CacheParameterGroup>(new CacheParameterGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -883,8 +873,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CacheSecurityGroup> responseHandler = new StaxResponseHandler<CacheSecurityGroup>(new CacheSecurityGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -948,8 +936,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<CacheSubnetGroup> responseHandler = new StaxResponseHandler<CacheSubnetGroup>(new CacheSubnetGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1061,8 +1047,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ReplicationGroup> responseHandler = new StaxResponseHandler<ReplicationGroup>(new ReplicationGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1152,8 +1136,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<Snapshot> responseHandler = new StaxResponseHandler<Snapshot>(new SnapshotStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1231,8 +1213,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ReplicationGroup> responseHandler = new StaxResponseHandler<ReplicationGroup>(new ReplicationGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1323,8 +1303,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CacheCluster> responseHandler = new StaxResponseHandler<CacheCluster>(new CacheClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1385,8 +1363,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteCacheParameterGroupResult> responseHandler = new StaxResponseHandler<DeleteCacheParameterGroupResult>(
                     new DeleteCacheParameterGroupResultStaxUnmarshaller());
@@ -1454,8 +1430,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteCacheSecurityGroupResult> responseHandler = new StaxResponseHandler<DeleteCacheSecurityGroupResult>(
                     new DeleteCacheSecurityGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1517,8 +1491,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteCacheSubnetGroupResult> responseHandler = new StaxResponseHandler<DeleteCacheSubnetGroupResult>(
                     new DeleteCacheSubnetGroupResultStaxUnmarshaller());
@@ -1613,8 +1585,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ReplicationGroup> responseHandler = new StaxResponseHandler<ReplicationGroup>(new ReplicationGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1680,8 +1650,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<Snapshot> responseHandler = new StaxResponseHandler<Snapshot>(new SnapshotStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1763,8 +1731,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeCacheClustersResult> responseHandler = new StaxResponseHandler<DescribeCacheClustersResult>(
                     new DescribeCacheClustersResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1822,8 +1788,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeCacheEngineVersionsResult> responseHandler = new StaxResponseHandler<DescribeCacheEngineVersionsResult>(
                     new DescribeCacheEngineVersionsResultStaxUnmarshaller());
@@ -1890,8 +1854,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeCacheParameterGroupsResult> responseHandler = new StaxResponseHandler<DescribeCacheParameterGroupsResult>(
                     new DescribeCacheParameterGroupsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1956,8 +1918,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeCacheParametersResult> responseHandler = new StaxResponseHandler<DescribeCacheParametersResult>(
                     new DescribeCacheParametersResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2017,8 +1977,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeCacheSecurityGroupsResult> responseHandler = new StaxResponseHandler<DescribeCacheSecurityGroupsResult>(
                     new DescribeCacheSecurityGroupsResultStaxUnmarshaller());
@@ -2080,8 +2038,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeCacheSubnetGroupsResult> responseHandler = new StaxResponseHandler<DescribeCacheSubnetGroupsResult>(
                     new DescribeCacheSubnetGroupsResultStaxUnmarshaller());
@@ -2145,8 +2101,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<EngineDefaults> responseHandler = new StaxResponseHandler<EngineDefaults>(new EngineDefaultsStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2208,8 +2162,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeEventsResult> responseHandler = new StaxResponseHandler<DescribeEventsResult>(
                     new DescribeEventsResultStaxUnmarshaller());
@@ -2281,8 +2233,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeReplicationGroupsResult> responseHandler = new StaxResponseHandler<DescribeReplicationGroupsResult>(
                     new DescribeReplicationGroupsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2346,8 +2296,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeReservedCacheNodesResult> responseHandler = new StaxResponseHandler<DescribeReservedCacheNodesResult>(
                     new DescribeReservedCacheNodesResultStaxUnmarshaller());
@@ -2414,8 +2362,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeReservedCacheNodesOfferingsResult> responseHandler = new StaxResponseHandler<DescribeReservedCacheNodesOfferingsResult>(
                     new DescribeReservedCacheNodesOfferingsResultStaxUnmarshaller());
@@ -2489,8 +2435,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeSnapshotsResult> responseHandler = new StaxResponseHandler<DescribeSnapshotsResult>(
                     new DescribeSnapshotsResultStaxUnmarshaller());
@@ -2574,8 +2518,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ReplicationGroup> responseHandler = new StaxResponseHandler<ReplicationGroup>(new ReplicationGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2642,8 +2584,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListAllowedNodeTypeModificationsResult> responseHandler = new StaxResponseHandler<ListAllowedNodeTypeModificationsResult>(
                     new ListAllowedNodeTypeModificationsResultStaxUnmarshaller());
@@ -2717,8 +2657,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListTagsForResourceResult> responseHandler = new StaxResponseHandler<ListTagsForResourceResult>(
                     new ListTagsForResourceResultStaxUnmarshaller());
@@ -2797,8 +2735,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CacheCluster> responseHandler = new StaxResponseHandler<CacheCluster>(new CacheClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2859,8 +2795,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ModifyCacheParameterGroupResult> responseHandler = new StaxResponseHandler<ModifyCacheParameterGroupResult>(
                     new ModifyCacheParameterGroupResultStaxUnmarshaller());
@@ -2923,8 +2857,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<CacheSubnetGroup> responseHandler = new StaxResponseHandler<CacheSubnetGroup>(new CacheSubnetGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3029,8 +2961,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ReplicationGroup> responseHandler = new StaxResponseHandler<ReplicationGroup>(new ReplicationGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -3106,8 +3036,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ReplicationGroup> responseHandler = new StaxResponseHandler<ReplicationGroup>(new ReplicationGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -3170,8 +3098,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ReservedCacheNode> responseHandler = new StaxResponseHandler<ReservedCacheNode>(new ReservedCacheNodeStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3247,8 +3173,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CacheCluster> responseHandler = new StaxResponseHandler<CacheCluster>(new CacheClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -3308,8 +3232,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<RemoveTagsFromResourceResult> responseHandler = new StaxResponseHandler<RemoveTagsFromResourceResult>(
                     new RemoveTagsFromResourceResultStaxUnmarshaller());
@@ -3374,8 +3296,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ResetCacheParameterGroupResult> responseHandler = new StaxResponseHandler<ResetCacheParameterGroupResult>(
                     new ResetCacheParameterGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3439,8 +3359,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<CacheSecurityGroup> responseHandler = new StaxResponseHandler<CacheSecurityGroup>(new CacheSecurityGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3594,8 +3512,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ReplicationGroup> responseHandler = new StaxResponseHandler<ReplicationGroup>(new ReplicationGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -3631,18 +3547,18 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -3652,7 +3568,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -3660,11 +3576,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

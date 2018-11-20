@@ -25,6 +25,7 @@ import com.amazonaws.util.EC2MetadataUtils;
 public enum Regions {
 
     GovCloud("us-gov-west-1", "AWS GovCloud (US)"),
+    US_GOV_EAST_1("us-gov-east-1", "AWS GovCloud (US-East)"),
     US_EAST_1("us-east-1", "US East (N. Virginia)"),
     US_EAST_2("us-east-2", "US East (Ohio)"),
     US_WEST_1("us-west-1", "US West (N. California)"),

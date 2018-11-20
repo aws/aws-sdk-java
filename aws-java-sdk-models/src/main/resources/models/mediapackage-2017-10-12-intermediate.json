@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -94,6 +94,7 @@
       "documentation" : "Creates a new Channel.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -120,6 +121,7 @@
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateChannelRequest",
@@ -148,6 +150,7 @@
       "documentation" : "Creates a new OriginEndpoint record.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -174,6 +177,7 @@
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateOriginEndpointRequest",
@@ -202,6 +206,7 @@
       "documentation" : "Deletes an existing Channel.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -228,6 +233,7 @@
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteChannelRequest",
@@ -256,6 +262,7 @@
       "documentation" : "Deletes an existing OriginEndpoint.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -282,6 +289,7 @@
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteOriginEndpointRequest",
@@ -310,6 +318,7 @@
       "documentation" : "Gets details about a Channel.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -336,6 +345,7 @@
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeChannelRequest",
@@ -364,6 +374,7 @@
       "documentation" : "Gets details about an existing OriginEndpoint.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -390,6 +401,7 @@
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeOriginEndpointRequest",
@@ -418,6 +430,7 @@
       "documentation" : "Returns a collection of Channels.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -444,6 +457,7 @@
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListChannelsRequest",
@@ -472,6 +486,7 @@
       "documentation" : "Returns a collection of OriginEndpoint records.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -498,6 +513,7 @@
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListOriginEndpointsRequest",
@@ -526,6 +542,7 @@
       "documentation" : "Changes the Channel's first IngestEndpoint's username and password. WARNING - This API is deprecated. Please use RotateIngestEndpointCredentials instead",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -552,6 +569,7 @@
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "RotateChannelCredentialsRequest",
@@ -580,6 +598,7 @@
       "documentation" : "Rotate the IngestEndpoint's username and password, as specified by the IngestEndpoint's id.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -606,6 +625,7 @@
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "RotateIngestEndpointCredentialsRequest",
@@ -634,6 +654,7 @@
       "documentation" : "Updates an existing Channel.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -660,6 +681,7 @@
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateChannelRequest",
@@ -688,6 +710,7 @@
       "documentation" : "Updates an existing OriginEndpoint.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -714,6 +737,7 @@
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateOriginEndpointRequest",

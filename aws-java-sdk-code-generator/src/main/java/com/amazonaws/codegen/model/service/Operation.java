@@ -16,7 +16,6 @@
 package com.amazonaws.codegen.model.service;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.List;
 
 public class Operation {
@@ -37,13 +36,13 @@ public class Operation {
 
     private List<ErrorMap> errors;
 
-    private EndpointDiscovery endpointDiscovery;
-
     private boolean requiresApiKey;
 
     private EndpointDiscovery endpointdiscovery;
     
     private boolean endpointoperation;
+
+    private EndpointTrait endpoint;
 
     @JsonProperty("authtype")
     private AuthType authType = AuthType.IAM;
@@ -135,14 +134,6 @@ public class Operation {
         this.authorizer = authorizer;
     }
 
-    public EndpointDiscovery getEndpointDiscovery() {
-        return endpointDiscovery;
-    }
-
-    public void setEndpointDiscovery(EndpointDiscovery endpointDiscovery) {
-        this.endpointDiscovery = endpointDiscovery;
-    }
-
     public boolean requiresApiKey() {
         return requiresApiKey;
     }
@@ -165,5 +156,13 @@ public class Operation {
 
     public void setEndpointoperation(boolean endpointoperation) {
         this.endpointoperation = endpointoperation;
+    }
+
+    public EndpointTrait getEndpoint() {
+        return endpoint;
+    }
+
+    public void setEndpoint(EndpointTrait endpoint) {
+        this.endpoint = endpoint;
     }
 }

@@ -27,18 +27,18 @@ public class GetEventSourceMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS Lambda assigned ID of the event source mapping.
+     * The identifier of the event source mapping.
      * </p>
      */
     private String uUID;
 
     /**
      * <p>
-     * The AWS Lambda assigned ID of the event source mapping.
+     * The identifier of the event source mapping.
      * </p>
      * 
      * @param uUID
-     *        The AWS Lambda assigned ID of the event source mapping.
+     *        The identifier of the event source mapping.
      */
 
     public void setUUID(String uUID) {
@@ -47,10 +47,10 @@ public class GetEventSourceMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS Lambda assigned ID of the event source mapping.
+     * The identifier of the event source mapping.
      * </p>
      * 
-     * @return The AWS Lambda assigned ID of the event source mapping.
+     * @return The identifier of the event source mapping.
      */
 
     public String getUUID() {
@@ -59,11 +59,11 @@ public class GetEventSourceMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS Lambda assigned ID of the event source mapping.
+     * The identifier of the event source mapping.
      * </p>
      * 
      * @param uUID
-     *        The AWS Lambda assigned ID of the event source mapping.
+     *        The identifier of the event source mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

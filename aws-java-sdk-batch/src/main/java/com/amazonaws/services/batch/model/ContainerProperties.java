@@ -196,6 +196,13 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String user;
+    /**
+     * <p>
+     * The instance type to use for a multi-node parallel job. Currently all node groups in a multi-node parallel job
+     * must use the same instance type. This parameter is not valid for single-node container jobs.
+     * </p>
+     */
+    private String instanceType;
 
     /**
      * <p>
@@ -1507,6 +1514,52 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The instance type to use for a multi-node parallel job. Currently all node groups in a multi-node parallel job
+     * must use the same instance type. This parameter is not valid for single-node container jobs.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type to use for a multi-node parallel job. Currently all node groups in a multi-node parallel
+     *        job must use the same instance type. This parameter is not valid for single-node container jobs.
+     */
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type to use for a multi-node parallel job. Currently all node groups in a multi-node parallel job
+     * must use the same instance type. This parameter is not valid for single-node container jobs.
+     * </p>
+     * 
+     * @return The instance type to use for a multi-node parallel job. Currently all node groups in a multi-node
+     *         parallel job must use the same instance type. This parameter is not valid for single-node container jobs.
+     */
+
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type to use for a multi-node parallel job. Currently all node groups in a multi-node parallel job
+     * must use the same instance type. This parameter is not valid for single-node container jobs.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type to use for a multi-node parallel job. Currently all node groups in a multi-node parallel
+     *        job must use the same instance type. This parameter is not valid for single-node container jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerProperties withInstanceType(String instanceType) {
+        setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1540,7 +1593,9 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
         if (getUlimits() != null)
             sb.append("Ulimits: ").append(getUlimits()).append(",");
         if (getUser() != null)
-            sb.append("User: ").append(getUser());
+            sb.append("User: ").append(getUser()).append(",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: ").append(getInstanceType());
         sb.append("}");
         return sb.toString();
     }
@@ -1603,6 +1658,10 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getUser() != null && other.getUser().equals(this.getUser()) == false)
             return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
+            return false;
         return true;
     }
 
@@ -1623,6 +1682,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getPrivileged() == null) ? 0 : getPrivileged().hashCode());
         hashCode = prime * hashCode + ((getUlimits() == null) ? 0 : getUlimits().hashCode());
         hashCode = prime * hashCode + ((getUser() == null) ? 0 : getUser().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         return hashCode;
     }
 

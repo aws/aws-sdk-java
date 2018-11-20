@@ -52,6 +52,10 @@ public class ShareResultJsonUnmarshaller implements Unmarshaller<ShareResult, Js
                     context.nextToken();
                     shareResult.setPrincipalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("InviteePrincipalId", targetDepth)) {
+                    context.nextToken();
+                    shareResult.setInviteePrincipalId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Role", targetDepth)) {
                     context.nextToken();
                     shareResult.setRole(context.getUnmarshaller(String.class).unmarshall(context));

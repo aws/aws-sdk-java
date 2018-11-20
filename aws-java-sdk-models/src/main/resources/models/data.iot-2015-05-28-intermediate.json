@@ -94,6 +94,7 @@
       "documentation" : "<p>Deletes the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html\">DeleteThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource does not exist.</p>",
@@ -128,6 +129,7 @@
         "httpStatusCode" : 415
       } ],
       "hasBlobMemberAsPayload" : true,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteThingShadowRequest",
@@ -156,6 +158,7 @@
       "documentation" : "<p>Gets the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html\">GetThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request is not valid.</p>",
@@ -190,6 +193,7 @@
         "httpStatusCode" : 415
       } ],
       "hasBlobMemberAsPayload" : true,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetThingShadowRequest",
@@ -218,6 +222,7 @@
       "documentation" : "<p>Publishes state information.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http\">HTTP Protocol</a> in the <i>AWS IoT Developer Guide</i>.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p>An unexpected error has occurred.</p>",
@@ -236,6 +241,7 @@
         "httpStatusCode" : 405
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PublishRequest",
@@ -264,6 +270,7 @@
       "documentation" : "<p>Updates the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html\">UpdateThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConflictException",
         "documentation" : "<p>The specified version does not match the version of the document.</p>",
@@ -302,6 +309,7 @@
         "httpStatusCode" : 415
       } ],
       "hasBlobMemberAsPayload" : true,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateThingShadowRequest",

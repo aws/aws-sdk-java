@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -94,6 +94,7 @@
       "documentation" : "<p>Creates an AWS Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and then connects from the instance to the environment.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The target request is invalid.</p>",
@@ -124,6 +125,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateEnvironmentEC2Request",
@@ -152,6 +154,7 @@
       "documentation" : "<p>Adds an environment member to an AWS Cloud9 development environment.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The target request is invalid.</p>",
@@ -182,6 +185,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateEnvironmentMembershipRequest",
@@ -210,6 +214,7 @@
       "documentation" : "<p>Deletes an AWS Cloud9 development environment. If an Amazon EC2 instance is connected to the environment, also terminates the instance.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The target request is invalid.</p>",
@@ -240,6 +245,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteEnvironmentRequest",
@@ -268,6 +274,7 @@
       "documentation" : "<p>Deletes an environment member from an AWS Cloud9 development environment.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The target request is invalid.</p>",
@@ -298,6 +305,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteEnvironmentMembershipRequest",
@@ -326,6 +334,7 @@
       "documentation" : "<p>Gets information about environment members for an AWS Cloud9 development environment.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The target request is invalid.</p>",
@@ -356,6 +365,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeEnvironmentMembershipsRequest",
@@ -384,6 +394,7 @@
       "documentation" : "<p>Gets status information for an AWS Cloud9 development environment.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The target request is invalid.</p>",
@@ -414,6 +425,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeEnvironmentStatusRequest",
@@ -442,6 +454,7 @@
       "documentation" : "<p>Gets information about AWS Cloud9 development environments.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The target request is invalid.</p>",
@@ -472,6 +485,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeEnvironmentsRequest",
@@ -500,6 +514,7 @@
       "documentation" : "<p>Gets a list of AWS Cloud9 development environment identifiers.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The target request is invalid.</p>",
@@ -530,6 +545,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListEnvironmentsRequest",
@@ -558,6 +574,7 @@
       "documentation" : "<p>Changes the settings of an existing AWS Cloud9 development environment.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The target request is invalid.</p>",
@@ -588,6 +605,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateEnvironmentRequest",
@@ -616,6 +634,7 @@
       "documentation" : "<p>Changes the settings of an existing environment member for an AWS Cloud9 development environment.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The target request is invalid.</p>",
@@ -646,6 +665,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateEnvironmentMembershipRequest",

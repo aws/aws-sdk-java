@@ -106,7 +106,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -180,8 +180,10 @@
       "documentation" : "<p>Removes the Public Access Block configuration for an Amazon Web Services account.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeletePublicAccessBlockRequest",
@@ -210,12 +212,14 @@
       "documentation" : "<p>Retrieves the Public Access Block configuration for an Amazon Web Services account.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NoSuchPublicAccessBlockConfigurationException",
         "documentation" : "<p>This exception is thrown if a <code>GetPublicAccessBlock</code> request is made against an account that does not have a PublicAccessBlockConfiguration set.</p>",
         "httpStatusCode" : 404
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetPublicAccessBlockRequest",
@@ -244,8 +248,10 @@
       "documentation" : "<p>Creates or modifies the Public Access Block configuration for an Amazon Web Services account.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutPublicAccessBlockRequest",

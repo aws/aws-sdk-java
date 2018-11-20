@@ -93,6 +93,11 @@ public enum Region {
     US_GovCloud("us-gov-west-1"),
 
     /**
+     * The US GovCloud (East) Region.
+     */
+    US_Gov_East_1("us-gov-east-1", "AWS GovCloud (US-East)"),
+
+    /**
      * The EU (Ireland) Amazon S3 Region. This region uses Amazon S3 servers located
      * in Ireland.
      */

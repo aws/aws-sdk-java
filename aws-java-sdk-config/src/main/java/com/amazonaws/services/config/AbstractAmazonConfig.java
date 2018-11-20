@@ -38,6 +38,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public BatchGetAggregateResourceConfigResult batchGetAggregateResourceConfig(BatchGetAggregateResourceConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGetResourceConfigResult batchGetResourceConfig(BatchGetResourceConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -209,6 +214,16 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public GetAggregateDiscoveredResourceCountsResult getAggregateDiscoveredResourceCounts(GetAggregateDiscoveredResourceCountsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAggregateResourceConfigResult getAggregateResourceConfig(GetAggregateResourceConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetComplianceDetailsByConfigRuleResult getComplianceDetailsByConfigRule(GetComplianceDetailsByConfigRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -245,6 +260,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
 
     @Override
     public GetResourceConfigHistoryResult getResourceConfigHistory(GetResourceConfigHistoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAggregateDiscoveredResourcesResult listAggregateDiscoveredResources(ListAggregateDiscoveredResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

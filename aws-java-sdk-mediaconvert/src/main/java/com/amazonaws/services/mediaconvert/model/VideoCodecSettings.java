@@ -30,6 +30,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VideoCodecSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /** Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. */
     private String codec;
 
     private FrameCaptureSettings frameCaptureSettings;
@@ -43,7 +44,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     private ProresSettings proresSettings;
 
     /**
+     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     * 
      * @param codec
+     *        Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
      * @see VideoCodec
      */
 
@@ -52,7 +56,9 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     * 
+     * @return Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
      * @see VideoCodec
      */
 
@@ -61,7 +67,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     * 
      * @param codec
+     *        Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VideoCodec
      */
@@ -72,7 +81,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     * 
      * @param codec
+     *        Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VideoCodec
      */

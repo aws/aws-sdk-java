@@ -242,8 +242,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<BatchCreatePartitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchCreatePartitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -299,8 +297,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<BatchDeleteConnectionResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -362,8 +358,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<BatchDeletePartitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchDeletePartitionResultJsonUnmarshaller());
@@ -437,8 +431,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<BatchDeleteTableResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchDeleteTableResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -499,8 +491,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<BatchDeleteTableVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -565,8 +555,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<BatchGetPartitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchGetPartitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -624,8 +612,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<BatchStopJobRunResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchStopJobRunResultJsonUnmarshaller());
@@ -686,8 +672,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateClassifierResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateClassifierResultJsonUnmarshaller());
@@ -751,8 +735,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateConnectionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -814,8 +796,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateCrawlerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateCrawlerResultJsonUnmarshaller());
@@ -880,8 +860,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateDatabaseResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDatabaseResultJsonUnmarshaller());
@@ -951,8 +929,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateDevEndpointResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDevEndpointResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1018,8 +994,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateJobResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateJobResultJsonUnmarshaller());
@@ -1087,8 +1061,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreatePartitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreatePartitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1146,8 +1118,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateScriptResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateScriptResultJsonUnmarshaller());
@@ -1211,8 +1181,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateSecurityConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1281,8 +1249,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateTableResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateTableResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1348,8 +1314,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateTriggerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateTriggerResultJsonUnmarshaller());
@@ -1418,8 +1382,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateUserDefinedFunctionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateUserDefinedFunctionResultJsonUnmarshaller());
@@ -1477,8 +1439,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteClassifierResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteClassifierResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1534,8 +1494,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteConnectionResultJsonUnmarshaller());
@@ -1596,8 +1554,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteCrawlerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteCrawlerResultJsonUnmarshaller());
@@ -1672,8 +1628,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDatabaseResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDatabaseResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1734,8 +1688,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDevEndpointResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDevEndpointResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1793,8 +1745,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteJobResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteJobResultJsonUnmarshaller());
@@ -1855,8 +1805,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeletePartitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeletePartitionResultJsonUnmarshaller());
@@ -1920,8 +1868,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteResourcePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1982,8 +1928,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteSecurityConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2058,8 +2002,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteTableResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTableResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2120,8 +2062,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteTableVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTableVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2181,8 +2121,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteTriggerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTriggerResultJsonUnmarshaller());
@@ -2245,8 +2183,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteUserDefinedFunctionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteUserDefinedFunctionResultJsonUnmarshaller());
@@ -2303,8 +2239,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetCatalogImportStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2363,8 +2297,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetClassifierResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetClassifierResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2418,8 +2350,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetClassifiersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetClassifiersResultJsonUnmarshaller());
@@ -2481,8 +2411,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetConnectionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2543,8 +2471,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetConnectionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetConnectionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2601,8 +2527,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetCrawlerResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCrawlerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2657,8 +2581,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetCrawlerMetricsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCrawlerMetricsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2712,8 +2634,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetCrawlersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCrawlersResultJsonUnmarshaller());
@@ -2774,8 +2694,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetDataCatalogEncryptionSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2840,8 +2758,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetDatabaseResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDatabaseResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2902,8 +2818,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetDatabasesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDatabasesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2961,8 +2875,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetDataflowGraphResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDataflowGraphResultJsonUnmarshaller());
@@ -3031,8 +2943,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetDevEndpointResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDevEndpointResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3100,8 +3010,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetDevEndpointsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDevEndpointsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3161,8 +3069,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetJobResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetJobResultJsonUnmarshaller());
@@ -3224,8 +3130,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetJobRunResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetJobRunResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3285,8 +3189,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetJobRunsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetJobRunsResultJsonUnmarshaller());
@@ -3348,8 +3250,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetJobsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetJobsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3409,8 +3309,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetMappingResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetMappingResultJsonUnmarshaller());
@@ -3474,8 +3372,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetPartitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetPartitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3538,8 +3434,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetPartitionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetPartitionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3597,8 +3491,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetPlanResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetPlanResultJsonUnmarshaller());
@@ -3659,8 +3551,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetResourcePolicyResultJsonUnmarshaller());
@@ -3723,8 +3613,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetSecurityConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetSecurityConfigurationResultJsonUnmarshaller());
@@ -3786,8 +3674,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetSecurityConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3852,8 +3738,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetTableResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetTableResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3915,8 +3799,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetTableVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetTableVersionResultJsonUnmarshaller());
@@ -3980,8 +3862,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetTableVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetTableVersionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4044,8 +3924,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetTablesResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetTablesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4106,8 +3984,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetTriggerResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetTriggerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4167,8 +4043,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetTriggersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetTriggersResultJsonUnmarshaller());
@@ -4231,8 +4105,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetUserDefinedFunctionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -4298,8 +4170,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetUserDefinedFunctionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetUserDefinedFunctionsResultJsonUnmarshaller());
@@ -4356,8 +4226,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ImportCatalogToGlueResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ImportCatalogToGlueResultJsonUnmarshaller());
@@ -4419,8 +4287,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<PutDataCatalogEncryptionSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -4485,8 +4351,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<PutResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutResourcePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4546,8 +4410,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ResetJobBookmarkResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ResetJobBookmarkResultJsonUnmarshaller());
@@ -4609,8 +4471,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<StartCrawlerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartCrawlerResultJsonUnmarshaller());
@@ -4675,8 +4535,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<StartCrawlerScheduleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartCrawlerScheduleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4740,8 +4598,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<StartJobRunResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartJobRunResultJsonUnmarshaller());
@@ -4808,8 +4664,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<StartTriggerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartTriggerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4869,8 +4723,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<StopCrawlerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopCrawlerResultJsonUnmarshaller());
@@ -4932,8 +4784,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<StopCrawlerScheduleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopCrawlerScheduleResultJsonUnmarshaller());
@@ -4997,8 +4847,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<StopTriggerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopTriggerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5059,8 +4907,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateClassifierResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateClassifierResultJsonUnmarshaller());
@@ -5124,8 +4970,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateConnectionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5188,8 +5032,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateCrawlerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateCrawlerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5251,8 +5093,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateCrawlerScheduleResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -5317,8 +5157,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDatabaseResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDatabaseResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5380,8 +5218,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDevEndpointResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDevEndpointResultJsonUnmarshaller());
@@ -5445,8 +5281,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateJobResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5508,8 +5342,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdatePartitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdatePartitionResultJsonUnmarshaller());
@@ -5577,8 +5409,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateTableResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateTableResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5640,8 +5470,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateTriggerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateTriggerResultJsonUnmarshaller());
@@ -5706,8 +5534,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateUserDefinedFunctionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateUserDefinedFunctionResultJsonUnmarshaller());
@@ -5745,18 +5571,18 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -5766,7 +5592,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -5774,11 +5600,13 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

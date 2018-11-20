@@ -141,6 +141,21 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements
             request.addParameter("TdeCredentialPassword", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getTdeCredentialPassword()));
         }
 
+        if (!restoreDBInstanceToPointInTimeRequest.getVpcSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) restoreDBInstanceToPointInTimeRequest.getVpcSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBInstanceToPointInTimeRequest
+                    .getVpcSecurityGroupIds();
+            int vpcSecurityGroupIdsListIndex = 1;
+
+            for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
+                if (vpcSecurityGroupIdsListValue != null) {
+                    request.addParameter("VpcSecurityGroupIds.VpcSecurityGroupId." + vpcSecurityGroupIdsListIndex,
+                            StringUtils.fromString(vpcSecurityGroupIdsListValue));
+                }
+                vpcSecurityGroupIdsListIndex++;
+            }
+        }
+
         if (restoreDBInstanceToPointInTimeRequest.getDomain() != null) {
             request.addParameter("Domain", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getDomain()));
         }

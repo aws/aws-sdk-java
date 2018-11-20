@@ -210,6 +210,15 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private String dBSubnetGroupName;
     /**
      * <p>
+     * A list of EC2 VPC security groups to associate with the Read Replica.
+     * </p>
+     * <p>
+     * Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIds;
+    /**
+     * <p>
      * Specifies the storage type to be associated with the Read Replica.
      * </p>
      * <p>
@@ -1712,6 +1721,99 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     public CreateDBInstanceReadReplicaRequest withDBSubnetGroupName(String dBSubnetGroupName) {
         setDBSubnetGroupName(dBSubnetGroupName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of EC2 VPC security groups to associate with the Read Replica.
+     * </p>
+     * <p>
+     * Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * </p>
+     * 
+     * @return A list of EC2 VPC security groups to associate with the Read Replica. </p>
+     *         <p>
+     *         Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     */
+
+    public java.util.List<String> getVpcSecurityGroupIds() {
+        if (vpcSecurityGroupIds == null) {
+            vpcSecurityGroupIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return vpcSecurityGroupIds;
+    }
+
+    /**
+     * <p>
+     * A list of EC2 VPC security groups to associate with the Read Replica.
+     * </p>
+     * <p>
+     * Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * </p>
+     * 
+     * @param vpcSecurityGroupIds
+     *        A list of EC2 VPC security groups to associate with the Read Replica. </p>
+     *        <p>
+     *        Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     */
+
+    public void setVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
+        if (vpcSecurityGroupIds == null) {
+            this.vpcSecurityGroupIds = null;
+            return;
+        }
+
+        this.vpcSecurityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(vpcSecurityGroupIds);
+    }
+
+    /**
+     * <p>
+     * A list of EC2 VPC security groups to associate with the Read Replica.
+     * </p>
+     * <p>
+     * Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcSecurityGroupIds(java.util.Collection)} or {@link #withVpcSecurityGroupIds(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param vpcSecurityGroupIds
+     *        A list of EC2 VPC security groups to associate with the Read Replica. </p>
+     *        <p>
+     *        Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withVpcSecurityGroupIds(String... vpcSecurityGroupIds) {
+        if (this.vpcSecurityGroupIds == null) {
+            setVpcSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(vpcSecurityGroupIds.length));
+        }
+        for (String ele : vpcSecurityGroupIds) {
+            this.vpcSecurityGroupIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of EC2 VPC security groups to associate with the Read Replica.
+     * </p>
+     * <p>
+     * Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * </p>
+     * 
+     * @param vpcSecurityGroupIds
+     *        A list of EC2 VPC security groups to associate with the Read Replica. </p>
+     *        <p>
+     *        Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
+        setVpcSecurityGroupIds(vpcSecurityGroupIds);
         return this;
     }
 
@@ -3285,6 +3387,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             sb.append("Tags: ").append(getTags()).append(",");
         if (getDBSubnetGroupName() != null)
             sb.append("DBSubnetGroupName: ").append(getDBSubnetGroupName()).append(",");
+        if (getVpcSecurityGroupIds() != null)
+            sb.append("VpcSecurityGroupIds: ").append(getVpcSecurityGroupIds()).append(",");
         if (getStorageType() != null)
             sb.append("StorageType: ").append(getStorageType()).append(",");
         if (getCopyTagsToSnapshot() != null)
@@ -3377,6 +3481,10 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getDBSubnetGroupName() != null && other.getDBSubnetGroupName().equals(this.getDBSubnetGroupName()) == false)
             return false;
+        if (other.getVpcSecurityGroupIds() == null ^ this.getVpcSecurityGroupIds() == null)
+            return false;
+        if (other.getVpcSecurityGroupIds() != null && other.getVpcSecurityGroupIds().equals(this.getVpcSecurityGroupIds()) == false)
+            return false;
         if (other.getStorageType() == null ^ this.getStorageType() == null)
             return false;
         if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
@@ -3459,6 +3567,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getDBSubnetGroupName() == null) ? 0 : getDBSubnetGroupName().hashCode());
+        hashCode = prime * hashCode + ((getVpcSecurityGroupIds() == null) ? 0 : getVpcSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
         hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
         hashCode = prime * hashCode + ((getMonitoringInterval() == null) ? 0 : getMonitoringInterval().hashCode());

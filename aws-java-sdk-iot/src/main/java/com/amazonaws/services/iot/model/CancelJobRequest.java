@@ -28,6 +28,12 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String jobId;
     /**
      * <p>
+     * (Optional)A reason code string that explains why the job was canceled.
+     * </p>
+     */
+    private String reasonCode;
+    /**
+     * <p>
      * An optional comment string describing why the job was canceled.
      * </p>
      */
@@ -82,6 +88,46 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     public CancelJobRequest withJobId(String jobId) {
         setJobId(jobId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Optional)A reason code string that explains why the job was canceled.
+     * </p>
+     * 
+     * @param reasonCode
+     *        (Optional)A reason code string that explains why the job was canceled.
+     */
+
+    public void setReasonCode(String reasonCode) {
+        this.reasonCode = reasonCode;
+    }
+
+    /**
+     * <p>
+     * (Optional)A reason code string that explains why the job was canceled.
+     * </p>
+     * 
+     * @return (Optional)A reason code string that explains why the job was canceled.
+     */
+
+    public String getReasonCode() {
+        return this.reasonCode;
+    }
+
+    /**
+     * <p>
+     * (Optional)A reason code string that explains why the job was canceled.
+     * </p>
+     * 
+     * @param reasonCode
+     *        (Optional)A reason code string that explains why the job was canceled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CancelJobRequest withReasonCode(String reasonCode) {
+        setReasonCode(reasonCode);
         return this;
     }
 
@@ -234,6 +280,8 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         sb.append("{");
         if (getJobId() != null)
             sb.append("JobId: ").append(getJobId()).append(",");
+        if (getReasonCode() != null)
+            sb.append("ReasonCode: ").append(getReasonCode()).append(",");
         if (getComment() != null)
             sb.append("Comment: ").append(getComment()).append(",");
         if (getForce() != null)
@@ -256,6 +304,10 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
             return false;
+        if (other.getReasonCode() == null ^ this.getReasonCode() == null)
+            return false;
+        if (other.getReasonCode() != null && other.getReasonCode().equals(this.getReasonCode()) == false)
+            return false;
         if (other.getComment() == null ^ this.getComment() == null)
             return false;
         if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
@@ -273,6 +325,7 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
+        hashCode = prime * hashCode + ((getReasonCode() == null) ? 0 : getReasonCode().hashCode());
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
         hashCode = prime * hashCode + ((getForce() == null) ? 0 : getForce().hashCode());
         return hashCode;

@@ -60,6 +60,10 @@ public class ContainerOverridesJsonUnmarshaller implements Unmarshaller<Containe
                     context.nextToken();
                     containerOverrides.setCommand(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("instanceType", targetDepth)) {
+                    context.nextToken();
+                    containerOverrides.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("environment", targetDepth)) {
                     context.nextToken();
                     containerOverrides.setEnvironment(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance()).unmarshall(context));

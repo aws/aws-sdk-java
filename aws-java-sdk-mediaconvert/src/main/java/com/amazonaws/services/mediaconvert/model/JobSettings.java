@@ -38,6 +38,11 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
      * These inputs will be concantenated together to create the output.
      */
     private java.util.List<Input> inputs;
+    /**
+     * Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in
+     * all output groups.
+     */
+    private MotionImageInserter motionImageInserter;
 
     private NielsenConfiguration nielsenConfiguration;
     /**
@@ -196,6 +201,46 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
 
     public JobSettings withInputs(java.util.Collection<Input> inputs) {
         setInputs(inputs);
+        return this;
+    }
+
+    /**
+     * Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in
+     * all output groups.
+     * 
+     * @param motionImageInserter
+     *        Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all
+     *        outputs in all output groups.
+     */
+
+    public void setMotionImageInserter(MotionImageInserter motionImageInserter) {
+        this.motionImageInserter = motionImageInserter;
+    }
+
+    /**
+     * Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in
+     * all output groups.
+     * 
+     * @return Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all
+     *         outputs in all output groups.
+     */
+
+    public MotionImageInserter getMotionImageInserter() {
+        return this.motionImageInserter;
+    }
+
+    /**
+     * Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in
+     * all output groups.
+     * 
+     * @param motionImageInserter
+     *        Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all
+     *        outputs in all output groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobSettings withMotionImageInserter(MotionImageInserter motionImageInserter) {
+        setMotionImageInserter(motionImageInserter);
         return this;
     }
 
@@ -412,6 +457,8 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
             sb.append("AvailBlanking: ").append(getAvailBlanking()).append(",");
         if (getInputs() != null)
             sb.append("Inputs: ").append(getInputs()).append(",");
+        if (getMotionImageInserter() != null)
+            sb.append("MotionImageInserter: ").append(getMotionImageInserter()).append(",");
         if (getNielsenConfiguration() != null)
             sb.append("NielsenConfiguration: ").append(getNielsenConfiguration()).append(",");
         if (getOutputGroups() != null)
@@ -446,6 +493,10 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInputs() != null && other.getInputs().equals(this.getInputs()) == false)
             return false;
+        if (other.getMotionImageInserter() == null ^ this.getMotionImageInserter() == null)
+            return false;
+        if (other.getMotionImageInserter() != null && other.getMotionImageInserter().equals(this.getMotionImageInserter()) == false)
+            return false;
         if (other.getNielsenConfiguration() == null ^ this.getNielsenConfiguration() == null)
             return false;
         if (other.getNielsenConfiguration() != null && other.getNielsenConfiguration().equals(this.getNielsenConfiguration()) == false)
@@ -473,6 +524,7 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAdAvailOffset() == null) ? 0 : getAdAvailOffset().hashCode());
         hashCode = prime * hashCode + ((getAvailBlanking() == null) ? 0 : getAvailBlanking().hashCode());
         hashCode = prime * hashCode + ((getInputs() == null) ? 0 : getInputs().hashCode());
+        hashCode = prime * hashCode + ((getMotionImageInserter() == null) ? 0 : getMotionImageInserter().hashCode());
         hashCode = prime * hashCode + ((getNielsenConfiguration() == null) ? 0 : getNielsenConfiguration().hashCode());
         hashCode = prime * hashCode + ((getOutputGroups() == null) ? 0 : getOutputGroups().hashCode());
         hashCode = prime * hashCode + ((getTimecodeConfig() == null) ? 0 : getTimecodeConfig().hashCode());

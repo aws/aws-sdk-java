@@ -15,7 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Type of Caption output, including Burn-In, Embedded, SCC, SRT, TTML, WebVTT, DVB-Sub, Teletext.
+ * Type of Caption output, including Burn-In, Embedded (with or without SCTE20), SCC, SMI, SRT, TTML, WebVTT, DVB-Sub,
+ * Teletext.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum CaptionDestinationType {
@@ -23,8 +24,11 @@ public enum CaptionDestinationType {
     BURN_IN("BURN_IN"),
     DVB_SUB("DVB_SUB"),
     EMBEDDED("EMBEDDED"),
+    EMBEDDED_PLUS_SCTE20("EMBEDDED_PLUS_SCTE20"),
+    SCTE20_PLUS_EMBEDDED("SCTE20_PLUS_EMBEDDED"),
     SCC("SCC"),
     SRT("SRT"),
+    SMI("SMI"),
     TELETEXT("TELETEXT"),
     TTML("TTML"),
     WEBVTT("WEBVTT");

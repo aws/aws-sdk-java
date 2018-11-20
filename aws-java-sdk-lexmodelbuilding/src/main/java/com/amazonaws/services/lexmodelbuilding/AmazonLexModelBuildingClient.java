@@ -219,8 +219,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateBotVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateBotVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -302,8 +300,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateIntentVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateIntentVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -384,8 +380,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateSlotTypeVersionResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -475,8 +469,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteBotResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteBotResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -561,8 +553,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteBotAliasResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteBotAliasResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -629,8 +619,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteBotChannelAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -712,8 +700,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteBotVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteBotVersionResultJsonUnmarshaller());
@@ -808,8 +794,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteIntentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteIntentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -890,8 +874,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteIntentVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteIntentVersionResultJsonUnmarshaller());
@@ -986,8 +968,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteSlotTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteSlotTypeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1069,8 +1049,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteSlotTypeVersionResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DeleteSlotTypeVersionResultJsonUnmarshaller());
@@ -1144,8 +1122,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteUtterancesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteUtterancesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1209,8 +1185,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetBotResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetBotResultJsonUnmarshaller());
@@ -1277,8 +1251,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetBotAliasResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetBotAliasResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1340,8 +1312,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetBotAliasesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetBotAliasesResultJsonUnmarshaller());
@@ -1408,8 +1378,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetBotChannelAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetBotChannelAssociationResultJsonUnmarshaller());
@@ -1474,8 +1442,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetBotChannelAssociationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1550,8 +1516,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetBotVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetBotVersionsResultJsonUnmarshaller());
@@ -1631,8 +1595,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetBotsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetBotsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1697,8 +1659,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetBuiltinIntentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetBuiltinIntentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1760,8 +1720,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetBuiltinIntentsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetBuiltinIntentsResultJsonUnmarshaller());
@@ -1830,8 +1788,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetBuiltinSlotTypesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetBuiltinSlotTypesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1893,8 +1849,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetExportResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetExportResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1955,8 +1909,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetImportResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetImportResultJsonUnmarshaller());
@@ -2021,8 +1973,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetIntentResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetIntentResultJsonUnmarshaller());
@@ -2097,8 +2047,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetIntentVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetIntentVersionsResultJsonUnmarshaller());
@@ -2178,8 +2126,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetIntentsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetIntentsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2244,8 +2190,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetSlotTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSlotTypeResultJsonUnmarshaller());
@@ -2320,8 +2264,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetSlotTypeVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSlotTypeVersionsResultJsonUnmarshaller());
@@ -2400,8 +2342,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetSlotTypesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSlotTypesResultJsonUnmarshaller());
@@ -2483,8 +2423,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetUtterancesViewResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetUtterancesViewResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2564,8 +2502,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<PutBotResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutBotResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2634,8 +2570,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<PutBotAliasResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutBotAliasResultJsonUnmarshaller());
@@ -2770,8 +2704,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<PutIntentResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutIntentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2850,8 +2782,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<PutSlotTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutSlotTypeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2911,8 +2841,6 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<StartImportResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartImportResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2949,18 +2877,18 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -2970,7 +2898,7 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -2978,11 +2906,13 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

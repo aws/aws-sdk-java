@@ -84,6 +84,10 @@ public class JobSummaryJsonUnmarshaller implements Unmarshaller<JobSummary, Json
                     context.nextToken();
                     jobSummary.setArrayProperties(ArrayPropertiesSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("nodeProperties", targetDepth)) {
+                    context.nextToken();
+                    jobSummary.setNodeProperties(NodePropertiesSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

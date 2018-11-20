@@ -43,6 +43,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public AddThingToBillingGroupResult addThingToBillingGroup(AddThingToBillingGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AddThingToThingGroupResult addThingToThingGroup(AddThingToThingGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -104,7 +109,17 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public CreateBillingGroupResult createBillingGroup(CreateBillingGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateCertificateFromCsrResult createCertificateFromCsr(CreateCertificateFromCsrRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateDynamicThingGroupResult createDynamicThingGroup(CreateDynamicThingGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -184,12 +199,22 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public DeleteBillingGroupResult deleteBillingGroup(DeleteBillingGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteCACertificateResult deleteCACertificate(DeleteCACertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteCertificateResult deleteCertificate(DeleteCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDynamicThingGroupResult deleteDynamicThingGroup(DeleteDynamicThingGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -285,6 +310,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public DescribeAuthorizerResult describeAuthorizer(DescribeAuthorizerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeBillingGroupResult describeBillingGroup(DescribeBillingGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -475,6 +505,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public ListBillingGroupsResult listBillingGroups(ListBillingGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListCACertificatesResult listCACertificates(ListCACertificatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -572,6 +607,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTargetsForPolicyResult listTargetsForPolicy(ListTargetsForPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -617,6 +657,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public ListThingsInBillingGroupResult listThingsInBillingGroup(ListThingsInBillingGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListThingsInThingGroupResult listThingsInThingGroup(ListThingsInThingGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -653,6 +698,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public RejectCertificateTransferResult rejectCertificateTransfer(RejectCertificateTransferRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveThingFromBillingGroupResult removeThingFromBillingGroup(RemoveThingFromBillingGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -712,6 +762,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TestAuthorizationResult testAuthorization(TestAuthorizationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -727,12 +782,22 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateAccountAuditConfigurationResult updateAccountAuditConfiguration(UpdateAccountAuditConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public UpdateAuthorizerResult updateAuthorizer(UpdateAuthorizerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateBillingGroupResult updateBillingGroup(UpdateBillingGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -747,12 +812,22 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public UpdateDynamicThingGroupResult updateDynamicThingGroup(UpdateDynamicThingGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateEventConfigurationsResult updateEventConfigurations(UpdateEventConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public UpdateIndexingConfigurationResult updateIndexingConfiguration(UpdateIndexingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateJobResult updateJob(UpdateJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

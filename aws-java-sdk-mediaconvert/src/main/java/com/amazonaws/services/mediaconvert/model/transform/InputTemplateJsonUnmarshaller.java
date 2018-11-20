@@ -79,6 +79,10 @@ public class InputTemplateJsonUnmarshaller implements Unmarshaller<InputTemplate
                     context.nextToken();
                     inputTemplate.setFilterStrength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("imageInserter", targetDepth)) {
+                    context.nextToken();
+                    inputTemplate.setImageInserter(ImageInserterJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("inputClippings", targetDepth)) {
                     context.nextToken();
                     inputTemplate.setInputClippings(new ListUnmarshaller<InputClipping>(InputClippingJsonUnmarshaller.getInstance()).unmarshall(context));

@@ -50,6 +50,12 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * </p>
      */
     private String zoneName;
+    /**
+     * <p>
+     * The ID of the Availability Zone.
+     * </p>
+     */
+    private String zoneId;
 
     /**
      * <p>
@@ -278,6 +284,46 @@ public class AvailabilityZone implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the Availability Zone.
+     * </p>
+     * 
+     * @param zoneId
+     *        The ID of the Availability Zone.
+     */
+
+    public void setZoneId(String zoneId) {
+        this.zoneId = zoneId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Availability Zone.
+     * </p>
+     * 
+     * @return The ID of the Availability Zone.
+     */
+
+    public String getZoneId() {
+        return this.zoneId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Availability Zone.
+     * </p>
+     * 
+     * @param zoneId
+     *        The ID of the Availability Zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AvailabilityZone withZoneId(String zoneId) {
+        setZoneId(zoneId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -295,7 +341,9 @@ public class AvailabilityZone implements Serializable, Cloneable {
         if (getRegionName() != null)
             sb.append("RegionName: ").append(getRegionName()).append(",");
         if (getZoneName() != null)
-            sb.append("ZoneName: ").append(getZoneName());
+            sb.append("ZoneName: ").append(getZoneName()).append(",");
+        if (getZoneId() != null)
+            sb.append("ZoneId: ").append(getZoneId());
         sb.append("}");
         return sb.toString();
     }
@@ -326,6 +374,10 @@ public class AvailabilityZone implements Serializable, Cloneable {
             return false;
         if (other.getZoneName() != null && other.getZoneName().equals(this.getZoneName()) == false)
             return false;
+        if (other.getZoneId() == null ^ this.getZoneId() == null)
+            return false;
+        if (other.getZoneId() != null && other.getZoneId().equals(this.getZoneId()) == false)
+            return false;
         return true;
     }
 
@@ -338,6 +390,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMessages() == null) ? 0 : getMessages().hashCode());
         hashCode = prime * hashCode + ((getRegionName() == null) ? 0 : getRegionName().hashCode());
         hashCode = prime * hashCode + ((getZoneName() == null) ? 0 : getZoneName().hashCode());
+        hashCode = prime * hashCode + ((getZoneId() == null) ? 0 : getZoneId().hashCode());
         return hashCode;
     }
 

@@ -351,8 +351,6 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<BatchDeleteAttributesResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<BatchDeleteAttributesResult>(
                     new BatchDeleteAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -464,8 +462,6 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<BatchPutAttributesResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<BatchPutAttributesResult>(
                     new BatchPutAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -531,8 +527,6 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateDomainResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<CreateDomainResult>(
                     new CreateDomainResultStaxUnmarshaller());
@@ -602,8 +596,6 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteAttributesResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<DeleteAttributesResult>(
                     new DeleteAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -656,8 +648,6 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteDomainResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<DeleteDomainResult>(
                     new DeleteDomainResultStaxUnmarshaller());
@@ -713,8 +703,6 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DomainMetadataResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<DomainMetadataResult>(
                     new DomainMetadataResultStaxUnmarshaller());
@@ -777,8 +765,6 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetAttributesResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<GetAttributesResult>(
                     new GetAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -836,8 +822,6 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListDomainsResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<ListDomainsResult>(
                     new ListDomainsResultStaxUnmarshaller());
@@ -943,8 +927,6 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<PutAttributesResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<PutAttributesResult>(
                     new PutAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1024,8 +1006,6 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<SelectResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<SelectResult>(
                     new SelectResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1066,18 +1046,18 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -1087,7 +1067,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -1095,11 +1075,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

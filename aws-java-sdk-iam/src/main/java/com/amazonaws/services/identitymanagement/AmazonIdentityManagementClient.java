@@ -426,8 +426,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<AddClientIDToOpenIDConnectProviderResult> responseHandler = new StaxResponseHandler<AddClientIDToOpenIDConnectProviderResult>(
                     new AddClientIDToOpenIDConnectProviderResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -513,8 +511,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<AddRoleToInstanceProfileResult> responseHandler = new StaxResponseHandler<AddRoleToInstanceProfileResult>(
                     new AddRoleToInstanceProfileResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -574,8 +570,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<AddUserToGroupResult> responseHandler = new StaxResponseHandler<AddUserToGroupResult>(
                     new AddUserToGroupResultStaxUnmarshaller());
@@ -650,8 +644,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<AttachGroupPolicyResult> responseHandler = new StaxResponseHandler<AttachGroupPolicyResult>(
                     new AttachGroupPolicyResultStaxUnmarshaller());
@@ -735,8 +727,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<AttachRolePolicyResult> responseHandler = new StaxResponseHandler<AttachRolePolicyResult>(
                     new AttachRolePolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -810,8 +800,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<AttachUserPolicyResult> responseHandler = new StaxResponseHandler<AttachUserPolicyResult>(
                     new AttachUserPolicyResultStaxUnmarshaller());
@@ -887,8 +875,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ChangePasswordResult> responseHandler = new StaxResponseHandler<ChangePasswordResult>(
                     new ChangePasswordResultStaxUnmarshaller());
@@ -968,8 +954,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CreateAccessKeyResult> responseHandler = new StaxResponseHandler<CreateAccessKeyResult>(
                     new CreateAccessKeyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1035,8 +1019,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateAccountAliasResult> responseHandler = new StaxResponseHandler<CreateAccountAliasResult>(
                     new CreateAccountAliasResultStaxUnmarshaller());
@@ -1105,8 +1087,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CreateGroupResult> responseHandler = new StaxResponseHandler<CreateGroupResult>(new CreateGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1170,8 +1150,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateInstanceProfileResult> responseHandler = new StaxResponseHandler<CreateInstanceProfileResult>(
                     new CreateInstanceProfileResultStaxUnmarshaller());
@@ -1240,8 +1218,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateLoginProfileResult> responseHandler = new StaxResponseHandler<CreateLoginProfileResult>(
                     new CreateLoginProfileResultStaxUnmarshaller());
@@ -1339,8 +1315,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CreateOpenIDConnectProviderResult> responseHandler = new StaxResponseHandler<CreateOpenIDConnectProviderResult>(
                     new CreateOpenIDConnectProviderResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1415,8 +1389,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreatePolicyResult> responseHandler = new StaxResponseHandler<CreatePolicyResult>(new CreatePolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1493,8 +1465,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CreatePolicyVersionResult> responseHandler = new StaxResponseHandler<CreatePolicyVersionResult>(
                     new CreatePolicyVersionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1565,8 +1535,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateRoleResult> responseHandler = new StaxResponseHandler<CreateRoleResult>(new CreateRoleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1653,8 +1621,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CreateSAMLProviderResult> responseHandler = new StaxResponseHandler<CreateSAMLProviderResult>(
                     new CreateSAMLProviderResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1725,8 +1691,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateServiceLinkedRoleResult> responseHandler = new StaxResponseHandler<CreateServiceLinkedRoleResult>(
                     new CreateServiceLinkedRoleResultStaxUnmarshaller());
@@ -1804,8 +1768,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CreateServiceSpecificCredentialResult> responseHandler = new StaxResponseHandler<CreateServiceSpecificCredentialResult>(
                     new CreateServiceSpecificCredentialResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1877,8 +1839,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateUserResult> responseHandler = new StaxResponseHandler<CreateUserResult>(new CreateUserResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1953,8 +1913,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CreateVirtualMFADeviceResult> responseHandler = new StaxResponseHandler<CreateVirtualMFADeviceResult>(
                     new CreateVirtualMFADeviceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2025,8 +1983,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeactivateMFADeviceResult> responseHandler = new StaxResponseHandler<DeactivateMFADeviceResult>(
                     new DeactivateMFADeviceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2092,8 +2048,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteAccessKeyResult> responseHandler = new StaxResponseHandler<DeleteAccessKeyResult>(
                     new DeleteAccessKeyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2156,8 +2110,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteAccountAliasResult> responseHandler = new StaxResponseHandler<DeleteAccountAliasResult>(
                     new DeleteAccountAliasResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2217,8 +2169,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteAccountPasswordPolicyResult> responseHandler = new StaxResponseHandler<DeleteAccountPasswordPolicyResult>(
                     new DeleteAccountPasswordPolicyResultStaxUnmarshaller());
@@ -2288,8 +2238,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteGroupResult> responseHandler = new StaxResponseHandler<DeleteGroupResult>(new DeleteGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2354,8 +2302,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteGroupPolicyResult> responseHandler = new StaxResponseHandler<DeleteGroupPolicyResult>(
                     new DeleteGroupPolicyResultStaxUnmarshaller());
@@ -2431,8 +2377,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteInstanceProfileResult> responseHandler = new StaxResponseHandler<DeleteInstanceProfileResult>(
                     new DeleteInstanceProfileResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2505,8 +2449,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteLoginProfileResult> responseHandler = new StaxResponseHandler<DeleteLoginProfileResult>(
                     new DeleteLoginProfileResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2573,8 +2515,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteOpenIDConnectProviderResult> responseHandler = new StaxResponseHandler<DeleteOpenIDConnectProviderResult>(
                     new DeleteOpenIDConnectProviderResultStaxUnmarshaller());
@@ -2672,8 +2612,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeletePolicyResult> responseHandler = new StaxResponseHandler<DeletePolicyResult>(new DeletePolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2747,8 +2685,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeletePolicyVersionResult> responseHandler = new StaxResponseHandler<DeletePolicyVersionResult>(
                     new DeletePolicyVersionResultStaxUnmarshaller());
@@ -2828,8 +2764,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteRoleResult> responseHandler = new StaxResponseHandler<DeleteRoleResult>(new DeleteRoleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2895,8 +2829,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteRolePermissionsBoundaryResult> responseHandler = new StaxResponseHandler<DeleteRolePermissionsBoundaryResult>(
                     new DeleteRolePermissionsBoundaryResultStaxUnmarshaller());
@@ -2967,8 +2899,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteRolePolicyResult> responseHandler = new StaxResponseHandler<DeleteRolePolicyResult>(
                     new DeleteRolePolicyResultStaxUnmarshaller());
@@ -3043,8 +2973,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteSAMLProviderResult> responseHandler = new StaxResponseHandler<DeleteSAMLProviderResult>(
                     new DeleteSAMLProviderResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3105,8 +3033,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteSSHPublicKeyResult> responseHandler = new StaxResponseHandler<DeleteSSHPublicKeyResult>(
                     new DeleteSSHPublicKeyResultStaxUnmarshaller());
@@ -3188,8 +3114,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteServerCertificateResult> responseHandler = new StaxResponseHandler<DeleteServerCertificateResult>(
                     new DeleteServerCertificateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3267,8 +3191,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteServiceLinkedRoleResult> responseHandler = new StaxResponseHandler<DeleteServiceLinkedRoleResult>(
                     new DeleteServiceLinkedRoleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3324,8 +3246,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteServiceSpecificCredentialResult> responseHandler = new StaxResponseHandler<DeleteServiceSpecificCredentialResult>(
                     new DeleteServiceSpecificCredentialResultStaxUnmarshaller());
@@ -3391,8 +3311,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteSigningCertificateResult> responseHandler = new StaxResponseHandler<DeleteSigningCertificateResult>(
                     new DeleteSigningCertificateResultStaxUnmarshaller());
@@ -3461,8 +3379,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteUserResult> responseHandler = new StaxResponseHandler<DeleteUserResult>(new DeleteUserResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -3524,8 +3440,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteUserPermissionsBoundaryResult> responseHandler = new StaxResponseHandler<DeleteUserPermissionsBoundaryResult>(
                     new DeleteUserPermissionsBoundaryResultStaxUnmarshaller());
@@ -3592,8 +3506,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteUserPolicyResult> responseHandler = new StaxResponseHandler<DeleteUserPolicyResult>(
                     new DeleteUserPolicyResultStaxUnmarshaller());
@@ -3664,8 +3576,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteVirtualMFADeviceResult> responseHandler = new StaxResponseHandler<DeleteVirtualMFADeviceResult>(
                     new DeleteVirtualMFADeviceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3733,8 +3643,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DetachGroupPolicyResult> responseHandler = new StaxResponseHandler<DetachGroupPolicyResult>(
                     new DetachGroupPolicyResultStaxUnmarshaller());
@@ -3808,8 +3716,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DetachRolePolicyResult> responseHandler = new StaxResponseHandler<DetachRolePolicyResult>(
                     new DetachRolePolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3877,8 +3783,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DetachUserPolicyResult> responseHandler = new StaxResponseHandler<DetachUserPolicyResult>(
                     new DetachUserPolicyResultStaxUnmarshaller());
@@ -3950,8 +3854,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<EnableMFADeviceResult> responseHandler = new StaxResponseHandler<EnableMFADeviceResult>(
                     new EnableMFADeviceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4010,8 +3912,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GenerateCredentialReportResult> responseHandler = new StaxResponseHandler<GenerateCredentialReportResult>(
                     new GenerateCredentialReportResultStaxUnmarshaller());
@@ -4074,8 +3974,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetAccessKeyLastUsedResult> responseHandler = new StaxResponseHandler<GetAccessKeyLastUsedResult>(
                     new GetAccessKeyLastUsedResultStaxUnmarshaller());
@@ -4145,8 +4043,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetAccountAuthorizationDetailsResult> responseHandler = new StaxResponseHandler<GetAccountAuthorizationDetailsResult>(
                     new GetAccountAuthorizationDetailsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4211,8 +4107,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetAccountPasswordPolicyResult> responseHandler = new StaxResponseHandler<GetAccountPasswordPolicyResult>(
                     new GetAccountPasswordPolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4276,8 +4170,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetAccountSummaryResult> responseHandler = new StaxResponseHandler<GetAccountSummaryResult>(
                     new GetAccountSummaryResultStaxUnmarshaller());
@@ -4346,8 +4238,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetContextKeysForCustomPolicyResult> responseHandler = new StaxResponseHandler<GetContextKeysForCustomPolicyResult>(
                     new GetContextKeysForCustomPolicyResultStaxUnmarshaller());
@@ -4424,8 +4314,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetContextKeysForPrincipalPolicyResult> responseHandler = new StaxResponseHandler<GetContextKeysForPrincipalPolicyResult>(
                     new GetContextKeysForPrincipalPolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4492,8 +4380,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetCredentialReportResult> responseHandler = new StaxResponseHandler<GetCredentialReportResult>(
                     new GetCredentialReportResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4556,8 +4442,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetGroupResult> responseHandler = new StaxResponseHandler<GetGroupResult>(new GetGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4633,8 +4517,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetGroupPolicyResult> responseHandler = new StaxResponseHandler<GetGroupPolicyResult>(
                     new GetGroupPolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4695,8 +4577,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetInstanceProfileResult> responseHandler = new StaxResponseHandler<GetInstanceProfileResult>(
                     new GetInstanceProfileResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4754,8 +4634,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetLoginProfileResult> responseHandler = new StaxResponseHandler<GetLoginProfileResult>(
                     new GetLoginProfileResultStaxUnmarshaller());
@@ -4815,8 +4693,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetOpenIDConnectProviderResult> responseHandler = new StaxResponseHandler<GetOpenIDConnectProviderResult>(
                     new GetOpenIDConnectProviderResultStaxUnmarshaller());
@@ -4890,8 +4766,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetPolicyResult> responseHandler = new StaxResponseHandler<GetPolicyResult>(new GetPolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4977,8 +4851,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetPolicyVersionResult> responseHandler = new StaxResponseHandler<GetPolicyVersionResult>(
                     new GetPolicyVersionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5045,8 +4917,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetRoleResult> responseHandler = new StaxResponseHandler<GetRoleResult>(new GetRoleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5127,8 +4997,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetRolePolicyResult> responseHandler = new StaxResponseHandler<GetRolePolicyResult>(new GetRolePolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -5194,8 +5062,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetSAMLProviderResult> responseHandler = new StaxResponseHandler<GetSAMLProviderResult>(
                     new GetSAMLProviderResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5259,8 +5125,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetSSHPublicKeyResult> responseHandler = new StaxResponseHandler<GetSSHPublicKeyResult>(
                     new GetSSHPublicKeyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5323,8 +5187,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetServerCertificateResult> responseHandler = new StaxResponseHandler<GetServerCertificateResult>(
                     new GetServerCertificateResultStaxUnmarshaller());
@@ -5390,8 +5252,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetServiceLinkedRoleDeletionStatusResult> responseHandler = new StaxResponseHandler<GetServiceLinkedRoleDeletionStatusResult>(
                     new GetServiceLinkedRoleDeletionStatusResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5452,8 +5312,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetUserResult> responseHandler = new StaxResponseHandler<GetUserResult>(new GetUserResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5534,8 +5392,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetUserPolicyResult> responseHandler = new StaxResponseHandler<GetUserPolicyResult>(new GetUserPolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -5609,8 +5465,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListAccessKeysResult> responseHandler = new StaxResponseHandler<ListAccessKeysResult>(
                     new ListAccessKeysResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5671,8 +5525,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListAccountAliasesResult> responseHandler = new StaxResponseHandler<ListAccountAliasesResult>(
                     new ListAccountAliasesResultStaxUnmarshaller());
@@ -5750,8 +5602,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListAttachedGroupPoliciesResult> responseHandler = new StaxResponseHandler<ListAttachedGroupPoliciesResult>(
                     new ListAttachedGroupPoliciesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5822,8 +5672,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListAttachedRolePoliciesResult> responseHandler = new StaxResponseHandler<ListAttachedRolePoliciesResult>(
                     new ListAttachedRolePoliciesResultStaxUnmarshaller());
@@ -5896,8 +5744,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListAttachedUserPoliciesResult> responseHandler = new StaxResponseHandler<ListAttachedUserPoliciesResult>(
                     new ListAttachedUserPoliciesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5964,8 +5810,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListEntitiesForPolicyResult> responseHandler = new StaxResponseHandler<ListEntitiesForPolicyResult>(
                     new ListEntitiesForPolicyResultStaxUnmarshaller());
@@ -6034,8 +5878,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListGroupPoliciesResult> responseHandler = new StaxResponseHandler<ListGroupPoliciesResult>(
                     new ListGroupPoliciesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6092,8 +5934,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListGroupsResult> responseHandler = new StaxResponseHandler<ListGroupsResult>(new ListGroupsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6159,8 +5999,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListGroupsForUserResult> responseHandler = new StaxResponseHandler<ListGroupsForUserResult>(
                     new ListGroupsForUserResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6219,8 +6057,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListInstanceProfilesResult> responseHandler = new StaxResponseHandler<ListInstanceProfilesResult>(
                     new ListInstanceProfilesResultStaxUnmarshaller());
@@ -6289,8 +6125,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListInstanceProfilesForRoleResult> responseHandler = new StaxResponseHandler<ListInstanceProfilesForRoleResult>(
                     new ListInstanceProfilesForRoleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6353,8 +6187,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListMFADevicesResult> responseHandler = new StaxResponseHandler<ListMFADevicesResult>(
                     new ListMFADevicesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6413,8 +6245,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListOpenIDConnectProvidersResult> responseHandler = new StaxResponseHandler<ListOpenIDConnectProvidersResult>(
                     new ListOpenIDConnectProvidersResultStaxUnmarshaller());
@@ -6490,8 +6320,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListPoliciesResult> responseHandler = new StaxResponseHandler<ListPoliciesResult>(new ListPoliciesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -6561,8 +6389,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListPolicyVersionsResult> responseHandler = new StaxResponseHandler<ListPolicyVersionsResult>(
                     new ListPolicyVersionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6630,8 +6456,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListRolePoliciesResult> responseHandler = new StaxResponseHandler<ListRolePoliciesResult>(
                     new ListRolePoliciesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6691,8 +6515,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListRoleTagsResult> responseHandler = new StaxResponseHandler<ListRoleTagsResult>(new ListRoleTagsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -6750,8 +6572,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListRolesResult> responseHandler = new StaxResponseHandler<ListRolesResult>(new ListRolesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6816,8 +6636,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListSAMLProvidersResult> responseHandler = new StaxResponseHandler<ListSAMLProvidersResult>(
                     new ListSAMLProvidersResultStaxUnmarshaller());
@@ -6890,8 +6708,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListSSHPublicKeysResult> responseHandler = new StaxResponseHandler<ListSSHPublicKeysResult>(
                     new ListSSHPublicKeysResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6961,8 +6777,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListServerCertificatesResult> responseHandler = new StaxResponseHandler<ListServerCertificatesResult>(
                     new ListServerCertificatesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7029,8 +6843,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListServiceSpecificCredentialsResult> responseHandler = new StaxResponseHandler<ListServiceSpecificCredentialsResult>(
                     new ListServiceSpecificCredentialsResultStaxUnmarshaller());
@@ -7099,8 +6911,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListSigningCertificatesResult> responseHandler = new StaxResponseHandler<ListSigningCertificatesResult>(
                     new ListSigningCertificatesResultStaxUnmarshaller());
@@ -7174,8 +6984,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListUserPoliciesResult> responseHandler = new StaxResponseHandler<ListUserPoliciesResult>(
                     new ListUserPoliciesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7235,8 +7043,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListUserTagsResult> responseHandler = new StaxResponseHandler<ListUserTagsResult>(new ListUserTagsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -7293,8 +7099,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListUsersResult> responseHandler = new StaxResponseHandler<ListUsersResult>(new ListUsersResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7356,8 +7160,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListVirtualMFADevicesResult> responseHandler = new StaxResponseHandler<ListVirtualMFADevicesResult>(
                     new ListVirtualMFADevicesResultStaxUnmarshaller());
@@ -7446,8 +7248,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<PutGroupPolicyResult> responseHandler = new StaxResponseHandler<PutGroupPolicyResult>(
                     new PutGroupPolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7527,8 +7327,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<PutRolePermissionsBoundaryResult> responseHandler = new StaxResponseHandler<PutRolePermissionsBoundaryResult>(
                     new PutRolePermissionsBoundaryResultStaxUnmarshaller());
@@ -7623,8 +7421,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<PutRolePolicyResult> responseHandler = new StaxResponseHandler<PutRolePolicyResult>(new PutRolePolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -7696,8 +7492,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<PutUserPermissionsBoundaryResult> responseHandler = new StaxResponseHandler<PutUserPermissionsBoundaryResult>(
                     new PutUserPermissionsBoundaryResultStaxUnmarshaller());
@@ -7781,8 +7575,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<PutUserPolicyResult> responseHandler = new StaxResponseHandler<PutUserPolicyResult>(new PutUserPolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -7847,8 +7639,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<RemoveClientIDFromOpenIDConnectProviderResult> responseHandler = new StaxResponseHandler<RemoveClientIDFromOpenIDConnectProviderResult>(
                     new RemoveClientIDFromOpenIDConnectProviderResultStaxUnmarshaller());
@@ -7927,8 +7717,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<RemoveRoleFromInstanceProfileResult> responseHandler = new StaxResponseHandler<RemoveRoleFromInstanceProfileResult>(
                     new RemoveRoleFromInstanceProfileResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7989,8 +7777,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<RemoveUserFromGroupResult> responseHandler = new StaxResponseHandler<RemoveUserFromGroupResult>(
                     new RemoveUserFromGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -8047,8 +7833,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ResetServiceSpecificCredentialResult> responseHandler = new StaxResponseHandler<ResetServiceSpecificCredentialResult>(
                     new ResetServiceSpecificCredentialResultStaxUnmarshaller());
@@ -8117,8 +7901,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ResyncMFADeviceResult> responseHandler = new StaxResponseHandler<ResyncMFADeviceResult>(
                     new ResyncMFADeviceResultStaxUnmarshaller());
@@ -8190,8 +7972,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<SetDefaultPolicyVersionResult> responseHandler = new StaxResponseHandler<SetDefaultPolicyVersionResult>(
                     new SetDefaultPolicyVersionResultStaxUnmarshaller());
@@ -8268,8 +8048,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<SimulateCustomPolicyResult> responseHandler = new StaxResponseHandler<SimulateCustomPolicyResult>(
                     new SimulateCustomPolicyResultStaxUnmarshaller());
@@ -8359,8 +8137,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<SimulatePrincipalPolicyResult> responseHandler = new StaxResponseHandler<SimulatePrincipalPolicyResult>(
                     new SimulatePrincipalPolicyResultStaxUnmarshaller());
@@ -8477,8 +8253,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<TagRoleResult> responseHandler = new StaxResponseHandler<TagRoleResult>(new TagRoleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -8594,8 +8368,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<TagUserResult> responseHandler = new StaxResponseHandler<TagUserResult>(new TagUserResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -8657,8 +8429,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<UntagRoleResult> responseHandler = new StaxResponseHandler<UntagRoleResult>(new UntagRoleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -8719,8 +8489,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<UntagUserResult> responseHandler = new StaxResponseHandler<UntagUserResult>(new UntagUserResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -8792,8 +8560,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<UpdateAccessKeyResult> responseHandler = new StaxResponseHandler<UpdateAccessKeyResult>(
                     new UpdateAccessKeyResultStaxUnmarshaller());
@@ -8876,8 +8642,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<UpdateAccountPasswordPolicyResult> responseHandler = new StaxResponseHandler<UpdateAccountPasswordPolicyResult>(
                     new UpdateAccountPasswordPolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -8947,8 +8711,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<UpdateAssumeRolePolicyResult> responseHandler = new StaxResponseHandler<UpdateAssumeRolePolicyResult>(
                     new UpdateAssumeRolePolicyResultStaxUnmarshaller());
@@ -9028,8 +8790,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<UpdateGroupResult> responseHandler = new StaxResponseHandler<UpdateGroupResult>(new UpdateGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -9100,8 +8860,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<UpdateLoginProfileResult> responseHandler = new StaxResponseHandler<UpdateLoginProfileResult>(
                     new UpdateLoginProfileResultStaxUnmarshaller());
@@ -9181,8 +8939,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<UpdateOpenIDConnectProviderThumbprintResult> responseHandler = new StaxResponseHandler<UpdateOpenIDConnectProviderThumbprintResult>(
                     new UpdateOpenIDConnectProviderThumbprintResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -9243,8 +8999,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<UpdateRoleResult> responseHandler = new StaxResponseHandler<UpdateRoleResult>(new UpdateRoleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -9309,8 +9063,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<UpdateRoleDescriptionResult> responseHandler = new StaxResponseHandler<UpdateRoleDescriptionResult>(
                     new UpdateRoleDescriptionResultStaxUnmarshaller());
@@ -9380,8 +9132,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<UpdateSAMLProviderResult> responseHandler = new StaxResponseHandler<UpdateSAMLProviderResult>(
                     new UpdateSAMLProviderResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -9444,8 +9194,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<UpdateSSHPublicKeyResult> responseHandler = new StaxResponseHandler<UpdateSSHPublicKeyResult>(
                     new UpdateSSHPublicKeyResultStaxUnmarshaller());
@@ -9533,8 +9281,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<UpdateServerCertificateResult> responseHandler = new StaxResponseHandler<UpdateServerCertificateResult>(
                     new UpdateServerCertificateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -9592,8 +9338,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<UpdateServiceSpecificCredentialResult> responseHandler = new StaxResponseHandler<UpdateServiceSpecificCredentialResult>(
                     new UpdateServiceSpecificCredentialResultStaxUnmarshaller());
@@ -9661,8 +9405,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<UpdateSigningCertificateResult> responseHandler = new StaxResponseHandler<UpdateSigningCertificateResult>(
                     new UpdateSigningCertificateResultStaxUnmarshaller());
@@ -9748,8 +9490,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<UpdateUserResult> responseHandler = new StaxResponseHandler<UpdateUserResult>(new UpdateUserResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -9819,8 +9559,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<UploadSSHPublicKeyResult> responseHandler = new StaxResponseHandler<UploadSSHPublicKeyResult>(
                     new UploadSSHPublicKeyResultStaxUnmarshaller());
@@ -9916,8 +9654,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<UploadServerCertificateResult> responseHandler = new StaxResponseHandler<UploadServerCertificateResult>(
                     new UploadServerCertificateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -10005,8 +9741,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<UploadSigningCertificateResult> responseHandler = new StaxResponseHandler<UploadSigningCertificateResult>(
                     new UploadSigningCertificateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -10043,18 +9777,18 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -10064,7 +9798,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -10072,11 +9806,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

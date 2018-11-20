@@ -372,8 +372,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AllocateStaticIpResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AllocateStaticIpResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -446,8 +444,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AttachDiskResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new AttachDiskResultJsonUnmarshaller());
@@ -524,8 +520,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AttachInstancesToLoadBalancerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -608,8 +602,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AttachLoadBalancerTlsCertificateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AttachLoadBalancerTlsCertificateResultJsonUnmarshaller());
@@ -683,8 +675,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AttachStaticIpResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AttachStaticIpResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -757,8 +747,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CloseInstancePublicPortsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -837,8 +825,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateDiskResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDiskResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -914,8 +900,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateDiskFromSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1000,8 +984,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateDiskSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDiskSnapshotResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1073,8 +1055,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateDomainResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDomainResultJsonUnmarshaller());
@@ -1149,8 +1129,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateDomainEntryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDomainEntryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1223,8 +1201,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateInstanceSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1303,8 +1279,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateInstancesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateInstancesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1379,8 +1353,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateInstancesFromSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateInstancesFromSnapshotResultJsonUnmarshaller());
@@ -1453,8 +1425,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateKeyPairResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateKeyPairResultJsonUnmarshaller());
@@ -1535,8 +1505,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateLoadBalancerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateLoadBalancerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1614,8 +1582,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateLoadBalancerTlsCertificateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateLoadBalancerTlsCertificateResultJsonUnmarshaller());
@@ -1689,8 +1655,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateRelationalDatabaseResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1771,8 +1735,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateRelationalDatabaseFromSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateRelationalDatabaseFromSnapshotResultJsonUnmarshaller());
@@ -1848,8 +1810,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateRelationalDatabaseSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1930,8 +1890,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDiskResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDiskResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2010,8 +1968,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDiskSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDiskSnapshotResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2083,8 +2039,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDomainResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDomainResultJsonUnmarshaller());
@@ -2158,8 +2112,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDomainEntryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDomainEntryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2232,8 +2184,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2305,8 +2255,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteInstanceSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2381,8 +2329,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteKeyPairResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteKeyPairResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2455,8 +2401,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteLoadBalancerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteLoadBalancerResultJsonUnmarshaller());
@@ -2532,8 +2476,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteLoadBalancerTlsCertificateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteLoadBalancerTlsCertificateResultJsonUnmarshaller());
@@ -2607,8 +2549,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteRelationalDatabaseResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2685,8 +2625,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteRelationalDatabaseSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteRelationalDatabaseSnapshotResultJsonUnmarshaller());
@@ -2760,8 +2698,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DetachDiskResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DetachDiskResultJsonUnmarshaller());
@@ -2840,8 +2776,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DetachInstancesFromLoadBalancerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DetachInstancesFromLoadBalancerResultJsonUnmarshaller());
@@ -2915,8 +2849,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DetachStaticIpResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DetachStaticIpResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2988,8 +2920,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DownloadDefaultKeyPairResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3063,8 +2993,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetActiveNamesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetActiveNamesResultJsonUnmarshaller());
@@ -3140,8 +3068,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetBlueprintsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetBlueprintsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3215,8 +3141,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetBundlesResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetBundlesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3289,8 +3213,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetDiskResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDiskResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3362,8 +3284,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetDiskSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDiskSnapshotResultJsonUnmarshaller());
@@ -3441,8 +3361,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetDiskSnapshotsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDiskSnapshotsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3519,8 +3437,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetDisksResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDisksResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3592,8 +3508,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetDomainResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDomainResultJsonUnmarshaller());
@@ -3667,8 +3581,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetDomainsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDomainsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3740,8 +3652,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetInstanceResultJsonUnmarshaller());
@@ -3816,8 +3726,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetInstanceAccessDetailsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetInstanceAccessDetailsResultJsonUnmarshaller());
@@ -3890,8 +3798,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetInstanceMetricDataResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3966,8 +3872,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetInstancePortStatesResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new GetInstancePortStatesResultJsonUnmarshaller());
@@ -4041,8 +3945,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetInstanceSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetInstanceSnapshotResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4114,8 +4016,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetInstanceSnapshotsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetInstanceSnapshotsResultJsonUnmarshaller());
@@ -4189,8 +4089,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetInstanceStateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetInstanceStateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4262,8 +4160,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetInstancesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetInstancesResultJsonUnmarshaller());
@@ -4337,8 +4233,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetKeyPairResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetKeyPairResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4410,8 +4304,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetKeyPairsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetKeyPairsResultJsonUnmarshaller());
@@ -4485,8 +4377,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetLoadBalancerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLoadBalancerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4559,8 +4449,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetLoadBalancerMetricDataResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -4643,8 +4531,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetLoadBalancerTlsCertificatesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetLoadBalancerTlsCertificatesResultJsonUnmarshaller());
@@ -4722,8 +4608,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetLoadBalancersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLoadBalancersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4796,8 +4680,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetOperationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetOperationResultJsonUnmarshaller());
@@ -4876,8 +4758,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetOperationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetOperationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4950,8 +4830,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetOperationsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -5027,8 +4905,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetRegionsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetRegionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5100,8 +4976,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetRelationalDatabaseResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -5182,8 +5056,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetRelationalDatabaseBlueprintsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetRelationalDatabaseBlueprintsResultJsonUnmarshaller());
@@ -5262,8 +5134,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetRelationalDatabaseBundlesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetRelationalDatabaseBundlesResultJsonUnmarshaller());
@@ -5337,8 +5207,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetRelationalDatabaseEventsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -5414,8 +5282,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetRelationalDatabaseLogEventsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetRelationalDatabaseLogEventsResultJsonUnmarshaller());
@@ -5490,8 +5356,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetRelationalDatabaseLogStreamsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -5569,8 +5433,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetRelationalDatabaseMasterUserPasswordResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new GetRelationalDatabaseMasterUserPasswordResultJsonUnmarshaller());
@@ -5645,8 +5507,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetRelationalDatabaseMetricDataResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -5729,8 +5589,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetRelationalDatabaseParametersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetRelationalDatabaseParametersResultJsonUnmarshaller());
@@ -5804,8 +5662,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetRelationalDatabaseSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -5881,8 +5737,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetRelationalDatabaseSnapshotsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetRelationalDatabaseSnapshotsResultJsonUnmarshaller());
@@ -5955,8 +5809,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetRelationalDatabasesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -6031,8 +5883,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetStaticIpResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetStaticIpResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6104,8 +5954,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetStaticIpsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetStaticIpsResultJsonUnmarshaller());
@@ -6179,8 +6027,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ImportKeyPairResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ImportKeyPairResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6252,8 +6098,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<IsVpcPeeredResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new IsVpcPeeredResultJsonUnmarshaller());
@@ -6328,8 +6172,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<OpenInstancePublicPortsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new OpenInstancePublicPortsResultJsonUnmarshaller());
@@ -6403,8 +6245,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<PeerVpcResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new PeerVpcResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6477,8 +6317,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<PutInstancePublicPortsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -6555,8 +6393,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<RebootInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RebootInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6629,8 +6465,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<RebootRelationalDatabaseResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -6705,8 +6539,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ReleaseStaticIpResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ReleaseStaticIpResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6779,8 +6611,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<StartInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartInstanceResultJsonUnmarshaller());
@@ -6856,8 +6686,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<StartRelationalDatabaseResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new StartRelationalDatabaseResultJsonUnmarshaller());
@@ -6931,8 +6759,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<StopInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7004,8 +6830,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<StopRelationalDatabaseResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -7080,8 +6904,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UnpeerVpcResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UnpeerVpcResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7153,8 +6975,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDomainEntryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDomainEntryResultJsonUnmarshaller());
@@ -7228,8 +7048,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateLoadBalancerAttributeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -7308,8 +7126,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateRelationalDatabaseResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -7393,8 +7209,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateRelationalDatabaseParametersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateRelationalDatabaseParametersResultJsonUnmarshaller());
@@ -7432,18 +7246,18 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -7453,7 +7267,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -7461,11 +7275,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

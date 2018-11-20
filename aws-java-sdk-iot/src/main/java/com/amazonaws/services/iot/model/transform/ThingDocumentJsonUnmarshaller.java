@@ -73,6 +73,10 @@ public class ThingDocumentJsonUnmarshaller implements Unmarshaller<ThingDocument
                     context.nextToken();
                     thingDocument.setShadow(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("connectivity", targetDepth)) {
+                    context.nextToken();
+                    thingDocument.setConnectivity(ThingConnectivityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

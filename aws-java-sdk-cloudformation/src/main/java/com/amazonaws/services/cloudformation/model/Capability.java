@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum Capability {
 
     CAPABILITY_IAM("CAPABILITY_IAM"),
-    CAPABILITY_NAMED_IAM("CAPABILITY_NAMED_IAM");
+    CAPABILITY_NAMED_IAM("CAPABILITY_NAMED_IAM"),
+    CAPABILITY_AUTO_EXPAND("CAPABILITY_AUTO_EXPAND");
 
     private String value;
 

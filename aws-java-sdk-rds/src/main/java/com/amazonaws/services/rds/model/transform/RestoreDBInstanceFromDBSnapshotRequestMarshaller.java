@@ -129,6 +129,21 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements
             request.addParameter("TdeCredentialPassword", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getTdeCredentialPassword()));
         }
 
+        if (!restoreDBInstanceFromDBSnapshotRequest.getVpcSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) restoreDBInstanceFromDBSnapshotRequest.getVpcSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBInstanceFromDBSnapshotRequest
+                    .getVpcSecurityGroupIds();
+            int vpcSecurityGroupIdsListIndex = 1;
+
+            for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
+                if (vpcSecurityGroupIdsListValue != null) {
+                    request.addParameter("VpcSecurityGroupIds.VpcSecurityGroupId." + vpcSecurityGroupIdsListIndex,
+                            StringUtils.fromString(vpcSecurityGroupIdsListValue));
+                }
+                vpcSecurityGroupIdsListIndex++;
+            }
+        }
+
         if (restoreDBInstanceFromDBSnapshotRequest.getDomain() != null) {
             request.addParameter("Domain", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getDomain()));
         }

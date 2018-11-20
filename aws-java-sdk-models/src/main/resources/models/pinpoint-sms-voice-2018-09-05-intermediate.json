@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -94,6 +94,7 @@
       "documentation" : "Create a new configuration set. After you create the configuration set, you can add one or more event destinations to it.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TooManyRequestsException",
         "documentation" : "TooManyRequestsException",
@@ -116,6 +117,7 @@
         "httpStatusCode" : 409
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateConfigurationSetRequest",
@@ -144,6 +146,7 @@
       "documentation" : "Create a new event destination in a configuration set.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "BadRequestException",
@@ -170,6 +173,7 @@
         "httpStatusCode" : 409
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateConfigurationSetEventDestinationRequest",
@@ -198,6 +202,7 @@
       "documentation" : "Deletes an existing configuration set.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "NotFoundException",
@@ -216,6 +221,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteConfigurationSetRequest",
@@ -244,6 +250,7 @@
       "documentation" : "Deletes an event destination in a configuration set.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "NotFoundException",
@@ -262,6 +269,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteConfigurationSetEventDestinationRequest",
@@ -290,6 +298,7 @@
       "documentation" : "Obtain information about an event destination, including the types of events it reports, the Amazon Resource Name (ARN) of the destination, and the name of the event destination.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "NotFoundException",
@@ -308,6 +317,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetConfigurationSetEventDestinationsRequest",
@@ -336,6 +346,7 @@
       "documentation" : "Create a new voice message and send it to a recipient's phone number.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TooManyRequestsException",
         "documentation" : "TooManyRequestsException",
@@ -350,6 +361,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "SendVoiceMessageRequest",
@@ -378,6 +390,7 @@
       "documentation" : "Update an event destination in a configuration set. An event destination is a location that you publish information about your voice calls to. For example, you can log an event to an Amazon CloudWatch destination when a call fails.",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "NotFoundException",
@@ -396,6 +409,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateConfigurationSetEventDestinationRequest",

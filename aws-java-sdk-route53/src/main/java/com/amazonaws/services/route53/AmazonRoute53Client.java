@@ -422,8 +422,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<AssociateVPCWithHostedZoneResult> responseHandler = new StaxResponseHandler<AssociateVPCWithHostedZoneResult>(
                     new AssociateVPCWithHostedZoneResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -587,8 +585,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ChangeResourceRecordSetsResult> responseHandler = new StaxResponseHandler<ChangeResourceRecordSetsResult>(
                     new ChangeResourceRecordSetsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -659,8 +655,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ChangeTagsForResourceResult> responseHandler = new StaxResponseHandler<ChangeTagsForResourceResult>(
                     new ChangeTagsForResourceResultStaxUnmarshaller());
@@ -792,8 +786,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateHealthCheckResult> responseHandler = new StaxResponseHandler<CreateHealthCheckResult>(
                     new CreateHealthCheckResultStaxUnmarshaller());
@@ -955,8 +947,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateHostedZoneResult> responseHandler = new StaxResponseHandler<CreateHostedZoneResult>(
                     new CreateHostedZoneResultStaxUnmarshaller());
@@ -1202,8 +1192,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CreateQueryLoggingConfigResult> responseHandler = new StaxResponseHandler<CreateQueryLoggingConfigResult>(
                     new CreateQueryLoggingConfigResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1352,8 +1340,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CreateReusableDelegationSetResult> responseHandler = new StaxResponseHandler<CreateReusableDelegationSetResult>(
                     new CreateReusableDelegationSetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1428,8 +1414,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateTrafficPolicyResult> responseHandler = new StaxResponseHandler<CreateTrafficPolicyResult>(
                     new CreateTrafficPolicyResultStaxUnmarshaller());
@@ -1511,8 +1495,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CreateTrafficPolicyInstanceResult> responseHandler = new StaxResponseHandler<CreateTrafficPolicyInstanceResult>(
                     new CreateTrafficPolicyInstanceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1588,8 +1570,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateTrafficPolicyVersionResult> responseHandler = new StaxResponseHandler<CreateTrafficPolicyVersionResult>(
                     new CreateTrafficPolicyVersionResultStaxUnmarshaller());
@@ -1672,8 +1652,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CreateVPCAssociationAuthorizationResult> responseHandler = new StaxResponseHandler<CreateVPCAssociationAuthorizationResult>(
                     new CreateVPCAssociationAuthorizationResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1742,8 +1720,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteHealthCheckResult> responseHandler = new StaxResponseHandler<DeleteHealthCheckResult>(
                     new DeleteHealthCheckResultStaxUnmarshaller());
@@ -1849,8 +1825,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteHostedZoneResult> responseHandler = new StaxResponseHandler<DeleteHostedZoneResult>(
                     new DeleteHostedZoneResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1913,8 +1887,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteQueryLoggingConfigResult> responseHandler = new StaxResponseHandler<DeleteQueryLoggingConfigResult>(
                     new DeleteQueryLoggingConfigResultStaxUnmarshaller());
@@ -1988,8 +1960,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteReusableDelegationSetResult> responseHandler = new StaxResponseHandler<DeleteReusableDelegationSetResult>(
                     new DeleteReusableDelegationSetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2051,8 +2021,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteTrafficPolicyResult> responseHandler = new StaxResponseHandler<DeleteTrafficPolicyResult>(
                     new DeleteTrafficPolicyResultStaxUnmarshaller());
@@ -2121,8 +2089,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteTrafficPolicyInstanceResult> responseHandler = new StaxResponseHandler<DeleteTrafficPolicyInstanceResult>(
                     new DeleteTrafficPolicyInstanceResultStaxUnmarshaller());
@@ -2200,8 +2166,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteVPCAssociationAuthorizationResult> responseHandler = new StaxResponseHandler<DeleteVPCAssociationAuthorizationResult>(
                     new DeleteVPCAssociationAuthorizationResultStaxUnmarshaller());
@@ -2288,8 +2252,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DisassociateVPCFromHostedZoneResult> responseHandler = new StaxResponseHandler<DisassociateVPCFromHostedZoneResult>(
                     new DisassociateVPCFromHostedZoneResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2352,8 +2314,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetAccountLimitResult> responseHandler = new StaxResponseHandler<GetAccountLimitResult>(
                     new GetAccountLimitResultStaxUnmarshaller());
@@ -2425,8 +2385,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetChangeResult> responseHandler = new StaxResponseHandler<GetChangeResult>(new GetChangeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2482,8 +2440,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetCheckerIpRangesResult> responseHandler = new StaxResponseHandler<GetCheckerIpRangesResult>(
                     new GetCheckerIpRangesResultStaxUnmarshaller());
@@ -2567,8 +2523,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetGeoLocationResult> responseHandler = new StaxResponseHandler<GetGeoLocationResult>(
                     new GetGeoLocationResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2633,8 +2587,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetHealthCheckResult> responseHandler = new StaxResponseHandler<GetHealthCheckResult>(
                     new GetHealthCheckResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2687,8 +2639,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetHealthCheckCountResult> responseHandler = new StaxResponseHandler<GetHealthCheckCountResult>(
                     new GetHealthCheckCountResultStaxUnmarshaller());
@@ -2753,8 +2703,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetHealthCheckLastFailureReasonResult> responseHandler = new StaxResponseHandler<GetHealthCheckLastFailureReasonResult>(
                     new GetHealthCheckLastFailureReasonResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2811,8 +2759,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetHealthCheckStatusResult> responseHandler = new StaxResponseHandler<GetHealthCheckStatusResult>(
                     new GetHealthCheckStatusResultStaxUnmarshaller());
@@ -2871,8 +2817,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetHostedZoneResult> responseHandler = new StaxResponseHandler<GetHostedZoneResult>(new GetHostedZoneResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2926,8 +2870,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetHostedZoneCountResult> responseHandler = new StaxResponseHandler<GetHostedZoneCountResult>(
                     new GetHostedZoneCountResultStaxUnmarshaller());
@@ -3001,8 +2943,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetHostedZoneLimitResult> responseHandler = new StaxResponseHandler<GetHostedZoneLimitResult>(
                     new GetHostedZoneLimitResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3063,8 +3003,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetQueryLoggingConfigResult> responseHandler = new StaxResponseHandler<GetQueryLoggingConfigResult>(
                     new GetQueryLoggingConfigResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3124,8 +3062,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetReusableDelegationSetResult> responseHandler = new StaxResponseHandler<GetReusableDelegationSetResult>(
                     new GetReusableDelegationSetResultStaxUnmarshaller());
@@ -3191,8 +3127,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetReusableDelegationSetLimitResult> responseHandler = new StaxResponseHandler<GetReusableDelegationSetLimitResult>(
                     new GetReusableDelegationSetLimitResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3249,8 +3183,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetTrafficPolicyResult> responseHandler = new StaxResponseHandler<GetTrafficPolicyResult>(
                     new GetTrafficPolicyResultStaxUnmarshaller());
@@ -3320,8 +3252,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetTrafficPolicyInstanceResult> responseHandler = new StaxResponseHandler<GetTrafficPolicyInstanceResult>(
                     new GetTrafficPolicyInstanceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3374,8 +3304,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetTrafficPolicyInstanceCountResult> responseHandler = new StaxResponseHandler<GetTrafficPolicyInstanceCountResult>(
                     new GetTrafficPolicyInstanceCountResultStaxUnmarshaller());
@@ -3443,8 +3371,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListGeoLocationsResult> responseHandler = new StaxResponseHandler<ListGeoLocationsResult>(
                     new ListGeoLocationsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3506,8 +3432,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListHealthChecksResult> responseHandler = new StaxResponseHandler<ListHealthChecksResult>(
                     new ListHealthChecksResultStaxUnmarshaller());
@@ -3578,8 +3502,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListHostedZonesResult> responseHandler = new StaxResponseHandler<ListHostedZonesResult>(
                     new ListHostedZonesResultStaxUnmarshaller());
@@ -3709,8 +3631,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListHostedZonesByNameResult> responseHandler = new StaxResponseHandler<ListHostedZonesByNameResult>(
                     new ListHostedZonesByNameResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3780,8 +3700,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListQueryLoggingConfigsResult> responseHandler = new StaxResponseHandler<ListQueryLoggingConfigsResult>(
                     new ListQueryLoggingConfigsResultStaxUnmarshaller());
@@ -3922,8 +3840,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListResourceRecordSetsResult> responseHandler = new StaxResponseHandler<ListResourceRecordSetsResult>(
                     new ListResourceRecordSetsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3978,8 +3894,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListReusableDelegationSetsResult> responseHandler = new StaxResponseHandler<ListReusableDelegationSetsResult>(
                     new ListReusableDelegationSetsResultStaxUnmarshaller());
@@ -4058,8 +3972,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListTagsForResourceResult> responseHandler = new StaxResponseHandler<ListTagsForResourceResult>(
                     new ListTagsForResourceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4132,8 +4044,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListTagsForResourcesResult> responseHandler = new StaxResponseHandler<ListTagsForResourcesResult>(
                     new ListTagsForResourcesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4190,8 +4100,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListTrafficPoliciesResult> responseHandler = new StaxResponseHandler<ListTrafficPoliciesResult>(
                     new ListTrafficPoliciesResultStaxUnmarshaller());
@@ -4266,8 +4174,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListTrafficPolicyInstancesResult> responseHandler = new StaxResponseHandler<ListTrafficPolicyInstancesResult>(
                     new ListTrafficPolicyInstancesResultStaxUnmarshaller());
@@ -4346,8 +4252,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListTrafficPolicyInstancesByHostedZoneResult> responseHandler = new StaxResponseHandler<ListTrafficPolicyInstancesByHostedZoneResult>(
                     new ListTrafficPolicyInstancesByHostedZoneResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4420,8 +4324,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListTrafficPolicyInstancesByPolicyResult> responseHandler = new StaxResponseHandler<ListTrafficPolicyInstancesByPolicyResult>(
                     new ListTrafficPolicyInstancesByPolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4481,8 +4383,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListTrafficPolicyVersionsResult> responseHandler = new StaxResponseHandler<ListTrafficPolicyVersionsResult>(
                     new ListTrafficPolicyVersionsResultStaxUnmarshaller());
@@ -4549,8 +4449,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ListVPCAssociationAuthorizationsResult> responseHandler = new StaxResponseHandler<ListVPCAssociationAuthorizationsResult>(
                     new ListVPCAssociationAuthorizationsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4611,8 +4509,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<TestDNSAnswerResult> responseHandler = new StaxResponseHandler<TestDNSAnswerResult>(new TestDNSAnswerResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4678,8 +4574,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<UpdateHealthCheckResult> responseHandler = new StaxResponseHandler<UpdateHealthCheckResult>(
                     new UpdateHealthCheckResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4736,8 +4630,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<UpdateHostedZoneCommentResult> responseHandler = new StaxResponseHandler<UpdateHostedZoneCommentResult>(
                     new UpdateHostedZoneCommentResultStaxUnmarshaller());
@@ -4798,8 +4690,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<UpdateTrafficPolicyCommentResult> responseHandler = new StaxResponseHandler<UpdateTrafficPolicyCommentResult>(
                     new UpdateTrafficPolicyCommentResultStaxUnmarshaller());
@@ -4897,8 +4787,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<UpdateTrafficPolicyInstanceResult> responseHandler = new StaxResponseHandler<UpdateTrafficPolicyInstanceResult>(
                     new UpdateTrafficPolicyInstanceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4935,18 +4823,18 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -4956,7 +4844,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -4964,11 +4852,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

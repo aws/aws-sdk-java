@@ -29,6 +29,8 @@ public class ShareResultMarshaller {
 
     private static final MarshallingInfo<String> PRINCIPALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrincipalId").build();
+    private static final MarshallingInfo<String> INVITEEPRINCIPALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InviteePrincipalId").build();
     private static final MarshallingInfo<String> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Role").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -55,6 +57,7 @@ public class ShareResultMarshaller {
 
         try {
             protocolMarshaller.marshall(shareResult.getPrincipalId(), PRINCIPALID_BINDING);
+            protocolMarshaller.marshall(shareResult.getInviteePrincipalId(), INVITEEPRINCIPALID_BINDING);
             protocolMarshaller.marshall(shareResult.getRole(), ROLE_BINDING);
             protocolMarshaller.marshall(shareResult.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(shareResult.getShareId(), SHAREID_BINDING);

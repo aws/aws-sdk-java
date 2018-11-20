@@ -104,6 +104,17 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     private java.util.Map<String, String> tags;
     /**
      * <p>
+     * The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node
+     * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
+     * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
+     * a single Availability Zone with high network flow potential. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * </p>
+     */
+    private String placementGroup;
+    /**
+     * <p>
      * The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance
      * type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be
      * below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest (market) price and
@@ -775,6 +786,79 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node
+     * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
+     * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
+     * a single Availability Zone with high network flow potential. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * </p>
+     * 
+     * @param placementGroup
+     *        The Amazon EC2 placement group to associate with your compute resources. If you intend to submit
+     *        multi-node parallel jobs to your compute environment, you should consider creating a cluster placement
+     *        group and associate it with your compute resources. This keeps your multi-node parallel job on a logical
+     *        grouping of instances within a single Availability Zone with high network flow potential. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *        the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     */
+
+    public void setPlacementGroup(String placementGroup) {
+        this.placementGroup = placementGroup;
+    }
+
+    /**
+     * <p>
+     * The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node
+     * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
+     * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
+     * a single Availability Zone with high network flow potential. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * </p>
+     * 
+     * @return The Amazon EC2 placement group to associate with your compute resources. If you intend to submit
+     *         multi-node parallel jobs to your compute environment, you should consider creating a cluster placement
+     *         group and associate it with your compute resources. This keeps your multi-node parallel job on a logical
+     *         grouping of instances within a single Availability Zone with high network flow potential. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *         the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     */
+
+    public String getPlacementGroup() {
+        return this.placementGroup;
+    }
+
+    /**
+     * <p>
+     * The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node
+     * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
+     * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
+     * a single Availability Zone with high network flow potential. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * </p>
+     * 
+     * @param placementGroup
+     *        The Amazon EC2 placement group to associate with your compute resources. If you intend to submit
+     *        multi-node parallel jobs to your compute environment, you should consider creating a cluster placement
+     *        group and associate it with your compute resources. This keeps your multi-node parallel job on a logical
+     *        grouping of instances within a single Availability Zone with high network flow potential. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *        the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeResource withPlacementGroup(String placementGroup) {
+        setPlacementGroup(placementGroup);
+        return this;
+    }
+
+    /**
+     * <p>
      * The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance
      * type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be
      * below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest (market) price and
@@ -971,6 +1055,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
             sb.append("InstanceRole: ").append(getInstanceRole()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getPlacementGroup() != null)
+            sb.append("PlacementGroup: ").append(getPlacementGroup()).append(",");
         if (getBidPercentage() != null)
             sb.append("BidPercentage: ").append(getBidPercentage()).append(",");
         if (getSpotIamFleetRole() != null)
@@ -1035,6 +1121,10 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getPlacementGroup() == null ^ this.getPlacementGroup() == null)
+            return false;
+        if (other.getPlacementGroup() != null && other.getPlacementGroup().equals(this.getPlacementGroup()) == false)
+            return false;
         if (other.getBidPercentage() == null ^ this.getBidPercentage() == null)
             return false;
         if (other.getBidPercentage() != null && other.getBidPercentage().equals(this.getBidPercentage()) == false)
@@ -1066,6 +1156,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getEc2KeyPair() == null) ? 0 : getEc2KeyPair().hashCode());
         hashCode = prime * hashCode + ((getInstanceRole() == null) ? 0 : getInstanceRole().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getPlacementGroup() == null) ? 0 : getPlacementGroup().hashCode());
         hashCode = prime * hashCode + ((getBidPercentage() == null) ? 0 : getBidPercentage().hashCode());
         hashCode = prime * hashCode + ((getSpotIamFleetRole() == null) ? 0 : getSpotIamFleetRole().hashCode());
         hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());

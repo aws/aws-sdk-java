@@ -105,6 +105,14 @@ public class JobDetailJsonUnmarshaller implements Unmarshaller<JobDetail, JsonUn
                     context.nextToken();
                     jobDetail.setContainer(ContainerDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("nodeDetails", targetDepth)) {
+                    context.nextToken();
+                    jobDetail.setNodeDetails(NodeDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("nodeProperties", targetDepth)) {
+                    context.nextToken();
+                    jobDetail.setNodeProperties(NodePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("arrayProperties", targetDepth)) {
                     context.nextToken();
                     jobDetail.setArrayProperties(ArrayPropertiesDetailJsonUnmarshaller.getInstance().unmarshall(context));

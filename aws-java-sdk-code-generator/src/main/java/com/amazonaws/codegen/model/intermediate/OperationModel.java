@@ -15,19 +15,20 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
-import com.amazonaws.codegen.internal.DocumentationUtils;
-import com.amazonaws.codegen.internal.Utils;
-import com.amazonaws.codegen.model.service.EndpointDiscovery;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import static com.amazonaws.codegen.internal.Constants.LINE_SEPARATOR;
 import static com.amazonaws.codegen.internal.DocumentationUtils.createLinkToServiceDocumentation;
 import static com.amazonaws.codegen.internal.DocumentationUtils.stripHTMLTags;
 import static com.amazonaws.codegen.naming.DefaultNamingStrategy.isJavaKeyword;
+
+import com.amazonaws.codegen.internal.DocumentationUtils;
+import com.amazonaws.codegen.internal.Utils;
+import com.amazonaws.codegen.model.service.EndpointDiscovery;
+import com.amazonaws.codegen.model.service.EndpointTrait;
+import com.amazonaws.codegen.model.service.HostPrefixProcessor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class OperationModel extends DocumentationModel {
 
@@ -52,6 +53,8 @@ public class OperationModel extends DocumentationModel {
     private EndpointDiscovery endpointDiscovery;
 
     private boolean endpointOperation;
+
+    private EndpointTrait endpointTrait;
 
     @JsonIgnore
     private ShapeModel inputShape;
@@ -325,5 +328,26 @@ public class OperationModel extends DocumentationModel {
 
     public void setEndpointOperation(boolean endpointOperation) {
         this.endpointOperation = endpointOperation;
+    }
+
+    /**
+     * Returns the endpoint trait that will be used to resolve the endpoint of an API.
+     */
+    public EndpointTrait getEndpointTrait() {
+        return endpointTrait;
+    }
+
+    /**
+     * Return the {@link HostPrefixProcessor} class that has data to be used for modifying the endpoint host.
+     */
+    public HostPrefixProcessor getHostPrefixProcessor() {
+        return endpointTrait != null ? new HostPrefixProcessor(endpointTrait.getHostPrefix()) : null;
+    }
+
+    /**
+     * Sets the endpoint trait that will be used to resolve the endpoint of an API.
+     */
+    public void setEndpointTrait(EndpointTrait endpointTrait) {
+        this.endpointTrait = endpointTrait;
     }
 }

@@ -62,6 +62,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private Boolean forceCanceled;
     /**
      * <p>
+     * If the job was updated, provides the reason code for the update.
+     * </p>
+     */
+    private String reasonCode;
+    /**
+     * <p>
      * If the job was updated, describes the reason for the update.
      * </p>
      */
@@ -90,6 +96,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private JobExecutionsRolloutConfig jobExecutionsRolloutConfig;
+    /**
+     * <p>
+     * Configuration for criteria to abort the job.
+     * </p>
+     */
+    private AbortConfig abortConfig;
     /**
      * <p>
      * The time, in milliseconds since the epoch, when the job was created.
@@ -419,6 +431,46 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * If the job was updated, provides the reason code for the update.
+     * </p>
+     * 
+     * @param reasonCode
+     *        If the job was updated, provides the reason code for the update.
+     */
+
+    public void setReasonCode(String reasonCode) {
+        this.reasonCode = reasonCode;
+    }
+
+    /**
+     * <p>
+     * If the job was updated, provides the reason code for the update.
+     * </p>
+     * 
+     * @return If the job was updated, provides the reason code for the update.
+     */
+
+    public String getReasonCode() {
+        return this.reasonCode;
+    }
+
+    /**
+     * <p>
+     * If the job was updated, provides the reason code for the update.
+     * </p>
+     * 
+     * @param reasonCode
+     *        If the job was updated, provides the reason code for the update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withReasonCode(String reasonCode) {
+        setReasonCode(reasonCode);
+        return this;
+    }
+
+    /**
+     * <p>
      * If the job was updated, describes the reason for the update.
      * </p>
      * 
@@ -644,6 +696,46 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     public Job withJobExecutionsRolloutConfig(JobExecutionsRolloutConfig jobExecutionsRolloutConfig) {
         setJobExecutionsRolloutConfig(jobExecutionsRolloutConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration for criteria to abort the job.
+     * </p>
+     * 
+     * @param abortConfig
+     *        Configuration for criteria to abort the job.
+     */
+
+    public void setAbortConfig(AbortConfig abortConfig) {
+        this.abortConfig = abortConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration for criteria to abort the job.
+     * </p>
+     * 
+     * @return Configuration for criteria to abort the job.
+     */
+
+    public AbortConfig getAbortConfig() {
+        return this.abortConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration for criteria to abort the job.
+     * </p>
+     * 
+     * @param abortConfig
+     *        Configuration for criteria to abort the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withAbortConfig(AbortConfig abortConfig) {
+        setAbortConfig(abortConfig);
         return this;
     }
 
@@ -880,6 +972,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             sb.append("Status: ").append(getStatus()).append(",");
         if (getForceCanceled() != null)
             sb.append("ForceCanceled: ").append(getForceCanceled()).append(",");
+        if (getReasonCode() != null)
+            sb.append("ReasonCode: ").append(getReasonCode()).append(",");
         if (getComment() != null)
             sb.append("Comment: ").append(getComment()).append(",");
         if (getTargets() != null)
@@ -890,6 +984,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             sb.append("PresignedUrlConfig: ").append(getPresignedUrlConfig()).append(",");
         if (getJobExecutionsRolloutConfig() != null)
             sb.append("JobExecutionsRolloutConfig: ").append(getJobExecutionsRolloutConfig()).append(",");
+        if (getAbortConfig() != null)
+            sb.append("AbortConfig: ").append(getAbortConfig()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getLastUpdatedAt() != null)
@@ -934,6 +1030,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getForceCanceled() != null && other.getForceCanceled().equals(this.getForceCanceled()) == false)
             return false;
+        if (other.getReasonCode() == null ^ this.getReasonCode() == null)
+            return false;
+        if (other.getReasonCode() != null && other.getReasonCode().equals(this.getReasonCode()) == false)
+            return false;
         if (other.getComment() == null ^ this.getComment() == null)
             return false;
         if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
@@ -953,6 +1053,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (other.getJobExecutionsRolloutConfig() == null ^ this.getJobExecutionsRolloutConfig() == null)
             return false;
         if (other.getJobExecutionsRolloutConfig() != null && other.getJobExecutionsRolloutConfig().equals(this.getJobExecutionsRolloutConfig()) == false)
+            return false;
+        if (other.getAbortConfig() == null ^ this.getAbortConfig() == null)
+            return false;
+        if (other.getAbortConfig() != null && other.getAbortConfig().equals(this.getAbortConfig()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
@@ -987,11 +1091,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTargetSelection() == null) ? 0 : getTargetSelection().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getForceCanceled() == null) ? 0 : getForceCanceled().hashCode());
+        hashCode = prime * hashCode + ((getReasonCode() == null) ? 0 : getReasonCode().hashCode());
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getPresignedUrlConfig() == null) ? 0 : getPresignedUrlConfig().hashCode());
         hashCode = prime * hashCode + ((getJobExecutionsRolloutConfig() == null) ? 0 : getJobExecutionsRolloutConfig().hashCode());
+        hashCode = prime * hashCode + ((getAbortConfig() == null) ? 0 : getAbortConfig().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getCompletedAt() == null) ? 0 : getCompletedAt().hashCode());

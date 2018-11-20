@@ -72,6 +72,22 @@ public class DescribeThingGroupResultJsonUnmarshaller implements Unmarshaller<De
                     context.nextToken();
                     describeThingGroupResult.setThingGroupMetadata(ThingGroupMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("indexName", targetDepth)) {
+                    context.nextToken();
+                    describeThingGroupResult.setIndexName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("queryString", targetDepth)) {
+                    context.nextToken();
+                    describeThingGroupResult.setQueryString(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("queryVersion", targetDepth)) {
+                    context.nextToken();
+                    describeThingGroupResult.setQueryVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    describeThingGroupResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

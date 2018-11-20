@@ -95,6 +95,7 @@
       "documentation" : "<p>Associates one or more configuration items with an application.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -113,6 +114,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "AssociateConfigurationItemsToApplicationRequest",
@@ -141,6 +143,7 @@
       "documentation" : "<p>Creates an application with the given name and description.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -159,6 +162,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateApplicationRequest",
@@ -187,6 +191,7 @@
       "documentation" : "<p>Creates one or more tags for configuration items. Tags are metadata that help you categorize IT assets. This API accepts a list of multiple configuration items.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -209,6 +214,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateTagsRequest",
@@ -237,6 +243,7 @@
       "documentation" : "<p>Deletes a list of applications and their associations with configuration items.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -255,6 +262,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteApplicationsRequest",
@@ -283,6 +291,7 @@
       "documentation" : "<p>Deletes the association between configuration items and one or more tags. This API accepts a list of multiple configuration items.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -305,6 +314,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteTagsRequest",
@@ -333,6 +343,7 @@
       "documentation" : "<p>Lists agents or connectors as specified by ID or other filters. All agents/connectors associated with your user account can be listed if you call <code>DescribeAgents</code> as is without passing any parameters.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -351,6 +362,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeAgentsRequest",
@@ -379,6 +391,7 @@
       "documentation" : "<p>Retrieves attributes for a list of configuration item IDs.</p> <note> <p>All of the supplied IDs must be for the same asset type from one of the follwoing:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li> <p>process</p> </li> <li> <p>connection</p> </li> </ul> <p>Output fields are specific to the asset type specified. For example, the output for a <i>server</i> configuration item includes a list of attributes about the server, such as host name, operating system, number of network cards, etc.</p> <p>For a complete list of outputs for each asset type, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#DescribeConfigurations\">Using the DescribeConfigurations Action</a>.</p> </note>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -397,6 +410,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeConfigurationsRequest",
@@ -425,6 +439,7 @@
       "documentation" : "<p>Lists exports as specified by ID. All continuous exports associated with your user account can be listed if you call <code>DescribeContinuousExports</code> as is without passing any parameters.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -451,6 +466,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeContinuousExportsRequest",
@@ -479,6 +495,7 @@
       "documentation" : "<p> <code>DescribeExportConfigurations</code> is deprecated.</p> <p>Use instead <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html\"> <code>DescribeExportTasks</code> </a>.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -501,6 +518,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeExportConfigurationsRequest",
@@ -529,6 +547,7 @@
       "documentation" : "<p>Retrieve status of one or more export tasks. You can retrieve the status of up to 100 export tasks.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -547,6 +566,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeExportTasksRequest",
@@ -575,6 +595,7 @@
       "documentation" : "<p>Retrieves a list of configuration items that have tags as specified by the key-value pairs, name and value, passed to the optional parameter <code>filters</code>.</p> <p>There are three valid tag filter names:</p> <ul> <li> <p>tagKey</p> </li> <li> <p>tagValue</p> </li> <li> <p>configurationId</p> </li> </ul> <p>Also, all configuration items associated with your user account that have tags can be listed if you call <code>DescribeTags</code> as is without passing any parameters.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -597,6 +618,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeTagsRequest",
@@ -625,6 +647,7 @@
       "documentation" : "<p>Disassociates one or more configuration items from an application.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -643,6 +666,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateConfigurationItemsFromApplicationRequest",
@@ -671,6 +695,7 @@
       "documentation" : "<p>Deprecated. Use <code>StartExportTask</code> instead.</p> <p>Exports all discovered configuration data to an Amazon S3 bucket or an application that enables you to view and evaluate the data. Data includes tags and tag associations, processes, connections, servers, and system performance. This API returns an export ID that you can query using the <i>DescribeExportConfigurations</i> API. The system imposes a limit of two configuration exports in six hours.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -693,6 +718,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ExportConfigurationsRequest",
@@ -721,6 +747,7 @@
       "documentation" : "<p>Retrieves a short summary of discovered assets.</p> <p>This API operation takes no request parameters and is called as is at the command prompt as shown in the example.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -739,6 +766,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetDiscoverySummaryRequest",
@@ -767,6 +795,7 @@
       "documentation" : "<p>Retrieves a list of configuration items as specified by the value passed to the required paramater <code>configurationType</code>. Optional filtering may be applied to refine search results.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -789,6 +818,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListConfigurationsRequest",
@@ -817,6 +847,7 @@
       "documentation" : "<p>Retrieves a list of servers that are one network hop away from a specified server.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -835,6 +866,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListServerNeighborsRequest",
@@ -863,6 +895,7 @@
       "documentation" : "<p>Start the continuous flow of agent's discovered data into Amazon Athena.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ConflictErrorException",
         "documentation" : "<p/>",
@@ -893,6 +926,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "StartContinuousExportRequest",
@@ -921,6 +955,7 @@
       "documentation" : "<p>Instructs the specified agents or connectors to start collecting data.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -939,6 +974,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "StartDataCollectionByAgentIdsRequest",
@@ -967,6 +1003,7 @@
       "documentation" : "<p> Begins the export of discovered data to an S3 bucket.</p> <p> If you specify <code>agentIds</code> in a filter, the task exports up to 72 hours of detailed data collected by the identified Application Discovery Agent, including network, process, and performance details. A time range for exported agent data may be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed agent data is limited to five concurrently running exports. </p> <p> If you do not include an <code>agentIds</code> filter, summary data is exported that includes both AWS Agentless Discovery Connector data and summary data from AWS Discovery Agents. Export of summary data is limited to two exports per day. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -989,6 +1026,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "StartExportTaskRequest",
@@ -1017,6 +1055,7 @@
       "documentation" : "<p>Stop the continuous flow of agent's discovered data into Amazon Athena.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -1047,6 +1086,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "StopContinuousExportRequest",
@@ -1075,6 +1115,7 @@
       "documentation" : "<p>Instructs the specified agents or connectors to stop collecting data.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -1093,6 +1134,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "StopDataCollectionByAgentIdsRequest",
@@ -1121,6 +1163,7 @@
       "documentation" : "<p>Updates metadata about an application.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AuthorizationErrorException",
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
@@ -1139,6 +1182,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateApplicationRequest",

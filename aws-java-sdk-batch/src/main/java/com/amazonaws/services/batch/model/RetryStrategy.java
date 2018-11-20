@@ -31,8 +31,8 @@ public class RetryStrategy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of times to move a job to the <code>RUNNABLE</code> status. You may specify between 1 and 10 attempts.
-     * If the value of <code>attempts</code> is greater than one, the job is retried if it fails until it has moved to
-     * <code>RUNNABLE</code> that many times.
+     * If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of
+     * attempts as the value.
      * </p>
      */
     private Integer attempts;
@@ -40,14 +40,14 @@ public class RetryStrategy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of times to move a job to the <code>RUNNABLE</code> status. You may specify between 1 and 10 attempts.
-     * If the value of <code>attempts</code> is greater than one, the job is retried if it fails until it has moved to
-     * <code>RUNNABLE</code> that many times.
+     * If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of
+     * attempts as the value.
      * </p>
      * 
      * @param attempts
      *        The number of times to move a job to the <code>RUNNABLE</code> status. You may specify between 1 and 10
-     *        attempts. If the value of <code>attempts</code> is greater than one, the job is retried if it fails until
-     *        it has moved to <code>RUNNABLE</code> that many times.
+     *        attempts. If the value of <code>attempts</code> is greater than one, the job is retried on failure the
+     *        same number of attempts as the value.
      */
 
     public void setAttempts(Integer attempts) {
@@ -57,13 +57,13 @@ public class RetryStrategy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of times to move a job to the <code>RUNNABLE</code> status. You may specify between 1 and 10 attempts.
-     * If the value of <code>attempts</code> is greater than one, the job is retried if it fails until it has moved to
-     * <code>RUNNABLE</code> that many times.
+     * If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of
+     * attempts as the value.
      * </p>
      * 
      * @return The number of times to move a job to the <code>RUNNABLE</code> status. You may specify between 1 and 10
-     *         attempts. If the value of <code>attempts</code> is greater than one, the job is retried if it fails until
-     *         it has moved to <code>RUNNABLE</code> that many times.
+     *         attempts. If the value of <code>attempts</code> is greater than one, the job is retried on failure the
+     *         same number of attempts as the value.
      */
 
     public Integer getAttempts() {
@@ -73,14 +73,14 @@ public class RetryStrategy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of times to move a job to the <code>RUNNABLE</code> status. You may specify between 1 and 10 attempts.
-     * If the value of <code>attempts</code> is greater than one, the job is retried if it fails until it has moved to
-     * <code>RUNNABLE</code> that many times.
+     * If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of
+     * attempts as the value.
      * </p>
      * 
      * @param attempts
      *        The number of times to move a job to the <code>RUNNABLE</code> status. You may specify between 1 and 10
-     *        attempts. If the value of <code>attempts</code> is greater than one, the job is retried if it fails until
-     *        it has moved to <code>RUNNABLE</code> that many times.
+     *        attempts. If the value of <code>attempts</code> is greater than one, the job is retried on failure the
+     *        same number of attempts as the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

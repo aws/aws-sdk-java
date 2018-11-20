@@ -453,8 +453,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AddCustomAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AddCustomAttributesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -521,8 +519,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AdminAddUserToGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AdminAddUserToGroupResultJsonUnmarshaller());
@@ -604,8 +600,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AdminConfirmSignUpResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AdminConfirmSignUpResultJsonUnmarshaller());
@@ -717,8 +711,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AdminCreateUserResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AdminCreateUserResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -786,8 +778,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AdminDeleteUserResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AdminDeleteUserResultJsonUnmarshaller());
@@ -857,8 +847,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AdminDeleteUserAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -958,8 +946,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AdminDisableProviderForUserResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AdminDisableProviderForUserResultJsonUnmarshaller());
@@ -1029,8 +1015,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AdminDisableUserResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AdminDisableUserResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1098,8 +1082,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AdminEnableUserResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AdminEnableUserResultJsonUnmarshaller());
@@ -1171,8 +1153,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AdminForgetDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AdminForgetDeviceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1241,8 +1221,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AdminGetDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AdminGetDeviceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1310,8 +1288,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AdminGetUserResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AdminGetUserResultJsonUnmarshaller());
@@ -1404,8 +1380,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AdminInitiateAuthResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AdminInitiateAuthResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1496,8 +1470,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AdminLinkProviderForUserResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AdminLinkProviderForUserResultJsonUnmarshaller());
@@ -1567,8 +1539,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AdminListDevicesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AdminListDevicesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1635,8 +1605,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AdminListGroupsForUserResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1706,8 +1674,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AdminListUserAuthEventsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AdminListUserAuthEventsResultJsonUnmarshaller());
@@ -1776,8 +1742,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AdminRemoveUserFromGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1875,8 +1839,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AdminResetUserPasswordResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1984,8 +1946,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AdminRespondToAuthChallengeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AdminRespondToAuthChallengeResultJsonUnmarshaller());
@@ -2054,8 +2014,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AdminSetUserMFAPreferenceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AdminSetUserMFAPreferenceResultJsonUnmarshaller());
@@ -2122,8 +2080,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AdminSetUserSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AdminSetUserSettingsResultJsonUnmarshaller());
@@ -2192,8 +2148,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AdminUpdateAuthEventFeedbackResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2266,8 +2220,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AdminUpdateDeviceStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2357,8 +2309,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AdminUpdateUserAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AdminUpdateUserAttributesResultJsonUnmarshaller());
@@ -2428,8 +2378,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<AdminUserGlobalSignOutResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AdminUserGlobalSignOutResultJsonUnmarshaller());
@@ -2494,8 +2442,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AssociateSoftwareTokenResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2570,8 +2516,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ChangePasswordResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ChangePasswordResultJsonUnmarshaller());
@@ -2649,8 +2593,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ConfirmDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ConfirmDeviceResultJsonUnmarshaller());
@@ -2737,8 +2679,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ConfirmForgotPasswordResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2827,8 +2767,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ConfirmSignUpResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ConfirmSignUpResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler, executionContext);
@@ -2898,8 +2836,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2966,8 +2902,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateIdentityProviderResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateIdentityProviderResultJsonUnmarshaller());
@@ -3032,8 +2966,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateResourceServerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateResourceServerResultJsonUnmarshaller());
@@ -3101,8 +3033,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateUserImportJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateUserImportJobResultJsonUnmarshaller());
@@ -3179,8 +3109,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateUserPoolResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateUserPoolResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3250,8 +3178,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<CreateUserPoolClientResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateUserPoolClientResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3313,8 +3239,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateUserPoolDomainResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateUserPoolDomainResultJsonUnmarshaller());
@@ -3381,8 +3305,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3447,8 +3369,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteIdentityProviderResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteIdentityProviderResultJsonUnmarshaller());
@@ -3511,8 +3431,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteResourceServerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteResourceServerResultJsonUnmarshaller());
@@ -3583,8 +3501,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteUserResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteUserResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler, executionContext);
@@ -3654,8 +3570,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteUserAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteUserAttributesResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler, executionContext);
@@ -3722,8 +3636,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteUserPoolResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteUserPoolResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3787,8 +3699,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DeleteUserPoolClientResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteUserPoolClientResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3848,8 +3758,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteUserPoolDomainResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteUserPoolDomainResultJsonUnmarshaller());
@@ -3914,8 +3822,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeIdentityProviderResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeIdentityProviderResultJsonUnmarshaller());
@@ -3978,8 +3884,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeResourceServerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -4047,8 +3951,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeRiskConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeRiskConfigurationResultJsonUnmarshaller());
@@ -4112,8 +4014,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeUserImportJobResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -4181,8 +4081,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeUserPoolResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeUserPoolResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4246,8 +4144,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<DescribeUserPoolClientResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeUserPoolClientResultJsonUnmarshaller());
@@ -4308,8 +4204,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeUserPoolDomainResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -4382,8 +4276,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ForgetDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ForgetDeviceResultJsonUnmarshaller());
@@ -4479,8 +4371,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ForgotPasswordResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ForgotPasswordResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler, executionContext);
@@ -4543,8 +4433,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetCSVHeaderResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCSVHeaderResultJsonUnmarshaller());
@@ -4617,8 +4505,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetDeviceResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDeviceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4684,8 +4570,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetGroupResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4750,8 +4634,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetIdentityProviderByIdentifierResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetIdentityProviderByIdentifierResultJsonUnmarshaller());
@@ -4809,8 +4691,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetSigningCertificateResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -4876,8 +4756,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetUICustomizationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetUICustomizationResultJsonUnmarshaller());
@@ -4947,8 +4825,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetUserResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetUserResultJsonUnmarshaller());
@@ -5043,8 +4919,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<GetUserAttributeVerificationCodeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetUserAttributeVerificationCodeResultJsonUnmarshaller());
@@ -5107,8 +4981,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetUserPoolMfaConfigResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetUserPoolMfaConfigResultJsonUnmarshaller());
@@ -5176,8 +5048,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GlobalSignOutResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GlobalSignOutResultJsonUnmarshaller());
@@ -5258,8 +5128,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<InitiateAuthResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new InitiateAuthResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5331,8 +5199,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListDevicesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDevicesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5398,8 +5264,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListGroupsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListGroupsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5461,8 +5325,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListIdentityProvidersResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -5527,8 +5389,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListResourceServersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListResourceServersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5591,8 +5451,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListUserImportJobsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListUserImportJobsResultJsonUnmarshaller());
@@ -5657,8 +5515,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<ListUserPoolClientsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListUserPoolClientsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5719,8 +5575,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListUserPoolsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListUserPoolsResultJsonUnmarshaller());
@@ -5784,8 +5638,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListUsersResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListUsersResultJsonUnmarshaller());
@@ -5851,8 +5703,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListUsersInGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListUsersInGroupResultJsonUnmarshaller());
@@ -5940,8 +5790,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ResendConfirmationCodeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -6045,8 +5893,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<RespondToAuthChallengeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new RespondToAuthChallengeResultJsonUnmarshaller());
@@ -6125,8 +5971,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<SetRiskConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetRiskConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6202,8 +6046,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<SetUICustomizationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetUICustomizationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6269,8 +6111,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<SetUserMFAPreferenceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetUserMFAPreferenceResultJsonUnmarshaller());
@@ -6341,8 +6181,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<SetUserPoolMfaConfigResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetUserPoolMfaConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6410,8 +6248,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<SetUserSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetUserSettingsResultJsonUnmarshaller());
@@ -6500,8 +6336,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<SignUpResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new SignUpResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler, executionContext);
@@ -6567,8 +6401,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<StartUserImportJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartUserImportJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6633,8 +6465,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<StopUserImportJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopUserImportJobResultJsonUnmarshaller());
@@ -6703,8 +6533,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateAuthEventFeedbackResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -6778,8 +6606,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDeviceStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDeviceStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6845,8 +6671,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6911,8 +6735,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateIdentityProviderResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateIdentityProviderResultJsonUnmarshaller());
@@ -6975,8 +6797,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateResourceServerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateResourceServerResultJsonUnmarshaller());
@@ -7075,8 +6895,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateUserAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateUserAttributesResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler, executionContext);
@@ -7158,8 +6976,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<UpdateUserPoolResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateUserPoolResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7230,8 +7046,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateUserPoolClientResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateUserPoolClientResultJsonUnmarshaller());
@@ -7314,8 +7128,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<VerifySoftwareTokenResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new VerifySoftwareTokenResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7391,8 +7203,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             HttpResponseHandler<AmazonWebServiceResponse<VerifyUserAttributeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new VerifyUserAttributeResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler, executionContext);
@@ -7429,18 +7239,18 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -7450,7 +7260,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -7458,11 +7268,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

@@ -61,6 +61,12 @@ public class ThingDocument implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String shadow;
+    /**
+     * <p>
+     * Indicates whether or not the thing is connected to the AWS IoT service.
+     * </p>
+     */
+    private ThingConnectivity connectivity;
 
     /**
      * <p>
@@ -354,6 +360,46 @@ public class ThingDocument implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Indicates whether or not the thing is connected to the AWS IoT service.
+     * </p>
+     * 
+     * @param connectivity
+     *        Indicates whether or not the thing is connected to the AWS IoT service.
+     */
+
+    public void setConnectivity(ThingConnectivity connectivity) {
+        this.connectivity = connectivity;
+    }
+
+    /**
+     * <p>
+     * Indicates whether or not the thing is connected to the AWS IoT service.
+     * </p>
+     * 
+     * @return Indicates whether or not the thing is connected to the AWS IoT service.
+     */
+
+    public ThingConnectivity getConnectivity() {
+        return this.connectivity;
+    }
+
+    /**
+     * <p>
+     * Indicates whether or not the thing is connected to the AWS IoT service.
+     * </p>
+     * 
+     * @param connectivity
+     *        Indicates whether or not the thing is connected to the AWS IoT service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ThingDocument withConnectivity(ThingConnectivity connectivity) {
+        setConnectivity(connectivity);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -375,7 +421,9 @@ public class ThingDocument implements Serializable, Cloneable, StructuredPojo {
         if (getAttributes() != null)
             sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getShadow() != null)
-            sb.append("Shadow: ").append(getShadow());
+            sb.append("Shadow: ").append(getShadow()).append(",");
+        if (getConnectivity() != null)
+            sb.append("Connectivity: ").append(getConnectivity());
         sb.append("}");
         return sb.toString();
     }
@@ -414,6 +462,10 @@ public class ThingDocument implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getShadow() != null && other.getShadow().equals(this.getShadow()) == false)
             return false;
+        if (other.getConnectivity() == null ^ this.getConnectivity() == null)
+            return false;
+        if (other.getConnectivity() != null && other.getConnectivity().equals(this.getConnectivity()) == false)
+            return false;
         return true;
     }
 
@@ -428,6 +480,7 @@ public class ThingDocument implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getThingGroupNames() == null) ? 0 : getThingGroupNames().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         hashCode = prime * hashCode + ((getShadow() == null) ? 0 : getShadow().hashCode());
+        hashCode = prime * hashCode + ((getConnectivity() == null) ? 0 : getConnectivity().hashCode());
         return hashCode;
     }
 

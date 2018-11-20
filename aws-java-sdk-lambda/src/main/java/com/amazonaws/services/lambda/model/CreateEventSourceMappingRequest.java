@@ -29,11 +29,28 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The Amazon Resource Name (ARN) of the event source.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String eventSourceArn;
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -61,46 +78,51 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
      * characters in length.
      * </p>
      */
     private String functionName;
     /**
      * <p>
-     * Set to false to disable the event source upon creation.
+     * Disables the event source mapping to pause polling and invocation.
      * </p>
      */
     private Boolean enabled;
     /**
      * <p>
-     * The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your
-     * function. Your function receives an event with all the retrieved records. The default for Amazon Kinesis and
-     * Amazon DynamoDB is 100 records. Both the default and maximum for Amazon SQS are 10 messages.
+     * The maximum number of items to retrieve in a single batch.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer batchSize;
     /**
      * <p>
-     * The position in the DynamoDB or Kinesis stream where AWS Lambda should start reading. For more information, see
-     * <a href=
-     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
-     * >GetShardIterator</a> in the <i>Amazon Kinesis API Reference Guide</i> or <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html"
-     * >GetShardIterator</a> in the <i>Amazon DynamoDB API Reference Guide</i>. The <code>AT_TIMESTAMP</code> value is
-     * supported only for <a href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
-     * streams</a>.
+     * The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Streams
+     * sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
      * </p>
      */
     private String startingPosition;
     /**
      * <p>
-     * The timestamp of the data record from which to start reading. Used with <a href=
-     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
-     * >shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator
-     * returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator
-     * returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for <a
-     * href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis streams</a>.
+     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix time in seconds from which to start
+     * reading.
      * </p>
      */
     private java.util.Date startingPositionTimestamp;
@@ -109,9 +131,42 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The Amazon Resource Name (ARN) of the event source.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param eventSourceArn
-     *        The Amazon Resource Name (ARN) of the event source.
+     *        The Amazon Resource Name (ARN) of the event source.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     *        </p>
+     *        </li>
      */
 
     public void setEventSourceArn(String eventSourceArn) {
@@ -122,8 +177,41 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The Amazon Resource Name (ARN) of the event source.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The Amazon Resource Name (ARN) of the event source.
+     * @return The Amazon Resource Name (ARN) of the event source.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     *         </p>
+     *         </li>
      */
 
     public String getEventSourceArn() {
@@ -134,9 +222,42 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The Amazon Resource Name (ARN) of the event source.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param eventSourceArn
-     *        The Amazon Resource Name (ARN) of the event source.
+     *        The Amazon Resource Name (ARN) of the event source.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,7 +268,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -175,12 +296,12 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
      * characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the lambda function.</p>
+     *        The name of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
@@ -207,8 +328,8 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        </ul>
      *        <p>
-     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
-     *        to 64 characters in length.
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it's limited to
+     *        64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -217,7 +338,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -245,11 +366,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
      * characters in length.
      * </p>
      * 
-     * @return The name of the lambda function.</p>
+     * @return The name of the Lambda function.</p>
      *         <p class="title">
      *         <b>Name formats</b>
      *         </p>
@@ -277,7 +398,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *         </li>
      *         </ul>
      *         <p>
-     *         The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *         The length constraint applies only to the full ARN. If you specify only the function name, it's limited
      *         to 64 characters in length.
      */
 
@@ -287,7 +408,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -315,12 +436,12 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
      * characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the lambda function.</p>
+     *        The name of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
@@ -347,8 +468,8 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        </ul>
      *        <p>
-     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
-     *        to 64 characters in length.
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it's limited to
+     *        64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -359,11 +480,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Set to false to disable the event source upon creation.
+     * Disables the event source mapping to pause polling and invocation.
      * </p>
      * 
      * @param enabled
-     *        Set to false to disable the event source upon creation.
+     *        Disables the event source mapping to pause polling and invocation.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -372,10 +493,10 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Set to false to disable the event source upon creation.
+     * Disables the event source mapping to pause polling and invocation.
      * </p>
      * 
-     * @return Set to false to disable the event source upon creation.
+     * @return Disables the event source mapping to pause polling and invocation.
      */
 
     public Boolean getEnabled() {
@@ -384,11 +505,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Set to false to disable the event source upon creation.
+     * Disables the event source mapping to pause polling and invocation.
      * </p>
      * 
      * @param enabled
-     *        Set to false to disable the event source upon creation.
+     *        Disables the event source mapping to pause polling and invocation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,10 +520,10 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Set to false to disable the event source upon creation.
+     * Disables the event source mapping to pause polling and invocation.
      * </p>
      * 
-     * @return Set to false to disable the event source upon creation.
+     * @return Disables the event source mapping to pause polling and invocation.
      */
 
     public Boolean isEnabled() {
@@ -411,15 +532,44 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your
-     * function. Your function receives an event with all the retrieved records. The default for Amazon Kinesis and
-     * Amazon DynamoDB is 100 records. Both the default and maximum for Amazon SQS are 10 messages.
+     * The maximum number of items to retrieve in a single batch.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param batchSize
-     *        The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking
-     *        your function. Your function receives an event with all the retrieved records. The default for Amazon
-     *        Kinesis and Amazon DynamoDB is 100 records. Both the default and maximum for Amazon SQS are 10 messages.
+     *        The maximum number of items to retrieve in a single batch.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     *        </p>
+     *        </li>
      */
 
     public void setBatchSize(Integer batchSize) {
@@ -428,15 +578,43 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your
-     * function. Your function receives an event with all the retrieved records. The default for Amazon Kinesis and
-     * Amazon DynamoDB is 100 records. Both the default and maximum for Amazon SQS are 10 messages.
+     * The maximum number of items to retrieve in a single batch.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The largest number of records that AWS Lambda will retrieve from your event source at the time of
-     *         invoking your function. Your function receives an event with all the retrieved records. The default for
-     *         Amazon Kinesis and Amazon DynamoDB is 100 records. Both the default and maximum for Amazon SQS are 10
-     *         messages.
+     * @return The maximum number of items to retrieve in a single batch.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     *         </p>
+     *         </li>
      */
 
     public Integer getBatchSize() {
@@ -445,15 +623,44 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your
-     * function. Your function receives an event with all the retrieved records. The default for Amazon Kinesis and
-     * Amazon DynamoDB is 100 records. Both the default and maximum for Amazon SQS are 10 messages.
+     * The maximum number of items to retrieve in a single batch.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param batchSize
-     *        The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking
-     *        your function. Your function receives an event with all the retrieved records. The default for Amazon
-     *        Kinesis and Amazon DynamoDB is 100 records. Both the default and maximum for Amazon SQS are 10 messages.
+     *        The maximum number of items to retrieve in a single batch.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -464,25 +671,13 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The position in the DynamoDB or Kinesis stream where AWS Lambda should start reading. For more information, see
-     * <a href=
-     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
-     * >GetShardIterator</a> in the <i>Amazon Kinesis API Reference Guide</i> or <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html"
-     * >GetShardIterator</a> in the <i>Amazon DynamoDB API Reference Guide</i>. The <code>AT_TIMESTAMP</code> value is
-     * supported only for <a href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
-     * streams</a>.
+     * The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Streams
+     * sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
      * </p>
      * 
      * @param startingPosition
-     *        The position in the DynamoDB or Kinesis stream where AWS Lambda should start reading. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
-     *        >GetShardIterator</a> in the <i>Amazon Kinesis API Reference Guide</i> or <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html"
-     *        >GetShardIterator</a> in the <i>Amazon DynamoDB API Reference Guide</i>. The <code>AT_TIMESTAMP</code>
-     *        value is supported only for <a
-     *        href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis streams</a>.
+     *        The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB
+     *        Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
      * @see EventSourcePosition
      */
 
@@ -492,24 +687,12 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The position in the DynamoDB or Kinesis stream where AWS Lambda should start reading. For more information, see
-     * <a href=
-     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
-     * >GetShardIterator</a> in the <i>Amazon Kinesis API Reference Guide</i> or <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html"
-     * >GetShardIterator</a> in the <i>Amazon DynamoDB API Reference Guide</i>. The <code>AT_TIMESTAMP</code> value is
-     * supported only for <a href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
-     * streams</a>.
+     * The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Streams
+     * sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
      * </p>
      * 
-     * @return The position in the DynamoDB or Kinesis stream where AWS Lambda should start reading. For more
-     *         information, see <a href=
-     *         "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
-     *         >GetShardIterator</a> in the <i>Amazon Kinesis API Reference Guide</i> or <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html"
-     *         >GetShardIterator</a> in the <i>Amazon DynamoDB API Reference Guide</i>. The <code>AT_TIMESTAMP</code>
-     *         value is supported only for <a
-     *         href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis streams</a>.
+     * @return The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB
+     *         Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
      * @see EventSourcePosition
      */
 
@@ -519,25 +702,13 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The position in the DynamoDB or Kinesis stream where AWS Lambda should start reading. For more information, see
-     * <a href=
-     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
-     * >GetShardIterator</a> in the <i>Amazon Kinesis API Reference Guide</i> or <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html"
-     * >GetShardIterator</a> in the <i>Amazon DynamoDB API Reference Guide</i>. The <code>AT_TIMESTAMP</code> value is
-     * supported only for <a href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
-     * streams</a>.
+     * The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Streams
+     * sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
      * </p>
      * 
      * @param startingPosition
-     *        The position in the DynamoDB or Kinesis stream where AWS Lambda should start reading. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
-     *        >GetShardIterator</a> in the <i>Amazon Kinesis API Reference Guide</i> or <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html"
-     *        >GetShardIterator</a> in the <i>Amazon DynamoDB API Reference Guide</i>. The <code>AT_TIMESTAMP</code>
-     *        value is supported only for <a
-     *        href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis streams</a>.
+     *        The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB
+     *        Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventSourcePosition
      */
@@ -549,25 +720,13 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The position in the DynamoDB or Kinesis stream where AWS Lambda should start reading. For more information, see
-     * <a href=
-     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
-     * >GetShardIterator</a> in the <i>Amazon Kinesis API Reference Guide</i> or <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html"
-     * >GetShardIterator</a> in the <i>Amazon DynamoDB API Reference Guide</i>. The <code>AT_TIMESTAMP</code> value is
-     * supported only for <a href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
-     * streams</a>.
+     * The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Streams
+     * sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
      * </p>
      * 
      * @param startingPosition
-     *        The position in the DynamoDB or Kinesis stream where AWS Lambda should start reading. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
-     *        >GetShardIterator</a> in the <i>Amazon Kinesis API Reference Guide</i> or <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html"
-     *        >GetShardIterator</a> in the <i>Amazon DynamoDB API Reference Guide</i>. The <code>AT_TIMESTAMP</code>
-     *        value is supported only for <a
-     *        href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis streams</a>.
+     *        The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB
+     *        Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
      * @see EventSourcePosition
      */
 
@@ -577,25 +736,13 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The position in the DynamoDB or Kinesis stream where AWS Lambda should start reading. For more information, see
-     * <a href=
-     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
-     * >GetShardIterator</a> in the <i>Amazon Kinesis API Reference Guide</i> or <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html"
-     * >GetShardIterator</a> in the <i>Amazon DynamoDB API Reference Guide</i>. The <code>AT_TIMESTAMP</code> value is
-     * supported only for <a href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
-     * streams</a>.
+     * The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Streams
+     * sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
      * </p>
      * 
      * @param startingPosition
-     *        The position in the DynamoDB or Kinesis stream where AWS Lambda should start reading. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
-     *        >GetShardIterator</a> in the <i>Amazon Kinesis API Reference Guide</i> or <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html"
-     *        >GetShardIterator</a> in the <i>Amazon DynamoDB API Reference Guide</i>. The <code>AT_TIMESTAMP</code>
-     *        value is supported only for <a
-     *        href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis streams</a>.
+     *        The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB
+     *        Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventSourcePosition
      */
@@ -607,21 +754,13 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The timestamp of the data record from which to start reading. Used with <a href=
-     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
-     * >shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator
-     * returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator
-     * returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for <a
-     * href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis streams</a>.
+     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix time in seconds from which to start
+     * reading.
      * </p>
      * 
      * @param startingPositionTimestamp
-     *        The timestamp of the data record from which to start reading. Used with <a href=
-     *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
-     *        >shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator
-     *        returned is for the next (later) record. If the timestamp is older than the current trim horizon, the
-     *        iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for <a
-     *        href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis streams</a>.
+     *        With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix time in seconds from which
+     *        to start reading.
      */
 
     public void setStartingPositionTimestamp(java.util.Date startingPositionTimestamp) {
@@ -630,20 +769,12 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The timestamp of the data record from which to start reading. Used with <a href=
-     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
-     * >shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator
-     * returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator
-     * returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for <a
-     * href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis streams</a>.
+     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix time in seconds from which to start
+     * reading.
      * </p>
      * 
-     * @return The timestamp of the data record from which to start reading. Used with <a href=
-     *         "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
-     *         >shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator
-     *         returned is for the next (later) record. If the timestamp is older than the current trim horizon, the
-     *         iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for <a
-     *         href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis streams</a>.
+     * @return With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix time in seconds from which
+     *         to start reading.
      */
 
     public java.util.Date getStartingPositionTimestamp() {
@@ -652,21 +783,13 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The timestamp of the data record from which to start reading. Used with <a href=
-     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
-     * >shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator
-     * returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator
-     * returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for <a
-     * href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis streams</a>.
+     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix time in seconds from which to start
+     * reading.
      * </p>
      * 
      * @param startingPositionTimestamp
-     *        The timestamp of the data record from which to start reading. Used with <a href=
-     *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
-     *        >shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator
-     *        returned is for the next (later) record. If the timestamp is older than the current trim horizon, the
-     *        iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for <a
-     *        href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis streams</a>.
+     *        With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix time in seconds from which
+     *        to start reading.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

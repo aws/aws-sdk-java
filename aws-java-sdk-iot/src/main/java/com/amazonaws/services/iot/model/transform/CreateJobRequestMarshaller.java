@@ -44,8 +44,12 @@ public class CreateJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetSelection").build();
     private static final MarshallingInfo<StructuredPojo> JOBEXECUTIONSROLLOUTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobExecutionsRolloutConfig").build();
+    private static final MarshallingInfo<StructuredPojo> ABORTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("abortConfig").build();
     private static final MarshallingInfo<StructuredPojo> TIMEOUTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutConfig").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateJobRequestMarshaller instance = new CreateJobRequestMarshaller();
 
@@ -71,7 +75,9 @@ public class CreateJobRequestMarshaller {
             protocolMarshaller.marshall(createJobRequest.getPresignedUrlConfig(), PRESIGNEDURLCONFIG_BINDING);
             protocolMarshaller.marshall(createJobRequest.getTargetSelection(), TARGETSELECTION_BINDING);
             protocolMarshaller.marshall(createJobRequest.getJobExecutionsRolloutConfig(), JOBEXECUTIONSROLLOUTCONFIG_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getAbortConfig(), ABORTCONFIG_BINDING);
             protocolMarshaller.marshall(createJobRequest.getTimeoutConfig(), TIMEOUTCONFIG_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

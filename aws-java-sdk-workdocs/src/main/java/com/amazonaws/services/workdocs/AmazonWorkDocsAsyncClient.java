@@ -1188,6 +1188,39 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourcesResult> getResourcesAsync(GetResourcesRequest request) {
+
+        return getResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcesResult> getResourcesAsync(final GetResourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetResourcesRequest, GetResourcesResult> asyncHandler) {
+        final GetResourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetResourcesResult>() {
+            @Override
+            public GetResourcesResult call() throws Exception {
+                GetResourcesResult result = null;
+
+                try {
+                    result = executeGetResources(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<InitiateDocumentVersionUploadResult> initiateDocumentVersionUploadAsync(InitiateDocumentVersionUploadRequest request) {
 
         return initiateDocumentVersionUploadAsync(request, null);

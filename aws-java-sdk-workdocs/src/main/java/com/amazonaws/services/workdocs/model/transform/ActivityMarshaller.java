@@ -31,6 +31,8 @@ public class ActivityMarshaller {
             .marshallLocationName("Type").build();
     private static final MarshallingInfo<java.util.Date> TIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeStamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Boolean> ISINDIRECTACTIVITY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsIndirectActivity").build();
     private static final MarshallingInfo<String> ORGANIZATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrganizationId").build();
     private static final MarshallingInfo<StructuredPojo> INITIATOR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -62,6 +64,7 @@ public class ActivityMarshaller {
         try {
             protocolMarshaller.marshall(activity.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(activity.getTimeStamp(), TIMESTAMP_BINDING);
+            protocolMarshaller.marshall(activity.getIsIndirectActivity(), ISINDIRECTACTIVITY_BINDING);
             protocolMarshaller.marshall(activity.getOrganizationId(), ORGANIZATIONID_BINDING);
             protocolMarshaller.marshall(activity.getInitiator(), INITIATOR_BINDING);
             protocolMarshaller.marshall(activity.getParticipants(), PARTICIPANTS_BINDING);

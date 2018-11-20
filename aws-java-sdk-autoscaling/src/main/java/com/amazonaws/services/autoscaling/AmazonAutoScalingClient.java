@@ -355,8 +355,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<AttachInstancesResult> responseHandler = new StaxResponseHandler<AttachInstancesResult>(
                     new AttachInstancesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -422,8 +420,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<AttachLoadBalancerTargetGroupsResult> responseHandler = new StaxResponseHandler<AttachLoadBalancerTargetGroupsResult>(
                     new AttachLoadBalancerTargetGroupsResultStaxUnmarshaller());
@@ -494,8 +490,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<AttachLoadBalancersResult> responseHandler = new StaxResponseHandler<AttachLoadBalancersResult>(
                     new AttachLoadBalancersResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -555,8 +549,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<BatchDeleteScheduledActionResult> responseHandler = new StaxResponseHandler<BatchDeleteScheduledActionResult>(
                     new BatchDeleteScheduledActionResultStaxUnmarshaller());
@@ -620,8 +612,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<BatchPutScheduledUpdateGroupActionResult> responseHandler = new StaxResponseHandler<BatchPutScheduledUpdateGroupActionResult>(
                     new BatchPutScheduledUpdateGroupActionResultStaxUnmarshaller());
@@ -715,8 +705,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CompleteLifecycleActionResult> responseHandler = new StaxResponseHandler<CompleteLifecycleActionResult>(
                     new CompleteLifecycleActionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -790,8 +778,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CreateAutoScalingGroupResult> responseHandler = new StaxResponseHandler<CreateAutoScalingGroupResult>(
                     new CreateAutoScalingGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -863,8 +849,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<CreateLaunchConfigurationResult> responseHandler = new StaxResponseHandler<CreateLaunchConfigurationResult>(
                     new CreateLaunchConfigurationResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -935,8 +919,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateOrUpdateTagsResult> responseHandler = new StaxResponseHandler<CreateOrUpdateTagsResult>(
                     new CreateOrUpdateTagsResultStaxUnmarshaller());
@@ -1014,8 +996,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteAutoScalingGroupResult> responseHandler = new StaxResponseHandler<DeleteAutoScalingGroupResult>(
                     new DeleteAutoScalingGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1077,8 +1057,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteLaunchConfigurationResult> responseHandler = new StaxResponseHandler<DeleteLaunchConfigurationResult>(
                     new DeleteLaunchConfigurationResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1138,8 +1116,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeleteLifecycleHookResult> responseHandler = new StaxResponseHandler<DeleteLifecycleHookResult>(
                     new DeleteLifecycleHookResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1195,8 +1171,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteNotificationConfigurationResult> responseHandler = new StaxResponseHandler<DeleteNotificationConfigurationResult>(
                     new DeleteNotificationConfigurationResultStaxUnmarshaller());
@@ -1259,8 +1233,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DeletePolicyResult> responseHandler = new StaxResponseHandler<DeletePolicyResult>(new DeletePolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1314,8 +1286,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteScheduledActionResult> responseHandler = new StaxResponseHandler<DeleteScheduledActionResult>(
                     new DeleteScheduledActionResultStaxUnmarshaller());
@@ -1373,8 +1343,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteTagsResult> responseHandler = new StaxResponseHandler<DeleteTagsResult>(new DeleteTagsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1435,8 +1403,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeAccountLimitsResult> responseHandler = new StaxResponseHandler<DescribeAccountLimitsResult>(
                     new DescribeAccountLimitsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1496,8 +1462,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeAdjustmentTypesResult> responseHandler = new StaxResponseHandler<DescribeAdjustmentTypesResult>(
                     new DescribeAdjustmentTypesResultStaxUnmarshaller());
@@ -1561,8 +1525,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeAutoScalingGroupsResult> responseHandler = new StaxResponseHandler<DescribeAutoScalingGroupsResult>(
                     new DescribeAutoScalingGroupsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1624,8 +1586,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeAutoScalingInstancesResult> responseHandler = new StaxResponseHandler<DescribeAutoScalingInstancesResult>(
                     new DescribeAutoScalingInstancesResultStaxUnmarshaller());
@@ -1689,8 +1649,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeAutoScalingNotificationTypesResult> responseHandler = new StaxResponseHandler<DescribeAutoScalingNotificationTypesResult>(
                     new DescribeAutoScalingNotificationTypesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1752,8 +1710,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeLaunchConfigurationsResult> responseHandler = new StaxResponseHandler<DescribeLaunchConfigurationsResult>(
                     new DescribeLaunchConfigurationsResultStaxUnmarshaller());
@@ -1830,8 +1786,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeLifecycleHookTypesResult> responseHandler = new StaxResponseHandler<DescribeLifecycleHookTypesResult>(
                     new DescribeLifecycleHookTypesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1892,8 +1846,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeLifecycleHooksResult> responseHandler = new StaxResponseHandler<DescribeLifecycleHooksResult>(
                     new DescribeLifecycleHooksResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1949,8 +1901,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeLoadBalancerTargetGroupsResult> responseHandler = new StaxResponseHandler<DescribeLoadBalancerTargetGroupsResult>(
                     new DescribeLoadBalancerTargetGroupsResultStaxUnmarshaller());
@@ -2011,8 +1961,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeLoadBalancersResult> responseHandler = new StaxResponseHandler<DescribeLoadBalancersResult>(
                     new DescribeLoadBalancersResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2071,8 +2019,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeMetricCollectionTypesResult> responseHandler = new StaxResponseHandler<DescribeMetricCollectionTypesResult>(
                     new DescribeMetricCollectionTypesResultStaxUnmarshaller());
@@ -2138,8 +2084,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeNotificationConfigurationsResult> responseHandler = new StaxResponseHandler<DescribeNotificationConfigurationsResult>(
                     new DescribeNotificationConfigurationsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2204,8 +2148,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribePoliciesResult> responseHandler = new StaxResponseHandler<DescribePoliciesResult>(
                     new DescribePoliciesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2268,8 +2210,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeScalingActivitiesResult> responseHandler = new StaxResponseHandler<DescribeScalingActivitiesResult>(
                     new DescribeScalingActivitiesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2329,8 +2269,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeScalingProcessTypesResult> responseHandler = new StaxResponseHandler<DescribeScalingProcessTypesResult>(
                     new DescribeScalingProcessTypesResultStaxUnmarshaller());
@@ -2394,8 +2332,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeScheduledActionsResult> responseHandler = new StaxResponseHandler<DescribeScheduledActionsResult>(
                     new DescribeScheduledActionsResultStaxUnmarshaller());
@@ -2468,8 +2404,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DescribeTagsResult> responseHandler = new StaxResponseHandler<DescribeTagsResult>(new DescribeTagsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2533,8 +2467,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeTerminationPolicyTypesResult> responseHandler = new StaxResponseHandler<DescribeTerminationPolicyTypesResult>(
                     new DescribeTerminationPolicyTypesResultStaxUnmarshaller());
@@ -2613,8 +2545,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DetachInstancesResult> responseHandler = new StaxResponseHandler<DetachInstancesResult>(
                     new DetachInstancesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2669,8 +2599,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<DetachLoadBalancerTargetGroupsResult> responseHandler = new StaxResponseHandler<DetachLoadBalancerTargetGroupsResult>(
                     new DetachLoadBalancerTargetGroupsResultStaxUnmarshaller());
@@ -2736,8 +2664,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DetachLoadBalancersResult> responseHandler = new StaxResponseHandler<DetachLoadBalancersResult>(
                     new DetachLoadBalancersResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2798,8 +2724,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DisableMetricsCollectionResult> responseHandler = new StaxResponseHandler<DisableMetricsCollectionResult>(
                     new DisableMetricsCollectionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2856,8 +2780,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<EnableMetricsCollectionResult> responseHandler = new StaxResponseHandler<EnableMetricsCollectionResult>(
                     new EnableMetricsCollectionResultStaxUnmarshaller());
@@ -2919,8 +2841,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<EnterStandbyResult> responseHandler = new StaxResponseHandler<EnterStandbyResult>(new EnterStandbyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2976,8 +2896,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ExecutePolicyResult> responseHandler = new StaxResponseHandler<ExecutePolicyResult>(new ExecutePolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3037,8 +2955,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<ExitStandbyResult> responseHandler = new StaxResponseHandler<ExitStandbyResult>(new ExitStandbyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3144,8 +3060,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<PutLifecycleHookResult> responseHandler = new StaxResponseHandler<PutLifecycleHookResult>(
                     new PutLifecycleHookResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3215,8 +3129,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<PutNotificationConfigurationResult> responseHandler = new StaxResponseHandler<PutNotificationConfigurationResult>(
                     new PutNotificationConfigurationResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3285,8 +3197,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<PutScalingPolicyResult> responseHandler = new StaxResponseHandler<PutScalingPolicyResult>(
                     new PutScalingPolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3352,8 +3262,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<PutScheduledUpdateGroupActionResult> responseHandler = new StaxResponseHandler<PutScheduledUpdateGroupActionResult>(
                     new PutScheduledUpdateGroupActionResultStaxUnmarshaller());
@@ -3448,8 +3356,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<RecordLifecycleActionHeartbeatResult> responseHandler = new StaxResponseHandler<RecordLifecycleActionHeartbeatResult>(
                     new RecordLifecycleActionHeartbeatResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3513,8 +3419,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<ResumeProcessesResult> responseHandler = new StaxResponseHandler<ResumeProcessesResult>(
                     new ResumeProcessesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3577,8 +3481,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<SetDesiredCapacityResult> responseHandler = new StaxResponseHandler<SetDesiredCapacityResult>(
                     new SetDesiredCapacityResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3637,8 +3539,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<SetInstanceHealthResult> responseHandler = new StaxResponseHandler<SetInstanceHealthResult>(
                     new SetInstanceHealthResultStaxUnmarshaller());
@@ -3702,8 +3602,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<SetInstanceProtectionResult> responseHandler = new StaxResponseHandler<SetInstanceProtectionResult>(
                     new SetInstanceProtectionResultStaxUnmarshaller());
@@ -3774,8 +3672,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<SuspendProcessesResult> responseHandler = new StaxResponseHandler<SuspendProcessesResult>(
                     new SuspendProcessesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3837,8 +3733,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<TerminateInstanceInAutoScalingGroupResult> responseHandler = new StaxResponseHandler<TerminateInstanceInAutoScalingGroupResult>(
                     new TerminateInstanceInAutoScalingGroupResultStaxUnmarshaller());
@@ -3933,8 +3827,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<UpdateAutoScalingGroupResult> responseHandler = new StaxResponseHandler<UpdateAutoScalingGroupResult>(
                     new UpdateAutoScalingGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3971,18 +3863,18 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -3992,7 +3884,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -4000,11 +3892,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

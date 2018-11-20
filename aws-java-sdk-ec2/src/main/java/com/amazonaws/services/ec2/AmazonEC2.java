@@ -2552,7 +2552,6 @@ public interface AmazonEC2 {
      * </ul>
      * 
      * @param describeAccountAttributesRequest
-     *        Contains the parameters for DescribeAccountAttributes.
      * @return Result of the DescribeAccountAttributes operation returned by the service.
      * @sample AmazonEC2.DescribeAccountAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes" target="_top">AWS
@@ -2635,7 +2634,6 @@ public interface AmazonEC2 {
      * </p>
      * 
      * @param describeAvailabilityZonesRequest
-     *        Contains the parameters for DescribeAvailabilityZones.
      * @return Result of the DescribeAvailabilityZones operation returned by the service.
      * @sample AmazonEC2.DescribeAvailabilityZones
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones" target="_top">AWS
@@ -3044,7 +3042,6 @@ public interface AmazonEC2 {
      * </p>
      * 
      * @param describeIdFormatRequest
-     *        Contains the parameters for DescribeIdFormat.
      * @return Result of the DescribeIdFormat operation returned by the service.
      * @sample AmazonEC2.DescribeIdFormat
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdFormat" target="_top">AWS API
@@ -3085,7 +3082,6 @@ public interface AmazonEC2 {
      * </p>
      * 
      * @param describeIdentityIdFormatRequest
-     *        Contains the parameters for DescribeIdentityIdFormat.
      * @return Result of the DescribeIdentityIdFormat operation returned by the service.
      * @sample AmazonEC2.DescribeIdentityIdFormat
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdentityIdFormat" target="_top">AWS
@@ -3604,7 +3600,6 @@ public interface AmazonEC2 {
      * </p>
      * 
      * @param describeRegionsRequest
-     *        Contains the parameters for DescribeRegions.
      * @return Result of the DescribeRegions operation returned by the service.
      * @sample AmazonEC2.DescribeRegions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions" target="_top">AWS API
@@ -5150,7 +5145,6 @@ public interface AmazonEC2 {
      * </p>
      * 
      * @param modifyIdFormatRequest
-     *        Contains the parameters of ModifyIdFormat.
      * @return Result of the ModifyIdFormat operation returned by the service.
      * @sample AmazonEC2.ModifyIdFormat
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdFormat" target="_top">AWS API
@@ -5190,7 +5184,6 @@ public interface AmazonEC2 {
      * </p>
      * 
      * @param modifyIdentityIdFormatRequest
-     *        Contains the parameters of ModifyIdentityIdFormat.
      * @return Result of the ModifyIdentityIdFormat operation returned by the service.
      * @sample AmazonEC2.ModifyIdentityIdFormat
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdentityIdFormat" target="_top">AWS API
@@ -5633,10 +5626,13 @@ public interface AmazonEC2 {
      * </li>
      * </ul>
      * <p>
-     * If the peered VPCs are in different accounts, each owner must initiate a separate request to modify the peering
-     * connection options, depending on whether their VPC was the requester or accepter for the VPC peering connection.
-     * If the peered VPCs are in the same account, you can modify the requester and accepter options in the same
-     * request. To confirm which VPC is the accepter and requester for a VPC peering connection, use the
+     * If the peered VPCs are in the same AWS account, you can enable DNS resolution for queries from the local VPC.
+     * This ensures that queries from the local VPC resolve to private IP addresses in the peer VPC. This option is not
+     * available if the peered VPCs are in different AWS accounts or different regions. For peered VPCs in different AWS
+     * accounts, each AWS account owner must initiate a separate request to modify the peering connection options. For
+     * inter-region peering connections, you must use the region for the requester VPC to modify the requester VPC
+     * peering options and the region for the accepter VPC to modify the accepter VPC peering options. To verify which
+     * VPCs are the accepter and the requester for a VPC peering connection, use the
      * <a>DescribeVpcPeeringConnections</a> command.
      * </p>
      * 

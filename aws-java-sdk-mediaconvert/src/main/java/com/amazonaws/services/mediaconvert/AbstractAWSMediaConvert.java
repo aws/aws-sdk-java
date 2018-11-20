@@ -28,6 +28,11 @@ public class AbstractAWSMediaConvert implements AWSMediaConvert {
     }
 
     @Override
+    public AssociateCertificateResult associateCertificate(AssociateCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelJobResult cancelJob(CancelJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -69,6 +74,11 @@ public class AbstractAWSMediaConvert implements AWSMediaConvert {
 
     @Override
     public DescribeEndpointsResult describeEndpoints(DescribeEndpointsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateCertificateResult disassociateCertificate(DisassociateCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

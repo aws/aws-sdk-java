@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum JobDefinitionType {
 
-    Container("container");
+    Container("container"),
+    Multinode("multinode");
 
     private String value;
 

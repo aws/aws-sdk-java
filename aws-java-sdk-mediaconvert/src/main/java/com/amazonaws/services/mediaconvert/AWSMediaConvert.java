@@ -40,6 +40,32 @@ public interface AWSMediaConvert {
     String ENDPOINT_PREFIX = "mediaconvert";
 
     /**
+     * Associates an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS Elemental MediaConvert.
+     * 
+     * @param associateCertificateRequest
+     * @return Result of the AssociateCertificate operation returned by the service.
+     * @throws BadRequestException
+     *         The service can't process your request because of a problem in the request. Please check your request
+     *         form and syntax.
+     * @throws InternalServerErrorException
+     *         The service encountered an unexpected condition and cannot fulfill your request.
+     * @throws ForbiddenException
+     *         You don't have permissions for this action with the credentials you sent.
+     * @throws NotFoundException
+     *         The resource you requested does not exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been sent in too short of a time. The service limits the rate at which it will
+     *         accept requests.
+     * @throws ConflictException
+     *         The service could not complete your request because there is a conflict with the current state of the
+     *         resource.
+     * @sample AWSMediaConvert.AssociateCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AssociateCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateCertificateResult associateCertificate(AssociateCertificateRequest associateCertificateRequest);
+
+    /**
      * Permanently remove a job from a queue. Once you have canceled a job, you can't start it again. You can't delete a
      * running job.
      * 
@@ -275,6 +301,33 @@ public interface AWSMediaConvert {
      *      API Documentation</a>
      */
     DescribeEndpointsResult describeEndpoints(DescribeEndpointsRequest describeEndpointsRequest);
+
+    /**
+     * Removes an association between the Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate and
+     * an AWS Elemental MediaConvert resource.
+     * 
+     * @param disassociateCertificateRequest
+     * @return Result of the DisassociateCertificate operation returned by the service.
+     * @throws BadRequestException
+     *         The service can't process your request because of a problem in the request. Please check your request
+     *         form and syntax.
+     * @throws InternalServerErrorException
+     *         The service encountered an unexpected condition and cannot fulfill your request.
+     * @throws ForbiddenException
+     *         You don't have permissions for this action with the credentials you sent.
+     * @throws NotFoundException
+     *         The resource you requested does not exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been sent in too short of a time. The service limits the rate at which it will
+     *         accept requests.
+     * @throws ConflictException
+     *         The service could not complete your request because there is a conflict with the current state of the
+     *         resource.
+     * @sample AWSMediaConvert.DisassociateCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DisassociateCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateCertificateResult disassociateCertificate(DisassociateCertificateRequest disassociateCertificateRequest);
 
     /**
      * Retrieve the JSON for a specific completed transcoding job.

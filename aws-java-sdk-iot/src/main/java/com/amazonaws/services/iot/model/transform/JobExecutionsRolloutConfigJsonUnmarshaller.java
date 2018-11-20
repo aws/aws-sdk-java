@@ -52,6 +52,10 @@ public class JobExecutionsRolloutConfigJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     jobExecutionsRolloutConfig.setMaximumPerMinute(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("exponentialRate", targetDepth)) {
+                    context.nextToken();
+                    jobExecutionsRolloutConfig.setExponentialRate(ExponentialRolloutRateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

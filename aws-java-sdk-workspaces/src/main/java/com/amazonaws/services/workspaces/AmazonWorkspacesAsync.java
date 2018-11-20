@@ -398,6 +398,37 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
+     * Retrieves a list that describes one or more specified Amazon WorkSpaces clients.
+     * </p>
+     * 
+     * @param describeClientPropertiesRequest
+     * @return A Java Future containing the result of the DescribeClientProperties operation returned by the service.
+     * @sample AmazonWorkspacesAsync.DescribeClientProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeClientPropertiesResult> describeClientPropertiesAsync(DescribeClientPropertiesRequest describeClientPropertiesRequest);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more specified Amazon WorkSpaces clients.
+     * </p>
+     * 
+     * @param describeClientPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeClientProperties operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.DescribeClientProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeClientPropertiesResult> describeClientPropertiesAsync(DescribeClientPropertiesRequest describeClientPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeClientPropertiesRequest, DescribeClientPropertiesResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes one or more of your IP access control groups.
      * </p>
      * 
@@ -823,6 +854,37 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      */
     java.util.concurrent.Future<ModifyAccountResult> modifyAccountAsync(ModifyAccountRequest modifyAccountRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyAccountRequest, ModifyAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the properties of the specified Amazon WorkSpaces client.
+     * </p>
+     * 
+     * @param modifyClientPropertiesRequest
+     * @return A Java Future containing the result of the ModifyClientProperties operation returned by the service.
+     * @sample AmazonWorkspacesAsync.ModifyClientProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyClientProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyClientPropertiesResult> modifyClientPropertiesAsync(ModifyClientPropertiesRequest modifyClientPropertiesRequest);
+
+    /**
+     * <p>
+     * Modifies the properties of the specified Amazon WorkSpaces client.
+     * </p>
+     * 
+     * @param modifyClientPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyClientProperties operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.ModifyClientProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyClientProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyClientPropertiesResult> modifyClientPropertiesAsync(ModifyClientPropertiesRequest modifyClientPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyClientPropertiesRequest, ModifyClientPropertiesResult> asyncHandler);
 
     /**
      * <p>

@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -94,6 +94,7 @@
       "documentation" : "<p> Creates an AWS Mobile Hub project. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>",
@@ -124,6 +125,7 @@
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateProjectRequest",
@@ -152,6 +154,7 @@
       "documentation" : "<p> Delets a project in AWS Mobile Hub. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>",
@@ -174,6 +177,7 @@
         "httpStatusCode" : 404
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteProjectRequest",
@@ -202,6 +206,7 @@
       "documentation" : "<p> Get the bundle details for the requested bundle id. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>",
@@ -228,6 +233,7 @@
         "httpStatusCode" : 404
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeBundleRequest",
@@ -256,6 +262,7 @@
       "documentation" : "<p> Gets details about a project in AWS Mobile Hub. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>",
@@ -282,6 +289,7 @@
         "httpStatusCode" : 404
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeProjectRequest",
@@ -310,6 +318,7 @@
       "documentation" : "<p> Generates customized software development kit (SDK) and or tool packages used to integrate mobile web or mobile app clients with backend AWS resources. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>",
@@ -336,6 +345,7 @@
         "httpStatusCode" : 404
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ExportBundleRequest",
@@ -364,6 +374,7 @@
       "documentation" : "<p> Exports project configuration to a snapshot which can be downloaded and shared. Note that mobile app push credentials are encrypted in exported projects, so they can only be shared successfully within the same AWS account. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>",
@@ -390,6 +401,7 @@
         "httpStatusCode" : 404
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ExportProjectRequest",
@@ -418,6 +430,7 @@
       "documentation" : "<p> List all available bundles. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>",
@@ -440,6 +453,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListBundlesRequest",
@@ -468,6 +482,7 @@
       "documentation" : "<p> Lists projects in AWS Mobile Hub. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>",
@@ -490,6 +505,7 @@
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListProjectsRequest",
@@ -518,6 +534,7 @@
       "documentation" : "<p> Update an existing project. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>",
@@ -552,6 +569,7 @@
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateProjectRequest",

@@ -56,6 +56,10 @@ public class ActivityJsonUnmarshaller implements Unmarshaller<Activity, JsonUnma
                     context.nextToken();
                     activity.setTimeStamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("IsIndirectActivity", targetDepth)) {
+                    context.nextToken();
+                    activity.setIsIndirectActivity(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("OrganizationId", targetDepth)) {
                     context.nextToken();
                     activity.setOrganizationId(context.getUnmarshaller(String.class).unmarshall(context));

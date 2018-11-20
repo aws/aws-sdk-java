@@ -93,6 +93,10 @@ public class ComputeResourceJsonUnmarshaller implements Unmarshaller<ComputeReso
                     computeResource.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
+                if (context.testExpression("placementGroup", targetDepth)) {
+                    context.nextToken();
+                    computeResource.setPlacementGroup(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("bidPercentage", targetDepth)) {
                     context.nextToken();
                     computeResource.setBidPercentage(context.getUnmarshaller(Integer.class).unmarshall(context));

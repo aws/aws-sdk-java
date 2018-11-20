@@ -97,6 +97,7 @@
       "documentation" : "<p>Returns information about one or more repositories.</p> <note> <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p> </note>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNamesRequiredException",
         "documentation" : "<p>A repository names object is required but was not specified.</p>",
@@ -131,6 +132,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "BatchGetRepositoriesRequest",
@@ -159,6 +161,7 @@
       "documentation" : "<p>Creates a new branch in a repository and points the branch to a commit.</p> <note> <p>Calling the create branch operation does not set a repository's default branch. To do this, call the update default branch operation.</p> </note>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -217,6 +220,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateBranchRequest",
@@ -245,6 +249,7 @@
       "documentation" : "<p>Creates a pull request in the specified repository.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -347,6 +352,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreatePullRequestRequest",
@@ -375,6 +381,7 @@
       "documentation" : "<p>Creates a new, empty repository.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameExistsException",
         "documentation" : "<p>The specified repository name already exists.</p>",
@@ -417,6 +424,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateRepositoryRequest",
@@ -445,6 +453,7 @@
       "documentation" : "<p>Deletes a branch from a repository, unless that branch is the default branch for the repository. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -491,6 +500,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteBranchRequest",
@@ -519,6 +529,7 @@
       "documentation" : "<p>Deletes the content of a comment made on a change, file, or commit in a repository.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "CommentDoesNotExistException",
         "documentation" : "<p>No comment exists with the provided ID. Verify that you have provided the correct ID, and then try again.</p>",
@@ -537,6 +548,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteCommentContentRequest",
@@ -565,6 +577,7 @@
       "documentation" : "<p>Deletes a specified file from a specified branch. A commit is created on the branch that contains the revision. The file will still exist in the commits prior to the commit that contains the deletion.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -655,6 +668,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteFileRequest",
@@ -683,6 +697,7 @@
       "documentation" : "<p>Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.</p> <important> <p>Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future push calls to the deleted repository will fail.</p> </important>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -713,6 +728,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteRepositoryRequest",
@@ -741,6 +757,7 @@
       "documentation" : "<p>Returns information about one or more pull request events.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "PullRequestDoesNotExistException",
         "documentation" : "<p>The pull request ID could not be found. Make sure that you have specified the correct repository name and pull request ID, and then try again.</p>",
@@ -795,6 +812,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribePullRequestEventsRequest",
@@ -823,6 +841,7 @@
       "documentation" : "<p>Returns the base-64 encoded content of an individual blob within a repository.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -873,6 +892,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetBlobRequest",
@@ -901,6 +921,7 @@
       "documentation" : "<p>Returns information about a repository branch, including its name and the last commit ID.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -947,6 +968,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetBranchRequest",
@@ -975,6 +997,7 @@
       "documentation" : "<p>Returns the content of a comment made on a change, file, or commit in a repository.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "CommentDoesNotExistException",
         "documentation" : "<p>No comment exists with the provided ID. Verify that you have provided the correct ID, and then try again.</p>",
@@ -993,6 +1016,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetCommentRequest",
@@ -1021,6 +1045,7 @@
       "documentation" : "<p>Returns information about comments made on the comparison between two commits.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -1075,6 +1100,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetCommentsForComparedCommitRequest",
@@ -1103,6 +1129,7 @@
       "documentation" : "<p>Returns comments made on a pull request.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "PullRequestIdRequiredException",
         "documentation" : "<p>A pull request ID is required, but none was provided.</p>",
@@ -1173,6 +1200,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetCommentsForPullRequestRequest",
@@ -1201,6 +1229,7 @@
       "documentation" : "<p>Returns information about a commit, including commit message and committer information.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -1247,6 +1276,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetCommitRequest",
@@ -1275,6 +1305,7 @@
       "documentation" : "<p>Returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID or other fully qualified reference). Results can be limited to a specified path.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -1341,6 +1372,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetDifferencesRequest",
@@ -1369,6 +1401,7 @@
       "documentation" : "<p>Returns the base-64 encoded contents of a specified file and its metadata.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -1427,6 +1460,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetFileRequest",
@@ -1455,6 +1489,7 @@
       "documentation" : "<p>Returns the contents of a specified folder in a repository.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -1509,6 +1544,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetFolderRequest",
@@ -1537,6 +1573,7 @@
       "documentation" : "<p>Returns information about merge conflicts between the before and after commit IDs for a pull request in a repository.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -1603,6 +1640,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetMergeConflictsRequest",
@@ -1631,6 +1669,7 @@
       "documentation" : "<p>Gets information about a pull request in a specified repository.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "PullRequestDoesNotExistException",
         "documentation" : "<p>The pull request ID could not be found. Make sure that you have specified the correct repository name and pull request ID, and then try again.</p>",
@@ -1665,6 +1704,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetPullRequestRequest",
@@ -1693,6 +1733,7 @@
       "documentation" : "<p>Returns information about a repository.</p> <note> <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p> </note>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -1727,6 +1768,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetRepositoryRequest",
@@ -1755,6 +1797,7 @@
       "documentation" : "<p>Gets information about triggers configured for a repository.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -1789,6 +1832,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetRepositoryTriggersRequest",
@@ -1817,6 +1861,7 @@
       "documentation" : "<p>Gets information about one or more branches in a repository.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -1855,6 +1900,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListBranchesRequest",
@@ -1883,6 +1929,7 @@
       "documentation" : "<p>Returns a list of pull requests for a specified repository. The return list can be refined by pull request status or pull request author ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidPullRequestStatusException",
         "documentation" : "<p>The pull request status is not valid. The only valid values are <code>OPEN</code> and <code>CLOSED</code>.</p>",
@@ -1937,6 +1984,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListPullRequestsRequest",
@@ -1965,6 +2013,7 @@
       "documentation" : "<p>Gets information about one or more repositories.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidSortByException",
         "documentation" : "<p>The specified sort by value is not valid.</p>",
@@ -1979,6 +2028,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListRepositoriesRequest",
@@ -2007,6 +2057,7 @@
       "documentation" : "<p>Closes a pull request and attempts to merge the source commit of a pull request into the specified destination branch for that pull request at the specified commit using the fast-forward merge option.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ManualMergeRequiredException",
         "documentation" : "<p>The pull request cannot be merged automatically into the destination branch. You must manually merge the branches and resolve any conflicts.</p>",
@@ -2073,6 +2124,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "MergePullRequestByFastForwardRequest",
@@ -2101,6 +2153,7 @@
       "documentation" : "<p>Posts a comment on the comparison between two commits.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -2195,6 +2248,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PostCommentForComparedCommitRequest",
@@ -2223,6 +2277,7 @@
       "documentation" : "<p>Posts a comment on a pull request.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "PullRequestDoesNotExistException",
         "documentation" : "<p>The pull request ID could not be found. Make sure that you have specified the correct repository name and pull request ID, and then try again.</p>",
@@ -2337,6 +2392,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PostCommentForPullRequestRequest",
@@ -2365,6 +2421,7 @@
       "documentation" : "<p>Posts a comment in reply to an existing comment on a comparison between commits or a pull request.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ClientRequestTokenRequiredException",
         "documentation" : "<p>A client request token is required. A client request token is an unique, client-generated idempotency token that when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request will return information about the initial request that used that token.</p>",
@@ -2399,6 +2456,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PostCommentReplyRequest",
@@ -2427,6 +2485,7 @@
       "documentation" : "<p>Adds or updates a file in a branch in an AWS CodeCommit repository, and generates a commit for the addition in the specified branch.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -2541,6 +2600,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutFileRequest",
@@ -2569,6 +2629,7 @@
       "documentation" : "<p>Replaces all triggers for a repository. This can be used to create or delete triggers.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryDoesNotExistException",
         "documentation" : "<p>The specified repository does not exist.</p>",
@@ -2655,6 +2716,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutRepositoryTriggersRequest",
@@ -2683,6 +2745,7 @@
       "documentation" : "<p>Tests the functionality of repository triggers by sending information to the trigger target. If real data is available in the repository, the test will send data from the last commit. If no data is available, sample data will be generated.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryDoesNotExistException",
         "documentation" : "<p>The specified repository does not exist.</p>",
@@ -2769,6 +2832,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "TestRepositoryTriggersRequest",
@@ -2797,6 +2861,7 @@
       "documentation" : "<p>Replaces the contents of a comment.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "CommentContentRequiredException",
         "documentation" : "<p>The comment is empty. You must provide some content for a comment. The content cannot be null.</p>",
@@ -2827,6 +2892,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateCommentRequest",
@@ -2855,6 +2921,7 @@
       "documentation" : "<p>Sets or changes the default branch name for the specified repository.</p> <note> <p>If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change.</p> </note>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -2901,6 +2968,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateDefaultBranchRequest",
@@ -2929,6 +2997,7 @@
       "documentation" : "<p>Replaces the contents of the description of a pull request.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "PullRequestDoesNotExistException",
         "documentation" : "<p>The pull request ID could not be found. Make sure that you have specified the correct repository name and pull request ID, and then try again.</p>",
@@ -2951,6 +3020,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdatePullRequestDescriptionRequest",
@@ -2979,6 +3049,7 @@
       "documentation" : "<p>Updates the status of a pull request. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "PullRequestDoesNotExistException",
         "documentation" : "<p>The pull request ID could not be found. Make sure that you have specified the correct repository name and pull request ID, and then try again.</p>",
@@ -3025,6 +3096,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdatePullRequestStatusRequest",
@@ -3053,6 +3125,7 @@
       "documentation" : "<p>Replaces the title of a pull request.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "PullRequestDoesNotExistException",
         "documentation" : "<p>The pull request ID could not be found. Make sure that you have specified the correct repository name and pull request ID, and then try again.</p>",
@@ -3079,6 +3152,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdatePullRequestTitleRequest",
@@ -3107,6 +3181,7 @@
       "documentation" : "<p>Sets or changes the comment or description for a repository.</p> <note> <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p> </note>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -3145,6 +3220,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateRepositoryDescriptionRequest",
@@ -3173,6 +3249,7 @@
       "documentation" : "<p>Renames a repository. The repository name must be unique across the calling AWS account. In addition, repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. The suffix \".git\" is prohibited. For a full description of the limits on repository names, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html\">Limits</a> in the AWS CodeCommit User Guide.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "RepositoryDoesNotExistException",
         "documentation" : "<p>The specified repository does not exist.</p>",
@@ -3191,6 +3268,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateRepositoryNameRequest",

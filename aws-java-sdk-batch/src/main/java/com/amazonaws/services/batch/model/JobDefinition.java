@@ -85,6 +85,12 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private JobTimeout timeout;
+    /**
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs.
+     * </p>
+     */
+    private NodeProperties nodeProperties;
 
     /**
      * <p>
@@ -486,6 +492,46 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs.
+     * </p>
+     * 
+     * @param nodeProperties
+     *        An object with various properties specific to multi-node parallel jobs.
+     */
+
+    public void setNodeProperties(NodeProperties nodeProperties) {
+        this.nodeProperties = nodeProperties;
+    }
+
+    /**
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs.
+     * </p>
+     * 
+     * @return An object with various properties specific to multi-node parallel jobs.
+     */
+
+    public NodeProperties getNodeProperties() {
+        return this.nodeProperties;
+    }
+
+    /**
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs.
+     * </p>
+     * 
+     * @param nodeProperties
+     *        An object with various properties specific to multi-node parallel jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDefinition withNodeProperties(NodeProperties nodeProperties) {
+        setNodeProperties(nodeProperties);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -513,7 +559,9 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
         if (getContainerProperties() != null)
             sb.append("ContainerProperties: ").append(getContainerProperties()).append(",");
         if (getTimeout() != null)
-            sb.append("Timeout: ").append(getTimeout());
+            sb.append("Timeout: ").append(getTimeout()).append(",");
+        if (getNodeProperties() != null)
+            sb.append("NodeProperties: ").append(getNodeProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -564,6 +612,10 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
             return false;
+        if (other.getNodeProperties() == null ^ this.getNodeProperties() == null)
+            return false;
+        if (other.getNodeProperties() != null && other.getNodeProperties().equals(this.getNodeProperties()) == false)
+            return false;
         return true;
     }
 
@@ -581,6 +633,7 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
         hashCode = prime * hashCode + ((getContainerProperties() == null) ? 0 : getContainerProperties().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
+        hashCode = prime * hashCode + ((getNodeProperties() == null) ? 0 : getNodeProperties().hashCode());
         return hashCode;
     }
 

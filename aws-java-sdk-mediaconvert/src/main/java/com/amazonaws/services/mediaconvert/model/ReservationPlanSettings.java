@@ -35,8 +35,8 @@ public class ReservationPlanSettings implements Serializable, Cloneable, Structu
      */
     private String renewalType;
     /**
-     * Specifies the number of reserved transcode slots (RTSs) for this queue. The number of RTS determines how many
-     * jobs the queue can process in parallel; each RTS can process one job at a time. To increase this number, create a
+     * Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs
+     * the queue can process in parallel; each RTS can process one job at a time. To increase this number, create a
      * replacement contract through the AWS Elemental MediaConvert console.
      */
     private Integer reservedSlots;
@@ -152,12 +152,12 @@ public class ReservationPlanSettings implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Specifies the number of reserved transcode slots (RTSs) for this queue. The number of RTS determines how many
-     * jobs the queue can process in parallel; each RTS can process one job at a time. To increase this number, create a
+     * Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs
+     * the queue can process in parallel; each RTS can process one job at a time. To increase this number, create a
      * replacement contract through the AWS Elemental MediaConvert console.
      * 
      * @param reservedSlots
-     *        Specifies the number of reserved transcode slots (RTSs) for this queue. The number of RTS determines how
+     *        Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how
      *        many jobs the queue can process in parallel; each RTS can process one job at a time. To increase this
      *        number, create a replacement contract through the AWS Elemental MediaConvert console.
      */
@@ -167,11 +167,11 @@ public class ReservationPlanSettings implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Specifies the number of reserved transcode slots (RTSs) for this queue. The number of RTS determines how many
-     * jobs the queue can process in parallel; each RTS can process one job at a time. To increase this number, create a
+     * Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs
+     * the queue can process in parallel; each RTS can process one job at a time. To increase this number, create a
      * replacement contract through the AWS Elemental MediaConvert console.
      * 
-     * @return Specifies the number of reserved transcode slots (RTSs) for this queue. The number of RTS determines how
+     * @return Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how
      *         many jobs the queue can process in parallel; each RTS can process one job at a time. To increase this
      *         number, create a replacement contract through the AWS Elemental MediaConvert console.
      */
@@ -181,12 +181,12 @@ public class ReservationPlanSettings implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Specifies the number of reserved transcode slots (RTSs) for this queue. The number of RTS determines how many
-     * jobs the queue can process in parallel; each RTS can process one job at a time. To increase this number, create a
+     * Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs
+     * the queue can process in parallel; each RTS can process one job at a time. To increase this number, create a
      * replacement contract through the AWS Elemental MediaConvert console.
      * 
      * @param reservedSlots
-     *        Specifies the number of reserved transcode slots (RTSs) for this queue. The number of RTS determines how
+     *        Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how
      *        many jobs the queue can process in parallel; each RTS can process one job at a time. To increase this
      *        number, create a replacement contract through the AWS Elemental MediaConvert console.
      * @return Returns a reference to this object so that method calls can be chained together.

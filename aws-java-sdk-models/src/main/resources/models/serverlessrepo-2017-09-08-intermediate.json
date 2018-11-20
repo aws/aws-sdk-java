@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -94,6 +94,7 @@
       "documentation" : "<p>Creates an application, optionally including an AWS SAM file to create the first application version in the same call.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TooManyRequestsException",
         "documentation" : "<p>The client is sending more than the allowed number of requests per unit of time.</p>",
@@ -116,6 +117,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateApplicationRequest",
@@ -144,6 +146,7 @@
       "documentation" : "<p>Creates an application version.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TooManyRequestsException",
         "documentation" : "<p>The client is sending more than the allowed number of requests per unit of time.</p>",
@@ -166,6 +169,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateApplicationVersionRequest",
@@ -194,6 +198,7 @@
       "documentation" : "<p>Creates an AWS CloudFormation change set for the given application.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "TooManyRequestsException",
         "documentation" : "<p>The client is sending more than the allowed number of requests per unit of time.</p>",
@@ -212,6 +217,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateCloudFormationChangeSetRequest",
@@ -240,6 +246,7 @@
       "documentation" : "<p>Creates an AWS CloudFormation template.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource (for example, an access policy statement) specified in the request doesn't exist.</p>",
@@ -262,6 +269,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateCloudFormationTemplateRequest",
@@ -290,6 +298,7 @@
       "documentation" : "<p>Deletes the specified application.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>One of the parameters in the request is invalid.</p>",
@@ -316,6 +325,7 @@
         "httpStatusCode" : 409
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteApplicationRequest",
@@ -344,6 +354,7 @@
       "documentation" : "<p>Gets the specified application.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource (for example, an access policy statement) specified in the request doesn't exist.</p>",
@@ -366,6 +377,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetApplicationRequest",
@@ -394,6 +406,7 @@
       "documentation" : "<p>Retrieves the policy for the application.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource (for example, an access policy statement) specified in the request doesn't exist.</p>",
@@ -416,6 +429,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetApplicationPolicyRequest",
@@ -444,6 +458,7 @@
       "documentation" : "<p>Gets the specified AWS CloudFormation template.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource (for example, an access policy statement) specified in the request doesn't exist.</p>",
@@ -466,6 +481,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetCloudFormationTemplateRequest",
@@ -494,6 +510,7 @@
       "documentation" : "<p>Lists versions for the specified application.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource (for example, an access policy statement) specified in the request doesn't exist.</p>",
@@ -516,6 +533,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListApplicationVersionsRequest",
@@ -544,6 +562,7 @@
       "documentation" : "<p>Lists applications owned by the requester.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource (for example, an access policy statement) specified in the request doesn't exist.</p>",
@@ -562,6 +581,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListApplicationsRequest",
@@ -590,6 +610,7 @@
       "documentation" : "<p>Sets the permission policy for an application. For the list of actions supported for this operation, see\n <a href=\"https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions\">Application \n Permissions</a>\n .</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource (for example, an access policy statement) specified in the request doesn't exist.</p>",
@@ -612,6 +633,7 @@
         "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "PutApplicationPolicyRequest",
@@ -640,6 +662,7 @@
       "documentation" : "<p>Updates the specified application.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>One of the parameters in the request is invalid.</p>",
@@ -666,6 +689,7 @@
         "httpStatusCode" : 409
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateApplicationRequest",

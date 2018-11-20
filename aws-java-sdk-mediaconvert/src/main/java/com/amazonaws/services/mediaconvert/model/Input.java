@@ -43,6 +43,8 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, CaptionSelector> captionSelectors;
 
     private String deblockFilter;
+    /** If the input file is encrypted, decryption settings to decrypt the media file */
+    private InputDecryptionSettings decryptionSettings;
 
     private String denoiseFilter;
     /**
@@ -57,6 +59,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * range is -5 to 5. Default is 0.
      */
     private Integer filterStrength;
+    /**
+     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable
+     * this feature for each input individually. This setting is disabled by default.
+     */
+    private ImageInserter imageInserter;
     /**
      * (InputClippings) contains sets of start and end times that together specify a portion of the input to be used in
      * the outputs. If you provide only a start time, the clip will be the entire input from that point to the end. If
@@ -302,6 +309,40 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If the input file is encrypted, decryption settings to decrypt the media file
+     * 
+     * @param decryptionSettings
+     *        If the input file is encrypted, decryption settings to decrypt the media file
+     */
+
+    public void setDecryptionSettings(InputDecryptionSettings decryptionSettings) {
+        this.decryptionSettings = decryptionSettings;
+    }
+
+    /**
+     * If the input file is encrypted, decryption settings to decrypt the media file
+     * 
+     * @return If the input file is encrypted, decryption settings to decrypt the media file
+     */
+
+    public InputDecryptionSettings getDecryptionSettings() {
+        return this.decryptionSettings;
+    }
+
+    /**
+     * If the input file is encrypted, decryption settings to decrypt the media file
+     * 
+     * @param decryptionSettings
+     *        If the input file is encrypted, decryption settings to decrypt the media file
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Input withDecryptionSettings(InputDecryptionSettings decryptionSettings) {
+        setDecryptionSettings(decryptionSettings);
+        return this;
+    }
+
+    /**
      * @param denoiseFilter
      * @see InputDenoiseFilter
      */
@@ -459,6 +500,46 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     public Input withFilterStrength(Integer filterStrength) {
         setFilterStrength(filterStrength);
+        return this;
+    }
+
+    /**
+     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable
+     * this feature for each input individually. This setting is disabled by default.
+     * 
+     * @param imageInserter
+     *        Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or
+     *        disable this feature for each input individually. This setting is disabled by default.
+     */
+
+    public void setImageInserter(ImageInserter imageInserter) {
+        this.imageInserter = imageInserter;
+    }
+
+    /**
+     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable
+     * this feature for each input individually. This setting is disabled by default.
+     * 
+     * @return Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or
+     *         disable this feature for each input individually. This setting is disabled by default.
+     */
+
+    public ImageInserter getImageInserter() {
+        return this.imageInserter;
+    }
+
+    /**
+     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable
+     * this feature for each input individually. This setting is disabled by default.
+     * 
+     * @param imageInserter
+     *        Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or
+     *        disable this feature for each input individually. This setting is disabled by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Input withImageInserter(ImageInserter imageInserter) {
+        setImageInserter(imageInserter);
         return this;
     }
 
@@ -727,6 +808,8 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             sb.append("CaptionSelectors: ").append(getCaptionSelectors()).append(",");
         if (getDeblockFilter() != null)
             sb.append("DeblockFilter: ").append(getDeblockFilter()).append(",");
+        if (getDecryptionSettings() != null)
+            sb.append("DecryptionSettings: ").append(getDecryptionSettings()).append(",");
         if (getDenoiseFilter() != null)
             sb.append("DenoiseFilter: ").append(getDenoiseFilter()).append(",");
         if (getFileInput() != null)
@@ -735,6 +818,8 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             sb.append("FilterEnable: ").append(getFilterEnable()).append(",");
         if (getFilterStrength() != null)
             sb.append("FilterStrength: ").append(getFilterStrength()).append(",");
+        if (getImageInserter() != null)
+            sb.append("ImageInserter: ").append(getImageInserter()).append(",");
         if (getInputClippings() != null)
             sb.append("InputClippings: ").append(getInputClippings()).append(",");
         if (getProgramNumber() != null)
@@ -775,6 +860,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDeblockFilter() != null && other.getDeblockFilter().equals(this.getDeblockFilter()) == false)
             return false;
+        if (other.getDecryptionSettings() == null ^ this.getDecryptionSettings() == null)
+            return false;
+        if (other.getDecryptionSettings() != null && other.getDecryptionSettings().equals(this.getDecryptionSettings()) == false)
+            return false;
         if (other.getDenoiseFilter() == null ^ this.getDenoiseFilter() == null)
             return false;
         if (other.getDenoiseFilter() != null && other.getDenoiseFilter().equals(this.getDenoiseFilter()) == false)
@@ -790,6 +879,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
         if (other.getFilterStrength() == null ^ this.getFilterStrength() == null)
             return false;
         if (other.getFilterStrength() != null && other.getFilterStrength().equals(this.getFilterStrength()) == false)
+            return false;
+        if (other.getImageInserter() == null ^ this.getImageInserter() == null)
+            return false;
+        if (other.getImageInserter() != null && other.getImageInserter().equals(this.getImageInserter()) == false)
             return false;
         if (other.getInputClippings() == null ^ this.getInputClippings() == null)
             return false;
@@ -823,10 +916,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAudioSelectors() == null) ? 0 : getAudioSelectors().hashCode());
         hashCode = prime * hashCode + ((getCaptionSelectors() == null) ? 0 : getCaptionSelectors().hashCode());
         hashCode = prime * hashCode + ((getDeblockFilter() == null) ? 0 : getDeblockFilter().hashCode());
+        hashCode = prime * hashCode + ((getDecryptionSettings() == null) ? 0 : getDecryptionSettings().hashCode());
         hashCode = prime * hashCode + ((getDenoiseFilter() == null) ? 0 : getDenoiseFilter().hashCode());
         hashCode = prime * hashCode + ((getFileInput() == null) ? 0 : getFileInput().hashCode());
         hashCode = prime * hashCode + ((getFilterEnable() == null) ? 0 : getFilterEnable().hashCode());
         hashCode = prime * hashCode + ((getFilterStrength() == null) ? 0 : getFilterStrength().hashCode());
+        hashCode = prime * hashCode + ((getImageInserter() == null) ? 0 : getImageInserter().hashCode());
         hashCode = prime * hashCode + ((getInputClippings() == null) ? 0 : getInputClippings().hashCode());
         hashCode = prime * hashCode + ((getProgramNumber() == null) ? 0 : getProgramNumber().hashCode());
         hashCode = prime * hashCode + ((getPsiControl() == null) ? 0 : getPsiControl().hashCode());

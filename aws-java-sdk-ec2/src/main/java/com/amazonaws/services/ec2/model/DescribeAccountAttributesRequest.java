@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeAccountAttributesRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeAccountAttributes.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

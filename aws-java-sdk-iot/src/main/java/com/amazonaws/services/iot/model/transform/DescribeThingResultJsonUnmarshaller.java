@@ -77,6 +77,10 @@ public class DescribeThingResultJsonUnmarshaller implements Unmarshaller<Describ
                     context.nextToken();
                     describeThingResult.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("billingGroupName", targetDepth)) {
+                    context.nextToken();
+                    describeThingResult.setBillingGroupName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

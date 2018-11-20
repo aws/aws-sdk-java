@@ -193,6 +193,11 @@ public class AbstractAmazonWorkDocs implements AmazonWorkDocs {
     }
 
     @Override
+    public GetResourcesResult getResources(GetResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public InitiateDocumentVersionUploadResult initiateDocumentVersionUpload(InitiateDocumentVersionUploadRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -487,8 +487,6 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<AssumeRoleResult> responseHandler = new StaxResponseHandler<AssumeRoleResult>(new AssumeRoleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -654,8 +652,6 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<AssumeRoleWithSAMLResult> responseHandler = new StaxResponseHandler<AssumeRoleWithSAMLResult>(
                     new AssumeRoleWithSAMLResultStaxUnmarshaller());
@@ -853,8 +849,6 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<AssumeRoleWithWebIdentityResult> responseHandler = new StaxResponseHandler<AssumeRoleWithWebIdentityResult>(
                     new AssumeRoleWithWebIdentityResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -961,8 +955,6 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<DecodeAuthorizationMessageResult> responseHandler = new StaxResponseHandler<DecodeAuthorizationMessageResult>(
                     new DecodeAuthorizationMessageResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1014,8 +1006,6 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetCallerIdentityResult> responseHandler = new StaxResponseHandler<GetCallerIdentityResult>(
                     new GetCallerIdentityResultStaxUnmarshaller());
@@ -1179,8 +1169,6 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetFederationTokenResult> responseHandler = new StaxResponseHandler<GetFederationTokenResult>(
                     new GetFederationTokenResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1292,8 +1280,6 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
-
             StaxResponseHandler<GetSessionTokenResult> responseHandler = new StaxResponseHandler<GetSessionTokenResult>(
                     new GetSessionTokenResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1335,18 +1321,18 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -1356,7 +1342,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -1364,11 +1350,13 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }

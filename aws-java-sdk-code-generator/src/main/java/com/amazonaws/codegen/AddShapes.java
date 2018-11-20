@@ -135,8 +135,6 @@ abstract class AddShapes {
         final List<String> enumValues = shape.getEnumValues();
         if (enumValues != null && !enumValues.isEmpty()) {
             for (String enumValue : enumValues) {
-                // TODO handle useRealName from Coral if explicitly mentioned in
-                // the customization.
                 shapeModel.addEnum(
                         new EnumModel(getNamingStrategy().getEnumValueName(enumValue), enumValue));
             }
@@ -165,7 +163,7 @@ abstract class AddShapes {
 
         String timestampFormat = null;
         if (variableType.equals(Date.class.getName())) {
-            timestampFormat = getDefaultTimeFormatIfNull(c2jMemberDefinition, allC2jShapes, protocol);
+            timestampFormat = getDefaultTimeFormatIfNull(c2jMemberDefinition, allC2jShapes, protocol, parentShape);
         }
 
         final MemberModel memberModel = new MemberModel();
@@ -225,10 +223,11 @@ abstract class AddShapes {
      * query: iso8601
      * ec2: iso8601
      */
-    protected String getDefaultTimeFormatIfNull(Member c2jMemberDefinition, Map<String, Shape> allC2jShapes, String protocolString) {
+    protected String getDefaultTimeFormatIfNull(Member c2jMemberDefinition, Map<String, Shape> allC2jShapes, String protocolString, Shape parentShape) {
         String timestampFormat = c2jMemberDefinition.getTimestampFormat();
 
         if (!StringUtils.isNullOrEmpty(timestampFormat)) {
+            failIfInCollection(c2jMemberDefinition, parentShape);
             return TimestampFormat.fromValue(timestampFormat).getFormat();
         }
 
@@ -236,6 +235,7 @@ abstract class AddShapes {
         Shape shape = allC2jShapes.get(shapeName);
 
         if (!StringUtils.isNullOrEmpty(shape.getTimestampFormat())) {
+            failIfInCollection(c2jMemberDefinition, parentShape);
             return TimestampFormat.fromValue(shape.getTimestampFormat()).getFormat();
         }
 
@@ -265,6 +265,17 @@ abstract class AddShapes {
         }
 
         throw new RuntimeException("Cannot determine timestamp format for protocol " + protocol);
+    }
+
+    /**
+     * Throw Exception if the member is in a Map/List
+     */
+    private void failIfInCollection(Member c2jMemberDefinition, Shape parentShape) {
+        if (isMapShape(parentShape) || isListShape(parentShape)) {
+            throw new IllegalArgumentException(String.format(
+                "Member (%s) has timestamp format provided. Timestamp format is not supported for Date in List/Map",
+                c2jMemberDefinition.getShape()));
+        }
     }
 
     protected String defaultHeaderTimestamp() {

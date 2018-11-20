@@ -42,12 +42,35 @@
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            URI cachedEndpoint = null;
             <#if operationModel.endpointDiscovery?has_content>
+                URI cachedEndpoint = null;
                 if (endpointDiscoveryEnabled) {
                     cachedEndpoint = cache.get(awsCredentialsProvider.getCredentials().getAWSAccessKeyId(), false, endpoint);
                 }
             </#if>
+
+
+           <#if operationModel.endpointTrait?has_content>
+               URI endpointTraitHost = null;
+               if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                   <#local inputShape = operationModel.inputShape />
+                   <#local hostPrefixProcessor = operationModel.getHostPrefixProcessor() />
+                   <#list hostPrefixProcessor.c2jNames as memberName>
+                       <#local memberShape = inputShape.getMemberByC2jName(memberName) />
+                       ValidationUtils.assertStringNotEmpty(${operationModel.input.variableName}.${memberShape.getterMethodName}(), "${memberName}");
+                   </#list>
+
+                   String hostPrefix = "${operationModel.endpointTrait.hostPrefix}";
+                   String resolvedHostPrefix = String.format("${hostPrefixProcessor.hostWithStringSpecifier}"
+                   <#list hostPrefixProcessor.c2jNames as memberName>
+                        <#local memberShape = inputShape.getMemberByC2jName(memberName) />
+                        , ${operationModel.input.variableName}.${memberShape.getterMethodName}()
+                   </#list>
+                        );
+
+                   endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+               }
+           </#if>
 
             <#if operationModel.returnType??>
                 <@ResponseHandlerCreation.content customConfig, operationModel, metadata, "new ${operationModel.syncReturnType}${metadata.unmarshallerClassSuffix}()", operationModel.returnType.returnType />

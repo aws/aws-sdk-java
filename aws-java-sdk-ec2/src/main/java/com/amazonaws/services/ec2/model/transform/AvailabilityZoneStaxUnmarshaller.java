@@ -69,6 +69,11 @@ public class AvailabilityZoneStaxUnmarshaller implements Unmarshaller<Availabili
                     availabilityZone.setZoneName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("zoneId", targetDepth)) {
+                    availabilityZone.setZoneId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return availabilityZone;

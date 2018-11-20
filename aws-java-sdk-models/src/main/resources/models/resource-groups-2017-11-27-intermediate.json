@@ -94,6 +94,7 @@
       "documentation" : "<p>Creates a group with a specified name, description, and resource query.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request does not comply with validation rules that are defined for the request parameters.</p>",
@@ -116,6 +117,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateGroupRequest",
@@ -144,6 +146,7 @@
       "documentation" : "<p>Deletes a specified resource group. Deleting a resource group does not delete resources that are members of the group; it only deletes the group structure.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request does not comply with validation rules that are defined for the request parameters.</p>",
@@ -170,6 +173,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteGroupRequest",
@@ -198,6 +202,7 @@
       "documentation" : "<p>Returns information about a specified resource group.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request does not comply with validation rules that are defined for the request parameters.</p>",
@@ -224,6 +229,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetGroupRequest",
@@ -252,6 +258,7 @@
       "documentation" : "<p>Returns the resource query associated with the specified resource group.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request does not comply with validation rules that are defined for the request parameters.</p>",
@@ -278,6 +285,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetGroupQueryRequest",
@@ -306,6 +314,7 @@
       "documentation" : "<p>Returns a list of tags that are associated with a resource, specified by an ARN.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request does not comply with validation rules that are defined for the request parameters.</p>",
@@ -332,6 +341,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "GetTagsRequest",
@@ -360,6 +370,7 @@
       "documentation" : "<p>Returns a list of ARNs of resources that are members of a specified resource group.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedException",
         "documentation" : "<p>The request has not been applied because it lacks valid authentication credentials for the target resource.</p>",
@@ -390,6 +401,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListGroupResourcesRequest",
@@ -418,6 +430,7 @@
       "documentation" : "<p>Returns a list of existing resource groups in your account.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request does not comply with validation rules that are defined for the request parameters.</p>",
@@ -440,6 +453,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListGroupsRequest",
@@ -468,6 +482,7 @@
       "documentation" : "<p>Returns a list of AWS resource identifiers that matches a specified query. The query uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedException",
         "documentation" : "<p>The request has not been applied because it lacks valid authentication credentials for the target resource.</p>",
@@ -494,6 +509,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "SearchResourcesRequest",
@@ -522,6 +538,7 @@
       "documentation" : "<p>Adds specified tags to a resource with the specified ARN. Existing tags on a resource are not changed if they are not specified in the request parameters.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request does not comply with validation rules that are defined for the request parameters.</p>",
@@ -548,6 +565,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "TagRequest",
@@ -576,6 +594,7 @@
       "documentation" : "<p>Deletes specified tags from a specified resource.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request does not comply with validation rules that are defined for the request parameters.</p>",
@@ -602,6 +621,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UntagRequest",
@@ -630,6 +650,7 @@
       "documentation" : "<p>Updates an existing group with a new or changed description. You cannot update the name of a resource group.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request does not comply with validation rules that are defined for the request parameters.</p>",
@@ -656,6 +677,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateGroupRequest",
@@ -684,6 +706,7 @@
       "documentation" : "<p>Updates the resource query of a group.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request does not comply with validation rules that are defined for the request parameters.</p>",
@@ -710,6 +733,7 @@
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateGroupQueryRequest",

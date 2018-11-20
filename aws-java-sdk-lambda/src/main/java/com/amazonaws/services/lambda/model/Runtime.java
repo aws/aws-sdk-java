@@ -27,6 +27,7 @@ public enum Runtime {
     Java8("java8"),
     Python27("python2.7"),
     Python36("python3.6"),
+    Python37("python3.7"),
     Dotnetcore10("dotnetcore1.0"),
     Dotnetcore20("dotnetcore2.0"),
     Dotnetcore21("dotnetcore2.1"),

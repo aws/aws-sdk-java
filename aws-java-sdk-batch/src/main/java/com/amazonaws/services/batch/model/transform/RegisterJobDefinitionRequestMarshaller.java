@@ -37,6 +37,8 @@ public class RegisterJobDefinitionRequestMarshaller {
             .marshallLocationName("parameters").build();
     private static final MarshallingInfo<StructuredPojo> CONTAINERPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerProperties").build();
+    private static final MarshallingInfo<StructuredPojo> NODEPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nodeProperties").build();
     private static final MarshallingInfo<StructuredPojo> RETRYSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retryStrategy").build();
     private static final MarshallingInfo<StructuredPojo> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -62,6 +64,7 @@ public class RegisterJobDefinitionRequestMarshaller {
             protocolMarshaller.marshall(registerJobDefinitionRequest.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(registerJobDefinitionRequest.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(registerJobDefinitionRequest.getContainerProperties(), CONTAINERPROPERTIES_BINDING);
+            protocolMarshaller.marshall(registerJobDefinitionRequest.getNodeProperties(), NODEPROPERTIES_BINDING);
             protocolMarshaller.marshall(registerJobDefinitionRequest.getRetryStrategy(), RETRYSTRATEGY_BINDING);
             protocolMarshaller.marshall(registerJobDefinitionRequest.getTimeout(), TIMEOUT_BINDING);
         } catch (Exception e) {

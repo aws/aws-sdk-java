@@ -44,8 +44,23 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The ARN of the device pool for the run to be scheduled.
      * </p>
+     * <p>
+     * Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> are required in
+     * a request.
+     * </p>
      */
     private String devicePoolArn;
+    /**
+     * <p>
+     * The filter criteria used to dynamically select a set of devices for a test run, as well as the maximum number of
+     * devices to be included in the run.
+     * </p>
+     * <p>
+     * Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> are required in
+     * a request.
+     * </p>
+     */
+    private DeviceSelectionConfiguration deviceSelectionConfiguration;
     /**
      * <p>
      * The name for the run to be scheduled.
@@ -155,9 +170,16 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The ARN of the device pool for the run to be scheduled.
      * </p>
+     * <p>
+     * Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> are required in
+     * a request.
+     * </p>
      * 
      * @param devicePoolArn
-     *        The ARN of the device pool for the run to be scheduled.
+     *        The ARN of the device pool for the run to be scheduled.</p>
+     *        <p>
+     *        Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> are
+     *        required in a request.
      */
 
     public void setDevicePoolArn(String devicePoolArn) {
@@ -168,8 +190,15 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The ARN of the device pool for the run to be scheduled.
      * </p>
+     * <p>
+     * Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> are required in
+     * a request.
+     * </p>
      * 
-     * @return The ARN of the device pool for the run to be scheduled.
+     * @return The ARN of the device pool for the run to be scheduled.</p>
+     *         <p>
+     *         Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> are
+     *         required in a request.
      */
 
     public String getDevicePoolArn() {
@@ -180,14 +209,88 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The ARN of the device pool for the run to be scheduled.
      * </p>
+     * <p>
+     * Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> are required in
+     * a request.
+     * </p>
      * 
      * @param devicePoolArn
-     *        The ARN of the device pool for the run to be scheduled.
+     *        The ARN of the device pool for the run to be scheduled.</p>
+     *        <p>
+     *        Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> are
+     *        required in a request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduleRunRequest withDevicePoolArn(String devicePoolArn) {
         setDevicePoolArn(devicePoolArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The filter criteria used to dynamically select a set of devices for a test run, as well as the maximum number of
+     * devices to be included in the run.
+     * </p>
+     * <p>
+     * Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> are required in
+     * a request.
+     * </p>
+     * 
+     * @param deviceSelectionConfiguration
+     *        The filter criteria used to dynamically select a set of devices for a test run, as well as the maximum
+     *        number of devices to be included in the run.</p>
+     *        <p>
+     *        Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> are
+     *        required in a request.
+     */
+
+    public void setDeviceSelectionConfiguration(DeviceSelectionConfiguration deviceSelectionConfiguration) {
+        this.deviceSelectionConfiguration = deviceSelectionConfiguration;
+    }
+
+    /**
+     * <p>
+     * The filter criteria used to dynamically select a set of devices for a test run, as well as the maximum number of
+     * devices to be included in the run.
+     * </p>
+     * <p>
+     * Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> are required in
+     * a request.
+     * </p>
+     * 
+     * @return The filter criteria used to dynamically select a set of devices for a test run, as well as the maximum
+     *         number of devices to be included in the run.</p>
+     *         <p>
+     *         Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> are
+     *         required in a request.
+     */
+
+    public DeviceSelectionConfiguration getDeviceSelectionConfiguration() {
+        return this.deviceSelectionConfiguration;
+    }
+
+    /**
+     * <p>
+     * The filter criteria used to dynamically select a set of devices for a test run, as well as the maximum number of
+     * devices to be included in the run.
+     * </p>
+     * <p>
+     * Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> are required in
+     * a request.
+     * </p>
+     * 
+     * @param deviceSelectionConfiguration
+     *        The filter criteria used to dynamically select a set of devices for a test run, as well as the maximum
+     *        number of devices to be included in the run.</p>
+     *        <p>
+     *        Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> are
+     *        required in a request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleRunRequest withDeviceSelectionConfiguration(DeviceSelectionConfiguration deviceSelectionConfiguration) {
+        setDeviceSelectionConfiguration(deviceSelectionConfiguration);
         return this;
     }
 
@@ -368,6 +471,8 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("AppArn: ").append(getAppArn()).append(",");
         if (getDevicePoolArn() != null)
             sb.append("DevicePoolArn: ").append(getDevicePoolArn()).append(",");
+        if (getDeviceSelectionConfiguration() != null)
+            sb.append("DeviceSelectionConfiguration: ").append(getDeviceSelectionConfiguration()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getTest() != null)
@@ -402,6 +507,10 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getDevicePoolArn() != null && other.getDevicePoolArn().equals(this.getDevicePoolArn()) == false)
             return false;
+        if (other.getDeviceSelectionConfiguration() == null ^ this.getDeviceSelectionConfiguration() == null)
+            return false;
+        if (other.getDeviceSelectionConfiguration() != null && other.getDeviceSelectionConfiguration().equals(this.getDeviceSelectionConfiguration()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -429,6 +538,7 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getProjectArn() == null) ? 0 : getProjectArn().hashCode());
         hashCode = prime * hashCode + ((getAppArn() == null) ? 0 : getAppArn().hashCode());
         hashCode = prime * hashCode + ((getDevicePoolArn() == null) ? 0 : getDevicePoolArn().hashCode());
+        hashCode = prime * hashCode + ((getDeviceSelectionConfiguration() == null) ? 0 : getDeviceSelectionConfiguration().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getTest() == null) ? 0 : getTest().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());

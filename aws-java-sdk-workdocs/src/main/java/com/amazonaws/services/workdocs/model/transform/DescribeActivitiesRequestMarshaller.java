@@ -35,8 +35,14 @@ public class DescribeActivitiesRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("endTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> ORGANIZATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("organizationId").build();
+    private static final MarshallingInfo<String> ACTIVITYTYPES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("activityTypes").build();
+    private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("resourceId").build();
     private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("userId").build();
+    private static final MarshallingInfo<Boolean> INCLUDEINDIRECTACTIVITIES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("includeIndirectActivities").build();
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("limit").build();
     private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -62,7 +68,10 @@ public class DescribeActivitiesRequestMarshaller {
             protocolMarshaller.marshall(describeActivitiesRequest.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(describeActivitiesRequest.getEndTime(), ENDTIME_BINDING);
             protocolMarshaller.marshall(describeActivitiesRequest.getOrganizationId(), ORGANIZATIONID_BINDING);
+            protocolMarshaller.marshall(describeActivitiesRequest.getActivityTypes(), ACTIVITYTYPES_BINDING);
+            protocolMarshaller.marshall(describeActivitiesRequest.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(describeActivitiesRequest.getUserId(), USERID_BINDING);
+            protocolMarshaller.marshall(describeActivitiesRequest.getIncludeIndirectActivities(), INCLUDEINDIRECTACTIVITIES_BINDING);
             protocolMarshaller.marshall(describeActivitiesRequest.getLimit(), LIMIT_BINDING);
             protocolMarshaller.marshall(describeActivitiesRequest.getMarker(), MARKER_BINDING);
         } catch (Exception e) {

@@ -113,6 +113,7 @@
       "documentation" : "<p>Associates the specified IP access control group with the specified directory.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterValuesException",
         "documentation" : "<p>One or more parameter values are not valid.</p>",
@@ -139,6 +140,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "AssociateIpGroupsRequest",
@@ -167,6 +169,7 @@
       "documentation" : "<p>Adds one or more rules to the specified IP access control group.</p> <p>This action gives users permission to access their WorkSpaces from the CIDR address ranges specified in the rules.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterValuesException",
         "documentation" : "<p>One or more parameter values are not valid.</p>",
@@ -189,6 +192,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "AuthorizeIpRulesRequest",
@@ -217,6 +221,7 @@
       "documentation" : "<p>Creates an IP access control group.</p> <p>An IP access control group provides you with the ability to control the IP addresses from which users are allowed to access their WorkSpaces. To specify the CIDR address ranges, add rules to your IP access control group and then associate the group with your directory. You can add rules when you create the group or at any time using <a>AuthorizeIpRules</a>.</p> <p>There is a default IP access control group associated with your directory. If you don't associate an IP access control group with your directory, the default group is used. The default group includes a default rule that allows users to access their WorkSpaces from anywhere. You cannot modify the default IP access control group for your directory.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterValuesException",
         "documentation" : "<p>One or more parameter values are not valid.</p>",
@@ -239,6 +244,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateIpGroupRequest",
@@ -267,6 +273,7 @@
       "documentation" : "<p>Creates the specified tags for the specified WorkSpace.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -281,6 +288,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateTagsRequest",
@@ -309,6 +317,7 @@
       "documentation" : "<p>Creates one or more WorkSpaces.</p> <p>This operation is asynchronous and returns before the WorkSpaces are created.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceLimitExceededException",
         "documentation" : "<p>Your resource limits have been exceeded.</p>",
@@ -319,6 +328,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "CreateWorkspacesRequest",
@@ -347,6 +357,7 @@
       "documentation" : "<p>Deletes the specified IP access control group.</p> <p>You cannot delete an IP access control group that is associated with a directory.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterValuesException",
         "documentation" : "<p>One or more parameter values are not valid.</p>",
@@ -365,6 +376,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteIpGroupRequest",
@@ -393,6 +405,7 @@
       "documentation" : "<p>Deletes the specified tags from the specified WorkSpace.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -403,6 +416,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteTagsRequest",
@@ -431,6 +445,7 @@
       "documentation" : "<p>Deletes the specified image from your account. To delete an image, you must first delete any bundles that are associated with the image. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceAssociatedException",
         "documentation" : "<p>The resource is associated with a directory.</p>",
@@ -445,6 +460,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DeleteWorkspaceImageRequest",
@@ -473,12 +489,14 @@
       "documentation" : "<p>Retrieves a list that describes the configuration of bring your own license (BYOL) for the specified account.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>The user is not authorized to access a resource.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeAccountRequest",
@@ -507,12 +525,14 @@
       "documentation" : "<p>Retrieves a list that describes modifications to the configuration of bring your own license (BYOL) for the specified account.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>The user is not authorized to access a resource.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeAccountModificationsRequest",
@@ -531,6 +551,50 @@
       },
       "syncReturnType" : "DescribeAccountModificationsResult"
     },
+    "DescribeClientProperties" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<DescribeClientPropertiesResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DescribeClientPropertiesResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeClientPropertiesRequest, DescribeClientPropertiesResult>",
+      "asyncReturnType" : "DescribeClientPropertiesResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Retrieves a list that describes one or more specified Amazon WorkSpaces clients.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "InvalidParameterValuesException",
+        "documentation" : "<p>One or more parameter values are not valid.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The resource could not be found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The user is not authorized to access a resource.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DescribeClientPropertiesRequest",
+        "variableName" : "describeClientPropertiesRequest",
+        "variableType" : "DescribeClientPropertiesRequest",
+        "documentation" : "",
+        "simpleType" : "DescribeClientPropertiesRequest",
+        "variableSetterType" : "DescribeClientPropertiesRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "describeClientProperties",
+      "operationName" : "DescribeClientProperties",
+      "returnType" : {
+        "returnType" : "DescribeClientPropertiesResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "DescribeClientPropertiesResult"
+    },
     "DescribeIpGroups" : {
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeIpGroupsResult>",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeIpGroupsResult>",
@@ -541,6 +605,7 @@
       "documentation" : "<p>Describes one or more of your IP access control groups.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterValuesException",
         "documentation" : "<p>One or more parameter values are not valid.</p>",
@@ -551,6 +616,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeIpGroupsRequest",
@@ -579,12 +645,14 @@
       "documentation" : "<p>Describes the specified tags for the specified WorkSpace.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeTagsRequest",
@@ -613,12 +681,14 @@
       "documentation" : "<p>Retrieves a list that describes the available WorkSpace bundles.</p> <p>You can filter the results using either bundle ID or owner, but not both.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterValuesException",
         "documentation" : "<p>One or more parameter values are not valid.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeWorkspaceBundlesRequest",
@@ -647,12 +717,14 @@
       "documentation" : "<p>Describes the available AWS Directory Service directories that are registered with Amazon WorkSpaces.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterValuesException",
         "documentation" : "<p>One or more parameter values are not valid.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeWorkspaceDirectoriesRequest",
@@ -681,12 +753,14 @@
       "documentation" : "<p>Retrieves a list that describes one or more specified images, if the image identifiers are provided. Otherwise, all images in the account are described. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>The user is not authorized to access a resource.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeWorkspaceImagesRequest",
@@ -715,6 +789,7 @@
       "documentation" : "<p>Describes the specified WorkSpaces.</p> <p>You can filter the results by using the bundle identifier, directory identifier, or owner, but you can specify only one filter at a time.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterValuesException",
         "documentation" : "<p>One or more parameter values are not valid.</p>",
@@ -725,6 +800,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeWorkspacesRequest",
@@ -753,12 +829,14 @@
       "documentation" : "<p>Describes the connection status of the specified WorkSpaces.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterValuesException",
         "documentation" : "<p>One or more parameter values are not valid.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DescribeWorkspacesConnectionStatusRequest",
@@ -787,6 +865,7 @@
       "documentation" : "<p>Disassociates the specified IP access control group from the specified directory.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterValuesException",
         "documentation" : "<p>One or more parameter values are not valid.</p>",
@@ -805,6 +884,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateIpGroupsRequest",
@@ -833,6 +913,7 @@
       "documentation" : "<p>Imports the specified Windows 7 or Windows 10 bring your own license (BYOL) image into Amazon WorkSpaces. The image must be an already licensed EC2 image that is in your AWS account, and you must own the image. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ResourceLimitExceededException",
         "documentation" : "<p>Your resource limits have been exceeded.</p>",
@@ -855,6 +936,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ImportWorkspaceImageRequest",
@@ -883,6 +965,7 @@
       "documentation" : "<p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can use for the network management interface when you enable bring your own license (BYOL). </p> <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterValuesException",
         "documentation" : "<p>One or more parameter values are not valid.</p>",
@@ -893,6 +976,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ListAvailableManagementCidrRangesRequest",
@@ -921,6 +1005,7 @@
       "documentation" : "<p>Modifies the configuration of bring your own license (BYOL) for the specified account.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterValuesException",
         "documentation" : "<p>One or more parameter values are not valid.</p>",
@@ -943,6 +1028,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ModifyAccountRequest",
@@ -961,6 +1047,50 @@
       },
       "syncReturnType" : "ModifyAccountResult"
     },
+    "ModifyClientProperties" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<ModifyClientPropertiesResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<ModifyClientPropertiesResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyClientPropertiesRequest, ModifyClientPropertiesResult>",
+      "asyncReturnType" : "ModifyClientPropertiesResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Modifies the properties of the specified Amazon WorkSpaces client.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "InvalidParameterValuesException",
+        "documentation" : "<p>One or more parameter values are not valid.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The resource could not be found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The user is not authorized to access a resource.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ModifyClientPropertiesRequest",
+        "variableName" : "modifyClientPropertiesRequest",
+        "variableType" : "ModifyClientPropertiesRequest",
+        "documentation" : "",
+        "simpleType" : "ModifyClientPropertiesRequest",
+        "variableSetterType" : "ModifyClientPropertiesRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "modifyClientProperties",
+      "operationName" : "ModifyClientProperties",
+      "returnType" : {
+        "returnType" : "ModifyClientPropertiesResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "ModifyClientPropertiesResult"
+    },
     "ModifyWorkspaceProperties" : {
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyWorkspacePropertiesResult>",
       "asyncFutureType" : "java.util.concurrent.Future<ModifyWorkspacePropertiesResult>",
@@ -971,6 +1101,7 @@
       "documentation" : "<p>Modifies the specified WorkSpace properties.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterValuesException",
         "documentation" : "<p>One or more parameter values are not valid.</p>",
@@ -1001,6 +1132,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ModifyWorkspacePropertiesRequest",
@@ -1029,6 +1161,7 @@
       "documentation" : "<p>Sets the state of the specified WorkSpace.</p> <p>To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>. WorkSpaces in this state do not respond to requests to reboot, stop, start, or rebuild. An AutoStop WorkSpace in this state is not stopped. Users can log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterValuesException",
         "documentation" : "<p>One or more parameter values are not valid.</p>",
@@ -1043,6 +1176,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "ModifyWorkspaceStateRequest",
@@ -1071,8 +1205,10 @@
       "documentation" : "<p>Reboots the specified WorkSpaces.</p> <p>You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or <code>UNHEALTHY</code>.</p> <p>This operation is asynchronous and returns before the WorkSpaces have rebooted.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "RebootWorkspacesRequest",
@@ -1101,8 +1237,10 @@
       "documentation" : "<p>Rebuilds the specified WorkSpace.</p> <p>You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>, or <code>UNHEALTHY</code>.</p> <p>Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more information, see <a href=\"http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html\">Rebuild a WorkSpace</a>.</p> <p>This operation is asynchronous and returns before the WorkSpaces have been completely rebuilt.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "RebuildWorkspacesRequest",
@@ -1131,6 +1269,7 @@
       "documentation" : "<p>Removes one or more rules from the specified IP access control group.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterValuesException",
         "documentation" : "<p>One or more parameter values are not valid.</p>",
@@ -1149,6 +1288,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "RevokeIpRulesRequest",
@@ -1177,8 +1317,10 @@
       "documentation" : "<p>Starts the specified WorkSpaces.</p> <p>You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of <code>STOPPED</code>.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "StartWorkspacesRequest",
@@ -1207,8 +1349,10 @@
       "documentation" : "<p> Stops the specified WorkSpaces.</p> <p>You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or <code>ERROR</code>.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "StopWorkspacesRequest",
@@ -1237,8 +1381,10 @@
       "documentation" : "<p>Terminates the specified WorkSpaces.</p> <p>Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is destroyed. If you need to archive any user data, contact Amazon Web Services before terminating the WorkSpace.</p> <p>You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.</p> <p>This operation is asynchronous and returns before the WorkSpaces have been completely terminated.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "TerminateWorkspacesRequest",
@@ -1267,6 +1413,7 @@
       "documentation" : "<p>Replaces the current rules of the specified IP access control group with the specified rules.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
+      "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterValuesException",
         "documentation" : "<p>One or more parameter values are not valid.</p>",
@@ -1289,6 +1436,7 @@
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
       "input" : {
         "timestampFormat" : null,
         "variableDeclarationType" : "UpdateRulesOfIpGroupRequest",
@@ -3184,6 +3332,481 @@
         "documentation" : null,
         "simpleType" : "AuthorizeIpRulesResult",
         "variableSetterType" : "AuthorizeIpRulesResult"
+      },
+      "wrapper" : false
+    },
+    "ClientProperties" : {
+      "c2jName" : "ClientProperties",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Describes an Amazon WorkSpaces client.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "ReconnectEnabled",
+        "c2jShape" : "ReconnectEnum",
+        "deprecated" : false,
+        "documentation" : "<p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>",
+        "enumType" : "ReconnectEnum",
+        "fluentSetterDocumentation" : "/**<p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>\n@param reconnectEnabled Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ReconnectEnum*/",
+        "fluentSetterMethodName" : "withReconnectEnabled",
+        "getterDocumentation" : "/**<p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>\n@return Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials.\n@see ReconnectEnum*/",
+        "getterMethodName" : "getReconnectEnabled",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ReconnectEnabled",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ReconnectEnabled",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ReconnectEnabled",
+        "setterDocumentation" : "/**<p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>\n@param reconnectEnabled Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials.\n@see ReconnectEnum*/",
+        "setterMethodName" : "setReconnectEnabled",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "reconnectEnabled",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>\n@param reconnectEnabled Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ReconnectEnum*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "reconnectEnabled",
+          "variableType" : "String",
+          "documentation" : "<p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ReconnectEnabled" : {
+          "c2jName" : "ReconnectEnabled",
+          "c2jShape" : "ReconnectEnum",
+          "deprecated" : false,
+          "documentation" : "<p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>",
+          "enumType" : "ReconnectEnum",
+          "fluentSetterDocumentation" : "/**<p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>\n@param reconnectEnabled Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ReconnectEnum*/",
+          "fluentSetterMethodName" : "withReconnectEnabled",
+          "getterDocumentation" : "/**<p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>\n@return Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials.\n@see ReconnectEnum*/",
+          "getterMethodName" : "getReconnectEnabled",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ReconnectEnabled",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ReconnectEnabled",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ReconnectEnabled",
+          "setterDocumentation" : "/**<p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>\n@param reconnectEnabled Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials.\n@see ReconnectEnum*/",
+          "setterMethodName" : "setReconnectEnabled",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "reconnectEnabled",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>\n@param reconnectEnabled Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ReconnectEnum*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "reconnectEnabled",
+            "variableType" : "String",
+            "documentation" : "<p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ClientProperties",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ClientProperties",
+        "variableName" : "clientProperties",
+        "variableType" : "ClientProperties",
+        "documentation" : null,
+        "simpleType" : "ClientProperties",
+        "variableSetterType" : "ClientProperties"
+      },
+      "wrapper" : false
+    },
+    "ClientPropertiesResult" : {
+      "c2jName" : "ClientPropertiesResult",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Information about the Amazon WorkSpaces client.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "ResourceId",
+        "c2jShape" : "NonEmptyString",
+        "deprecated" : false,
+        "documentation" : "<p>The resource identifier, in the form of a directory ID.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The resource identifier, in the form of a directory ID.</p>\n@param resourceId The resource identifier, in the form of a directory ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withResourceId",
+        "getterDocumentation" : "/**<p>The resource identifier, in the form of a directory ID.</p>\n@return The resource identifier, in the form of a directory ID.*/",
+        "getterMethodName" : "getResourceId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ResourceId",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ResourceId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ResourceId",
+        "setterDocumentation" : "/**<p>The resource identifier, in the form of a directory ID.</p>\n@param resourceId The resource identifier, in the form of a directory ID.*/",
+        "setterMethodName" : "setResourceId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "resourceId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The resource identifier, in the form of a directory ID.</p>\n@param resourceId The resource identifier, in the form of a directory ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "resourceId",
+          "variableType" : "String",
+          "documentation" : "<p>The resource identifier, in the form of a directory ID.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ClientProperties",
+        "c2jShape" : "ClientProperties",
+        "deprecated" : false,
+        "documentation" : "<p>Information about the Amazon WorkSpaces client.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Information about the Amazon WorkSpaces client.</p>\n@param clientProperties Information about the Amazon WorkSpaces client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withClientProperties",
+        "getterDocumentation" : "/**<p>Information about the Amazon WorkSpaces client.</p>\n@return Information about the Amazon WorkSpaces client.*/",
+        "getterMethodName" : "getClientProperties",
+        "getterModel" : {
+          "returnType" : "ClientProperties",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ClientProperties",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ClientProperties",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "ClientProperties",
+        "setterDocumentation" : "/**<p>Information about the Amazon WorkSpaces client.</p>\n@param clientProperties Information about the Amazon WorkSpaces client.*/",
+        "setterMethodName" : "setClientProperties",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "ClientProperties",
+          "variableName" : "clientProperties",
+          "variableType" : "ClientProperties",
+          "documentation" : "",
+          "simpleType" : "ClientProperties",
+          "variableSetterType" : "ClientProperties"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Information about the Amazon WorkSpaces client.</p>\n@param clientProperties Information about the Amazon WorkSpaces client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "ClientProperties",
+          "variableName" : "clientProperties",
+          "variableType" : "ClientProperties",
+          "documentation" : "<p>Information about the Amazon WorkSpaces client.</p>",
+          "simpleType" : "ClientProperties",
+          "variableSetterType" : "ClientProperties"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ClientProperties" : {
+          "c2jName" : "ClientProperties",
+          "c2jShape" : "ClientProperties",
+          "deprecated" : false,
+          "documentation" : "<p>Information about the Amazon WorkSpaces client.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Information about the Amazon WorkSpaces client.</p>\n@param clientProperties Information about the Amazon WorkSpaces client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withClientProperties",
+          "getterDocumentation" : "/**<p>Information about the Amazon WorkSpaces client.</p>\n@return Information about the Amazon WorkSpaces client.*/",
+          "getterMethodName" : "getClientProperties",
+          "getterModel" : {
+            "returnType" : "ClientProperties",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ClientProperties",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ClientProperties",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "ClientProperties",
+          "setterDocumentation" : "/**<p>Information about the Amazon WorkSpaces client.</p>\n@param clientProperties Information about the Amazon WorkSpaces client.*/",
+          "setterMethodName" : "setClientProperties",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "ClientProperties",
+            "variableName" : "clientProperties",
+            "variableType" : "ClientProperties",
+            "documentation" : "",
+            "simpleType" : "ClientProperties",
+            "variableSetterType" : "ClientProperties"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Information about the Amazon WorkSpaces client.</p>\n@param clientProperties Information about the Amazon WorkSpaces client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "ClientProperties",
+            "variableName" : "clientProperties",
+            "variableType" : "ClientProperties",
+            "documentation" : "<p>Information about the Amazon WorkSpaces client.</p>",
+            "simpleType" : "ClientProperties",
+            "variableSetterType" : "ClientProperties"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ResourceId" : {
+          "c2jName" : "ResourceId",
+          "c2jShape" : "NonEmptyString",
+          "deprecated" : false,
+          "documentation" : "<p>The resource identifier, in the form of a directory ID.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The resource identifier, in the form of a directory ID.</p>\n@param resourceId The resource identifier, in the form of a directory ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withResourceId",
+          "getterDocumentation" : "/**<p>The resource identifier, in the form of a directory ID.</p>\n@return The resource identifier, in the form of a directory ID.*/",
+          "getterMethodName" : "getResourceId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ResourceId",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ResourceId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ResourceId",
+          "setterDocumentation" : "/**<p>The resource identifier, in the form of a directory ID.</p>\n@param resourceId The resource identifier, in the form of a directory ID.*/",
+          "setterMethodName" : "setResourceId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "resourceId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The resource identifier, in the form of a directory ID.</p>\n@param resourceId The resource identifier, in the form of a directory ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "resourceId",
+            "variableType" : "String",
+            "documentation" : "<p>The resource identifier, in the form of a directory ID.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ClientPropertiesResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ClientPropertiesResult",
+        "variableName" : "clientPropertiesResult",
+        "variableType" : "ClientPropertiesResult",
+        "documentation" : null,
+        "simpleType" : "ClientPropertiesResult",
+        "variableSetterType" : "ClientPropertiesResult"
       },
       "wrapper" : false
     },
@@ -8461,6 +9084,674 @@
         "documentation" : null,
         "simpleType" : "DescribeAccountResult",
         "variableSetterType" : "DescribeAccountResult"
+      },
+      "wrapper" : false
+    },
+    "DescribeClientPropertiesRequest" : {
+      "c2jName" : "DescribeClientPropertiesRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "DescribeClientProperties",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "WorkspacesService.DescribeClientProperties",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "ResourceIds",
+        "c2jShape" : "ResourceIdList",
+        "deprecated" : false,
+        "documentation" : "<p>The resource identifiers, in the form of directory IDs.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The resource identifiers, in the form of directory IDs.</p>\n@param resourceIds The resource identifiers, in the form of directory IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withResourceIds",
+        "getterDocumentation" : "/**<p>The resource identifiers, in the form of directory IDs.</p>\n@return The resource identifiers, in the form of directory IDs.*/",
+        "getterMethodName" : "getResourceIds",
+        "getterModel" : {
+          "returnType" : "java.util.List<String>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ResourceIds",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ResourceIds",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "NonEmptyString",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "fluentSetterMethodName" : "withMember",
+            "getterDocumentation" : "/**\n@return */",
+            "getterMethodName" : "getMember",
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "greedy" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocation" : "PAYLOAD",
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "marshallingTargetClass" : "String",
+            "marshallingType" : "STRING",
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member */",
+            "setterMethodName" : "setMember",
+            "setterModel" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "shouldEmitLegacyEnumSetter" : false,
+            "simple" : true,
+            "unmarshallingType" : null,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "String",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : true,
+          "simpleType" : "String",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
+        "name" : "ResourceIds",
+        "setterDocumentation" : "/**<p>The resource identifiers, in the form of directory IDs.</p>\n@param resourceIds The resource identifiers, in the form of directory IDs.*/",
+        "setterMethodName" : "setResourceIds",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "variableName" : "resourceIds",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The resource identifiers, in the form of directory IDs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceIds(java.util.Collection)} or {@link #withResourceIds(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceIds The resource identifiers, in the form of directory IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "variableName" : "resourceIds",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "<p>The resource identifiers, in the form of directory IDs.</p>",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ResourceIds" : {
+          "c2jName" : "ResourceIds",
+          "c2jShape" : "ResourceIdList",
+          "deprecated" : false,
+          "documentation" : "<p>The resource identifiers, in the form of directory IDs.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The resource identifiers, in the form of directory IDs.</p>\n@param resourceIds The resource identifiers, in the form of directory IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withResourceIds",
+          "getterDocumentation" : "/**<p>The resource identifiers, in the form of directory IDs.</p>\n@return The resource identifiers, in the form of directory IDs.*/",
+          "getterMethodName" : "getResourceIds",
+          "getterModel" : {
+            "returnType" : "java.util.List<String>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ResourceIds",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ResourceIds",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "NonEmptyString",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "fluentSetterMethodName" : "withMember",
+              "getterDocumentation" : "/**\n@return */",
+              "getterMethodName" : "getMember",
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "greedy" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocation" : "PAYLOAD",
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "marshallingTargetClass" : "String",
+              "marshallingType" : "STRING",
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member */",
+              "setterMethodName" : "setMember",
+              "setterModel" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "shouldEmitLegacyEnumSetter" : false,
+              "simple" : true,
+              "unmarshallingType" : null,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "String",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : true,
+            "simpleType" : "String",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
+          "name" : "ResourceIds",
+          "setterDocumentation" : "/**<p>The resource identifiers, in the form of directory IDs.</p>\n@param resourceIds The resource identifiers, in the form of directory IDs.*/",
+          "setterMethodName" : "setResourceIds",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "variableName" : "resourceIds",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The resource identifiers, in the form of directory IDs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceIds(java.util.Collection)} or {@link #withResourceIds(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceIds The resource identifiers, in the form of directory IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "variableName" : "resourceIds",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "<p>The resource identifiers, in the form of directory IDs.</p>",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "ResourceIds" ],
+      "shapeName" : "DescribeClientPropertiesRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DescribeClientPropertiesRequest",
+        "variableName" : "describeClientPropertiesRequest",
+        "variableType" : "DescribeClientPropertiesRequest",
+        "documentation" : null,
+        "simpleType" : "DescribeClientPropertiesRequest",
+        "variableSetterType" : "DescribeClientPropertiesRequest"
+      },
+      "wrapper" : false
+    },
+    "DescribeClientPropertiesResult" : {
+      "c2jName" : "DescribeClientPropertiesResult",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "ClientPropertiesList",
+        "c2jShape" : "ClientPropertiesList",
+        "deprecated" : false,
+        "documentation" : "<p>Information about the specified Amazon WorkSpaces clients.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Information about the specified Amazon WorkSpaces clients.</p>\n@param clientPropertiesList Information about the specified Amazon WorkSpaces clients.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withClientPropertiesList",
+        "getterDocumentation" : "/**<p>Information about the specified Amazon WorkSpaces clients.</p>\n@return Information about the specified Amazon WorkSpaces clients.*/",
+        "getterMethodName" : "getClientPropertiesList",
+        "getterModel" : {
+          "returnType" : "java.util.List<ClientPropertiesResult>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ClientPropertiesList",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ClientPropertiesList",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "ClientPropertiesResult",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "fluentSetterMethodName" : "withMember",
+            "getterDocumentation" : "/**\n@return */",
+            "getterMethodName" : "getMember",
+            "getterModel" : {
+              "returnType" : "ClientPropertiesResult",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "greedy" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocation" : "PAYLOAD",
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "marshallingTargetClass" : "StructuredPojo",
+            "marshallingType" : "STRUCTURED",
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member */",
+            "setterMethodName" : "setMember",
+            "setterModel" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "ClientPropertiesResult",
+              "variableName" : "member",
+              "variableType" : "ClientPropertiesResult",
+              "documentation" : "",
+              "simpleType" : "ClientPropertiesResult",
+              "variableSetterType" : "ClientPropertiesResult"
+            },
+            "shouldEmitLegacyEnumSetter" : false,
+            "simple" : false,
+            "unmarshallingType" : null,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "ClientPropertiesResult",
+              "variableName" : "member",
+              "variableType" : "ClientPropertiesResult",
+              "documentation" : "",
+              "simpleType" : "ClientPropertiesResult",
+              "variableSetterType" : "ClientPropertiesResult"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "ClientPropertiesResult",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "ClientPropertiesResult",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ClientPropertiesResult>",
+          "templateType" : "java.util.List<ClientPropertiesResult>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
+        "name" : "ClientPropertiesList",
+        "setterDocumentation" : "/**<p>Information about the specified Amazon WorkSpaces clients.</p>\n@param clientPropertiesList Information about the specified Amazon WorkSpaces clients.*/",
+        "setterMethodName" : "setClientPropertiesList",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ClientPropertiesResult>",
+          "variableName" : "clientPropertiesList",
+          "variableType" : "java.util.List<ClientPropertiesResult>",
+          "documentation" : "",
+          "simpleType" : "List<ClientPropertiesResult>",
+          "variableSetterType" : "java.util.Collection<ClientPropertiesResult>"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Information about the specified Amazon WorkSpaces clients.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setClientPropertiesList(java.util.Collection)} or {@link #withClientPropertiesList(java.util.Collection)} if you want to override the existing values.</p>\n@param clientPropertiesList Information about the specified Amazon WorkSpaces clients.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ClientPropertiesResult>",
+          "variableName" : "clientPropertiesList",
+          "variableType" : "java.util.List<ClientPropertiesResult>",
+          "documentation" : "<p>Information about the specified Amazon WorkSpaces clients.</p>",
+          "simpleType" : "List<ClientPropertiesResult>",
+          "variableSetterType" : "java.util.Collection<ClientPropertiesResult>"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ClientPropertiesList" : {
+          "c2jName" : "ClientPropertiesList",
+          "c2jShape" : "ClientPropertiesList",
+          "deprecated" : false,
+          "documentation" : "<p>Information about the specified Amazon WorkSpaces clients.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Information about the specified Amazon WorkSpaces clients.</p>\n@param clientPropertiesList Information about the specified Amazon WorkSpaces clients.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withClientPropertiesList",
+          "getterDocumentation" : "/**<p>Information about the specified Amazon WorkSpaces clients.</p>\n@return Information about the specified Amazon WorkSpaces clients.*/",
+          "getterMethodName" : "getClientPropertiesList",
+          "getterModel" : {
+            "returnType" : "java.util.List<ClientPropertiesResult>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ClientPropertiesList",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ClientPropertiesList",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "ClientPropertiesResult",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "fluentSetterMethodName" : "withMember",
+              "getterDocumentation" : "/**\n@return */",
+              "getterMethodName" : "getMember",
+              "getterModel" : {
+                "returnType" : "ClientPropertiesResult",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "greedy" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocation" : "PAYLOAD",
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "marshallingTargetClass" : "StructuredPojo",
+              "marshallingType" : "STRUCTURED",
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member */",
+              "setterMethodName" : "setMember",
+              "setterModel" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "ClientPropertiesResult",
+                "variableName" : "member",
+                "variableType" : "ClientPropertiesResult",
+                "documentation" : "",
+                "simpleType" : "ClientPropertiesResult",
+                "variableSetterType" : "ClientPropertiesResult"
+              },
+              "shouldEmitLegacyEnumSetter" : false,
+              "simple" : false,
+              "unmarshallingType" : null,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "ClientPropertiesResult",
+                "variableName" : "member",
+                "variableType" : "ClientPropertiesResult",
+                "documentation" : "",
+                "simpleType" : "ClientPropertiesResult",
+                "variableSetterType" : "ClientPropertiesResult"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "ClientPropertiesResult",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "ClientPropertiesResult",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ClientPropertiesResult>",
+            "templateType" : "java.util.List<ClientPropertiesResult>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
+          "name" : "ClientPropertiesList",
+          "setterDocumentation" : "/**<p>Information about the specified Amazon WorkSpaces clients.</p>\n@param clientPropertiesList Information about the specified Amazon WorkSpaces clients.*/",
+          "setterMethodName" : "setClientPropertiesList",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ClientPropertiesResult>",
+            "variableName" : "clientPropertiesList",
+            "variableType" : "java.util.List<ClientPropertiesResult>",
+            "documentation" : "",
+            "simpleType" : "List<ClientPropertiesResult>",
+            "variableSetterType" : "java.util.Collection<ClientPropertiesResult>"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Information about the specified Amazon WorkSpaces clients.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setClientPropertiesList(java.util.Collection)} or {@link #withClientPropertiesList(java.util.Collection)} if you want to override the existing values.</p>\n@param clientPropertiesList Information about the specified Amazon WorkSpaces clients.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ClientPropertiesResult>",
+            "variableName" : "clientPropertiesList",
+            "variableType" : "java.util.List<ClientPropertiesResult>",
+            "documentation" : "<p>Information about the specified Amazon WorkSpaces clients.</p>",
+            "simpleType" : "List<ClientPropertiesResult>",
+            "variableSetterType" : "java.util.Collection<ClientPropertiesResult>"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DescribeClientPropertiesResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DescribeClientPropertiesResult",
+        "variableName" : "describeClientPropertiesResult",
+        "variableType" : "DescribeClientPropertiesResult",
+        "documentation" : null,
+        "simpleType" : "DescribeClientPropertiesResult",
+        "variableSetterType" : "DescribeClientPropertiesResult"
       },
       "wrapper" : false
     },
@@ -19608,6 +20899,353 @@
       },
       "wrapper" : false
     },
+    "ModifyClientPropertiesRequest" : {
+      "c2jName" : "ModifyClientPropertiesRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "ModifyClientProperties",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "WorkspacesService.ModifyClientProperties",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "ResourceId",
+        "c2jShape" : "NonEmptyString",
+        "deprecated" : false,
+        "documentation" : "<p>The resource identifiers, in the form of directory IDs.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The resource identifiers, in the form of directory IDs.</p>\n@param resourceId The resource identifiers, in the form of directory IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withResourceId",
+        "getterDocumentation" : "/**<p>The resource identifiers, in the form of directory IDs.</p>\n@return The resource identifiers, in the form of directory IDs.*/",
+        "getterMethodName" : "getResourceId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ResourceId",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ResourceId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ResourceId",
+        "setterDocumentation" : "/**<p>The resource identifiers, in the form of directory IDs.</p>\n@param resourceId The resource identifiers, in the form of directory IDs.*/",
+        "setterMethodName" : "setResourceId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "resourceId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The resource identifiers, in the form of directory IDs.</p>\n@param resourceId The resource identifiers, in the form of directory IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "resourceId",
+          "variableType" : "String",
+          "documentation" : "<p>The resource identifiers, in the form of directory IDs.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ClientProperties",
+        "c2jShape" : "ClientProperties",
+        "deprecated" : false,
+        "documentation" : "<p>Information about the Amazon WorkSpaces client.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Information about the Amazon WorkSpaces client.</p>\n@param clientProperties Information about the Amazon WorkSpaces client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withClientProperties",
+        "getterDocumentation" : "/**<p>Information about the Amazon WorkSpaces client.</p>\n@return Information about the Amazon WorkSpaces client.*/",
+        "getterMethodName" : "getClientProperties",
+        "getterModel" : {
+          "returnType" : "ClientProperties",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ClientProperties",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ClientProperties",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "ClientProperties",
+        "setterDocumentation" : "/**<p>Information about the Amazon WorkSpaces client.</p>\n@param clientProperties Information about the Amazon WorkSpaces client.*/",
+        "setterMethodName" : "setClientProperties",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "ClientProperties",
+          "variableName" : "clientProperties",
+          "variableType" : "ClientProperties",
+          "documentation" : "",
+          "simpleType" : "ClientProperties",
+          "variableSetterType" : "ClientProperties"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Information about the Amazon WorkSpaces client.</p>\n@param clientProperties Information about the Amazon WorkSpaces client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "ClientProperties",
+          "variableName" : "clientProperties",
+          "variableType" : "ClientProperties",
+          "documentation" : "<p>Information about the Amazon WorkSpaces client.</p>",
+          "simpleType" : "ClientProperties",
+          "variableSetterType" : "ClientProperties"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ClientProperties" : {
+          "c2jName" : "ClientProperties",
+          "c2jShape" : "ClientProperties",
+          "deprecated" : false,
+          "documentation" : "<p>Information about the Amazon WorkSpaces client.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Information about the Amazon WorkSpaces client.</p>\n@param clientProperties Information about the Amazon WorkSpaces client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withClientProperties",
+          "getterDocumentation" : "/**<p>Information about the Amazon WorkSpaces client.</p>\n@return Information about the Amazon WorkSpaces client.*/",
+          "getterMethodName" : "getClientProperties",
+          "getterModel" : {
+            "returnType" : "ClientProperties",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ClientProperties",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ClientProperties",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "ClientProperties",
+          "setterDocumentation" : "/**<p>Information about the Amazon WorkSpaces client.</p>\n@param clientProperties Information about the Amazon WorkSpaces client.*/",
+          "setterMethodName" : "setClientProperties",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "ClientProperties",
+            "variableName" : "clientProperties",
+            "variableType" : "ClientProperties",
+            "documentation" : "",
+            "simpleType" : "ClientProperties",
+            "variableSetterType" : "ClientProperties"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Information about the Amazon WorkSpaces client.</p>\n@param clientProperties Information about the Amazon WorkSpaces client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "ClientProperties",
+            "variableName" : "clientProperties",
+            "variableType" : "ClientProperties",
+            "documentation" : "<p>Information about the Amazon WorkSpaces client.</p>",
+            "simpleType" : "ClientProperties",
+            "variableSetterType" : "ClientProperties"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ResourceId" : {
+          "c2jName" : "ResourceId",
+          "c2jShape" : "NonEmptyString",
+          "deprecated" : false,
+          "documentation" : "<p>The resource identifiers, in the form of directory IDs.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The resource identifiers, in the form of directory IDs.</p>\n@param resourceId The resource identifiers, in the form of directory IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withResourceId",
+          "getterDocumentation" : "/**<p>The resource identifiers, in the form of directory IDs.</p>\n@return The resource identifiers, in the form of directory IDs.*/",
+          "getterMethodName" : "getResourceId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ResourceId",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ResourceId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ResourceId",
+          "setterDocumentation" : "/**<p>The resource identifiers, in the form of directory IDs.</p>\n@param resourceId The resource identifiers, in the form of directory IDs.*/",
+          "setterMethodName" : "setResourceId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "resourceId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The resource identifiers, in the form of directory IDs.</p>\n@param resourceId The resource identifiers, in the form of directory IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "resourceId",
+            "variableType" : "String",
+            "documentation" : "<p>The resource identifiers, in the form of directory IDs.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "ResourceId" ],
+      "shapeName" : "ModifyClientPropertiesRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ModifyClientPropertiesRequest",
+        "variableName" : "modifyClientPropertiesRequest",
+        "variableType" : "ModifyClientPropertiesRequest",
+        "documentation" : null,
+        "simpleType" : "ModifyClientPropertiesRequest",
+        "variableSetterType" : "ModifyClientPropertiesRequest"
+      },
+      "wrapper" : false
+    },
+    "ModifyClientPropertiesResult" : {
+      "c2jName" : "ModifyClientPropertiesResult",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ModifyClientPropertiesResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ModifyClientPropertiesResult",
+        "variableName" : "modifyClientPropertiesResult",
+        "variableType" : "ModifyClientPropertiesResult",
+        "documentation" : null,
+        "simpleType" : "ModifyClientPropertiesResult",
+        "variableSetterType" : "ModifyClientPropertiesResult"
+      },
+      "wrapper" : false
+    },
     "ModifyWorkspacePropertiesRequest" : {
       "c2jName" : "ModifyWorkspacePropertiesRequest",
       "customization" : {
@@ -22271,6 +23909,52 @@
         "documentation" : null,
         "simpleType" : "RebuildWorkspacesResult",
         "variableSetterType" : "RebuildWorkspacesResult"
+      },
+      "wrapper" : false
+    },
+    "ReconnectEnum" : {
+      "c2jName" : "ReconnectEnum",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : [ {
+        "name" : "ENABLED",
+        "value" : "ENABLED"
+      }, {
+        "name" : "DISABLED",
+        "value" : "DISABLED"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ReconnectEnum",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ReconnectEnum",
+        "variableName" : "reconnectEnum",
+        "variableType" : "ReconnectEnum",
+        "documentation" : null,
+        "simpleType" : "ReconnectEnum",
+        "variableSetterType" : "ReconnectEnum"
       },
       "wrapper" : false
     },

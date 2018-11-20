@@ -43,6 +43,8 @@ public class SubmitJobRequestMarshaller {
             .marshallLocationName("parameters").build();
     private static final MarshallingInfo<StructuredPojo> CONTAINEROVERRIDES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerOverrides").build();
+    private static final MarshallingInfo<StructuredPojo> NODEOVERRIDES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nodeOverrides").build();
     private static final MarshallingInfo<StructuredPojo> RETRYSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retryStrategy").build();
     private static final MarshallingInfo<StructuredPojo> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -71,6 +73,7 @@ public class SubmitJobRequestMarshaller {
             protocolMarshaller.marshall(submitJobRequest.getJobDefinition(), JOBDEFINITION_BINDING);
             protocolMarshaller.marshall(submitJobRequest.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(submitJobRequest.getContainerOverrides(), CONTAINEROVERRIDES_BINDING);
+            protocolMarshaller.marshall(submitJobRequest.getNodeOverrides(), NODEOVERRIDES_BINDING);
             protocolMarshaller.marshall(submitJobRequest.getRetryStrategy(), RETRYSTRATEGY_BINDING);
             protocolMarshaller.marshall(submitJobRequest.getTimeout(), TIMEOUT_BINDING);
         } catch (Exception e) {

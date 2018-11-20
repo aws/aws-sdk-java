@@ -31,6 +31,33 @@ import com.amazonaws.services.mediaconvert.model.*;
 public interface AWSMediaConvertAsync extends AWSMediaConvert {
 
     /**
+     * Associates an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS Elemental MediaConvert.
+     * 
+     * @param associateCertificateRequest
+     * @return A Java Future containing the result of the AssociateCertificate operation returned by the service.
+     * @sample AWSMediaConvertAsync.AssociateCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AssociateCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateCertificateResult> associateCertificateAsync(AssociateCertificateRequest associateCertificateRequest);
+
+    /**
+     * Associates an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS Elemental MediaConvert.
+     * 
+     * @param associateCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateCertificate operation returned by the service.
+     * @sample AWSMediaConvertAsyncHandler.AssociateCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AssociateCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateCertificateResult> associateCertificateAsync(AssociateCertificateRequest associateCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateCertificateRequest, AssociateCertificateResult> asyncHandler);
+
+    /**
      * Permanently remove a job from a queue. Once you have canceled a job, you can't start it again. You can't delete a
      * running job.
      * 
@@ -284,6 +311,35 @@ public interface AWSMediaConvertAsync extends AWSMediaConvert {
      */
     java.util.concurrent.Future<DescribeEndpointsResult> describeEndpointsAsync(DescribeEndpointsRequest describeEndpointsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeEndpointsRequest, DescribeEndpointsResult> asyncHandler);
+
+    /**
+     * Removes an association between the Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate and
+     * an AWS Elemental MediaConvert resource.
+     * 
+     * @param disassociateCertificateRequest
+     * @return A Java Future containing the result of the DisassociateCertificate operation returned by the service.
+     * @sample AWSMediaConvertAsync.DisassociateCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DisassociateCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateCertificateResult> disassociateCertificateAsync(DisassociateCertificateRequest disassociateCertificateRequest);
+
+    /**
+     * Removes an association between the Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate and
+     * an AWS Elemental MediaConvert resource.
+     * 
+     * @param disassociateCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateCertificate operation returned by the service.
+     * @sample AWSMediaConvertAsyncHandler.DisassociateCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DisassociateCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateCertificateResult> disassociateCertificateAsync(DisassociateCertificateRequest disassociateCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateCertificateRequest, DisassociateCertificateResult> asyncHandler);
 
     /**
      * Retrieve the JSON for a specific completed transcoding job.

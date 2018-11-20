@@ -104,6 +104,21 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
             request.addParameter("DBSubnetGroupName", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDBSubnetGroupName()));
         }
 
+        if (!createDBInstanceReadReplicaRequest.getVpcSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createDBInstanceReadReplicaRequest.getVpcSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceReadReplicaRequest
+                    .getVpcSecurityGroupIds();
+            int vpcSecurityGroupIdsListIndex = 1;
+
+            for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
+                if (vpcSecurityGroupIdsListValue != null) {
+                    request.addParameter("VpcSecurityGroupIds.VpcSecurityGroupId." + vpcSecurityGroupIdsListIndex,
+                            StringUtils.fromString(vpcSecurityGroupIdsListValue));
+                }
+                vpcSecurityGroupIdsListIndex++;
+            }
+        }
+
         if (createDBInstanceReadReplicaRequest.getStorageType() != null) {
             request.addParameter("StorageType", StringUtils.fromString(createDBInstanceReadReplicaRequest.getStorageType()));
         }

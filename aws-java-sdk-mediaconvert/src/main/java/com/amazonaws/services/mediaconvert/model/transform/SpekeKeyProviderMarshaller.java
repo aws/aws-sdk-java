@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class SpekeKeyProviderMarshaller {
 
+    private static final MarshallingInfo<String> CERTIFICATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateArn").build();
     private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceId").build();
     private static final MarshallingInfo<List> SYSTEMIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -51,6 +53,7 @@ public class SpekeKeyProviderMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(spekeKeyProvider.getCertificateArn(), CERTIFICATEARN_BINDING);
             protocolMarshaller.marshall(spekeKeyProvider.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(spekeKeyProvider.getSystemIds(), SYSTEMIDS_BINDING);
             protocolMarshaller.marshall(spekeKeyProvider.getUrl(), URL_BINDING);

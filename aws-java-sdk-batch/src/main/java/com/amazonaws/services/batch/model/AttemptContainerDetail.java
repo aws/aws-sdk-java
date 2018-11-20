@@ -62,6 +62,12 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
      * </p>
      */
     private String logStreamName;
+    /**
+     * <p>
+     * The network interfaces associated with the job attempt.
+     * </p>
+     */
+    private java.util.List<NetworkInterface> networkInterfaces;
 
     /**
      * <p>
@@ -288,6 +294,76 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The network interfaces associated with the job attempt.
+     * </p>
+     * 
+     * @return The network interfaces associated with the job attempt.
+     */
+
+    public java.util.List<NetworkInterface> getNetworkInterfaces() {
+        return networkInterfaces;
+    }
+
+    /**
+     * <p>
+     * The network interfaces associated with the job attempt.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        The network interfaces associated with the job attempt.
+     */
+
+    public void setNetworkInterfaces(java.util.Collection<NetworkInterface> networkInterfaces) {
+        if (networkInterfaces == null) {
+            this.networkInterfaces = null;
+            return;
+        }
+
+        this.networkInterfaces = new java.util.ArrayList<NetworkInterface>(networkInterfaces);
+    }
+
+    /**
+     * <p>
+     * The network interfaces associated with the job attempt.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkInterfaces(java.util.Collection)} or {@link #withNetworkInterfaces(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        The network interfaces associated with the job attempt.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttemptContainerDetail withNetworkInterfaces(NetworkInterface... networkInterfaces) {
+        if (this.networkInterfaces == null) {
+            setNetworkInterfaces(new java.util.ArrayList<NetworkInterface>(networkInterfaces.length));
+        }
+        for (NetworkInterface ele : networkInterfaces) {
+            this.networkInterfaces.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The network interfaces associated with the job attempt.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        The network interfaces associated with the job attempt.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttemptContainerDetail withNetworkInterfaces(java.util.Collection<NetworkInterface> networkInterfaces) {
+        setNetworkInterfaces(networkInterfaces);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -307,7 +383,9 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
         if (getReason() != null)
             sb.append("Reason: ").append(getReason()).append(",");
         if (getLogStreamName() != null)
-            sb.append("LogStreamName: ").append(getLogStreamName());
+            sb.append("LogStreamName: ").append(getLogStreamName()).append(",");
+        if (getNetworkInterfaces() != null)
+            sb.append("NetworkInterfaces: ").append(getNetworkInterfaces());
         sb.append("}");
         return sb.toString();
     }
@@ -342,6 +420,10 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
             return false;
         if (other.getLogStreamName() != null && other.getLogStreamName().equals(this.getLogStreamName()) == false)
             return false;
+        if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null)
+            return false;
+        if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false)
+            return false;
         return true;
     }
 
@@ -355,6 +437,7 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getExitCode() == null) ? 0 : getExitCode().hashCode());
         hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
         hashCode = prime * hashCode + ((getLogStreamName() == null) ? 0 : getLogStreamName().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
         return hashCode;
     }
 

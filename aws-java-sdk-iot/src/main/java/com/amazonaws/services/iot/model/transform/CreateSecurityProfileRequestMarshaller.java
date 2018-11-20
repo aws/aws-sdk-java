@@ -37,6 +37,8 @@ public class CreateSecurityProfileRequestMarshaller {
             .marshallLocationName("behaviors").build();
     private static final MarshallingInfo<Map> ALERTTARGETS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("alertTargets").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateSecurityProfileRequestMarshaller instance = new CreateSecurityProfileRequestMarshaller();
 
@@ -58,6 +60,7 @@ public class CreateSecurityProfileRequestMarshaller {
             protocolMarshaller.marshall(createSecurityProfileRequest.getSecurityProfileDescription(), SECURITYPROFILEDESCRIPTION_BINDING);
             protocolMarshaller.marshall(createSecurityProfileRequest.getBehaviors(), BEHAVIORS_BINDING);
             protocolMarshaller.marshall(createSecurityProfileRequest.getAlertTargets(), ALERTTARGETS_BINDING);
+            protocolMarshaller.marshall(createSecurityProfileRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

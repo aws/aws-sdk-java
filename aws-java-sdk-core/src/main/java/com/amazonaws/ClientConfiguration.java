@@ -346,6 +346,14 @@ public class ClientConfiguration {
      */
     private final ApacheHttpClientConfig apacheHttpClientConfig;
 
+    /**
+     * Configuration option to disable the host prefix injection.
+     *
+     * The hostPrefix template is specified in the service model and is used by the SDK to modify the endpoint
+     * the request is sent to. Host prefix injection is enabled by default. This option can be set to disable the behavior.
+     */
+    private boolean disableHostPrefixInjection;
+
     public ClientConfiguration() {
         apacheHttpClientConfig = new ApacheHttpClientConfig();
     }
@@ -392,6 +400,7 @@ public class ClientConfiguration {
         this.headers.clear();
         this.headers.putAll(other.getHeaders());
         this.maxConsecutiveRetriesBeforeThrottling = other.getMaxConsecutiveRetriesBeforeThrottling();
+        this.disableHostPrefixInjection = other.disableHostPrefixInjection;
     }
 
     /**
@@ -2190,5 +2199,36 @@ public class ClientConfiguration {
      */
     public Map<String, String> getHeaders() {
         return Collections.unmodifiableMap(headers);
+    }
+
+    /**
+     * Returns the boolean value to indicate if the host prefix injection is disabled or not.
+     *
+     * The hostPrefix template is specified in the service model and is used by the SDK to modify the endpoint
+     * the request is sent to. Host prefix injection is enabled by default. This option can be set to disable the behavior.
+     */
+    public boolean isDisableHostPrefixInjection() {
+        return disableHostPrefixInjection;
+    }
+
+    /**
+     * Sets the configuration option to disable the host prefix injection.
+     *
+     * The hostPrefix template is specified in the service model and is used by the SDK to modify the endpoint
+     * the request is sent to. Host prefix injection is enabled by default. This option can be set to disable the behavior.
+     */
+    public void setDisableHostPrefixInjection(boolean disableHostPrefixInjection) {
+        this.disableHostPrefixInjection = disableHostPrefixInjection;
+    }
+
+    /**
+     * Sets the configuration option to disable the host prefix injection.
+     *
+     * The hostPrefix template is specified in the service model and is used by the SDK to modify the endpoint
+     * the request is sent to. Host prefix injection is enabled by default. This option can be set to disable the behavior.
+     */
+    public ClientConfiguration withDisableHostPrefixInjection(boolean disableHostPrefixInjection) {
+        setDisableHostPrefixInjection(disableHostPrefixInjection);
+        return this;
     }
 }

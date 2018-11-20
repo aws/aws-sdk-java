@@ -47,6 +47,8 @@ public class UpdateTrailRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchLogsRoleArn").build();
     private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("KmsKeyId").build();
+    private static final MarshallingInfo<Boolean> ISORGANIZATIONTRAIL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsOrganizationTrail").build();
 
     private static final UpdateTrailRequestMarshaller instance = new UpdateTrailRequestMarshaller();
 
@@ -74,6 +76,7 @@ public class UpdateTrailRequestMarshaller {
             protocolMarshaller.marshall(updateTrailRequest.getCloudWatchLogsLogGroupArn(), CLOUDWATCHLOGSLOGGROUPARN_BINDING);
             protocolMarshaller.marshall(updateTrailRequest.getCloudWatchLogsRoleArn(), CLOUDWATCHLOGSROLEARN_BINDING);
             protocolMarshaller.marshall(updateTrailRequest.getKmsKeyId(), KMSKEYID_BINDING);
+            protocolMarshaller.marshall(updateTrailRequest.getIsOrganizationTrail(), ISORGANIZATIONTRAIL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

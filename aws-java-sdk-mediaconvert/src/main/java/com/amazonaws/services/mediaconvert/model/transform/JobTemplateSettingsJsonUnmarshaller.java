@@ -60,6 +60,10 @@ public class JobTemplateSettingsJsonUnmarshaller implements Unmarshaller<JobTemp
                     context.nextToken();
                     jobTemplateSettings.setInputs(new ListUnmarshaller<InputTemplate>(InputTemplateJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("motionImageInserter", targetDepth)) {
+                    context.nextToken();
+                    jobTemplateSettings.setMotionImageInserter(MotionImageInserterJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("nielsenConfiguration", targetDepth)) {
                     context.nextToken();
                     jobTemplateSettings.setNielsenConfiguration(NielsenConfigurationJsonUnmarshaller.getInstance().unmarshall(context));

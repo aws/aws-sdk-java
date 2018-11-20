@@ -29,7 +29,8 @@
         {"shape":"InvalidTrailNameException"},
         {"shape":"InvalidTagParameterException"},
         {"shape":"UnsupportedOperationException"},
-        {"shape":"OperationNotPermittedException"}
+        {"shape":"OperationNotPermittedException"},
+        {"shape":"NotOrganizationMasterAccountException"}
       ],
       "documentation":"<p>Adds one or more tags to a trail, up to a limit of 50. Tags must be unique per trail. Overwrites an existing tag's value when a new value is specified for an existing tag key. If you specify a key without a value, the tag will be created with the specified key and a value of null. You can tag a trail that applies to all regions only from the region in which the trail was created (that is, from its home region).</p>",
       "idempotent":true
@@ -63,7 +64,12 @@
         {"shape":"InvalidCloudWatchLogsRoleArnException"},
         {"shape":"CloudWatchLogsDeliveryUnavailableException"},
         {"shape":"UnsupportedOperationException"},
-        {"shape":"OperationNotPermittedException"}
+        {"shape":"OperationNotPermittedException"},
+        {"shape":"CloudTrailAccessNotEnabledException"},
+        {"shape":"InsufficientDependencyServiceAccessPermissionException"},
+        {"shape":"NotOrganizationMasterAccountException"},
+        {"shape":"OrganizationsNotInUseException"},
+        {"shape":"OrganizationNotInAllFeaturesModeException"}
       ],
       "documentation":"<p>Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. A maximum of five trails can exist in a region, irrespective of the region in which they were created.</p>",
       "idempotent":true
@@ -79,7 +85,11 @@
       "errors":[
         {"shape":"TrailNotFoundException"},
         {"shape":"InvalidTrailNameException"},
-        {"shape":"InvalidHomeRegionException"}
+        {"shape":"InvalidHomeRegionException"},
+        {"shape":"UnsupportedOperationException"},
+        {"shape":"OperationNotPermittedException"},
+        {"shape":"NotOrganizationMasterAccountException"},
+        {"shape":"InsufficientDependencyServiceAccessPermissionException"}
       ],
       "documentation":"<p>Deletes a trail. This operation must be called from the region in which the trail was created. <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled in all regions.</p>",
       "idempotent":true
@@ -199,7 +209,9 @@
         {"shape":"InvalidHomeRegionException"},
         {"shape":"InvalidEventSelectorsException"},
         {"shape":"UnsupportedOperationException"},
-        {"shape":"OperationNotPermittedException"}
+        {"shape":"OperationNotPermittedException"},
+        {"shape":"NotOrganizationMasterAccountException"},
+        {"shape":"InsufficientDependencyServiceAccessPermissionException"}
       ],
       "documentation":"<p>Configures an event selector for your trail. Use event selectors to further specify the management and data event settings for your trail. By default, trails created without specific event selectors will be configured to log all read and write management events, and no data events. </p> <p>When an event occurs in your account, CloudTrail evaluates the event selectors in all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't match any event selector, the trail doesn't log the event. </p> <p>Example</p> <ol> <li> <p>You create an event selector for a trail and specify that you want write-only events.</p> </li> <li> <p>The EC2 <code>GetConsoleOutput</code> and <code>RunInstances</code> API operations occur in your account.</p> </li> <li> <p>CloudTrail evaluates whether the events match your event selectors.</p> </li> <li> <p>The <code>RunInstances</code> is a write-only event and it matches your event selector. The trail logs the event.</p> </li> <li> <p>The <code>GetConsoleOutput</code> is a read-only event but it doesn't match your event selector. The trail doesn't log the event. </p> </li> </ol> <p>The <code>PutEventSelectors</code> operation must be called from the region in which the trail was created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.</p> <p>You can configure up to five event selectors for each trail. For more information, see <a href=\"http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html\">Logging Data and Management Events for Trails </a> and <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html\">Limits in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p>",
       "idempotent":true
@@ -219,7 +231,8 @@
         {"shape":"InvalidTrailNameException"},
         {"shape":"InvalidTagParameterException"},
         {"shape":"UnsupportedOperationException"},
-        {"shape":"OperationNotPermittedException"}
+        {"shape":"OperationNotPermittedException"},
+        {"shape":"NotOrganizationMasterAccountException"}
       ],
       "documentation":"<p>Removes the specified tags from a trail.</p>",
       "idempotent":true
@@ -235,7 +248,11 @@
       "errors":[
         {"shape":"TrailNotFoundException"},
         {"shape":"InvalidTrailNameException"},
-        {"shape":"InvalidHomeRegionException"}
+        {"shape":"InvalidHomeRegionException"},
+        {"shape":"UnsupportedOperationException"},
+        {"shape":"OperationNotPermittedException"},
+        {"shape":"NotOrganizationMasterAccountException"},
+        {"shape":"InsufficientDependencyServiceAccessPermissionException"}
       ],
       "documentation":"<p>Starts the recording of AWS API calls and log file delivery for a trail. For a trail that is enabled in all regions, this operation must be called from the region in which the trail was created. This operation cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled in all regions.</p>",
       "idempotent":true
@@ -251,7 +268,11 @@
       "errors":[
         {"shape":"TrailNotFoundException"},
         {"shape":"InvalidTrailNameException"},
-        {"shape":"InvalidHomeRegionException"}
+        {"shape":"InvalidHomeRegionException"},
+        {"shape":"UnsupportedOperationException"},
+        {"shape":"OperationNotPermittedException"},
+        {"shape":"NotOrganizationMasterAccountException"},
+        {"shape":"InsufficientDependencyServiceAccessPermissionException"}
       ],
       "documentation":"<p>Suspends the recording of AWS API calls and log file delivery for the specified trail. Under most circumstances, there is no need to use this action. You can update a trail without stopping it first. This action is the only way to stop recording. For a trail enabled in all regions, this operation must be called from the region in which the trail was created, or an <code>InvalidHomeRegionException</code> will occur. This operation cannot be called on the shadow trails (replicated trails in other regions) of a trail enabled in all regions.</p>",
       "idempotent":true
@@ -285,7 +306,12 @@
         {"shape":"InvalidCloudWatchLogsRoleArnException"},
         {"shape":"CloudWatchLogsDeliveryUnavailableException"},
         {"shape":"UnsupportedOperationException"},
-        {"shape":"OperationNotPermittedException"}
+        {"shape":"OperationNotPermittedException"},
+        {"shape":"CloudTrailAccessNotEnabledException"},
+        {"shape":"InsufficientDependencyServiceAccessPermissionException"},
+        {"shape":"OrganizationsNotInUseException"},
+        {"shape":"NotOrganizationMasterAccountException"},
+        {"shape":"OrganizationNotInAllFeaturesModeException"}
       ],
       "documentation":"<p>Updates the settings that specify delivery of log files. Changes to a trail do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery. If the existing bucket has previously been a target for CloudTrail log files, an IAM policy exists for the bucket. <code>UpdateTrail</code> must be called from the region in which the trail was created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.</p>",
       "idempotent":true
@@ -320,6 +346,13 @@
       "members":{
       },
       "documentation":"<p>This exception is thrown when an operation is called with an invalid trail ARN. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>",
+      "exception":true
+    },
+    "CloudTrailAccessNotEnabledException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>This exception is thrown when trusted access has not been enabled between AWS CloudTrail and AWS Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html\">Enabling Trusted Access with Other AWS Services</a> and <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>. </p>",
       "exception":true
     },
     "CloudWatchLogsDeliveryUnavailableException":{
@@ -375,6 +408,10 @@
         "KmsKeyId":{
           "shape":"String",
           "documentation":"<p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by \"alias/\", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p> <p>Examples:</p> <ul> <li> <p>alias/MyAliasName</p> </li> <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li> <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li> <li> <p>12345678-1234-1234-1234-123456789012</p> </li> </ul>"
+        },
+        "IsOrganizationTrail":{
+          "shape":"Boolean",
+          "documentation":"<p>Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations.</p>"
         }
       },
       "documentation":"<p>Specifies the settings for each trail.</p>"
@@ -430,6 +467,10 @@
         "KmsKeyId":{
           "shape":"String",
           "documentation":"<p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the format:</p> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>"
+        },
+        "IsOrganizationTrail":{
+          "shape":"Boolean",
+          "documentation":"<p>Specifies whether the trail is an organization trail.</p>"
         }
       },
       "documentation":"<p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>"
@@ -483,7 +524,7 @@
         },
         "includeShadowTrails":{
           "shape":"Boolean",
-          "documentation":"<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.</p>"
+          "documentation":"<p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>"
         }
       },
       "documentation":"<p>Returns information about the trail.</p>"
@@ -673,6 +714,13 @@
         }
       },
       "documentation":"<p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>"
+    },
+    "InsufficientDependencyServiceAccessPermissionException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+      "exception":true
     },
     "InsufficientEncryptionPolicyException":{
       "type":"structure",
@@ -978,11 +1026,32 @@
       "exception":true
     },
     "NextToken":{"type":"string"},
+    "NotOrganizationMasterAccountException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an organization in AWS Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+      "exception":true
+    },
     "OperationNotPermittedException":{
       "type":"structure",
       "members":{
       },
       "documentation":"<p>This exception is thrown when the requested operation is not permitted.</p>",
+      "exception":true
+    },
+    "OrganizationNotInAllFeaturesModeException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>This exception is thrown when AWS Organizations is not configured to support all features. All features must be enabled in AWS Organization to support creating an organization trail. For more information, see <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>",
+      "exception":true
+    },
+    "OrganizationsNotInUseException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>This exception is thrown when the request is made from an AWS account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>",
       "exception":true
     },
     "PublicKey":{
@@ -1253,6 +1322,10 @@
         "HasCustomEventSelectors":{
           "shape":"Boolean",
           "documentation":"<p>Specifies if the trail has custom event selectors.</p>"
+        },
+        "IsOrganizationTrail":{
+          "shape":"Boolean",
+          "documentation":"<p>Specifies whether the trail is an organization trail.</p>"
         }
       },
       "documentation":"<p>The settings for a trail.</p>"
@@ -1336,6 +1409,10 @@
         "KmsKeyId":{
           "shape":"String",
           "documentation":"<p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by \"alias/\", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p> <p>Examples:</p> <ul> <li> <p>alias/MyAliasName</p> </li> <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li> <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li> <li> <p>12345678-1234-1234-1234-123456789012</p> </li> </ul>"
+        },
+        "IsOrganizationTrail":{
+          "shape":"Boolean",
+          "documentation":"<p>Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be deleted from all member accounts in the organization.</p>"
         }
       },
       "documentation":"<p>Specifies settings to update for the trail.</p>"
@@ -1391,6 +1468,10 @@
         "KmsKeyId":{
           "shape":"String",
           "documentation":"<p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the format:</p> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>"
+        },
+        "IsOrganizationTrail":{
+          "shape":"Boolean",
+          "documentation":"<p>Specifies whether the trail is an organization trail.</p>"
         }
       },
       "documentation":"<p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>"

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class CreateThingTypeRequestMarshaller {
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("thingTypeName").build();
     private static final MarshallingInfo<StructuredPojo> THINGTYPEPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("thingTypeProperties").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateThingTypeRequestMarshaller instance = new CreateThingTypeRequestMarshaller();
 
@@ -50,6 +53,7 @@ public class CreateThingTypeRequestMarshaller {
         try {
             protocolMarshaller.marshall(createThingTypeRequest.getThingTypeName(), THINGTYPENAME_BINDING);
             protocolMarshaller.marshall(createThingTypeRequest.getThingTypeProperties(), THINGTYPEPROPERTIES_BINDING);
+            protocolMarshaller.marshall(createThingTypeRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

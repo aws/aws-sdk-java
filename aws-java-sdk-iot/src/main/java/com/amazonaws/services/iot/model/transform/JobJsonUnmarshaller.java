@@ -68,6 +68,10 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                     context.nextToken();
                     job.setForceCanceled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("reasonCode", targetDepth)) {
+                    context.nextToken();
+                    job.setReasonCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("comment", targetDepth)) {
                     context.nextToken();
                     job.setComment(context.getUnmarshaller(String.class).unmarshall(context));
@@ -87,6 +91,10 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                 if (context.testExpression("jobExecutionsRolloutConfig", targetDepth)) {
                     context.nextToken();
                     job.setJobExecutionsRolloutConfig(JobExecutionsRolloutConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("abortConfig", targetDepth)) {
+                    context.nextToken();
+                    job.setAbortConfig(AbortConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();

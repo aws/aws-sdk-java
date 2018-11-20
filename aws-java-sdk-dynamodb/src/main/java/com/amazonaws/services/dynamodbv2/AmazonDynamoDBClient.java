@@ -487,7 +487,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<BatchGetItemResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchGetItemResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -667,7 +667,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<BatchWriteItemResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchWriteItemResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -800,7 +800,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateBackupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateBackupResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -932,7 +932,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateGlobalTableResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateGlobalTableResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -1025,7 +1025,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateTableResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateTableResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -1113,7 +1113,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteBackupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteBackupResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -1200,7 +1200,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteItemResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteItemResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -1311,7 +1311,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteTableResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTableResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -1380,7 +1380,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeBackupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeBackupResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -1457,7 +1457,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<DescribeContinuousBackupsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeContinuousBackupsResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -1502,8 +1502,6 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-
-            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeEndpointsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeEndpointsResultJsonUnmarshaller());
@@ -1568,7 +1566,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeGlobalTableResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeGlobalTableResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -1631,7 +1629,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<DescribeGlobalTableSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeGlobalTableSettingsResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -1779,7 +1777,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeLimitsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeLimitsResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -1851,7 +1849,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeTableResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeTableResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -1918,7 +1916,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeTimeToLiveResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeTimeToLiveResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -1994,7 +1992,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<GetItemResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetItemResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -2072,7 +2070,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<ListBackupsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListBackupsResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -2131,7 +2129,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<ListGlobalTablesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListGlobalTablesResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -2192,7 +2190,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTablesResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTablesResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -2280,7 +2278,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsOfResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsOfResourceResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -2441,7 +2439,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<PutItemResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutItemResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -2573,7 +2571,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<QueryResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new QueryResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -2695,7 +2693,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<RestoreTableFromBackupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new RestoreTableFromBackupResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -2857,7 +2855,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<RestoreTableToPointInTimeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new RestoreTableToPointInTimeResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -2955,7 +2953,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<ScanResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ScanResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -3056,7 +3054,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -3141,7 +3139,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -3218,7 +3216,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<UpdateContinuousBackupsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateContinuousBackupsResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -3315,7 +3313,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateGlobalTableResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateGlobalTableResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -3399,7 +3397,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<UpdateGlobalTableSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateGlobalTableSettingsResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -3480,7 +3478,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateItemResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateItemResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -3604,7 +3602,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateTableResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateTableResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -3721,7 +3719,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateTimeToLiveResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateTimeToLiveResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, cachedEndpoint);
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
 
             return response.getAwsResponse();
 
@@ -3760,18 +3758,18 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
-        return invoke(request, responseHandler, executionContext, null);
+        return invoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI cachedEndpoint) {
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -3781,7 +3779,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext, null);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -3789,11 +3787,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext, URI discoveredEndpoint) {
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 
         if (discoveredEndpoint != null) {
             request.setEndpoint(discoveredEndpoint);
             request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
         } else {
             request.setEndpoint(endpoint);
         }
