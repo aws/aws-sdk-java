@@ -45,6 +45,8 @@ public class CreateDataSourceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("elasticsearchConfig").build();
     private static final MarshallingInfo<StructuredPojo> HTTPCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("httpConfig").build();
+    private static final MarshallingInfo<StructuredPojo> RELATIONALDATABASECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("relationalDatabaseConfig").build();
 
     private static final CreateDataSourceRequestMarshaller instance = new CreateDataSourceRequestMarshaller();
 
@@ -71,6 +73,7 @@ public class CreateDataSourceRequestMarshaller {
             protocolMarshaller.marshall(createDataSourceRequest.getLambdaConfig(), LAMBDACONFIG_BINDING);
             protocolMarshaller.marshall(createDataSourceRequest.getElasticsearchConfig(), ELASTICSEARCHCONFIG_BINDING);
             protocolMarshaller.marshall(createDataSourceRequest.getHttpConfig(), HTTPCONFIG_BINDING);
+            protocolMarshaller.marshall(createDataSourceRequest.getRelationalDatabaseConfig(), RELATIONALDATABASECONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

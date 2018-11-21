@@ -110,8 +110,8 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     private String severity;
     /**
      * <p>
-     * A Boolean value; set to <code>true</code> to activate the subscription, set to <code>false</code> to create the
-     * subscription but not active it.
+     * A boolean value; set to <code>true</code> to activate the subscription, and set to <code>false</code> to create
+     * the subscription but not activate it.
      * </p>
      */
     private Boolean enabled;
@@ -716,13 +716,13 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A Boolean value; set to <code>true</code> to activate the subscription, set to <code>false</code> to create the
-     * subscription but not active it.
+     * A boolean value; set to <code>true</code> to activate the subscription, and set to <code>false</code> to create
+     * the subscription but not activate it.
      * </p>
      * 
      * @param enabled
-     *        A Boolean value; set to <code>true</code> to activate the subscription, set to <code>false</code> to
-     *        create the subscription but not active it.
+     *        A boolean value; set to <code>true</code> to activate the subscription, and set to <code>false</code> to
+     *        create the subscription but not activate it.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -731,12 +731,12 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A Boolean value; set to <code>true</code> to activate the subscription, set to <code>false</code> to create the
-     * subscription but not active it.
+     * A boolean value; set to <code>true</code> to activate the subscription, and set to <code>false</code> to create
+     * the subscription but not activate it.
      * </p>
      * 
-     * @return A Boolean value; set to <code>true</code> to activate the subscription, set to <code>false</code> to
-     *         create the subscription but not active it.
+     * @return A boolean value; set to <code>true</code> to activate the subscription, and set to <code>false</code> to
+     *         create the subscription but not activate it.
      */
 
     public Boolean getEnabled() {
@@ -745,13 +745,13 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A Boolean value; set to <code>true</code> to activate the subscription, set to <code>false</code> to create the
-     * subscription but not active it.
+     * A boolean value; set to <code>true</code> to activate the subscription, and set to <code>false</code> to create
+     * the subscription but not activate it.
      * </p>
      * 
      * @param enabled
-     *        A Boolean value; set to <code>true</code> to activate the subscription, set to <code>false</code> to
-     *        create the subscription but not active it.
+     *        A boolean value; set to <code>true</code> to activate the subscription, and set to <code>false</code> to
+     *        create the subscription but not activate it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -762,12 +762,12 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A Boolean value; set to <code>true</code> to activate the subscription, set to <code>false</code> to create the
-     * subscription but not active it.
+     * A boolean value; set to <code>true</code> to activate the subscription, and set to <code>false</code> to create
+     * the subscription but not activate it.
      * </p>
      * 
-     * @return A Boolean value; set to <code>true</code> to activate the subscription, set to <code>false</code> to
-     *         create the subscription but not active it.
+     * @return A boolean value; set to <code>true</code> to activate the subscription, and set to <code>false</code> to
+     *         create the subscription but not activate it.
      */
 
     public Boolean isEnabled() {

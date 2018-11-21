@@ -7,6 +7,7 @@
     "protocol":"rest-json",
     "serviceAbbreviation":"AWSAppSync",
     "serviceFullName":"AWS AppSync",
+    "serviceId":"AppSync",
     "signatureVersion":"v4",
     "signingName":"appsync",
     "uid":"appsync-2017-07-25"
@@ -48,6 +49,22 @@
         {"shape":"InternalFailureException"}
       ],
       "documentation":"<p>Creates a <code>DataSource</code> object.</p>"
+    },
+    "CreateFunction":{
+      "name":"CreateFunction",
+      "http":{
+        "method":"POST",
+        "requestUri":"/v1/apis/{apiId}/functions"
+      },
+      "input":{"shape":"CreateFunctionRequest"},
+      "output":{"shape":"CreateFunctionResponse"},
+      "errors":[
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"NotFoundException"},
+        {"shape":"UnauthorizedException"},
+        {"shape":"InternalFailureException"}
+      ],
+      "documentation":"<p>Creates a <code>Function</code> object.</p> <p>A function is a reusable entity. Multiple functions can be used to compose the resolver logic.</p>"
     },
     "CreateGraphqlApi":{
       "name":"CreateGraphqlApi",
@@ -133,6 +150,22 @@
       ],
       "documentation":"<p>Deletes a <code>DataSource</code> object.</p>"
     },
+    "DeleteFunction":{
+      "name":"DeleteFunction",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/v1/apis/{apiId}/functions/{functionId}"
+      },
+      "input":{"shape":"DeleteFunctionRequest"},
+      "output":{"shape":"DeleteFunctionResponse"},
+      "errors":[
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"NotFoundException"},
+        {"shape":"UnauthorizedException"},
+        {"shape":"InternalFailureException"}
+      ],
+      "documentation":"<p>Deletes a <code>Function</code>.</p>"
+    },
     "DeleteGraphqlApi":{
       "name":"DeleteGraphqlApi",
       "http":{
@@ -199,6 +232,21 @@
         {"shape":"InternalFailureException"}
       ],
       "documentation":"<p>Retrieves a <code>DataSource</code> object.</p>"
+    },
+    "GetFunction":{
+      "name":"GetFunction",
+      "http":{
+        "method":"GET",
+        "requestUri":"/v1/apis/{apiId}/functions/{functionId}"
+      },
+      "input":{"shape":"GetFunctionRequest"},
+      "output":{"shape":"GetFunctionResponse"},
+      "errors":[
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"NotFoundException"},
+        {"shape":"UnauthorizedException"}
+      ],
+      "documentation":"<p>Get a <code>Function</code>.</p>"
     },
     "GetGraphqlApi":{
       "name":"GetGraphqlApi",
@@ -312,6 +360,22 @@
       ],
       "documentation":"<p>Lists the data sources for a given API.</p>"
     },
+    "ListFunctions":{
+      "name":"ListFunctions",
+      "http":{
+        "method":"GET",
+        "requestUri":"/v1/apis/{apiId}/functions"
+      },
+      "input":{"shape":"ListFunctionsRequest"},
+      "output":{"shape":"ListFunctionsResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"NotFoundException"},
+        {"shape":"UnauthorizedException"},
+        {"shape":"InternalFailureException"}
+      ],
+      "documentation":"<p>List multiple functions.</p>"
+    },
     "ListGraphqlApis":{
       "name":"ListGraphqlApis",
       "http":{
@@ -342,6 +406,22 @@
         {"shape":"InternalFailureException"}
       ],
       "documentation":"<p>Lists the resolvers for a given API and type.</p>"
+    },
+    "ListResolversByFunction":{
+      "name":"ListResolversByFunction",
+      "http":{
+        "method":"GET",
+        "requestUri":"/v1/apis/{apiId}/functions/{functionId}/resolvers"
+      },
+      "input":{"shape":"ListResolversByFunctionRequest"},
+      "output":{"shape":"ListResolversByFunctionResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"NotFoundException"},
+        {"shape":"UnauthorizedException"},
+        {"shape":"InternalFailureException"}
+      ],
+      "documentation":"<p>List the resolvers that are associated with a specific function.</p>"
     },
     "ListTypes":{
       "name":"ListTypes",
@@ -412,6 +492,22 @@
       ],
       "documentation":"<p>Updates a <code>DataSource</code> object.</p>"
     },
+    "UpdateFunction":{
+      "name":"UpdateFunction",
+      "http":{
+        "method":"POST",
+        "requestUri":"/v1/apis/{apiId}/functions/{functionId}"
+      },
+      "input":{"shape":"UpdateFunctionRequest"},
+      "output":{"shape":"UpdateFunctionResponse"},
+      "errors":[
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"NotFoundException"},
+        {"shape":"UnauthorizedException"},
+        {"shape":"InternalFailureException"}
+      ],
+      "documentation":"<p>Updates a <code>Function</code> object.</p>"
+    },
     "UpdateGraphqlApi":{
       "name":"UpdateGraphqlApi",
       "http":{
@@ -480,7 +576,7 @@
           "documentation":"<p>The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>"
         }
       },
-      "documentation":"<p>Describes an API key.</p> <p>Customers invoke AWS AppSync GraphQL APIs with API keys as an identity mechanism. There are two key versions:</p> <p> <b>da1</b>: This version was introduced at launch in November 2017. These keys always expire after 7 days. Key expiration is managed by DynamoDB TTL. The keys will cease to be valid after Feb 21, 2018 and should not be used after that date.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>UpdateApiKey</code> is not available for this key version.</p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the table after Feb 21, 2018.</p> </li> </ul> <p> <b>da2</b>: This version was introduced in February 2018 when AppSync added support to extend key expiration.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time in seconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds.</p> </li> <li> <p> <code>UpdateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds. Key expiration can only be updated while the key has not expired.</p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in DynamoDB as seconds.</p> </li> </ul>"
+      "documentation":"<p>Describes an API key.</p> <p>Customers invoke AWS AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:</p> <p> <b>da1</b>: This version was introduced at launch in November 2017. These keys always expire after 7 days. Key expiration is managed by Amazon DynamoDB TTL. The keys ceased to be valid after February 21, 2018 and should not be used after that date.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>UpdateApiKey</code> is not available for this key version.</p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in Amazon DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the table after February 21, 2018.</p> </li> </ul> <p> <b>da2</b>: This version was introduced in February 2018 when AppSync added support to extend key expiration.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time in seconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds.</p> </li> <li> <p> <code>UpdateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds. Key expiration can only be updated while the key has not expired.</p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in Amazon DynamoDB as seconds.</p> </li> </ul>"
     },
     "ApiKeyLimitExceededException":{
       "type":"structure",
@@ -522,12 +618,45 @@
         "OPENID_CONNECT"
       ]
     },
+    "AuthorizationConfig":{
+      "type":"structure",
+      "required":["authorizationType"],
+      "members":{
+        "authorizationType":{
+          "shape":"AuthorizationType",
+          "documentation":"<p>The authorization type required by the HTTP endpoint.</p> <ul> <li> <p> <b>AWS_IAM</b>: The authorization type is Sigv4.</p> </li> </ul>"
+        },
+        "awsIamConfig":{
+          "shape":"AwsIamConfig",
+          "documentation":"<p>The AWS IAM settings.</p>"
+        }
+      },
+      "documentation":"<p>The authorization config in case the HTTP endpoint requires authorization.</p>"
+    },
+    "AuthorizationType":{
+      "type":"string",
+      "enum":["AWS_IAM"]
+    },
+    "AwsIamConfig":{
+      "type":"structure",
+      "members":{
+        "signingRegion":{
+          "shape":"String",
+          "documentation":"<p>The signing region for AWS IAM authorization.</p>"
+        },
+        "signingServiceName":{
+          "shape":"String",
+          "documentation":"<p>The signing service name for AWS IAM authorization.</p>"
+        }
+      },
+      "documentation":"<p>The AWS IAM configuration.</p>"
+    },
     "BadRequestException":{
       "type":"structure",
       "members":{
         "message":{"shape":"ErrorMessage"}
       },
-      "documentation":"<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
+      "documentation":"<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>",
       "error":{"httpStatusCode":400},
       "exception":true
     },
@@ -538,7 +667,7 @@
       "members":{
         "message":{"shape":"ErrorMessage"}
       },
-      "documentation":"<p>Another modification is being made. That modification must complete before you can make your change. </p>",
+      "documentation":"<p>Another modification is in progress at this time and it must complete before you can make your change. </p>",
       "error":{"httpStatusCode":409},
       "exception":true
     },
@@ -599,11 +728,11 @@
         },
         "serviceRoleArn":{
           "shape":"String",
-          "documentation":"<p>The IAM service role ARN for the data source. The system assumes this role when accessing the data source.</p>"
+          "documentation":"<p>The AWS IAM service role ARN for the data source. The system assumes this role when accessing the data source.</p>"
         },
         "dynamodbConfig":{
           "shape":"DynamodbDataSourceConfig",
-          "documentation":"<p>DynamoDB settings.</p>"
+          "documentation":"<p>Amazon DynamoDB settings.</p>"
         },
         "lambdaConfig":{
           "shape":"LambdaDataSourceConfig",
@@ -611,11 +740,15 @@
         },
         "elasticsearchConfig":{
           "shape":"ElasticsearchDataSourceConfig",
-          "documentation":"<p>Amazon Elasticsearch settings.</p>"
+          "documentation":"<p>Amazon Elasticsearch Service settings.</p>"
         },
         "httpConfig":{
           "shape":"HttpDataSourceConfig",
-          "documentation":"<p>Http endpoint settings.</p>"
+          "documentation":"<p>HTTP endpoint settings.</p>"
+        },
+        "relationalDatabaseConfig":{
+          "shape":"RelationalDatabaseDataSourceConfig",
+          "documentation":"<p>Relational database settings.</p>"
         }
       }
     },
@@ -625,6 +758,57 @@
         "dataSource":{
           "shape":"DataSource",
           "documentation":"<p>The <code>DataSource</code> object.</p>"
+        }
+      }
+    },
+    "CreateFunctionRequest":{
+      "type":"structure",
+      "required":[
+        "apiId",
+        "name",
+        "dataSourceName",
+        "requestMappingTemplate",
+        "functionVersion"
+      ],
+      "members":{
+        "apiId":{
+          "shape":"String",
+          "documentation":"<p>The GraphQL API ID.</p>",
+          "location":"uri",
+          "locationName":"apiId"
+        },
+        "name":{
+          "shape":"ResourceName",
+          "documentation":"<p>The <code>Function</code> name. The function name does not have to be unique.</p>"
+        },
+        "description":{
+          "shape":"String",
+          "documentation":"<p>The <code>Function</code> description.</p>"
+        },
+        "dataSourceName":{
+          "shape":"ResourceName",
+          "documentation":"<p>The <code>Function</code> <code>DataSource</code> name.</p>"
+        },
+        "requestMappingTemplate":{
+          "shape":"MappingTemplate",
+          "documentation":"<p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>"
+        },
+        "responseMappingTemplate":{
+          "shape":"MappingTemplate",
+          "documentation":"<p>The <code>Function</code> response mapping template. </p>"
+        },
+        "functionVersion":{
+          "shape":"String",
+          "documentation":"<p>The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29. </p>"
+        }
+      }
+    },
+    "CreateFunctionResponse":{
+      "type":"structure",
+      "members":{
+        "functionConfiguration":{
+          "shape":"FunctionConfiguration",
+          "documentation":"<p>The <code>Function</code> object.</p>"
         }
       }
     },
@@ -641,19 +825,19 @@
         },
         "logConfig":{
           "shape":"LogConfig",
-          "documentation":"<p>The Amazon CloudWatch logs configuration.</p>"
+          "documentation":"<p>The Amazon CloudWatch Logs configuration.</p>"
         },
         "authenticationType":{
           "shape":"AuthenticationType",
-          "documentation":"<p>The authentication type: API key, IAM, or Amazon Cognito User Pools.</p>"
+          "documentation":"<p>The authentication type: API key, AWS IAM, or Amazon Cognito user pools.</p>"
         },
         "userPoolConfig":{
           "shape":"UserPoolConfig",
-          "documentation":"<p>The Amazon Cognito User Pool configuration.</p>"
+          "documentation":"<p>The Amazon Cognito user pool configuration.</p>"
         },
         "openIDConnectConfig":{
           "shape":"OpenIDConnectConfig",
-          "documentation":"<p>The Open Id Connect configuration configuration.</p>"
+          "documentation":"<p>The OpenID Connect configuration.</p>"
         }
       }
     },
@@ -672,7 +856,6 @@
         "apiId",
         "typeName",
         "fieldName",
-        "dataSourceName",
         "requestMappingTemplate"
       ],
       "members":{
@@ -703,6 +886,14 @@
         "responseMappingTemplate":{
           "shape":"MappingTemplate",
           "documentation":"<p>The mapping template to be used for responses from the data source.</p>"
+        },
+        "kind":{
+          "shape":"ResolverKind",
+          "documentation":"<p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to execute a GraphQL query against a single data source.</p> </li> <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against multiple data sources.</p> </li> </ul>"
+        },
+        "pipelineConfig":{
+          "shape":"PipelineConfig",
+          "documentation":"<p>The <code>PipelineConfig</code>.</p>"
         }
       }
     },
@@ -765,27 +956,31 @@
         },
         "type":{
           "shape":"DataSourceType",
-          "documentation":"<p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li> <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an AWS Lambda function.</p> </li> <li> <p> <b>NONE</b>: There is no data source. This type is used when when you wish to invoke a GraphQL operation without connecting to a data source, such as performing data transformation with resolvers or triggering a subscription to be invoked from a mutation.</p> </li> <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> </ul>"
+          "documentation":"<p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li> <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an AWS Lambda function.</p> </li> <li> <p> <b>NONE</b>: There is no data source. This type is used when you wish to invoke a GraphQL operation without connecting to a data source, such as performing data transformation with resolvers or triggering a subscription to be invoked from a mutation.</p> </li> <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li> </ul>"
         },
         "serviceRoleArn":{
           "shape":"String",
-          "documentation":"<p>The IAM service role ARN for the data source. The system assumes this role when accessing the data source.</p>"
+          "documentation":"<p>The AWS IAM service role ARN for the data source. The system assumes this role when accessing the data source.</p>"
         },
         "dynamodbConfig":{
           "shape":"DynamodbDataSourceConfig",
-          "documentation":"<p>DynamoDB settings.</p>"
+          "documentation":"<p>Amazon DynamoDB settings.</p>"
         },
         "lambdaConfig":{
           "shape":"LambdaDataSourceConfig",
-          "documentation":"<p>Lambda settings.</p>"
+          "documentation":"<p>AWS Lambda settings.</p>"
         },
         "elasticsearchConfig":{
           "shape":"ElasticsearchDataSourceConfig",
-          "documentation":"<p>Amazon Elasticsearch settings.</p>"
+          "documentation":"<p>Amazon Elasticsearch Service settings.</p>"
         },
         "httpConfig":{
           "shape":"HttpDataSourceConfig",
-          "documentation":"<p>Http endpoint settings.</p>"
+          "documentation":"<p>HTTP endpoint settings.</p>"
+        },
+        "relationalDatabaseConfig":{
+          "shape":"RelationalDatabaseDataSourceConfig",
+          "documentation":"<p>Relational database settings.</p>"
         }
       },
       "documentation":"<p>Describes a data source.</p>"
@@ -797,7 +992,8 @@
         "AMAZON_DYNAMODB",
         "AMAZON_ELASTICSEARCH",
         "NONE",
-        "HTTP"
+        "HTTP",
+        "RELATIONAL_DATABASE"
       ]
     },
     "DataSources":{
@@ -859,6 +1055,32 @@
       }
     },
     "DeleteDataSourceResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DeleteFunctionRequest":{
+      "type":"structure",
+      "required":[
+        "apiId",
+        "functionId"
+      ],
+      "members":{
+        "apiId":{
+          "shape":"String",
+          "documentation":"<p>The GraphQL API ID.</p>",
+          "location":"uri",
+          "locationName":"apiId"
+        },
+        "functionId":{
+          "shape":"ResourceName",
+          "documentation":"<p>The <code>Function</code> ID.</p>",
+          "location":"uri",
+          "locationName":"functionId"
+        }
+      }
+    },
+    "DeleteFunctionResponse":{
       "type":"structure",
       "members":{
       }
@@ -952,14 +1174,14 @@
         },
         "awsRegion":{
           "shape":"String",
-          "documentation":"<p>The AWS region.</p>"
+          "documentation":"<p>The AWS Region.</p>"
         },
         "useCallerCredentials":{
           "shape":"Boolean",
           "documentation":"<p>Set to TRUE to use Amazon Cognito credentials with this data source.</p>"
         }
       },
-      "documentation":"<p>Describes a DynamoDB data source configuration.</p>"
+      "documentation":"<p>Describes an Amazon DynamoDB data source configuration.</p>"
     },
     "ElasticsearchDataSourceConfig":{
       "type":"structure",
@@ -974,7 +1196,7 @@
         },
         "awsRegion":{
           "shape":"String",
-          "documentation":"<p>The AWS region.</p>"
+          "documentation":"<p>The AWS Region.</p>"
         }
       },
       "documentation":"<p>Describes an Elasticsearch data source configuration.</p>"
@@ -987,6 +1209,52 @@
         "ERROR",
         "ALL"
       ]
+    },
+    "FunctionConfiguration":{
+      "type":"structure",
+      "members":{
+        "functionId":{
+          "shape":"String",
+          "documentation":"<p>A unique ID representing the <code>Function</code> object.</p>"
+        },
+        "functionArn":{
+          "shape":"String",
+          "documentation":"<p>The ARN of the <code>Function</code> object.</p>"
+        },
+        "name":{
+          "shape":"ResourceName",
+          "documentation":"<p>The name of the <code>Function</code> object.</p>"
+        },
+        "description":{
+          "shape":"String",
+          "documentation":"<p>The <code>Function</code> description.</p>"
+        },
+        "dataSourceName":{
+          "shape":"ResourceName",
+          "documentation":"<p>The name of the <code>DataSource</code>.</p>"
+        },
+        "requestMappingTemplate":{
+          "shape":"MappingTemplate",
+          "documentation":"<p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>"
+        },
+        "responseMappingTemplate":{
+          "shape":"MappingTemplate",
+          "documentation":"<p>The <code>Function</code> response mapping template.</p>"
+        },
+        "functionVersion":{
+          "shape":"String",
+          "documentation":"<p>The version of the request mapping template. Currently only the 2018-05-29 version of the template is supported.</p>"
+        }
+      },
+      "documentation":"<p>A function is a reusable entity. Multiple functions can be used to compose the resolver logic.</p>"
+    },
+    "Functions":{
+      "type":"list",
+      "member":{"shape":"FunctionConfiguration"}
+    },
+    "FunctionsIds":{
+      "type":"list",
+      "member":{"shape":"String"}
     },
     "GetDataSourceRequest":{
       "type":"structure",
@@ -1015,6 +1283,36 @@
         "dataSource":{
           "shape":"DataSource",
           "documentation":"<p>The <code>DataSource</code> object.</p>"
+        }
+      }
+    },
+    "GetFunctionRequest":{
+      "type":"structure",
+      "required":[
+        "apiId",
+        "functionId"
+      ],
+      "members":{
+        "apiId":{
+          "shape":"String",
+          "documentation":"<p>The GraphQL API ID.</p>",
+          "location":"uri",
+          "locationName":"apiId"
+        },
+        "functionId":{
+          "shape":"ResourceName",
+          "documentation":"<p>The <code>Function</code> ID.</p>",
+          "location":"uri",
+          "locationName":"functionId"
+        }
+      }
+    },
+    "GetFunctionResponse":{
+      "type":"structure",
+      "members":{
+        "functionConfiguration":{
+          "shape":"FunctionConfiguration",
+          "documentation":"<p>The <code>Function</code> object.</p>"
         }
       }
     },
@@ -1199,11 +1497,11 @@
         },
         "userPoolConfig":{
           "shape":"UserPoolConfig",
-          "documentation":"<p>The Amazon Cognito User Pool configuration.</p>"
+          "documentation":"<p>The Amazon Cognito user pool configuration.</p>"
         },
         "openIDConnectConfig":{
           "shape":"OpenIDConnectConfig",
-          "documentation":"<p>The Open Id Connect configuration.</p>"
+          "documentation":"<p>The OpenID Connect configuration.</p>"
         },
         "arn":{
           "shape":"String",
@@ -1225,10 +1523,14 @@
       "members":{
         "endpoint":{
           "shape":"String",
-          "documentation":"<p>The Http url endpoint. You can either specify the domain name or ip and port combination and the url scheme must be http(s). If the port is not specified, AWS AppSync will use the default port 80 for http endpoint and port 443 for https endpoints.</p>"
+          "documentation":"<p>The HTTP URL endpoint. You can either specify the domain name or IP, and port combination, and the URL scheme must be HTTP or HTTPS. If the port is not specified, AWS AppSync uses the default port 80 for the HTTP endpoint and port 443 for HTTPS endpoints.</p>"
+        },
+        "authorizationConfig":{
+          "shape":"AuthorizationConfig",
+          "documentation":"<p>The authorization config in case the HTTP endpoint requires authorization.</p>"
         }
       },
-      "documentation":"<p>Describes a Http data source configuration.</p>"
+      "documentation":"<p>Describes an HTTP data source configuration.</p>"
     },
     "InternalFailureException":{
       "type":"structure",
@@ -1249,7 +1551,7 @@
           "documentation":"<p>The ARN for the Lambda function.</p>"
         }
       },
-      "documentation":"<p>Describes a Lambda data source configuration.</p>"
+      "documentation":"<p>Describes an AWS Lambda data source configuration.</p>"
     },
     "LimitExceededException":{
       "type":"structure",
@@ -1334,6 +1636,43 @@
         }
       }
     },
+    "ListFunctionsRequest":{
+      "type":"structure",
+      "required":["apiId"],
+      "members":{
+        "apiId":{
+          "shape":"String",
+          "documentation":"<p>The GraphQL API ID.</p>",
+          "location":"uri",
+          "locationName":"apiId"
+        },
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "maxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of results you want the request to return.</p>",
+          "location":"querystring",
+          "locationName":"maxResults"
+        }
+      }
+    },
+    "ListFunctionsResponse":{
+      "type":"structure",
+      "members":{
+        "functions":{
+          "shape":"Functions",
+          "documentation":"<p>A list of <code>Function</code> objects.</p>"
+        },
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>"
+        }
+      }
+    },
     "ListGraphqlApisRequest":{
       "type":"structure",
       "members":{
@@ -1361,6 +1700,52 @@
         "nextToken":{
           "shape":"PaginationToken",
           "documentation":"<p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>"
+        }
+      }
+    },
+    "ListResolversByFunctionRequest":{
+      "type":"structure",
+      "required":[
+        "apiId",
+        "functionId"
+      ],
+      "members":{
+        "apiId":{
+          "shape":"String",
+          "documentation":"<p>The API ID.</p>",
+          "location":"uri",
+          "locationName":"apiId"
+        },
+        "functionId":{
+          "shape":"String",
+          "documentation":"<p>The Function ID.</p>",
+          "location":"uri",
+          "locationName":"functionId"
+        },
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "maxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of results you want the request to return.</p>",
+          "location":"querystring",
+          "locationName":"maxResults"
+        }
+      }
+    },
+    "ListResolversByFunctionResponse":{
+      "type":"structure",
+      "members":{
+        "resolvers":{
+          "shape":"Resolvers",
+          "documentation":"<p>The list of resolvers.</p>"
+        },
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>An identifier that can be used to return the next set of items in the list.</p>"
         }
       }
     },
@@ -1465,7 +1850,7 @@
       "members":{
         "fieldLogLevel":{
           "shape":"FieldLogLevel",
-          "documentation":"<p>The field logging level. Values can be NONE, ERROR, ALL. </p> <ul> <li> <p> <b>NONE</b>: No field-level logs are captured.</p> </li> <li> <p> <b>ERROR</b>: Logs the following information only for the fields that are in error:</p> <ul> <li> <p>The error section in the server response.</p> </li> <li> <p>Field-level errors.</p> </li> <li> <p>The generated request/response functions that got resolved for error fields.</p> </li> </ul> </li> <li> <p> <b>ALL</b>: The following information is logged for all fields in the query:</p> <ul> <li> <p>Field-level tracing information.</p> </li> <li> <p>The generated request/response functions that got resolved for each field.</p> </li> </ul> </li> </ul>"
+          "documentation":"<p>The field logging level. Values can be NONE, ERROR, or ALL. </p> <ul> <li> <p> <b>NONE</b>: No field-level logs are captured.</p> </li> <li> <p> <b>ERROR</b>: Logs the following information only for the fields that are in error:</p> <ul> <li> <p>The error section in the server response.</p> </li> <li> <p>Field-level errors.</p> </li> <li> <p>The generated request/response functions that got resolved for error fields.</p> </li> </ul> </li> <li> <p> <b>ALL</b>: The following information is logged for all fields in the query:</p> <ul> <li> <p>Field-level tracing information.</p> </li> <li> <p>The generated request/response functions that got resolved for each field.</p> </li> </ul> </li> </ul>"
         },
         "cloudWatchLogsRoleArn":{
           "shape":"String",
@@ -1495,7 +1880,7 @@
       "members":{
         "message":{"shape":"String"}
       },
-      "documentation":"<p>The resource specified in the request was not found. Check the resource and try again.</p>",
+      "documentation":"<p>The resource specified in the request was not found. Check the resource, and then try again.</p>",
       "error":{"httpStatusCode":404},
       "exception":true
     },
@@ -1505,11 +1890,11 @@
       "members":{
         "issuer":{
           "shape":"String",
-          "documentation":"<p>The issuer for the open id connect configuration. The issuer returned by discovery MUST exactly match the value of iss in the ID Token.</p>"
+          "documentation":"<p>The issuer for the OpenID Connect configuration. The issuer returned by discovery must exactly match the value of <code>iss</code> in the ID token.</p>"
         },
         "clientId":{
           "shape":"String",
-          "documentation":"<p>The client identifier of the Relying party at the OpenID Provider. This identifier is typically obtained when the Relying party is registered with the OpenID Provider. You can specify a regular expression so the AWS AppSync can validate against multiple client identifiers at a time</p>"
+          "documentation":"<p>The client identifier of the Relying party at the OpenID identity provider. This identifier is typically obtained when the Relying party is registered with the OpenID identity provider. You can specify a regular expression so the AWS AppSync can validate against multiple client identifiers at a time.</p>"
         },
         "iatTTL":{
           "shape":"Long",
@@ -1520,7 +1905,7 @@
           "documentation":"<p>The number of milliseconds a token is valid after being authenticated.</p>"
         }
       },
-      "documentation":"<p>Describes an Open Id Connect configuration.</p>"
+      "documentation":"<p>Describes an OpenID Connect configuration.</p>"
     },
     "OutputType":{
       "type":"string",
@@ -1532,6 +1917,60 @@
     "PaginationToken":{
       "type":"string",
       "pattern":"[\\\\S]+"
+    },
+    "PipelineConfig":{
+      "type":"structure",
+      "members":{
+        "functions":{
+          "shape":"FunctionsIds",
+          "documentation":"<p>A list of <code>Function</code> objects.</p>"
+        }
+      },
+      "documentation":"<p>The pipeline configuration for a resolver of kind <code>PIPELINE</code>.</p>"
+    },
+    "RdsHttpEndpointConfig":{
+      "type":"structure",
+      "members":{
+        "awsRegion":{
+          "shape":"String",
+          "documentation":"<p>AWS Region for RDS HTTP endpoint.</p>"
+        },
+        "dbClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>Amazon RDS cluster identifier.</p>"
+        },
+        "databaseName":{
+          "shape":"String",
+          "documentation":"<p>Logical database name.</p>"
+        },
+        "schema":{
+          "shape":"String",
+          "documentation":"<p>Logical schema name.</p>"
+        },
+        "awsSecretStoreArn":{
+          "shape":"String",
+          "documentation":"<p>AWS secret store ARN for database credentials.</p>"
+        }
+      },
+      "documentation":"<p>The Amazon RDS HTTP endpoint configuration.</p>"
+    },
+    "RelationalDatabaseDataSourceConfig":{
+      "type":"structure",
+      "members":{
+        "relationalDatabaseSourceType":{
+          "shape":"RelationalDatabaseSourceType",
+          "documentation":"<p>Source type for the relational database.</p> <ul> <li> <p> <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon RDS HTTP endpoint.</p> </li> </ul>"
+        },
+        "rdsHttpEndpointConfig":{
+          "shape":"RdsHttpEndpointConfig",
+          "documentation":"<p>Amazon RDS HTTP endpoint settings.</p>"
+        }
+      },
+      "documentation":"<p>Describes a relational database data source configuration.</p>"
+    },
+    "RelationalDatabaseSourceType":{
+      "type":"string",
+      "enum":["RDS_HTTP_ENDPOINT"]
     },
     "Resolver":{
       "type":"structure",
@@ -1559,9 +1998,24 @@
         "responseMappingTemplate":{
           "shape":"MappingTemplate",
           "documentation":"<p>The response mapping template.</p>"
+        },
+        "kind":{
+          "shape":"ResolverKind",
+          "documentation":"<p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to execute a GraphQL query against a single data source.</p> </li> <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against multiple data sources.</p> </li> </ul>"
+        },
+        "pipelineConfig":{
+          "shape":"PipelineConfig",
+          "documentation":"<p>The <code>PipelineConfig</code>.</p>"
         }
       },
       "documentation":"<p>Describes a resolver.</p>"
+    },
+    "ResolverKind":{
+      "type":"string",
+      "enum":[
+        "UNIT",
+        "PIPELINE"
+      ]
     },
     "Resolvers":{
       "type":"list",
@@ -1603,7 +2057,7 @@
       "members":{
         "status":{
           "shape":"SchemaStatus",
-          "documentation":"<p>The current state of the schema (PROCESSING, ACTIVE, or DELETING). Once the schema is in the ACTIVE state, you can add data.</p>"
+          "documentation":"<p>The current state of the schema (PROCESSING, ACTIVE, or DELETING). When the schema is in the ACTIVE state, you can add data.</p>"
         }
       }
     },
@@ -1663,7 +2117,7 @@
       "members":{
         "apiId":{
           "shape":"String",
-          "documentation":"<p>The ID for the GraphQL API</p>",
+          "documentation":"<p>The ID for the GraphQL API.</p>",
           "location":"uri",
           "locationName":"apiId"
         },
@@ -1726,19 +2180,23 @@
         },
         "dynamodbConfig":{
           "shape":"DynamodbDataSourceConfig",
-          "documentation":"<p>The new DynamoDB configuration.</p>"
+          "documentation":"<p>The new Amazon DynamoDB configuration.</p>"
         },
         "lambdaConfig":{
           "shape":"LambdaDataSourceConfig",
-          "documentation":"<p>The new Lambda configuration.</p>"
+          "documentation":"<p>The new AWS Lambda configuration.</p>"
         },
         "elasticsearchConfig":{
           "shape":"ElasticsearchDataSourceConfig",
-          "documentation":"<p>The new Elasticsearch configuration.</p>"
+          "documentation":"<p>The new Elasticsearch Service configuration.</p>"
         },
         "httpConfig":{
           "shape":"HttpDataSourceConfig",
-          "documentation":"<p>The new http endpoint configuration</p>"
+          "documentation":"<p>The new HTTP endpoint configuration.</p>"
+        },
+        "relationalDatabaseConfig":{
+          "shape":"RelationalDatabaseDataSourceConfig",
+          "documentation":"<p>The new relational database configuration.</p>"
         }
       }
     },
@@ -1748,6 +2206,64 @@
         "dataSource":{
           "shape":"DataSource",
           "documentation":"<p>The updated <code>DataSource</code> object.</p>"
+        }
+      }
+    },
+    "UpdateFunctionRequest":{
+      "type":"structure",
+      "required":[
+        "apiId",
+        "name",
+        "functionId",
+        "dataSourceName",
+        "requestMappingTemplate",
+        "functionVersion"
+      ],
+      "members":{
+        "apiId":{
+          "shape":"String",
+          "documentation":"<p>The GraphQL API ID.</p>",
+          "location":"uri",
+          "locationName":"apiId"
+        },
+        "name":{
+          "shape":"ResourceName",
+          "documentation":"<p>The <code>Function</code> name.</p>"
+        },
+        "description":{
+          "shape":"String",
+          "documentation":"<p>The <code>Function</code> description.</p>"
+        },
+        "functionId":{
+          "shape":"ResourceName",
+          "documentation":"<p>The function ID.</p>",
+          "location":"uri",
+          "locationName":"functionId"
+        },
+        "dataSourceName":{
+          "shape":"ResourceName",
+          "documentation":"<p>The <code>Function</code> <code>DataSource</code> name.</p>"
+        },
+        "requestMappingTemplate":{
+          "shape":"MappingTemplate",
+          "documentation":"<p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>"
+        },
+        "responseMappingTemplate":{
+          "shape":"MappingTemplate",
+          "documentation":"<p>The <code>Function</code> request mapping template. </p>"
+        },
+        "functionVersion":{
+          "shape":"String",
+          "documentation":"<p>The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29. </p>"
+        }
+      }
+    },
+    "UpdateFunctionResponse":{
+      "type":"structure",
+      "members":{
+        "functionConfiguration":{
+          "shape":"FunctionConfiguration",
+          "documentation":"<p>The <code>Function</code> object.</p>"
         }
       }
     },
@@ -1770,7 +2286,7 @@
         },
         "logConfig":{
           "shape":"LogConfig",
-          "documentation":"<p>The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code> object.</p>"
+          "documentation":"<p>The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code> object.</p>"
         },
         "authenticationType":{
           "shape":"AuthenticationType",
@@ -1778,11 +2294,11 @@
         },
         "userPoolConfig":{
           "shape":"UserPoolConfig",
-          "documentation":"<p>The new Amazon Cognito User Pool configuration for the <code>GraphqlApi</code> object.</p>"
+          "documentation":"<p>The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code> object.</p>"
         },
         "openIDConnectConfig":{
           "shape":"OpenIDConnectConfig",
-          "documentation":"<p>The Open Id Connect configuration configuration for the <code>GraphqlApi</code> object.</p>"
+          "documentation":"<p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>"
         }
       }
     },
@@ -1801,7 +2317,6 @@
         "apiId",
         "typeName",
         "fieldName",
-        "dataSourceName",
         "requestMappingTemplate"
       ],
       "members":{
@@ -1834,6 +2349,14 @@
         "responseMappingTemplate":{
           "shape":"MappingTemplate",
           "documentation":"<p>The new response mapping template.</p>"
+        },
+        "kind":{
+          "shape":"ResolverKind",
+          "documentation":"<p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to execute a GraphQL query against a single data source.</p> </li> <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against multiple data sources.</p> </li> </ul>"
+        },
+        "pipelineConfig":{
+          "shape":"PipelineConfig",
+          "documentation":"<p>The <code>PipelineConfig</code>.</p>"
         }
       }
     },
@@ -1899,18 +2422,18 @@
         },
         "awsRegion":{
           "shape":"String",
-          "documentation":"<p>The AWS region in which the user pool was created.</p>"
+          "documentation":"<p>The AWS Region in which the user pool was created.</p>"
         },
         "defaultAction":{
           "shape":"DefaultAction",
-          "documentation":"<p>The action that you want your GraphQL API to take when a request that uses Amazon Cognito User Pool authentication doesn't match the Amazon Cognito User Pool configuration.</p>"
+          "documentation":"<p>The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool authentication doesn't match the Amazon Cognito user pool configuration.</p>"
         },
         "appIdClientRegex":{
           "shape":"String",
-          "documentation":"<p>A regular expression for validating the incoming Amazon Cognito User Pool app client ID.</p>"
+          "documentation":"<p>A regular expression for validating the incoming Amazon Cognito user pool app client ID.</p>"
         }
       },
-      "documentation":"<p>Describes an Amazon Cognito User Pool configuration.</p>"
+      "documentation":"<p>Describes an Amazon Cognito user pool configuration.</p>"
     }
   },
   "documentation":"<p>AWS AppSync provides API actions for creating and interacting with data sources using GraphQL from your application.</p>"

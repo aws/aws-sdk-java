@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a condition for a device pool. It is passed in as the <code>rules</code> parameter to
- * <a>CreateDevicePool</a> and <a>UpdateDevicePool</a>.
+ * Represents a condition for a device pool.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Rule" target="_top">AWS API
@@ -31,8 +30,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule's attribute. It is the aspect of a device such as platform or model used as selection criteria to create
-     * or update a device pool.
+     * The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.
      * </p>
      * <p>
      * Allowed values include:
@@ -40,33 +38,27 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ARN: The Amazon Resource Name (ARN) of a device. For example,
-     * "arn:aws:devicefarm:us-west-2::device:12345Example".
+     * ARN: The ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The device platform. Valid values are "ANDROID" or "IOS".
+     * FORM_FACTOR: The form factor (for example, phone or tablet).
      * </p>
      * </li>
      * <li>
      * <p>
-     * FORM_FACTOR: The device form factor. Valid values are "PHONE" or "TABLET".
+     * MANUFACTURER: The manufacturer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MANUFACTURER: The device manufacturer. For example, "Apple".
+     * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
      * <li>
      * <p>
      * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
      * </p>
      * </li>
      * <li>
@@ -82,11 +74,6 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * INSTANCE_LABELS: The label of the device instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".
      * </p>
      * </li>
      * </ul>
@@ -134,22 +121,12 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The rule's value.
      * </p>
-     * <p>
-     * The value must be passed in as a string using escaped quotes.
-     * </p>
-     * <p>
-     * For example:
-     * </p>
-     * <p>
-     * "value": "\"ANDROID\""
-     * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The rule's attribute. It is the aspect of a device such as platform or model used as selection criteria to create
-     * or update a device pool.
+     * The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.
      * </p>
      * <p>
      * Allowed values include:
@@ -157,33 +134,27 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ARN: The Amazon Resource Name (ARN) of a device. For example,
-     * "arn:aws:devicefarm:us-west-2::device:12345Example".
+     * ARN: The ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The device platform. Valid values are "ANDROID" or "IOS".
+     * FORM_FACTOR: The form factor (for example, phone or tablet).
      * </p>
      * </li>
      * <li>
      * <p>
-     * FORM_FACTOR: The device form factor. Valid values are "PHONE" or "TABLET".
+     * MANUFACTURER: The manufacturer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MANUFACTURER: The device manufacturer. For example, "Apple".
+     * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
      * <li>
      * <p>
      * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
      * </p>
      * </li>
      * <li>
@@ -201,49 +172,37 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * INSTANCE_LABELS: The label of the device instance.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param attribute
-     *        The rule's attribute. It is the aspect of a device such as platform or model used as selection criteria to
-     *        create or update a device pool.</p>
+     *        The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.</p>
      *        <p>
      *        Allowed values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ARN: The Amazon Resource Name (ARN) of a device. For example,
-     *        "arn:aws:devicefarm:us-west-2::device:12345Example".
+     *        ARN: The ARN.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM: The device platform. Valid values are "ANDROID" or "IOS".
+     *        FORM_FACTOR: The form factor (for example, phone or tablet).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FORM_FACTOR: The device form factor. Valid values are "PHONE" or "TABLET".
+     *        MANUFACTURER: The manufacturer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MANUFACTURER: The device manufacturer. For example, "Apple".
+     *        PLATFORM: The platform (for example, Android or iOS).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
      *        </p>
      *        </li>
      *        <li>
@@ -261,11 +220,6 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *        INSTANCE_LABELS: The label of the device instance.
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".
-     *        </p>
-     *        </li>
      * @see DeviceAttribute
      */
 
@@ -275,8 +229,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule's attribute. It is the aspect of a device such as platform or model used as selection criteria to create
-     * or update a device pool.
+     * The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.
      * </p>
      * <p>
      * Allowed values include:
@@ -284,33 +237,27 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ARN: The Amazon Resource Name (ARN) of a device. For example,
-     * "arn:aws:devicefarm:us-west-2::device:12345Example".
+     * ARN: The ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The device platform. Valid values are "ANDROID" or "IOS".
+     * FORM_FACTOR: The form factor (for example, phone or tablet).
      * </p>
      * </li>
      * <li>
      * <p>
-     * FORM_FACTOR: The device form factor. Valid values are "PHONE" or "TABLET".
+     * MANUFACTURER: The manufacturer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MANUFACTURER: The device manufacturer. For example, "Apple".
+     * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
      * <li>
      * <p>
      * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
      * </p>
      * </li>
      * <li>
@@ -328,48 +275,36 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * INSTANCE_LABELS: The label of the device instance.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".
-     * </p>
-     * </li>
      * </ul>
      * 
-     * @return The rule's attribute. It is the aspect of a device such as platform or model used as selection criteria
-     *         to create or update a device pool.</p>
+     * @return The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.</p>
      *         <p>
      *         Allowed values include:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         ARN: The Amazon Resource Name (ARN) of a device. For example,
-     *         "arn:aws:devicefarm:us-west-2::device:12345Example".
+     *         ARN: The ARN.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         PLATFORM: The device platform. Valid values are "ANDROID" or "IOS".
+     *         FORM_FACTOR: The form factor (for example, phone or tablet).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         FORM_FACTOR: The device form factor. Valid values are "PHONE" or "TABLET".
+     *         MANUFACTURER: The manufacturer.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MANUFACTURER: The device manufacturer. For example, "Apple".
+     *         PLATFORM: The platform (for example, Android or iOS).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
      *         </p>
      *         </li>
      *         <li>
@@ -387,11 +322,6 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *         INSTANCE_LABELS: The label of the device instance.
      *         </p>
      *         </li>
-     *         <li>
-     *         <p>
-     *         FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".
-     *         </p>
-     *         </li>
      * @see DeviceAttribute
      */
 
@@ -401,8 +331,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule's attribute. It is the aspect of a device such as platform or model used as selection criteria to create
-     * or update a device pool.
+     * The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.
      * </p>
      * <p>
      * Allowed values include:
@@ -410,33 +339,27 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ARN: The Amazon Resource Name (ARN) of a device. For example,
-     * "arn:aws:devicefarm:us-west-2::device:12345Example".
+     * ARN: The ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The device platform. Valid values are "ANDROID" or "IOS".
+     * FORM_FACTOR: The form factor (for example, phone or tablet).
      * </p>
      * </li>
      * <li>
      * <p>
-     * FORM_FACTOR: The device form factor. Valid values are "PHONE" or "TABLET".
+     * MANUFACTURER: The manufacturer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MANUFACTURER: The device manufacturer. For example, "Apple".
+     * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
      * <li>
      * <p>
      * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
      * </p>
      * </li>
      * <li>
@@ -454,49 +377,37 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * INSTANCE_LABELS: The label of the device instance.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param attribute
-     *        The rule's attribute. It is the aspect of a device such as platform or model used as selection criteria to
-     *        create or update a device pool.</p>
+     *        The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.</p>
      *        <p>
      *        Allowed values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ARN: The Amazon Resource Name (ARN) of a device. For example,
-     *        "arn:aws:devicefarm:us-west-2::device:12345Example".
+     *        ARN: The ARN.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM: The device platform. Valid values are "ANDROID" or "IOS".
+     *        FORM_FACTOR: The form factor (for example, phone or tablet).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FORM_FACTOR: The device form factor. Valid values are "PHONE" or "TABLET".
+     *        MANUFACTURER: The manufacturer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MANUFACTURER: The device manufacturer. For example, "Apple".
+     *        PLATFORM: The platform (for example, Android or iOS).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
      *        </p>
      *        </li>
      *        <li>
@@ -512,11 +423,6 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        INSTANCE_LABELS: The label of the device instance.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -530,8 +436,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule's attribute. It is the aspect of a device such as platform or model used as selection criteria to create
-     * or update a device pool.
+     * The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.
      * </p>
      * <p>
      * Allowed values include:
@@ -539,33 +444,27 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ARN: The Amazon Resource Name (ARN) of a device. For example,
-     * "arn:aws:devicefarm:us-west-2::device:12345Example".
+     * ARN: The ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The device platform. Valid values are "ANDROID" or "IOS".
+     * FORM_FACTOR: The form factor (for example, phone or tablet).
      * </p>
      * </li>
      * <li>
      * <p>
-     * FORM_FACTOR: The device form factor. Valid values are "PHONE" or "TABLET".
+     * MANUFACTURER: The manufacturer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MANUFACTURER: The device manufacturer. For example, "Apple".
+     * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
      * <li>
      * <p>
      * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
      * </p>
      * </li>
      * <li>
@@ -583,49 +482,37 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * INSTANCE_LABELS: The label of the device instance.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param attribute
-     *        The rule's attribute. It is the aspect of a device such as platform or model used as selection criteria to
-     *        create or update a device pool.</p>
+     *        The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.</p>
      *        <p>
      *        Allowed values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ARN: The Amazon Resource Name (ARN) of a device. For example,
-     *        "arn:aws:devicefarm:us-west-2::device:12345Example".
+     *        ARN: The ARN.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM: The device platform. Valid values are "ANDROID" or "IOS".
+     *        FORM_FACTOR: The form factor (for example, phone or tablet).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FORM_FACTOR: The device form factor. Valid values are "PHONE" or "TABLET".
+     *        MANUFACTURER: The manufacturer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MANUFACTURER: The device manufacturer. For example, "Apple".
+     *        PLATFORM: The platform (for example, Android or iOS).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
      *        </p>
      *        </li>
      *        <li>
@@ -641,11 +528,6 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        INSTANCE_LABELS: The label of the device instance.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".
      *        </p>
      *        </li>
      * @see DeviceAttribute
@@ -657,8 +539,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule's attribute. It is the aspect of a device such as platform or model used as selection criteria to create
-     * or update a device pool.
+     * The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.
      * </p>
      * <p>
      * Allowed values include:
@@ -666,33 +547,27 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ARN: The Amazon Resource Name (ARN) of a device. For example,
-     * "arn:aws:devicefarm:us-west-2::device:12345Example".
+     * ARN: The ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The device platform. Valid values are "ANDROID" or "IOS".
+     * FORM_FACTOR: The form factor (for example, phone or tablet).
      * </p>
      * </li>
      * <li>
      * <p>
-     * FORM_FACTOR: The device form factor. Valid values are "PHONE" or "TABLET".
+     * MANUFACTURER: The manufacturer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MANUFACTURER: The device manufacturer. For example, "Apple".
+     * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
      * <li>
      * <p>
      * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
      * </p>
      * </li>
      * <li>
@@ -710,49 +585,37 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * INSTANCE_LABELS: The label of the device instance.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param attribute
-     *        The rule's attribute. It is the aspect of a device such as platform or model used as selection criteria to
-     *        create or update a device pool.</p>
+     *        The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.</p>
      *        <p>
      *        Allowed values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ARN: The Amazon Resource Name (ARN) of a device. For example,
-     *        "arn:aws:devicefarm:us-west-2::device:12345Example".
+     *        ARN: The ARN.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM: The device platform. Valid values are "ANDROID" or "IOS".
+     *        FORM_FACTOR: The form factor (for example, phone or tablet).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FORM_FACTOR: The device form factor. Valid values are "PHONE" or "TABLET".
+     *        MANUFACTURER: The manufacturer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MANUFACTURER: The device manufacturer. For example, "Apple".
+     *        PLATFORM: The platform (for example, Android or iOS).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
      *        </p>
      *        </li>
      *        <li>
@@ -768,11 +631,6 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        INSTANCE_LABELS: The label of the device instance.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1176,26 +1034,9 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The rule's value.
      * </p>
-     * <p>
-     * The value must be passed in as a string using escaped quotes.
-     * </p>
-     * <p>
-     * For example:
-     * </p>
-     * <p>
-     * "value": "\"ANDROID\""
-     * </p>
      * 
      * @param value
-     *        The rule's value.</p>
-     *        <p>
-     *        The value must be passed in as a string using escaped quotes.
-     *        </p>
-     *        <p>
-     *        For example:
-     *        </p>
-     *        <p>
-     *        "value": "\"ANDROID\""
+     *        The rule's value.
      */
 
     public void setValue(String value) {
@@ -1206,25 +1047,8 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The rule's value.
      * </p>
-     * <p>
-     * The value must be passed in as a string using escaped quotes.
-     * </p>
-     * <p>
-     * For example:
-     * </p>
-     * <p>
-     * "value": "\"ANDROID\""
-     * </p>
      * 
-     * @return The rule's value.</p>
-     *         <p>
-     *         The value must be passed in as a string using escaped quotes.
-     *         </p>
-     *         <p>
-     *         For example:
-     *         </p>
-     *         <p>
-     *         "value": "\"ANDROID\""
+     * @return The rule's value.
      */
 
     public String getValue() {
@@ -1235,26 +1059,9 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The rule's value.
      * </p>
-     * <p>
-     * The value must be passed in as a string using escaped quotes.
-     * </p>
-     * <p>
-     * For example:
-     * </p>
-     * <p>
-     * "value": "\"ANDROID\""
-     * </p>
      * 
      * @param value
-     *        The rule's value.</p>
-     *        <p>
-     *        The value must be passed in as a string using escaped quotes.
-     *        </p>
-     *        <p>
-     *        For example:
-     *        </p>
-     *        <p>
-     *        "value": "\"ANDROID\""
+     *        The rule's value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

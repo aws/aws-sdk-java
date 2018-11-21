@@ -48,6 +48,11 @@ public class AbstractAWSAutoScalingPlans implements AWSAutoScalingPlans {
     }
 
     @Override
+    public GetScalingPlanResourceForecastDataResult getScalingPlanResourceForecastData(GetScalingPlanResourceForecastDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateScalingPlanResult updateScalingPlan(UpdateScalingPlanRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

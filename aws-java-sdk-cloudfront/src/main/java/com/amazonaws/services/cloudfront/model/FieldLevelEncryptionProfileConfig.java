@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * A complex data type of profiles for the field-level encryption.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/FieldLevelEncryptionProfileConfig"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/FieldLevelEncryptionProfileConfig"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -34,7 +34,7 @@ public class FieldLevelEncryptionProfileConfig implements Serializable, Cloneabl
     private String name;
     /**
      * <p>
-     * A unique number that ensures the request can't be replayed.
+     * A unique number that ensures that the request can't be replayed.
      * </p>
      */
     private String callerReference;
@@ -94,11 +94,11 @@ public class FieldLevelEncryptionProfileConfig implements Serializable, Cloneabl
 
     /**
      * <p>
-     * A unique number that ensures the request can't be replayed.
+     * A unique number that ensures that the request can't be replayed.
      * </p>
      * 
      * @param callerReference
-     *        A unique number that ensures the request can't be replayed.
+     *        A unique number that ensures that the request can't be replayed.
      */
 
     public void setCallerReference(String callerReference) {
@@ -107,10 +107,10 @@ public class FieldLevelEncryptionProfileConfig implements Serializable, Cloneabl
 
     /**
      * <p>
-     * A unique number that ensures the request can't be replayed.
+     * A unique number that ensures that the request can't be replayed.
      * </p>
      * 
-     * @return A unique number that ensures the request can't be replayed.
+     * @return A unique number that ensures that the request can't be replayed.
      */
 
     public String getCallerReference() {
@@ -119,11 +119,11 @@ public class FieldLevelEncryptionProfileConfig implements Serializable, Cloneabl
 
     /**
      * <p>
-     * A unique number that ensures the request can't be replayed.
+     * A unique number that ensures that the request can't be replayed.
      * </p>
      * 
      * @param callerReference
-     *        A unique number that ensures the request can't be replayed.
+     *        A unique number that ensures that the request can't be replayed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

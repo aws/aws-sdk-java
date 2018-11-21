@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,8 +30,12 @@ public class CreateDocumentRequestMarshaller {
 
     private static final MarshallingInfo<String> CONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Content").build();
+    private static final MarshallingInfo<List> ATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Attachments").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VersionName").build();
     private static final MarshallingInfo<String> DOCUMENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentType").build();
     private static final MarshallingInfo<String> DOCUMENTFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -55,7 +60,9 @@ public class CreateDocumentRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createDocumentRequest.getContent(), CONTENT_BINDING);
+            protocolMarshaller.marshall(createDocumentRequest.getAttachments(), ATTACHMENTS_BINDING);
             protocolMarshaller.marshall(createDocumentRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createDocumentRequest.getVersionName(), VERSIONNAME_BINDING);
             protocolMarshaller.marshall(createDocumentRequest.getDocumentType(), DOCUMENTTYPE_BINDING);
             protocolMarshaller.marshall(createDocumentRequest.getDocumentFormat(), DOCUMENTFORMAT_BINDING);
             protocolMarshaller.marshall(createDocumentRequest.getTargetType(), TARGETTYPE_BINDING);

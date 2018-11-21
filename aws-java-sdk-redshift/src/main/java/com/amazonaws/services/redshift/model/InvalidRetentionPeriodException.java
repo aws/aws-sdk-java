@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The retention period specified is either in the past or is not a valide value.
+ * The retention period specified is either in the past or is not a valid value.
  * </p>
  * <p>
  * The value must be either -1 or an integer between 1 and 3,653.

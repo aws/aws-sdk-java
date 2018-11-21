@@ -29,6 +29,8 @@ public class HttpDataSourceConfigMarshaller {
 
     private static final MarshallingInfo<String> ENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("endpoint").build();
+    private static final MarshallingInfo<StructuredPojo> AUTHORIZATIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizationConfig").build();
 
     private static final HttpDataSourceConfigMarshaller instance = new HttpDataSourceConfigMarshaller();
 
@@ -47,6 +49,7 @@ public class HttpDataSourceConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(httpDataSourceConfig.getEndpoint(), ENDPOINT_BINDING);
+            protocolMarshaller.marshall(httpDataSourceConfig.getAuthorizationConfig(), AUTHORIZATIONCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

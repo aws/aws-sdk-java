@@ -105,8 +105,8 @@ public class EventSubscription implements Serializable, Cloneable {
     private String severity;
     /**
      * <p>
-     * A Boolean value indicating whether the subscription is enabled. <code>true</code> indicates the subscription is
-     * enabled.
+     * A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the subscription
+     * is enabled.
      * </p>
      */
     private Boolean enabled;
@@ -682,12 +682,12 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value indicating whether the subscription is enabled. <code>true</code> indicates the subscription is
-     * enabled.
+     * A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the subscription
+     * is enabled.
      * </p>
      * 
      * @param enabled
-     *        A Boolean value indicating whether the subscription is enabled. <code>true</code> indicates the
+     *        A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the
      *        subscription is enabled.
      */
 
@@ -697,11 +697,11 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value indicating whether the subscription is enabled. <code>true</code> indicates the subscription is
-     * enabled.
+     * A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the subscription
+     * is enabled.
      * </p>
      * 
-     * @return A Boolean value indicating whether the subscription is enabled. <code>true</code> indicates the
+     * @return A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the
      *         subscription is enabled.
      */
 
@@ -711,12 +711,12 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value indicating whether the subscription is enabled. <code>true</code> indicates the subscription is
-     * enabled.
+     * A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the subscription
+     * is enabled.
      * </p>
      * 
      * @param enabled
-     *        A Boolean value indicating whether the subscription is enabled. <code>true</code> indicates the
+     *        A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the
      *        subscription is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -728,11 +728,11 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value indicating whether the subscription is enabled. <code>true</code> indicates the subscription is
-     * enabled.
+     * A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the subscription
+     * is enabled.
      * </p>
      * 
-     * @return A Boolean value indicating whether the subscription is enabled. <code>true</code> indicates the
+     * @return A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the
      *         subscription is enabled.
      */
 

@@ -33,7 +33,7 @@ public class ModifySnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
     private String scheduleIdentifier;
     /**
      * <p>
-     * An updated list of schedule definitions. A schedule definition is made up of schedule expressions. For example,
+     * An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example,
      * "cron(30 12 *)" or "rate(12 hours)".
      * </p>
      */
@@ -81,11 +81,11 @@ public class ModifySnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An updated list of schedule definitions. A schedule definition is made up of schedule expressions. For example,
+     * An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example,
      * "cron(30 12 *)" or "rate(12 hours)".
      * </p>
      * 
-     * @return An updated list of schedule definitions. A schedule definition is made up of schedule expressions. For
+     * @return An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for
      *         example, "cron(30 12 *)" or "rate(12 hours)".
      */
 
@@ -98,12 +98,12 @@ public class ModifySnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An updated list of schedule definitions. A schedule definition is made up of schedule expressions. For example,
+     * An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example,
      * "cron(30 12 *)" or "rate(12 hours)".
      * </p>
      * 
      * @param scheduleDefinitions
-     *        An updated list of schedule definitions. A schedule definition is made up of schedule expressions. For
+     *        An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for
      *        example, "cron(30 12 *)" or "rate(12 hours)".
      */
 
@@ -118,7 +118,7 @@ public class ModifySnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An updated list of schedule definitions. A schedule definition is made up of schedule expressions. For example,
+     * An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example,
      * "cron(30 12 *)" or "rate(12 hours)".
      * </p>
      * <p>
@@ -128,7 +128,7 @@ public class ModifySnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param scheduleDefinitions
-     *        An updated list of schedule definitions. A schedule definition is made up of schedule expressions. For
+     *        An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for
      *        example, "cron(30 12 *)" or "rate(12 hours)".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -145,12 +145,12 @@ public class ModifySnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An updated list of schedule definitions. A schedule definition is made up of schedule expressions. For example,
+     * An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example,
      * "cron(30 12 *)" or "rate(12 hours)".
      * </p>
      * 
      * @param scheduleDefinitions
-     *        An updated list of schedule definitions. A schedule definition is made up of schedule expressions. For
+     *        An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for
      *        example, "cron(30 12 *)" or "rate(12 hours)".
      * @return Returns a reference to this object so that method calls can be chained together.
      */

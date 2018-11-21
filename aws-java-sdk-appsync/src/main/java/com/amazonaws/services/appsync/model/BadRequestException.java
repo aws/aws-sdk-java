@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The request is not well formed. For example, a value is invalid or a required field is missing. Check the field
- * values, and try again.
+ * values, and then try again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

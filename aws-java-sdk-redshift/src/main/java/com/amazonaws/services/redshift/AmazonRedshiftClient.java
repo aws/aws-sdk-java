@@ -481,7 +481,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * If you authorize access to an Amazon EC2 security group, specify <i>EC2SecurityGroupName</i> and
      * <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon Redshift cluster must be in the same AWS
-     * region.
+     * Region.
      * </p>
      * <p>
      * If you authorize access to a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR blocks, see
@@ -686,7 +686,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @param batchModifyClusterSnapshotsRequest
      * @return Result of the BatchModifyClusterSnapshots operation returned by the service.
      * @throws InvalidRetentionPeriodException
-     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         The retention period specified is either in the past or is not a valid value.</p>
      *         <p>
      *         The value must be either -1 or an integer between 1 and 3,653.
      * @throws BatchModifyClusterSnapshotsLimitExceededException
@@ -824,7 +824,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterSnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of cluster snapshots.
      * @throws InvalidRetentionPeriodException
-     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         The retention period specified is either in the past or is not a valid value.</p>
      *         <p>
      *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.CopyClusterSnapshot
@@ -935,7 +935,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws SnapshotScheduleNotFoundException
      *         We could not find the specified snapshot schedule.
      * @throws InvalidRetentionPeriodException
-     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         The retention period specified is either in the past or is not a valid value.</p>
      *         <p>
      *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.CreateCluster
@@ -1149,7 +1149,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidTagException
      *         The tag is invalid.
      * @throws InvalidRetentionPeriodException
-     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         The retention period specified is either in the past or is not a valid value.</p>
      *         <p>
      *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.CreateClusterSnapshot
@@ -1742,7 +1742,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterSnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of cluster snapshots.
      * @throws InvalidRetentionPeriodException
-     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         The retention period specified is either in the past or is not a valid value.</p>
      *         <p>
      *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.DeleteCluster
@@ -3500,7 +3500,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Returns a list of orderable cluster options. Before you create a new cluster you can use this operation to find
-     * what options are available, such as the EC2 Availability Zones (AZ) in the specific AWS region that you can
+     * what options are available, such as the EC2 Availability Zones (AZ) in the specific AWS Region that you can
      * specify, and the node types you can request. The node types differ by available storage, memory, CPU and price.
      * With the cost involved you might want to obtain a list of cluster options in the specific region and specify
      * values when creating a cluster. For more information about managing clusters, go to <a
@@ -4298,7 +4298,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
      * @throws InvalidRetentionPeriodException
-     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         The retention period specified is either in the past or is not a valid value.</p>
      *         <p>
      *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.EnableSnapshotCopy
@@ -4552,7 +4552,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidClusterTrackException
      *         The provided cluster track name is not valid.
      * @throws InvalidRetentionPeriodException
-     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         The retention period specified is either in the past or is not a valid value.</p>
      *         <p>
      *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.ModifyCluster
@@ -4845,7 +4845,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterSnapshotNotFoundException
      *         The snapshot identifier does not refer to an existing cluster snapshot.
      * @throws InvalidRetentionPeriodException
-     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         The retention period specified is either in the past or is not a valid value.</p>
      *         <p>
      *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.ModifyClusterSnapshot
@@ -5093,11 +5093,11 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Modifies the number of days to retain snapshots in the destination region after they are copied from the source
-     * region. By default, this only changes the retention period of copied automated snapshots. The retention periods
-     * for both new and existing copied automated snapshots will be updated with the new retention period. You can set
-     * the manual option to change only the retention periods of copied manual snapshots. If you set this option only
-     * newly copied manual snapshots will have the new retention period
+     * Modifies the number of days to retain snapshots in the destination AWS Region after they are copied from the
+     * source AWS Region. By default, this operation only changes the retention period of copied automated snapshots.
+     * The retention periods for both new and existing copied automated snapshots are updated with the new retention
+     * period. You can set the manual option to change only the retention periods of copied manual snapshots. If you set
+     * this option, only newly copied manual snapshots have the new retention period.
      * </p>
      * 
      * @param modifySnapshotCopyRetentionPeriodRequest
@@ -5111,7 +5111,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidClusterStateException
      *         The specified cluster is not in the <code>available</code> state.
      * @throws InvalidRetentionPeriodException
-     *         The retention period specified is either in the past or is not a valide value.</p>
+     *         The retention period specified is either in the past or is not a valid value.</p>
      *         <p>
      *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.ModifySnapshotCopyRetentionPeriod
@@ -5160,7 +5160,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Modifies a snapshot schedule. Any schedule associate with a cluster will be modified asynchronously.
+     * Modifies a snapshot schedule. Any schedule associated with a cluster is modified asynchronously.
      * </p>
      * 
      * @param modifySnapshotScheduleRequest

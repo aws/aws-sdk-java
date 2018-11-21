@@ -56,6 +56,10 @@ public class DocumentVersionInfoJsonUnmarshaller implements Unmarshaller<Documen
                     context.nextToken();
                     documentVersionInfo.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("VersionName", targetDepth)) {
+                    context.nextToken();
+                    documentVersionInfo.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
                     documentVersionInfo.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -67,6 +71,14 @@ public class DocumentVersionInfoJsonUnmarshaller implements Unmarshaller<Documen
                 if (context.testExpression("DocumentFormat", targetDepth)) {
                     context.nextToken();
                     documentVersionInfo.setDocumentFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Status", targetDepth)) {
+                    context.nextToken();
+                    documentVersionInfo.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StatusInformation", targetDepth)) {
+                    context.nextToken();
+                    documentVersionInfo.setStatusInformation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

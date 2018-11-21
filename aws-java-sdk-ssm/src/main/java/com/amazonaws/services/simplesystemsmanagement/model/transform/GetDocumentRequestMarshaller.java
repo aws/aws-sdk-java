@@ -29,6 +29,8 @@ public class GetDocumentRequestMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VersionName").build();
     private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentVersion").build();
     private static final MarshallingInfo<String> DOCUMENTFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -51,6 +53,7 @@ public class GetDocumentRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(getDocumentRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(getDocumentRequest.getVersionName(), VERSIONNAME_BINDING);
             protocolMarshaller.marshall(getDocumentRequest.getDocumentVersion(), DOCUMENTVERSION_BINDING);
             protocolMarshaller.marshall(getDocumentRequest.getDocumentFormat(), DOCUMENTFORMAT_BINDING);
         } catch (Exception e) {

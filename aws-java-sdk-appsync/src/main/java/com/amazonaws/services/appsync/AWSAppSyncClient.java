@@ -84,14 +84,8 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                             new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withModeledClass(
                                     com.amazonaws.services.appsync.model.InternalFailureException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ApiKeyValidityOutOfBoundsException").withModeledClass(
-                                    com.amazonaws.services.appsync.model.ApiKeyValidityOutOfBoundsException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("GraphQLSchemaException").withModeledClass(
                                     com.amazonaws.services.appsync.model.GraphQLSchemaException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ApiLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.appsync.model.ApiLimitExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
                                     com.amazonaws.services.appsync.model.NotFoundException.class))
@@ -102,11 +96,17 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                             new JsonErrorShapeMetadata().withErrorCode("ApiKeyLimitExceededException").withModeledClass(
                                     com.amazonaws.services.appsync.model.ApiKeyLimitExceededException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withModeledClass(
-                                    com.amazonaws.services.appsync.model.BadRequestException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
                                     com.amazonaws.services.appsync.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ApiKeyValidityOutOfBoundsException").withModeledClass(
+                                    com.amazonaws.services.appsync.model.ApiKeyValidityOutOfBoundsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ApiLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.appsync.model.ApiLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withModeledClass(
+                                    com.amazonaws.services.appsync.model.BadRequestException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.appsync.model.AWSAppSyncException.class));
 
     public static AWSAppSyncClientBuilder builder() {
@@ -164,9 +164,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the CreateApiKey operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws LimitExceededException
      *         The request exceeded a limit. Try your request again.
      * @throws UnauthorizedException
@@ -234,11 +234,11 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the CreateDataSource operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws ConcurrentModificationException
-     *         Another modification is being made. That modification must complete before you can make your change.
+     *         Another modification is in progress at this time and it must complete before you can make your change.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -290,6 +290,69 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
     /**
      * <p>
+     * Creates a <code>Function</code> object.
+     * </p>
+     * <p>
+     * A function is a reusable entity. Multiple functions can be used to compose the resolver logic.
+     * </p>
+     * 
+     * @param createFunctionRequest
+     * @return Result of the CreateFunction operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @sample AWSAppSync.CreateFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateFunctionResult createFunction(CreateFunctionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFunction(request);
+    }
+
+    @SdkInternalApi
+    final CreateFunctionResult executeCreateFunction(CreateFunctionRequest createFunctionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createFunctionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateFunctionRequest> request = null;
+        Response<CreateFunctionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateFunctionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFunctionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFunction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateFunctionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateFunctionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a <code>GraphqlApi</code> object.
      * </p>
      * 
@@ -297,11 +360,11 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the CreateGraphqlApi operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws LimitExceededException
      *         The request exceeded a limit. Try your request again.
      * @throws ConcurrentModificationException
-     *         Another modification is being made. That modification must complete before you can make your change.
+     *         Another modification is in progress at this time and it must complete before you can make your change.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -365,9 +428,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @param createResolverRequest
      * @return Result of the CreateResolver operation returned by the service.
      * @throws ConcurrentModificationException
-     *         Another modification is being made. That modification must complete before you can make your change.
+     *         Another modification is in progress at this time and it must complete before you can make your change.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -426,11 +489,11 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the CreateType operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws ConcurrentModificationException
-     *         Another modification is being made. That modification must complete before you can make your change.
+     *         Another modification is in progress at this time and it must complete before you can make your change.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -489,9 +552,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the DeleteApiKey operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -550,11 +613,11 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the DeleteDataSource operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws ConcurrentModificationException
-     *         Another modification is being made. That modification must complete before you can make your change.
+     *         Another modification is in progress at this time and it must complete before you can make your change.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -606,6 +669,66 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
     /**
      * <p>
+     * Deletes a <code>Function</code>.
+     * </p>
+     * 
+     * @param deleteFunctionRequest
+     * @return Result of the DeleteFunction operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @sample AWSAppSync.DeleteFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteFunctionResult deleteFunction(DeleteFunctionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFunction(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFunctionResult executeDeleteFunction(DeleteFunctionRequest deleteFunctionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFunctionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFunctionRequest> request = null;
+        Response<DeleteFunctionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFunctionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFunctionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFunction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFunctionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteFunctionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a <code>GraphqlApi</code> object.
      * </p>
      * 
@@ -613,11 +736,11 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the DeleteGraphqlApi operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws ConcurrentModificationException
-     *         Another modification is being made. That modification must complete before you can make your change.
+     *         Another modification is in progress at this time and it must complete before you can make your change.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -675,9 +798,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @param deleteResolverRequest
      * @return Result of the DeleteResolver operation returned by the service.
      * @throws ConcurrentModificationException
-     *         Another modification is being made. That modification must complete before you can make your change.
+     *         Another modification is in progress at this time and it must complete before you can make your change.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -736,11 +859,11 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the DeleteType operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws ConcurrentModificationException
-     *         Another modification is being made. That modification must complete before you can make your change.
+     *         Another modification is in progress at this time and it must complete before you can make your change.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -799,11 +922,11 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the GetDataSource operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws ConcurrentModificationException
-     *         Another modification is being made. That modification must complete before you can make your change.
+     *         Another modification is in progress at this time and it must complete before you can make your change.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -855,6 +978,64 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
     /**
      * <p>
+     * Get a <code>Function</code>.
+     * </p>
+     * 
+     * @param getFunctionRequest
+     * @return Result of the GetFunction operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @sample AWSAppSync.GetFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetFunctionResult getFunction(GetFunctionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFunction(request);
+    }
+
+    @SdkInternalApi
+    final GetFunctionResult executeGetFunction(GetFunctionRequest getFunctionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFunctionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFunctionRequest> request = null;
+        Response<GetFunctionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFunctionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFunctionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFunction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetFunctionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetFunctionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a <code>GraphqlApi</code> object.
      * </p>
      * 
@@ -862,9 +1043,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the GetGraphqlApi operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -924,7 +1105,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @throws GraphQLSchemaException
      *         The GraphQL schema is not valid.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -983,9 +1164,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @param getResolverRequest
      * @return Result of the GetResolver operation returned by the service.
      * @throws ConcurrentModificationException
-     *         Another modification is being made. That modification must complete before you can make your change.
+     *         Another modification is in progress at this time and it must complete before you can make your change.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @sample AWSAppSync.GetResolver
@@ -1042,9 +1223,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the GetSchemaCreationStatus operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -1105,11 +1286,11 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the GetType operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws ConcurrentModificationException
-     *         Another modification is being made. That modification must complete before you can make your change.
+     *         Another modification is in progress at this time and it must complete before you can make your change.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -1175,9 +1356,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the ListApiKeys operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -1236,9 +1417,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the ListDataSources operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -1290,6 +1471,67 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
     /**
      * <p>
+     * List multiple functions.
+     * </p>
+     * 
+     * @param listFunctionsRequest
+     * @return Result of the ListFunctions operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @sample AWSAppSync.ListFunctions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListFunctions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListFunctionsResult listFunctions(ListFunctionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFunctions(request);
+    }
+
+    @SdkInternalApi
+    final ListFunctionsResult executeListFunctions(ListFunctionsRequest listFunctionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listFunctionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFunctionsRequest> request = null;
+        Response<ListFunctionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFunctionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFunctionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFunctions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListFunctionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListFunctionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists your GraphQL APIs.
      * </p>
      * 
@@ -1297,7 +1539,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the ListGraphqlApis operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -1356,9 +1598,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the ListResolvers operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -1410,6 +1652,69 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
     /**
      * <p>
+     * List the resolvers that are associated with a specific function.
+     * </p>
+     * 
+     * @param listResolversByFunctionRequest
+     * @return Result of the ListResolversByFunction operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @sample AWSAppSync.ListResolversByFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolversByFunction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListResolversByFunctionResult listResolversByFunction(ListResolversByFunctionRequest request) {
+        request = beforeClientExecution(request);
+        return executeListResolversByFunction(request);
+    }
+
+    @SdkInternalApi
+    final ListResolversByFunctionResult executeListResolversByFunction(ListResolversByFunctionRequest listResolversByFunctionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listResolversByFunctionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListResolversByFunctionRequest> request = null;
+        Response<ListResolversByFunctionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListResolversByFunctionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listResolversByFunctionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResolversByFunction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListResolversByFunctionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListResolversByFunctionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the types for a given API.
      * </p>
      * 
@@ -1417,11 +1722,11 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the ListTypes operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws ConcurrentModificationException
-     *         Another modification is being made. That modification must complete before you can make your change.
+     *         Another modification is in progress at this time and it must complete before you can make your change.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -1483,11 +1788,11 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the StartSchemaCreation operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws ConcurrentModificationException
-     *         Another modification is being made. That modification must complete before you can make your change.
+     *         Another modification is in progress at this time and it must complete before you can make your change.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -1546,9 +1851,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the UpdateApiKey operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws LimitExceededException
@@ -1612,11 +1917,11 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the UpdateDataSource operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws ConcurrentModificationException
-     *         Another modification is being made. That modification must complete before you can make your change.
+     *         Another modification is in progress at this time and it must complete before you can make your change.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -1668,6 +1973,66 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
     /**
      * <p>
+     * Updates a <code>Function</code> object.
+     * </p>
+     * 
+     * @param updateFunctionRequest
+     * @return Result of the UpdateFunction operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @sample AWSAppSync.UpdateFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateFunctionResult updateFunction(UpdateFunctionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFunction(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFunctionResult executeUpdateFunction(UpdateFunctionRequest updateFunctionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateFunctionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateFunctionRequest> request = null;
+        Response<UpdateFunctionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateFunctionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFunctionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFunction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateFunctionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateFunctionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates a <code>GraphqlApi</code> object.
      * </p>
      * 
@@ -1675,11 +2040,11 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the UpdateGraphqlApi operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws ConcurrentModificationException
-     *         Another modification is being made. That modification must complete before you can make your change.
+     *         Another modification is in progress at this time and it must complete before you can make your change.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -1737,9 +2102,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @param updateResolverRequest
      * @return Result of the UpdateResolver operation returned by the service.
      * @throws ConcurrentModificationException
-     *         Another modification is being made. That modification must complete before you can make your change.
+     *         Another modification is in progress at this time and it must complete before you can make your change.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException
@@ -1798,11 +2163,11 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      * @return Result of the UpdateType operation returned by the service.
      * @throws BadRequestException
      *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
-     *         field values, and try again.
+     *         field values, and then try again.
      * @throws ConcurrentModificationException
-     *         Another modification is being made. That modification must complete before you can make your change.
+     *         Another modification is in progress at this time and it must complete before you can make your change.
      * @throws NotFoundException
-     *         The resource specified in the request was not found. Check the resource and try again.
+     *         The resource specified in the request was not found. Check the resource, and then try again.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws InternalFailureException

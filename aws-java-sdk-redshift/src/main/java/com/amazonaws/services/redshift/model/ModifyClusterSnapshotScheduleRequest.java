@@ -33,7 +33,7 @@ public class ModifyClusterSnapshotScheduleRequest extends com.amazonaws.AmazonWe
     private String clusterIdentifier;
     /**
      * <p>
-     * A unique alphanumeric identifier for the schedule you want to associate with the cluster.
+     * A unique alphanumeric identifier for the schedule that you want to associate with the cluster.
      * </p>
      */
     private String scheduleIdentifier;
@@ -86,11 +86,11 @@ public class ModifyClusterSnapshotScheduleRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A unique alphanumeric identifier for the schedule you want to associate with the cluster.
+     * A unique alphanumeric identifier for the schedule that you want to associate with the cluster.
      * </p>
      * 
      * @param scheduleIdentifier
-     *        A unique alphanumeric identifier for the schedule you want to associate with the cluster.
+     *        A unique alphanumeric identifier for the schedule that you want to associate with the cluster.
      */
 
     public void setScheduleIdentifier(String scheduleIdentifier) {
@@ -99,10 +99,10 @@ public class ModifyClusterSnapshotScheduleRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A unique alphanumeric identifier for the schedule you want to associate with the cluster.
+     * A unique alphanumeric identifier for the schedule that you want to associate with the cluster.
      * </p>
      * 
-     * @return A unique alphanumeric identifier for the schedule you want to associate with the cluster.
+     * @return A unique alphanumeric identifier for the schedule that you want to associate with the cluster.
      */
 
     public String getScheduleIdentifier() {
@@ -111,11 +111,11 @@ public class ModifyClusterSnapshotScheduleRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A unique alphanumeric identifier for the schedule you want to associate with the cluster.
+     * A unique alphanumeric identifier for the schedule that you want to associate with the cluster.
      * </p>
      * 
      * @param scheduleIdentifier
-     *        A unique alphanumeric identifier for the schedule you want to associate with the cluster.
+     *        A unique alphanumeric identifier for the schedule that you want to associate with the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

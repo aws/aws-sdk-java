@@ -136,6 +136,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     private String programDateTime;
     /** Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds. */
     private Integer programDateTimePeriod;
+    /** When set to "enabled", includes the media playlists from both pipelines in the master manifest (.m3u8) file. */
+    private String redundantManifest;
     /**
      * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next
      * keyframe after this number of seconds, so actual segment length may be longer.
@@ -1597,6 +1599,61 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * When set to "enabled", includes the media playlists from both pipelines in the master manifest (.m3u8) file.
+     * 
+     * @param redundantManifest
+     *        When set to "enabled", includes the media playlists from both pipelines in the master manifest (.m3u8)
+     *        file.
+     * @see HlsRedundantManifest
+     */
+
+    public void setRedundantManifest(String redundantManifest) {
+        this.redundantManifest = redundantManifest;
+    }
+
+    /**
+     * When set to "enabled", includes the media playlists from both pipelines in the master manifest (.m3u8) file.
+     * 
+     * @return When set to "enabled", includes the media playlists from both pipelines in the master manifest (.m3u8)
+     *         file.
+     * @see HlsRedundantManifest
+     */
+
+    public String getRedundantManifest() {
+        return this.redundantManifest;
+    }
+
+    /**
+     * When set to "enabled", includes the media playlists from both pipelines in the master manifest (.m3u8) file.
+     * 
+     * @param redundantManifest
+     *        When set to "enabled", includes the media playlists from both pipelines in the master manifest (.m3u8)
+     *        file.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsRedundantManifest
+     */
+
+    public HlsGroupSettings withRedundantManifest(String redundantManifest) {
+        setRedundantManifest(redundantManifest);
+        return this;
+    }
+
+    /**
+     * When set to "enabled", includes the media playlists from both pipelines in the master manifest (.m3u8) file.
+     * 
+     * @param redundantManifest
+     *        When set to "enabled", includes the media playlists from both pipelines in the master manifest (.m3u8)
+     *        file.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsRedundantManifest
+     */
+
+    public HlsGroupSettings withRedundantManifest(HlsRedundantManifest redundantManifest) {
+        this.redundantManifest = redundantManifest.toString();
+        return this;
+    }
+
+    /**
      * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next
      * keyframe after this number of seconds, so actual segment length may be longer.
      * 
@@ -2037,6 +2094,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
             sb.append("ProgramDateTime: ").append(getProgramDateTime()).append(",");
         if (getProgramDateTimePeriod() != null)
             sb.append("ProgramDateTimePeriod: ").append(getProgramDateTimePeriod()).append(",");
+        if (getRedundantManifest() != null)
+            sb.append("RedundantManifest: ").append(getRedundantManifest()).append(",");
         if (getSegmentLength() != null)
             sb.append("SegmentLength: ").append(getSegmentLength()).append(",");
         if (getSegmentationMode() != null)
@@ -2175,6 +2234,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getProgramDateTimePeriod() != null && other.getProgramDateTimePeriod().equals(this.getProgramDateTimePeriod()) == false)
             return false;
+        if (other.getRedundantManifest() == null ^ this.getRedundantManifest() == null)
+            return false;
+        if (other.getRedundantManifest() != null && other.getRedundantManifest().equals(this.getRedundantManifest()) == false)
+            return false;
         if (other.getSegmentLength() == null ^ this.getSegmentLength() == null)
             return false;
         if (other.getSegmentLength() != null && other.getSegmentLength().equals(this.getSegmentLength()) == false)
@@ -2242,6 +2305,7 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getOutputSelection() == null) ? 0 : getOutputSelection().hashCode());
         hashCode = prime * hashCode + ((getProgramDateTime() == null) ? 0 : getProgramDateTime().hashCode());
         hashCode = prime * hashCode + ((getProgramDateTimePeriod() == null) ? 0 : getProgramDateTimePeriod().hashCode());
+        hashCode = prime * hashCode + ((getRedundantManifest() == null) ? 0 : getRedundantManifest().hashCode());
         hashCode = prime * hashCode + ((getSegmentLength() == null) ? 0 : getSegmentLength().hashCode());
         hashCode = prime * hashCode + ((getSegmentationMode() == null) ? 0 : getSegmentationMode().hashCode());
         hashCode = prime * hashCode + ((getSegmentsPerSubdirectory() == null) ? 0 : getSegmentsPerSubdirectory().hashCode());

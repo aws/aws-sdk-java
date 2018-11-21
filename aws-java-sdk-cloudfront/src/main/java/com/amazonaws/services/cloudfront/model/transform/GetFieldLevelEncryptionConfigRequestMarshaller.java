@@ -40,7 +40,7 @@ public class GetFieldLevelEncryptionConfigRequestMarshaller implements
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2018-06-18/field-level-encryption/{Id}/config";
+        String uriResourcePath = "/2018-11-05/field-level-encryption/{Id}/config";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", getFieldLevelEncryptionConfigRequest.getId());
         request.setResourcePath(uriResourcePath);

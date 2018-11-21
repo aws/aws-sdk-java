@@ -30,7 +30,7 @@ public class LogConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The field logging level. Values can be NONE, ERROR, ALL.
+     * The field logging level. Values can be NONE, ERROR, or ALL.
      * </p>
      * <ul>
      * <li>
@@ -89,7 +89,7 @@ public class LogConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The field logging level. Values can be NONE, ERROR, ALL.
+     * The field logging level. Values can be NONE, ERROR, or ALL.
      * </p>
      * <ul>
      * <li>
@@ -139,7 +139,7 @@ public class LogConfig implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param fieldLogLevel
-     *        The field logging level. Values can be NONE, ERROR, ALL. </p>
+     *        The field logging level. Values can be NONE, ERROR, or ALL. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -194,7 +194,7 @@ public class LogConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The field logging level. Values can be NONE, ERROR, ALL.
+     * The field logging level. Values can be NONE, ERROR, or ALL.
      * </p>
      * <ul>
      * <li>
@@ -243,7 +243,7 @@ public class LogConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The field logging level. Values can be NONE, ERROR, ALL. </p>
+     * @return The field logging level. Values can be NONE, ERROR, or ALL. </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -298,7 +298,7 @@ public class LogConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The field logging level. Values can be NONE, ERROR, ALL.
+     * The field logging level. Values can be NONE, ERROR, or ALL.
      * </p>
      * <ul>
      * <li>
@@ -348,7 +348,7 @@ public class LogConfig implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param fieldLogLevel
-     *        The field logging level. Values can be NONE, ERROR, ALL. </p>
+     *        The field logging level. Values can be NONE, ERROR, or ALL. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -405,7 +405,7 @@ public class LogConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The field logging level. Values can be NONE, ERROR, ALL.
+     * The field logging level. Values can be NONE, ERROR, or ALL.
      * </p>
      * <ul>
      * <li>
@@ -455,7 +455,7 @@ public class LogConfig implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param fieldLogLevel
-     *        The field logging level. Values can be NONE, ERROR, ALL. </p>
+     *        The field logging level. Values can be NONE, ERROR, or ALL. </p>
      *        <ul>
      *        <li>
      *        <p>

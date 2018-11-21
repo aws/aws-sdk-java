@@ -40,7 +40,7 @@ import javax.annotation.Generated;
  * For more information about updating the distribution configuration, see <a>DistributionConfig</a> .
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/TrustedSigners" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/TrustedSigners" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * A streaming distribution.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/StreamingDistribution" target="_top">AWS
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/StreamingDistribution" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -32,7 +32,13 @@ public class StreamingDistribution implements Serializable, Cloneable {
      * </p>
      */
     private String id;
-
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
+     * your AWS account ID.
+     * </p>
+     */
     private String aRN;
     /**
      * <p>
@@ -121,7 +127,16 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
+     * your AWS account ID.
+     * </p>
+     * 
      * @param aRN
+     *        The ARN (Amazon Resource Name) for the distribution. For example:
+     *        <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
+     *        <code>123456789012</code> is your AWS account ID.
      */
 
     public void setARN(String aRN) {
@@ -129,7 +144,15 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
+     * your AWS account ID.
+     * </p>
+     * 
+     * @return The ARN (Amazon Resource Name) for the distribution. For example:
+     *         <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
+     *         <code>123456789012</code> is your AWS account ID.
      */
 
     public String getARN() {
@@ -137,7 +160,16 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
+     * your AWS account ID.
+     * </p>
+     * 
      * @param aRN
+     *        The ARN (Amazon Resource Name) for the distribution. For example:
+     *        <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
+     *        <code>123456789012</code> is your AWS account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

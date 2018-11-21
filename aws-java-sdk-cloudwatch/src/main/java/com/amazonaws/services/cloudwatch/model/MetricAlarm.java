@@ -184,6 +184,8 @@ public class MetricAlarm implements Serializable, Cloneable {
      * </p>
      */
     private String evaluateLowSampleCountPercentile;
+    /** <p/> */
+    private com.amazonaws.internal.SdkInternalList<MetricDataQuery> metrics;
 
     /**
      * <p>
@@ -1527,6 +1529,68 @@ public class MetricAlarm implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public java.util.List<MetricDataQuery> getMetrics() {
+        if (metrics == null) {
+            metrics = new com.amazonaws.internal.SdkInternalList<MetricDataQuery>();
+        }
+        return metrics;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param metrics
+     */
+
+    public void setMetrics(java.util.Collection<MetricDataQuery> metrics) {
+        if (metrics == null) {
+            this.metrics = null;
+            return;
+        }
+
+        this.metrics = new com.amazonaws.internal.SdkInternalList<MetricDataQuery>(metrics);
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMetrics(java.util.Collection)} or {@link #withMetrics(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param metrics
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricAlarm withMetrics(MetricDataQuery... metrics) {
+        if (this.metrics == null) {
+            setMetrics(new com.amazonaws.internal.SdkInternalList<MetricDataQuery>(metrics.length));
+        }
+        for (MetricDataQuery ele : metrics) {
+            this.metrics.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param metrics
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricAlarm withMetrics(java.util.Collection<MetricDataQuery> metrics) {
+        setMetrics(metrics);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1586,7 +1650,9 @@ public class MetricAlarm implements Serializable, Cloneable {
         if (getTreatMissingData() != null)
             sb.append("TreatMissingData: ").append(getTreatMissingData()).append(",");
         if (getEvaluateLowSampleCountPercentile() != null)
-            sb.append("EvaluateLowSampleCountPercentile: ").append(getEvaluateLowSampleCountPercentile());
+            sb.append("EvaluateLowSampleCountPercentile: ").append(getEvaluateLowSampleCountPercentile()).append(",");
+        if (getMetrics() != null)
+            sb.append("Metrics: ").append(getMetrics());
         sb.append("}");
         return sb.toString();
     }
@@ -1703,6 +1769,10 @@ public class MetricAlarm implements Serializable, Cloneable {
         if (other.getEvaluateLowSampleCountPercentile() != null
                 && other.getEvaluateLowSampleCountPercentile().equals(this.getEvaluateLowSampleCountPercentile()) == false)
             return false;
+        if (other.getMetrics() == null ^ this.getMetrics() == null)
+            return false;
+        if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
+            return false;
         return true;
     }
 
@@ -1736,6 +1806,7 @@ public class MetricAlarm implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getComparisonOperator() == null) ? 0 : getComparisonOperator().hashCode());
         hashCode = prime * hashCode + ((getTreatMissingData() == null) ? 0 : getTreatMissingData().hashCode());
         hashCode = prime * hashCode + ((getEvaluateLowSampleCountPercentile() == null) ? 0 : getEvaluateLowSampleCountPercentile().hashCode());
+        hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         return hashCode;
     }
 

@@ -56,6 +56,10 @@ public class DocumentDefaultVersionDescriptionJsonUnmarshaller implements Unmars
                     context.nextToken();
                     documentDefaultVersionDescription.setDefaultVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DefaultVersionName", targetDepth)) {
+                    context.nextToken();
+                    documentDefaultVersionDescription.setDefaultVersionName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

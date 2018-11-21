@@ -27,7 +27,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name for the alarm. This name must be unique within the AWS account.
+     * The name for the alarm. This name must be unique within your AWS account.
      * </p>
      */
     private String alarmName;
@@ -39,7 +39,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     private String alarmDescription;
     /**
      * <p>
-     * Indicates whether actions should be executed during any changes to the alarm state.
+     * Indicates whether actions should be executed during any changes to the alarm state. The default is TRUE.
      * </p>
      */
     private Boolean actionsEnabled;
@@ -51,8 +51,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
@@ -107,40 +107,47 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name for the metric associated with the alarm.
      * </p>
+     * <p>
+     * If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code>
+     * array.
+     * </p>
      */
     private String metricName;
     /**
      * <p>
-     * The namespace for the metric associated with the alarm.
+     * The namespace for the metric associated specified in <code>MetricName</code>.
      * </p>
      */
     private String namespace;
     /**
      * <p>
-     * The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use
-     * <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
+     * The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile
+     * statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a
+     * <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but
+     * not both.
      * </p>
      */
     private String statistic;
     /**
      * <p>
-     * The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100. When
-     * you call <code>PutMetricAlarm</code>, you must specify either <code>Statistic</code> or
-     * <code>ExtendedStatistic,</code> but not both.
+     * The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0 and
+     * p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either
+     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
      * </p>
      */
     private String extendedStatistic;
     /**
      * <p>
-     * The dimensions for the metric associated with the alarm.
+     * The dimensions for the metric specified in <code>MetricName</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Dimension> dimensions;
     /**
      * <p>
-     * The period, in seconds, over which the specified statistic is applied. Valid values are 10, 30, and any multiple
-     * of 60.
+     * The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values
+     * are 10, 30, and any multiple of 60.
      * </p>
      * <p>
      * Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
@@ -172,7 +179,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     private String unit;
     /**
      * <p>
-     * The number of periods over which data is compared to the specified threshold. If you are setting an alarm which
+     * The number of periods over which data is compared to the specified threshold. If you are setting an alarm that
      * requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that
      * number. If you are setting an "M out of N" alarm, this value is the N.
      * </p>
@@ -230,14 +237,28 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String evaluateLowSampleCountPercentile;
+    /**
+     * <p>
+     * An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a
+     * metric math expression. Each item in the <code>Metrics</code> array either retrieves a metric or performs a math
+     * expression.
+     * </p>
+     * <p>
+     * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you
+     * retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<MetricDataQuery> metrics;
 
     /**
      * <p>
-     * The name for the alarm. This name must be unique within the AWS account.
+     * The name for the alarm. This name must be unique within your AWS account.
      * </p>
      * 
      * @param alarmName
-     *        The name for the alarm. This name must be unique within the AWS account.
+     *        The name for the alarm. This name must be unique within your AWS account.
      */
 
     public void setAlarmName(String alarmName) {
@@ -246,10 +267,10 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name for the alarm. This name must be unique within the AWS account.
+     * The name for the alarm. This name must be unique within your AWS account.
      * </p>
      * 
-     * @return The name for the alarm. This name must be unique within the AWS account.
+     * @return The name for the alarm. This name must be unique within your AWS account.
      */
 
     public String getAlarmName() {
@@ -258,11 +279,11 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name for the alarm. This name must be unique within the AWS account.
+     * The name for the alarm. This name must be unique within your AWS account.
      * </p>
      * 
      * @param alarmName
-     *        The name for the alarm. This name must be unique within the AWS account.
+     *        The name for the alarm. This name must be unique within your AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,11 +334,11 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Indicates whether actions should be executed during any changes to the alarm state.
+     * Indicates whether actions should be executed during any changes to the alarm state. The default is TRUE.
      * </p>
      * 
      * @param actionsEnabled
-     *        Indicates whether actions should be executed during any changes to the alarm state.
+     *        Indicates whether actions should be executed during any changes to the alarm state. The default is TRUE.
      */
 
     public void setActionsEnabled(Boolean actionsEnabled) {
@@ -326,10 +347,10 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Indicates whether actions should be executed during any changes to the alarm state.
+     * Indicates whether actions should be executed during any changes to the alarm state. The default is TRUE.
      * </p>
      * 
-     * @return Indicates whether actions should be executed during any changes to the alarm state.
+     * @return Indicates whether actions should be executed during any changes to the alarm state. The default is TRUE.
      */
 
     public Boolean getActionsEnabled() {
@@ -338,11 +359,11 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Indicates whether actions should be executed during any changes to the alarm state.
+     * Indicates whether actions should be executed during any changes to the alarm state. The default is TRUE.
      * </p>
      * 
      * @param actionsEnabled
-     *        Indicates whether actions should be executed during any changes to the alarm state.
+     *        Indicates whether actions should be executed during any changes to the alarm state. The default is TRUE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -353,10 +374,10 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Indicates whether actions should be executed during any changes to the alarm state.
+     * Indicates whether actions should be executed during any changes to the alarm state. The default is TRUE.
      * </p>
      * 
-     * @return Indicates whether actions should be executed during any changes to the alarm state.
+     * @return Indicates whether actions should be executed during any changes to the alarm state. The default is TRUE.
      */
 
     public Boolean isActionsEnabled() {
@@ -371,8 +392,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
@@ -388,6 +409,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *         Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      *         <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      *         <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     *         <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *         <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      *         <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *         </p>
@@ -413,8 +435,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
@@ -431,6 +453,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
@@ -458,8 +481,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
@@ -481,6 +504,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
@@ -510,8 +534,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
@@ -528,6 +552,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
      *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
@@ -910,9 +935,20 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name for the metric associated with the alarm.
      * </p>
+     * <p>
+     * If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code>
+     * array.
+     * </p>
      * 
      * @param metricName
-     *        The name for the metric associated with the alarm.
+     *        The name for the metric associated with the alarm.</p>
+     *        <p>
+     *        If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the
+     *        <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
+     *        <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the
+     *        <code>Metrics</code> array.
      */
 
     public void setMetricName(String metricName) {
@@ -923,8 +959,19 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name for the metric associated with the alarm.
      * </p>
+     * <p>
+     * If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code>
+     * array.
+     * </p>
      * 
-     * @return The name for the metric associated with the alarm.
+     * @return The name for the metric associated with the alarm.</p>
+     *         <p>
+     *         If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the
+     *         <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
+     *         <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the
+     *         <code>Metrics</code> array.
      */
 
     public String getMetricName() {
@@ -935,9 +982,20 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name for the metric associated with the alarm.
      * </p>
+     * <p>
+     * If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code>
+     * array.
+     * </p>
      * 
      * @param metricName
-     *        The name for the metric associated with the alarm.
+     *        The name for the metric associated with the alarm.</p>
+     *        <p>
+     *        If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the
+     *        <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
+     *        <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the
+     *        <code>Metrics</code> array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -948,11 +1006,11 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The namespace for the metric associated with the alarm.
+     * The namespace for the metric associated specified in <code>MetricName</code>.
      * </p>
      * 
      * @param namespace
-     *        The namespace for the metric associated with the alarm.
+     *        The namespace for the metric associated specified in <code>MetricName</code>.
      */
 
     public void setNamespace(String namespace) {
@@ -961,10 +1019,10 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The namespace for the metric associated with the alarm.
+     * The namespace for the metric associated specified in <code>MetricName</code>.
      * </p>
      * 
-     * @return The namespace for the metric associated with the alarm.
+     * @return The namespace for the metric associated specified in <code>MetricName</code>.
      */
 
     public String getNamespace() {
@@ -973,11 +1031,11 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The namespace for the metric associated with the alarm.
+     * The namespace for the metric associated specified in <code>MetricName</code>.
      * </p>
      * 
      * @param namespace
-     *        The namespace for the metric associated with the alarm.
+     *        The namespace for the metric associated specified in <code>MetricName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -988,15 +1046,17 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use
-     * <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
+     * The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile
+     * statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a
+     * <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but
+     * not both.
      * </p>
      * 
      * @param statistic
-     *        The statistic for the metric associated with the alarm, other than percentile. For percentile statistics,
-     *        use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
-     *        <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
+     *        The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile
+     *        statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a
+     *        <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code>
+     *        but not both.
      * @see Statistic
      */
 
@@ -1006,14 +1066,16 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use
-     * <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
+     * The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile
+     * statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a
+     * <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but
+     * not both.
      * </p>
      * 
-     * @return The statistic for the metric associated with the alarm, other than percentile. For percentile statistics,
-     *         use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
-     *         <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
+     * @return The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile
+     *         statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a
+     *         <code>MetricName</code>, you must specify either <code>Statistic</code> or
+     *         <code>ExtendedStatistic,</code> but not both.
      * @see Statistic
      */
 
@@ -1023,15 +1085,17 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use
-     * <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
+     * The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile
+     * statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a
+     * <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but
+     * not both.
      * </p>
      * 
      * @param statistic
-     *        The statistic for the metric associated with the alarm, other than percentile. For percentile statistics,
-     *        use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
-     *        <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
+     *        The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile
+     *        statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a
+     *        <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code>
+     *        but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Statistic
      */
@@ -1043,15 +1107,17 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use
-     * <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
+     * The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile
+     * statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a
+     * <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but
+     * not both.
      * </p>
      * 
      * @param statistic
-     *        The statistic for the metric associated with the alarm, other than percentile. For percentile statistics,
-     *        use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
-     *        <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
+     *        The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile
+     *        statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a
+     *        <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code>
+     *        but not both.
      * @see Statistic
      */
 
@@ -1061,15 +1127,17 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use
-     * <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
+     * The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile
+     * statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a
+     * <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but
+     * not both.
      * </p>
      * 
      * @param statistic
-     *        The statistic for the metric associated with the alarm, other than percentile. For percentile statistics,
-     *        use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
-     *        <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
+     *        The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile
+     *        statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a
+     *        <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code>
+     *        but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Statistic
      */
@@ -1081,15 +1149,15 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100. When
-     * you call <code>PutMetricAlarm</code>, you must specify either <code>Statistic</code> or
-     * <code>ExtendedStatistic,</code> but not both.
+     * The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0 and
+     * p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either
+     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
      * </p>
      * 
      * @param extendedStatistic
-     *        The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.
-     *        When you call <code>PutMetricAlarm</code>, you must specify either <code>Statistic</code> or
-     *        <code>ExtendedStatistic,</code> but not both.
+     *        The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0
+     *        and p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must
+     *        specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
      */
 
     public void setExtendedStatistic(String extendedStatistic) {
@@ -1098,14 +1166,14 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100. When
-     * you call <code>PutMetricAlarm</code>, you must specify either <code>Statistic</code> or
-     * <code>ExtendedStatistic,</code> but not both.
+     * The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0 and
+     * p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either
+     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
      * </p>
      * 
-     * @return The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.
-     *         When you call <code>PutMetricAlarm</code>, you must specify either <code>Statistic</code> or
-     *         <code>ExtendedStatistic,</code> but not both.
+     * @return The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between
+     *         p0.0 and p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must
+     *         specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
      */
 
     public String getExtendedStatistic() {
@@ -1114,15 +1182,15 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100. When
-     * you call <code>PutMetricAlarm</code>, you must specify either <code>Statistic</code> or
-     * <code>ExtendedStatistic,</code> but not both.
+     * The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0 and
+     * p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either
+     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
      * </p>
      * 
      * @param extendedStatistic
-     *        The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.
-     *        When you call <code>PutMetricAlarm</code>, you must specify either <code>Statistic</code> or
-     *        <code>ExtendedStatistic,</code> but not both.
+     *        The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0
+     *        and p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must
+     *        specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1133,10 +1201,10 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The dimensions for the metric associated with the alarm.
+     * The dimensions for the metric specified in <code>MetricName</code>.
      * </p>
      * 
-     * @return The dimensions for the metric associated with the alarm.
+     * @return The dimensions for the metric specified in <code>MetricName</code>.
      */
 
     public java.util.List<Dimension> getDimensions() {
@@ -1148,11 +1216,11 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The dimensions for the metric associated with the alarm.
+     * The dimensions for the metric specified in <code>MetricName</code>.
      * </p>
      * 
      * @param dimensions
-     *        The dimensions for the metric associated with the alarm.
+     *        The dimensions for the metric specified in <code>MetricName</code>.
      */
 
     public void setDimensions(java.util.Collection<Dimension> dimensions) {
@@ -1166,7 +1234,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The dimensions for the metric associated with the alarm.
+     * The dimensions for the metric specified in <code>MetricName</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1175,7 +1243,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param dimensions
-     *        The dimensions for the metric associated with the alarm.
+     *        The dimensions for the metric specified in <code>MetricName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1191,11 +1259,11 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The dimensions for the metric associated with the alarm.
+     * The dimensions for the metric specified in <code>MetricName</code>.
      * </p>
      * 
      * @param dimensions
-     *        The dimensions for the metric associated with the alarm.
+     *        The dimensions for the metric specified in <code>MetricName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1206,8 +1274,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The period, in seconds, over which the specified statistic is applied. Valid values are 10, 30, and any multiple
-     * of 60.
+     * The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values
+     * are 10, 30, and any multiple of 60.
      * </p>
      * <p>
      * Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
@@ -1224,8 +1292,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param period
-     *        The period, in seconds, over which the specified statistic is applied. Valid values are 10, 30, and any
-     *        multiple of 60.</p>
+     *        The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid
+     *        values are 10, 30, and any multiple of 60.</p>
      *        <p>
      *        Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
      *        <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
@@ -1246,8 +1314,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The period, in seconds, over which the specified statistic is applied. Valid values are 10, 30, and any multiple
-     * of 60.
+     * The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values
+     * are 10, 30, and any multiple of 60.
      * </p>
      * <p>
      * Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
@@ -1263,8 +1331,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.
      * </p>
      * 
-     * @return The period, in seconds, over which the specified statistic is applied. Valid values are 10, 30, and any
-     *         multiple of 60.</p>
+     * @return The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated.
+     *         Valid values are 10, 30, and any multiple of 60.</p>
      *         <p>
      *         Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
      *         <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
@@ -1285,8 +1353,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The period, in seconds, over which the specified statistic is applied. Valid values are 10, 30, and any multiple
-     * of 60.
+     * The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values
+     * are 10, 30, and any multiple of 60.
      * </p>
      * <p>
      * Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
@@ -1303,8 +1371,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param period
-     *        The period, in seconds, over which the specified statistic is applied. Valid values are 10, 30, and any
-     *        multiple of 60.</p>
+     *        The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid
+     *        values are 10, 30, and any multiple of 60.</p>
      *        <p>
      *        Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
      *        <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
@@ -1466,7 +1534,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The number of periods over which data is compared to the specified threshold. If you are setting an alarm which
+     * The number of periods over which data is compared to the specified threshold. If you are setting an alarm that
      * requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that
      * number. If you are setting an "M out of N" alarm, this value is the N.
      * </p>
@@ -1477,7 +1545,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param evaluationPeriods
      *        The number of periods over which data is compared to the specified threshold. If you are setting an alarm
-     *        which requires that a number of consecutive data points be breaching to trigger the alarm, this value
+     *        that requires that a number of consecutive data points be breaching to trigger the alarm, this value
      *        specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p>
      *        <p>
      *        An alarm's total current evaluation period can be no longer than one day, so this number multiplied by
@@ -1490,7 +1558,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The number of periods over which data is compared to the specified threshold. If you are setting an alarm which
+     * The number of periods over which data is compared to the specified threshold. If you are setting an alarm that
      * requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that
      * number. If you are setting an "M out of N" alarm, this value is the N.
      * </p>
@@ -1500,7 +1568,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return The number of periods over which data is compared to the specified threshold. If you are setting an alarm
-     *         which requires that a number of consecutive data points be breaching to trigger the alarm, this value
+     *         that requires that a number of consecutive data points be breaching to trigger the alarm, this value
      *         specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p>
      *         <p>
      *         An alarm's total current evaluation period can be no longer than one day, so this number multiplied by
@@ -1513,7 +1581,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The number of periods over which data is compared to the specified threshold. If you are setting an alarm which
+     * The number of periods over which data is compared to the specified threshold. If you are setting an alarm that
      * requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that
      * number. If you are setting an "M out of N" alarm, this value is the N.
      * </p>
@@ -1524,7 +1592,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param evaluationPeriods
      *        The number of periods over which data is compared to the specified threshold. If you are setting an alarm
-     *        which requires that a number of consecutive data points be breaching to trigger the alarm, this value
+     *        that requires that a number of consecutive data points be breaching to trigger the alarm, this value
      *        specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p>
      *        <p>
      *        An alarm's total current evaluation period can be no longer than one day, so this number multiplied by
@@ -1877,6 +1945,139 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a
+     * metric math expression. Each item in the <code>Metrics</code> array either retrieves a metric or performs a math
+     * expression.
+     * </p>
+     * <p>
+     * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you
+     * retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.
+     * </p>
+     * 
+     * @return An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the
+     *         result of a metric math expression. Each item in the <code>Metrics</code> array either retrieves a metric
+     *         or performs a math expression.</p>
+     *         <p>
+     *         If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     *         <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
+     *         <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead,
+     *         you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.
+     */
+
+    public java.util.List<MetricDataQuery> getMetrics() {
+        if (metrics == null) {
+            metrics = new com.amazonaws.internal.SdkInternalList<MetricDataQuery>();
+        }
+        return metrics;
+    }
+
+    /**
+     * <p>
+     * An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a
+     * metric math expression. Each item in the <code>Metrics</code> array either retrieves a metric or performs a math
+     * expression.
+     * </p>
+     * <p>
+     * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you
+     * retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.
+     * </p>
+     * 
+     * @param metrics
+     *        An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result
+     *        of a metric math expression. Each item in the <code>Metrics</code> array either retrieves a metric or
+     *        performs a math expression.</p>
+     *        <p>
+     *        If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     *        <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
+     *        <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead,
+     *        you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.
+     */
+
+    public void setMetrics(java.util.Collection<MetricDataQuery> metrics) {
+        if (metrics == null) {
+            this.metrics = null;
+            return;
+        }
+
+        this.metrics = new com.amazonaws.internal.SdkInternalList<MetricDataQuery>(metrics);
+    }
+
+    /**
+     * <p>
+     * An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a
+     * metric math expression. Each item in the <code>Metrics</code> array either retrieves a metric or performs a math
+     * expression.
+     * </p>
+     * <p>
+     * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you
+     * retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMetrics(java.util.Collection)} or {@link #withMetrics(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param metrics
+     *        An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result
+     *        of a metric math expression. Each item in the <code>Metrics</code> array either retrieves a metric or
+     *        performs a math expression.</p>
+     *        <p>
+     *        If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     *        <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
+     *        <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead,
+     *        you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutMetricAlarmRequest withMetrics(MetricDataQuery... metrics) {
+        if (this.metrics == null) {
+            setMetrics(new com.amazonaws.internal.SdkInternalList<MetricDataQuery>(metrics.length));
+        }
+        for (MetricDataQuery ele : metrics) {
+            this.metrics.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a
+     * metric math expression. Each item in the <code>Metrics</code> array either retrieves a metric or performs a math
+     * expression.
+     * </p>
+     * <p>
+     * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you
+     * retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.
+     * </p>
+     * 
+     * @param metrics
+     *        An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result
+     *        of a metric math expression. Each item in the <code>Metrics</code> array either retrieves a metric or
+     *        performs a math expression.</p>
+     *        <p>
+     *        If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     *        <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
+     *        <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead,
+     *        you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutMetricAlarmRequest withMetrics(java.util.Collection<MetricDataQuery> metrics) {
+        setMetrics(metrics);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1924,7 +2125,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getTreatMissingData() != null)
             sb.append("TreatMissingData: ").append(getTreatMissingData()).append(",");
         if (getEvaluateLowSampleCountPercentile() != null)
-            sb.append("EvaluateLowSampleCountPercentile: ").append(getEvaluateLowSampleCountPercentile());
+            sb.append("EvaluateLowSampleCountPercentile: ").append(getEvaluateLowSampleCountPercentile()).append(",");
+        if (getMetrics() != null)
+            sb.append("Metrics: ").append(getMetrics());
         sb.append("}");
         return sb.toString();
     }
@@ -2016,6 +2219,10 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
         if (other.getEvaluateLowSampleCountPercentile() != null
                 && other.getEvaluateLowSampleCountPercentile().equals(this.getEvaluateLowSampleCountPercentile()) == false)
             return false;
+        if (other.getMetrics() == null ^ this.getMetrics() == null)
+            return false;
+        if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
+            return false;
         return true;
     }
 
@@ -2043,6 +2250,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getComparisonOperator() == null) ? 0 : getComparisonOperator().hashCode());
         hashCode = prime * hashCode + ((getTreatMissingData() == null) ? 0 : getTreatMissingData().hashCode());
         hashCode = prime * hashCode + ((getEvaluateLowSampleCountPercentile() == null) ? 0 : getEvaluateLowSampleCountPercentile().hashCode());
+        hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         return hashCode;
     }
 

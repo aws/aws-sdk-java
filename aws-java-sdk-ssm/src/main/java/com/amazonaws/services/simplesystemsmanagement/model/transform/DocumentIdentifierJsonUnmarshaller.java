@@ -56,6 +56,10 @@ public class DocumentIdentifierJsonUnmarshaller implements Unmarshaller<Document
                     context.nextToken();
                     documentIdentifier.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("VersionName", targetDepth)) {
+                    context.nextToken();
+                    documentIdentifier.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("PlatformTypes", targetDepth)) {
                     context.nextToken();
                     documentIdentifier.setPlatformTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));

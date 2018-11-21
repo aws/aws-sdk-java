@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * A summary of the information for an Amazon CloudFront streaming distribution.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/StreamingDistributionSummary"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/StreamingDistributionSummary"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -93,7 +93,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * </p>
      */
     private String comment;
-
+    /** <p/> */
     private String priceClass;
     /**
      * <p>
@@ -544,6 +544,8 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param priceClass
      * @see PriceClass
      */
@@ -553,6 +555,8 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @return
      * @see PriceClass
      */
@@ -562,6 +566,8 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param priceClass
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PriceClass
@@ -573,6 +579,8 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param priceClass
      * @see PriceClass
      */
@@ -582,6 +590,8 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param priceClass
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PriceClass

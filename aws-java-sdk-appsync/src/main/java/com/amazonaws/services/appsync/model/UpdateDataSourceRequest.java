@@ -57,28 +57,34 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private String serviceRoleArn;
     /**
      * <p>
-     * The new DynamoDB configuration.
+     * The new Amazon DynamoDB configuration.
      * </p>
      */
     private DynamodbDataSourceConfig dynamodbConfig;
     /**
      * <p>
-     * The new Lambda configuration.
+     * The new AWS Lambda configuration.
      * </p>
      */
     private LambdaDataSourceConfig lambdaConfig;
     /**
      * <p>
-     * The new Elasticsearch configuration.
+     * The new Elasticsearch Service configuration.
      * </p>
      */
     private ElasticsearchDataSourceConfig elasticsearchConfig;
     /**
      * <p>
-     * The new http endpoint configuration
+     * The new HTTP endpoint configuration.
      * </p>
      */
     private HttpDataSourceConfig httpConfig;
+    /**
+     * <p>
+     * The new relational database configuration.
+     * </p>
+     */
+    private RelationalDatabaseDataSourceConfig relationalDatabaseConfig;
 
     /**
      * <p>
@@ -301,11 +307,11 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new DynamoDB configuration.
+     * The new Amazon DynamoDB configuration.
      * </p>
      * 
      * @param dynamodbConfig
-     *        The new DynamoDB configuration.
+     *        The new Amazon DynamoDB configuration.
      */
 
     public void setDynamodbConfig(DynamodbDataSourceConfig dynamodbConfig) {
@@ -314,10 +320,10 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new DynamoDB configuration.
+     * The new Amazon DynamoDB configuration.
      * </p>
      * 
-     * @return The new DynamoDB configuration.
+     * @return The new Amazon DynamoDB configuration.
      */
 
     public DynamodbDataSourceConfig getDynamodbConfig() {
@@ -326,11 +332,11 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new DynamoDB configuration.
+     * The new Amazon DynamoDB configuration.
      * </p>
      * 
      * @param dynamodbConfig
-     *        The new DynamoDB configuration.
+     *        The new Amazon DynamoDB configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -341,11 +347,11 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new Lambda configuration.
+     * The new AWS Lambda configuration.
      * </p>
      * 
      * @param lambdaConfig
-     *        The new Lambda configuration.
+     *        The new AWS Lambda configuration.
      */
 
     public void setLambdaConfig(LambdaDataSourceConfig lambdaConfig) {
@@ -354,10 +360,10 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new Lambda configuration.
+     * The new AWS Lambda configuration.
      * </p>
      * 
-     * @return The new Lambda configuration.
+     * @return The new AWS Lambda configuration.
      */
 
     public LambdaDataSourceConfig getLambdaConfig() {
@@ -366,11 +372,11 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new Lambda configuration.
+     * The new AWS Lambda configuration.
      * </p>
      * 
      * @param lambdaConfig
-     *        The new Lambda configuration.
+     *        The new AWS Lambda configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -381,11 +387,11 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new Elasticsearch configuration.
+     * The new Elasticsearch Service configuration.
      * </p>
      * 
      * @param elasticsearchConfig
-     *        The new Elasticsearch configuration.
+     *        The new Elasticsearch Service configuration.
      */
 
     public void setElasticsearchConfig(ElasticsearchDataSourceConfig elasticsearchConfig) {
@@ -394,10 +400,10 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new Elasticsearch configuration.
+     * The new Elasticsearch Service configuration.
      * </p>
      * 
-     * @return The new Elasticsearch configuration.
+     * @return The new Elasticsearch Service configuration.
      */
 
     public ElasticsearchDataSourceConfig getElasticsearchConfig() {
@@ -406,11 +412,11 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new Elasticsearch configuration.
+     * The new Elasticsearch Service configuration.
      * </p>
      * 
      * @param elasticsearchConfig
-     *        The new Elasticsearch configuration.
+     *        The new Elasticsearch Service configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -421,11 +427,11 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new http endpoint configuration
+     * The new HTTP endpoint configuration.
      * </p>
      * 
      * @param httpConfig
-     *        The new http endpoint configuration
+     *        The new HTTP endpoint configuration.
      */
 
     public void setHttpConfig(HttpDataSourceConfig httpConfig) {
@@ -434,10 +440,10 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new http endpoint configuration
+     * The new HTTP endpoint configuration.
      * </p>
      * 
-     * @return The new http endpoint configuration
+     * @return The new HTTP endpoint configuration.
      */
 
     public HttpDataSourceConfig getHttpConfig() {
@@ -446,16 +452,56 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new http endpoint configuration
+     * The new HTTP endpoint configuration.
      * </p>
      * 
      * @param httpConfig
-     *        The new http endpoint configuration
+     *        The new HTTP endpoint configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateDataSourceRequest withHttpConfig(HttpDataSourceConfig httpConfig) {
         setHttpConfig(httpConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The new relational database configuration.
+     * </p>
+     * 
+     * @param relationalDatabaseConfig
+     *        The new relational database configuration.
+     */
+
+    public void setRelationalDatabaseConfig(RelationalDatabaseDataSourceConfig relationalDatabaseConfig) {
+        this.relationalDatabaseConfig = relationalDatabaseConfig;
+    }
+
+    /**
+     * <p>
+     * The new relational database configuration.
+     * </p>
+     * 
+     * @return The new relational database configuration.
+     */
+
+    public RelationalDatabaseDataSourceConfig getRelationalDatabaseConfig() {
+        return this.relationalDatabaseConfig;
+    }
+
+    /**
+     * <p>
+     * The new relational database configuration.
+     * </p>
+     * 
+     * @param relationalDatabaseConfig
+     *        The new relational database configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDataSourceRequest withRelationalDatabaseConfig(RelationalDatabaseDataSourceConfig relationalDatabaseConfig) {
+        setRelationalDatabaseConfig(relationalDatabaseConfig);
         return this;
     }
 
@@ -487,7 +533,9 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getElasticsearchConfig() != null)
             sb.append("ElasticsearchConfig: ").append(getElasticsearchConfig()).append(",");
         if (getHttpConfig() != null)
-            sb.append("HttpConfig: ").append(getHttpConfig());
+            sb.append("HttpConfig: ").append(getHttpConfig()).append(",");
+        if (getRelationalDatabaseConfig() != null)
+            sb.append("RelationalDatabaseConfig: ").append(getRelationalDatabaseConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -538,6 +586,10 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getHttpConfig() != null && other.getHttpConfig().equals(this.getHttpConfig()) == false)
             return false;
+        if (other.getRelationalDatabaseConfig() == null ^ this.getRelationalDatabaseConfig() == null)
+            return false;
+        if (other.getRelationalDatabaseConfig() != null && other.getRelationalDatabaseConfig().equals(this.getRelationalDatabaseConfig()) == false)
+            return false;
         return true;
     }
 
@@ -555,6 +607,7 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getLambdaConfig() == null) ? 0 : getLambdaConfig().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchConfig() == null) ? 0 : getElasticsearchConfig().hashCode());
         hashCode = prime * hashCode + ((getHttpConfig() == null) ? 0 : getHttpConfig().hashCode());
+        hashCode = prime * hashCode + ((getRelationalDatabaseConfig() == null) ? 0 : getRelationalDatabaseConfig().hashCode());
         return hashCode;
     }
 

@@ -40,14 +40,14 @@ public class Snapshot implements Serializable, Cloneable {
     private String clusterIdentifier;
     /**
      * <p>
-     * The time (UTC) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data as of this
-     * exact time.
+     * The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data
+     * as of this exact time.
      * </p>
      */
     private java.util.Date snapshotCreateTime;
     /**
      * <p>
-     * The snapshot status. The value of the status depends on the API operation used.
+     * The snapshot status. The value of the status depends on the API operation used:
      * </p>
      * <ul>
      * <li>
@@ -100,7 +100,7 @@ public class Snapshot implements Serializable, Cloneable {
     private String clusterVersion;
     /**
      * <p>
-     * The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> will be of
+     * The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> are of
      * type "manual".
      * </p>
      */
@@ -347,13 +347,13 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time (UTC) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data as of this
-     * exact time.
+     * The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data
+     * as of this exact time.
      * </p>
      * 
      * @param snapshotCreateTime
-     *        The time (UTC) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data as
-     *        of this exact time.
+     *        The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a copy of the
+     *        cluster data as of this exact time.
      */
 
     public void setSnapshotCreateTime(java.util.Date snapshotCreateTime) {
@@ -362,12 +362,12 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time (UTC) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data as of this
-     * exact time.
+     * The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data
+     * as of this exact time.
      * </p>
      * 
-     * @return The time (UTC) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data as
-     *         of this exact time.
+     * @return The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a copy of the
+     *         cluster data as of this exact time.
      */
 
     public java.util.Date getSnapshotCreateTime() {
@@ -376,13 +376,13 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time (UTC) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data as of this
-     * exact time.
+     * The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data
+     * as of this exact time.
      * </p>
      * 
      * @param snapshotCreateTime
-     *        The time (UTC) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data as
-     *        of this exact time.
+     *        The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a copy of the
+     *        cluster data as of this exact time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -393,7 +393,7 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The snapshot status. The value of the status depends on the API operation used.
+     * The snapshot status. The value of the status depends on the API operation used:
      * </p>
      * <ul>
      * <li>
@@ -414,7 +414,7 @@ public class Snapshot implements Serializable, Cloneable {
      * </ul>
      * 
      * @param status
-     *        The snapshot status. The value of the status depends on the API operation used. </p>
+     *        The snapshot status. The value of the status depends on the API operation used: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -439,7 +439,7 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The snapshot status. The value of the status depends on the API operation used.
+     * The snapshot status. The value of the status depends on the API operation used:
      * </p>
      * <ul>
      * <li>
@@ -459,7 +459,7 @@ public class Snapshot implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The snapshot status. The value of the status depends on the API operation used. </p>
+     * @return The snapshot status. The value of the status depends on the API operation used: </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -484,7 +484,7 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The snapshot status. The value of the status depends on the API operation used.
+     * The snapshot status. The value of the status depends on the API operation used:
      * </p>
      * <ul>
      * <li>
@@ -505,7 +505,7 @@ public class Snapshot implements Serializable, Cloneable {
      * </ul>
      * 
      * @param status
-     *        The snapshot status. The value of the status depends on the API operation used. </p>
+     *        The snapshot status. The value of the status depends on the API operation used: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -732,13 +732,13 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> will be of
+     * The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> are of
      * type "manual".
      * </p>
      * 
      * @param snapshotType
-     *        The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
-     *        will be of type "manual".
+     *        The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> are
+     *        of type "manual".
      */
 
     public void setSnapshotType(String snapshotType) {
@@ -747,12 +747,12 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> will be of
+     * The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> are of
      * type "manual".
      * </p>
      * 
      * @return The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
-     *         will be of type "manual".
+     *         are of type "manual".
      */
 
     public String getSnapshotType() {
@@ -761,13 +761,13 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> will be of
+     * The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> are of
      * type "manual".
      * </p>
      * 
      * @param snapshotType
-     *        The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
-     *        will be of type "manual".
+     *        The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> are
+     *        of type "manual".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

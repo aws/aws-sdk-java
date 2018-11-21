@@ -78,6 +78,11 @@ public class DistributionSummaryStaxUnmarshaller implements Unmarshaller<Distrib
                     continue;
                 }
 
+                if (context.testExpression("OriginGroups", targetDepth)) {
+                    distributionSummary.setOriginGroups(OriginGroupsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("DefaultCacheBehavior", targetDepth)) {
                     distributionSummary.setDefaultCacheBehavior(DefaultCacheBehaviorStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

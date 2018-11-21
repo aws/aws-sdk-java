@@ -27,7 +27,7 @@ public class UpdateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID for the GraphQL API
+     * The ID for the GraphQL API.
      * </p>
      */
     private String apiId;
@@ -53,11 +53,11 @@ public class UpdateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID for the GraphQL API
+     * The ID for the GraphQL API.
      * </p>
      * 
      * @param apiId
-     *        The ID for the GraphQL API
+     *        The ID for the GraphQL API.
      */
 
     public void setApiId(String apiId) {
@@ -66,10 +66,10 @@ public class UpdateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID for the GraphQL API
+     * The ID for the GraphQL API.
      * </p>
      * 
-     * @return The ID for the GraphQL API
+     * @return The ID for the GraphQL API.
      */
 
     public String getApiId() {
@@ -78,11 +78,11 @@ public class UpdateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID for the GraphQL API
+     * The ID for the GraphQL API.
      * </p>
      * 
      * @param apiId
-     *        The ID for the GraphQL API
+     *        The ID for the GraphQL API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

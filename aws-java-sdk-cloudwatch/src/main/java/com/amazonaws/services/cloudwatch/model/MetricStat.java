@@ -34,7 +34,7 @@ public class MetricStat implements Serializable, Cloneable {
     private Metric metric;
     /**
      * <p>
-     * The period to use when retrieving the metric.
+     * The period, in seconds, to use when retrieving the metric.
      * </p>
      */
     private Integer period;
@@ -93,11 +93,11 @@ public class MetricStat implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The period to use when retrieving the metric.
+     * The period, in seconds, to use when retrieving the metric.
      * </p>
      * 
      * @param period
-     *        The period to use when retrieving the metric.
+     *        The period, in seconds, to use when retrieving the metric.
      */
 
     public void setPeriod(Integer period) {
@@ -106,10 +106,10 @@ public class MetricStat implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The period to use when retrieving the metric.
+     * The period, in seconds, to use when retrieving the metric.
      * </p>
      * 
-     * @return The period to use when retrieving the metric.
+     * @return The period, in seconds, to use when retrieving the metric.
      */
 
     public Integer getPeriod() {
@@ -118,11 +118,11 @@ public class MetricStat implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The period to use when retrieving the metric.
+     * The period, in seconds, to use when retrieving the metric.
      * </p>
      * 
      * @param period
-     *        The period to use when retrieving the metric.
+     *        The period, in seconds, to use when retrieving the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

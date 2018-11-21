@@ -53,13 +53,16 @@ import com.amazonaws.services.autoscalingplans.model.transform.*;
  * <fullname>AWS Auto Scaling</fullname>
  * <p>
  * Use AWS Auto Scaling to quickly discover all the scalable AWS resources for your application and configure dynamic
- * scaling for your scalable resources.
+ * scaling and predictive scaling for your resources using scaling plans. Use this service in conjunction with the
+ * Amazon EC2 Auto Scaling, Application Auto Scaling, Amazon CloudWatch, and AWS CloudFormation services.
  * </p>
  * <p>
- * To get started, create a scaling plan with a set of instructions used to configure dynamic scaling for the scalable
- * resources in your application. AWS Auto Scaling creates target tracking scaling policies for the scalable resources
- * in your scaling plan. Target tracking scaling policies adjust the capacity of your scalable resource as required to
- * maintain resource utilization at the target value that you specified.
+ * Currently, predictive scaling is only available for Amazon EC2 Auto Scaling groups.
+ * </p>
+ * <p>
+ * For more information about AWS Auto Scaling, see the <a
+ * href="http://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html">AWS Auto Scaling User
+ * Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -154,11 +157,6 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
      * <p>
      * Creates a scaling plan.
      * </p>
-     * <p>
-     * A scaling plan contains a set of instructions used to configure dynamic scaling for the scalable resources in
-     * your application. AWS Auto Scaling creates target tracking scaling policies based on the scaling instructions in
-     * your scaling plan.
-     * </p>
      * 
      * @param createScalingPlanRequest
      * @return Result of the CreateScalingPlan operation returned by the service.
@@ -219,6 +217,14 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Deletes the specified scaling plan.
+     * </p>
+     * <p>
+     * Deleting a scaling plan deletes the underlying <a>ScalingInstruction</a> for all of the scalable resources that
+     * are covered by the plan.
+     * </p>
+     * <p>
+     * If the plan has launched resources or has scaling activities in progress, you must delete those resources
+     * separately.
      * </p>
      * 
      * @param deleteScalingPlanRequest
@@ -342,7 +348,7 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Describes the specified scaling plans or all of your scaling plans.
+     * Describes one or more of your scaling plans.
      * </p>
      * 
      * @param describeScalingPlansRequest
@@ -403,7 +409,71 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Updates the scaling plan for the specified scaling plan.
+     * Retrieves the forecast data for a scalable resource.
+     * </p>
+     * <p>
+     * Capacity forecasts are represented as predicted values, or data points, that are calculated using historical data
+     * points from a specified CloudWatch load metric. Data points are available for up to 56 days.
+     * </p>
+     * 
+     * @param getScalingPlanResourceForecastDataRequest
+     * @return Result of the GetScalingPlanResourceForecastData operation returned by the service.
+     * @throws ValidationException
+     *         An exception was thrown for a validation issue. Review the parameters provided.
+     * @throws InternalServiceException
+     *         The service encountered an internal error.
+     * @sample AWSAutoScalingPlans.GetScalingPlanResourceForecastData
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/GetScalingPlanResourceForecastData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetScalingPlanResourceForecastDataResult getScalingPlanResourceForecastData(GetScalingPlanResourceForecastDataRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetScalingPlanResourceForecastData(request);
+    }
+
+    @SdkInternalApi
+    final GetScalingPlanResourceForecastDataResult executeGetScalingPlanResourceForecastData(
+            GetScalingPlanResourceForecastDataRequest getScalingPlanResourceForecastDataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getScalingPlanResourceForecastDataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetScalingPlanResourceForecastDataRequest> request = null;
+        Response<GetScalingPlanResourceForecastDataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetScalingPlanResourceForecastDataRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getScalingPlanResourceForecastDataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetScalingPlanResourceForecastData");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetScalingPlanResourceForecastDataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetScalingPlanResourceForecastDataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the specified scaling plan.
      * </p>
      * <p>
      * You cannot update a scaling plan if it is in the process of being created, updated, or deleted.

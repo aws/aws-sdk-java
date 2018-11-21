@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.454-SNAPSHOT</version>
+    <version>1.11.454</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,18 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-quicksight</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-rdsdata</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-route53resolver</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -1034,6 +1046,14 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>Amazon QuickSight</title>
+                                  <packages>com.amazonaws.services.quicksight*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS RDS Data</title>
+                                  <packages>com.amazonaws.services.rdsdata*</packages>
+                              </group>
                               <group>
                                   <title>Amazon Route 53 Resolver</title>
                                   <packages>com.amazonaws.services.route53resolver*</packages>

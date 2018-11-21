@@ -68,6 +68,37 @@ public interface AWSXRayAsync extends AWSXRay {
 
     /**
      * <p>
+     * Creates a group resource with a name and a filter expression.
+     * </p>
+     * 
+     * @param createGroupRequest
+     * @return A Java Future containing the result of the CreateGroup operation returned by the service.
+     * @sample AWSXRayAsync.CreateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest createGroupRequest);
+
+    /**
+     * <p>
+     * Creates a group resource with a name and a filter expression.
+     * </p>
+     * 
+     * @param createGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateGroup operation returned by the service.
+     * @sample AWSXRayAsyncHandler.CreateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest createGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateGroupRequest, CreateGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a rule to control sampling behavior for instrumented applications. Services retrieve rules with
      * <a>GetSamplingRules</a>, and evaluate each rule in ascending order of <i>priority</i> for each request. If a rule
      * matches, the service records a trace, borrowing it from the reservoir size. After 10 seconds, the service reports
@@ -104,6 +135,37 @@ public interface AWSXRayAsync extends AWSXRay {
      */
     java.util.concurrent.Future<CreateSamplingRuleResult> createSamplingRuleAsync(CreateSamplingRuleRequest createSamplingRuleRequest,
             com.amazonaws.handlers.AsyncHandler<CreateSamplingRuleRequest, CreateSamplingRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a group resource.
+     * </p>
+     * 
+     * @param deleteGroupRequest
+     * @return A Java Future containing the result of the DeleteGroup operation returned by the service.
+     * @sample AWSXRayAsync.DeleteGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(DeleteGroupRequest deleteGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a group resource.
+     * </p>
+     * 
+     * @param deleteGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteGroup operation returned by the service.
+     * @sample AWSXRayAsyncHandler.DeleteGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(DeleteGroupRequest deleteGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteGroupRequest, DeleteGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -166,6 +228,68 @@ public interface AWSXRayAsync extends AWSXRay {
      */
     java.util.concurrent.Future<GetEncryptionConfigResult> getEncryptionConfigAsync(GetEncryptionConfigRequest getEncryptionConfigRequest,
             com.amazonaws.handlers.AsyncHandler<GetEncryptionConfigRequest, GetEncryptionConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves group resource details.
+     * </p>
+     * 
+     * @param getGroupRequest
+     * @return A Java Future containing the result of the GetGroup operation returned by the service.
+     * @sample AWSXRayAsync.GetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetGroupResult> getGroupAsync(GetGroupRequest getGroupRequest);
+
+    /**
+     * <p>
+     * Retrieves group resource details.
+     * </p>
+     * 
+     * @param getGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetGroup operation returned by the service.
+     * @sample AWSXRayAsyncHandler.GetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetGroupResult> getGroupAsync(GetGroupRequest getGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<GetGroupRequest, GetGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves all active group details.
+     * </p>
+     * 
+     * @param getGroupsRequest
+     * @return A Java Future containing the result of the GetGroups operation returned by the service.
+     * @sample AWSXRayAsync.GetGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetGroupsResult> getGroupsAsync(GetGroupsRequest getGroupsRequest);
+
+    /**
+     * <p>
+     * Retrieves all active group details.
+     * </p>
+     * 
+     * @param getGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetGroups operation returned by the service.
+     * @sample AWSXRayAsyncHandler.GetGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetGroupsResult> getGroupsAsync(GetGroupsRequest getGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetGroupsRequest, GetGroupsResult> asyncHandler);
 
     /**
      * <p>
@@ -645,6 +769,37 @@ public interface AWSXRayAsync extends AWSXRay {
      */
     java.util.concurrent.Future<PutTraceSegmentsResult> putTraceSegmentsAsync(PutTraceSegmentsRequest putTraceSegmentsRequest,
             com.amazonaws.handlers.AsyncHandler<PutTraceSegmentsRequest, PutTraceSegmentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a group resource.
+     * </p>
+     * 
+     * @param updateGroupRequest
+     * @return A Java Future containing the result of the UpdateGroup operation returned by the service.
+     * @sample AWSXRayAsync.UpdateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(UpdateGroupRequest updateGroupRequest);
+
+    /**
+     * <p>
+     * Updates a group resource.
+     * </p>
+     * 
+     * @param updateGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateGroup operation returned by the service.
+     * @sample AWSXRayAsyncHandler.UpdateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(UpdateGroupRequest updateGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateGroupRequest, UpdateGroupResult> asyncHandler);
 
     /**
      * <p>

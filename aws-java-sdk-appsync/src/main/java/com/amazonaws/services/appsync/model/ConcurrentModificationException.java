@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Another modification is being made. That modification must complete before you can make your change.
+ * Another modification is in progress at this time and it must complete before you can make your change.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

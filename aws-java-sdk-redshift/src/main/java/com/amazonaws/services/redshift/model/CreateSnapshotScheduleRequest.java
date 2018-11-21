@@ -27,7 +27,7 @@ public class CreateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The definition of the snapshot schedule. The definition is made up of schedule expressions. For example,
+     * The definition of the snapshot schedule. The definition is made up of schedule expressions, for example
      * "cron(30 12 *)" or "rate(12 hours)".
      * </p>
      */
@@ -53,11 +53,11 @@ public class CreateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The definition of the snapshot schedule. The definition is made up of schedule expressions. For example,
+     * The definition of the snapshot schedule. The definition is made up of schedule expressions, for example
      * "cron(30 12 *)" or "rate(12 hours)".
      * </p>
      * 
-     * @return The definition of the snapshot schedule. The definition is made up of schedule expressions. For example,
+     * @return The definition of the snapshot schedule. The definition is made up of schedule expressions, for example
      *         "cron(30 12 *)" or "rate(12 hours)".
      */
 
@@ -70,12 +70,12 @@ public class CreateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The definition of the snapshot schedule. The definition is made up of schedule expressions. For example,
+     * The definition of the snapshot schedule. The definition is made up of schedule expressions, for example
      * "cron(30 12 *)" or "rate(12 hours)".
      * </p>
      * 
      * @param scheduleDefinitions
-     *        The definition of the snapshot schedule. The definition is made up of schedule expressions. For example,
+     *        The definition of the snapshot schedule. The definition is made up of schedule expressions, for example
      *        "cron(30 12 *)" or "rate(12 hours)".
      */
 
@@ -90,7 +90,7 @@ public class CreateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The definition of the snapshot schedule. The definition is made up of schedule expressions. For example,
+     * The definition of the snapshot schedule. The definition is made up of schedule expressions, for example
      * "cron(30 12 *)" or "rate(12 hours)".
      * </p>
      * <p>
@@ -100,7 +100,7 @@ public class CreateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param scheduleDefinitions
-     *        The definition of the snapshot schedule. The definition is made up of schedule expressions. For example,
+     *        The definition of the snapshot schedule. The definition is made up of schedule expressions, for example
      *        "cron(30 12 *)" or "rate(12 hours)".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -117,12 +117,12 @@ public class CreateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The definition of the snapshot schedule. The definition is made up of schedule expressions. For example,
+     * The definition of the snapshot schedule. The definition is made up of schedule expressions, for example
      * "cron(30 12 *)" or "rate(12 hours)".
      * </p>
      * 
      * @param scheduleDefinitions
-     *        The definition of the snapshot schedule. The definition is made up of schedule expressions. For example,
+     *        The definition of the snapshot schedule. The definition is made up of schedule expressions, for example
      *        "cron(30 12 *)" or "rate(12 hours)".
      * @return Returns a reference to this object so that method calls can be chained together.
      */

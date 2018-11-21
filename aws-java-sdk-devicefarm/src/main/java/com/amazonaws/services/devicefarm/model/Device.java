@@ -178,12 +178,6 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<DeviceInstance> instances;
-    /**
-     * <p>
-     * Reflects how likely a device will be available for a test run.
-     * </p>
-     */
-    private String availability;
 
     /**
      * <p>
@@ -1396,79 +1390,6 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * Reflects how likely a device will be available for a test run.
-     * </p>
-     * 
-     * @param availability
-     *        Reflects how likely a device will be available for a test run.
-     * @see DeviceAvailability
-     */
-
-    public void setAvailability(String availability) {
-        this.availability = availability;
-    }
-
-    /**
-     * <p>
-     * Reflects how likely a device will be available for a test run.
-     * </p>
-     * 
-     * @return Reflects how likely a device will be available for a test run.
-     * @see DeviceAvailability
-     */
-
-    public String getAvailability() {
-        return this.availability;
-    }
-
-    /**
-     * <p>
-     * Reflects how likely a device will be available for a test run.
-     * </p>
-     * 
-     * @param availability
-     *        Reflects how likely a device will be available for a test run.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see DeviceAvailability
-     */
-
-    public Device withAvailability(String availability) {
-        setAvailability(availability);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Reflects how likely a device will be available for a test run.
-     * </p>
-     * 
-     * @param availability
-     *        Reflects how likely a device will be available for a test run.
-     * @see DeviceAvailability
-     */
-
-    public void setAvailability(DeviceAvailability availability) {
-        withAvailability(availability);
-    }
-
-    /**
-     * <p>
-     * Reflects how likely a device will be available for a test run.
-     * </p>
-     * 
-     * @param availability
-     *        Reflects how likely a device will be available for a test run.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see DeviceAvailability
-     */
-
-    public Device withAvailability(DeviceAvailability availability) {
-        this.availability = availability.toString();
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1518,9 +1439,7 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
         if (getFleetName() != null)
             sb.append("FleetName: ").append(getFleetName()).append(",");
         if (getInstances() != null)
-            sb.append("Instances: ").append(getInstances()).append(",");
-        if (getAvailability() != null)
-            sb.append("Availability: ").append(getAvailability());
+            sb.append("Instances: ").append(getInstances());
         sb.append("}");
         return sb.toString();
     }
@@ -1615,10 +1534,6 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false)
             return false;
-        if (other.getAvailability() == null ^ this.getAvailability() == null)
-            return false;
-        if (other.getAvailability() != null && other.getAvailability().equals(this.getAvailability()) == false)
-            return false;
         return true;
     }
 
@@ -1647,7 +1562,6 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFleetType() == null) ? 0 : getFleetType().hashCode());
         hashCode = prime * hashCode + ((getFleetName() == null) ? 0 : getFleetName().hashCode());
         hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
-        hashCode = prime * hashCode + ((getAvailability() == null) ? 0 : getAvailability().hashCode());
         return hashCode;
     }
 

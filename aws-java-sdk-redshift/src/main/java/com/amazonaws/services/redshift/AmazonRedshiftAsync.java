@@ -100,7 +100,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <p>
      * If you authorize access to an Amazon EC2 security group, specify <i>EC2SecurityGroupName</i> and
      * <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon Redshift cluster must be in the same AWS
-     * region.
+     * Region.
      * </p>
      * <p>
      * If you authorize access to a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR blocks, see
@@ -134,7 +134,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <p>
      * If you authorize access to an Amazon EC2 security group, specify <i>EC2SecurityGroupName</i> and
      * <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon Redshift cluster must be in the same AWS
-     * region.
+     * Region.
      * </p>
      * <p>
      * If you authorize access to a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR blocks, see
@@ -2282,7 +2282,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
     /**
      * <p>
      * Returns a list of orderable cluster options. Before you create a new cluster you can use this operation to find
-     * what options are available, such as the EC2 Availability Zones (AZ) in the specific AWS region that you can
+     * what options are available, such as the EC2 Availability Zones (AZ) in the specific AWS Region that you can
      * specify, and the node types you can request. The node types differ by available storage, memory, CPU and price.
      * With the cost involved you might want to obtain a list of cluster options in the specific region and specify
      * values when creating a cluster. For more information about managing clusters, go to <a
@@ -2303,7 +2303,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
     /**
      * <p>
      * Returns a list of orderable cluster options. Before you create a new cluster you can use this operation to find
-     * what options are available, such as the EC2 Availability Zones (AZ) in the specific AWS region that you can
+     * what options are available, such as the EC2 Availability Zones (AZ) in the specific AWS Region that you can
      * specify, and the node types you can request. The node types differ by available storage, memory, CPU and price.
      * With the cost involved you might want to obtain a list of cluster options in the specific region and specify
      * values when creating a cluster. For more information about managing clusters, go to <a
@@ -3372,11 +3372,11 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * Modifies the number of days to retain snapshots in the destination region after they are copied from the source
-     * region. By default, this only changes the retention period of copied automated snapshots. The retention periods
-     * for both new and existing copied automated snapshots will be updated with the new retention period. You can set
-     * the manual option to change only the retention periods of copied manual snapshots. If you set this option only
-     * newly copied manual snapshots will have the new retention period
+     * Modifies the number of days to retain snapshots in the destination AWS Region after they are copied from the
+     * source AWS Region. By default, this operation only changes the retention period of copied automated snapshots.
+     * The retention periods for both new and existing copied automated snapshots are updated with the new retention
+     * period. You can set the manual option to change only the retention periods of copied manual snapshots. If you set
+     * this option, only newly copied manual snapshots have the new retention period.
      * </p>
      * 
      * @param modifySnapshotCopyRetentionPeriodRequest
@@ -3391,11 +3391,11 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * Modifies the number of days to retain snapshots in the destination region after they are copied from the source
-     * region. By default, this only changes the retention period of copied automated snapshots. The retention periods
-     * for both new and existing copied automated snapshots will be updated with the new retention period. You can set
-     * the manual option to change only the retention periods of copied manual snapshots. If you set this option only
-     * newly copied manual snapshots will have the new retention period
+     * Modifies the number of days to retain snapshots in the destination AWS Region after they are copied from the
+     * source AWS Region. By default, this operation only changes the retention period of copied automated snapshots.
+     * The retention periods for both new and existing copied automated snapshots are updated with the new retention
+     * period. You can set the manual option to change only the retention periods of copied manual snapshots. If you set
+     * this option, only newly copied manual snapshots have the new retention period.
      * </p>
      * 
      * @param modifySnapshotCopyRetentionPeriodRequest
@@ -3415,7 +3415,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * Modifies a snapshot schedule. Any schedule associate with a cluster will be modified asynchronously.
+     * Modifies a snapshot schedule. Any schedule associated with a cluster is modified asynchronously.
      * </p>
      * 
      * @param modifySnapshotScheduleRequest
@@ -3428,7 +3428,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * Modifies a snapshot schedule. Any schedule associate with a cluster will be modified asynchronously.
+     * Modifies a snapshot schedule. Any schedule associated with a cluster is modified asynchronously.
      * </p>
      * 
      * @param modifySnapshotScheduleRequest

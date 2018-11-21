@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.453</version>
+    <version>1.11.454</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.453</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.454</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.453</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.454</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -131,6 +131,14 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>Amazon QuickSight</title>
+                      <packages>com.amazonaws.services.quicksight*</packages>
+                    </group>
+                    <group>
+                      <title>AWS RDS Data</title>
+                      <packages>com.amazonaws.services.rdsdata*</packages>
+                    </group>
                     <group>
                       <title>Amazon Route 53 Resolver</title>
                       <packages>com.amazonaws.services.route53resolver*</packages>
@@ -822,10 +830,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.453</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.454</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.453</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.454</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -839,6 +847,14 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>Amazon QuickSight</title>
+                      <packages>com.amazonaws.services.quicksight*</packages>
+                    </group>
+                    <group>
+                      <title>AWS RDS Data</title>
+                      <packages>com.amazonaws.services.rdsdata*</packages>
+                    </group>
                     <group>
                       <title>Amazon Route 53 Resolver</title>
                       <packages>com.amazonaws.services.route53resolver*</packages>
@@ -1526,10 +1542,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.453</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.454</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.453</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.454</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1543,6 +1559,14 @@
                 </taglet>
               </taglets>
               <groups>
+                <group>
+                  <title>Amazon QuickSight</title>
+                  <packages>com.amazonaws.services.quicksight*</packages>
+                </group>
+                <group>
+                  <title>AWS RDS Data</title>
+                  <packages>com.amazonaws.services.rdsdata*</packages>
+                </group>
                 <group>
                   <title>Amazon Route 53 Resolver</title>
                   <packages>com.amazonaws.services.route53resolver*</packages>
@@ -2443,7 +2467,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.453-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.454-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>

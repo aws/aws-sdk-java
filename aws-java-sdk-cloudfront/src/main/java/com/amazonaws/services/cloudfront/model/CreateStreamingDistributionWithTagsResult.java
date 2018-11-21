@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * The returned result of the corresponding request.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CreateStreamingDistributionWithTags"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateStreamingDistributionWithTags"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -40,7 +40,11 @@ public class CreateStreamingDistributionWithTagsResult extends com.amazonaws.Ama
      * </p>
      */
     private String location;
-
+    /**
+     * <p>
+     * The current version of the distribution created.
+     * </p>
+     */
     private String eTag;
 
     /**
@@ -130,7 +134,12 @@ public class CreateStreamingDistributionWithTagsResult extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * The current version of the distribution created.
+     * </p>
+     * 
      * @param eTag
+     *        The current version of the distribution created.
      */
 
     public void setETag(String eTag) {
@@ -138,7 +147,11 @@ public class CreateStreamingDistributionWithTagsResult extends com.amazonaws.Ama
     }
 
     /**
-     * @return
+     * <p>
+     * The current version of the distribution created.
+     * </p>
+     * 
+     * @return The current version of the distribution created.
      */
 
     public String getETag() {
@@ -146,7 +159,12 @@ public class CreateStreamingDistributionWithTagsResult extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * The current version of the distribution created.
+     * </p>
+     * 
      * @param eTag
+     *        The current version of the distribution created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

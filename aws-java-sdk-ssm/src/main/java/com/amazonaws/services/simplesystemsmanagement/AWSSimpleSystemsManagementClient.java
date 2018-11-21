@@ -298,6 +298,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("AutomationExecutionLimitExceededException").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.AutomationExecutionLimitExceededException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateDocumentVersionName").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.DuplicateDocumentVersionNameException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNotificationConfig").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidNotificationConfigException.class))
                     .addErrorMetadata(
@@ -7635,6 +7638,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws DuplicateDocumentContentException
      *         The content of the association document matches another document. Change the content of the document and
      *         try again.
+     * @throws DuplicateDocumentVersionNameException
+     *         The version name has already been used in this document. Specify a different version name, and then try
+     *         again.
      * @throws InvalidDocumentContentException
      *         The content for the document is not valid.
      * @throws InvalidDocumentVersionException
@@ -7643,6 +7649,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         The version of the document schema is not supported.
      * @throws InvalidDocumentException
      *         The specified document does not exist.
+     * @throws InvalidDocumentOperationException
+     *         You attempted to delete a document while it is still shared. You must stop sharing the document before
+     *         you can delete it.
      * @sample AWSSimpleSystemsManagement.UpdateDocument
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument" target="_top">AWS API
      *      Documentation</a>

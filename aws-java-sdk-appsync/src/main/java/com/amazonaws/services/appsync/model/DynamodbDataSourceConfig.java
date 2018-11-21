@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a DynamoDB data source configuration.
+ * Describes an Amazon DynamoDB data source configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DynamodbDataSourceConfig" target="_top">AWS
@@ -36,7 +36,7 @@ public class DynamodbDataSourceConfig implements Serializable, Cloneable, Struct
     private String tableName;
     /**
      * <p>
-     * The AWS region.
+     * The AWS Region.
      * </p>
      */
     private String awsRegion;
@@ -89,11 +89,11 @@ public class DynamodbDataSourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The AWS region.
+     * The AWS Region.
      * </p>
      * 
      * @param awsRegion
-     *        The AWS region.
+     *        The AWS Region.
      */
 
     public void setAwsRegion(String awsRegion) {
@@ -102,10 +102,10 @@ public class DynamodbDataSourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The AWS region.
+     * The AWS Region.
      * </p>
      * 
-     * @return The AWS region.
+     * @return The AWS Region.
      */
 
     public String getAwsRegion() {
@@ -114,11 +114,11 @@ public class DynamodbDataSourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The AWS region.
+     * The AWS Region.
      * </p>
      * 
      * @param awsRegion
-     *        The AWS region.
+     *        The AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

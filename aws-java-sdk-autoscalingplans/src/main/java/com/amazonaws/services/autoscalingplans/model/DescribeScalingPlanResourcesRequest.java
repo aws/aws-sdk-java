@@ -33,13 +33,13 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
     private String scalingPlanName;
     /**
      * <p>
-     * The version of the scaling plan.
+     * The version number of the scaling plan.
      * </p>
      */
     private Long scalingPlanVersion;
     /**
      * <p>
-     * The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.
+     * The maximum number of scalable resources to return. The value must be between 1 and 50. The default value is 50.
      * </p>
      */
     private Integer maxResults;
@@ -92,11 +92,11 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The version of the scaling plan.
+     * The version number of the scaling plan.
      * </p>
      * 
      * @param scalingPlanVersion
-     *        The version of the scaling plan.
+     *        The version number of the scaling plan.
      */
 
     public void setScalingPlanVersion(Long scalingPlanVersion) {
@@ -105,10 +105,10 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The version of the scaling plan.
+     * The version number of the scaling plan.
      * </p>
      * 
-     * @return The version of the scaling plan.
+     * @return The version number of the scaling plan.
      */
 
     public Long getScalingPlanVersion() {
@@ -117,11 +117,11 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The version of the scaling plan.
+     * The version number of the scaling plan.
      * </p>
      * 
      * @param scalingPlanVersion
-     *        The version of the scaling plan.
+     *        The version number of the scaling plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +132,11 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.
+     * The maximum number of scalable resources to return. The value must be between 1 and 50. The default value is 50.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of scalable resources to return. This value can be between 1 and 50. The default value
+     *        The maximum number of scalable resources to return. The value must be between 1 and 50. The default value
      *        is 50.
      */
 
@@ -146,10 +146,10 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.
+     * The maximum number of scalable resources to return. The value must be between 1 and 50. The default value is 50.
      * </p>
      * 
-     * @return The maximum number of scalable resources to return. This value can be between 1 and 50. The default value
+     * @return The maximum number of scalable resources to return. The value must be between 1 and 50. The default value
      *         is 50.
      */
 
@@ -159,11 +159,11 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.
+     * The maximum number of scalable resources to return. The value must be between 1 and 50. The default value is 50.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of scalable resources to return. This value can be between 1 and 50. The default value
+     *        The maximum number of scalable resources to return. The value must be between 1 and 50. The default value
      *        is 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -36,7 +36,7 @@ public class ElasticsearchDataSourceConfig implements Serializable, Cloneable, S
     private String endpoint;
     /**
      * <p>
-     * The AWS region.
+     * The AWS Region.
      * </p>
      */
     private String awsRegion;
@@ -83,11 +83,11 @@ public class ElasticsearchDataSourceConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The AWS region.
+     * The AWS Region.
      * </p>
      * 
      * @param awsRegion
-     *        The AWS region.
+     *        The AWS Region.
      */
 
     public void setAwsRegion(String awsRegion) {
@@ -96,10 +96,10 @@ public class ElasticsearchDataSourceConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The AWS region.
+     * The AWS Region.
      * </p>
      * 
-     * @return The AWS region.
+     * @return The AWS Region.
      */
 
     public String getAwsRegion() {
@@ -108,11 +108,11 @@ public class ElasticsearchDataSourceConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The AWS region.
+     * The AWS Region.
      * </p>
      * 
      * @param awsRegion
-     *        The AWS region.
+     *        The AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

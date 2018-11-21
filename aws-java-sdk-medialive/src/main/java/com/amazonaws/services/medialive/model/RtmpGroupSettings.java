@@ -45,6 +45,13 @@ public class RtmpGroupSettings implements Serializable, Cloneable, StructuredPoj
      */
     private String captionData;
     /**
+     * Controls the behavior of this RTMP group if input becomes unavailable.
+     * 
+     * - emitOutput: Emit a slate until input returns. - pauseOutput: Stop transmitting data until input returns. This
+     * does not close the underlying RTMP connection.
+     */
+    private String inputLossAction;
+    /**
      * If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never
      * restart.
      */
@@ -294,6 +301,81 @@ public class RtmpGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Controls the behavior of this RTMP group if input becomes unavailable.
+     * 
+     * - emitOutput: Emit a slate until input returns. - pauseOutput: Stop transmitting data until input returns. This
+     * does not close the underlying RTMP connection.
+     * 
+     * @param inputLossAction
+     *        Controls the behavior of this RTMP group if input becomes unavailable.
+     * 
+     *        - emitOutput: Emit a slate until input returns. - pauseOutput: Stop transmitting data until input returns.
+     *        This does not close the underlying RTMP connection.
+     * @see InputLossActionForRtmpOut
+     */
+
+    public void setInputLossAction(String inputLossAction) {
+        this.inputLossAction = inputLossAction;
+    }
+
+    /**
+     * Controls the behavior of this RTMP group if input becomes unavailable.
+     * 
+     * - emitOutput: Emit a slate until input returns. - pauseOutput: Stop transmitting data until input returns. This
+     * does not close the underlying RTMP connection.
+     * 
+     * @return Controls the behavior of this RTMP group if input becomes unavailable.
+     * 
+     *         - emitOutput: Emit a slate until input returns. - pauseOutput: Stop transmitting data until input
+     *         returns. This does not close the underlying RTMP connection.
+     * @see InputLossActionForRtmpOut
+     */
+
+    public String getInputLossAction() {
+        return this.inputLossAction;
+    }
+
+    /**
+     * Controls the behavior of this RTMP group if input becomes unavailable.
+     * 
+     * - emitOutput: Emit a slate until input returns. - pauseOutput: Stop transmitting data until input returns. This
+     * does not close the underlying RTMP connection.
+     * 
+     * @param inputLossAction
+     *        Controls the behavior of this RTMP group if input becomes unavailable.
+     * 
+     *        - emitOutput: Emit a slate until input returns. - pauseOutput: Stop transmitting data until input returns.
+     *        This does not close the underlying RTMP connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputLossActionForRtmpOut
+     */
+
+    public RtmpGroupSettings withInputLossAction(String inputLossAction) {
+        setInputLossAction(inputLossAction);
+        return this;
+    }
+
+    /**
+     * Controls the behavior of this RTMP group if input becomes unavailable.
+     * 
+     * - emitOutput: Emit a slate until input returns. - pauseOutput: Stop transmitting data until input returns. This
+     * does not close the underlying RTMP connection.
+     * 
+     * @param inputLossAction
+     *        Controls the behavior of this RTMP group if input becomes unavailable.
+     * 
+     *        - emitOutput: Emit a slate until input returns. - pauseOutput: Stop transmitting data until input returns.
+     *        This does not close the underlying RTMP connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputLossActionForRtmpOut
+     */
+
+    public RtmpGroupSettings withInputLossAction(InputLossActionForRtmpOut inputLossAction) {
+        this.inputLossAction = inputLossAction.toString();
+        return this;
+    }
+
+    /**
      * If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never
      * restart.
      * 
@@ -352,6 +434,8 @@ public class RtmpGroupSettings implements Serializable, Cloneable, StructuredPoj
             sb.append("CacheLength: ").append(getCacheLength()).append(",");
         if (getCaptionData() != null)
             sb.append("CaptionData: ").append(getCaptionData()).append(",");
+        if (getInputLossAction() != null)
+            sb.append("InputLossAction: ").append(getInputLossAction()).append(",");
         if (getRestartDelay() != null)
             sb.append("RestartDelay: ").append(getRestartDelay());
         sb.append("}");
@@ -384,6 +468,10 @@ public class RtmpGroupSettings implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getCaptionData() != null && other.getCaptionData().equals(this.getCaptionData()) == false)
             return false;
+        if (other.getInputLossAction() == null ^ this.getInputLossAction() == null)
+            return false;
+        if (other.getInputLossAction() != null && other.getInputLossAction().equals(this.getInputLossAction()) == false)
+            return false;
         if (other.getRestartDelay() == null ^ this.getRestartDelay() == null)
             return false;
         if (other.getRestartDelay() != null && other.getRestartDelay().equals(this.getRestartDelay()) == false)
@@ -400,6 +488,7 @@ public class RtmpGroupSettings implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getCacheFullBehavior() == null) ? 0 : getCacheFullBehavior().hashCode());
         hashCode = prime * hashCode + ((getCacheLength() == null) ? 0 : getCacheLength().hashCode());
         hashCode = prime * hashCode + ((getCaptionData() == null) ? 0 : getCaptionData().hashCode());
+        hashCode = prime * hashCode + ((getInputLossAction() == null) ? 0 : getInputLossAction().hashCode());
         hashCode = prime * hashCode + ((getRestartDelay() == null) ? 0 : getRestartDelay().hashCode());
         return hashCode;
     }

@@ -64,6 +64,10 @@ public class RtmpGroupSettingsJsonUnmarshaller implements Unmarshaller<RtmpGroup
                     context.nextToken();
                     rtmpGroupSettings.setCaptionData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("inputLossAction", targetDepth)) {
+                    context.nextToken();
+                    rtmpGroupSettings.setInputLossAction(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("restartDelay", targetDepth)) {
                     context.nextToken();
                     rtmpGroupSettings.setRestartDelay(context.getUnmarshaller(Integer.class).unmarshall(context));

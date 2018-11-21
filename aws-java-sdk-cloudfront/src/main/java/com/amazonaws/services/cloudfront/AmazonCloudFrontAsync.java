@@ -49,7 +49,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.CreateCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CreateCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateCloudFrontOriginAccessIdentityResult> createCloudFrontOriginAccessIdentityAsync(
@@ -73,7 +73,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.CreateCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CreateCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateCloudFrontOriginAccessIdentityResult> createCloudFrontOriginAccessIdentityAsync(
@@ -106,7 +106,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to create a new distribution.
      * @return A Java Future containing the result of the CreateDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.CreateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CreateDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateDistributionResult> createDistributionAsync(CreateDistributionRequest createDistributionRequest);
@@ -141,7 +141,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.CreateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CreateDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateDistributionResult> createDistributionAsync(CreateDistributionRequest createDistributionRequest,
@@ -156,7 +156,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to create a new distribution with tags.
      * @return A Java Future containing the result of the CreateDistributionWithTags operation returned by the service.
      * @sample AmazonCloudFrontAsync.CreateDistributionWithTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CreateDistributionWithTags"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateDistributionWithTagsResult> createDistributionWithTagsAsync(
@@ -175,7 +175,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDistributionWithTags operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.CreateDistributionWithTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CreateDistributionWithTags"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateDistributionWithTagsResult> createDistributionWithTagsAsync(
@@ -191,7 +191,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateFieldLevelEncryptionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.CreateFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CreateFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateFieldLevelEncryptionConfigResult> createFieldLevelEncryptionConfigAsync(
@@ -210,7 +210,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateFieldLevelEncryptionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.CreateFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CreateFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateFieldLevelEncryptionConfigResult> createFieldLevelEncryptionConfigAsync(
@@ -226,7 +226,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateFieldLevelEncryptionProfile operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.CreateFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CreateFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateFieldLevelEncryptionProfileResult> createFieldLevelEncryptionProfileAsync(
@@ -245,7 +245,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateFieldLevelEncryptionProfile operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.CreateFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CreateFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateFieldLevelEncryptionProfileResult> createFieldLevelEncryptionProfileAsync(
@@ -261,7 +261,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to create an invalidation.
      * @return A Java Future containing the result of the CreateInvalidation operation returned by the service.
      * @sample AmazonCloudFrontAsync.CreateInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CreateInvalidation" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateInvalidation" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateInvalidationResult> createInvalidationAsync(CreateInvalidationRequest createInvalidationRequest);
@@ -279,7 +279,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateInvalidation operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.CreateInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CreateInvalidation" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateInvalidation" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateInvalidationResult> createInvalidationAsync(CreateInvalidationRequest createInvalidationRequest,
@@ -294,7 +294,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @param createPublicKeyRequest
      * @return A Java Future containing the result of the CreatePublicKey operation returned by the service.
      * @sample AmazonCloudFrontAsync.CreatePublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CreatePublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreatePublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreatePublicKeyResult> createPublicKeyAsync(CreatePublicKeyRequest createPublicKeyRequest);
@@ -312,7 +312,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreatePublicKey operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.CreatePublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CreatePublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreatePublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreatePublicKeyResult> createPublicKeyAsync(CreatePublicKeyRequest createPublicKeyRequest,
@@ -355,7 +355,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to create a new streaming distribution.
      * @return A Java Future containing the result of the CreateStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.CreateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CreateStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateStreamingDistributionResult> createStreamingDistributionAsync(
@@ -402,7 +402,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.CreateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CreateStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateStreamingDistributionResult> createStreamingDistributionAsync(
@@ -419,7 +419,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateStreamingDistributionWithTags operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.CreateStreamingDistributionWithTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CreateStreamingDistributionWithTags"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateStreamingDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateStreamingDistributionWithTagsResult> createStreamingDistributionWithTagsAsync(
@@ -439,7 +439,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateStreamingDistributionWithTags operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.CreateStreamingDistributionWithTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CreateStreamingDistributionWithTags"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateStreamingDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateStreamingDistributionWithTagsResult> createStreamingDistributionWithTagsAsync(
@@ -456,7 +456,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the DeleteCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.DeleteCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/DeleteCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteCloudFrontOriginAccessIdentityResult> deleteCloudFrontOriginAccessIdentityAsync(
@@ -476,7 +476,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the DeleteCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.DeleteCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/DeleteCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteCloudFrontOriginAccessIdentityResult> deleteCloudFrontOriginAccessIdentityAsync(
@@ -552,7 +552,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        >Deleting a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return A Java Future containing the result of the DeleteDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.DeleteDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/DeleteDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteDistributionResult> deleteDistributionAsync(DeleteDistributionRequest deleteDistributionRequest);
@@ -630,7 +630,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.DeleteDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/DeleteDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteDistributionResult> deleteDistributionAsync(DeleteDistributionRequest deleteDistributionRequest,
@@ -645,7 +645,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the DeleteFieldLevelEncryptionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.DeleteFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/DeleteFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteFieldLevelEncryptionConfigResult> deleteFieldLevelEncryptionConfigAsync(
@@ -664,7 +664,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the DeleteFieldLevelEncryptionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.DeleteFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/DeleteFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteFieldLevelEncryptionConfigResult> deleteFieldLevelEncryptionConfigAsync(
@@ -680,7 +680,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the DeleteFieldLevelEncryptionProfile operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.DeleteFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/DeleteFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteFieldLevelEncryptionProfileResult> deleteFieldLevelEncryptionProfileAsync(
@@ -699,7 +699,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the DeleteFieldLevelEncryptionProfile operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.DeleteFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/DeleteFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteFieldLevelEncryptionProfileResult> deleteFieldLevelEncryptionProfileAsync(
@@ -714,7 +714,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @param deletePublicKeyRequest
      * @return A Java Future containing the result of the DeletePublicKey operation returned by the service.
      * @sample AmazonCloudFrontAsync.DeletePublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/DeletePublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeletePublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeletePublicKeyResult> deletePublicKeyAsync(DeletePublicKeyRequest deletePublicKeyRequest);
@@ -731,7 +731,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeletePublicKey operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.DeletePublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/DeletePublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeletePublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeletePublicKeyResult> deletePublicKeyAsync(DeletePublicKeyRequest deletePublicKeyRequest,
@@ -807,7 +807,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to delete a streaming distribution.
      * @return A Java Future containing the result of the DeleteStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.DeleteStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/DeleteStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteStreamingDistributionResult> deleteStreamingDistributionAsync(
@@ -887,7 +887,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.DeleteStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/DeleteStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteStreamingDistributionResult> deleteStreamingDistributionAsync(
@@ -904,7 +904,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.GetCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetCloudFrontOriginAccessIdentityResult> getCloudFrontOriginAccessIdentityAsync(
@@ -924,7 +924,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.GetCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetCloudFrontOriginAccessIdentityResult> getCloudFrontOriginAccessIdentityAsync(
@@ -943,7 +943,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *         the service.
      * @sample AmazonCloudFrontAsync.GetCloudFrontOriginAccessIdentityConfig
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetCloudFrontOriginAccessIdentityConfig"
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetCloudFrontOriginAccessIdentityConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetCloudFrontOriginAccessIdentityConfigResult> getCloudFrontOriginAccessIdentityConfigAsync(
@@ -965,7 +965,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *         the service.
      * @sample AmazonCloudFrontAsyncHandler.GetCloudFrontOriginAccessIdentityConfig
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetCloudFrontOriginAccessIdentityConfig"
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetCloudFrontOriginAccessIdentityConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetCloudFrontOriginAccessIdentityConfigResult> getCloudFrontOriginAccessIdentityConfigAsync(
@@ -981,7 +981,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to get a distribution's information.
      * @return A Java Future containing the result of the GetDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetDistribution" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetDistribution" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetDistributionResult> getDistributionAsync(GetDistributionRequest getDistributionRequest);
@@ -999,7 +999,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.GetDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetDistribution" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetDistribution" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetDistributionResult> getDistributionAsync(GetDistributionRequest getDistributionRequest,
@@ -1014,7 +1014,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to get a distribution configuration.
      * @return A Java Future containing the result of the GetDistributionConfig operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetDistributionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetDistributionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetDistributionConfigResult> getDistributionConfigAsync(GetDistributionConfigRequest getDistributionConfigRequest);
@@ -1032,7 +1032,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDistributionConfig operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.GetDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetDistributionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetDistributionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetDistributionConfigResult> getDistributionConfigAsync(GetDistributionConfigRequest getDistributionConfigRequest,
@@ -1046,7 +1046,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @param getFieldLevelEncryptionRequest
      * @return A Java Future containing the result of the GetFieldLevelEncryption operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetFieldLevelEncryption
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetFieldLevelEncryption"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryption"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetFieldLevelEncryptionResult> getFieldLevelEncryptionAsync(GetFieldLevelEncryptionRequest getFieldLevelEncryptionRequest);
@@ -1063,7 +1063,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetFieldLevelEncryption operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.GetFieldLevelEncryption
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetFieldLevelEncryption"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryption"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetFieldLevelEncryptionResult> getFieldLevelEncryptionAsync(GetFieldLevelEncryptionRequest getFieldLevelEncryptionRequest,
@@ -1078,7 +1078,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetFieldLevelEncryptionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.GetFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetFieldLevelEncryptionConfigResult> getFieldLevelEncryptionConfigAsync(
@@ -1097,7 +1097,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetFieldLevelEncryptionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.GetFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetFieldLevelEncryptionConfigResult> getFieldLevelEncryptionConfigAsync(
@@ -1113,7 +1113,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetFieldLevelEncryptionProfile operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.GetFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetFieldLevelEncryptionProfileResult> getFieldLevelEncryptionProfileAsync(
@@ -1132,7 +1132,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetFieldLevelEncryptionProfile operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.GetFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetFieldLevelEncryptionProfileResult> getFieldLevelEncryptionProfileAsync(
@@ -1148,7 +1148,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetFieldLevelEncryptionProfileConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.GetFieldLevelEncryptionProfileConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetFieldLevelEncryptionProfileConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryptionProfileConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetFieldLevelEncryptionProfileConfigResult> getFieldLevelEncryptionProfileConfigAsync(
@@ -1167,7 +1167,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetFieldLevelEncryptionProfileConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.GetFieldLevelEncryptionProfileConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetFieldLevelEncryptionProfileConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryptionProfileConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetFieldLevelEncryptionProfileConfigResult> getFieldLevelEncryptionProfileConfigAsync(
@@ -1183,7 +1183,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to get an invalidation's information.
      * @return A Java Future containing the result of the GetInvalidation operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetInvalidation" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetInvalidation" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetInvalidationResult> getInvalidationAsync(GetInvalidationRequest getInvalidationRequest);
@@ -1201,7 +1201,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetInvalidation operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.GetInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetInvalidation" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetInvalidation" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetInvalidationResult> getInvalidationAsync(GetInvalidationRequest getInvalidationRequest,
@@ -1215,7 +1215,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @param getPublicKeyRequest
      * @return A Java Future containing the result of the GetPublicKey operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetPublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetPublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetPublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetPublicKeyResult> getPublicKeyAsync(GetPublicKeyRequest getPublicKeyRequest);
@@ -1232,7 +1232,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetPublicKey operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.GetPublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetPublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetPublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetPublicKeyResult> getPublicKeyAsync(GetPublicKeyRequest getPublicKeyRequest,
@@ -1246,7 +1246,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @param getPublicKeyConfigRequest
      * @return A Java Future containing the result of the GetPublicKeyConfig operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetPublicKeyConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetPublicKeyConfig" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetPublicKeyConfig" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<GetPublicKeyConfigResult> getPublicKeyConfigAsync(GetPublicKeyConfigRequest getPublicKeyConfigRequest);
@@ -1263,7 +1263,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetPublicKeyConfig operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.GetPublicKeyConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetPublicKeyConfig" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetPublicKeyConfig" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<GetPublicKeyConfigResult> getPublicKeyConfigAsync(GetPublicKeyConfigRequest getPublicKeyConfigRequest,
@@ -1278,7 +1278,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to get a streaming distribution's information.
      * @return A Java Future containing the result of the GetStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetStreamingDistributionResult> getStreamingDistributionAsync(GetStreamingDistributionRequest getStreamingDistributionRequest);
@@ -1296,7 +1296,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.GetStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetStreamingDistributionResult> getStreamingDistributionAsync(GetStreamingDistributionRequest getStreamingDistributionRequest,
@@ -1312,7 +1312,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetStreamingDistributionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.GetStreamingDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetStreamingDistributionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetStreamingDistributionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetStreamingDistributionConfigResult> getStreamingDistributionConfigAsync(
@@ -1332,7 +1332,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetStreamingDistributionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.GetStreamingDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetStreamingDistributionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetStreamingDistributionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetStreamingDistributionConfigResult> getStreamingDistributionConfigAsync(
@@ -1349,7 +1349,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the ListCloudFrontOriginAccessIdentities operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.ListCloudFrontOriginAccessIdentities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ListCloudFrontOriginAccessIdentities"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListCloudFrontOriginAccessIdentities"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListCloudFrontOriginAccessIdentitiesResult> listCloudFrontOriginAccessIdentitiesAsync(
@@ -1369,7 +1369,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the ListCloudFrontOriginAccessIdentities operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.ListCloudFrontOriginAccessIdentities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ListCloudFrontOriginAccessIdentities"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListCloudFrontOriginAccessIdentities"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListCloudFrontOriginAccessIdentitiesResult> listCloudFrontOriginAccessIdentitiesAsync(
@@ -1385,7 +1385,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to list your distributions.
      * @return A Java Future containing the result of the ListDistributions operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ListDistributions" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListDistributions" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<ListDistributionsResult> listDistributionsAsync(ListDistributionsRequest listDistributionsRequest);
@@ -1403,7 +1403,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDistributions operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.ListDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ListDistributions" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListDistributions" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<ListDistributionsResult> listDistributionsAsync(ListDistributionsRequest listDistributionsRequest,
@@ -1418,7 +1418,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to list distributions that are associated with a specified AWS WAF web ACL.
      * @return A Java Future containing the result of the ListDistributionsByWebACLId operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListDistributionsByWebACLId
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ListDistributionsByWebACLId"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListDistributionsByWebACLId"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListDistributionsByWebACLIdResult> listDistributionsByWebACLIdAsync(
@@ -1437,7 +1437,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDistributionsByWebACLId operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.ListDistributionsByWebACLId
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ListDistributionsByWebACLId"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListDistributionsByWebACLId"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListDistributionsByWebACLIdResult> listDistributionsByWebACLIdAsync(
@@ -1453,7 +1453,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the ListFieldLevelEncryptionConfigs operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.ListFieldLevelEncryptionConfigs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ListFieldLevelEncryptionConfigs"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListFieldLevelEncryptionConfigs"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListFieldLevelEncryptionConfigsResult> listFieldLevelEncryptionConfigsAsync(
@@ -1472,7 +1472,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the ListFieldLevelEncryptionConfigs operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.ListFieldLevelEncryptionConfigs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ListFieldLevelEncryptionConfigs"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListFieldLevelEncryptionConfigs"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListFieldLevelEncryptionConfigsResult> listFieldLevelEncryptionConfigsAsync(
@@ -1488,7 +1488,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the ListFieldLevelEncryptionProfiles operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.ListFieldLevelEncryptionProfiles
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ListFieldLevelEncryptionProfiles"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListFieldLevelEncryptionProfiles"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListFieldLevelEncryptionProfilesResult> listFieldLevelEncryptionProfilesAsync(
@@ -1507,7 +1507,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the ListFieldLevelEncryptionProfiles operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.ListFieldLevelEncryptionProfiles
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ListFieldLevelEncryptionProfiles"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListFieldLevelEncryptionProfiles"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListFieldLevelEncryptionProfilesResult> listFieldLevelEncryptionProfilesAsync(
@@ -1523,7 +1523,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to list invalidations.
      * @return A Java Future containing the result of the ListInvalidations operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListInvalidations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ListInvalidations" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListInvalidations" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<ListInvalidationsResult> listInvalidationsAsync(ListInvalidationsRequest listInvalidationsRequest);
@@ -1541,7 +1541,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListInvalidations operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.ListInvalidations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ListInvalidations" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListInvalidations" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<ListInvalidationsResult> listInvalidationsAsync(ListInvalidationsRequest listInvalidationsRequest,
@@ -1555,7 +1555,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @param listPublicKeysRequest
      * @return A Java Future containing the result of the ListPublicKeys operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListPublicKeys
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ListPublicKeys" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListPublicKeys" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListPublicKeysResult> listPublicKeysAsync(ListPublicKeysRequest listPublicKeysRequest);
@@ -1572,7 +1572,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListPublicKeys operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.ListPublicKeys
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ListPublicKeys" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListPublicKeys" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListPublicKeysResult> listPublicKeysAsync(ListPublicKeysRequest listPublicKeysRequest,
@@ -1587,7 +1587,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to list your streaming distributions.
      * @return A Java Future containing the result of the ListStreamingDistributions operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListStreamingDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ListStreamingDistributions"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListStreamingDistributions"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListStreamingDistributionsResult> listStreamingDistributionsAsync(
@@ -1606,7 +1606,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListStreamingDistributions operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.ListStreamingDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ListStreamingDistributions"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListStreamingDistributions"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListStreamingDistributionsResult> listStreamingDistributionsAsync(
@@ -1622,7 +1622,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to list tags for a CloudFront resource.
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ListTagsForResource" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
@@ -1640,7 +1640,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ListTagsForResource" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
@@ -1655,7 +1655,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to add tags to a CloudFront resource.
      * @return A Java Future containing the result of the TagResource operation returned by the service.
      * @sample AmazonCloudFrontAsync.TagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/TagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/TagResource" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
@@ -1673,7 +1673,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the TagResource operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.TagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/TagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/TagResource" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
@@ -1688,7 +1688,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to remove tags from a CloudFront resource.
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
      * @sample AmazonCloudFrontAsync.UntagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/UntagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UntagResource" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
@@ -1706,7 +1706,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.UntagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/UntagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UntagResource" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
@@ -1722,7 +1722,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the UpdateCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.UpdateCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/UpdateCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateCloudFrontOriginAccessIdentityResult> updateCloudFrontOriginAccessIdentityAsync(
@@ -1742,7 +1742,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the UpdateCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.UpdateCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/UpdateCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateCloudFrontOriginAccessIdentityResult> updateCloudFrontOriginAccessIdentityAsync(
@@ -1863,7 +1863,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to update a distribution.
      * @return A Java Future containing the result of the UpdateDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.UpdateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/UpdateDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateDistributionResult> updateDistributionAsync(UpdateDistributionRequest updateDistributionRequest);
@@ -1986,7 +1986,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.UpdateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/UpdateDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateDistributionResult> updateDistributionAsync(UpdateDistributionRequest updateDistributionRequest,
@@ -2001,7 +2001,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the UpdateFieldLevelEncryptionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.UpdateFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/UpdateFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateFieldLevelEncryptionConfigResult> updateFieldLevelEncryptionConfigAsync(
@@ -2020,7 +2020,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the UpdateFieldLevelEncryptionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.UpdateFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/UpdateFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateFieldLevelEncryptionConfigResult> updateFieldLevelEncryptionConfigAsync(
@@ -2036,7 +2036,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the UpdateFieldLevelEncryptionProfile operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.UpdateFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/UpdateFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateFieldLevelEncryptionProfileResult> updateFieldLevelEncryptionProfileAsync(
@@ -2055,7 +2055,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the UpdateFieldLevelEncryptionProfile operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.UpdateFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/UpdateFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateFieldLevelEncryptionProfileResult> updateFieldLevelEncryptionProfileAsync(
@@ -2070,7 +2070,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @param updatePublicKeyRequest
      * @return A Java Future containing the result of the UpdatePublicKey operation returned by the service.
      * @sample AmazonCloudFrontAsync.UpdatePublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/UpdatePublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdatePublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdatePublicKeyResult> updatePublicKeyAsync(UpdatePublicKeyRequest updatePublicKeyRequest);
@@ -2087,7 +2087,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdatePublicKey operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.UpdatePublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/UpdatePublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdatePublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdatePublicKeyResult> updatePublicKeyAsync(UpdatePublicKeyRequest updatePublicKeyRequest,
@@ -2102,7 +2102,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to update a streaming distribution.
      * @return A Java Future containing the result of the UpdateStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.UpdateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/UpdateStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateStreamingDistributionResult> updateStreamingDistributionAsync(
@@ -2121,7 +2121,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.UpdateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/UpdateStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateStreamingDistributionResult> updateStreamingDistributionAsync(

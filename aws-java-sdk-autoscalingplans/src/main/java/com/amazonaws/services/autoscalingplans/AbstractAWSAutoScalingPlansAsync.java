@@ -80,6 +80,21 @@ public class AbstractAWSAutoScalingPlansAsync extends AbstractAWSAutoScalingPlan
     }
 
     @Override
+    public java.util.concurrent.Future<GetScalingPlanResourceForecastDataResult> getScalingPlanResourceForecastDataAsync(
+            GetScalingPlanResourceForecastDataRequest request) {
+
+        return getScalingPlanResourceForecastDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetScalingPlanResourceForecastDataResult> getScalingPlanResourceForecastDataAsync(
+            GetScalingPlanResourceForecastDataRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetScalingPlanResourceForecastDataRequest, GetScalingPlanResourceForecastDataResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateScalingPlanResult> updateScalingPlanAsync(UpdateScalingPlanRequest request) {
 
         return updateScalingPlanAsync(request, null);

@@ -64,6 +64,10 @@ public class DocumentDescriptionJsonUnmarshaller implements Unmarshaller<Documen
                     context.nextToken();
                     documentDescription.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("VersionName", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Owner", targetDepth)) {
                     context.nextToken();
                     documentDescription.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
@@ -75,6 +79,10 @@ public class DocumentDescriptionJsonUnmarshaller implements Unmarshaller<Documen
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     documentDescription.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StatusInformation", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setStatusInformation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentVersion", targetDepth)) {
                     context.nextToken();
@@ -120,6 +128,11 @@ public class DocumentDescriptionJsonUnmarshaller implements Unmarshaller<Documen
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     documentDescription.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("AttachmentsInformation", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setAttachmentsInformation(new ListUnmarshaller<AttachmentInformation>(AttachmentInformationJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

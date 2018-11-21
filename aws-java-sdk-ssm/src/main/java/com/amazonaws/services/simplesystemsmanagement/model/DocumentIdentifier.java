@@ -42,6 +42,13 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
     private String owner;
     /**
      * <p>
+     * An optional field specifying the version of the artifact associated with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     * </p>
+     */
+    private String versionName;
+    /**
+     * <p>
      * The operating system platform.
      * </p>
      */
@@ -163,6 +170,52 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     public DocumentIdentifier withOwner(String owner) {
         setOwner(owner);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional field specifying the version of the artifact associated with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     * </p>
+     * 
+     * @param versionName
+     *        An optional field specifying the version of the artifact associated with the document. For example,
+     *        "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     */
+
+    public void setVersionName(String versionName) {
+        this.versionName = versionName;
+    }
+
+    /**
+     * <p>
+     * An optional field specifying the version of the artifact associated with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     * </p>
+     * 
+     * @return An optional field specifying the version of the artifact associated with the document. For example,
+     *         "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     */
+
+    public String getVersionName() {
+        return this.versionName;
+    }
+
+    /**
+     * <p>
+     * An optional field specifying the version of the artifact associated with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     * </p>
+     * 
+     * @param versionName
+     *        An optional field specifying the version of the artifact associated with the document. For example,
+     *        "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentIdentifier withVersionName(String versionName) {
+        setVersionName(versionName);
         return this;
     }
 
@@ -639,6 +692,8 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
             sb.append("Name: ").append(getName()).append(",");
         if (getOwner() != null)
             sb.append("Owner: ").append(getOwner()).append(",");
+        if (getVersionName() != null)
+            sb.append("VersionName: ").append(getVersionName()).append(",");
         if (getPlatformTypes() != null)
             sb.append("PlatformTypes: ").append(getPlatformTypes()).append(",");
         if (getDocumentVersion() != null)
@@ -674,6 +729,10 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
         if (other.getOwner() == null ^ this.getOwner() == null)
             return false;
         if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
+            return false;
+        if (other.getVersionName() == null ^ this.getVersionName() == null)
+            return false;
+        if (other.getVersionName() != null && other.getVersionName().equals(this.getVersionName()) == false)
             return false;
         if (other.getPlatformTypes() == null ^ this.getPlatformTypes() == null)
             return false;
@@ -713,6 +772,7 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
+        hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getPlatformTypes() == null) ? 0 : getPlatformTypes().hashCode());
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getDocumentType() == null) ? 0 : getDocumentType().hashCode());

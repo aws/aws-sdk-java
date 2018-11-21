@@ -206,8 +206,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual
-     * snapshot is retained indefinitely. This value will not retroactively change the retention periods of existing
-     * manual snapshots
+     * snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of existing
+     * manual snapshots.
      * </p>
      * <p>
      * The value must be either -1 or an integer between 1 and 3,653.
@@ -1572,8 +1572,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual
-     * snapshot is retained indefinitely. This value will not retroactively change the retention periods of existing
-     * manual snapshots
+     * snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of existing
+     * manual snapshots.
      * </p>
      * <p>
      * The value must be either -1 or an integer between 1 and 3,653.
@@ -1584,8 +1584,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param manualSnapshotRetentionPeriod
      *        The default for number of days that a newly created manual snapshot is retained. If the value is -1, the
-     *        manual snapshot is retained indefinitely. This value will not retroactively change the retention periods
-     *        of existing manual snapshots</p>
+     *        manual snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of
+     *        existing manual snapshots.</p>
      *        <p>
      *        The value must be either -1 or an integer between 1 and 3,653.
      *        </p>
@@ -1600,8 +1600,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual
-     * snapshot is retained indefinitely. This value will not retroactively change the retention periods of existing
-     * manual snapshots
+     * snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of existing
+     * manual snapshots.
      * </p>
      * <p>
      * The value must be either -1 or an integer between 1 and 3,653.
@@ -1611,8 +1611,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @return The default for number of days that a newly created manual snapshot is retained. If the value is -1, the
-     *         manual snapshot is retained indefinitely. This value will not retroactively change the retention periods
-     *         of existing manual snapshots</p>
+     *         manual snapshot is retained indefinitely. This value doesn't retroactively change the retention periods
+     *         of existing manual snapshots.</p>
      *         <p>
      *         The value must be either -1 or an integer between 1 and 3,653.
      *         </p>
@@ -1627,8 +1627,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual
-     * snapshot is retained indefinitely. This value will not retroactively change the retention periods of existing
-     * manual snapshots
+     * snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of existing
+     * manual snapshots.
      * </p>
      * <p>
      * The value must be either -1 or an integer between 1 and 3,653.
@@ -1639,8 +1639,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param manualSnapshotRetentionPeriod
      *        The default for number of days that a newly created manual snapshot is retained. If the value is -1, the
-     *        manual snapshot is retained indefinitely. This value will not retroactively change the retention periods
-     *        of existing manual snapshots</p>
+     *        manual snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of
+     *        existing manual snapshots.</p>
      *        <p>
      *        The value must be either -1 or an integer between 1 and 3,653.
      *        </p>

@@ -61,6 +61,33 @@ public class UpdateResolverRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String responseMappingTemplate;
+    /**
+     * <p>
+     * The resolver type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to
+     * execute a GraphQL query against a single data source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of
+     * <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against
+     * multiple data sources.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String kind;
+    /**
+     * <p>
+     * The <code>PipelineConfig</code>.
+     * </p>
+     */
+    private PipelineConfig pipelineConfig;
 
     /**
      * <p>
@@ -303,6 +330,221 @@ public class UpdateResolverRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The resolver type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to
+     * execute a GraphQL query against a single data source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of
+     * <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against
+     * multiple data sources.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param kind
+     *        The resolver type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables
+     *        you to execute a GraphQL query against a single data source.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of
+     *        <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query
+     *        against multiple data sources.
+     *        </p>
+     *        </li>
+     * @see ResolverKind
+     */
+
+    public void setKind(String kind) {
+        this.kind = kind;
+    }
+
+    /**
+     * <p>
+     * The resolver type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to
+     * execute a GraphQL query against a single data source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of
+     * <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against
+     * multiple data sources.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The resolver type.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables
+     *         you to execute a GraphQL query against a single data source.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of
+     *         <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query
+     *         against multiple data sources.
+     *         </p>
+     *         </li>
+     * @see ResolverKind
+     */
+
+    public String getKind() {
+        return this.kind;
+    }
+
+    /**
+     * <p>
+     * The resolver type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to
+     * execute a GraphQL query against a single data source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of
+     * <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against
+     * multiple data sources.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param kind
+     *        The resolver type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables
+     *        you to execute a GraphQL query against a single data source.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of
+     *        <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query
+     *        against multiple data sources.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResolverKind
+     */
+
+    public UpdateResolverRequest withKind(String kind) {
+        setKind(kind);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The resolver type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to
+     * execute a GraphQL query against a single data source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of
+     * <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against
+     * multiple data sources.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param kind
+     *        The resolver type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables
+     *        you to execute a GraphQL query against a single data source.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of
+     *        <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query
+     *        against multiple data sources.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResolverKind
+     */
+
+    public UpdateResolverRequest withKind(ResolverKind kind) {
+        this.kind = kind.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>PipelineConfig</code>.
+     * </p>
+     * 
+     * @param pipelineConfig
+     *        The <code>PipelineConfig</code>.
+     */
+
+    public void setPipelineConfig(PipelineConfig pipelineConfig) {
+        this.pipelineConfig = pipelineConfig;
+    }
+
+    /**
+     * <p>
+     * The <code>PipelineConfig</code>.
+     * </p>
+     * 
+     * @return The <code>PipelineConfig</code>.
+     */
+
+    public PipelineConfig getPipelineConfig() {
+        return this.pipelineConfig;
+    }
+
+    /**
+     * <p>
+     * The <code>PipelineConfig</code>.
+     * </p>
+     * 
+     * @param pipelineConfig
+     *        The <code>PipelineConfig</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateResolverRequest withPipelineConfig(PipelineConfig pipelineConfig) {
+        setPipelineConfig(pipelineConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -324,7 +566,11 @@ public class UpdateResolverRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getRequestMappingTemplate() != null)
             sb.append("RequestMappingTemplate: ").append(getRequestMappingTemplate()).append(",");
         if (getResponseMappingTemplate() != null)
-            sb.append("ResponseMappingTemplate: ").append(getResponseMappingTemplate());
+            sb.append("ResponseMappingTemplate: ").append(getResponseMappingTemplate()).append(",");
+        if (getKind() != null)
+            sb.append("Kind: ").append(getKind()).append(",");
+        if (getPipelineConfig() != null)
+            sb.append("PipelineConfig: ").append(getPipelineConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -363,6 +609,14 @@ public class UpdateResolverRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getResponseMappingTemplate() != null && other.getResponseMappingTemplate().equals(this.getResponseMappingTemplate()) == false)
             return false;
+        if (other.getKind() == null ^ this.getKind() == null)
+            return false;
+        if (other.getKind() != null && other.getKind().equals(this.getKind()) == false)
+            return false;
+        if (other.getPipelineConfig() == null ^ this.getPipelineConfig() == null)
+            return false;
+        if (other.getPipelineConfig() != null && other.getPipelineConfig().equals(this.getPipelineConfig()) == false)
+            return false;
         return true;
     }
 
@@ -377,6 +631,8 @@ public class UpdateResolverRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDataSourceName() == null) ? 0 : getDataSourceName().hashCode());
         hashCode = prime * hashCode + ((getRequestMappingTemplate() == null) ? 0 : getRequestMappingTemplate().hashCode());
         hashCode = prime * hashCode + ((getResponseMappingTemplate() == null) ? 0 : getResponseMappingTemplate().hashCode());
+        hashCode = prime * hashCode + ((getKind() == null) ? 0 : getKind().hashCode());
+        hashCode = prime * hashCode + ((getPipelineConfig() == null) ? 0 : getPipelineConfig().hashCode());
         return hashCode;
     }
 

@@ -24,7 +24,8 @@ public enum DataSourceType {
     AMAZON_DYNAMODB("AMAZON_DYNAMODB"),
     AMAZON_ELASTICSEARCH("AMAZON_ELASTICSEARCH"),
     NONE("NONE"),
-    HTTP("HTTP");
+    HTTP("HTTP"),
+    RELATIONAL_DATABASE("RELATIONAL_DATABASE");
 
     private String value;
 

@@ -46,7 +46,7 @@ public class CreateInvalidationRequestMarshaller implements Marshaller<Request<C
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2018-06-18/distribution/{DistributionId}/invalidation";
+        String uriResourcePath = "/2018-11-05/distribution/{DistributionId}/invalidation";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DistributionId",
                 createInvalidationRequest.getDistributionId());
@@ -54,7 +54,7 @@ public class CreateInvalidationRequestMarshaller implements Marshaller<Request<C
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2018-06-18/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2018-11-05/");
 
             InvalidationBatch invalidationBatch = createInvalidationRequest.getInvalidationBatch();
             if (invalidationBatch != null) {

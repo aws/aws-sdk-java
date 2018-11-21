@@ -33,8 +33,6 @@ public class ScheduleRunRequestMarshaller {
             .marshallLocationName("appArn").build();
     private static final MarshallingInfo<String> DEVICEPOOLARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("devicePoolArn").build();
-    private static final MarshallingInfo<StructuredPojo> DEVICESELECTIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deviceSelectionConfiguration").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<StructuredPojo> TEST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -63,7 +61,6 @@ public class ScheduleRunRequestMarshaller {
             protocolMarshaller.marshall(scheduleRunRequest.getProjectArn(), PROJECTARN_BINDING);
             protocolMarshaller.marshall(scheduleRunRequest.getAppArn(), APPARN_BINDING);
             protocolMarshaller.marshall(scheduleRunRequest.getDevicePoolArn(), DEVICEPOOLARN_BINDING);
-            protocolMarshaller.marshall(scheduleRunRequest.getDeviceSelectionConfiguration(), DEVICESELECTIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(scheduleRunRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(scheduleRunRequest.getTest(), TEST_BINDING);
             protocolMarshaller.marshall(scheduleRunRequest.getConfiguration(), CONFIGURATION_BINDING);

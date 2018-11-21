@@ -318,10 +318,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
-     * indefinitely. This setting does not change the retention period of existing snapshots.
+     * indefinitely. This setting doesn't change the retention period of existing snapshots.
      * </p>
      * <p>
-     * The value must be either -1 or an integer between 1 and 3,653
+     * The value must be either -1 or an integer between 1 and 3,653.
      * </p>
      */
     private Integer manualSnapshotRetentionPeriod;
@@ -2328,17 +2328,17 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
-     * indefinitely. This setting does not change the retention period of existing snapshots.
+     * indefinitely. This setting doesn't change the retention period of existing snapshots.
      * </p>
      * <p>
-     * The value must be either -1 or an integer between 1 and 3,653
+     * The value must be either -1 or an integer between 1 and 3,653.
      * </p>
      * 
      * @param manualSnapshotRetentionPeriod
      *        The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
-     *        indefinitely. This setting does not change the retention period of existing snapshots.</p>
+     *        indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
      *        <p>
-     *        The value must be either -1 or an integer between 1 and 3,653
+     *        The value must be either -1 or an integer between 1 and 3,653.
      */
 
     public void setManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
@@ -2348,16 +2348,16 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
-     * indefinitely. This setting does not change the retention period of existing snapshots.
+     * indefinitely. This setting doesn't change the retention period of existing snapshots.
      * </p>
      * <p>
-     * The value must be either -1 or an integer between 1 and 3,653
+     * The value must be either -1 or an integer between 1 and 3,653.
      * </p>
      * 
      * @return The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
-     *         indefinitely. This setting does not change the retention period of existing snapshots.</p>
+     *         indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
      *         <p>
-     *         The value must be either -1 or an integer between 1 and 3,653
+     *         The value must be either -1 or an integer between 1 and 3,653.
      */
 
     public Integer getManualSnapshotRetentionPeriod() {
@@ -2367,17 +2367,17 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
-     * indefinitely. This setting does not change the retention period of existing snapshots.
+     * indefinitely. This setting doesn't change the retention period of existing snapshots.
      * </p>
      * <p>
-     * The value must be either -1 or an integer between 1 and 3,653
+     * The value must be either -1 or an integer between 1 and 3,653.
      * </p>
      * 
      * @param manualSnapshotRetentionPeriod
      *        The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
-     *        indefinitely. This setting does not change the retention period of existing snapshots.</p>
+     *        indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
      *        <p>
-     *        The value must be either -1 or an integer between 1 and 3,653
+     *        The value must be either -1 or an integer between 1 and 3,653.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

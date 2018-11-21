@@ -30,7 +30,7 @@ public class ApplicationSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a CloudFormation stack.
+     * The Amazon Resource Name (ARN) of a AWS CloudFormation stack.
      * </p>
      */
     private String cloudFormationStackARN;
@@ -43,11 +43,11 @@ public class ApplicationSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a CloudFormation stack.
+     * The Amazon Resource Name (ARN) of a AWS CloudFormation stack.
      * </p>
      * 
      * @param cloudFormationStackARN
-     *        The Amazon Resource Name (ARN) of a CloudFormation stack.
+     *        The Amazon Resource Name (ARN) of a AWS CloudFormation stack.
      */
 
     public void setCloudFormationStackARN(String cloudFormationStackARN) {
@@ -56,10 +56,10 @@ public class ApplicationSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a CloudFormation stack.
+     * The Amazon Resource Name (ARN) of a AWS CloudFormation stack.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of a CloudFormation stack.
+     * @return The Amazon Resource Name (ARN) of a AWS CloudFormation stack.
      */
 
     public String getCloudFormationStackARN() {
@@ -68,11 +68,11 @@ public class ApplicationSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a CloudFormation stack.
+     * The Amazon Resource Name (ARN) of a AWS CloudFormation stack.
      * </p>
      * 
      * @param cloudFormationStackARN
-     *        The Amazon Resource Name (ARN) of a CloudFormation stack.
+     *        The Amazon Resource Name (ARN) of a AWS CloudFormation stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

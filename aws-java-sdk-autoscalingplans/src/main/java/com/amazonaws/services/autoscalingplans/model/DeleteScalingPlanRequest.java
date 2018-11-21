@@ -33,7 +33,7 @@ public class DeleteScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     private String scalingPlanName;
     /**
      * <p>
-     * The version of the scaling plan.
+     * The version number of the scaling plan.
      * </p>
      */
     private Long scalingPlanVersion;
@@ -80,11 +80,11 @@ public class DeleteScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the scaling plan.
+     * The version number of the scaling plan.
      * </p>
      * 
      * @param scalingPlanVersion
-     *        The version of the scaling plan.
+     *        The version number of the scaling plan.
      */
 
     public void setScalingPlanVersion(Long scalingPlanVersion) {
@@ -93,10 +93,10 @@ public class DeleteScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the scaling plan.
+     * The version number of the scaling plan.
      * </p>
      * 
-     * @return The version of the scaling plan.
+     * @return The version number of the scaling plan.
      */
 
     public Long getScalingPlanVersion() {
@@ -105,11 +105,11 @@ public class DeleteScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the scaling plan.
+     * The version number of the scaling plan.
      * </p>
      * 
      * @param scalingPlanVersion
-     *        The version of the scaling plan.
+     *        The version number of the scaling plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -60,6 +60,10 @@ public class GetServiceGraphResultJsonUnmarshaller implements Unmarshaller<GetSe
                     context.nextToken();
                     getServiceGraphResult.setServices(new ListUnmarshaller<Service>(ServiceJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("ContainsOldGroupVersions", targetDepth)) {
+                    context.nextToken();
+                    getServiceGraphResult.setContainsOldGroupVersions(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
                     getServiceGraphResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));

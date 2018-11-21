@@ -27,17 +27,17 @@ public class BatchDeleteClusterSnapshotsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of indentifiers for the snapshots you want to delete.
+     * A list of identifiers for the snapshots that you want to delete.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DeleteClusterSnapshotMessage> identifiers;
 
     /**
      * <p>
-     * A list of indentifiers for the snapshots you want to delete.
+     * A list of identifiers for the snapshots that you want to delete.
      * </p>
      * 
-     * @return A list of indentifiers for the snapshots you want to delete.
+     * @return A list of identifiers for the snapshots that you want to delete.
      */
 
     public java.util.List<DeleteClusterSnapshotMessage> getIdentifiers() {
@@ -49,11 +49,11 @@ public class BatchDeleteClusterSnapshotsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of indentifiers for the snapshots you want to delete.
+     * A list of identifiers for the snapshots that you want to delete.
      * </p>
      * 
      * @param identifiers
-     *        A list of indentifiers for the snapshots you want to delete.
+     *        A list of identifiers for the snapshots that you want to delete.
      */
 
     public void setIdentifiers(java.util.Collection<DeleteClusterSnapshotMessage> identifiers) {
@@ -67,7 +67,7 @@ public class BatchDeleteClusterSnapshotsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of indentifiers for the snapshots you want to delete.
+     * A list of identifiers for the snapshots that you want to delete.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class BatchDeleteClusterSnapshotsRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param identifiers
-     *        A list of indentifiers for the snapshots you want to delete.
+     *        A list of identifiers for the snapshots that you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class BatchDeleteClusterSnapshotsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of indentifiers for the snapshots you want to delete.
+     * A list of identifiers for the snapshots that you want to delete.
      * </p>
      * 
      * @param identifiers
-     *        A list of indentifiers for the snapshots you want to delete.
+     *        A list of identifiers for the snapshots that you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

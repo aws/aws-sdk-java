@@ -31,6 +31,8 @@ public class DescribeDocumentRequestMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentVersion").build();
+    private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VersionName").build();
 
     private static final DescribeDocumentRequestMarshaller instance = new DescribeDocumentRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class DescribeDocumentRequestMarshaller {
         try {
             protocolMarshaller.marshall(describeDocumentRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(describeDocumentRequest.getDocumentVersion(), DOCUMENTVERSION_BINDING);
+            protocolMarshaller.marshall(describeDocumentRequest.getVersionName(), VERSIONNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

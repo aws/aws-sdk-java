@@ -25,18 +25,26 @@ public class CreateScalingPlanResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The version of the scaling plan. This value is always 1.
+     * The version number of the scaling plan. This value is always 1.
+     * </p>
+     * <p>
+     * Currently, you cannot specify multiple scaling plan versions.
      * </p>
      */
     private Long scalingPlanVersion;
 
     /**
      * <p>
-     * The version of the scaling plan. This value is always 1.
+     * The version number of the scaling plan. This value is always 1.
+     * </p>
+     * <p>
+     * Currently, you cannot specify multiple scaling plan versions.
      * </p>
      * 
      * @param scalingPlanVersion
-     *        The version of the scaling plan. This value is always 1.
+     *        The version number of the scaling plan. This value is always 1.</p>
+     *        <p>
+     *        Currently, you cannot specify multiple scaling plan versions.
      */
 
     public void setScalingPlanVersion(Long scalingPlanVersion) {
@@ -45,10 +53,15 @@ public class CreateScalingPlanResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The version of the scaling plan. This value is always 1.
+     * The version number of the scaling plan. This value is always 1.
+     * </p>
+     * <p>
+     * Currently, you cannot specify multiple scaling plan versions.
      * </p>
      * 
-     * @return The version of the scaling plan. This value is always 1.
+     * @return The version number of the scaling plan. This value is always 1.</p>
+     *         <p>
+     *         Currently, you cannot specify multiple scaling plan versions.
      */
 
     public Long getScalingPlanVersion() {
@@ -57,11 +70,16 @@ public class CreateScalingPlanResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The version of the scaling plan. This value is always 1.
+     * The version number of the scaling plan. This value is always 1.
+     * </p>
+     * <p>
+     * Currently, you cannot specify multiple scaling plan versions.
      * </p>
      * 
      * @param scalingPlanVersion
-     *        The version of the scaling plan. This value is always 1.
+     *        The version number of the scaling plan. This value is always 1.</p>
+     *        <p>
+     *        Currently, you cannot specify multiple scaling plan versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

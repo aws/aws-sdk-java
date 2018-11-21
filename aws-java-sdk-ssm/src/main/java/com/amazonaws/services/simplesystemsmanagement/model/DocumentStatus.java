@@ -15,7 +15,9 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The status of a document.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DocumentStatus {
@@ -23,7 +25,8 @@ public enum DocumentStatus {
     Creating("Creating"),
     Active("Active"),
     Updating("Updating"),
-    Deleting("Deleting");
+    Deleting("Deleting"),
+    Failed("Failed");
 
     private String value;
 

@@ -54,13 +54,13 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
     private LogConfig logConfig;
     /**
      * <p>
-     * The Amazon Cognito User Pool configuration.
+     * The Amazon Cognito user pool configuration.
      * </p>
      */
     private UserPoolConfig userPoolConfig;
     /**
      * <p>
-     * The Open Id Connect configuration.
+     * The OpenID Connect configuration.
      * </p>
      */
     private OpenIDConnectConfig openIDConnectConfig;
@@ -258,11 +258,11 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Cognito User Pool configuration.
+     * The Amazon Cognito user pool configuration.
      * </p>
      * 
      * @param userPoolConfig
-     *        The Amazon Cognito User Pool configuration.
+     *        The Amazon Cognito user pool configuration.
      */
 
     public void setUserPoolConfig(UserPoolConfig userPoolConfig) {
@@ -271,10 +271,10 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Cognito User Pool configuration.
+     * The Amazon Cognito user pool configuration.
      * </p>
      * 
-     * @return The Amazon Cognito User Pool configuration.
+     * @return The Amazon Cognito user pool configuration.
      */
 
     public UserPoolConfig getUserPoolConfig() {
@@ -283,11 +283,11 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Cognito User Pool configuration.
+     * The Amazon Cognito user pool configuration.
      * </p>
      * 
      * @param userPoolConfig
-     *        The Amazon Cognito User Pool configuration.
+     *        The Amazon Cognito user pool configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -298,11 +298,11 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Open Id Connect configuration.
+     * The OpenID Connect configuration.
      * </p>
      * 
      * @param openIDConnectConfig
-     *        The Open Id Connect configuration.
+     *        The OpenID Connect configuration.
      */
 
     public void setOpenIDConnectConfig(OpenIDConnectConfig openIDConnectConfig) {
@@ -311,10 +311,10 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Open Id Connect configuration.
+     * The OpenID Connect configuration.
      * </p>
      * 
-     * @return The Open Id Connect configuration.
+     * @return The OpenID Connect configuration.
      */
 
     public OpenIDConnectConfig getOpenIDConnectConfig() {
@@ -323,11 +323,11 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Open Id Connect configuration.
+     * The OpenID Connect configuration.
      * </p>
      * 
      * @param openIDConnectConfig
-     *        The Open Id Connect configuration.
+     *        The OpenID Connect configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

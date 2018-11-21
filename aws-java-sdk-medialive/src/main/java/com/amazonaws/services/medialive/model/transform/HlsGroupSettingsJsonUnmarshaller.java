@@ -157,6 +157,10 @@ public class HlsGroupSettingsJsonUnmarshaller implements Unmarshaller<HlsGroupSe
                     context.nextToken();
                     hlsGroupSettings.setProgramDateTimePeriod(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("redundantManifest", targetDepth)) {
+                    context.nextToken();
+                    hlsGroupSettings.setRedundantManifest(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("segmentLength", targetDepth)) {
                     context.nextToken();
                     hlsGroupSettings.setSegmentLength(context.getUnmarshaller(Integer.class).unmarshall(context));

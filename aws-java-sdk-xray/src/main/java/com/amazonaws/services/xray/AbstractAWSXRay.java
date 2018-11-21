@@ -43,7 +43,17 @@ public class AbstractAWSXRay implements AWSXRay {
     }
 
     @Override
+    public CreateGroupResult createGroup(CreateGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateSamplingRuleResult createSamplingRule(CreateSamplingRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteGroupResult deleteGroup(DeleteGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -54,6 +64,16 @@ public class AbstractAWSXRay implements AWSXRay {
 
     @Override
     public GetEncryptionConfigResult getEncryptionConfig(GetEncryptionConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetGroupResult getGroup(GetGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetGroupsResult getGroups(GetGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -99,6 +119,11 @@ public class AbstractAWSXRay implements AWSXRay {
 
     @Override
     public PutTraceSegmentsResult putTraceSegments(PutTraceSegmentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateGroupResult updateGroup(UpdateGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

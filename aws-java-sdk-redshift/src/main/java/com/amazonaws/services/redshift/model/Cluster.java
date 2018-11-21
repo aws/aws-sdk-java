@@ -50,6 +50,16 @@ public class Cluster implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>available, prep-for-resize</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available, resize-cleanup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>cancelling-resize</code>
      * </p>
      * </li>
@@ -173,10 +183,10 @@ public class Cluster implements Serializable, Cloneable {
     /**
      * <p>
      * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
-     * indefinitely. This setting does not change the retention period of existing snapshots.
+     * indefinitely. This setting doesn't change the retention period of existing snapshots.
      * </p>
      * <p>
-     * The value must be either -1 or an integer between 1 and 3,653
+     * The value must be either -1 or an integer between 1 and 3,653.
      * </p>
      */
     private Integer manualSnapshotRetentionPeriod;
@@ -247,7 +257,7 @@ public class Cluster implements Serializable, Cloneable {
     private String clusterVersion;
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
+     * A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
      * to the cluster during the maintenance window.
      * </p>
      */
@@ -260,13 +270,13 @@ public class Cluster implements Serializable, Cloneable {
     private Integer numberOfNodes;
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
+     * A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
      * </p>
      */
     private Boolean publiclyAccessible;
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
+     * A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
      * </p>
      */
     private Boolean encrypted;
@@ -501,6 +511,16 @@ public class Cluster implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>available, prep-for-resize</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available, resize-cleanup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>cancelling-resize</code>
      * </p>
      * </li>
@@ -587,6 +607,16 @@ public class Cluster implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>available</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>available, prep-for-resize</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>available, resize-cleanup</code>
      *        </p>
      *        </li>
      *        <li>
@@ -687,6 +717,16 @@ public class Cluster implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>available, prep-for-resize</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available, resize-cleanup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>cancelling-resize</code>
      * </p>
      * </li>
@@ -772,6 +812,16 @@ public class Cluster implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>available</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>available, prep-for-resize</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>available, resize-cleanup</code>
      *         </p>
      *         </li>
      *         <li>
@@ -872,6 +922,16 @@ public class Cluster implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>available, prep-for-resize</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available, resize-cleanup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>cancelling-resize</code>
      * </p>
      * </li>
@@ -958,6 +1018,16 @@ public class Cluster implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>available</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>available, prep-for-resize</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>available, resize-cleanup</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1309,17 +1379,17 @@ public class Cluster implements Serializable, Cloneable {
     /**
      * <p>
      * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
-     * indefinitely. This setting does not change the retention period of existing snapshots.
+     * indefinitely. This setting doesn't change the retention period of existing snapshots.
      * </p>
      * <p>
-     * The value must be either -1 or an integer between 1 and 3,653
+     * The value must be either -1 or an integer between 1 and 3,653.
      * </p>
      * 
      * @param manualSnapshotRetentionPeriod
      *        The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
-     *        indefinitely. This setting does not change the retention period of existing snapshots.</p>
+     *        indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
      *        <p>
-     *        The value must be either -1 or an integer between 1 and 3,653
+     *        The value must be either -1 or an integer between 1 and 3,653.
      */
 
     public void setManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
@@ -1329,16 +1399,16 @@ public class Cluster implements Serializable, Cloneable {
     /**
      * <p>
      * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
-     * indefinitely. This setting does not change the retention period of existing snapshots.
+     * indefinitely. This setting doesn't change the retention period of existing snapshots.
      * </p>
      * <p>
-     * The value must be either -1 or an integer between 1 and 3,653
+     * The value must be either -1 or an integer between 1 and 3,653.
      * </p>
      * 
      * @return The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
-     *         indefinitely. This setting does not change the retention period of existing snapshots.</p>
+     *         indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
      *         <p>
-     *         The value must be either -1 or an integer between 1 and 3,653
+     *         The value must be either -1 or an integer between 1 and 3,653.
      */
 
     public Integer getManualSnapshotRetentionPeriod() {
@@ -1348,17 +1418,17 @@ public class Cluster implements Serializable, Cloneable {
     /**
      * <p>
      * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
-     * indefinitely. This setting does not change the retention period of existing snapshots.
+     * indefinitely. This setting doesn't change the retention period of existing snapshots.
      * </p>
      * <p>
-     * The value must be either -1 or an integer between 1 and 3,653
+     * The value must be either -1 or an integer between 1 and 3,653.
      * </p>
      * 
      * @param manualSnapshotRetentionPeriod
      *        The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
-     *        indefinitely. This setting does not change the retention period of existing snapshots.</p>
+     *        indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
      *        <p>
-     *        The value must be either -1 or an integer between 1 and 3,653
+     *        The value must be either -1 or an integer between 1 and 3,653.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1908,12 +1978,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
+     * A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
      * to the cluster during the maintenance window.
      * </p>
      * 
      * @param allowVersionUpgrade
-     *        A Boolean value that, if <code>true</code>, indicates that major version upgrades will be applied
+     *        A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied
      *        automatically to the cluster during the maintenance window.
      */
 
@@ -1923,11 +1993,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
+     * A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
      * to the cluster during the maintenance window.
      * </p>
      * 
-     * @return A Boolean value that, if <code>true</code>, indicates that major version upgrades will be applied
+     * @return A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied
      *         automatically to the cluster during the maintenance window.
      */
 
@@ -1937,12 +2007,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
+     * A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
      * to the cluster during the maintenance window.
      * </p>
      * 
      * @param allowVersionUpgrade
-     *        A Boolean value that, if <code>true</code>, indicates that major version upgrades will be applied
+     *        A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied
      *        automatically to the cluster during the maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1954,11 +2024,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
+     * A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
      * to the cluster during the maintenance window.
      * </p>
      * 
-     * @return A Boolean value that, if <code>true</code>, indicates that major version upgrades will be applied
+     * @return A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied
      *         automatically to the cluster during the maintenance window.
      */
 
@@ -2008,11 +2078,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
+     * A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
      * </p>
      * 
      * @param publiclyAccessible
-     *        A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public
+     *        A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public
      *        network.
      */
 
@@ -2022,10 +2092,10 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
+     * A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
      * </p>
      * 
-     * @return A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public
+     * @return A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public
      *         network.
      */
 
@@ -2035,11 +2105,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
+     * A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
      * </p>
      * 
      * @param publiclyAccessible
-     *        A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public
+     *        A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public
      *        network.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2051,10 +2121,10 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
+     * A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
      * </p>
      * 
-     * @return A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public
+     * @return A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public
      *         network.
      */
 
@@ -2064,11 +2134,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
+     * A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
      * </p>
      * 
      * @param encrypted
-     *        A Boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
+     *        A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -2077,10 +2147,10 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
+     * A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
      * </p>
      * 
-     * @return A Boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
+     * @return A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
      */
 
     public Boolean getEncrypted() {
@@ -2089,11 +2159,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
+     * A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
      * </p>
      * 
      * @param encrypted
-     *        A Boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
+     *        A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2104,10 +2174,10 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
+     * A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
      * </p>
      * 
-     * @return A Boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
+     * @return A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
      */
 
     public Boolean isEncrypted() {

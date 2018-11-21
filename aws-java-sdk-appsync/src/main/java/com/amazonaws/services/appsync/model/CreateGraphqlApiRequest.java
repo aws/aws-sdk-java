@@ -33,25 +33,25 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
     private String name;
     /**
      * <p>
-     * The Amazon CloudWatch logs configuration.
+     * The Amazon CloudWatch Logs configuration.
      * </p>
      */
     private LogConfig logConfig;
     /**
      * <p>
-     * The authentication type: API key, IAM, or Amazon Cognito User Pools.
+     * The authentication type: API key, AWS IAM, or Amazon Cognito user pools.
      * </p>
      */
     private String authenticationType;
     /**
      * <p>
-     * The Amazon Cognito User Pool configuration.
+     * The Amazon Cognito user pool configuration.
      * </p>
      */
     private UserPoolConfig userPoolConfig;
     /**
      * <p>
-     * The Open Id Connect configuration configuration.
+     * The OpenID Connect configuration.
      * </p>
      */
     private OpenIDConnectConfig openIDConnectConfig;
@@ -98,11 +98,11 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon CloudWatch logs configuration.
+     * The Amazon CloudWatch Logs configuration.
      * </p>
      * 
      * @param logConfig
-     *        The Amazon CloudWatch logs configuration.
+     *        The Amazon CloudWatch Logs configuration.
      */
 
     public void setLogConfig(LogConfig logConfig) {
@@ -111,10 +111,10 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon CloudWatch logs configuration.
+     * The Amazon CloudWatch Logs configuration.
      * </p>
      * 
-     * @return The Amazon CloudWatch logs configuration.
+     * @return The Amazon CloudWatch Logs configuration.
      */
 
     public LogConfig getLogConfig() {
@@ -123,11 +123,11 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon CloudWatch logs configuration.
+     * The Amazon CloudWatch Logs configuration.
      * </p>
      * 
      * @param logConfig
-     *        The Amazon CloudWatch logs configuration.
+     *        The Amazon CloudWatch Logs configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The authentication type: API key, IAM, or Amazon Cognito User Pools.
+     * The authentication type: API key, AWS IAM, or Amazon Cognito user pools.
      * </p>
      * 
      * @param authenticationType
-     *        The authentication type: API key, IAM, or Amazon Cognito User Pools.
+     *        The authentication type: API key, AWS IAM, or Amazon Cognito user pools.
      * @see AuthenticationType
      */
 
@@ -152,10 +152,10 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The authentication type: API key, IAM, or Amazon Cognito User Pools.
+     * The authentication type: API key, AWS IAM, or Amazon Cognito user pools.
      * </p>
      * 
-     * @return The authentication type: API key, IAM, or Amazon Cognito User Pools.
+     * @return The authentication type: API key, AWS IAM, or Amazon Cognito user pools.
      * @see AuthenticationType
      */
 
@@ -165,11 +165,11 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The authentication type: API key, IAM, or Amazon Cognito User Pools.
+     * The authentication type: API key, AWS IAM, or Amazon Cognito user pools.
      * </p>
      * 
      * @param authenticationType
-     *        The authentication type: API key, IAM, or Amazon Cognito User Pools.
+     *        The authentication type: API key, AWS IAM, or Amazon Cognito user pools.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationType
      */
@@ -181,11 +181,11 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The authentication type: API key, IAM, or Amazon Cognito User Pools.
+     * The authentication type: API key, AWS IAM, or Amazon Cognito user pools.
      * </p>
      * 
      * @param authenticationType
-     *        The authentication type: API key, IAM, or Amazon Cognito User Pools.
+     *        The authentication type: API key, AWS IAM, or Amazon Cognito user pools.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationType
      */
@@ -197,11 +197,11 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Cognito User Pool configuration.
+     * The Amazon Cognito user pool configuration.
      * </p>
      * 
      * @param userPoolConfig
-     *        The Amazon Cognito User Pool configuration.
+     *        The Amazon Cognito user pool configuration.
      */
 
     public void setUserPoolConfig(UserPoolConfig userPoolConfig) {
@@ -210,10 +210,10 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Cognito User Pool configuration.
+     * The Amazon Cognito user pool configuration.
      * </p>
      * 
-     * @return The Amazon Cognito User Pool configuration.
+     * @return The Amazon Cognito user pool configuration.
      */
 
     public UserPoolConfig getUserPoolConfig() {
@@ -222,11 +222,11 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Cognito User Pool configuration.
+     * The Amazon Cognito user pool configuration.
      * </p>
      * 
      * @param userPoolConfig
-     *        The Amazon Cognito User Pool configuration.
+     *        The Amazon Cognito user pool configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,11 +237,11 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Open Id Connect configuration configuration.
+     * The OpenID Connect configuration.
      * </p>
      * 
      * @param openIDConnectConfig
-     *        The Open Id Connect configuration configuration.
+     *        The OpenID Connect configuration.
      */
 
     public void setOpenIDConnectConfig(OpenIDConnectConfig openIDConnectConfig) {
@@ -250,10 +250,10 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Open Id Connect configuration configuration.
+     * The OpenID Connect configuration.
      * </p>
      * 
-     * @return The Open Id Connect configuration configuration.
+     * @return The OpenID Connect configuration.
      */
 
     public OpenIDConnectConfig getOpenIDConnectConfig() {
@@ -262,11 +262,11 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Open Id Connect configuration configuration.
+     * The OpenID Connect configuration.
      * </p>
      * 
      * @param openIDConnectConfig
-     *        The Open Id Connect configuration configuration.
+     *        The OpenID Connect configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

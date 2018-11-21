@@ -189,6 +189,17 @@ public class MetricAlarmStaxUnmarshaller implements Unmarshaller<MetricAlarm, St
                     metricAlarm.setEvaluateLowSampleCountPercentile(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Metrics", targetDepth)) {
+                    metricAlarm.withMetrics(new ArrayList<MetricDataQuery>());
+                    continue;
+                }
+
+                if (context.testExpression("Metrics/member", targetDepth)) {
+                    metricAlarm.withMetrics(MetricDataQueryStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return metricAlarm;

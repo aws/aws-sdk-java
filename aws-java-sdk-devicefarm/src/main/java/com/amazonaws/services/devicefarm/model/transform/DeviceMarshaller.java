@@ -68,8 +68,6 @@ public class DeviceMarshaller {
             .marshallLocationName("fleetName").build();
     private static final MarshallingInfo<List> INSTANCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("instances").build();
-    private static final MarshallingInfo<String> AVAILABILITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("availability").build();
 
     private static final DeviceMarshaller instance = new DeviceMarshaller();
 
@@ -107,7 +105,6 @@ public class DeviceMarshaller {
             protocolMarshaller.marshall(device.getFleetType(), FLEETTYPE_BINDING);
             protocolMarshaller.marshall(device.getFleetName(), FLEETNAME_BINDING);
             protocolMarshaller.marshall(device.getInstances(), INSTANCES_BINDING);
-            protocolMarshaller.marshall(device.getAvailability(), AVAILABILITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
