@@ -44,7 +44,12 @@ public enum LandmarkType {
     MouthUp("mouthUp"),
     MouthDown("mouthDown"),
     LeftPupil("leftPupil"),
-    RightPupil("rightPupil");
+    RightPupil("rightPupil"),
+    UpperJawlineLeft("upperJawlineLeft"),
+    MidJawlineLeft("midJawlineLeft"),
+    ChinBottom("chinBottom"),
+    MidJawlineRight("midJawlineRight"),
+    UpperJawlineRight("upperJawlineRight");
 
     private String value;
 

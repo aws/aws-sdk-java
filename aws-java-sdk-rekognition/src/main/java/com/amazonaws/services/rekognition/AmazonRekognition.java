@@ -180,6 +180,9 @@ public interface AmazonRekognition {
      * using the <code>IndexFaces</code> operation and persist results in a specific collection. Then, a user can search
      * the collection for faces in the user-specific container.
      * </p>
+     * <p>
+     * When you create a collection, it is associated with the latest version of the face model version.
+     * </p>
      * <note>
      * <p>
      * Collection names are case-sensitive.
@@ -405,8 +408,8 @@ public interface AmazonRekognition {
      * </p>
      * <p>
      * You pass the input image either as base64-encoded image bytes or as a reference to an image in an Amazon S3
-     * bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. The
-     * image must be either a PNG or JPEG formatted file.
+     * bucket. If you use the to call Amazon Rekognition operations, passing image bytes is not supported. The image
+     * must be either a PNG or JPEG formatted file.
      * </p>
      * <note>
      * <p>
@@ -1052,9 +1055,15 @@ public interface AmazonRekognition {
      * </p>
      * <p>
      * If you're using version 1.0 of the face detection model, <code>IndexFaces</code> indexes the 15 largest faces in
-     * the input image. Later versions of the face detection model index the 100 largest faces in the input image. To
-     * determine which version of the model you're using, call and supply the collection ID. You can also get the model
-     * version from the value of <code>FaceModelVersion</code> in the response from <code>IndexFaces</code>.
+     * the input image. Later versions of the face detection model index the 100 largest faces in the input image.
+     * </p>
+     * <p>
+     * If you're using version 4 or later of the face model, image orientation information is not returned in the
+     * <code>OrientationCorrection</code> field.
+     * </p>
+     * <p>
+     * To determine which version of the model you're using, call and supply the collection ID. You can also get the
+     * model version from the value of <code>FaceModelVersion</code> in the response from <code>IndexFaces</code>
      * </p>
      * <p>
      * For more information, see Model Versioning in the Amazon Rekognition Developer Guide.

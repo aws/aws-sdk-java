@@ -1,3 +1,8 @@
+# __1.11.455__ __2018-11-21__
+## __Amazon Rekognition__
+  - ### Features
+    - This release updates the DetectFaces and IndexFaces operation. When the Attributes input parameter is set to ALL, the face location landmarks includes 5 new landmarks: upperJawlineLeft, midJawlineLeft, chinBottom, midJawlineRight, upperJawlineRight.
+
 # __1.11.454__ __2018-11-20__
 ## __AWS AppSync__
   - ### Features
