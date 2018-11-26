@@ -25,7 +25,7 @@ public class ListCompatibleImagesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snowball Edge AMI.
+     * A JSON-formatted object that describes a compatible AMI.
      * </p>
      */
     private java.util.List<CompatibleImage> compatibleImages;
@@ -38,11 +38,10 @@ public class ListCompatibleImagesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snowball Edge AMI.
+     * A JSON-formatted object that describes a compatible AMI.
      * </p>
      * 
-     * @return A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snowball Edge
-     *         AMI.
+     * @return A JSON-formatted object that describes a compatible AMI.
      */
 
     public java.util.List<CompatibleImage> getCompatibleImages() {
@@ -51,12 +50,11 @@ public class ListCompatibleImagesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snowball Edge AMI.
+     * A JSON-formatted object that describes a compatible AMI.
      * </p>
      * 
      * @param compatibleImages
-     *        A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snowball Edge
-     *        AMI.
+     *        A JSON-formatted object that describes a compatible AMI.
      */
 
     public void setCompatibleImages(java.util.Collection<CompatibleImage> compatibleImages) {
@@ -70,7 +68,7 @@ public class ListCompatibleImagesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snowball Edge AMI.
+     * A JSON-formatted object that describes a compatible AMI.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,8 +77,7 @@ public class ListCompatibleImagesResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param compatibleImages
-     *        A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snowball Edge
-     *        AMI.
+     *        A JSON-formatted object that describes a compatible AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,12 +93,11 @@ public class ListCompatibleImagesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snowball Edge AMI.
+     * A JSON-formatted object that describes a compatible AMI.
      * </p>
      * 
      * @param compatibleImages
-     *        A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snowball Edge
-     *        AMI.
+     *        A JSON-formatted object that describes a compatible AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

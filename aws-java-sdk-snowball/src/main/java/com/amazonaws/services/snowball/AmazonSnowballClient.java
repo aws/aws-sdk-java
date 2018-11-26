@@ -52,11 +52,10 @@ import com.amazonaws.services.snowball.model.transform.*;
  * <p>
  * <p>
  * AWS Snowball is a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data
- * between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snowball commands described
- * here provide access to the same functionality that is available in the AWS Snowball Management Console, which enables
- * you to create and manage jobs for Snowball. To transfer data locally with a Snowball device, you'll need to use the
- * Snowball client or the Amazon S3 API adapter for Snowball. For more information, see the <a
- * href="http://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
+ * between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The commands described here
+ * provide access to the same functionality that is available in the AWS Snowball Management Console, which enables you
+ * to create and manage jobs for Snowball and Snowball Edge devices. To transfer data locally with a device, you'll need
+ * to use the Snowball client or the Amazon S3 API adapter for Snowball.
  * </p>
  */
 @ThreadSafe
@@ -1169,9 +1168,10 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your AWS
-     * account that would be supported for use on a Snowball Edge device. Currently, supported AMIs are based on the
-     * CentOS 7 (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images,
-     * available on the AWS Marketplace.
+     * account that would be supported for use on <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>
+     * devices. For more information on compatible AMIs, see <a
+     * href="http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html">Using Amazon EC2 Compute
+     * Instances</a> in the <i>AWS Snowball Developer Guide</i>.
      * </p>
      * 
      * @param listCompatibleImagesRequest

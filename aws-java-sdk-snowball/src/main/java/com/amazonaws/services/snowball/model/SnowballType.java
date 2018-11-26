@@ -21,7 +21,9 @@ import javax.annotation.Generated;
 public enum SnowballType {
 
     STANDARD("STANDARD"),
-    EDGE("EDGE");
+    EDGE("EDGE"),
+    EDGE_C("EDGE_C"),
+    EDGE_CG("EDGE_CG");
 
     private String value;
 

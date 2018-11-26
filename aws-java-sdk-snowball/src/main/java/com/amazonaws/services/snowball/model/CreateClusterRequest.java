@@ -69,8 +69,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String roleARN;
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      */
     private String snowballType;
@@ -96,7 +96,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -439,13 +439,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
-     *        cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs
+     *        are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @see SnowballType
      */
 
@@ -455,12 +455,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
-     * @return The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
-     *         cluster jobs is <code>EDGE</code>.
+     * @return The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs
+     *         are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @see SnowballType
      */
 
@@ -470,13 +470,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
-     *        cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs
+     *        are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -488,13 +488,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
-     *        cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs
+     *        are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @see SnowballType
      */
 
@@ -504,13 +504,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
-     *        cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs
+     *        are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -542,7 +542,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -572,7 +572,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowball Edges are delivered in one to seven days.
+     *        In India, devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -609,7 +609,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -638,7 +638,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </li>
      *         <li>
      *         <p>
-     *         In India, Snowball Edges are delivered in one to seven days.
+     *         In India, devices are delivered in one to seven days.
      *         </p>
      *         </li>
      *         <li>
@@ -675,7 +675,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -705,7 +705,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowball Edges are delivered in one to seven days.
+     *        In India, devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -744,7 +744,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -774,7 +774,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowball Edges are delivered in one to seven days.
+     *        In India, devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -811,7 +811,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -841,7 +841,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowball Edges are delivered in one to seven days.
+     *        In India, devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>

@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including the ID and name for a
- * Snowball Edge AMI. This AMI is compatible with the device's physical hardware requirements, and it should be able to
- * be run in an SBE1 instance on the device.
+ * A JSON-formatted object that describes a compatible Amazon Machine Image (AMI). For more information on compatible
+ * AMIs, see <a href="http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html">Using Amazon EC2
+ * Compute Instances</a> in the <i>AWS Snowball Developer Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CompatibleImage" target="_top">AWS API

@@ -1,3 +1,28 @@
+# __1.11.456__ __2018-11-26__
+## __AWS Amplify__
+  - ### Features
+    - Release of AWS Amplify: Everything you need to develop & deploy cloud-powered mobile and web apps.
+
+## __AWS DataSync__
+  - ### Features
+    - AWS DataSync simplifies, automates, and accelerates moving and replicating data between on-premises storage and AWS services over the network.
+
+## __AWS RoboMaker__
+  - ### Features
+    - (New Service) AWS RoboMaker is a service that makes it easy to develop, simulate, and deploy intelligent robotics applications at scale. 
+
+## __AWS Transfer for SFTP__
+  - ### Features
+    - AWS Transfer for SFTP is a fully managed service that enables transfer of secure data over the internet into and out of Amazon S3. SFTP is deeply embedded in data exchange workflows across different industries such as financial services, healthcare, advertising, and retail, among others.
+
+## __Amazon Import/Export Snowball__
+  - ### Features
+    - AWS announces the availability of AWS Snowball Edge Compute Optimized to run compute-intensive applications is disconnected and physically harsh environments. It comes with 52 vCPUs, 208GB memory, 8TB NVMe SSD, and 42TB S3-compatible storage to accelerate local processing and is well suited for use cases such as full motion video processing, deep IoT analytics, and continuous machine learning in bandwidth-constrained locations. It features new instances types called SBE-C instances that are available in eight sizes and multiple instances can be run on the device at the same time. Optionally, developers can choose the compute optimized device to include a GPU and use SBE-G instances for accelerating their application performance. 
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - The INTELLIGENT_TIERING storage class is designed to optimize storage costs by automatically moving data to the most cost effective storage access tier, without performance impact or operational overhead. This SDK release provides API support for this new storage class.
+
 # __1.11.455__ __2018-11-21__
 ## __Amazon Rekognition__
   - ### Features

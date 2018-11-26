@@ -65,7 +65,17 @@ public enum StorageClass {
      * One Zone Infrequent Access storage class stores object data in only one Availability Zone at a lower price than
      * STANDARD_IA.
      */
-    OneZoneInfrequentAccess("ONEZONE_IA")
+    OneZoneInfrequentAccess("ONEZONE_IA"),
+
+    /**
+     * IntelligentTiering makes it easy to lower your overall cost of storage by automatically placing data in the storage
+     * class that best matches the access patterns for the storage. With IntelligentTiering, you don’t need to define
+     * and manage individual policies for lifecycle data management or write code to transition objects
+     * between storage classes. Instead, you can use IntelligentTiering to manage transitions between Standard and
+     * S-IA without writing any application code. IntelligentTiering also manages transitions automatically to
+     * Glacier for long term archive in addition to S3 storage classes.
+     */
+    IntelligentTiering("INTELLIGENT_TIERING")
     ;
 
     /**

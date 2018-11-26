@@ -27,7 +27,7 @@ public class ListCompatibleImagesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10
+     * The maximum number of results for the list of compatible images. Currently, each supported device can store 10
      * AMIs.
      * </p>
      */
@@ -42,12 +42,12 @@ public class ListCompatibleImagesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10
+     * The maximum number of results for the list of compatible images. Currently, each supported device can store 10
      * AMIs.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can
+     *        The maximum number of results for the list of compatible images. Currently, each supported device can
      *        store 10 AMIs.
      */
 
@@ -57,11 +57,11 @@ public class ListCompatibleImagesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10
+     * The maximum number of results for the list of compatible images. Currently, each supported device can store 10
      * AMIs.
      * </p>
      * 
-     * @return The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can
+     * @return The maximum number of results for the list of compatible images. Currently, each supported device can
      *         store 10 AMIs.
      */
 
@@ -71,12 +71,12 @@ public class ListCompatibleImagesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10
+     * The maximum number of results for the list of compatible images. Currently, each supported device can store 10
      * AMIs.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can
+     *        The maximum number of results for the list of compatible images. Currently, each supported device can
      *        store 10 AMIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
