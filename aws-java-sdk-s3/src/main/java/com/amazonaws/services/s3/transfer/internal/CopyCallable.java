@@ -121,7 +121,10 @@ public class CopyCallable implements Callable<CopyResult> {
      */
     public boolean isMultipartCopy() {
         return (metadata.getContentLength() > configuration
-                .getMultipartCopyThreshold());
+                .getMultipartCopyThreshold())
+                && copyObjectRequest.getObjectLockMode() == null
+                && copyObjectRequest.getObjectLockLegalHoldStatus() == null
+                && copyObjectRequest.getObjectLockRetainUntilDate() == null;
     }
 
     public CopyResult call() throws Exception {

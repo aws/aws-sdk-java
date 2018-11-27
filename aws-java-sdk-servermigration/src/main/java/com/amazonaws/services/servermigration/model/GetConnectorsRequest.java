@@ -25,12 +25,27 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetConnectorsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     */
     private String nextToken;
-
+    /**
+     * <p>
+     * The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining
+     * results, make another call with the returned <code>NextToken</code> value.
+     * </p>
+     */
     private Integer maxResults;
 
     /**
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     * 
      * @param nextToken
+     *        The token for the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -38,7 +53,11 @@ public class GetConnectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     * 
+     * @return The token for the next set of results.
      */
 
     public String getNextToken() {
@@ -46,7 +65,12 @@ public class GetConnectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     * 
      * @param nextToken
+     *        The token for the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +80,14 @@ public class GetConnectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining
+     * results, make another call with the returned <code>NextToken</code> value.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of results to return in a single call. The default value is 50. To retrieve the
+     *        remaining results, make another call with the returned <code>NextToken</code> value.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -64,7 +95,13 @@ public class GetConnectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining
+     * results, make another call with the returned <code>NextToken</code> value.
+     * </p>
+     * 
+     * @return The maximum number of results to return in a single call. The default value is 50. To retrieve the
+     *         remaining results, make another call with the returned <code>NextToken</code> value.
      */
 
     public Integer getMaxResults() {
@@ -72,7 +109,14 @@ public class GetConnectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining
+     * results, make another call with the returned <code>NextToken</code> value.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of results to return in a single call. The default value is 50. To retrieve the
+     *        remaining results, make another call with the returned <code>NextToken</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

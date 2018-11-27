@@ -16,7 +16,7 @@
  * <p>
  * AWS Key Management Service (AWS KMS) is an encryption and key management web service. This guide describes the AWS
  * KMS operations that you can call programmatically. For general information about AWS KMS, see the <a
- * href="http://docs.aws.amazon.com/kms/latest/developerguide/">AWS Key Management Service Developer Guide</a>.
+ * href="http://docs.aws.amazon.com/kms/latest/developerguide/"> <i>AWS Key Management Service Developer Guide</i> </a>.
  * </p>
  * <note>
  * <p>
@@ -41,7 +41,7 @@
  * <p>
  * Requests must be signed by using an access key ID and a secret access key. We strongly recommend that you <i>do
  * not</i> use your AWS account (root) access key ID and secret key for everyday work with AWS KMS. Instead, use the
- * access key ID and secret access key for an IAM user. You can also use the AWS Security Token Service to generate
+ * access key ID and secret access key for an IAM user, or you can use the AWS Security Token Service to generate
  * temporary security credentials that you can use to sign requests.
  * </p>
  * <p>
@@ -68,7 +68,7 @@
  * <li>
  * <p>
  * <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS Security Credentials</a> -
- * This topic provides general information about the types of credentials used for accessing AWS.
+ * This topic provides general information about the of credentials used for accessing AWS.
  * </p>
  * </li>
  * <li>
@@ -86,11 +86,11 @@
  * </li>
  * </ul>
  * <p>
- * <b>Commonly Used API Operations</b>
+ * <b>Commonly Used APIs</b>
  * </p>
  * <p>
- * Of the API operations discussed in this guide, the following will prove the most useful for most applications. You
- * will likely perform operations other than these, such as creating keys and assigning policies, by using the console.
+ * Of the APIs discussed in this guide, the following will prove the most useful for most applications. You will likely
+ * perform actions other than these, such as creating keys and assigning policies, by using the console.
  * </p>
  * <ul>
  * <li>

@@ -33,7 +33,15 @@ public enum InventoryOptionalField {
 
     InventoryOptionalField("InventoryOptionalField"),
 
-    EncryptionStatus("EncryptionStatus"),;
+    EncryptionStatus("EncryptionStatus"),
+
+    ObjectLockRetainUntilDate("ObjectLockRetainUntilDate"),
+
+    ObjectLockMode("ObjectLockMode"),
+
+    ObjectLockLegalHoldStatus("ObjectLockLegalHoldStatus")
+
+    ;
 
     private final String field;
 

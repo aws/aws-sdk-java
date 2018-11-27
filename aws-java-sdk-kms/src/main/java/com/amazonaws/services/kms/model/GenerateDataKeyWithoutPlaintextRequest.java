@@ -31,8 +31,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
-     * alias ARN.
+     * prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
      * </p>
      * <p>
      * For example:
@@ -109,8 +108,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
-     * alias ARN.
+     * prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
      * </p>
      * <p>
      * For example:
@@ -147,8 +145,8 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      *        key.</p>
      *        <p>
      *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *        alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
-     *        use the key ARN or alias ARN.
+     *        alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN
+     *        or alias ARN.
      *        </p>
      *        <p>
      *        For example:
@@ -190,8 +188,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
-     * alias ARN.
+     * prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
      * </p>
      * <p>
      * For example:
@@ -227,8 +224,8 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      *         key.</p>
      *         <p>
      *         To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *         alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
-     *         use the key ARN or alias ARN.
+     *         alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key
+     *         ARN or alias ARN.
      *         </p>
      *         <p>
      *         For example:
@@ -270,8 +267,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
-     * alias ARN.
+     * prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
      * </p>
      * <p>
      * For example:
@@ -308,8 +304,8 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      *        key.</p>
      *        <p>
      *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *        alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
-     *        use the key ARN or alias ARN.
+     *        alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN
+     *        or alias ARN.
      *        </p>
      *        <p>
      *        For example:

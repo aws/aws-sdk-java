@@ -52,6 +52,10 @@ public class FunctionConfigurationEnvironmentJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     functionConfigurationEnvironment.setAccessSysfs(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("Execution", targetDepth)) {
+                    context.nextToken();
+                    functionConfigurationEnvironment.setExecution(FunctionExecutionConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ResourceAccessPolicies", targetDepth)) {
                     context.nextToken();
                     functionConfigurationEnvironment.setResourceAccessPolicies(new ListUnmarshaller<ResourceAccessPolicy>(ResourceAccessPolicyJsonUnmarshaller

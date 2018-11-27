@@ -15,7 +15,9 @@ package com.amazonaws.services.servermigration.model;
 import javax.annotation.Generated;
 
 /**
- * An internal error has occured.
+ * <p>
+ * An internal error occurred.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalErrorException extends com.amazonaws.services.servermigration.model.AWSServerMigrationException {

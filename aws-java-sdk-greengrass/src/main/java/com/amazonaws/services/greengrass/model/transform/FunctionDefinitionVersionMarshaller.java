@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class FunctionDefinitionVersionMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> DEFAULTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultConfig").build();
     private static final MarshallingInfo<List> FUNCTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Functions").build();
 
@@ -47,6 +49,7 @@ public class FunctionDefinitionVersionMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(functionDefinitionVersion.getDefaultConfig(), DEFAULTCONFIG_BINDING);
             protocolMarshaller.marshall(functionDefinitionVersion.getFunctions(), FUNCTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

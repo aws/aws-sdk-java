@@ -35,7 +35,13 @@ public enum S3Event {
 
     ObjectRemovedDelete("s3:ObjectRemoved:Delete"),
 
-    ObjectRemovedDeleteMarkerCreated("s3:ObjectRemoved:DeleteMarkerCreated");
+    ObjectRemovedDeleteMarkerCreated("s3:ObjectRemoved:DeleteMarkerCreated"),
+
+    ObjectRestorePost("s3:ObjectRestore:Post"),
+
+    ObjectRestoreCompleted("s3:ObjectRestore:Completed")
+
+    ;
 
     private final String event;
 

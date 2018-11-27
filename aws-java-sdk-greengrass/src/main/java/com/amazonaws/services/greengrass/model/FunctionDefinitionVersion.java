@@ -26,8 +26,44 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FunctionDefinitionVersion implements Serializable, Cloneable, StructuredPojo {
 
+    /** Default configuration that will apply to all Lambda functions in this function definition version */
+    private FunctionDefaultConfig defaultConfig;
     /** A list of Lambda functions in this function definition version. */
     private java.util.List<Function> functions;
+
+    /**
+     * Default configuration that will apply to all Lambda functions in this function definition version
+     * 
+     * @param defaultConfig
+     *        Default configuration that will apply to all Lambda functions in this function definition version
+     */
+
+    public void setDefaultConfig(FunctionDefaultConfig defaultConfig) {
+        this.defaultConfig = defaultConfig;
+    }
+
+    /**
+     * Default configuration that will apply to all Lambda functions in this function definition version
+     * 
+     * @return Default configuration that will apply to all Lambda functions in this function definition version
+     */
+
+    public FunctionDefaultConfig getDefaultConfig() {
+        return this.defaultConfig;
+    }
+
+    /**
+     * Default configuration that will apply to all Lambda functions in this function definition version
+     * 
+     * @param defaultConfig
+     *        Default configuration that will apply to all Lambda functions in this function definition version
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FunctionDefinitionVersion withDefaultConfig(FunctionDefaultConfig defaultConfig) {
+        setDefaultConfig(defaultConfig);
+        return this;
+    }
 
     /**
      * A list of Lambda functions in this function definition version.
@@ -102,6 +138,8 @@ public class FunctionDefinitionVersion implements Serializable, Cloneable, Struc
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDefaultConfig() != null)
+            sb.append("DefaultConfig: ").append(getDefaultConfig()).append(",");
         if (getFunctions() != null)
             sb.append("Functions: ").append(getFunctions());
         sb.append("}");
@@ -118,6 +156,10 @@ public class FunctionDefinitionVersion implements Serializable, Cloneable, Struc
         if (obj instanceof FunctionDefinitionVersion == false)
             return false;
         FunctionDefinitionVersion other = (FunctionDefinitionVersion) obj;
+        if (other.getDefaultConfig() == null ^ this.getDefaultConfig() == null)
+            return false;
+        if (other.getDefaultConfig() != null && other.getDefaultConfig().equals(this.getDefaultConfig()) == false)
+            return false;
         if (other.getFunctions() == null ^ this.getFunctions() == null)
             return false;
         if (other.getFunctions() != null && other.getFunctions().equals(this.getFunctions()) == false)
@@ -130,6 +172,7 @@ public class FunctionDefinitionVersion implements Serializable, Cloneable, Struc
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDefaultConfig() == null) ? 0 : getDefaultConfig().hashCode());
         hashCode = prime * hashCode + ((getFunctions() == null) ? 0 : getFunctions().hashCode());
         return hashCode;
     }

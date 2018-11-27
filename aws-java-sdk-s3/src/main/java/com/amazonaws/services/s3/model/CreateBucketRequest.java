@@ -45,6 +45,8 @@ public class CreateBucketRequest extends AmazonWebServiceRequest implements
      */
     private AccessControlList accessControlList;
 
+    private boolean objectLockEnabled;
+
     /**
      * Constructs a new {@link CreateBucketRequest},
      * ready to be executed to create the
@@ -220,4 +222,25 @@ public class CreateBucketRequest extends AmazonWebServiceRequest implements
         return this;
     }
 
+    /**
+     * Specifies whether you want S3 Object Lock to be enabled for the new bucket.
+     */
+    public boolean getObjectLockEnabledForBucket() {
+        return objectLockEnabled;
+    }
+
+    /**
+     * Specifies whether you want S3 Object Lock to be enabled for the new bucket.
+     */
+    public CreateBucketRequest withObjectLockEnabledForBucket(boolean objectLockEnabled) {
+        this.objectLockEnabled = objectLockEnabled;
+        return this;
+    }
+
+    /**
+     * Specifies whether you want S3 Object Lock to be enabled for the new bucket.
+     */
+    public void setObjectLockEnabledForBucket(boolean objectLockEnabled) {
+        withObjectLockEnabledForBucket(objectLockEnabled);
+    }
 }

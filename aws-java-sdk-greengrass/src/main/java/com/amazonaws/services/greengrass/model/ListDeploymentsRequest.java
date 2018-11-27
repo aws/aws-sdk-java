@@ -25,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The ID of the AWS Greengrass group. */
+    /** The ID of the Greengrass group. */
     private String groupId;
     /** The maximum number of results to be returned per request. */
     private String maxResults;
@@ -33,10 +33,10 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
     private String nextToken;
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      * 
      * @param groupId
-     *        The ID of the AWS Greengrass group.
+     *        The ID of the Greengrass group.
      */
 
     public void setGroupId(String groupId) {
@@ -44,9 +44,9 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      * 
-     * @return The ID of the AWS Greengrass group.
+     * @return The ID of the Greengrass group.
      */
 
     public String getGroupId() {
@@ -54,10 +54,10 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      * 
      * @param groupId
-     *        The ID of the AWS Greengrass group.
+     *        The ID of the Greengrass group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

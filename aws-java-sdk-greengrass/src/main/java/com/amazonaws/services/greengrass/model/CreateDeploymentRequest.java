@@ -33,7 +33,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * The type of deployment. When used in ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
      */
     private String deploymentType;
-    /** The ID of the AWS Greengrass group. */
+    /** The ID of the Greengrass group. */
     private String groupId;
     /** The ID of the group version to be deployed. */
     private String groupVersionId;
@@ -175,10 +175,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      * 
      * @param groupId
-     *        The ID of the AWS Greengrass group.
+     *        The ID of the Greengrass group.
      */
 
     public void setGroupId(String groupId) {
@@ -186,9 +186,9 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      * 
-     * @return The ID of the AWS Greengrass group.
+     * @return The ID of the Greengrass group.
      */
 
     public String getGroupId() {
@@ -196,10 +196,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      * 
      * @param groupId
-     *        The ID of the AWS Greengrass group.
+     *        The ID of the Greengrass group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

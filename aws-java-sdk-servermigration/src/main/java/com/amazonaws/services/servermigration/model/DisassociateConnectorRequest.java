@@ -25,10 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DisassociateConnectorRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The identifier of the connector.
+     * </p>
+     */
     private String connectorId;
 
     /**
+     * <p>
+     * The identifier of the connector.
+     * </p>
+     * 
      * @param connectorId
+     *        The identifier of the connector.
      */
 
     public void setConnectorId(String connectorId) {
@@ -36,7 +46,11 @@ public class DisassociateConnectorRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the connector.
+     * </p>
+     * 
+     * @return The identifier of the connector.
      */
 
     public String getConnectorId() {
@@ -44,7 +58,12 @@ public class DisassociateConnectorRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The identifier of the connector.
+     * </p>
+     * 
      * @param connectorId
+     *        The identifier of the connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

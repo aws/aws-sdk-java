@@ -23,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateReplicationJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The unique identifier of the replication job.
+     * </p>
+     */
     private String replicationJobId;
 
     /**
+     * <p>
+     * The unique identifier of the replication job.
+     * </p>
+     * 
      * @param replicationJobId
+     *        The unique identifier of the replication job.
      */
 
     public void setReplicationJobId(String replicationJobId) {
@@ -34,7 +44,11 @@ public class CreateReplicationJobResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The unique identifier of the replication job.
+     * </p>
+     * 
+     * @return The unique identifier of the replication job.
      */
 
     public String getReplicationJobId() {
@@ -42,7 +56,12 @@ public class CreateReplicationJobResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The unique identifier of the replication job.
+     * </p>
+     * 
      * @param replicationJobId
+     *        The unique identifier of the replication job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

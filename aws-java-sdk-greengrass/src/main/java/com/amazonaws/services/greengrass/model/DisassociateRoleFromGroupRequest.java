@@ -25,14 +25,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DisassociateRoleFromGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The ID of the AWS Greengrass group. */
+    /** The ID of the Greengrass group. */
     private String groupId;
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      * 
      * @param groupId
-     *        The ID of the AWS Greengrass group.
+     *        The ID of the Greengrass group.
      */
 
     public void setGroupId(String groupId) {
@@ -40,9 +40,9 @@ public class DisassociateRoleFromGroupRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      * 
-     * @return The ID of the AWS Greengrass group.
+     * @return The ID of the Greengrass group.
      */
 
     public String getGroupId() {
@@ -50,10 +50,10 @@ public class DisassociateRoleFromGroupRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      * 
      * @param groupId
-     *        The ID of the AWS Greengrass group.
+     *        The ID of the Greengrass group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

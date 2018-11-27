@@ -64,6 +64,10 @@ public class ReplaceRouteRequestMarshaller implements Marshaller<Request<Replace
             request.addParameter("NatGatewayId", StringUtils.fromString(replaceRouteRequest.getNatGatewayId()));
         }
 
+        if (replaceRouteRequest.getTransitGatewayId() != null) {
+            request.addParameter("TransitGatewayId", StringUtils.fromString(replaceRouteRequest.getTransitGatewayId()));
+        }
+
         if (replaceRouteRequest.getNetworkInterfaceId() != null) {
             request.addParameter("NetworkInterfaceId", StringUtils.fromString(replaceRouteRequest.getNetworkInterfaceId()));
         }

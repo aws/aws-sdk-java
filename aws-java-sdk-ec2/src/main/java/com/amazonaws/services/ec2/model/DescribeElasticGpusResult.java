@@ -25,7 +25,7 @@ public class DescribeElasticGpusResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the Elastic GPUs.
+     * Information about the Elastic Graphics accelerators.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ElasticGpus> elasticGpuSet;
@@ -46,10 +46,10 @@ public class DescribeElasticGpusResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the Elastic GPUs.
+     * Information about the Elastic Graphics accelerators.
      * </p>
      * 
-     * @return Information about the Elastic GPUs.
+     * @return Information about the Elastic Graphics accelerators.
      */
 
     public java.util.List<ElasticGpus> getElasticGpuSet() {
@@ -61,11 +61,11 @@ public class DescribeElasticGpusResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the Elastic GPUs.
+     * Information about the Elastic Graphics accelerators.
      * </p>
      * 
      * @param elasticGpuSet
-     *        Information about the Elastic GPUs.
+     *        Information about the Elastic Graphics accelerators.
      */
 
     public void setElasticGpuSet(java.util.Collection<ElasticGpus> elasticGpuSet) {
@@ -79,7 +79,7 @@ public class DescribeElasticGpusResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the Elastic GPUs.
+     * Information about the Elastic Graphics accelerators.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,7 +88,7 @@ public class DescribeElasticGpusResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param elasticGpuSet
-     *        Information about the Elastic GPUs.
+     *        Information about the Elastic Graphics accelerators.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +104,11 @@ public class DescribeElasticGpusResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the Elastic GPUs.
+     * Information about the Elastic Graphics accelerators.
      * </p>
      * 
      * @param elasticGpuSet
-     *        Information about the Elastic GPUs.
+     *        Information about the Elastic Graphics accelerators.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -64,6 +64,8 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
      */
     private boolean isRequesterPays;
 
+    private boolean bypassGovernanceRetention;
+
     /**
      * Constructs a new {@link DeleteObjectsRequest}, specifying the objects'
      * bucket name.
@@ -326,6 +328,31 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
     public DeleteObjectsRequest withRequesterPays(boolean isRequesterPays) {
         setRequesterPays(isRequesterPays);
         return this;
+    }
+
+    /**
+     * Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. You must
+     * have sufficient permissions to perform this operation.
+     */
+    public boolean getBypassGovernanceRetention() {
+        return bypassGovernanceRetention;
+    }
+
+    /**
+     * Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. You must
+     * have sufficient permissions to perform this operation.
+     */
+    public DeleteObjectsRequest withBypassGovernanceRetention(boolean bypassGovernanceRetention) {
+        this.bypassGovernanceRetention = bypassGovernanceRetention;
+        return this;
+    }
+
+    /**
+     * Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. You must
+     * have sufficient permissions to perform this operation.
+     */
+    public void setBypassGovernanceRetention(boolean bypassGovernanceRetention) {
+        withBypassGovernanceRetention(bypassGovernanceRetention);
     }
 
     /**

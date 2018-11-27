@@ -153,6 +153,12 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
 
     private String metadataDirective;
 
+    private String objectLockMode;
+
+    private Date objectLockRetainUntilDate;
+
+    private String objectLockLegalHoldStatus;
+
     /**
      * <p>
      * Constructs with basic options.
@@ -1242,5 +1248,99 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
      */
     public CopyObjectRequest withMetadataDirective(MetadataDirective metadataDirective) {
         return withMetadataDirective(metadataDirective == null ? null : metadataDirective.toString());
+    }
+
+    /**
+     * The Object Lock mode that you want to apply to the copied object.
+     */
+    public String getObjectLockMode() {
+        return objectLockMode;
+    }
+
+    /**
+     * The Object Lock mode that you want to apply to the copied object.
+     */
+    public CopyObjectRequest withObjectLockMode(String objectLockMode) {
+        this.objectLockMode = objectLockMode;
+        return this;
+    }
+
+    /**
+     * The Object Lock mode that you want to apply to the copied object.
+     */
+    public CopyObjectRequest withObjectLockMode(ObjectLockMode objectLockMode) {
+        return withObjectLockMode(objectLockMode.toString());
+    }
+
+    /**
+     * The Object Lock mode that you want to apply to the copied object.
+     */
+    public void setObjectLockMode(String objectLockMode) {
+        withObjectLockMode(objectLockMode);
+    }
+
+    /**
+     * The Object Lock mode that you want to apply to the copied object.
+     */
+    public void setObjectLockMode(ObjectLockMode objectLockMode) {
+        setObjectLockMode(objectLockMode.toString());
+    }
+
+    /**
+     * The date and time when you want this object's Object Lock to expire.
+     */
+    public Date getObjectLockRetainUntilDate() {
+        return objectLockRetainUntilDate;
+    }
+
+    /**
+     * The date and time when you want this object's Object Lock to expire.
+     */
+    public CopyObjectRequest withObjectLockRetainUntilDate(Date objectLockRetainUntilDate) {
+        this.objectLockRetainUntilDate = objectLockRetainUntilDate;
+        return this;
+    }
+
+    /**
+     * The date and time when you want this object's Object Lock to expire.
+     */
+    public void setObjectLockRetainUntilDate(Date objectLockRetainUntilDate) {
+        withObjectLockRetainUntilDate(objectLockRetainUntilDate);
+    }
+
+    /**
+     * Specifies whether you want to apply a Legal Hold to the copied object.
+     */
+    public String getObjectLockLegalHoldStatus() {
+        return objectLockLegalHoldStatus;
+    }
+
+    /**
+     * Specifies whether you want to apply a Legal Hold to the copied object.
+     */
+    public CopyObjectRequest withObjectLockLegalHoldStatus(String objectLockLegalHoldStatus) {
+        this.objectLockLegalHoldStatus = objectLockLegalHoldStatus;
+        return this;
+    }
+
+    /**
+     * Specifies whether you want to apply a Legal Hold to the copied object.
+     */
+    public CopyObjectRequest withObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus objectLockLegalHoldStatus) {
+        return withObjectLockLegalHoldStatus(objectLockLegalHoldStatus.toString());
+    }
+
+    /**
+     * Specifies whether you want to apply a Legal Hold to the copied object.
+     */
+    public void setObjectLockLegalHoldStatus(String objectLockLegalHoldStatus) {
+        withObjectLockLegalHoldStatus(objectLockLegalHoldStatus);
+    }
+
+    /**
+     * Specifies whether you want to apply a Legal Hold to the copied object.
+     */
+    public void setObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus objectLockLegalHoldStatus) {
+        setObjectLockLegalHoldStatus(objectLockLegalHoldStatus.toString());
     }
 }

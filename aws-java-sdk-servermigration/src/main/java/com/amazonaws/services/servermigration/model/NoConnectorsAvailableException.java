@@ -15,8 +15,9 @@ package com.amazonaws.services.servermigration.model;
 import javax.annotation.Generated;
 
 /**
- * No connectors are available to handle this request. Please associate connector(s) and verify any existing connectors
- * are healthy and can respond to requests.
+ * <p>
+ * There are no connectors available.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NoConnectorsAvailableException extends com.amazonaws.services.servermigration.model.AWSServerMigrationException {

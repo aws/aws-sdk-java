@@ -52,6 +52,8 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<DatasetTrigger> triggers;
+
+    private java.util.List<DatasetContentDeliveryRule> contentDeliveryRules;
     /**
      * <p>
      * The status of the data set.
@@ -298,6 +300,58 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<DatasetContentDeliveryRule> getContentDeliveryRules() {
+        return contentDeliveryRules;
+    }
+
+    /**
+     * @param contentDeliveryRules
+     */
+
+    public void setContentDeliveryRules(java.util.Collection<DatasetContentDeliveryRule> contentDeliveryRules) {
+        if (contentDeliveryRules == null) {
+            this.contentDeliveryRules = null;
+            return;
+        }
+
+        this.contentDeliveryRules = new java.util.ArrayList<DatasetContentDeliveryRule>(contentDeliveryRules);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setContentDeliveryRules(java.util.Collection)} or {@link #withContentDeliveryRules(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param contentDeliveryRules
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Dataset withContentDeliveryRules(DatasetContentDeliveryRule... contentDeliveryRules) {
+        if (this.contentDeliveryRules == null) {
+            setContentDeliveryRules(new java.util.ArrayList<DatasetContentDeliveryRule>(contentDeliveryRules.length));
+        }
+        for (DatasetContentDeliveryRule ele : contentDeliveryRules) {
+            this.contentDeliveryRules.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param contentDeliveryRules
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Dataset withContentDeliveryRules(java.util.Collection<DatasetContentDeliveryRule> contentDeliveryRules) {
+        setContentDeliveryRules(contentDeliveryRules);
+        return this;
+    }
+
+    /**
      * <p>
      * The status of the data set.
      * </p>
@@ -495,6 +549,8 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
             sb.append("Actions: ").append(getActions()).append(",");
         if (getTriggers() != null)
             sb.append("Triggers: ").append(getTriggers()).append(",");
+        if (getContentDeliveryRules() != null)
+            sb.append("ContentDeliveryRules: ").append(getContentDeliveryRules()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getCreationTime() != null)
@@ -533,6 +589,10 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTriggers() != null && other.getTriggers().equals(this.getTriggers()) == false)
             return false;
+        if (other.getContentDeliveryRules() == null ^ this.getContentDeliveryRules() == null)
+            return false;
+        if (other.getContentDeliveryRules() != null && other.getContentDeliveryRules().equals(this.getContentDeliveryRules()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -561,6 +621,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
         hashCode = prime * hashCode + ((getTriggers() == null) ? 0 : getTriggers().hashCode());
+        hashCode = prime * hashCode + ((getContentDeliveryRules() == null) ? 0 : getContentDeliveryRules().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime().hashCode());

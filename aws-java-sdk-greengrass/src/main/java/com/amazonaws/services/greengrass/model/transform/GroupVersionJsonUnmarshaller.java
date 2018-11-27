@@ -48,6 +48,10 @@ public class GroupVersionJsonUnmarshaller implements Unmarshaller<GroupVersion, 
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ConnectorDefinitionVersionArn", targetDepth)) {
+                    context.nextToken();
+                    groupVersion.setConnectorDefinitionVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CoreDefinitionVersionArn", targetDepth)) {
                     context.nextToken();
                     groupVersion.setCoreDefinitionVersionArn(context.getUnmarshaller(String.class).unmarshall(context));

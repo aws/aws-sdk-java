@@ -49,6 +49,10 @@ public class KeyMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidTo").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ORIGIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Origin").build();
+    private static final MarshallingInfo<String> CUSTOMKEYSTOREID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomKeyStoreId").build();
+    private static final MarshallingInfo<String> CLOUDHSMCLUSTERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudHsmClusterId").build();
     private static final MarshallingInfo<String> EXPIRATIONMODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpirationModel").build();
     private static final MarshallingInfo<String> KEYMANAGER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -81,6 +85,8 @@ public class KeyMetadataMarshaller {
             protocolMarshaller.marshall(keyMetadata.getDeletionDate(), DELETIONDATE_BINDING);
             protocolMarshaller.marshall(keyMetadata.getValidTo(), VALIDTO_BINDING);
             protocolMarshaller.marshall(keyMetadata.getOrigin(), ORIGIN_BINDING);
+            protocolMarshaller.marshall(keyMetadata.getCustomKeyStoreId(), CUSTOMKEYSTOREID_BINDING);
+            protocolMarshaller.marshall(keyMetadata.getCloudHsmClusterId(), CLOUDHSMCLUSTERID_BINDING);
             protocolMarshaller.marshall(keyMetadata.getExpirationModel(), EXPIRATIONMODEL_BINDING);
             protocolMarshaller.marshall(keyMetadata.getKeyManager(), KEYMANAGER_BINDING);
         } catch (Exception e) {

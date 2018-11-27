@@ -15,7 +15,7 @@ package com.amazonaws.services.servermigration.model;
 import javax.annotation.Generated;
 
 /**
- * Current state of Replication Job
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ReplicationJobState {
@@ -24,7 +24,10 @@ public enum ReplicationJobState {
     ACTIVE("ACTIVE"),
     FAILED("FAILED"),
     DELETING("DELETING"),
-    DELETED("DELETED");
+    DELETED("DELETED"),
+    COMPLETED("COMPLETED"),
+    PAUSED_ON_FAILURE("PAUSED_ON_FAILURE"),
+    FAILING("FAILING");
 
     private String value;
 

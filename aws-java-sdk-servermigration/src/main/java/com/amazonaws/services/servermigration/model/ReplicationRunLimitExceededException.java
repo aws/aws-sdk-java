@@ -15,7 +15,9 @@ package com.amazonaws.services.servermigration.model;
 import javax.annotation.Generated;
 
 /**
- * This user has exceeded the maximum allowed Replication Run limit.
+ * <p>
+ * You have exceeded the number of on-demand replication runs you can request in a 24-hour period.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReplicationRunLimitExceededException extends com.amazonaws.services.servermigration.model.AWSServerMigrationException {

@@ -27,7 +27,7 @@ public class CreateGroupCertificateAuthorityRequest extends com.amazonaws.Amazon
 
     /** A client token used to correlate requests and responses. */
     private String amznClientToken;
-    /** The ID of the AWS Greengrass group. */
+    /** The ID of the Greengrass group. */
     private String groupId;
 
     /**
@@ -65,10 +65,10 @@ public class CreateGroupCertificateAuthorityRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      * 
      * @param groupId
-     *        The ID of the AWS Greengrass group.
+     *        The ID of the Greengrass group.
      */
 
     public void setGroupId(String groupId) {
@@ -76,9 +76,9 @@ public class CreateGroupCertificateAuthorityRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      * 
-     * @return The ID of the AWS Greengrass group.
+     * @return The ID of the Greengrass group.
      */
 
     public String getGroupId() {
@@ -86,10 +86,10 @@ public class CreateGroupCertificateAuthorityRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      * 
      * @param groupId
-     *        The ID of the AWS Greengrass group.
+     *        The ID of the Greengrass group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -60,6 +60,10 @@ public class ReplicationRunJsonUnmarshaller implements Unmarshaller<ReplicationR
                     context.nextToken();
                     replicationRun.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("stageDetails", targetDepth)) {
+                    context.nextToken();
+                    replicationRun.setStageDetails(ReplicationRunStageDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("statusMessage", targetDepth)) {
                     context.nextToken();
                     replicationRun.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
@@ -79,6 +83,14 @@ public class ReplicationRunJsonUnmarshaller implements Unmarshaller<ReplicationR
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     replicationRun.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("encrypted", targetDepth)) {
+                    context.nextToken();
+                    replicationRun.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("kmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    replicationRun.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

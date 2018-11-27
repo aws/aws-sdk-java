@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ArchitectureValues {
 
     I386("i386"),
-    X86_64("x86_64");
+    X86_64("x86_64"),
+    Arm64("arm64");
 
     private String value;
 

@@ -30,7 +30,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -568,6 +567,24 @@ public class XmlResponsesSaxParser {
     public RequestPaymentConfigurationHandler parseRequestPaymentConfigurationResponse(InputStream inputStream)
             throws IOException {
         RequestPaymentConfigurationHandler handler = new RequestPaymentConfigurationHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public GetObjectLegalHoldResponseHandler parseGetObjectLegalHoldResponse(InputStream inputStream) throws IOException {
+        GetObjectLegalHoldResponseHandler handler = new GetObjectLegalHoldResponseHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public GetObjectLockConfigurationResponseHandler parseGetObjectLockConfigurationResponse(InputStream inputStream) throws IOException {
+        GetObjectLockConfigurationResponseHandler handler = new GetObjectLockConfigurationResponseHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public GetObjectRetentionResponseHandler parseGetObjectRetentionResponse(InputStream inputStream) throws IOException {
+        GetObjectRetentionResponseHandler handler = new GetObjectRetentionResponseHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
@@ -3802,6 +3819,101 @@ public class XmlResponsesSaxParser {
             }
         }
 
+    }
+
+    public static class GetObjectLegalHoldResponseHandler extends AbstractHandler {
+        private GetObjectLegalHoldResult getObjectLegalHoldResult = new GetObjectLegalHoldResult();
+
+        private ObjectLockLegalHold legalHold = new ObjectLockLegalHold();
+
+        public GetObjectLegalHoldResult getResult() {
+            return getObjectLegalHoldResult.withLegalHold(legalHold);
+        }
+
+        @Override
+        protected void doStartElement(String uri, String name, String qName, Attributes attrs) {
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (in("LegalHold")) {
+                if ("Status".equals(name)) {
+                    legalHold.setStatus(getText());
+                }
+            }
+        }
+    }
+
+    public static class GetObjectLockConfigurationResponseHandler extends AbstractHandler {
+        private GetObjectLockConfigurationResult result = new GetObjectLockConfigurationResult();
+        private ObjectLockConfiguration objectLockConfiguration = new ObjectLockConfiguration();
+        private ObjectLockRule rule;
+        private DefaultRetention defaultRetention;
+
+        public GetObjectLockConfigurationResult getResult() {
+            return result.withObjectLockConfiguration(objectLockConfiguration);
+        }
+
+        @Override
+        protected void doStartElement(String uri, String name, String qName, Attributes attrs) {
+            if (in("ObjectLockConfiguration")) {
+                if ("Rule".equals(name)) {
+                    rule = new ObjectLockRule();
+                }
+            } else if (in("ObjectLockConfiguration", "Rule")) {
+                if ("DefaultRetention".equals(name)) {
+                    defaultRetention = new DefaultRetention();
+                }
+            }
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (in("ObjectLockConfiguration")) {
+                if ("ObjectLockEnabled".equals(name)) {
+                    objectLockConfiguration.setObjectLockEnabled(getText());
+                } else if ("Rule".equals(name)) {
+                    objectLockConfiguration.setRule(rule);
+                }
+            } else if (in("ObjectLockConfiguration", "Rule")) {
+                if ("DefaultRetention".equals(name)) {
+                    rule.setDefaultRetention(defaultRetention);
+                }
+            } else if (in("ObjectLockConfiguration", "Rule", "DefaultRetention")) {
+                if ("Mode".equals(name)) {
+                    defaultRetention.setMode(getText());
+                } else if ("Days".equals(name)) {
+                    defaultRetention.setDays(Integer.parseInt(getText()));
+                } else if ("Years".equals(name)) {
+                    defaultRetention.setYears(Integer.parseInt(getText()));
+                }
+            }
+        }
+    }
+
+    public static class GetObjectRetentionResponseHandler extends AbstractHandler {
+        private GetObjectRetentionResult result = new GetObjectRetentionResult();
+
+        private ObjectLockRetention retention = new ObjectLockRetention();
+
+        public GetObjectRetentionResult getResult() {
+            return result.withRetention(retention);
+        }
+
+        @Override
+        protected void doStartElement(String uri, String name, String qName, Attributes attrs) {
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (in("Retention")) {
+                if ("Mode".equals(name)) {
+                    retention.setMode(getText());
+                } else if ("RetainUntilDate".equals(name)) {
+                    retention.setRetainUntilDate(ServiceUtils.parseIso8601Date(getText()));
+                }
+            }
+        }
     }
 
     private static String findAttributeValue(

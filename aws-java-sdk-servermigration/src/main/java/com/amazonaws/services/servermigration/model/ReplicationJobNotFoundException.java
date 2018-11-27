@@ -15,7 +15,9 @@ package com.amazonaws.services.servermigration.model;
 import javax.annotation.Generated;
 
 /**
- * The specified Replication Job cannot be found.
+ * <p>
+ * The specified replication job does not exist.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReplicationJobNotFoundException extends com.amazonaws.services.servermigration.model.AWSServerMigrationException {

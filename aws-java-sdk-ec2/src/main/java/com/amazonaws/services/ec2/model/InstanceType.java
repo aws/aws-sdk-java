@@ -133,6 +133,12 @@ public enum InstanceType {
     C5d4xlarge("c5d.4xlarge"),
     C5d9xlarge("c5d.9xlarge"),
     C5d18xlarge("c5d.18xlarge"),
+    C5nLarge("c5n.large"),
+    C5nXlarge("c5n.xlarge"),
+    C5n2xlarge("c5n.2xlarge"),
+    C5n4xlarge("c5n.4xlarge"),
+    C5n9xlarge("c5n.9xlarge"),
+    C5n18xlarge("c5n.18xlarge"),
     Cc14xlarge("cc1.4xlarge"),
     Cc28xlarge("cc2.8xlarge"),
     G22xlarge("g2.2xlarge"),
@@ -185,7 +191,12 @@ public enum InstanceType {
     Z1d12xlarge("z1d.12xlarge"),
     U6tb1Metal("u-6tb1.metal"),
     U9tb1Metal("u-9tb1.metal"),
-    U12tb1Metal("u-12tb1.metal");
+    U12tb1Metal("u-12tb1.metal"),
+    A1Medium("a1.medium"),
+    A1Large("a1.large"),
+    A1Xlarge("a1.xlarge"),
+    A12xlarge("a1.2xlarge"),
+    A14xlarge("a1.4xlarge");
 
     private String value;
 

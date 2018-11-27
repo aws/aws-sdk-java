@@ -34,6 +34,9 @@ import com.amazonaws.services.s3.model.DeletePublicAccessBlockResult;
 import com.amazonaws.services.s3.model.GetBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationResult;
+import com.amazonaws.services.s3.model.GetObjectLegalHoldResult;
+import com.amazonaws.services.s3.model.GetObjectLockConfigurationResult;
+import com.amazonaws.services.s3.model.GetObjectRetentionResult;
 import com.amazonaws.services.s3.model.GetObjectTaggingResult;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsResult;
@@ -50,6 +53,9 @@ import com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketEncryptionResult;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationResult;
+import com.amazonaws.services.s3.model.SetObjectLegalHoldResult;
+import com.amazonaws.services.s3.model.SetObjectLockConfigurationResult;
+import com.amazonaws.services.s3.model.SetObjectRetentionResult;
 import com.amazonaws.services.s3.model.SetObjectTaggingResult;
 import com.amazonaws.services.s3.model.SetPublicAccessBlockResult;
 import com.amazonaws.services.s3.model.VersionListing;
@@ -517,6 +523,54 @@ public class Unmarshallers {
 
         public RestoreObjectResult unmarshall(InputStream in) {
             return new RestoreObjectResult();
+        }
+    }
+
+    public static final class GetObjectLegalHoldResultUnmarshaller implements Unmarshaller<GetObjectLegalHoldResult, InputStream> {
+
+        @Override
+        public GetObjectLegalHoldResult unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseGetObjectLegalHoldResponse(in).getResult();
+        }
+    }
+
+    public static final class SetObjectLockConfigurationResultUnmarshaller implements Unmarshaller<SetObjectLockConfigurationResult, InputStream> {
+
+        @Override
+        public SetObjectLockConfigurationResult unmarshall(InputStream in) throws Exception {
+            return new SetObjectLockConfigurationResult();
+        }
+    }
+
+    public static final class SetObjectLegalHoldResultUnmarshaller implements Unmarshaller<SetObjectLegalHoldResult, InputStream> {
+
+        @Override
+        public SetObjectLegalHoldResult unmarshall(InputStream in) throws Exception {
+            return new SetObjectLegalHoldResult();
+        }
+    }
+
+    public static final class GetObjectLockConfigurationResultUnmarshaller implements Unmarshaller<GetObjectLockConfigurationResult, InputStream> {
+
+        @Override
+        public GetObjectLockConfigurationResult unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseGetObjectLockConfigurationResponse(in).getResult();
+        }
+    }
+
+    public static final class SetObjectRetentionResultUnmarshaller implements Unmarshaller<SetObjectRetentionResult, InputStream> {
+
+        @Override
+        public SetObjectRetentionResult unmarshall(InputStream in) throws Exception {
+            return new SetObjectRetentionResult();
+        }
+    }
+
+    public static final class GetObjectRetentionResultUnmarshaller implements Unmarshaller<GetObjectRetentionResult, InputStream> {
+
+        @Override
+        public GetObjectRetentionResult unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseGetObjectRetentionResponse(in).getResult();
         }
     }
 }

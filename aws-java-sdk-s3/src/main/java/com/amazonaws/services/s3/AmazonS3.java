@@ -92,8 +92,14 @@ import com.amazonaws.services.s3.model.GetBucketTaggingConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.GetObjectAclRequest;
+import com.amazonaws.services.s3.model.GetObjectLegalHoldRequest;
+import com.amazonaws.services.s3.model.GetObjectLegalHoldResult;
+import com.amazonaws.services.s3.model.GetObjectLockConfigurationRequest;
+import com.amazonaws.services.s3.model.GetObjectLockConfigurationResult;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
+import com.amazonaws.services.s3.model.GetObjectRetentionRequest;
+import com.amazonaws.services.s3.model.GetObjectRetentionResult;
 import com.amazonaws.services.s3.model.GetObjectTaggingRequest;
 import com.amazonaws.services.s3.model.GetObjectTaggingResult;
 import com.amazonaws.services.s3.model.GetS3AccountOwnerRequest;
@@ -154,6 +160,12 @@ import com.amazonaws.services.s3.model.SetBucketTaggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.SetObjectAclRequest;
+import com.amazonaws.services.s3.model.SetObjectLegalHoldRequest;
+import com.amazonaws.services.s3.model.SetObjectLegalHoldResult;
+import com.amazonaws.services.s3.model.SetObjectLockConfigurationRequest;
+import com.amazonaws.services.s3.model.SetObjectLockConfigurationResult;
+import com.amazonaws.services.s3.model.SetObjectRetentionRequest;
+import com.amazonaws.services.s3.model.SetObjectRetentionResult;
 import com.amazonaws.services.s3.model.SetObjectTaggingRequest;
 import com.amazonaws.services.s3.model.SetObjectTaggingResult;
 import com.amazonaws.services.s3.model.StorageClass;
@@ -5288,6 +5300,80 @@ public interface AmazonS3 extends S3DirectSpi {
      */
     SelectObjectContentResult selectObjectContent(SelectObjectContentRequest selectRequest)
             throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Applies a Legal Hold configuration to the specified object.
+     *
+     * @param setObjectLegalHoldRequest The request object for setting the object legal hold.
+
+     * @return A {@link SetObjectLegalHoldResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">AWS API Documentation</a>
+     */
+    SetObjectLegalHoldResult setObjectLegalHold(SetObjectLegalHoldRequest setObjectLegalHoldRequest);
+
+    /**
+     * Gets an object's current Legal Hold status.
+     *
+     * @param getObjectLegalHoldRequest The request object for getting an object legal hold status.
+
+     * @return A {@link GetObjectLegalHoldResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">AWS API Documentation</a>
+     */
+    GetObjectLegalHoldResult getObjectLegalHold(GetObjectLegalHoldRequest getObjectLegalHoldRequest);
+
+    /**
+     * Places an Object Lock configuration on the specified bucket. The rule specified in the Object Lock configuration will
+     * be applied by default to every new object placed in the specified bucket.
+     *
+     * @param setObjectLockConfigurationRequest The request object for setting the object lock configuration.
+
+     * @return A {@link SetObjectLockConfigurationResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">AWS API Documentation</a>
+     */
+    SetObjectLockConfigurationResult setObjectLockConfiguration(SetObjectLockConfigurationRequest setObjectLockConfigurationRequest);
+
+    /**
+     * Gets the Object Lock configuration for a bucket. The rule specified in the Object Lock configuration will be applied
+     * by default to every new object placed in the specified bucket.
+     *
+     * @param getObjectLockConfigurationRequest The request object for getting the object lock configuration.
+
+     * @return A {@link GetObjectLockConfigurationResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">AWS API Documentation</a>
+     */
+    GetObjectLockConfigurationResult getObjectLockConfiguration(GetObjectLockConfigurationRequest getObjectLockConfigurationRequest);
+
+    /**
+     * Places an Object Retention configuration on an object.
+     *
+     * @param setObjectRetentionRequest The request object for setting the object retention.
+
+     * @return A {@link SetObjectRetentionResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">AWS API Documentation</a>
+     */
+    SetObjectRetentionResult setObjectRetention(SetObjectRetentionRequest setObjectRetentionRequest);
+
+    /**
+     * Retrieves an object's retention settings.
+     *
+     * @param getObjectRetentionRequest The request object for getting the object retention.
+
+     * @return A {@link GetObjectRetentionResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">AWS API Documentation</a>
+     */
+    GetObjectRetentionResult getObjectRetention(GetObjectRetentionRequest getObjectRetentionRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held

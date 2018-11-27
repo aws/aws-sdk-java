@@ -18,7 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Information about a bulk deployment.
+ * Information about a bulk deployment. You cannot start a new bulk deployment while another one is still running or in
+ * a non-terminal state.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/BulkDeployment" target="_top">AWS API
  *      Documentation</a>

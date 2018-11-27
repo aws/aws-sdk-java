@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the status of an Elastic GPU.
+ * Describes the status of an Elastic Graphics accelerator.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ElasticGpuHealth" target="_top">AWS API

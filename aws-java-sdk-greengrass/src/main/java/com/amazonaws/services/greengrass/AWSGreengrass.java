@@ -26,10 +26,10 @@ import com.amazonaws.services.greengrass.model.*;
  * {@link com.amazonaws.services.greengrass.AbstractAWSGreengrass} instead.
  * </p>
  * <p>
- * AWS Greengrass seamlessly extends AWS onto physical devices so they can act locally on the data they generate, while
- * still using the cloud for management, analytics, and durable storage. AWS Greengrass ensures your devices can respond
- * quickly to local events and operate with intermittent connectivity. AWS Greengrass minimizes the cost of transmitting
- * data to the cloud by allowing you to author AWS Lambda functions that execute locally.
+ * AWS IoT Greengrass seamlessly extends AWS onto physical devices so they can act locally on the data they generate,
+ * while still using the cloud for management, analytics, and durable storage. AWS IoT Greengrass ensures your devices
+ * can respond quickly to local events and operate with intermittent connectivity. AWS IoT Greengrass minimizes the cost
+ * of transmitting data to the cloud by allowing you to author AWS Lambda functions that execute locally.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSGreengrass {
@@ -43,8 +43,8 @@ public interface AWSGreengrass {
     String ENDPOINT_PREFIX = "greengrass";
 
     /**
-     * Associates a role with a group. Your AWS Greengrass core will use the role to access AWS cloud services. The
-     * role's permissions should allow Greengrass core Lambda functions to perform actions against the cloud.
+     * Associates a role with a group. Your Greengrass core will use the role to access AWS cloud services. The role's
+     * permissions should allow Greengrass core Lambda functions to perform actions against the cloud.
      * 
      * @param associateRoleToGroupRequest
      * @return Result of the AssociateRoleToGroup operation returned by the service.
@@ -59,9 +59,9 @@ public interface AWSGreengrass {
     AssociateRoleToGroupResult associateRoleToGroup(AssociateRoleToGroupRequest associateRoleToGroupRequest);
 
     /**
-     * Associates a role with your account. AWS Greengrass will use the role to access your Lambda functions and AWS IoT
-     * resources. This is necessary for deployments to succeed. The role must have at least minimum permissions in the
-     * policy ''AWSGreengrassResourceAccessRolePolicy''.
+     * Associates a role with your account. AWS IoT Greengrass will use the role to access your Lambda functions and AWS
+     * IoT resources. This is necessary for deployments to succeed. The role must have at least minimum permissions in
+     * the policy ''AWSGreengrassResourceAccessRolePolicy''.
      * 
      * @param associateServiceRoleToAccountRequest
      * @return Result of the AssociateServiceRoleToAccount operation returned by the service.
@@ -76,9 +76,35 @@ public interface AWSGreengrass {
     AssociateServiceRoleToAccountResult associateServiceRoleToAccount(AssociateServiceRoleToAccountRequest associateServiceRoleToAccountRequest);
 
     /**
+     * Creates a connector definition. You may provide the initial version of the connector definition now or use
+     * ''CreateConnectorDefinitionVersion'' at a later time.
+     * 
+     * @param createConnectorDefinitionRequest
+     * @return Result of the CreateConnectorDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.CreateConnectorDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateConnectorDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateConnectorDefinitionResult createConnectorDefinition(CreateConnectorDefinitionRequest createConnectorDefinitionRequest);
+
+    /**
+     * Creates a version of a connector definition which has already been defined.
+     * 
+     * @param createConnectorDefinitionVersionRequest
+     * @return Result of the CreateConnectorDefinitionVersion operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.CreateConnectorDefinitionVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateConnectorDefinitionVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateConnectorDefinitionVersionResult createConnectorDefinitionVersion(CreateConnectorDefinitionVersionRequest createConnectorDefinitionVersionRequest);
+
+    /**
      * Creates a core definition. You may provide the initial version of the core definition now or use
-     * ''CreateCoreDefinitionVersion'' at a later time. AWS Greengrass groups must each contain exactly one AWS
-     * Greengrass core.
+     * ''CreateCoreDefinitionVersion'' at a later time. Greengrass groups must each contain exactly one Greengrass core.
      * 
      * @param createCoreDefinitionRequest
      *        Information needed to create a core definition.
@@ -92,8 +118,8 @@ public interface AWSGreengrass {
     CreateCoreDefinitionResult createCoreDefinition(CreateCoreDefinitionRequest createCoreDefinitionRequest);
 
     /**
-     * Creates a version of a core definition that has already been defined. AWS Greengrass groups must each contain
-     * exactly one AWS Greengrass core.
+     * Creates a version of a core definition that has already been defined. Greengrass groups must each contain exactly
+     * one Greengrass core.
      * 
      * @param createCoreDefinitionVersionRequest
      * @return Result of the CreateCoreDefinitionVersion operation returned by the service.
@@ -177,6 +203,8 @@ public interface AWSGreengrass {
 
     /**
      * Creates a group. You may provide the initial version of the group or use ''CreateGroupVersion'' at a later time.
+     * Tip: You can use the ''gg_group_setup'' package (https://github.com/awslabs/aws-greengrass-group-setup) as a
+     * library or command-line application to create and deploy Greengrass groups.
      * 
      * @param createGroupRequest
      * @return Result of the CreateGroup operation returned by the service.
@@ -314,6 +342,19 @@ public interface AWSGreengrass {
      */
     CreateSubscriptionDefinitionVersionResult createSubscriptionDefinitionVersion(
             CreateSubscriptionDefinitionVersionRequest createSubscriptionDefinitionVersionRequest);
+
+    /**
+     * Deletes a connector definition.
+     * 
+     * @param deleteConnectorDefinitionRequest
+     * @return Result of the DeleteConnectorDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.DeleteConnectorDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteConnectorDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteConnectorDefinitionResult deleteConnectorDefinition(DeleteConnectorDefinitionRequest deleteConnectorDefinitionRequest);
 
     /**
      * Deletes a core definition.
@@ -477,6 +518,34 @@ public interface AWSGreengrass {
      *      API Documentation</a>
      */
     GetConnectivityInfoResult getConnectivityInfo(GetConnectivityInfoRequest getConnectivityInfoRequest);
+
+    /**
+     * Retrieves information about a connector definition.
+     * 
+     * @param getConnectorDefinitionRequest
+     * @return Result of the GetConnectorDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.GetConnectorDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectorDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetConnectorDefinitionResult getConnectorDefinition(GetConnectorDefinitionRequest getConnectorDefinitionRequest);
+
+    /**
+     * Retrieves information about a connector definition version, including the connectors that the version contains.
+     * Connectors are prebuilt modules that interact with local infrastructure, device protocols, AWS, and other cloud
+     * services.
+     * 
+     * @param getConnectorDefinitionVersionRequest
+     * @return Result of the GetConnectorDefinitionVersion operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.GetConnectorDefinitionVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectorDefinitionVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetConnectorDefinitionVersionResult getConnectorDefinitionVersion(GetConnectorDefinitionVersionRequest getConnectorDefinitionVersionRequest);
 
     /**
      * Retrieves information about a core definition version.
@@ -745,6 +814,32 @@ public interface AWSGreengrass {
     ListBulkDeploymentsResult listBulkDeployments(ListBulkDeploymentsRequest listBulkDeploymentsRequest);
 
     /**
+     * Lists the versions of a connector definition, which are containers for connectors. Connectors run on the
+     * Greengrass core and contain built-in integration with local infrastructure, device protocols, AWS, and other
+     * cloud services.
+     * 
+     * @param listConnectorDefinitionVersionsRequest
+     * @return Result of the ListConnectorDefinitionVersions operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.ListConnectorDefinitionVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListConnectorDefinitionVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListConnectorDefinitionVersionsResult listConnectorDefinitionVersions(ListConnectorDefinitionVersionsRequest listConnectorDefinitionVersionsRequest);
+
+    /**
+     * Retrieves a list of connector definitions.
+     * 
+     * @param listConnectorDefinitionsRequest
+     * @return Result of the ListConnectorDefinitions operation returned by the service.
+     * @sample AWSGreengrass.ListConnectorDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListConnectorDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListConnectorDefinitionsResult listConnectorDefinitions(ListConnectorDefinitionsRequest listConnectorDefinitionsRequest);
+
+    /**
      * Lists the versions of a core definition.
      * 
      * @param listCoreDefinitionVersionsRequest
@@ -1002,6 +1097,19 @@ public interface AWSGreengrass {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateConnectivityInfoResult updateConnectivityInfo(UpdateConnectivityInfoRequest updateConnectivityInfoRequest);
+
+    /**
+     * Updates a connector definition.
+     * 
+     * @param updateConnectorDefinitionRequest
+     * @return Result of the UpdateConnectorDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.UpdateConnectorDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateConnectorDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateConnectorDefinitionResult updateConnectorDefinition(UpdateConnectorDefinitionRequest updateConnectorDefinitionRequest);
 
     /**
      * Updates a core definition.

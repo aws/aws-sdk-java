@@ -15,7 +15,9 @@ package com.amazonaws.services.servermigration.model;
 import javax.annotation.Generated;
 
 /**
- * The provided server cannot be replicated.
+ * <p>
+ * The specified server cannot be replicated.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ServerCannotBeReplicatedException extends com.amazonaws.services.servermigration.model.AWSServerMigrationException {

@@ -25,14 +25,14 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
+     * The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
      * Otherwise, it is not encoded.
      * </p>
      */
     private java.nio.ByteBuffer ciphertextBlob;
     /**
      * <p>
-     * The data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * The data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
      * not encoded. Use this data key for local encryption and decryption, then remove it from memory as soon as
      * possible.
      * </p>
@@ -47,7 +47,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
+     * The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
      * Otherwise, it is not encoded.
      * </p>
      * <p>
@@ -62,7 +62,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param ciphertextBlob
-     *        The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
+     *        The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
      *        Otherwise, it is not encoded.
      */
 
@@ -72,7 +72,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
+     * The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
      * Otherwise, it is not encoded.
      * </p>
      * <p>
@@ -83,8 +83,8 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
      * {@code position}.
      * </p>
      * 
-     * @return The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
-     *         Otherwise, it is not encoded.
+     * @return The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is
+     *         Base64-encdoded. Otherwise, it is not encoded.
      */
 
     public java.nio.ByteBuffer getCiphertextBlob() {
@@ -93,7 +93,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
+     * The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
      * Otherwise, it is not encoded.
      * </p>
      * <p>
@@ -108,7 +108,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param ciphertextBlob
-     *        The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
+     *        The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
      *        Otherwise, it is not encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -120,7 +120,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * The data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
      * not encoded. Use this data key for local encryption and decryption, then remove it from memory as soon as
      * possible.
      * </p>
@@ -136,9 +136,9 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param plaintext
-     *        The data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
-     *        it is not encoded. Use this data key for local encryption and decryption, then remove it from memory as
-     *        soon as possible.
+     *        The data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
+     *        Otherwise, it is not encoded. Use this data key for local encryption and decryption, then remove it from
+     *        memory as soon as possible.
      */
 
     public void setPlaintext(java.nio.ByteBuffer plaintext) {
@@ -147,7 +147,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * The data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
      * not encoded. Use this data key for local encryption and decryption, then remove it from memory as soon as
      * possible.
      * </p>
@@ -159,7 +159,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
      * {@code position}.
      * </p>
      * 
-     * @return The data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
+     * @return The data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
      *         Otherwise, it is not encoded. Use this data key for local encryption and decryption, then remove it from
      *         memory as soon as possible.
      */
@@ -170,7 +170,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * The data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
      * not encoded. Use this data key for local encryption and decryption, then remove it from memory as soon as
      * possible.
      * </p>
@@ -186,9 +186,9 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param plaintext
-     *        The data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
-     *        it is not encoded. Use this data key for local encryption and decryption, then remove it from memory as
-     *        soon as possible.
+     *        The data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
+     *        Otherwise, it is not encoded. Use this data key for local encryption and decryption, then remove it from
+     *        memory as soon as possible.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

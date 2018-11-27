@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.servermigration.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class GetServersRequestMarshaller {
             .marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<List> VMSERVERADDRESSLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vmServerAddressList").build();
 
     private static final GetServersRequestMarshaller instance = new GetServersRequestMarshaller();
 
@@ -50,6 +53,7 @@ public class GetServersRequestMarshaller {
         try {
             protocolMarshaller.marshall(getServersRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(getServersRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(getServersRequest.getVmServerAddressList(), VMSERVERADDRESSLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

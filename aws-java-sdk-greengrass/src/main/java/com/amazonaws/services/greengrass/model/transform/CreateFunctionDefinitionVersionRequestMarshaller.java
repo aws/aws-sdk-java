@@ -30,6 +30,8 @@ public class CreateFunctionDefinitionVersionRequestMarshaller {
 
     private static final MarshallingInfo<String> AMZNCLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-Client-Token").build();
+    private static final MarshallingInfo<StructuredPojo> DEFAULTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultConfig").build();
     private static final MarshallingInfo<String> FUNCTIONDEFINITIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("FunctionDefinitionId").build();
     private static final MarshallingInfo<List> FUNCTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -52,6 +54,7 @@ public class CreateFunctionDefinitionVersionRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createFunctionDefinitionVersionRequest.getAmznClientToken(), AMZNCLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(createFunctionDefinitionVersionRequest.getDefaultConfig(), DEFAULTCONFIG_BINDING);
             protocolMarshaller.marshall(createFunctionDefinitionVersionRequest.getFunctionDefinitionId(), FUNCTIONDEFINITIONID_BINDING);
             protocolMarshaller.marshall(createFunctionDefinitionVersionRequest.getFunctions(), FUNCTIONS_BINDING);
         } catch (Exception e) {

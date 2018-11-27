@@ -66,6 +66,11 @@ public class ResourceDataContainerJsonUnmarshaller implements Unmarshaller<Resou
                     resourceDataContainer.setSageMakerMachineLearningModelResourceData(SageMakerMachineLearningModelResourceDataJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("SecretsManagerSecretResourceData", targetDepth)) {
+                    context.nextToken();
+                    resourceDataContainer.setSecretsManagerSecretResourceData(SecretsManagerSecretResourceDataJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

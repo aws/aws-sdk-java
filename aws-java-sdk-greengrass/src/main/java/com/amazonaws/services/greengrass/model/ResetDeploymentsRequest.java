@@ -30,7 +30,7 @@ public class ResetDeploymentsRequest extends com.amazonaws.AmazonWebServiceReque
     private String amznClientToken;
     /** If true, performs a best-effort only core reset. */
     private Boolean force;
-    /** The ID of the AWS Greengrass group. */
+    /** The ID of the Greengrass group. */
     private String groupId;
 
     /**
@@ -112,10 +112,10 @@ public class ResetDeploymentsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      * 
      * @param groupId
-     *        The ID of the AWS Greengrass group.
+     *        The ID of the Greengrass group.
      */
 
     public void setGroupId(String groupId) {
@@ -123,9 +123,9 @@ public class ResetDeploymentsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      * 
-     * @return The ID of the AWS Greengrass group.
+     * @return The ID of the Greengrass group.
      */
 
     public String getGroupId() {
@@ -133,10 +133,10 @@ public class ResetDeploymentsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      * 
      * @param groupId
-     *        The ID of the AWS Greengrass group.
+     *        The ID of the Greengrass group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

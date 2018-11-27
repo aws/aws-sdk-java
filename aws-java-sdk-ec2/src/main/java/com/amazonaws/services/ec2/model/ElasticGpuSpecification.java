@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A specification for an Elastic GPU.
+ * A specification for an Elastic Graphics accelerator.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ElasticGpuSpecification" target="_top">AWS API
@@ -28,18 +28,18 @@ public class ElasticGpuSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of Elastic GPU.
+     * The type of Elastic Graphics accelerator.
      * </p>
      */
     private String type;
 
     /**
      * <p>
-     * The type of Elastic GPU.
+     * The type of Elastic Graphics accelerator.
      * </p>
      * 
      * @param type
-     *        The type of Elastic GPU.
+     *        The type of Elastic Graphics accelerator.
      */
 
     public void setType(String type) {
@@ -48,10 +48,10 @@ public class ElasticGpuSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of Elastic GPU.
+     * The type of Elastic Graphics accelerator.
      * </p>
      * 
-     * @return The type of Elastic GPU.
+     * @return The type of Elastic Graphics accelerator.
      */
 
     public String getType() {
@@ -60,11 +60,11 @@ public class ElasticGpuSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of Elastic GPU.
+     * The type of Elastic Graphics accelerator.
      * </p>
      * 
      * @param type
-     *        The type of Elastic GPU.
+     *        The type of Elastic Graphics accelerator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

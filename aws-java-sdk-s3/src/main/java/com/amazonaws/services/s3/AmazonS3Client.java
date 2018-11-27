@@ -177,8 +177,14 @@ import com.amazonaws.services.s3.model.GetBucketTaggingConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.GetObjectAclRequest;
+import com.amazonaws.services.s3.model.GetObjectLegalHoldRequest;
+import com.amazonaws.services.s3.model.GetObjectLegalHoldResult;
+import com.amazonaws.services.s3.model.GetObjectLockConfigurationRequest;
+import com.amazonaws.services.s3.model.GetObjectLockConfigurationResult;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
+import com.amazonaws.services.s3.model.GetObjectRetentionRequest;
+import com.amazonaws.services.s3.model.GetObjectRetentionResult;
 import com.amazonaws.services.s3.model.GetObjectTaggingRequest;
 import com.amazonaws.services.s3.model.GetObjectTaggingResult;
 import com.amazonaws.services.s3.model.GetPublicAccessBlockRequest;
@@ -260,6 +266,12 @@ import com.amazonaws.services.s3.model.SetBucketTaggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.SetObjectAclRequest;
+import com.amazonaws.services.s3.model.SetObjectLegalHoldRequest;
+import com.amazonaws.services.s3.model.SetObjectLegalHoldResult;
+import com.amazonaws.services.s3.model.SetObjectLockConfigurationRequest;
+import com.amazonaws.services.s3.model.SetObjectLockConfigurationResult;
+import com.amazonaws.services.s3.model.SetObjectRetentionRequest;
+import com.amazonaws.services.s3.model.SetObjectRetentionResult;
 import com.amazonaws.services.s3.model.SetObjectTaggingRequest;
 import com.amazonaws.services.s3.model.SetObjectTaggingResult;
 import com.amazonaws.services.s3.model.SetRequestPaymentConfigurationRequest;
@@ -279,6 +291,9 @@ import com.amazonaws.services.s3.model.transform.GetBucketEncryptionStaxUnmarsha
 import com.amazonaws.services.s3.model.transform.GetBucketPolicyStatusStaxUnmarshaller;
 import com.amazonaws.services.s3.model.transform.HeadBucketResultHandler;
 import com.amazonaws.services.s3.model.transform.MultiObjectDeleteXmlFactory;
+import com.amazonaws.services.s3.model.transform.ObjectLockConfigurationXmlFactory;
+import com.amazonaws.services.s3.model.transform.ObjectLockLegalHoldXmlFactory;
+import com.amazonaws.services.s3.model.transform.ObjectLockRetentionXmlFactory;
 import com.amazonaws.services.s3.model.transform.ObjectTaggingXmlFactory;
 import com.amazonaws.services.s3.model.transform.RequestPaymentConfigurationXmlFactory;
 import com.amazonaws.services.s3.model.transform.RequestXmlFactory;
@@ -1047,6 +1062,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             request.setContent(new ByteArrayInputStream(xml.getBytes()));
         }
 
+        if (createBucketRequest.getObjectLockEnabledForBucket()) {
+            request.addHeader(Headers.OBJECT_LOCK_ENABLED_FOR_BUCKET, "true");
+        }
+
         invoke(request, voidResponseHandler, bucketName, null);
 
         return new Bucket(bucketName);
@@ -1731,6 +1750,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             populateSSE_KMS(request,
                     putObjectRequest.getSSEAwsKeyManagementParams());
 
+            populateObjectLockHeaders(request, putObjectRequest.getObjectLockMode(), putObjectRequest.getObjectLockRetainUntilDate(),
+                    putObjectRequest.getObjectLockLegalHoldStatus());
+
             // Use internal interface to differentiate 0 from unset.
             final Long contentLength = (Long)metadata.getRawMetadataValue(Headers.CONTENT_LENGTH);
             if (contentLength == null) {
@@ -1898,6 +1920,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         // Populate the SSE AWS KMS parameters to the request header
         populateSSE_KMS(request,
                 copyObjectRequest.getSSEAwsKeyManagementParams());
+
+        populateObjectLockHeaders(request, copyObjectRequest.getObjectLockMode(), copyObjectRequest.getObjectLockRetainUntilDate(),
+                copyObjectRequest.getObjectLockLegalHoldStatus());
+
         /*
          * We can't send a non-zero length Content-Length header if the user
          * specified it, otherwise it messes up the HTTP connection when the
@@ -2131,6 +2157,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         Request<DeleteObjectRequest> request = createRequest(deleteObjectRequest.getBucketName(), deleteObjectRequest.getKey(), deleteObjectRequest, HttpMethodName.DELETE);
         request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteObject");
+
         invoke(request, voidResponseHandler, deleteObjectRequest.getBucketName(), deleteObjectRequest.getKey());
     }
 
@@ -2140,6 +2167,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         Request<DeleteObjectsRequest> request = createRequest(deleteObjectsRequest.getBucketName(), null, deleteObjectsRequest, HttpMethodName.POST);
         request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteObjects");
         request.addParameter("delete", null);
+        if (deleteObjectsRequest.getBypassGovernanceRetention()) {
+            request.addHeader(Headers.BYPASS_GOVERNANCE_RETENTION, "true");
+        }
 
         if ( deleteObjectsRequest.getMfa() != null ) {
             populateRequestWithMfaDetails(request, deleteObjectsRequest.getMfa());
@@ -2215,6 +2245,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         if (deleteVersionRequest.getMfa() != null) {
             populateRequestWithMfaDetails(request, deleteVersionRequest.getMfa());
+        }
+        if (deleteVersionRequest.getBypassGovernanceRetention()) {
+            request.addHeader(Headers.BYPASS_GOVERNANCE_RETENTION, "true");
         }
 
         invoke(request, voidResponseHandler, bucketName, key);
@@ -3069,6 +3102,144 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     @Override
+    public SetObjectLegalHoldResult setObjectLegalHold(SetObjectLegalHoldRequest setObjectLegalHoldRequest) {
+        setObjectLegalHoldRequest = beforeClientExecution(setObjectLegalHoldRequest);
+        rejectNull(setObjectLegalHoldRequest, "The request parameter must be specified");
+
+        String bucketName = setObjectLegalHoldRequest.getBucketName();
+        String key = setObjectLegalHoldRequest.getKey();
+
+        rejectNull(bucketName, "The bucket name parameter must be specified when setting the object legal hold.");
+        rejectNull(key, "The key parameter must be specified when setting the object legal hold.");
+
+        Request<SetObjectLegalHoldRequest> request = createRequest(bucketName, key, setObjectLegalHoldRequest, HttpMethodName.PUT);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutObjectLegalHold");
+        setContent(request, new ObjectLockLegalHoldXmlFactory().convertToXmlByteArray(setObjectLegalHoldRequest.getLegalHold()),
+                ContentType.APPLICATION_XML.toString(), true);
+        request.addParameter("legal-hold", null);
+
+        addParameterIfNotNull(request, "versionId", setObjectLegalHoldRequest.getVersionId());
+        populateRequesterPaysHeader(request, setObjectLegalHoldRequest.isRequesterPays());
+
+        ResponseHeaderHandlerChain<SetObjectLegalHoldResult> responseHandler = new ResponseHeaderHandlerChain<SetObjectLegalHoldResult>(
+                new Unmarshallers.SetObjectLegalHoldResultUnmarshaller(),
+                new S3RequesterChargedHeaderHandler<SetObjectLegalHoldResult>());
+
+        return invoke(request, responseHandler, bucketName, key);
+    }
+
+    @Override
+    public GetObjectLegalHoldResult getObjectLegalHold(GetObjectLegalHoldRequest getObjectLegalHoldRequest) {
+        getObjectLegalHoldRequest = beforeClientExecution(getObjectLegalHoldRequest);
+        rejectNull(getObjectLegalHoldRequest, "The request parameter must be specified");
+
+        String bucketName = getObjectLegalHoldRequest.getBucketName();
+        String key = getObjectLegalHoldRequest.getKey();
+        rejectNull(bucketName, "The bucket name parameter must be specified when getting the object legal hold.");
+        rejectNull(key, "The key parameter must be specified when getting the object legal hold.");
+
+        Request<GetObjectLegalHoldRequest> request = createRequest(bucketName, key, getObjectLegalHoldRequest, HttpMethodName.GET);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetObjectLegalHold");
+        request.addParameter("legal-hold", null);
+        addParameterIfNotNull(request, "versionId", getObjectLegalHoldRequest.getVersionId());
+        populateRequesterPaysHeader(request, getObjectLegalHoldRequest.isRequesterPays());
+
+        return invoke(request, new Unmarshallers.GetObjectLegalHoldResultUnmarshaller(), bucketName, key);
+    }
+
+    @Override
+    public SetObjectLockConfigurationResult setObjectLockConfiguration(SetObjectLockConfigurationRequest setObjectLockConfigurationRequest) {
+        setObjectLockConfigurationRequest = beforeClientExecution(setObjectLockConfigurationRequest);
+        rejectNull(setObjectLockConfigurationRequest, "The request parameter must be specified");
+
+        String bucketName = setObjectLockConfigurationRequest.getBucketName();
+        rejectNull(bucketName, "The bucket name parameter must be specified when setting the object lock configuration");
+
+        Request<SetObjectLockConfigurationRequest> request = createRequest(bucketName, null, setObjectLockConfigurationRequest, HttpMethodName.PUT);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutObjectLockConfiguration");
+        request.addParameter("object-lock", null);
+
+        addHeaderIfNotNull(request, Headers.OBJECT_LOCK_TOKEN, setObjectLockConfigurationRequest.getToken());
+        populateRequesterPaysHeader(request, setObjectLockConfigurationRequest.isRequesterPays());
+
+        setContent(request, new ObjectLockConfigurationXmlFactory().convertToXmlByteArray(setObjectLockConfigurationRequest.getObjectLockConfiguration()),
+                ContentType.APPLICATION_XML.toString(), true);
+
+        ResponseHeaderHandlerChain<SetObjectLockConfigurationResult> responseHandler = new ResponseHeaderHandlerChain<SetObjectLockConfigurationResult>(
+                new Unmarshallers.SetObjectLockConfigurationResultUnmarshaller(),
+                new S3RequesterChargedHeaderHandler<SetObjectLockConfigurationResult>());
+
+        return invoke(request, responseHandler, bucketName, null);
+    }
+
+    @Override
+    public GetObjectLockConfigurationResult getObjectLockConfiguration(GetObjectLockConfigurationRequest getObjectLockConfigurationRequest) {
+        getObjectLockConfigurationRequest = beforeClientExecution(getObjectLockConfigurationRequest);
+        rejectNull(getObjectLockConfigurationRequest, "The request parameter must be specified");
+
+        String bucketName = getObjectLockConfigurationRequest.getBucketName();
+        rejectNull(bucketName, "The bucket name parameter must be specified when getting the object lock configuration");
+
+        Request<GetObjectLockConfigurationRequest> request = createRequest(bucketName, null, getObjectLockConfigurationRequest, HttpMethodName.GET);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetObjectLockConfiguration");
+        request.addParameter("object-lock", null);
+
+        return invoke(request, new Unmarshallers.GetObjectLockConfigurationResultUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public SetObjectRetentionResult setObjectRetention(SetObjectRetentionRequest setObjectRetentionRequest) {
+        setObjectRetentionRequest = beforeClientExecution(setObjectRetentionRequest);
+        rejectNull(setObjectRetentionRequest, "The request parameter must be specified");
+
+        String bucketName = setObjectRetentionRequest.getBucketName();
+        String key = setObjectRetentionRequest.getKey();
+
+        rejectNull(bucketName, "The bucket name parameter must be specified when setting the object retention.");
+        rejectNull(key, "The key parameter must be specified when setting the object retention.");
+
+        Request<SetObjectRetentionRequest> request = createRequest(bucketName, key, setObjectRetentionRequest, HttpMethodName.PUT);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutObjectRetention");
+        request.addParameter("retention", null);
+        if (setObjectRetentionRequest.getBypassGovernanceRetention()) {
+            request.addHeader(Headers.BYPASS_GOVERNANCE_RETENTION, "true");
+        }
+        addParameterIfNotNull(request, "versionId", setObjectRetentionRequest.getVersionId());
+        populateRequesterPaysHeader(request, setObjectRetentionRequest.isRequesterPays());
+
+        setContent(request, new ObjectLockRetentionXmlFactory().convertToXmlByteArray(setObjectRetentionRequest.getRetention()),
+                ContentType.APPLICATION_XML.toString(), true);
+
+        ResponseHeaderHandlerChain<SetObjectRetentionResult> responseHandler = new ResponseHeaderHandlerChain<SetObjectRetentionResult>(
+                new Unmarshallers.SetObjectRetentionResultUnmarshaller(),
+                new S3RequesterChargedHeaderHandler<SetObjectRetentionResult>());
+
+        return invoke(request, responseHandler, bucketName, key);
+    }
+
+    @Override
+    public GetObjectRetentionResult getObjectRetention(GetObjectRetentionRequest getObjectRetentionRequest) {
+        getObjectRetentionRequest = beforeClientExecution(getObjectRetentionRequest);
+        rejectNull(getObjectRetentionRequest, "The request parameter must be specified");
+
+        String bucketName = getObjectRetentionRequest.getBucketName();
+        String key = getObjectRetentionRequest.getKey();
+
+        rejectNull(bucketName, "The bucket name parameter must be specified when getting the object retention.");
+        rejectNull(key, "The key parameter must be specified when getting the object retention.");
+
+        Request<GetObjectRetentionRequest> request = createRequest(bucketName, key, getObjectRetentionRequest, HttpMethodName.GET);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetObjectRetention");
+        request.addParameter("retention", null);
+
+        addParameterIfNotNull(request, "versionId", getObjectRetentionRequest.getVersionId());
+        // Note: the model has a requester pays member on the request but no requester charged on the result...
+        populateRequesterPaysHeader(request, getObjectRetentionRequest.isRequesterPays());
+
+        return invoke(request, new Unmarshallers.GetObjectRetentionResultUnmarshaller(), bucketName, key);
+    }
+
+    @Override
     public URL generatePresignedUrl(String bucketName, String key, Date expiration)
             throws SdkClientException {
         return generatePresignedUrl(bucketName, key, expiration, HttpMethod.GET);
@@ -3307,6 +3478,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 initiateMultipartUploadRequest.getSSEAwsKeyManagementParams());
 
         addHeaderIfNotNull(request, Headers.S3_TAGGING, urlEncodeTags(initiateMultipartUploadRequest.getTagging()));
+
+        populateObjectLockHeaders(request, initiateMultipartUploadRequest.getObjectLockMode(), initiateMultipartUploadRequest.getObjectLockRetainUntilDate(),
+                initiateMultipartUploadRequest.getObjectLockLegalHoldStatus());
 
         // Be careful that we don't send the object's total size as the content
         // length for the InitiateMultipartUpload request.
@@ -5383,5 +5557,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         byte[] content = RequestXmlFactory.convertToXmlByteArray(restoreObjectRequest);
         setContent(request, content, "application/xml", true);
         return request;
+    }
+
+    private static void populateObjectLockHeaders(Request<?> request, String mode, Date retainUntil, String status) {
+        addHeaderIfNotNull(request, Headers.OBJECT_LOCK_MODE, mode);
+        if (retainUntil != null) {
+            request.addHeader(Headers.OBJECT_LOCK_RETAIN_UNTIL_DATE, ServiceUtils.formatIso8601Date(retainUntil));
+        }
+        addHeaderIfNotNull(request, Headers.OBJECT_LOCK_LEGAL_HOLD_STATUS, status);
     }
 }

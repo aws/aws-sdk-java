@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum OriginType {
 
     AWS_KMS("AWS_KMS"),
-    EXTERNAL("EXTERNAL");
+    EXTERNAL("EXTERNAL"),
+    AWS_CLOUDHSM("AWS_CLOUDHSM");
 
     private String value;
 

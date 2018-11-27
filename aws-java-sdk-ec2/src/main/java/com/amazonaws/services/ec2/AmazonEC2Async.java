@@ -105,6 +105,51 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Accepts a request to attach a VPC to a transit gateway.
+     * </p>
+     * <p>
+     * The VPC attachment must be in the <code>pendingAcceptance</code> state. Use
+     * <a>DescribeTransitGatewayVpcAttachments</a> to view your pending VPC attachment requests. Use
+     * <a>RejectTransitGatewayVpcAttachment</a> to reject a VPC attachment request.
+     * </p>
+     * 
+     * @param acceptTransitGatewayVpcAttachmentRequest
+     * @return A Java Future containing the result of the AcceptTransitGatewayVpcAttachment operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.AcceptTransitGatewayVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AcceptTransitGatewayVpcAttachmentResult> acceptTransitGatewayVpcAttachmentAsync(
+            AcceptTransitGatewayVpcAttachmentRequest acceptTransitGatewayVpcAttachmentRequest);
+
+    /**
+     * <p>
+     * Accepts a request to attach a VPC to a transit gateway.
+     * </p>
+     * <p>
+     * The VPC attachment must be in the <code>pendingAcceptance</code> state. Use
+     * <a>DescribeTransitGatewayVpcAttachments</a> to view your pending VPC attachment requests. Use
+     * <a>RejectTransitGatewayVpcAttachment</a> to reject a VPC attachment request.
+     * </p>
+     * 
+     * @param acceptTransitGatewayVpcAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AcceptTransitGatewayVpcAttachment operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.AcceptTransitGatewayVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AcceptTransitGatewayVpcAttachmentResult> acceptTransitGatewayVpcAttachmentAsync(
+            AcceptTransitGatewayVpcAttachmentRequest acceptTransitGatewayVpcAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<AcceptTransitGatewayVpcAttachmentRequest, AcceptTransitGatewayVpcAttachmentResult> asyncHandler);
+
+    /**
+     * <p>
      * Accepts one or more interface VPC endpoint connection requests to your VPC endpoint service.
      * </p>
      * 
@@ -752,6 +797,43 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<AssociateSubnetCidrBlockResult> associateSubnetCidrBlockAsync(AssociateSubnetCidrBlockRequest associateSubnetCidrBlockRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateSubnetCidrBlockRequest, AssociateSubnetCidrBlockResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates the specified attachment with the specified transit gateway route table. You can associate only one
+     * route table with an attachment.
+     * </p>
+     * 
+     * @param associateTransitGatewayRouteTableRequest
+     * @return A Java Future containing the result of the AssociateTransitGatewayRouteTable operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.AssociateTransitGatewayRouteTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayRouteTable"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateTransitGatewayRouteTableResult> associateTransitGatewayRouteTableAsync(
+            AssociateTransitGatewayRouteTableRequest associateTransitGatewayRouteTableRequest);
+
+    /**
+     * <p>
+     * Associates the specified attachment with the specified transit gateway route table. You can associate only one
+     * route table with an attachment.
+     * </p>
+     * 
+     * @param associateTransitGatewayRouteTableRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateTransitGatewayRouteTable operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.AssociateTransitGatewayRouteTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayRouteTable"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateTransitGatewayRouteTableResult> associateTransitGatewayRouteTableAsync(
+            AssociateTransitGatewayRouteTableRequest associateTransitGatewayRouteTableRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateTransitGatewayRouteTableRequest, AssociateTransitGatewayRouteTableResult> asyncHandler);
 
     /**
      * <p>
@@ -3585,6 +3667,196 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Creates a transit gateway.
+     * </p>
+     * <p>
+     * You can use a transit gateway to interconnect your virtual private clouds (VPC) and on-premises networks. After
+     * the transit gateway enters the <code>available</code> state, you can attach your VPCs and VPN connections to the
+     * transit gateway.
+     * </p>
+     * <p>
+     * To attach your VPCs, use <a>CreateTransitGatewayVpcAttachment</a>.
+     * </p>
+     * <p>
+     * To attach a VPN connection, use <a>CreateCustomerGateway</a> to create a customer gateway and specify the ID of
+     * the customer gateway and the ID of the transit gateway in a call to <a>CreateVpnConnection</a>.
+     * </p>
+     * <p>
+     * When you create a transit gateway, we create a default transit gateway route table and use it as the default
+     * association route table and the default propagation route table. You can use
+     * <a>CreateTransitGatewayRouteTable</a> to create additional transit gateway route tables. If you disable automatic
+     * route propagation, we do not create a default transit gateway route table. You can use
+     * <a>EnableTransitGatewayRouteTablePropagation</a> to propagate routes from a resource attachment to a transit
+     * gateway route table. If you disable automatic associations, you can use <a>AssociateTransitGatewayRouteTable</a>
+     * to associate a resource attachment with a transit gateway route table.
+     * </p>
+     * 
+     * @param createTransitGatewayRequest
+     * @return A Java Future containing the result of the CreateTransitGateway operation returned by the service.
+     * @sample AmazonEC2Async.CreateTransitGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGateway" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTransitGatewayResult> createTransitGatewayAsync(CreateTransitGatewayRequest createTransitGatewayRequest);
+
+    /**
+     * <p>
+     * Creates a transit gateway.
+     * </p>
+     * <p>
+     * You can use a transit gateway to interconnect your virtual private clouds (VPC) and on-premises networks. After
+     * the transit gateway enters the <code>available</code> state, you can attach your VPCs and VPN connections to the
+     * transit gateway.
+     * </p>
+     * <p>
+     * To attach your VPCs, use <a>CreateTransitGatewayVpcAttachment</a>.
+     * </p>
+     * <p>
+     * To attach a VPN connection, use <a>CreateCustomerGateway</a> to create a customer gateway and specify the ID of
+     * the customer gateway and the ID of the transit gateway in a call to <a>CreateVpnConnection</a>.
+     * </p>
+     * <p>
+     * When you create a transit gateway, we create a default transit gateway route table and use it as the default
+     * association route table and the default propagation route table. You can use
+     * <a>CreateTransitGatewayRouteTable</a> to create additional transit gateway route tables. If you disable automatic
+     * route propagation, we do not create a default transit gateway route table. You can use
+     * <a>EnableTransitGatewayRouteTablePropagation</a> to propagate routes from a resource attachment to a transit
+     * gateway route table. If you disable automatic associations, you can use <a>AssociateTransitGatewayRouteTable</a>
+     * to associate a resource attachment with a transit gateway route table.
+     * </p>
+     * 
+     * @param createTransitGatewayRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTransitGateway operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CreateTransitGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGateway" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTransitGatewayResult> createTransitGatewayAsync(CreateTransitGatewayRequest createTransitGatewayRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTransitGatewayRequest, CreateTransitGatewayResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a static route for the specified transit gateway route table.
+     * </p>
+     * 
+     * @param createTransitGatewayRouteRequest
+     * @return A Java Future containing the result of the CreateTransitGatewayRoute operation returned by the service.
+     * @sample AmazonEC2Async.CreateTransitGatewayRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRoute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTransitGatewayRouteResult> createTransitGatewayRouteAsync(
+            CreateTransitGatewayRouteRequest createTransitGatewayRouteRequest);
+
+    /**
+     * <p>
+     * Creates a static route for the specified transit gateway route table.
+     * </p>
+     * 
+     * @param createTransitGatewayRouteRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTransitGatewayRoute operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CreateTransitGatewayRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRoute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTransitGatewayRouteResult> createTransitGatewayRouteAsync(
+            CreateTransitGatewayRouteRequest createTransitGatewayRouteRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTransitGatewayRouteRequest, CreateTransitGatewayRouteResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a route table for the specified transit gateway.
+     * </p>
+     * 
+     * @param createTransitGatewayRouteTableRequest
+     * @return A Java Future containing the result of the CreateTransitGatewayRouteTable operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.CreateTransitGatewayRouteTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTable"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTransitGatewayRouteTableResult> createTransitGatewayRouteTableAsync(
+            CreateTransitGatewayRouteTableRequest createTransitGatewayRouteTableRequest);
+
+    /**
+     * <p>
+     * Creates a route table for the specified transit gateway.
+     * </p>
+     * 
+     * @param createTransitGatewayRouteTableRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTransitGatewayRouteTable operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.CreateTransitGatewayRouteTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTable"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTransitGatewayRouteTableResult> createTransitGatewayRouteTableAsync(
+            CreateTransitGatewayRouteTableRequest createTransitGatewayRouteTableRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTransitGatewayRouteTableRequest, CreateTransitGatewayRouteTableResult> asyncHandler);
+
+    /**
+     * <p>
+     * Attaches the specified VPC to the specified transit gateway.
+     * </p>
+     * <p>
+     * If you attach a VPC with a CIDR range that overlaps the CIDR range of a VPC that is already attached, the new VPC
+     * CIDR range is not propagated to the default propagation route table.
+     * </p>
+     * <p>
+     * To send VPC traffic to an attached transit gateway, add a route to the VPC route table using <a>CreateRoute</a>.
+     * </p>
+     * 
+     * @param createTransitGatewayVpcAttachmentRequest
+     * @return A Java Future containing the result of the CreateTransitGatewayVpcAttachment operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.CreateTransitGatewayVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTransitGatewayVpcAttachmentResult> createTransitGatewayVpcAttachmentAsync(
+            CreateTransitGatewayVpcAttachmentRequest createTransitGatewayVpcAttachmentRequest);
+
+    /**
+     * <p>
+     * Attaches the specified VPC to the specified transit gateway.
+     * </p>
+     * <p>
+     * If you attach a VPC with a CIDR range that overlaps the CIDR range of a VPC that is already attached, the new VPC
+     * CIDR range is not propagated to the default propagation route table.
+     * </p>
+     * <p>
+     * To send VPC traffic to an attached transit gateway, add a route to the VPC route table using <a>CreateRoute</a>.
+     * </p>
+     * 
+     * @param createTransitGatewayVpcAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTransitGatewayVpcAttachment operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.CreateTransitGatewayVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTransitGatewayVpcAttachmentResult> createTransitGatewayVpcAttachmentAsync(
+            CreateTransitGatewayVpcAttachmentRequest createTransitGatewayVpcAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTransitGatewayVpcAttachmentRequest, CreateTransitGatewayVpcAttachmentResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an EBS volume that can be attached to an instance in the same Availability Zone. The volume is created in
      * the regional endpoint that you send the HTTP request to. For more information see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
@@ -4994,6 +5266,142 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Deletes the specified transit gateway.
+     * </p>
+     * 
+     * @param deleteTransitGatewayRequest
+     * @return A Java Future containing the result of the DeleteTransitGateway operation returned by the service.
+     * @sample AmazonEC2Async.DeleteTransitGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGateway" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTransitGatewayResult> deleteTransitGatewayAsync(DeleteTransitGatewayRequest deleteTransitGatewayRequest);
+
+    /**
+     * <p>
+     * Deletes the specified transit gateway.
+     * </p>
+     * 
+     * @param deleteTransitGatewayRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTransitGateway operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DeleteTransitGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGateway" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTransitGatewayResult> deleteTransitGatewayAsync(DeleteTransitGatewayRequest deleteTransitGatewayRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTransitGatewayRequest, DeleteTransitGatewayResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified route from the specified transit gateway route table.
+     * </p>
+     * 
+     * @param deleteTransitGatewayRouteRequest
+     * @return A Java Future containing the result of the DeleteTransitGatewayRoute operation returned by the service.
+     * @sample AmazonEC2Async.DeleteTransitGatewayRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRoute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTransitGatewayRouteResult> deleteTransitGatewayRouteAsync(
+            DeleteTransitGatewayRouteRequest deleteTransitGatewayRouteRequest);
+
+    /**
+     * <p>
+     * Deletes the specified route from the specified transit gateway route table.
+     * </p>
+     * 
+     * @param deleteTransitGatewayRouteRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTransitGatewayRoute operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DeleteTransitGatewayRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRoute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTransitGatewayRouteResult> deleteTransitGatewayRouteAsync(
+            DeleteTransitGatewayRouteRequest deleteTransitGatewayRouteRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTransitGatewayRouteRequest, DeleteTransitGatewayRouteResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified transit gateway route table. You must disassociate the route table from any transit gateway
+     * route tables before you can delete it.
+     * </p>
+     * 
+     * @param deleteTransitGatewayRouteTableRequest
+     * @return A Java Future containing the result of the DeleteTransitGatewayRouteTable operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DeleteTransitGatewayRouteTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTable"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTransitGatewayRouteTableResult> deleteTransitGatewayRouteTableAsync(
+            DeleteTransitGatewayRouteTableRequest deleteTransitGatewayRouteTableRequest);
+
+    /**
+     * <p>
+     * Deletes the specified transit gateway route table. You must disassociate the route table from any transit gateway
+     * route tables before you can delete it.
+     * </p>
+     * 
+     * @param deleteTransitGatewayRouteTableRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTransitGatewayRouteTable operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DeleteTransitGatewayRouteTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTable"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTransitGatewayRouteTableResult> deleteTransitGatewayRouteTableAsync(
+            DeleteTransitGatewayRouteTableRequest deleteTransitGatewayRouteTableRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTransitGatewayRouteTableRequest, DeleteTransitGatewayRouteTableResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified VPC attachment.
+     * </p>
+     * 
+     * @param deleteTransitGatewayVpcAttachmentRequest
+     * @return A Java Future containing the result of the DeleteTransitGatewayVpcAttachment operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DeleteTransitGatewayVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTransitGatewayVpcAttachmentResult> deleteTransitGatewayVpcAttachmentAsync(
+            DeleteTransitGatewayVpcAttachmentRequest deleteTransitGatewayVpcAttachmentRequest);
+
+    /**
+     * <p>
+     * Deletes the specified VPC attachment.
+     * </p>
+     * 
+     * @param deleteTransitGatewayVpcAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTransitGatewayVpcAttachment operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DeleteTransitGatewayVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTransitGatewayVpcAttachmentResult> deleteTransitGatewayVpcAttachmentAsync(
+            DeleteTransitGatewayVpcAttachmentRequest deleteTransitGatewayVpcAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTransitGatewayVpcAttachmentRequest, DeleteTransitGatewayVpcAttachmentResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified EBS volume. The volume must be in the <code>available</code> state (not attached to an
      * instance).
      * </p>
@@ -6147,8 +6555,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the Elastic GPUs associated with your instances. For more information about Elastic GPUs, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-gpus.html">Amazon EC2 Elastic GPUs</a>.
+     * Describes the Elastic Graphics accelerator associated with your instances. For more information about Elastic
+     * Graphics, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
+     * Elastic Graphics</a>.
      * </p>
      * 
      * @param describeElasticGpusRequest
@@ -6161,8 +6570,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the Elastic GPUs associated with your instances. For more information about Elastic GPUs, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-gpus.html">Amazon EC2 Elastic GPUs</a>.
+     * Describes the Elastic Graphics accelerator associated with your instances. For more information about Elastic
+     * Graphics, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
+     * Elastic Graphics</a>.
      * </p>
      * 
      * @param describeElasticGpusRequest
@@ -9191,6 +9601,152 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Describes one or more attachments between resources and transit gateways. By default, all attachments are
+     * described. Alternatively, you can filter the results by attachment ID, attachment state, resource ID, or resource
+     * owner.
+     * </p>
+     * 
+     * @param describeTransitGatewayAttachmentsRequest
+     * @return A Java Future containing the result of the DescribeTransitGatewayAttachments operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeTransitGatewayAttachments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayAttachments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTransitGatewayAttachmentsResult> describeTransitGatewayAttachmentsAsync(
+            DescribeTransitGatewayAttachmentsRequest describeTransitGatewayAttachmentsRequest);
+
+    /**
+     * <p>
+     * Describes one or more attachments between resources and transit gateways. By default, all attachments are
+     * described. Alternatively, you can filter the results by attachment ID, attachment state, resource ID, or resource
+     * owner.
+     * </p>
+     * 
+     * @param describeTransitGatewayAttachmentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTransitGatewayAttachments operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeTransitGatewayAttachments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayAttachments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTransitGatewayAttachmentsResult> describeTransitGatewayAttachmentsAsync(
+            DescribeTransitGatewayAttachmentsRequest describeTransitGatewayAttachmentsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTransitGatewayAttachmentsRequest, DescribeTransitGatewayAttachmentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes one or more transit gateway route tables. By default, all transit gateway route tables are described.
+     * Alternatively, you can filter the results.
+     * </p>
+     * 
+     * @param describeTransitGatewayRouteTablesRequest
+     * @return A Java Future containing the result of the DescribeTransitGatewayRouteTables operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeTransitGatewayRouteTables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTables"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTransitGatewayRouteTablesResult> describeTransitGatewayRouteTablesAsync(
+            DescribeTransitGatewayRouteTablesRequest describeTransitGatewayRouteTablesRequest);
+
+    /**
+     * <p>
+     * Describes one or more transit gateway route tables. By default, all transit gateway route tables are described.
+     * Alternatively, you can filter the results.
+     * </p>
+     * 
+     * @param describeTransitGatewayRouteTablesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTransitGatewayRouteTables operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeTransitGatewayRouteTables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTables"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTransitGatewayRouteTablesResult> describeTransitGatewayRouteTablesAsync(
+            DescribeTransitGatewayRouteTablesRequest describeTransitGatewayRouteTablesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTransitGatewayRouteTablesRequest, DescribeTransitGatewayRouteTablesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes one or more VPC attachments. By default, all VPC attachments are described. Alternatively, you can
+     * filter the results.
+     * </p>
+     * 
+     * @param describeTransitGatewayVpcAttachmentsRequest
+     * @return A Java Future containing the result of the DescribeTransitGatewayVpcAttachments operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeTransitGatewayVpcAttachments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayVpcAttachments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTransitGatewayVpcAttachmentsResult> describeTransitGatewayVpcAttachmentsAsync(
+            DescribeTransitGatewayVpcAttachmentsRequest describeTransitGatewayVpcAttachmentsRequest);
+
+    /**
+     * <p>
+     * Describes one or more VPC attachments. By default, all VPC attachments are described. Alternatively, you can
+     * filter the results.
+     * </p>
+     * 
+     * @param describeTransitGatewayVpcAttachmentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTransitGatewayVpcAttachments operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeTransitGatewayVpcAttachments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayVpcAttachments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTransitGatewayVpcAttachmentsResult> describeTransitGatewayVpcAttachmentsAsync(
+            DescribeTransitGatewayVpcAttachmentsRequest describeTransitGatewayVpcAttachmentsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTransitGatewayVpcAttachmentsRequest, DescribeTransitGatewayVpcAttachmentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes one or more transit gateways. By default, all transit gateways are described. Alternatively, you can
+     * filter the results.
+     * </p>
+     * 
+     * @param describeTransitGatewaysRequest
+     * @return A Java Future containing the result of the DescribeTransitGateways operation returned by the service.
+     * @sample AmazonEC2Async.DescribeTransitGateways
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGateways" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTransitGatewaysResult> describeTransitGatewaysAsync(DescribeTransitGatewaysRequest describeTransitGatewaysRequest);
+
+    /**
+     * <p>
+     * Describes one or more transit gateways. By default, all transit gateways are described. Alternatively, you can
+     * filter the results.
+     * </p>
+     * 
+     * @param describeTransitGatewaysRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTransitGateways operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeTransitGateways
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGateways" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTransitGatewaysResult> describeTransitGatewaysAsync(DescribeTransitGatewaysRequest describeTransitGatewaysRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTransitGatewaysRequest, DescribeTransitGatewaysResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the specified attribute of the specified volume. You can specify only one attribute at a time.
      * </p>
      * <p>
@@ -10266,6 +10822,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Disables the specified resource attachment from propagating routes to the specified propagation route table.
+     * </p>
+     * 
+     * @param disableTransitGatewayRouteTablePropagationRequest
+     * @return A Java Future containing the result of the DisableTransitGatewayRouteTablePropagation operation returned
+     *         by the service.
+     * @sample AmazonEC2Async.DisableTransitGatewayRouteTablePropagation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableTransitGatewayRouteTablePropagation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableTransitGatewayRouteTablePropagationResult> disableTransitGatewayRouteTablePropagationAsync(
+            DisableTransitGatewayRouteTablePropagationRequest disableTransitGatewayRouteTablePropagationRequest);
+
+    /**
+     * <p>
+     * Disables the specified resource attachment from propagating routes to the specified propagation route table.
+     * </p>
+     * 
+     * @param disableTransitGatewayRouteTablePropagationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableTransitGatewayRouteTablePropagation operation returned
+     *         by the service.
+     * @sample AmazonEC2AsyncHandler.DisableTransitGatewayRouteTablePropagation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableTransitGatewayRouteTablePropagation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableTransitGatewayRouteTablePropagationResult> disableTransitGatewayRouteTablePropagationAsync(
+            DisableTransitGatewayRouteTablePropagationRequest disableTransitGatewayRouteTablePropagationRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableTransitGatewayRouteTablePropagationRequest, DisableTransitGatewayRouteTablePropagationResult> asyncHandler);
+
+    /**
+     * <p>
      * Disables a virtual private gateway (VGW) from propagating routes to a specified route table of a VPC.
      * </p>
      * 
@@ -10545,6 +11136,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Disassociates a resource attachment from a transit gateway route table.
+     * </p>
+     * 
+     * @param disassociateTransitGatewayRouteTableRequest
+     * @return A Java Future containing the result of the DisassociateTransitGatewayRouteTable operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DisassociateTransitGatewayRouteTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayRouteTable"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateTransitGatewayRouteTableResult> disassociateTransitGatewayRouteTableAsync(
+            DisassociateTransitGatewayRouteTableRequest disassociateTransitGatewayRouteTableRequest);
+
+    /**
+     * <p>
+     * Disassociates a resource attachment from a transit gateway route table.
+     * </p>
+     * 
+     * @param disassociateTransitGatewayRouteTableRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateTransitGatewayRouteTable operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DisassociateTransitGatewayRouteTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayRouteTable"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateTransitGatewayRouteTableResult> disassociateTransitGatewayRouteTableAsync(
+            DisassociateTransitGatewayRouteTableRequest disassociateTransitGatewayRouteTableRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateTransitGatewayRouteTableRequest, DisassociateTransitGatewayRouteTableResult> asyncHandler);
+
+    /**
+     * <p>
      * Disassociates a CIDR block from a VPC. To disassociate the CIDR block, you must specify its association ID. You
      * can get the association ID by using <a>DescribeVpcs</a>. You must detach or delete all gateways and resources
      * that are associated with the CIDR block before you can disassociate it.
@@ -10583,6 +11209,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DisassociateVpcCidrBlockResult> disassociateVpcCidrBlockAsync(DisassociateVpcCidrBlockRequest disassociateVpcCidrBlockRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateVpcCidrBlockRequest, DisassociateVpcCidrBlockResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables the specified attachment to propagate routes to the specified propagation route table.
+     * </p>
+     * 
+     * @param enableTransitGatewayRouteTablePropagationRequest
+     * @return A Java Future containing the result of the EnableTransitGatewayRouteTablePropagation operation returned
+     *         by the service.
+     * @sample AmazonEC2Async.EnableTransitGatewayRouteTablePropagation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableTransitGatewayRouteTablePropagation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableTransitGatewayRouteTablePropagationResult> enableTransitGatewayRouteTablePropagationAsync(
+            EnableTransitGatewayRouteTablePropagationRequest enableTransitGatewayRouteTablePropagationRequest);
+
+    /**
+     * <p>
+     * Enables the specified attachment to propagate routes to the specified propagation route table.
+     * </p>
+     * 
+     * @param enableTransitGatewayRouteTablePropagationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableTransitGatewayRouteTablePropagation operation returned
+     *         by the service.
+     * @sample AmazonEC2AsyncHandler.EnableTransitGatewayRouteTablePropagation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableTransitGatewayRouteTablePropagation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableTransitGatewayRouteTablePropagationResult> enableTransitGatewayRouteTablePropagationAsync(
+            EnableTransitGatewayRouteTablePropagationRequest enableTransitGatewayRouteTablePropagationRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableTransitGatewayRouteTablePropagationRequest, EnableTransitGatewayRouteTablePropagationResult> asyncHandler);
 
     /**
      * <p>
@@ -10741,6 +11402,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<EnableVpcClassicLinkDnsSupportResult> enableVpcClassicLinkDnsSupportAsync(
             EnableVpcClassicLinkDnsSupportRequest enableVpcClassicLinkDnsSupportRequest,
             com.amazonaws.handlers.AsyncHandler<EnableVpcClassicLinkDnsSupportRequest, EnableVpcClassicLinkDnsSupportResult> asyncHandler);
+
+    /**
+     * <p>
+     * Exports routes from the specified transit gateway route table to the specified S3 bucket. By default, all routes
+     * are exported. Alternatively, you can filter by CIDR range.
+     * </p>
+     * 
+     * @param exportTransitGatewayRoutesRequest
+     * @return A Java Future containing the result of the ExportTransitGatewayRoutes operation returned by the service.
+     * @sample AmazonEC2Async.ExportTransitGatewayRoutes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportTransitGatewayRoutes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportTransitGatewayRoutesResult> exportTransitGatewayRoutesAsync(
+            ExportTransitGatewayRoutesRequest exportTransitGatewayRoutesRequest);
+
+    /**
+     * <p>
+     * Exports routes from the specified transit gateway route table to the specified S3 bucket. By default, all routes
+     * are exported. Alternatively, you can filter by CIDR range.
+     * </p>
+     * 
+     * @param exportTransitGatewayRoutesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExportTransitGatewayRoutes operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ExportTransitGatewayRoutes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportTransitGatewayRoutes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportTransitGatewayRoutesResult> exportTransitGatewayRoutesAsync(
+            ExportTransitGatewayRoutesRequest exportTransitGatewayRoutesRequest,
+            com.amazonaws.handlers.AsyncHandler<ExportTransitGatewayRoutesRequest, ExportTransitGatewayRoutesResult> asyncHandler);
 
     /**
      * <p>
@@ -11037,6 +11733,111 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<GetReservedInstancesExchangeQuoteResult> getReservedInstancesExchangeQuoteAsync(
             GetReservedInstancesExchangeQuoteRequest getReservedInstancesExchangeQuoteRequest,
             com.amazonaws.handlers.AsyncHandler<GetReservedInstancesExchangeQuoteRequest, GetReservedInstancesExchangeQuoteResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the route tables to which the specified resource attachment propagates routes.
+     * </p>
+     * 
+     * @param getTransitGatewayAttachmentPropagationsRequest
+     * @return A Java Future containing the result of the GetTransitGatewayAttachmentPropagations operation returned by
+     *         the service.
+     * @sample AmazonEC2Async.GetTransitGatewayAttachmentPropagations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayAttachmentPropagations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTransitGatewayAttachmentPropagationsResult> getTransitGatewayAttachmentPropagationsAsync(
+            GetTransitGatewayAttachmentPropagationsRequest getTransitGatewayAttachmentPropagationsRequest);
+
+    /**
+     * <p>
+     * Lists the route tables to which the specified resource attachment propagates routes.
+     * </p>
+     * 
+     * @param getTransitGatewayAttachmentPropagationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTransitGatewayAttachmentPropagations operation returned by
+     *         the service.
+     * @sample AmazonEC2AsyncHandler.GetTransitGatewayAttachmentPropagations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayAttachmentPropagations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTransitGatewayAttachmentPropagationsResult> getTransitGatewayAttachmentPropagationsAsync(
+            GetTransitGatewayAttachmentPropagationsRequest getTransitGatewayAttachmentPropagationsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTransitGatewayAttachmentPropagationsRequest, GetTransitGatewayAttachmentPropagationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about the associations for the specified transit gateway route table.
+     * </p>
+     * 
+     * @param getTransitGatewayRouteTableAssociationsRequest
+     * @return A Java Future containing the result of the GetTransitGatewayRouteTableAssociations operation returned by
+     *         the service.
+     * @sample AmazonEC2Async.GetTransitGatewayRouteTableAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTableAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTransitGatewayRouteTableAssociationsResult> getTransitGatewayRouteTableAssociationsAsync(
+            GetTransitGatewayRouteTableAssociationsRequest getTransitGatewayRouteTableAssociationsRequest);
+
+    /**
+     * <p>
+     * Gets information about the associations for the specified transit gateway route table.
+     * </p>
+     * 
+     * @param getTransitGatewayRouteTableAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTransitGatewayRouteTableAssociations operation returned by
+     *         the service.
+     * @sample AmazonEC2AsyncHandler.GetTransitGatewayRouteTableAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTableAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTransitGatewayRouteTableAssociationsResult> getTransitGatewayRouteTableAssociationsAsync(
+            GetTransitGatewayRouteTableAssociationsRequest getTransitGatewayRouteTableAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTransitGatewayRouteTableAssociationsRequest, GetTransitGatewayRouteTableAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about the route table propagations for the specified transit gateway route table.
+     * </p>
+     * 
+     * @param getTransitGatewayRouteTablePropagationsRequest
+     * @return A Java Future containing the result of the GetTransitGatewayRouteTablePropagations operation returned by
+     *         the service.
+     * @sample AmazonEC2Async.GetTransitGatewayRouteTablePropagations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTablePropagations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTransitGatewayRouteTablePropagationsResult> getTransitGatewayRouteTablePropagationsAsync(
+            GetTransitGatewayRouteTablePropagationsRequest getTransitGatewayRouteTablePropagationsRequest);
+
+    /**
+     * <p>
+     * Gets information about the route table propagations for the specified transit gateway route table.
+     * </p>
+     * 
+     * @param getTransitGatewayRouteTablePropagationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTransitGatewayRouteTablePropagations operation returned by
+     *         the service.
+     * @sample AmazonEC2AsyncHandler.GetTransitGatewayRouteTablePropagations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTablePropagations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTransitGatewayRouteTablePropagationsResult> getTransitGatewayRouteTablePropagationsAsync(
+            GetTransitGatewayRouteTablePropagationsRequest getTransitGatewayRouteTablePropagationsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTransitGatewayRouteTablePropagationsRequest, GetTransitGatewayRouteTablePropagationsResult> asyncHandler);
 
     /**
      * <p>
@@ -12167,6 +12968,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Modifies the specified VPC attachment.
+     * </p>
+     * 
+     * @param modifyTransitGatewayVpcAttachmentRequest
+     * @return A Java Future containing the result of the ModifyTransitGatewayVpcAttachment operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.ModifyTransitGatewayVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyTransitGatewayVpcAttachmentResult> modifyTransitGatewayVpcAttachmentAsync(
+            ModifyTransitGatewayVpcAttachmentRequest modifyTransitGatewayVpcAttachmentRequest);
+
+    /**
+     * <p>
+     * Modifies the specified VPC attachment.
+     * </p>
+     * 
+     * @param modifyTransitGatewayVpcAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyTransitGatewayVpcAttachment operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.ModifyTransitGatewayVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyTransitGatewayVpcAttachmentResult> modifyTransitGatewayVpcAttachmentAsync(
+            ModifyTransitGatewayVpcAttachmentRequest modifyTransitGatewayVpcAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyTransitGatewayVpcAttachmentRequest, ModifyTransitGatewayVpcAttachmentResult> asyncHandler);
+
+    /**
+     * <p>
      * You can modify several parameters of an existing EBS volume, including volume size, volume type, and IOPS
      * capacity. If your EBS volume is attached to a current-generation EC2 instance type, you may be able to apply
      * these changes without stopping the instance or detaching the volume from it. For more information about modifying
@@ -13112,6 +13948,51 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Rejects a request to attach a VPC to a transit gateway.
+     * </p>
+     * <p>
+     * The VPC attachment must be in the <code>pendingAcceptance</code> state. Use
+     * <a>DescribeTransitGatewayVpcAttachments</a> to view your pending VPC attachment requests. Use
+     * <a>AcceptTransitGatewayVpcAttachment</a> to accept a VPC attachment request.
+     * </p>
+     * 
+     * @param rejectTransitGatewayVpcAttachmentRequest
+     * @return A Java Future containing the result of the RejectTransitGatewayVpcAttachment operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.RejectTransitGatewayVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RejectTransitGatewayVpcAttachmentResult> rejectTransitGatewayVpcAttachmentAsync(
+            RejectTransitGatewayVpcAttachmentRequest rejectTransitGatewayVpcAttachmentRequest);
+
+    /**
+     * <p>
+     * Rejects a request to attach a VPC to a transit gateway.
+     * </p>
+     * <p>
+     * The VPC attachment must be in the <code>pendingAcceptance</code> state. Use
+     * <a>DescribeTransitGatewayVpcAttachments</a> to view your pending VPC attachment requests. Use
+     * <a>AcceptTransitGatewayVpcAttachment</a> to accept a VPC attachment request.
+     * </p>
+     * 
+     * @param rejectTransitGatewayVpcAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RejectTransitGatewayVpcAttachment operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.RejectTransitGatewayVpcAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayVpcAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RejectTransitGatewayVpcAttachmentResult> rejectTransitGatewayVpcAttachmentAsync(
+            RejectTransitGatewayVpcAttachmentRequest rejectTransitGatewayVpcAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<RejectTransitGatewayVpcAttachmentRequest, RejectTransitGatewayVpcAttachmentResult> asyncHandler);
+
+    /**
+     * <p>
      * Rejects one or more VPC endpoint connection requests to your VPC endpoint service.
      * </p>
      * 
@@ -13522,6 +14403,39 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<ReplaceRouteTableAssociationResult> replaceRouteTableAssociationAsync(
             ReplaceRouteTableAssociationRequest replaceRouteTableAssociationRequest,
             com.amazonaws.handlers.AsyncHandler<ReplaceRouteTableAssociationRequest, ReplaceRouteTableAssociationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Replaces the specified route in the specified transit gateway route table.
+     * </p>
+     * 
+     * @param replaceTransitGatewayRouteRequest
+     * @return A Java Future containing the result of the ReplaceTransitGatewayRoute operation returned by the service.
+     * @sample AmazonEC2Async.ReplaceTransitGatewayRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceTransitGatewayRoute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ReplaceTransitGatewayRouteResult> replaceTransitGatewayRouteAsync(
+            ReplaceTransitGatewayRouteRequest replaceTransitGatewayRouteRequest);
+
+    /**
+     * <p>
+     * Replaces the specified route in the specified transit gateway route table.
+     * </p>
+     * 
+     * @param replaceTransitGatewayRouteRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ReplaceTransitGatewayRoute operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ReplaceTransitGatewayRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceTransitGatewayRoute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ReplaceTransitGatewayRouteResult> replaceTransitGatewayRouteAsync(
+            ReplaceTransitGatewayRouteRequest replaceTransitGatewayRouteRequest,
+            com.amazonaws.handlers.AsyncHandler<ReplaceTransitGatewayRouteRequest, ReplaceTransitGatewayRouteResult> asyncHandler);
 
     /**
      * <p>
@@ -14318,6 +15232,39 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<RunScheduledInstancesResult> runScheduledInstancesAsync(RunScheduledInstancesRequest runScheduledInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<RunScheduledInstancesRequest, RunScheduledInstancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Searches for routes in the specified transit gateway route table.
+     * </p>
+     * 
+     * @param searchTransitGatewayRoutesRequest
+     * @return A Java Future containing the result of the SearchTransitGatewayRoutes operation returned by the service.
+     * @sample AmazonEC2Async.SearchTransitGatewayRoutes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayRoutes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchTransitGatewayRoutesResult> searchTransitGatewayRoutesAsync(
+            SearchTransitGatewayRoutesRequest searchTransitGatewayRoutesRequest);
+
+    /**
+     * <p>
+     * Searches for routes in the specified transit gateway route table.
+     * </p>
+     * 
+     * @param searchTransitGatewayRoutesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SearchTransitGatewayRoutes operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.SearchTransitGatewayRoutes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayRoutes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchTransitGatewayRoutesResult> searchTransitGatewayRoutesAsync(
+            SearchTransitGatewayRoutesRequest searchTransitGatewayRoutesRequest,
+            com.amazonaws.handlers.AsyncHandler<SearchTransitGatewayRoutesRequest, SearchTransitGatewayRoutesResult> asyncHandler);
 
     /**
      * <p>

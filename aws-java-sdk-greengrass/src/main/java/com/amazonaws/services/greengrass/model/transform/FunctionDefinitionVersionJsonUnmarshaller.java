@@ -48,6 +48,10 @@ public class FunctionDefinitionVersionJsonUnmarshaller implements Unmarshaller<F
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("DefaultConfig", targetDepth)) {
+                    context.nextToken();
+                    functionDefinitionVersion.setDefaultConfig(FunctionDefaultConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Functions", targetDepth)) {
                     context.nextToken();
                     functionDefinitionVersion.setFunctions(new ListUnmarshaller<Function>(FunctionJsonUnmarshaller.getInstance()).unmarshall(context));

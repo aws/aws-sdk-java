@@ -34,6 +34,8 @@ public class CreateDatasetRequestMarshaller {
             .marshallLocationName("actions").build();
     private static final MarshallingInfo<List> TRIGGERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("triggers").build();
+    private static final MarshallingInfo<List> CONTENTDELIVERYRULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("contentDeliveryRules").build();
     private static final MarshallingInfo<StructuredPojo> RETENTIONPERIOD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retentionPeriod").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,6 +60,7 @@ public class CreateDatasetRequestMarshaller {
             protocolMarshaller.marshall(createDatasetRequest.getDatasetName(), DATASETNAME_BINDING);
             protocolMarshaller.marshall(createDatasetRequest.getActions(), ACTIONS_BINDING);
             protocolMarshaller.marshall(createDatasetRequest.getTriggers(), TRIGGERS_BINDING);
+            protocolMarshaller.marshall(createDatasetRequest.getContentDeliveryRules(), CONTENTDELIVERYRULES_BINDING);
             protocolMarshaller.marshall(createDatasetRequest.getRetentionPeriod(), RETENTIONPERIOD_BINDING);
             protocolMarshaller.marshall(createDatasetRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {

@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.456</version>
+    <version>1.11.457</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.456</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.457</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.456</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.457</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -131,6 +131,10 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>AWS Global Accelerator</title>
+                      <packages>com.amazonaws.services.globalaccelerator*</packages>
+                    </group>
                     <group>
                       <title>AWS Transfer for SFTP</title>
                       <packages>com.amazonaws.services.transfer*</packages>
@@ -846,10 +850,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.456</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.457</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.456</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.457</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -863,6 +867,10 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>AWS Global Accelerator</title>
+                      <packages>com.amazonaws.services.globalaccelerator*</packages>
+                    </group>
                     <group>
                       <title>AWS Transfer for SFTP</title>
                       <packages>com.amazonaws.services.transfer*</packages>
@@ -1574,10 +1582,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.456</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.457</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.456</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.457</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1591,6 +1599,10 @@
                 </taglet>
               </taglets>
               <groups>
+                <group>
+                  <title>AWS Global Accelerator</title>
+                  <packages>com.amazonaws.services.globalaccelerator*</packages>
+                </group>
                 <group>
                   <title>AWS Transfer for SFTP</title>
                   <packages>com.amazonaws.services.transfer*</packages>
@@ -2515,7 +2527,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.456-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.457-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>

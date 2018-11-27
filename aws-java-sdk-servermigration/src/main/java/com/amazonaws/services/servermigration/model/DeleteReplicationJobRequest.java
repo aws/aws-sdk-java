@@ -25,10 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteReplicationJobRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     */
     private String replicationJobId;
 
     /**
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     * 
      * @param replicationJobId
+     *        The identifier of the replication job.
      */
 
     public void setReplicationJobId(String replicationJobId) {
@@ -36,7 +46,11 @@ public class DeleteReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     * 
+     * @return The identifier of the replication job.
      */
 
     public String getReplicationJobId() {
@@ -44,7 +58,12 @@ public class DeleteReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     * 
      * @param replicationJobId
+     *        The identifier of the replication job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

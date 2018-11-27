@@ -52,6 +52,10 @@ public class CreateVpnConnectionRequestMarshaller implements Marshaller<Request<
             request.addParameter("VpnGatewayId", StringUtils.fromString(createVpnConnectionRequest.getVpnGatewayId()));
         }
 
+        if (createVpnConnectionRequest.getTransitGatewayId() != null) {
+            request.addParameter("TransitGatewayId", StringUtils.fromString(createVpnConnectionRequest.getTransitGatewayId()));
+        }
+
         VpnConnectionOptionsSpecification options = createVpnConnectionRequest.getOptions();
         if (options != null) {
 

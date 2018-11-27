@@ -50,7 +50,6 @@ public class DeleteObjectRequest extends AmazonWebServiceRequest implements Seri
      */
     private boolean isRequesterPays;
 
-
     /**
      * Constructs a new
      * {@link DeleteObjectRequest},

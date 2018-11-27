@@ -38,6 +38,16 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
     }
 
     @Override
+    public CreateConnectorDefinitionResult createConnectorDefinition(CreateConnectorDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateConnectorDefinitionVersionResult createConnectorDefinitionVersion(CreateConnectorDefinitionVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateCoreDefinitionResult createCoreDefinition(CreateCoreDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -123,6 +133,11 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
     }
 
     @Override
+    public DeleteConnectorDefinitionResult deleteConnectorDefinition(DeleteConnectorDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteCoreDefinitionResult deleteCoreDefinition(DeleteCoreDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -179,6 +194,16 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
 
     @Override
     public GetConnectivityInfoResult getConnectivityInfo(GetConnectivityInfoRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetConnectorDefinitionResult getConnectorDefinition(GetConnectorDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetConnectorDefinitionVersionResult getConnectorDefinitionVersion(GetConnectorDefinitionVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -283,6 +308,16 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
     }
 
     @Override
+    public ListConnectorDefinitionVersionsResult listConnectorDefinitionVersions(ListConnectorDefinitionVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListConnectorDefinitionsResult listConnectorDefinitions(ListConnectorDefinitionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListCoreDefinitionVersionsResult listCoreDefinitionVersions(ListCoreDefinitionVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -379,6 +414,11 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
 
     @Override
     public UpdateConnectivityInfoResult updateConnectivityInfo(UpdateConnectivityInfoRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateConnectorDefinitionResult updateConnectorDefinition(UpdateConnectorDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

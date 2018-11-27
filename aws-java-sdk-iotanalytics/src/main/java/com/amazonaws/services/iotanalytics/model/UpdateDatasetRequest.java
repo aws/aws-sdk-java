@@ -44,6 +44,8 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.List<DatasetTrigger> triggers;
+
+    private java.util.List<DatasetContentDeliveryRule> contentDeliveryRules;
     /**
      * <p>
      * How long, in days, message data is kept for the data set.
@@ -240,6 +242,58 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<DatasetContentDeliveryRule> getContentDeliveryRules() {
+        return contentDeliveryRules;
+    }
+
+    /**
+     * @param contentDeliveryRules
+     */
+
+    public void setContentDeliveryRules(java.util.Collection<DatasetContentDeliveryRule> contentDeliveryRules) {
+        if (contentDeliveryRules == null) {
+            this.contentDeliveryRules = null;
+            return;
+        }
+
+        this.contentDeliveryRules = new java.util.ArrayList<DatasetContentDeliveryRule>(contentDeliveryRules);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setContentDeliveryRules(java.util.Collection)} or {@link #withContentDeliveryRules(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param contentDeliveryRules
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDatasetRequest withContentDeliveryRules(DatasetContentDeliveryRule... contentDeliveryRules) {
+        if (this.contentDeliveryRules == null) {
+            setContentDeliveryRules(new java.util.ArrayList<DatasetContentDeliveryRule>(contentDeliveryRules.length));
+        }
+        for (DatasetContentDeliveryRule ele : contentDeliveryRules) {
+            this.contentDeliveryRules.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param contentDeliveryRules
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDatasetRequest withContentDeliveryRules(java.util.Collection<DatasetContentDeliveryRule> contentDeliveryRules) {
+        setContentDeliveryRules(contentDeliveryRules);
+        return this;
+    }
+
+    /**
      * <p>
      * How long, in days, message data is kept for the data set.
      * </p>
@@ -296,6 +350,8 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("Actions: ").append(getActions()).append(",");
         if (getTriggers() != null)
             sb.append("Triggers: ").append(getTriggers()).append(",");
+        if (getContentDeliveryRules() != null)
+            sb.append("ContentDeliveryRules: ").append(getContentDeliveryRules()).append(",");
         if (getRetentionPeriod() != null)
             sb.append("RetentionPeriod: ").append(getRetentionPeriod());
         sb.append("}");
@@ -324,6 +380,10 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTriggers() != null && other.getTriggers().equals(this.getTriggers()) == false)
             return false;
+        if (other.getContentDeliveryRules() == null ^ this.getContentDeliveryRules() == null)
+            return false;
+        if (other.getContentDeliveryRules() != null && other.getContentDeliveryRules().equals(this.getContentDeliveryRules()) == false)
+            return false;
         if (other.getRetentionPeriod() == null ^ this.getRetentionPeriod() == null)
             return false;
         if (other.getRetentionPeriod() != null && other.getRetentionPeriod().equals(this.getRetentionPeriod()) == false)
@@ -339,6 +399,7 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getDatasetName() == null) ? 0 : getDatasetName().hashCode());
         hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
         hashCode = prime * hashCode + ((getTriggers() == null) ? 0 : getTriggers().hashCode());
+        hashCode = prime * hashCode + ((getContentDeliveryRules() == null) ? 0 : getContentDeliveryRules().hashCode());
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
         return hashCode;
     }

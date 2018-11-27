@@ -40,6 +40,8 @@ public class ReplicationJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("seedReplicationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Integer> FREQUENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("frequency").build();
+    private static final MarshallingInfo<Boolean> RUNONCE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("runOnce").build();
     private static final MarshallingInfo<java.util.Date> NEXTREPLICATIONRUNSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nextReplicationRunStartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> LICENSETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +56,12 @@ public class ReplicationJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusMessage").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<Integer> NUMBEROFRECENTAMISTOKEEP_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("numberOfRecentAmisToKeep").build();
+    private static final MarshallingInfo<Boolean> ENCRYPTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encrypted").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("kmsKeyId").build();
     private static final MarshallingInfo<List> REPLICATIONRUNLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("replicationRunList").build();
 
@@ -79,6 +87,7 @@ public class ReplicationJobMarshaller {
             protocolMarshaller.marshall(replicationJob.getVmServer(), VMSERVER_BINDING);
             protocolMarshaller.marshall(replicationJob.getSeedReplicationTime(), SEEDREPLICATIONTIME_BINDING);
             protocolMarshaller.marshall(replicationJob.getFrequency(), FREQUENCY_BINDING);
+            protocolMarshaller.marshall(replicationJob.getRunOnce(), RUNONCE_BINDING);
             protocolMarshaller.marshall(replicationJob.getNextReplicationRunStartTime(), NEXTREPLICATIONRUNSTARTTIME_BINDING);
             protocolMarshaller.marshall(replicationJob.getLicenseType(), LICENSETYPE_BINDING);
             protocolMarshaller.marshall(replicationJob.getRoleName(), ROLENAME_BINDING);
@@ -86,6 +95,9 @@ public class ReplicationJobMarshaller {
             protocolMarshaller.marshall(replicationJob.getState(), STATE_BINDING);
             protocolMarshaller.marshall(replicationJob.getStatusMessage(), STATUSMESSAGE_BINDING);
             protocolMarshaller.marshall(replicationJob.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(replicationJob.getNumberOfRecentAmisToKeep(), NUMBEROFRECENTAMISTOKEEP_BINDING);
+            protocolMarshaller.marshall(replicationJob.getEncrypted(), ENCRYPTED_BINDING);
+            protocolMarshaller.marshall(replicationJob.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(replicationJob.getReplicationRunList(), REPLICATIONRUNLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

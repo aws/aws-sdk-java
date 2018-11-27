@@ -36,6 +36,8 @@ public class ResourceDataContainerMarshaller {
     private static final MarshallingInfo<StructuredPojo> SAGEMAKERMACHINELEARNINGMODELRESOURCEDATA_BINDING = MarshallingInfo
             .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SageMakerMachineLearningModelResourceData")
             .build();
+    private static final MarshallingInfo<StructuredPojo> SECRETSMANAGERSECRETRESOURCEDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerSecretResourceData").build();
 
     private static final ResourceDataContainerMarshaller instance = new ResourceDataContainerMarshaller();
 
@@ -58,6 +60,7 @@ public class ResourceDataContainerMarshaller {
             protocolMarshaller.marshall(resourceDataContainer.getS3MachineLearningModelResourceData(), S3MACHINELEARNINGMODELRESOURCEDATA_BINDING);
             protocolMarshaller
                     .marshall(resourceDataContainer.getSageMakerMachineLearningModelResourceData(), SAGEMAKERMACHINELEARNINGMODELRESOURCEDATA_BINDING);
+            protocolMarshaller.marshall(resourceDataContainer.getSecretsManagerSecretResourceData(), SECRETSMANAGERSECRETRESOURCEDATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -92,6 +92,14 @@ public class KeyMetadataJsonUnmarshaller implements Unmarshaller<KeyMetadata, Js
                     context.nextToken();
                     keyMetadata.setOrigin(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CustomKeyStoreId", targetDepth)) {
+                    context.nextToken();
+                    keyMetadata.setCustomKeyStoreId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CloudHsmClusterId", targetDepth)) {
+                    context.nextToken();
+                    keyMetadata.setCloudHsmClusterId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ExpirationModel", targetDepth)) {
                     context.nextToken();
                     keyMetadata.setExpirationModel(context.getUnmarshaller(String.class).unmarshall(context));

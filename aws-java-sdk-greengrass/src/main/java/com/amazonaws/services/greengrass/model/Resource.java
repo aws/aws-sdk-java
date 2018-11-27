@@ -32,8 +32,8 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
      */
     private String id;
     /**
-     * The descriptive resource name, which is displayed on the Greengrass console. Max length 128 characters with
-     * pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+     * The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters
+     * with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
      */
     private String name;
     /** A container of data for all resource types. */
@@ -80,12 +80,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The descriptive resource name, which is displayed on the Greengrass console. Max length 128 characters with
-     * pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+     * The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters
+     * with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
      * 
      * @param name
-     *        The descriptive resource name, which is displayed on the Greengrass console. Max length 128 characters
-     *        with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+     *        The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128
+     *        characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
      */
 
     public void setName(String name) {
@@ -93,11 +93,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The descriptive resource name, which is displayed on the Greengrass console. Max length 128 characters with
-     * pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+     * The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters
+     * with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
      * 
-     * @return The descriptive resource name, which is displayed on the Greengrass console. Max length 128 characters
-     *         with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+     * @return The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128
+     *         characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
      */
 
     public String getName() {
@@ -105,12 +105,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The descriptive resource name, which is displayed on the Greengrass console. Max length 128 characters with
-     * pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+     * The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters
+     * with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
      * 
      * @param name
-     *        The descriptive resource name, which is displayed on the Greengrass console. Max length 128 characters
-     *        with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+     *        The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128
+     *        characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

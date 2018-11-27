@@ -80,6 +80,11 @@ public class VpnConnectionStaxUnmarshaller implements Unmarshaller<VpnConnection
                     continue;
                 }
 
+                if (context.testExpression("transitGatewayId", targetDepth)) {
+                    vpnConnection.setTransitGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("options", targetDepth)) {
                     vpnConnection.setOptions(VpnConnectionOptionsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

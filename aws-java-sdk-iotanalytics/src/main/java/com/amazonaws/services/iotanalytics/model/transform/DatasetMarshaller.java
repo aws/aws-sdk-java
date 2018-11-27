@@ -36,6 +36,8 @@ public class DatasetMarshaller {
             .marshallLocationName("actions").build();
     private static final MarshallingInfo<List> TRIGGERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("triggers").build();
+    private static final MarshallingInfo<List> CONTENTDELIVERYRULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("contentDeliveryRules").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -65,6 +67,7 @@ public class DatasetMarshaller {
             protocolMarshaller.marshall(dataset.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(dataset.getActions(), ACTIONS_BINDING);
             protocolMarshaller.marshall(dataset.getTriggers(), TRIGGERS_BINDING);
+            protocolMarshaller.marshall(dataset.getContentDeliveryRules(), CONTENTDELIVERYRULES_BINDING);
             protocolMarshaller.marshall(dataset.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(dataset.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(dataset.getLastUpdateTime(), LASTUPDATETIME_BINDING);

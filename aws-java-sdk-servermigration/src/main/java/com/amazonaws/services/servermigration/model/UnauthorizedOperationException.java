@@ -15,7 +15,10 @@ package com.amazonaws.services.servermigration.model;
 import javax.annotation.Generated;
 
 /**
- * This user does not have permissions to perform this operation.
+ * <p>
+ * You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the
+ * correct access keys.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnauthorizedOperationException extends com.amazonaws.services.servermigration.model.AWSServerMigrationException {

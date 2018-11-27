@@ -15,7 +15,7 @@ package com.amazonaws.services.servermigration.model;
 import javax.annotation.Generated;
 
 /**
- * Type of server.
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ServerType {

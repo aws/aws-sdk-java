@@ -29,6 +29,7 @@ import com.amazonaws.services.s3.internal.ObjectExpirationResult;
 import com.amazonaws.services.s3.internal.ObjectRestoreResult;
 import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
 import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
+import com.amazonaws.util.DateUtils;
 
 /**
  * Represents the object metadata that is stored with Amazon S3. This includes custom
@@ -954,5 +955,30 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      */
     public String getReplicationStatus() {
         return (String) metadata.get(Headers.OBJECT_REPLICATION_STATUS);
+    }
+
+    /**
+     * The Object Lock mode applied to this object.
+     */
+    public String getObjectLockMode() {
+        return (String) metadata.get(Headers.OBJECT_LOCK_MODE);
+    }
+
+    /**
+     * The date and time this object's Object Lock will expire.
+     */
+    public Date getObjectLockRetainUntilDate() {
+        String dateStr = (String) metadata.get(Headers.OBJECT_LOCK_RETAIN_UNTIL_DATE);
+        if (dateStr != null) {
+            return DateUtils.parseISO8601Date(dateStr);
+        }
+        return null;
+    }
+
+    /**
+     * The Legal Hold status of the specified object.
+     */
+    public String getObjectLockLegalHoldStatus() {
+        return (String) metadata.get(Headers.OBJECT_LOCK_LEGAL_HOLD_STATUS);
     }
 }

@@ -31,6 +31,8 @@ public class FunctionConfigurationEnvironmentMarshaller {
 
     private static final MarshallingInfo<Boolean> ACCESSSYSFS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessSysfs").build();
+    private static final MarshallingInfo<StructuredPojo> EXECUTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Execution").build();
     private static final MarshallingInfo<List> RESOURCEACCESSPOLICIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceAccessPolicies").build();
     private static final MarshallingInfo<Map> VARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -53,6 +55,7 @@ public class FunctionConfigurationEnvironmentMarshaller {
 
         try {
             protocolMarshaller.marshall(functionConfigurationEnvironment.getAccessSysfs(), ACCESSSYSFS_BINDING);
+            protocolMarshaller.marshall(functionConfigurationEnvironment.getExecution(), EXECUTION_BINDING);
             protocolMarshaller.marshall(functionConfigurationEnvironment.getResourceAccessPolicies(), RESOURCEACCESSPOLICIES_BINDING);
             protocolMarshaller.marshall(functionConfigurationEnvironment.getVariables(), VARIABLES_BINDING);
         } catch (Exception e) {

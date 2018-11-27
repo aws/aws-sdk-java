@@ -39,6 +39,12 @@ public class UpdateReplicationJobRequestMarshaller {
             .marshallLocationName("roleName").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<Integer> NUMBEROFRECENTAMISTOKEEP_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("numberOfRecentAmisToKeep").build();
+    private static final MarshallingInfo<Boolean> ENCRYPTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encrypted").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("kmsKeyId").build();
 
     private static final UpdateReplicationJobRequestMarshaller instance = new UpdateReplicationJobRequestMarshaller();
 
@@ -62,6 +68,9 @@ public class UpdateReplicationJobRequestMarshaller {
             protocolMarshaller.marshall(updateReplicationJobRequest.getLicenseType(), LICENSETYPE_BINDING);
             protocolMarshaller.marshall(updateReplicationJobRequest.getRoleName(), ROLENAME_BINDING);
             protocolMarshaller.marshall(updateReplicationJobRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateReplicationJobRequest.getNumberOfRecentAmisToKeep(), NUMBEROFRECENTAMISTOKEEP_BINDING);
+            protocolMarshaller.marshall(updateReplicationJobRequest.getEncrypted(), ENCRYPTED_BINDING);
+            protocolMarshaller.marshall(updateReplicationJobRequest.getKmsKeyId(), KMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
