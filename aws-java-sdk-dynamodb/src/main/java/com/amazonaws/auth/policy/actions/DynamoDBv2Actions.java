@@ -79,6 +79,10 @@ public enum DynamoDBv2Actions implements Action {
     Scan("dynamodb:Scan"),
     /** Action for the TagResource operation. */
     TagResource("dynamodb:TagResource"),
+    /** Action for the TransactGetItems operation. */
+    TransactGetItems("dynamodb:TransactGetItems"),
+    /** Action for the TransactWriteItems operation. */
+    TransactWriteItems("dynamodb:TransactWriteItems"),
     /** Action for the UntagResource operation. */
     UntagResource("dynamodb:UntagResource"),
     /** Action for the UpdateContinuousBackups operation. */

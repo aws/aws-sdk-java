@@ -48,6 +48,14 @@ public class CapacityJsonUnmarshaller implements Unmarshaller<Capacity, JsonUnma
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ReadCapacityUnits", targetDepth)) {
+                    context.nextToken();
+                    capacity.setReadCapacityUnits(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("WriteCapacityUnits", targetDepth)) {
+                    context.nextToken();
+                    capacity.setWriteCapacityUnits(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
                 if (context.testExpression("CapacityUnits", targetDepth)) {
                     context.nextToken();
                     capacity.setCapacityUnits(context.getUnmarshaller(Double.class).unmarshall(context));

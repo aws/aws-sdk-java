@@ -647,7 +647,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private com.amazonaws.internal.SdkInternalList<String> dBSecurityGroups;
     /**
      * <p>
-     * A list of EC2 VPC security groups to associate with this DB instance.
+     * A list of Amazon EC2 VPC security groups to associate with this DB instance.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -892,8 +892,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer port;
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the
-     * MultiAZ parameter is set to true.
+     * A value that specifies whether the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone
+     * parameter if the MultiAZ parameter is set to true.
      * </p>
      */
     private Boolean multiAZ;
@@ -5537,7 +5537,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of EC2 VPC security groups to associate with this DB instance.
+     * A list of Amazon EC2 VPC security groups to associate with this DB instance.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -5550,7 +5550,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: The default EC2 VPC security group for the DB subnet group's VPC.
      * </p>
      * 
-     * @return A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * @return A list of Amazon EC2 VPC security groups to associate with this DB instance.</p>
      *         <p>
      *         <b>Amazon Aurora</b>
      *         </p>
@@ -5571,7 +5571,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of EC2 VPC security groups to associate with this DB instance.
+     * A list of Amazon EC2 VPC security groups to associate with this DB instance.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -5585,7 +5585,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of EC2 VPC security groups to associate with this DB instance.</p>
+     *        A list of Amazon EC2 VPC security groups to associate with this DB instance.</p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
@@ -5608,7 +5608,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of EC2 VPC security groups to associate with this DB instance.
+     * A list of Amazon EC2 VPC security groups to associate with this DB instance.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -5627,7 +5627,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of EC2 VPC security groups to associate with this DB instance.</p>
+     *        A list of Amazon EC2 VPC security groups to associate with this DB instance.</p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
@@ -5652,7 +5652,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of EC2 VPC security groups to associate with this DB instance.
+     * A list of Amazon EC2 VPC security groups to associate with this DB instance.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -5666,7 +5666,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of EC2 VPC security groups to associate with this DB instance.</p>
+     *        A list of Amazon EC2 VPC security groups to associate with this DB instance.</p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
@@ -7067,13 +7067,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the
-     * MultiAZ parameter is set to true.
+     * A value that specifies whether the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone
+     * parameter if the MultiAZ parameter is set to true.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the
-     *        MultiAZ parameter is set to true.
+     *        A value that specifies whether the DB instance is a Multi-AZ deployment. You can't set the
+     *        AvailabilityZone parameter if the MultiAZ parameter is set to true.
      */
 
     public void setMultiAZ(Boolean multiAZ) {
@@ -7082,12 +7082,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the
-     * MultiAZ parameter is set to true.
+     * A value that specifies whether the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone
+     * parameter if the MultiAZ parameter is set to true.
      * </p>
      * 
-     * @return Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if
-     *         the MultiAZ parameter is set to true.
+     * @return A value that specifies whether the DB instance is a Multi-AZ deployment. You can't set the
+     *         AvailabilityZone parameter if the MultiAZ parameter is set to true.
      */
 
     public Boolean getMultiAZ() {
@@ -7096,13 +7096,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the
-     * MultiAZ parameter is set to true.
+     * A value that specifies whether the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone
+     * parameter if the MultiAZ parameter is set to true.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the
-     *        MultiAZ parameter is set to true.
+     *        A value that specifies whether the DB instance is a Multi-AZ deployment. You can't set the
+     *        AvailabilityZone parameter if the MultiAZ parameter is set to true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -7113,12 +7113,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the
-     * MultiAZ parameter is set to true.
+     * A value that specifies whether the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone
+     * parameter if the MultiAZ parameter is set to true.
      * </p>
      * 
-     * @return Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if
-     *         the MultiAZ parameter is set to true.
+     * @return A value that specifies whether the DB instance is a Multi-AZ deployment. You can't set the
+     *         AvailabilityZone parameter if the MultiAZ parameter is set to true.
      */
 
     public Boolean isMultiAZ() {

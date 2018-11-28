@@ -56,6 +56,10 @@ public class ReplicaSettingsDescriptionJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     replicaSettingsDescription.setReplicaStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ReplicaBillingModeSummary", targetDepth)) {
+                    context.nextToken();
+                    replicaSettingsDescription.setReplicaBillingModeSummary(BillingModeSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ReplicaProvisionedReadCapacityUnits", targetDepth)) {
                     context.nextToken();
                     replicaSettingsDescription.setReplicaProvisionedReadCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));

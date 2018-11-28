@@ -56,6 +56,14 @@ public class ConsumedCapacityJsonUnmarshaller implements Unmarshaller<ConsumedCa
                     context.nextToken();
                     consumedCapacity.setCapacityUnits(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("ReadCapacityUnits", targetDepth)) {
+                    context.nextToken();
+                    consumedCapacity.setReadCapacityUnits(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("WriteCapacityUnits", targetDepth)) {
+                    context.nextToken();
+                    consumedCapacity.setWriteCapacityUnits(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
                 if (context.testExpression("Table", targetDepth)) {
                     context.nextToken();
                     consumedCapacity.setTable(CapacityJsonUnmarshaller.getInstance().unmarshall(context));

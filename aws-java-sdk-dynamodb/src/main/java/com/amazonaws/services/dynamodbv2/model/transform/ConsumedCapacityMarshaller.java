@@ -33,6 +33,10 @@ public class ConsumedCapacityMarshaller {
             .marshallLocationName("TableName").build();
     private static final MarshallingInfo<Double> CAPACITYUNITS_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CapacityUnits").build();
+    private static final MarshallingInfo<Double> READCAPACITYUNITS_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReadCapacityUnits").build();
+    private static final MarshallingInfo<Double> WRITECAPACITYUNITS_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WriteCapacityUnits").build();
     private static final MarshallingInfo<StructuredPojo> TABLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Table").build();
     private static final MarshallingInfo<Map> LOCALSECONDARYINDEXES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
@@ -58,6 +62,8 @@ public class ConsumedCapacityMarshaller {
         try {
             protocolMarshaller.marshall(consumedCapacity.getTableName(), TABLENAME_BINDING);
             protocolMarshaller.marshall(consumedCapacity.getCapacityUnits(), CAPACITYUNITS_BINDING);
+            protocolMarshaller.marshall(consumedCapacity.getReadCapacityUnits(), READCAPACITYUNITS_BINDING);
+            protocolMarshaller.marshall(consumedCapacity.getWriteCapacityUnits(), WRITECAPACITYUNITS_BINDING);
             protocolMarshaller.marshall(consumedCapacity.getTable(), TABLE_BINDING);
             protocolMarshaller.marshall(consumedCapacity.getLocalSecondaryIndexes(), LOCALSECONDARYINDEXES_BINDING);
             protocolMarshaller.marshall(consumedCapacity.getGlobalSecondaryIndexes(), GLOBALSECONDARYINDEXES_BINDING);

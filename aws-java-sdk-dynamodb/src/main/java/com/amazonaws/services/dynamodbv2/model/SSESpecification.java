@@ -30,7 +30,9 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates whether server-side encryption is enabled (true) or disabled (false) on the table.
+     * Indicates whether server-side encryption is enabled (true) or disabled (false) on the table. If enabled (true),
+     * server-side encryption type is set to <code>KMS</code>. If disabled (false) or not specified, server-side
+     * encryption is set to AWS owned CMK.
      * </p>
      */
     private Boolean enabled;
@@ -41,12 +43,13 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. (default)
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
+     * and is managed by AWS KMS (KMS charges apply).
      * </p>
      * </li>
      * </ul>
@@ -63,11 +66,15 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates whether server-side encryption is enabled (true) or disabled (false) on the table.
+     * Indicates whether server-side encryption is enabled (true) or disabled (false) on the table. If enabled (true),
+     * server-side encryption type is set to <code>KMS</code>. If disabled (false) or not specified, server-side
+     * encryption is set to AWS owned CMK.
      * </p>
      * 
      * @param enabled
-     *        Indicates whether server-side encryption is enabled (true) or disabled (false) on the table.
+     *        Indicates whether server-side encryption is enabled (true) or disabled (false) on the table. If enabled
+     *        (true), server-side encryption type is set to <code>KMS</code>. If disabled (false) or not specified,
+     *        server-side encryption is set to AWS owned CMK.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -76,10 +83,14 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates whether server-side encryption is enabled (true) or disabled (false) on the table.
+     * Indicates whether server-side encryption is enabled (true) or disabled (false) on the table. If enabled (true),
+     * server-side encryption type is set to <code>KMS</code>. If disabled (false) or not specified, server-side
+     * encryption is set to AWS owned CMK.
      * </p>
      * 
-     * @return Indicates whether server-side encryption is enabled (true) or disabled (false) on the table.
+     * @return Indicates whether server-side encryption is enabled (true) or disabled (false) on the table. If enabled
+     *         (true), server-side encryption type is set to <code>KMS</code>. If disabled (false) or not specified,
+     *         server-side encryption is set to AWS owned CMK.
      */
 
     public Boolean getEnabled() {
@@ -88,11 +99,15 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates whether server-side encryption is enabled (true) or disabled (false) on the table.
+     * Indicates whether server-side encryption is enabled (true) or disabled (false) on the table. If enabled (true),
+     * server-side encryption type is set to <code>KMS</code>. If disabled (false) or not specified, server-side
+     * encryption is set to AWS owned CMK.
      * </p>
      * 
      * @param enabled
-     *        Indicates whether server-side encryption is enabled (true) or disabled (false) on the table.
+     *        Indicates whether server-side encryption is enabled (true) or disabled (false) on the table. If enabled
+     *        (true), server-side encryption type is set to <code>KMS</code>. If disabled (false) or not specified,
+     *        server-side encryption is set to AWS owned CMK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,10 +118,14 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates whether server-side encryption is enabled (true) or disabled (false) on the table.
+     * Indicates whether server-side encryption is enabled (true) or disabled (false) on the table. If enabled (true),
+     * server-side encryption type is set to <code>KMS</code>. If disabled (false) or not specified, server-side
+     * encryption is set to AWS owned CMK.
      * </p>
      * 
-     * @return Indicates whether server-side encryption is enabled (true) or disabled (false) on the table.
+     * @return Indicates whether server-side encryption is enabled (true) or disabled (false) on the table. If enabled
+     *         (true), server-side encryption type is set to <code>KMS</code>. If disabled (false) or not specified,
+     *         server-side encryption is set to AWS owned CMK.
      */
 
     public Boolean isEnabled() {
@@ -120,12 +139,13 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. (default)
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
+     * and is managed by AWS KMS (KMS charges apply).
      * </p>
      * </li>
      * </ul>
@@ -135,12 +155,13 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     *        <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. (default)
+     *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your
+     *        account and is managed by AWS KMS (KMS charges apply).
      *        </p>
      *        </li>
      * @see SSEType
@@ -157,12 +178,13 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. (default)
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
+     * and is managed by AWS KMS (KMS charges apply).
      * </p>
      * </li>
      * </ul>
@@ -171,12 +193,13 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     *         <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. (default)
+     *         <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your
+     *         account and is managed by AWS KMS (KMS charges apply).
      *         </p>
      *         </li>
      * @see SSEType
@@ -193,12 +216,13 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. (default)
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
+     * and is managed by AWS KMS (KMS charges apply).
      * </p>
      * </li>
      * </ul>
@@ -208,12 +232,13 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     *        <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. (default)
+     *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your
+     *        account and is managed by AWS KMS (KMS charges apply).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -232,12 +257,13 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. (default)
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
+     * and is managed by AWS KMS (KMS charges apply).
      * </p>
      * </li>
      * </ul>
@@ -247,12 +273,13 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     *        <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. (default)
+     *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your
+     *        account and is managed by AWS KMS (KMS charges apply).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

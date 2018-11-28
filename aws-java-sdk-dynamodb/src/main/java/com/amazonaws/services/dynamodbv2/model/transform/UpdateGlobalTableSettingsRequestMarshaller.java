@@ -30,6 +30,8 @@ public class UpdateGlobalTableSettingsRequestMarshaller {
 
     private static final MarshallingInfo<String> GLOBALTABLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlobalTableName").build();
+    private static final MarshallingInfo<String> GLOBALTABLEBILLINGMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlobalTableBillingMode").build();
     private static final MarshallingInfo<Long> GLOBALTABLEPROVISIONEDWRITECAPACITYUNITS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlobalTableProvisionedWriteCapacityUnits").build();
     private static final MarshallingInfo<StructuredPojo> GLOBALTABLEPROVISIONEDWRITECAPACITYAUTOSCALINGSETTINGSUPDATE_BINDING = MarshallingInfo
@@ -57,6 +59,7 @@ public class UpdateGlobalTableSettingsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateGlobalTableSettingsRequest.getGlobalTableName(), GLOBALTABLENAME_BINDING);
+            protocolMarshaller.marshall(updateGlobalTableSettingsRequest.getGlobalTableBillingMode(), GLOBALTABLEBILLINGMODE_BINDING);
             protocolMarshaller.marshall(updateGlobalTableSettingsRequest.getGlobalTableProvisionedWriteCapacityUnits(),
                     GLOBALTABLEPROVISIONEDWRITECAPACITYUNITS_BINDING);
             protocolMarshaller.marshall(updateGlobalTableSettingsRequest.getGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(),

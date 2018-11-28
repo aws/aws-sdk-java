@@ -89,6 +89,10 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
                     context.nextToken();
                     tableDescription.setTableId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("BillingModeSummary", targetDepth)) {
+                    context.nextToken();
+                    tableDescription.setBillingModeSummary(BillingModeSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("LocalSecondaryIndexes", targetDepth)) {
                     context.nextToken();
                     tableDescription.setLocalSecondaryIndexes(new ListUnmarshaller<LocalSecondaryIndexDescription>(

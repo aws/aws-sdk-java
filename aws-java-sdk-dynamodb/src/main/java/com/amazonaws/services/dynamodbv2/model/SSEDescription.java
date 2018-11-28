@@ -68,12 +68,13 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
+     * and is managed by AWS KMS (KMS charges apply).
      * </p>
      * </li>
      * </ul>
@@ -364,12 +365,13 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
+     * and is managed by AWS KMS (KMS charges apply).
      * </p>
      * </li>
      * </ul>
@@ -379,12 +381,13 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     *        <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your
+     *        account and is managed by AWS KMS (KMS charges apply).
      *        </p>
      *        </li>
      * @see SSEType
@@ -401,12 +404,13 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
+     * and is managed by AWS KMS (KMS charges apply).
      * </p>
      * </li>
      * </ul>
@@ -415,12 +419,13 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     *         <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     *         <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your
+     *         account and is managed by AWS KMS (KMS charges apply).
      *         </p>
      *         </li>
      * @see SSEType
@@ -437,12 +442,13 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
+     * and is managed by AWS KMS (KMS charges apply).
      * </p>
      * </li>
      * </ul>
@@ -452,12 +458,13 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     *        <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your
+     *        account and is managed by AWS KMS (KMS charges apply).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -476,12 +483,13 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
+     * and is managed by AWS KMS (KMS charges apply).
      * </p>
      * </li>
      * </ul>
@@ -491,12 +499,13 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     *        <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your
+     *        account and is managed by AWS KMS (KMS charges apply).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

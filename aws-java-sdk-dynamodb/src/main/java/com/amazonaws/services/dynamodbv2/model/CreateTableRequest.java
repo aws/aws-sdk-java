@@ -233,8 +233,33 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<GlobalSecondaryIndex> globalSecondaryIndexes;
     /**
      * <p>
+     * Controls how you are charged for read and write throughput and how you manage capacity. This setting can be
+     * changed later.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
+     * <code>PROVISIONED</code> for predictable workloads.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String billingMode;
+    /**
+     * <p>
      * Represents the provisioned throughput settings for a specified table or index. The settings can be modified using
      * the <code>UpdateTable</code> operation.
+     * </p>
+     * <p>
+     * If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as
+     * <code>PAY_PER_REQUEST</code>, you cannot specify this property.
      * </p>
      * <p>
      * For current minimum and maximum provisioned throughput values, see <a
@@ -437,6 +462,10 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param provisionedThroughput
      *        Represents the provisioned throughput settings for a specified table or index. The settings can be
      *        modified using the <code>UpdateTable</code> operation.
+     *        </p>
+     *        <p>
+     *        If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode
+     *        as <code>PAY_PER_REQUEST</code>, you cannot specify this property.
      *        </p>
      *        <p>
      *        For current minimum and maximum provisioned throughput values, see <a
@@ -2149,8 +2178,187 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
+     * Controls how you are charged for read and write throughput and how you manage capacity. This setting can be
+     * changed later.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
+     * <code>PROVISIONED</code> for predictable workloads.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param billingMode
+     *        Controls how you are charged for read and write throughput and how you manage capacity. This setting can
+     *        be changed later.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
+     *        <code>PROVISIONED</code> for predictable workloads.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     *        <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     *        </p>
+     *        </li>
+     * @see BillingMode
+     */
+
+    public void setBillingMode(String billingMode) {
+        this.billingMode = billingMode;
+    }
+
+    /**
+     * <p>
+     * Controls how you are charged for read and write throughput and how you manage capacity. This setting can be
+     * changed later.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
+     * <code>PROVISIONED</code> for predictable workloads.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Controls how you are charged for read and write throughput and how you manage capacity. This setting can
+     *         be changed later.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
+     *         <code>PROVISIONED</code> for predictable workloads.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     *         <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     *         </p>
+     *         </li>
+     * @see BillingMode
+     */
+
+    public String getBillingMode() {
+        return this.billingMode;
+    }
+
+    /**
+     * <p>
+     * Controls how you are charged for read and write throughput and how you manage capacity. This setting can be
+     * changed later.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
+     * <code>PROVISIONED</code> for predictable workloads.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param billingMode
+     *        Controls how you are charged for read and write throughput and how you manage capacity. This setting can
+     *        be changed later.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
+     *        <code>PROVISIONED</code> for predictable workloads.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     *        <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BillingMode
+     */
+
+    public CreateTableRequest withBillingMode(String billingMode) {
+        setBillingMode(billingMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Controls how you are charged for read and write throughput and how you manage capacity. This setting can be
+     * changed later.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
+     * <code>PROVISIONED</code> for predictable workloads.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param billingMode
+     *        Controls how you are charged for read and write throughput and how you manage capacity. This setting can
+     *        be changed later.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
+     *        <code>PROVISIONED</code> for predictable workloads.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     *        <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BillingMode
+     */
+
+    public CreateTableRequest withBillingMode(BillingMode billingMode) {
+        this.billingMode = billingMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Represents the provisioned throughput settings for a specified table or index. The settings can be modified using
      * the <code>UpdateTable</code> operation.
+     * </p>
+     * <p>
+     * If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as
+     * <code>PAY_PER_REQUEST</code>, you cannot specify this property.
      * </p>
      * <p>
      * For current minimum and maximum provisioned throughput values, see <a
@@ -2161,6 +2369,10 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param provisionedThroughput
      *        Represents the provisioned throughput settings for a specified table or index. The settings can be
      *        modified using the <code>UpdateTable</code> operation.</p>
+     *        <p>
+     *        If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode
+     *        as <code>PAY_PER_REQUEST</code>, you cannot specify this property.
+     *        </p>
      *        <p>
      *        For current minimum and maximum provisioned throughput values, see <a
      *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
@@ -2177,6 +2389,10 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * the <code>UpdateTable</code> operation.
      * </p>
      * <p>
+     * If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as
+     * <code>PAY_PER_REQUEST</code>, you cannot specify this property.
+     * </p>
+     * <p>
      * For current minimum and maximum provisioned throughput values, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
      * DynamoDB Developer Guide</i>.
@@ -2184,6 +2400,10 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return Represents the provisioned throughput settings for a specified table or index. The settings can be
      *         modified using the <code>UpdateTable</code> operation.</p>
+     *         <p>
+     *         If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set
+     *         BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property.
+     *         </p>
      *         <p>
      *         For current minimum and maximum provisioned throughput values, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
@@ -2200,6 +2420,10 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * the <code>UpdateTable</code> operation.
      * </p>
      * <p>
+     * If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as
+     * <code>PAY_PER_REQUEST</code>, you cannot specify this property.
+     * </p>
+     * <p>
      * For current minimum and maximum provisioned throughput values, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
      * DynamoDB Developer Guide</i>.
@@ -2208,6 +2432,10 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param provisionedThroughput
      *        Represents the provisioned throughput settings for a specified table or index. The settings can be
      *        modified using the <code>UpdateTable</code> operation.</p>
+     *        <p>
+     *        If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode
+     *        as <code>PAY_PER_REQUEST</code>, you cannot specify this property.
+     *        </p>
      *        <p>
      *        For current minimum and maximum provisioned throughput values, see <a
      *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
@@ -2535,6 +2763,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("LocalSecondaryIndexes: ").append(getLocalSecondaryIndexes()).append(",");
         if (getGlobalSecondaryIndexes() != null)
             sb.append("GlobalSecondaryIndexes: ").append(getGlobalSecondaryIndexes()).append(",");
+        if (getBillingMode() != null)
+            sb.append("BillingMode: ").append(getBillingMode()).append(",");
         if (getProvisionedThroughput() != null)
             sb.append("ProvisionedThroughput: ").append(getProvisionedThroughput()).append(",");
         if (getStreamSpecification() != null)
@@ -2575,6 +2805,10 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getGlobalSecondaryIndexes() != null && other.getGlobalSecondaryIndexes().equals(this.getGlobalSecondaryIndexes()) == false)
             return false;
+        if (other.getBillingMode() == null ^ this.getBillingMode() == null)
+            return false;
+        if (other.getBillingMode() != null && other.getBillingMode().equals(this.getBillingMode()) == false)
+            return false;
         if (other.getProvisionedThroughput() == null ^ this.getProvisionedThroughput() == null)
             return false;
         if (other.getProvisionedThroughput() != null && other.getProvisionedThroughput().equals(this.getProvisionedThroughput()) == false)
@@ -2600,6 +2834,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getKeySchema() == null) ? 0 : getKeySchema().hashCode());
         hashCode = prime * hashCode + ((getLocalSecondaryIndexes() == null) ? 0 : getLocalSecondaryIndexes().hashCode());
         hashCode = prime * hashCode + ((getGlobalSecondaryIndexes() == null) ? 0 : getGlobalSecondaryIndexes().hashCode());
+        hashCode = prime * hashCode + ((getBillingMode() == null) ? 0 : getBillingMode().hashCode());
         hashCode = prime * hashCode + ((getProvisionedThroughput() == null) ? 0 : getProvisionedThroughput().hashCode());
         hashCode = prime * hashCode + ((getStreamSpecification() == null) ? 0 : getStreamSpecification().hashCode());
         hashCode = prime * hashCode + ((getSSESpecification() == null) ? 0 : getSSESpecification().hashCode());

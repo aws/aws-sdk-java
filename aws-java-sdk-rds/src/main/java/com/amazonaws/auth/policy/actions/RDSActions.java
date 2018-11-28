@@ -69,6 +69,8 @@ public enum RDSActions implements Action {
     CreateDBSubnetGroup("rds:CreateDBSubnetGroup"),
     /** Action for the CreateEventSubscription operation. */
     CreateEventSubscription("rds:CreateEventSubscription"),
+    /** Action for the CreateGlobalCluster operation. */
+    CreateGlobalCluster("rds:CreateGlobalCluster"),
     /** Action for the CreateOptionGroup operation. */
     CreateOptionGroup("rds:CreateOptionGroup"),
     /** Action for the DeleteDBCluster operation. */
@@ -93,6 +95,8 @@ public enum RDSActions implements Action {
     DeleteDBSubnetGroup("rds:DeleteDBSubnetGroup"),
     /** Action for the DeleteEventSubscription operation. */
     DeleteEventSubscription("rds:DeleteEventSubscription"),
+    /** Action for the DeleteGlobalCluster operation. */
+    DeleteGlobalCluster("rds:DeleteGlobalCluster"),
     /** Action for the DeleteOptionGroup operation. */
     DeleteOptionGroup("rds:DeleteOptionGroup"),
     /** Action for the DescribeAccountAttributes operation. */
@@ -143,6 +147,8 @@ public enum RDSActions implements Action {
     DescribeEventSubscriptions("rds:DescribeEventSubscriptions"),
     /** Action for the DescribeEvents operation. */
     DescribeEvents("rds:DescribeEvents"),
+    /** Action for the DescribeGlobalClusters operation. */
+    DescribeGlobalClusters("rds:DescribeGlobalClusters"),
     /** Action for the DescribeOptionGroupOptions operation. */
     DescribeOptionGroupOptions("rds:DescribeOptionGroupOptions"),
     /** Action for the DescribeOptionGroups operation. */
@@ -187,6 +193,8 @@ public enum RDSActions implements Action {
     ModifyDBSubnetGroup("rds:ModifyDBSubnetGroup"),
     /** Action for the ModifyEventSubscription operation. */
     ModifyEventSubscription("rds:ModifyEventSubscription"),
+    /** Action for the ModifyGlobalCluster operation. */
+    ModifyGlobalCluster("rds:ModifyGlobalCluster"),
     /** Action for the ModifyOptionGroup operation. */
     ModifyOptionGroup("rds:ModifyOptionGroup"),
     /** Action for the PromoteReadReplica operation. */
@@ -197,6 +205,8 @@ public enum RDSActions implements Action {
     PurchaseReservedDBInstancesOffering("rds:PurchaseReservedDBInstancesOffering"),
     /** Action for the RebootDBInstance operation. */
     RebootDBInstance("rds:RebootDBInstance"),
+    /** Action for the RemoveFromGlobalCluster operation. */
+    RemoveFromGlobalCluster("rds:RemoveFromGlobalCluster"),
     /** Action for the RemoveRoleFromDBCluster operation. */
     RemoveRoleFromDBCluster("rds:RemoveRoleFromDBCluster"),
     /** Action for the RemoveSourceIdentifierFromSubscription operation. */

@@ -32,6 +32,8 @@ public class UpdateTableRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttributeDefinitions").build();
     private static final MarshallingInfo<String> TABLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TableName").build();
+    private static final MarshallingInfo<String> BILLINGMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BillingMode").build();
     private static final MarshallingInfo<StructuredPojo> PROVISIONEDTHROUGHPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedThroughput").build();
     private static final MarshallingInfo<List> GLOBALSECONDARYINDEXUPDATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -59,6 +61,7 @@ public class UpdateTableRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateTableRequest.getAttributeDefinitions(), ATTRIBUTEDEFINITIONS_BINDING);
             protocolMarshaller.marshall(updateTableRequest.getTableName(), TABLENAME_BINDING);
+            protocolMarshaller.marshall(updateTableRequest.getBillingMode(), BILLINGMODE_BINDING);
             protocolMarshaller.marshall(updateTableRequest.getProvisionedThroughput(), PROVISIONEDTHROUGHPUT_BINDING);
             protocolMarshaller.marshall(updateTableRequest.getGlobalSecondaryIndexUpdates(), GLOBALSECONDARYINDEXUPDATES_BINDING);
             protocolMarshaller.marshall(updateTableRequest.getStreamSpecification(), STREAMSPECIFICATION_BINDING);

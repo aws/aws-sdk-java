@@ -32,6 +32,8 @@ public class ReplicaSettingsDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RegionName").build();
     private static final MarshallingInfo<String> REPLICASTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicaStatus").build();
+    private static final MarshallingInfo<StructuredPojo> REPLICABILLINGMODESUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicaBillingModeSummary").build();
     private static final MarshallingInfo<Long> REPLICAPROVISIONEDREADCAPACITYUNITS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicaProvisionedReadCapacityUnits").build();
     private static final MarshallingInfo<StructuredPojo> REPLICAPROVISIONEDREADCAPACITYAUTOSCALINGSETTINGS_BINDING = MarshallingInfo
@@ -63,6 +65,7 @@ public class ReplicaSettingsDescriptionMarshaller {
         try {
             protocolMarshaller.marshall(replicaSettingsDescription.getRegionName(), REGIONNAME_BINDING);
             protocolMarshaller.marshall(replicaSettingsDescription.getReplicaStatus(), REPLICASTATUS_BINDING);
+            protocolMarshaller.marshall(replicaSettingsDescription.getReplicaBillingModeSummary(), REPLICABILLINGMODESUMMARY_BINDING);
             protocolMarshaller.marshall(replicaSettingsDescription.getReplicaProvisionedReadCapacityUnits(), REPLICAPROVISIONEDREADCAPACITYUNITS_BINDING);
             protocolMarshaller.marshall(replicaSettingsDescription.getReplicaProvisionedReadCapacityAutoScalingSettings(),
                     REPLICAPROVISIONEDREADCAPACITYAUTOSCALINGSETTINGS_BINDING);

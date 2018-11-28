@@ -48,6 +48,8 @@ public class TableDescriptionMarshaller {
             .marshallLocationName("TableArn").build();
     private static final MarshallingInfo<String> TABLEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TableId").build();
+    private static final MarshallingInfo<StructuredPojo> BILLINGMODESUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BillingModeSummary").build();
     private static final MarshallingInfo<List> LOCALSECONDARYINDEXES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LocalSecondaryIndexes").build();
     private static final MarshallingInfo<List> GLOBALSECONDARYINDEXES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -89,6 +91,7 @@ public class TableDescriptionMarshaller {
             protocolMarshaller.marshall(tableDescription.getItemCount(), ITEMCOUNT_BINDING);
             protocolMarshaller.marshall(tableDescription.getTableArn(), TABLEARN_BINDING);
             protocolMarshaller.marshall(tableDescription.getTableId(), TABLEID_BINDING);
+            protocolMarshaller.marshall(tableDescription.getBillingModeSummary(), BILLINGMODESUMMARY_BINDING);
             protocolMarshaller.marshall(tableDescription.getLocalSecondaryIndexes(), LOCALSECONDARYINDEXES_BINDING);
             protocolMarshaller.marshall(tableDescription.getGlobalSecondaryIndexes(), GLOBALSECONDARYINDEXES_BINDING);
             protocolMarshaller.marshall(tableDescription.getStreamSpecification(), STREAMSPECIFICATION_BINDING);

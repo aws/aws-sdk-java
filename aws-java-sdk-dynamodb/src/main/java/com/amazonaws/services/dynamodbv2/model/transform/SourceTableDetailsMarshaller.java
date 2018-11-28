@@ -44,6 +44,8 @@ public class SourceTableDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedThroughput").build();
     private static final MarshallingInfo<Long> ITEMCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ItemCount").build();
+    private static final MarshallingInfo<String> BILLINGMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BillingMode").build();
 
     private static final SourceTableDetailsMarshaller instance = new SourceTableDetailsMarshaller();
 
@@ -69,6 +71,7 @@ public class SourceTableDetailsMarshaller {
             protocolMarshaller.marshall(sourceTableDetails.getTableCreationDateTime(), TABLECREATIONDATETIME_BINDING);
             protocolMarshaller.marshall(sourceTableDetails.getProvisionedThroughput(), PROVISIONEDTHROUGHPUT_BINDING);
             protocolMarshaller.marshall(sourceTableDetails.getItemCount(), ITEMCOUNT_BINDING);
+            protocolMarshaller.marshall(sourceTableDetails.getBillingMode(), BILLINGMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -185,6 +185,10 @@ public interface AmazonDynamoDB {
      * @throws ResourceNotFoundException
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws RequestLimitExceededException
+     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
+     *         href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS Support</a> to request a limit
+     *         increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.BatchGetItem
@@ -325,6 +329,10 @@ public interface AmazonDynamoDB {
      * @throws ItemCollectionSizeLimitExceededException
      *         An item collection is too large. This exception is only returned for tables that have one or more local
      *         secondary indexes.
+     * @throws RequestLimitExceededException
+     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
+     *         href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS Support</a> to request a limit
+     *         increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.BatchWriteItem
@@ -400,7 +408,7 @@ public interface AmazonDynamoDB {
      * @throws ContinuousBackupsUnavailableException
      *         Backups have not yet been enabled for this table.
      * @throws BackupInUseException
-     *         There is another ongoing conflicting backup control plane operation on the table. The backups is either
+     *         There is another ongoing conflicting backup control plane operation on the table. The backup is either
      *         being created, deleted or restored to a table.
      * @throws LimitExceededException
      *         There is no limit to the number of daily on-demand backups that can be taken. </p>
@@ -582,7 +590,7 @@ public interface AmazonDynamoDB {
      * @throws BackupNotFoundException
      *         Backup not found for the given BackupARN.
      * @throws BackupInUseException
-     *         There is another ongoing conflicting backup control plane operation on the table. The backups is either
+     *         There is another ongoing conflicting backup control plane operation on the table. The backup is either
      *         being created, deleted or restored to a table.
      * @throws LimitExceededException
      *         There is no limit to the number of daily on-demand backups that can be taken. </p>
@@ -641,6 +649,12 @@ public interface AmazonDynamoDB {
      * @throws ItemCollectionSizeLimitExceededException
      *         An item collection is too large. This exception is only returned for tables that have one or more local
      *         secondary indexes.
+     * @throws TransactionConflictException
+     *         Operation was rejected because there is an ongoing transaction for the item.
+     * @throws RequestLimitExceededException
+     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
+     *         href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS Support</a> to request a limit
+     *         increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.DeleteItem
@@ -1002,6 +1016,10 @@ public interface AmazonDynamoDB {
      * @throws ResourceNotFoundException
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws RequestLimitExceededException
+     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
+     *         href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS Support</a> to request a limit
+     *         increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.GetItem
@@ -1241,6 +1259,12 @@ public interface AmazonDynamoDB {
      * @throws ItemCollectionSizeLimitExceededException
      *         An item collection is too large. This exception is only returned for tables that have one or more local
      *         secondary indexes.
+     * @throws TransactionConflictException
+     *         Operation was rejected because there is an ongoing transaction for the item.
+     * @throws RequestLimitExceededException
+     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
+     *         href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS Support</a> to request a limit
+     *         increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.PutItem
@@ -1333,6 +1357,10 @@ public interface AmazonDynamoDB {
      * @throws ResourceNotFoundException
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws RequestLimitExceededException
+     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
+     *         href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS Support</a> to request a limit
+     *         increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.Query
@@ -1394,7 +1422,7 @@ public interface AmazonDynamoDB {
      * @throws BackupNotFoundException
      *         Backup not found for the given BackupARN.
      * @throws BackupInUseException
-     *         There is another ongoing conflicting backup control plane operation on the table. The backups is either
+     *         There is another ongoing conflicting backup control plane operation on the table. The backup is either
      *         being created, deleted or restored to a table.
      * @throws LimitExceededException
      *         There is no limit to the number of daily on-demand backups that can be taken. </p>
@@ -1580,6 +1608,10 @@ public interface AmazonDynamoDB {
      * @throws ResourceNotFoundException
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws RequestLimitExceededException
+     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
+     *         href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS Support</a> to request a limit
+     *         increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.Scan
@@ -1650,6 +1682,240 @@ public interface AmazonDynamoDB {
      *      Documentation</a>
      */
     TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * <code>TransactGetItems</code> is a synchronous operation that atomically retrieves multiple items from one or
+     * more tables (but not from indexes) in a single account and region. A <code>TransactGetItems</code> call can
+     * contain up to 10 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure that
+     * specifies an item to retrieve from a table in the account and region. A call to <code>TransactGetItems</code>
+     * cannot retrieve items from tables in more than one AWS account or region.
+     * </p>
+     * <p>
+     * DynamoDB rejects the entire <code>TransactGetItems</code> request if any of the following is true:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A conflicting operation is in the process of updating an item to be read.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * There is insufficient provisioned capacity for the transaction to be completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * There is a user error, such as an invalid data format.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param transactGetItemsRequest
+     * @return Result of the TransactGetItems operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws TransactionCanceledException
+     *         The entire transaction request was rejected.</p>
+     *         <p>
+     *         DynamoDB will reject the entire <code>TransactWriteItems</code> request if any of the following is true:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         A table in the <code>TransactWriteItems</code> request does not exist.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A table in the <code>TransactWriteItems</code> request is on a different account or region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Operations contain item schema violations.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         More than one write operation (<code>UpdateItem</code>, <code>PutItem</code>, <code>DeleteItem</code>)
+     *         operates on the same item.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         More than one check operation operates on the same item.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The number of operations sent in the <code>TransactWriteItems</code> request is 0 or greater than 10.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A <code>TransactWriteItems</code> request exceeds the maximum 4 MB request size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Any operation in the <code>TransactWriteItems</code> request would cause an item to become larger than
+     *         400KB.
+     *         </p>
+     *         </li>
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.TransactGetItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactGetItems" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TransactGetItemsResult transactGetItems(TransactGetItemsRequest transactGetItemsRequest);
+
+    /**
+     * <p>
+     * <code>TransactWriteItems</code> is a synchronous write operation that groups up to 10 action requests. These
+     * actions can target items in different tables, but not in different AWS accounts or regions, and no two actions
+     * can target the same item. For example, you cannot both <code>ConditionCheck</code> and <code>Update</code> the
+     * same item.
+     * </p>
+     * <p>
+     * The actions are completed atomically so that either all of them succeed, or all of them fail. They are defined by
+     * the following objects:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Put</code>  &#x97;   Initiates a <code>PutItem</code> operation to write a new item. This structure
+     * specifies the primary key of the item to be written, the name of the table to write it in, an optional condition
+     * expression that must be satisfied for the write to succeed, a list of the item's attributes, and a field
+     * indicating whether or not to retrieve the item's attributes if the condition is not met.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Update</code>  &#x97;   Initiates an <code>UpdateItem</code> operation to update an existing item. This
+     * structure specifies the primary key of the item to be updated, the name of the table where it resides, an
+     * optional condition expression that must be satisfied for the update to succeed, an expression that defines one or
+     * more attributes to be updated, and a field indicating whether or not to retrieve the item's attributes if the
+     * condition is not met.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Delete</code>  &#x97;   Initiates a <code>DeleteItem</code> operation to delete an existing item. This
+     * structure specifies the primary key of the item to be deleted, the name of the table where it resides, an
+     * optional condition expression that must be satisfied for the deletion to succeed, and a field indicating whether
+     * or not to retrieve the item's attributes if the condition is not met.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ConditionCheck</code>  &#x97;   Applies a condition to an item that is not being modified by the
+     * transaction. This structure specifies the primary key of the item to be checked, the name of the table where it
+     * resides, a condition expression that must be satisfied for the transaction to succeed, and a field indicating
+     * whether or not to retrieve the item's attributes if the condition is not met.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * DynamoDB rejects the entire <code>TransactWriteItems</code> request if any of the following is true:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A condition in one of the condition expressions is not met.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A conflicting operation is in the process of updating the same item.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * There is insufficient provisioned capacity for the transaction to be completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An item size becomes too large (bigger than 400 KB), a Local Secondary Index (LSI) becomes too large, or a
+     * similar validation error occurs because of changes made by the transaction.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * There is a user error, such as an invalid data format.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param transactWriteItemsRequest
+     * @return Result of the TransactWriteItems operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws TransactionCanceledException
+     *         The entire transaction request was rejected.</p>
+     *         <p>
+     *         DynamoDB will reject the entire <code>TransactWriteItems</code> request if any of the following is true:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         A table in the <code>TransactWriteItems</code> request does not exist.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A table in the <code>TransactWriteItems</code> request is on a different account or region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Operations contain item schema violations.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         More than one write operation (<code>UpdateItem</code>, <code>PutItem</code>, <code>DeleteItem</code>)
+     *         operates on the same item.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         More than one check operation operates on the same item.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The number of operations sent in the <code>TransactWriteItems</code> request is 0 or greater than 10.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A <code>TransactWriteItems</code> request exceeds the maximum 4 MB request size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Any operation in the <code>TransactWriteItems</code> request would cause an item to become larger than
+     *         400KB.
+     *         </p>
+     *         </li>
+     * @throws TransactionInProgressException
+     *         The transaction with the given request token is already in progress.
+     * @throws IdempotentParameterMismatchException
+     *         DynamoDB rejected the request because you retried a request with a different payload but with an
+     *         idempotent token that was already used.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.TransactWriteItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactWriteItems" target="_top">AWS
+     *      API Documentation</a>
+     */
+    TransactWriteItemsResult transactWriteItems(TransactWriteItemsRequest transactWriteItemsRequest);
 
     /**
      * <p>
@@ -1843,6 +2109,12 @@ public interface AmazonDynamoDB {
      * @throws ItemCollectionSizeLimitExceededException
      *         An item collection is too large. This exception is only returned for tables that have one or more local
      *         secondary indexes.
+     * @throws TransactionConflictException
+     *         Operation was rejected because there is an ongoing transaction for the item.
+     * @throws RequestLimitExceededException
+     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
+     *         href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS Support</a> to request a limit
+     *         increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.UpdateItem
