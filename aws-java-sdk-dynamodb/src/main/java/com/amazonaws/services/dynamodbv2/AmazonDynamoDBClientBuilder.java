@@ -69,8 +69,6 @@ public final class AmazonDynamoDBClientBuilder extends AwsSyncClientBuilder<Amaz
 
     private boolean endpointDiscoveryEnabled() {
 
-        Boolean endpointDiscoveryChainSetting = DEFAULT_ENDPOINT_DISCOVERY_PROVIDER.endpointDiscoveryEnabled();
-
         if (endpointDiscoveryDisabled) {
             return false;
         }
@@ -78,6 +76,8 @@ public final class AmazonDynamoDBClientBuilder extends AwsSyncClientBuilder<Amaz
         if (endpointDiscoveryEnabled) {
             return true;
         }
+
+        Boolean endpointDiscoveryChainSetting = DEFAULT_ENDPOINT_DISCOVERY_PROVIDER.endpointDiscoveryEnabled();
 
         if (endpointDiscoveryChainSetting != null && endpointDiscoveryChainSetting == false) {
             return false;
