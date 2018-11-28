@@ -62,6 +62,12 @@ public class RouteTable implements Serializable, Cloneable {
      * </p>
      */
     private String vpcId;
+    /**
+     * <p>
+     * The ID of the AWS account that owns the route table.
+     * </p>
+     */
+    private String ownerId;
 
     /**
      * <p>
@@ -436,6 +442,46 @@ public class RouteTable implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the AWS account that owns the route table.
+     * </p>
+     * 
+     * @param ownerId
+     *        The ID of the AWS account that owns the route table.
+     */
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the route table.
+     * </p>
+     * 
+     * @return The ID of the AWS account that owns the route table.
+     */
+
+    public String getOwnerId() {
+        return this.ownerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the route table.
+     * </p>
+     * 
+     * @param ownerId
+     *        The ID of the AWS account that owns the route table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RouteTable withOwnerId(String ownerId) {
+        setOwnerId(ownerId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -457,7 +503,9 @@ public class RouteTable implements Serializable, Cloneable {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId());
+            sb.append("VpcId: ").append(getVpcId()).append(",");
+        if (getOwnerId() != null)
+            sb.append("OwnerId: ").append(getOwnerId());
         sb.append("}");
         return sb.toString();
     }
@@ -496,6 +544,10 @@ public class RouteTable implements Serializable, Cloneable {
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null)
+            return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
+            return false;
         return true;
     }
 
@@ -510,6 +562,7 @@ public class RouteTable implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRoutes() == null) ? 0 : getRoutes().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         return hashCode;
     }
 

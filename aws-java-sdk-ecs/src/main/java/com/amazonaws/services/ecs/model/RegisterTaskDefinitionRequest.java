@@ -272,7 +272,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2207,7 +2207,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2249,7 +2249,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *        the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <ul>
@@ -2297,7 +2297,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2338,7 +2338,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *         the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *         Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
      *         <ul>
@@ -2386,7 +2386,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2428,7 +2428,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *        the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <ul>
@@ -2478,7 +2478,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2520,7 +2520,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *        the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <ul>
@@ -2568,7 +2568,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2610,7 +2610,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *        the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <ul>

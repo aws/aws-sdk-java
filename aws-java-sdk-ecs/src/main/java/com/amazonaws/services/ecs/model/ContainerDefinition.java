@@ -145,7 +145,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which
      * Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel
-     * converts to 2 CPU shares.
+     * converts to two CPU shares.
      * </p>
      * </li>
      * <li>
@@ -1117,7 +1117,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which
      * Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel
-     * converts to 2 CPU shares.
+     * converts to two CPU shares.
      * </p>
      * </li>
      * <li>
@@ -1181,7 +1181,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <p>
      *        <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0,
      *        which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux
-     *        kernel converts to 2 CPU shares.
+     *        kernel converts to two CPU shares.
      *        </p>
      *        </li>
      *        <li>
@@ -1248,7 +1248,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which
      * Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel
-     * converts to 2 CPU shares.
+     * converts to two CPU shares.
      * </p>
      * </li>
      * <li>
@@ -1311,7 +1311,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         <p>
      *         <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0,
      *         which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the
-     *         Linux kernel converts to 2 CPU shares.
+     *         Linux kernel converts to two CPU shares.
      *         </p>
      *         </li>
      *         <li>
@@ -1378,7 +1378,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which
      * Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel
-     * converts to 2 CPU shares.
+     * converts to two CPU shares.
      * </p>
      * </li>
      * <li>
@@ -1442,7 +1442,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <p>
      *        <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0,
      *        which Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux
-     *        kernel converts to 2 CPU shares.
+     *        kernel converts to two CPU shares.
      *        </p>
      *        </li>
      *        <li>

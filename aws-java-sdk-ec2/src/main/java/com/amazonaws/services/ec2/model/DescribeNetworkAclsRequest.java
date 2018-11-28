@@ -103,6 +103,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the network ACL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
      * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
      * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
@@ -211,6 +216,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the network ACL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
      * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
      * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
@@ -302,6 +312,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *         <li>
      *         <p>
      *         <code>network-acl-id</code> - The ID of the network ACL.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>owner-id</code> - The ID of the AWS account that owns the network ACL.
      *         </p>
      *         </li>
      *         <li>
@@ -410,6 +425,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the network ACL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
      * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
      * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
@@ -502,6 +522,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        <li>
      *        <p>
      *        <code>network-acl-id</code> - The ID of the network ACL.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>owner-id</code> - The ID of the AWS account that owns the network ACL.
      *        </p>
      *        </li>
      *        <li>
@@ -612,6 +637,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the network ACL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
      * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
      * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
@@ -709,6 +739,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        <li>
      *        <p>
      *        <code>network-acl-id</code> - The ID of the network ACL.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>owner-id</code> - The ID of the AWS account that owns the network ACL.
      *        </p>
      *        </li>
      *        <li>
@@ -821,6 +856,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the network ACL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
      * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
      * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
@@ -913,6 +953,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        <li>
      *        <p>
      *        <code>network-acl-id</code> - The ID of the network ACL.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>owner-id</code> - The ID of the AWS account that owns the network ACL.
      *        </p>
      *        </li>
      *        <li>

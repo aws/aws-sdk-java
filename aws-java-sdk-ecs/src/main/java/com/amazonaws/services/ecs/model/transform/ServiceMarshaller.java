@@ -54,6 +54,8 @@ public class ServiceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskDefinition").build();
     private static final MarshallingInfo<StructuredPojo> DEPLOYMENTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentConfiguration").build();
+    private static final MarshallingInfo<List> TASKSETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("taskSets").build();
     private static final MarshallingInfo<List> DEPLOYMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("deployments").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -72,6 +74,8 @@ public class ServiceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("healthCheckGracePeriodSeconds").build();
     private static final MarshallingInfo<String> SCHEDULINGSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("schedulingStrategy").build();
+    private static final MarshallingInfo<StructuredPojo> DEPLOYMENTCONTROLLER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentController").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> CREATEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -110,6 +114,7 @@ public class ServiceMarshaller {
             protocolMarshaller.marshall(service.getPlatformVersion(), PLATFORMVERSION_BINDING);
             protocolMarshaller.marshall(service.getTaskDefinition(), TASKDEFINITION_BINDING);
             protocolMarshaller.marshall(service.getDeploymentConfiguration(), DEPLOYMENTCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(service.getTaskSets(), TASKSETS_BINDING);
             protocolMarshaller.marshall(service.getDeployments(), DEPLOYMENTS_BINDING);
             protocolMarshaller.marshall(service.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(service.getEvents(), EVENTS_BINDING);
@@ -119,6 +124,7 @@ public class ServiceMarshaller {
             protocolMarshaller.marshall(service.getNetworkConfiguration(), NETWORKCONFIGURATION_BINDING);
             protocolMarshaller.marshall(service.getHealthCheckGracePeriodSeconds(), HEALTHCHECKGRACEPERIODSECONDS_BINDING);
             protocolMarshaller.marshall(service.getSchedulingStrategy(), SCHEDULINGSTRATEGY_BINDING);
+            protocolMarshaller.marshall(service.getDeploymentController(), DEPLOYMENTCONTROLLER_BINDING);
             protocolMarshaller.marshall(service.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(service.getCreatedBy(), CREATEDBY_BINDING);
             protocolMarshaller.marshall(service.getEnableECSManagedTags(), ENABLEECSMANAGEDTAGS_BINDING);

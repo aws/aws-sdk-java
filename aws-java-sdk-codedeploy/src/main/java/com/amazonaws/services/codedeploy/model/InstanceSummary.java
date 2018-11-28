@@ -25,12 +25,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/InstanceSummary" target="_top">AWS API
  *      Documentation</a>
  */
+@Deprecated
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InstanceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The deployment ID.
+     * The unique ID of a deployment.
      * </p>
      */
     private String deploymentId;
@@ -111,11 +112,11 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The deployment ID.
+     * The unique ID of a deployment.
      * </p>
      * 
      * @param deploymentId
-     *        The deployment ID.
+     *        The unique ID of a deployment.
      */
 
     public void setDeploymentId(String deploymentId) {
@@ -124,10 +125,10 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The deployment ID.
+     * The unique ID of a deployment.
      * </p>
      * 
-     * @return The deployment ID.
+     * @return The unique ID of a deployment.
      */
 
     public String getDeploymentId() {
@@ -136,11 +137,11 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The deployment ID.
+     * The unique ID of a deployment.
      * </p>
      * 
      * @param deploymentId
-     *        The deployment ID.
+     *        The unique ID of a deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,7 +262,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      * @see InstanceStatus
      */
-
+    @Deprecated
     public void setStatus(String status) {
         this.status = status;
     }
@@ -337,7 +338,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      * @see InstanceStatus
      */
-
+    @Deprecated
     public String getStatus() {
         return this.status;
     }
@@ -415,7 +416,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceStatus
      */
-
+    @Deprecated
     public InstanceSummary withStatus(String status) {
         setStatus(status);
         return this;
@@ -493,7 +494,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      * @see InstanceStatus
      */
-
+    @Deprecated
     public void setStatus(InstanceStatus status) {
         withStatus(status);
     }
@@ -571,7 +572,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceStatus
      */
-
+    @Deprecated
     public InstanceSummary withStatus(InstanceStatus status) {
         this.status = status.toString();
         return this;

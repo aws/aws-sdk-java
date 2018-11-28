@@ -120,11 +120,7 @@ public class CopyCallable implements Callable<CopyResult> {
      * @return True if this CopyCallable is processing a multi-part copy.
      */
     public boolean isMultipartCopy() {
-        return (metadata.getContentLength() > configuration
-                .getMultipartCopyThreshold())
-                && copyObjectRequest.getObjectLockMode() == null
-                && copyObjectRequest.getObjectLockLegalHoldStatus() == null
-                && copyObjectRequest.getObjectLockRetainUntilDate() == null;
+        return metadata.getContentLength() > configuration.getMultipartCopyThreshold();
     }
 
     public CopyResult call() throws Exception {
@@ -244,6 +240,10 @@ public class CopyCallable implements Callable<CopyResult> {
         populateMetadataWithEncryptionParams(metadata,newObjectMetadata);
 
         req.setTagging(origReq.getNewObjectTagging());
+
+        req.withObjectLockMode(origReq.getObjectLockMode())
+           .withObjectLockLegalHoldStatus(origReq.getObjectLockLegalHoldStatus())
+           .withObjectLockRetainUntilDate(origReq.getObjectLockRetainUntilDate());
 
         String uploadId = s3.initiateMultipartUpload(req).getUploadId();
         log.debug("Initiated new multipart upload: " + uploadId);

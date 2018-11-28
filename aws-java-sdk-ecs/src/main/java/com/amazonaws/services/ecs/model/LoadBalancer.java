@@ -22,6 +22,18 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Details on a load balancer that is used with a service.
  * </p>
  * <p>
+ * If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer or target
+ * group.
+ * </p>
+ * <p>
+ * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either an
+ * Application Load Balancer or Network Load Balancer. When you are creating an AWS CodeDeploy deployment group, you
+ * specify two target groups (referred to as a <code>targetGroupPair</code>). Each target group binds to a separate task
+ * set in the deployment. The load balancer can also have up to two listeners, a required listener for production
+ * traffic and an optional listener that allows you to test new revisions of the service before routing production
+ * traffic to it.
+ * </p>
+ * <p>
  * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch type)
  * only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not supported. Also,
  * when you create any target groups for these services, you must choose <code>ip</code> as the target type, not
@@ -37,7 +49,10 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a service.
+     * The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group or groups associated with a
+     * service. For services using the <code>ECS</code> deployment controller, you are limited to one target group. For
+     * services using the <code>CODE_DEPLOY</code> deployment controller, you are required to define two target groups
+     * for the load balancer.
      * </p>
      * <important>
      * <p>
@@ -72,7 +87,10 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a service.
+     * The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group or groups associated with a
+     * service. For services using the <code>ECS</code> deployment controller, you are limited to one target group. For
+     * services using the <code>CODE_DEPLOY</code> deployment controller, you are required to define two target groups
+     * for the load balancer.
      * </p>
      * <important>
      * <p>
@@ -84,8 +102,10 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * </important>
      * 
      * @param targetGroupArn
-     *        The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a
-     *        service.</p> <important>
+     *        The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group or groups associated with a
+     *        service. For services using the <code>ECS</code> deployment controller, you are limited to one target
+     *        group. For services using the <code>CODE_DEPLOY</code> deployment controller, you are required to define
+     *        two target groups for the load balancer.</p> <important>
      *        <p>
      *        If your service's task definition uses the <code>awsvpc</code> network mode (which is required for the
      *        Fargate launch type), you must choose <code>ip</code> as the target type, not <code>instance</code>,
@@ -100,7 +120,10 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a service.
+     * The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group or groups associated with a
+     * service. For services using the <code>ECS</code> deployment controller, you are limited to one target group. For
+     * services using the <code>CODE_DEPLOY</code> deployment controller, you are required to define two target groups
+     * for the load balancer.
      * </p>
      * <important>
      * <p>
@@ -111,8 +134,10 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </important>
      * 
-     * @return The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a
-     *         service.</p> <important>
+     * @return The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group or groups associated with
+     *         a service. For services using the <code>ECS</code> deployment controller, you are limited to one target
+     *         group. For services using the <code>CODE_DEPLOY</code> deployment controller, you are required to define
+     *         two target groups for the load balancer.</p> <important>
      *         <p>
      *         If your service's task definition uses the <code>awsvpc</code> network mode (which is required for the
      *         Fargate launch type), you must choose <code>ip</code> as the target type, not <code>instance</code>,
@@ -127,7 +152,10 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a service.
+     * The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group or groups associated with a
+     * service. For services using the <code>ECS</code> deployment controller, you are limited to one target group. For
+     * services using the <code>CODE_DEPLOY</code> deployment controller, you are required to define two target groups
+     * for the load balancer.
      * </p>
      * <important>
      * <p>
@@ -139,8 +167,10 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * </important>
      * 
      * @param targetGroupArn
-     *        The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a
-     *        service.</p> <important>
+     *        The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group or groups associated with a
+     *        service. For services using the <code>ECS</code> deployment controller, you are limited to one target
+     *        group. For services using the <code>CODE_DEPLOY</code> deployment controller, you are required to define
+     *        two target groups for the load balancer.</p> <important>
      *        <p>
      *        If your service's task definition uses the <code>awsvpc</code> network mode (which is required for the
      *        Fargate launch type), you must choose <code>ip</code> as the target type, not <code>instance</code>,

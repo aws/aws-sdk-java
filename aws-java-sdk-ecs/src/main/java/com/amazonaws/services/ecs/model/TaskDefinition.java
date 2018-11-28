@@ -117,9 +117,9 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The revision of the task in a particular family. The revision is a version number of a task definition in a
-     * family. When you register a task definition for the first time, the revision is <code>1</code>. Each time you
-     * register a new revision of a task definition in the same family, the revision value always increases by one (even
-     * if you have deregistered previous revisions in this family).
+     * family. When you register a task definition for the first time, the revision is <code>1</code>. Each time that
+     * you register a new revision of a task definition in the same family, the revision value always increases by one,
+     * even if you have deregistered previous revisions in this family.
      * </p>
      */
     private Integer revision;
@@ -146,15 +146,15 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The container instance attributes required by your task. This field is not valid if using the Fargate launch type
-     * for your task.
+     * The container instance attributes required by your task. This field is not valid if you are using the Fargate
+     * launch type for your task.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Attribute> requiresAttributes;
     /**
      * <p>
-     * An array of placement constraint objects to use for tasks. This field is not valid if using the Fargate launch
-     * type for your task.
+     * An array of placement constraint objects to use for tasks. This field is not valid if you are using the Fargate
+     * launch type for your task.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TaskDefinitionPlacementConstraint> placementConstraints;
@@ -168,7 +168,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<String> compatibilities;
     /**
      * <p>
-     * The launch type the task is using.
+     * The launch type that the task is using.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> requiresCompatibilities;
@@ -291,7 +291,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -1082,16 +1082,16 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The revision of the task in a particular family. The revision is a version number of a task definition in a
-     * family. When you register a task definition for the first time, the revision is <code>1</code>. Each time you
-     * register a new revision of a task definition in the same family, the revision value always increases by one (even
-     * if you have deregistered previous revisions in this family).
+     * family. When you register a task definition for the first time, the revision is <code>1</code>. Each time that
+     * you register a new revision of a task definition in the same family, the revision value always increases by one,
+     * even if you have deregistered previous revisions in this family.
      * </p>
      * 
      * @param revision
      *        The revision of the task in a particular family. The revision is a version number of a task definition in
      *        a family. When you register a task definition for the first time, the revision is <code>1</code>. Each
-     *        time you register a new revision of a task definition in the same family, the revision value always
-     *        increases by one (even if you have deregistered previous revisions in this family).
+     *        time that you register a new revision of a task definition in the same family, the revision value always
+     *        increases by one, even if you have deregistered previous revisions in this family.
      */
 
     public void setRevision(Integer revision) {
@@ -1101,15 +1101,15 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The revision of the task in a particular family. The revision is a version number of a task definition in a
-     * family. When you register a task definition for the first time, the revision is <code>1</code>. Each time you
-     * register a new revision of a task definition in the same family, the revision value always increases by one (even
-     * if you have deregistered previous revisions in this family).
+     * family. When you register a task definition for the first time, the revision is <code>1</code>. Each time that
+     * you register a new revision of a task definition in the same family, the revision value always increases by one,
+     * even if you have deregistered previous revisions in this family.
      * </p>
      * 
      * @return The revision of the task in a particular family. The revision is a version number of a task definition in
      *         a family. When you register a task definition for the first time, the revision is <code>1</code>. Each
-     *         time you register a new revision of a task definition in the same family, the revision value always
-     *         increases by one (even if you have deregistered previous revisions in this family).
+     *         time that you register a new revision of a task definition in the same family, the revision value always
+     *         increases by one, even if you have deregistered previous revisions in this family.
      */
 
     public Integer getRevision() {
@@ -1119,16 +1119,16 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The revision of the task in a particular family. The revision is a version number of a task definition in a
-     * family. When you register a task definition for the first time, the revision is <code>1</code>. Each time you
-     * register a new revision of a task definition in the same family, the revision value always increases by one (even
-     * if you have deregistered previous revisions in this family).
+     * family. When you register a task definition for the first time, the revision is <code>1</code>. Each time that
+     * you register a new revision of a task definition in the same family, the revision value always increases by one,
+     * even if you have deregistered previous revisions in this family.
      * </p>
      * 
      * @param revision
      *        The revision of the task in a particular family. The revision is a version number of a task definition in
      *        a family. When you register a task definition for the first time, the revision is <code>1</code>. Each
-     *        time you register a new revision of a task definition in the same family, the revision value always
-     *        increases by one (even if you have deregistered previous revisions in this family).
+     *        time that you register a new revision of a task definition in the same family, the revision value always
+     *        increases by one, even if you have deregistered previous revisions in this family.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1353,12 +1353,12 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The container instance attributes required by your task. This field is not valid if using the Fargate launch type
-     * for your task.
+     * The container instance attributes required by your task. This field is not valid if you are using the Fargate
+     * launch type for your task.
      * </p>
      * 
-     * @return The container instance attributes required by your task. This field is not valid if using the Fargate
-     *         launch type for your task.
+     * @return The container instance attributes required by your task. This field is not valid if you are using the
+     *         Fargate launch type for your task.
      */
 
     public java.util.List<Attribute> getRequiresAttributes() {
@@ -1370,13 +1370,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The container instance attributes required by your task. This field is not valid if using the Fargate launch type
-     * for your task.
+     * The container instance attributes required by your task. This field is not valid if you are using the Fargate
+     * launch type for your task.
      * </p>
      * 
      * @param requiresAttributes
-     *        The container instance attributes required by your task. This field is not valid if using the Fargate
-     *        launch type for your task.
+     *        The container instance attributes required by your task. This field is not valid if you are using the
+     *        Fargate launch type for your task.
      */
 
     public void setRequiresAttributes(java.util.Collection<Attribute> requiresAttributes) {
@@ -1390,8 +1390,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The container instance attributes required by your task. This field is not valid if using the Fargate launch type
-     * for your task.
+     * The container instance attributes required by your task. This field is not valid if you are using the Fargate
+     * launch type for your task.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1400,8 +1400,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param requiresAttributes
-     *        The container instance attributes required by your task. This field is not valid if using the Fargate
-     *        launch type for your task.
+     *        The container instance attributes required by your task. This field is not valid if you are using the
+     *        Fargate launch type for your task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1417,13 +1417,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The container instance attributes required by your task. This field is not valid if using the Fargate launch type
-     * for your task.
+     * The container instance attributes required by your task. This field is not valid if you are using the Fargate
+     * launch type for your task.
      * </p>
      * 
      * @param requiresAttributes
-     *        The container instance attributes required by your task. This field is not valid if using the Fargate
-     *        launch type for your task.
+     *        The container instance attributes required by your task. This field is not valid if you are using the
+     *        Fargate launch type for your task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1434,12 +1434,12 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of placement constraint objects to use for tasks. This field is not valid if using the Fargate launch
-     * type for your task.
+     * An array of placement constraint objects to use for tasks. This field is not valid if you are using the Fargate
+     * launch type for your task.
      * </p>
      * 
-     * @return An array of placement constraint objects to use for tasks. This field is not valid if using the Fargate
-     *         launch type for your task.
+     * @return An array of placement constraint objects to use for tasks. This field is not valid if you are using the
+     *         Fargate launch type for your task.
      */
 
     public java.util.List<TaskDefinitionPlacementConstraint> getPlacementConstraints() {
@@ -1451,13 +1451,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of placement constraint objects to use for tasks. This field is not valid if using the Fargate launch
-     * type for your task.
+     * An array of placement constraint objects to use for tasks. This field is not valid if you are using the Fargate
+     * launch type for your task.
      * </p>
      * 
      * @param placementConstraints
-     *        An array of placement constraint objects to use for tasks. This field is not valid if using the Fargate
-     *        launch type for your task.
+     *        An array of placement constraint objects to use for tasks. This field is not valid if you are using the
+     *        Fargate launch type for your task.
      */
 
     public void setPlacementConstraints(java.util.Collection<TaskDefinitionPlacementConstraint> placementConstraints) {
@@ -1471,8 +1471,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of placement constraint objects to use for tasks. This field is not valid if using the Fargate launch
-     * type for your task.
+     * An array of placement constraint objects to use for tasks. This field is not valid if you are using the Fargate
+     * launch type for your task.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1481,8 +1481,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param placementConstraints
-     *        An array of placement constraint objects to use for tasks. This field is not valid if using the Fargate
-     *        launch type for your task.
+     *        An array of placement constraint objects to use for tasks. This field is not valid if you are using the
+     *        Fargate launch type for your task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1498,13 +1498,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of placement constraint objects to use for tasks. This field is not valid if using the Fargate launch
-     * type for your task.
+     * An array of placement constraint objects to use for tasks. This field is not valid if you are using the Fargate
+     * launch type for your task.
      * </p>
      * 
      * @param placementConstraints
-     *        An array of placement constraint objects to use for tasks. This field is not valid if using the Fargate
-     *        launch type for your task.
+     *        An array of placement constraint objects to use for tasks. This field is not valid if you are using the
+     *        Fargate launch type for your task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1636,10 +1636,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type the task is using.
+     * The launch type that the task is using.
      * </p>
      * 
-     * @return The launch type the task is using.
+     * @return The launch type that the task is using.
      * @see Compatibility
      */
 
@@ -1652,11 +1652,11 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type the task is using.
+     * The launch type that the task is using.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type the task is using.
+     *        The launch type that the task is using.
      * @see Compatibility
      */
 
@@ -1671,7 +1671,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type the task is using.
+     * The launch type that the task is using.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1680,7 +1680,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type the task is using.
+     *        The launch type that the task is using.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -1697,11 +1697,11 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type the task is using.
+     * The launch type that the task is using.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type the task is using.
+     *        The launch type that the task is using.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -1713,11 +1713,11 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type the task is using.
+     * The launch type that the task is using.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type the task is using.
+     *        The launch type that the task is using.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -2448,7 +2448,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2490,7 +2490,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *        the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <ul>
@@ -2538,7 +2538,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2579,7 +2579,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *         the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *         Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
      *         <ul>
@@ -2627,7 +2627,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2669,7 +2669,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *        the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <ul>
@@ -2719,7 +2719,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2761,7 +2761,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *        the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <ul>
@@ -2809,7 +2809,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2851,7 +2851,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *        the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <ul>

@@ -366,7 +366,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * @param ignoreApplicationStopFailures
      *        If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an
      *        instance to fail, the deployment to that instance will not be considered to have failed at that point and
-     *        will continue on to the BeforeInstall deployment lifecycle event.</p>
+     *        will continue on to the BeforeInstall deployment lifecycle event. </p>
      *        <p>
      *        If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle
      *        event to fail to an instance, the deployment to that instance will stop, and the deployment to that
@@ -391,7 +391,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an
      *         instance to fail, the deployment to that instance will not be considered to have failed at that point and
-     *         will continue on to the BeforeInstall deployment lifecycle event.</p>
+     *         will continue on to the BeforeInstall deployment lifecycle event. </p>
      *         <p>
      *         If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle
      *         event to fail to an instance, the deployment to that instance will stop, and the deployment to that
@@ -417,7 +417,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * @param ignoreApplicationStopFailures
      *        If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an
      *        instance to fail, the deployment to that instance will not be considered to have failed at that point and
-     *        will continue on to the BeforeInstall deployment lifecycle event.</p>
+     *        will continue on to the BeforeInstall deployment lifecycle event. </p>
      *        <p>
      *        If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle
      *        event to fail to an instance, the deployment to that instance will stop, and the deployment to that
@@ -444,7 +444,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an
      *         instance to fail, the deployment to that instance will not be considered to have failed at that point and
-     *         will continue on to the BeforeInstall deployment lifecycle event.</p>
+     *         will continue on to the BeforeInstall deployment lifecycle event. </p>
      *         <p>
      *         If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle
      *         event to fail to an instance, the deployment to that instance will stop, and the deployment to that

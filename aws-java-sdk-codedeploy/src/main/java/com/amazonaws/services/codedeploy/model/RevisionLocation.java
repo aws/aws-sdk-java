@@ -69,6 +69,13 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private RawString string;
+    /**
+     * <p>
+     * The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted as JSON or
+     * YAML and stored as a RawString.
+     * </p>
+     */
+    private AppSpecContent appSpecContent;
 
     /**
      * <p>
@@ -396,7 +403,7 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
      * @param string
      *        Information about the location of an AWS Lambda deployment revision stored as a RawString.
      */
-
+    @Deprecated
     public void setString(RawString string) {
         this.string = string;
     }
@@ -408,7 +415,7 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
      * 
      * @return Information about the location of an AWS Lambda deployment revision stored as a RawString.
      */
-
+    @Deprecated
     public RawString getString() {
         return this.string;
     }
@@ -422,9 +429,55 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
      *        Information about the location of an AWS Lambda deployment revision stored as a RawString.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public RevisionLocation withString(RawString string) {
         setString(string);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted as JSON or
+     * YAML and stored as a RawString.
+     * </p>
+     * 
+     * @param appSpecContent
+     *        The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted as
+     *        JSON or YAML and stored as a RawString.
+     */
+
+    public void setAppSpecContent(AppSpecContent appSpecContent) {
+        this.appSpecContent = appSpecContent;
+    }
+
+    /**
+     * <p>
+     * The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted as JSON or
+     * YAML and stored as a RawString.
+     * </p>
+     * 
+     * @return The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted as
+     *         JSON or YAML and stored as a RawString.
+     */
+
+    public AppSpecContent getAppSpecContent() {
+        return this.appSpecContent;
+    }
+
+    /**
+     * <p>
+     * The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted as JSON or
+     * YAML and stored as a RawString.
+     * </p>
+     * 
+     * @param appSpecContent
+     *        The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted as
+     *        JSON or YAML and stored as a RawString.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RevisionLocation withAppSpecContent(AppSpecContent appSpecContent) {
+        setAppSpecContent(appSpecContent);
         return this;
     }
 
@@ -446,7 +499,9 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
         if (getGitHubLocation() != null)
             sb.append("GitHubLocation: ").append(getGitHubLocation()).append(",");
         if (getString() != null)
-            sb.append("String: ").append(getString());
+            sb.append("String: ").append(getString()).append(",");
+        if (getAppSpecContent() != null)
+            sb.append("AppSpecContent: ").append(getAppSpecContent());
         sb.append("}");
         return sb.toString();
     }
@@ -477,6 +532,10 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getString() != null && other.getString().equals(this.getString()) == false)
             return false;
+        if (other.getAppSpecContent() == null ^ this.getAppSpecContent() == null)
+            return false;
+        if (other.getAppSpecContent() != null && other.getAppSpecContent().equals(this.getAppSpecContent()) == false)
+            return false;
         return true;
     }
 
@@ -489,6 +548,7 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getS3Location() == null) ? 0 : getS3Location().hashCode());
         hashCode = prime * hashCode + ((getGitHubLocation() == null) ? 0 : getGitHubLocation().hashCode());
         hashCode = prime * hashCode + ((getString() == null) ? 0 : getString().hashCode());
+        hashCode = prime * hashCode + ((getAppSpecContent() == null) ? 0 : getAppSpecContent().hashCode());
         return hashCode;
     }
 

@@ -154,6 +154,14 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String computePlatform;
+    /**
+     * <p>
+     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
+     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ECSService> ecsServices;
 
     /**
      * <p>
@@ -1147,6 +1155,95 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
+     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * </p>
+     * 
+     * @return The target ECS services in the deployment group. This only applies to deployment groups that use the
+     *         Amazon ECS compute platform. A target ECS service is specified as an Amazon ECS cluster and service name
+     *         pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     */
+
+    public java.util.List<ECSService> getEcsServices() {
+        if (ecsServices == null) {
+            ecsServices = new com.amazonaws.internal.SdkInternalList<ECSService>();
+        }
+        return ecsServices;
+    }
+
+    /**
+     * <p>
+     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
+     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * </p>
+     * 
+     * @param ecsServices
+     *        The target ECS services in the deployment group. This only applies to deployment groups that use the
+     *        Amazon ECS compute platform. A target ECS service is specified as an Amazon ECS cluster and service name
+     *        pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     */
+
+    public void setEcsServices(java.util.Collection<ECSService> ecsServices) {
+        if (ecsServices == null) {
+            this.ecsServices = null;
+            return;
+        }
+
+        this.ecsServices = new com.amazonaws.internal.SdkInternalList<ECSService>(ecsServices);
+    }
+
+    /**
+     * <p>
+     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
+     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEcsServices(java.util.Collection)} or {@link #withEcsServices(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param ecsServices
+     *        The target ECS services in the deployment group. This only applies to deployment groups that use the
+     *        Amazon ECS compute platform. A target ECS service is specified as an Amazon ECS cluster and service name
+     *        pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentGroupInfo withEcsServices(ECSService... ecsServices) {
+        if (this.ecsServices == null) {
+            setEcsServices(new com.amazonaws.internal.SdkInternalList<ECSService>(ecsServices.length));
+        }
+        for (ECSService ele : ecsServices) {
+            this.ecsServices.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
+     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * </p>
+     * 
+     * @param ecsServices
+     *        The target ECS services in the deployment group. This only applies to deployment groups that use the
+     *        Amazon ECS compute platform. A target ECS service is specified as an Amazon ECS cluster and service name
+     *        pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentGroupInfo withEcsServices(java.util.Collection<ECSService> ecsServices) {
+        setEcsServices(ecsServices);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1196,7 +1293,9 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
         if (getOnPremisesTagSet() != null)
             sb.append("OnPremisesTagSet: ").append(getOnPremisesTagSet()).append(",");
         if (getComputePlatform() != null)
-            sb.append("ComputePlatform: ").append(getComputePlatform());
+            sb.append("ComputePlatform: ").append(getComputePlatform()).append(",");
+        if (getEcsServices() != null)
+            sb.append("EcsServices: ").append(getEcsServices());
         sb.append("}");
         return sb.toString();
     }
@@ -1292,6 +1391,10 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getComputePlatform() != null && other.getComputePlatform().equals(this.getComputePlatform()) == false)
             return false;
+        if (other.getEcsServices() == null ^ this.getEcsServices() == null)
+            return false;
+        if (other.getEcsServices() != null && other.getEcsServices().equals(this.getEcsServices()) == false)
+            return false;
         return true;
     }
 
@@ -1320,6 +1423,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getEc2TagSet() == null) ? 0 : getEc2TagSet().hashCode());
         hashCode = prime * hashCode + ((getOnPremisesTagSet() == null) ? 0 : getOnPremisesTagSet().hashCode());
         hashCode = prime * hashCode + ((getComputePlatform() == null) ? 0 : getComputePlatform().hashCode());
+        hashCode = prime * hashCode + ((getEcsServices() == null) ? 0 : getEcsServices().hashCode());
         return hashCode;
     }
 

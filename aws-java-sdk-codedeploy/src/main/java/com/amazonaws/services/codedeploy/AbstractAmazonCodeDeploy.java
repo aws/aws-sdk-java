@@ -64,7 +64,13 @@ public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
     }
 
     @Override
+    @Deprecated
     public BatchGetDeploymentInstancesResult batchGetDeploymentInstances(BatchGetDeploymentInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchGetDeploymentTargetsResult batchGetDeploymentTargets(BatchGetDeploymentTargetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -164,7 +170,13 @@ public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
     }
 
     @Override
+    @Deprecated
     public GetDeploymentInstanceResult getDeploymentInstance(GetDeploymentInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDeploymentTargetResult getDeploymentTarget(GetDeploymentTargetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -204,7 +216,13 @@ public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
     }
 
     @Override
+    @Deprecated
     public ListDeploymentInstancesResult listDeploymentInstances(ListDeploymentInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDeploymentTargetsResult listDeploymentTargets(ListDeploymentTargetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -254,6 +272,7 @@ public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
     }
 
     @Override
+    @Deprecated
     public SkipWaitTimeForInstanceTerminationResult skipWaitTimeForInstanceTermination(SkipWaitTimeForInstanceTerminationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

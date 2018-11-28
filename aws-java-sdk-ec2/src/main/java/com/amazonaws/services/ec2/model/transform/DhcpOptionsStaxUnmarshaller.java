@@ -60,6 +60,11 @@ public class DhcpOptionsStaxUnmarshaller implements Unmarshaller<DhcpOptions, St
                     continue;
                 }
 
+                if (context.testExpression("ownerId", targetDepth)) {
+                    dhcpOptions.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("tagSet", targetDepth)) {
                     dhcpOptions.withTags(new ArrayList<Tag>());
                     continue;

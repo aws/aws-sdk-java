@@ -54,7 +54,7 @@ public class SystemControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespaced kernel parameter to set a <code>value</code> for.
+     * The namespaced kernel parameter for which to set a <code>value</code>.
      * </p>
      */
     private String namespace;
@@ -67,11 +67,11 @@ public class SystemControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespaced kernel parameter to set a <code>value</code> for.
+     * The namespaced kernel parameter for which to set a <code>value</code>.
      * </p>
      * 
      * @param namespace
-     *        The namespaced kernel parameter to set a <code>value</code> for.
+     *        The namespaced kernel parameter for which to set a <code>value</code>.
      */
 
     public void setNamespace(String namespace) {
@@ -80,10 +80,10 @@ public class SystemControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespaced kernel parameter to set a <code>value</code> for.
+     * The namespaced kernel parameter for which to set a <code>value</code>.
      * </p>
      * 
-     * @return The namespaced kernel parameter to set a <code>value</code> for.
+     * @return The namespaced kernel parameter for which to set a <code>value</code>.
      */
 
     public String getNamespace() {
@@ -92,11 +92,11 @@ public class SystemControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespaced kernel parameter to set a <code>value</code> for.
+     * The namespaced kernel parameter for which to set a <code>value</code>.
      * </p>
      * 
      * @param namespace
-     *        The namespaced kernel parameter to set a <code>value</code> for.
+     *        The namespaced kernel parameter for which to set a <code>value</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

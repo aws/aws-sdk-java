@@ -48,6 +48,11 @@ public class AbstractAWSMarketplaceMetering implements AWSMarketplaceMetering {
     }
 
     @Override
+    public RegisterUsageResult registerUsage(RegisterUsageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ResolveCustomerResult resolveCustomer(ResolveCustomerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

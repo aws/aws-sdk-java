@@ -36,7 +36,7 @@ public class BatchGetDeploymentInstancesRequest extends com.amazonaws.AmazonWebS
     private String deploymentId;
     /**
      * <p>
-     * The unique IDs of instances in the deployment group.
+     * The unique IDs of instances of the deployment.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
@@ -83,10 +83,10 @@ public class BatchGetDeploymentInstancesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The unique IDs of instances in the deployment group.
+     * The unique IDs of instances of the deployment.
      * </p>
      * 
-     * @return The unique IDs of instances in the deployment group.
+     * @return The unique IDs of instances of the deployment.
      */
 
     public java.util.List<String> getInstanceIds() {
@@ -98,11 +98,11 @@ public class BatchGetDeploymentInstancesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The unique IDs of instances in the deployment group.
+     * The unique IDs of instances of the deployment.
      * </p>
      * 
      * @param instanceIds
-     *        The unique IDs of instances in the deployment group.
+     *        The unique IDs of instances of the deployment.
      */
 
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
@@ -116,7 +116,7 @@ public class BatchGetDeploymentInstancesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The unique IDs of instances in the deployment group.
+     * The unique IDs of instances of the deployment.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -125,7 +125,7 @@ public class BatchGetDeploymentInstancesRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param instanceIds
-     *        The unique IDs of instances in the deployment group.
+     *        The unique IDs of instances of the deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class BatchGetDeploymentInstancesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The unique IDs of instances in the deployment group.
+     * The unique IDs of instances of the deployment.
      * </p>
      * 
      * @param instanceIds
-     *        The unique IDs of instances in the deployment group.
+     *        The unique IDs of instances of the deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

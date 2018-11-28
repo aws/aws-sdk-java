@@ -133,6 +133,11 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
+    public DescribeQueriesResult describeQueries(DescribeQueriesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeResourcePoliciesResult describeResourcePolicies(DescribeResourcePoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -154,6 +159,21 @@ public class AbstractAWSLogs implements AWSLogs {
 
     @Override
     public GetLogEventsResult getLogEvents(GetLogEventsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLogGroupFieldsResult getLogGroupFields(GetLogGroupFieldsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLogRecordResult getLogRecord(GetLogRecordRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetQueryResultsResult getQueryResults(GetQueryResultsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -194,6 +214,16 @@ public class AbstractAWSLogs implements AWSLogs {
 
     @Override
     public PutSubscriptionFilterResult putSubscriptionFilter(PutSubscriptionFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartQueryResult startQuery(StartQueryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopQueryResult stopQuery(StopQueryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

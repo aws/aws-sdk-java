@@ -28,18 +28,18 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A unique deployment ID.
+     * The unique ID of a deployment.
      * </p>
      */
     private String deploymentId;
 
     /**
      * <p>
-     * A unique deployment ID.
+     * The unique ID of a deployment.
      * </p>
      * 
      * @param deploymentId
-     *        A unique deployment ID.
+     *        The unique ID of a deployment.
      */
 
     public void setDeploymentId(String deploymentId) {
@@ -48,10 +48,10 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A unique deployment ID.
+     * The unique ID of a deployment.
      * </p>
      * 
-     * @return A unique deployment ID.
+     * @return The unique ID of a deployment.
      */
 
     public String getDeploymentId() {
@@ -60,11 +60,11 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A unique deployment ID.
+     * The unique ID of a deployment.
      * </p>
      * 
      * @param deploymentId
-     *        A unique deployment ID.
+     *        The unique ID of a deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

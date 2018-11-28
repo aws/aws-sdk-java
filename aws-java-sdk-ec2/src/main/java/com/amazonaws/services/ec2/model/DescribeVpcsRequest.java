@@ -81,6 +81,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the VPC.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).
      * </p>
      * </li>
@@ -172,6 +177,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the VPC.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).
      * </p>
      * </li>
@@ -245,6 +255,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *         <li>
      *         <p>
      *         <code>isDefault</code> - Indicates whether the VPC is the default VPC.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>owner-id</code> - The ID of the AWS account that owns the VPC.
      *         </p>
      *         </li>
      *         <li>
@@ -336,6 +351,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the VPC.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).
      * </p>
      * </li>
@@ -410,6 +430,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *        <li>
      *        <p>
      *        <code>isDefault</code> - Indicates whether the VPC is the default VPC.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>owner-id</code> - The ID of the AWS account that owns the VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -503,6 +528,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the VPC.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).
      * </p>
      * </li>
@@ -582,6 +612,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *        <li>
      *        <p>
      *        <code>isDefault</code> - Indicates whether the VPC is the default VPC.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>owner-id</code> - The ID of the AWS account that owns the VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -677,6 +712,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the VPC.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).
      * </p>
      * </li>
@@ -751,6 +791,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *        <li>
      *        <p>
      *        <code>isDefault</code> - Indicates whether the VPC is the default VPC.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>owner-id</code> - The ID of the AWS account that owns the VPC.
      *        </p>
      *        </li>
      *        <li>

@@ -85,6 +85,29 @@ import com.amazonaws.services.marketplacemetering.model.transform.*;
  * </p>
  * </li>
  * </ul>
+ * <p>
+ * <b>Entitlement and Metering for Paid Container Products</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Paid container software products sold through AWS Marketplace must integrate with the AWS Marketplace Metering
+ * Service and call the RegisterUsage operation for software entitlement and metering. Calling RegisterUsage from
+ * containers running outside of Amazon Elastic Container Service (Amazon ECR) isn't supported. Free and BYOL products
+ * for ECS aren't required to call RegisterUsage, but you can do so if you want to receive usage data in your seller
+ * reports. For more information on using the RegisterUsage operation, see <a
+ * href="https://docs.aws.amazon.com/latest/userguide/entitlement-and-metering-for-paid-products.html">Container-Based
+ * Products</a>.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * BatchMeterUsage API calls are captured by AWS CloudTrail. You can use Cloudtrail to verify that the SaaS metering
+ * records that you sent are accurate by searching for records with the eventName of BatchMeterUsage. You can also use
+ * CloudTrail to audit records over time. For more information, see the <i> <a
+ * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html">AWS CloudTrail User
+ * Guide</a> </i>.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -118,6 +141,9 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                             new JsonErrorShapeMetadata().withErrorCode("InvalidEndpointRegionException").withModeledClass(
                                     com.amazonaws.services.marketplacemetering.model.InvalidEndpointRegionException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PlatformNotSupportedException").withModeledClass(
+                                    com.amazonaws.services.marketplacemetering.model.PlatformNotSupportedException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TimestampOutOfBoundsException").withModeledClass(
                                     com.amazonaws.services.marketplacemetering.model.TimestampOutOfBoundsException.class))
                     .addErrorMetadata(
@@ -127,11 +153,23 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                             new JsonErrorShapeMetadata().withErrorCode("InvalidUsageDimensionException").withModeledClass(
                                     com.amazonaws.services.marketplacemetering.model.InvalidUsageDimensionException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withModeledClass(
-                                    com.amazonaws.services.marketplacemetering.model.ThrottlingException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DuplicateRequestException").withModeledClass(
                                     com.amazonaws.services.marketplacemetering.model.DuplicateRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPublicKeyVersionException").withModeledClass(
+                                    com.amazonaws.services.marketplacemetering.model.InvalidPublicKeyVersionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRegionException").withModeledClass(
+                                    com.amazonaws.services.marketplacemetering.model.InvalidRegionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CustomerNotEntitledException").withModeledClass(
+                                    com.amazonaws.services.marketplacemetering.model.CustomerNotEntitledException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DisabledApiException").withModeledClass(
+                                    com.amazonaws.services.marketplacemetering.model.DisabledApiException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withModeledClass(
+                                    com.amazonaws.services.marketplacemetering.model.ThrottlingException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidCustomerIdentifierException").withModeledClass(
                                     com.amazonaws.services.marketplacemetering.model.InvalidCustomerIdentifierException.class))
@@ -373,7 +411,9 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      * @throws TimestampOutOfBoundsException
      *         The timestamp value passed in the meterUsage() is out of allowed range.
      * @throws ThrottlingException
-     *         The calls to the MeterUsage API are throttled.
+     *         The calls to the API are throttled.
+     * @throws DisabledApiException
+     *         The API is disabled in the Region.
      * @sample AWSMarketplaceMetering.BatchMeterUsage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage"
      *      target="_top">AWS API Documentation</a>
@@ -439,15 +479,15 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      * @throws InvalidUsageDimensionException
      *         The usage dimension does not match one of the UsageDimensions associated with products.
      * @throws InvalidEndpointRegionException
-     *         The endpoint being called is in a region different from your EC2 instance. The region of the Metering
-     *         service endpoint and the region of the EC2 instance must match.
+     *         The endpoint being called is in a Region different from your EC2 instance. The Region of the Metering
+     *         Service endpoint and the Region of the EC2 instance must match.
      * @throws TimestampOutOfBoundsException
      *         The timestamp value passed in the meterUsage() is out of allowed range.
      * @throws DuplicateRequestException
      *         A metering record has already been emitted by the same EC2 instance for the given {usageDimension,
      *         timestamp} with a different usageQuantity.
      * @throws ThrottlingException
-     *         The calls to the MeterUsage API are throttled.
+     *         The calls to the API are throttled.
      * @sample AWSMarketplaceMetering.MeterUsage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage" target="_top">AWS
      *      API Documentation</a>
@@ -495,6 +535,106 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Paid container software products sold through AWS Marketplace must integrate with the AWS Marketplace Metering
+     * Service and call the RegisterUsage operation for software entitlement and metering. Calling RegisterUsage from
+     * containers running outside of ECS is not currently supported. Free and BYOL products for ECS aren't required to
+     * call RegisterUsage, but you may choose to do so if you would like to receive usage data in your seller reports.
+     * The sections below explain the behavior of RegisterUsage. RegisterUsage performs two primary functions: metering
+     * and entitlement.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>Entitlement</i>: RegisterUsage allows you to verify that the customer running your paid software is subscribed
+     * to your product on AWS Marketplace, enabling you to guard against unauthorized use. Your container image that
+     * integrates with RegisterUsage is only required to guard against unauthorized use at container startup, as such a
+     * CustomerNotSubscribedException/PlatformNotSupportedException will only be thrown on the initial call to
+     * RegisterUsage. Subsequent calls from the same Amazon ECS task instance (e.g. task-id) will not throw a
+     * CustomerNotSubscribedException, even if the customer unsubscribes while the Amazon ECS task is still running.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Metering</i>: RegisterUsage meters software use per ECS task, per hour, with usage prorated to the second. A
+     * minimum of 1 minute of usage applies to tasks that are short lived. For example, if a customer has a 10 node ECS
+     * cluster and creates an ECS service configured as a Daemon Set, then ECS will launch a task on all 10 cluster
+     * nodes and the customer will be charged: (10 * hourly_rate). Metering for software use is automatically handled by
+     * the AWS Marketplace Metering Control Plane -- your software is not required to perform any metering specific
+     * actions, other than call RegisterUsage once for metering of software use to commence. The AWS Marketplace
+     * Metering Control Plane will also continue to bill customers for running ECS tasks, regardless of the customers
+     * subscription state, removing the need for your software to perform entitlement checks at runtime.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param registerUsageRequest
+     * @return Result of the RegisterUsage operation returned by the service.
+     * @throws InvalidProductCodeException
+     *         The product code passed does not match the product code used for publishing the product.
+     * @throws InvalidRegionException
+     *         RegisterUsage must be called in the same AWS Region the ECS task was launched in. This prevents a
+     *         container from hardcoding a Region (e.g. withRegion(“us-east-1”) when calling RegisterUsage.
+     * @throws InvalidPublicKeyVersionException
+     *         Public Key version is invalid.
+     * @throws PlatformNotSupportedException
+     *         AWS Marketplace does not support metering usage from the underlying platform. Currently, only Amazon ECS
+     *         is supported.
+     * @throws CustomerNotEntitledException
+     *         Exception thrown when the customer does not have a valid subscription for the product.
+     * @throws ThrottlingException
+     *         The calls to the API are throttled.
+     * @throws InternalServiceErrorException
+     *         An internal error has occurred. Retry your request. If the problem persists, post a message with details
+     *         on the AWS forums.
+     * @throws DisabledApiException
+     *         The API is disabled in the Region.
+     * @sample AWSMarketplaceMetering.RegisterUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/RegisterUsage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RegisterUsageResult registerUsage(RegisterUsageRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterUsage(request);
+    }
+
+    @SdkInternalApi
+    final RegisterUsageResult executeRegisterUsage(RegisterUsageRequest registerUsageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(registerUsageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterUsageRequest> request = null;
+        Response<RegisterUsageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerUsageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Metering");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterUsage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterUsageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RegisterUsageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * ResolveCustomer is called by a SaaS application during the registration process. When a buyer visits your website
      * during the registration process, the buyer submits a registration token through their browser. The registration
      * token is resolved through this API to obtain a CustomerIdentifier and product code.
@@ -504,16 +644,19 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      *        Contains input to the ResolveCustomer operation.
      * @return Result of the ResolveCustomer operation returned by the service.
      * @throws InvalidTokenException
+     *         Registration token is invalid.
      * @throws ExpiredTokenException
      *         The submitted registration token has expired. This can happen if the buyer's browser takes too long to
      *         redirect to your page, the buyer has resubmitted the registration token, or your application has held on
      *         to the registration token for too long. Your SaaS registration website should redeem this token as soon
      *         as it is submitted by the buyer's browser.
      * @throws ThrottlingException
-     *         The calls to the MeterUsage API are throttled.
+     *         The calls to the API are throttled.
      * @throws InternalServiceErrorException
      *         An internal error has occurred. Retry your request. If the problem persists, post a message with details
      *         on the AWS forums.
+     * @throws DisabledApiException
+     *         The API is disabled in the Region.
      * @sample AWSMarketplaceMetering.ResolveCustomer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer"
      *      target="_top">AWS API Documentation</a>

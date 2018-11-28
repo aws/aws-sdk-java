@@ -41,7 +41,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
-     * <code>dhcp-options-id</code> - The ID of a set of DHCP options.
+     * <code>dhcp-options-id</code> - The ID of a DHCP options set.
      * </p>
      * </li>
      * <li>
@@ -52,6 +52,11 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>value</code> - The value for one of the options.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options set.
      * </p>
      * </li>
      * <li>
@@ -172,7 +177,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
-     * <code>dhcp-options-id</code> - The ID of a set of DHCP options.
+     * <code>dhcp-options-id</code> - The ID of a DHCP options set.
      * </p>
      * </li>
      * <li>
@@ -183,6 +188,11 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>value</code> - The value for one of the options.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options set.
      * </p>
      * </li>
      * <li>
@@ -205,7 +215,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>dhcp-options-id</code> - The ID of a set of DHCP options.
+     *         <code>dhcp-options-id</code> - The ID of a DHCP options set.
      *         </p>
      *         </li>
      *         <li>
@@ -216,6 +226,11 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      *         <li>
      *         <p>
      *         <code>value</code> - The value for one of the options.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>owner-id</code> - The ID of the AWS account that owns the DHCP options set.
      *         </p>
      *         </li>
      *         <li>
@@ -248,7 +263,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
-     * <code>dhcp-options-id</code> - The ID of a set of DHCP options.
+     * <code>dhcp-options-id</code> - The ID of a DHCP options set.
      * </p>
      * </li>
      * <li>
@@ -259,6 +274,11 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>value</code> - The value for one of the options.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options set.
      * </p>
      * </li>
      * <li>
@@ -282,7 +302,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>dhcp-options-id</code> - The ID of a set of DHCP options.
+     *        <code>dhcp-options-id</code> - The ID of a DHCP options set.
      *        </p>
      *        </li>
      *        <li>
@@ -293,6 +313,11 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      *        <li>
      *        <p>
      *        <code>value</code> - The value for one of the options.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>owner-id</code> - The ID of the AWS account that owns the DHCP options set.
      *        </p>
      *        </li>
      *        <li>
@@ -327,7 +352,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
-     * <code>dhcp-options-id</code> - The ID of a set of DHCP options.
+     * <code>dhcp-options-id</code> - The ID of a DHCP options set.
      * </p>
      * </li>
      * <li>
@@ -338,6 +363,11 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>value</code> - The value for one of the options.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options set.
      * </p>
      * </li>
      * <li>
@@ -366,7 +396,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>dhcp-options-id</code> - The ID of a set of DHCP options.
+     *        <code>dhcp-options-id</code> - The ID of a DHCP options set.
      *        </p>
      *        </li>
      *        <li>
@@ -377,6 +407,11 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      *        <li>
      *        <p>
      *        <code>value</code> - The value for one of the options.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>owner-id</code> - The ID of the AWS account that owns the DHCP options set.
      *        </p>
      *        </li>
      *        <li>
@@ -413,7 +448,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
-     * <code>dhcp-options-id</code> - The ID of a set of DHCP options.
+     * <code>dhcp-options-id</code> - The ID of a DHCP options set.
      * </p>
      * </li>
      * <li>
@@ -424,6 +459,11 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>value</code> - The value for one of the options.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options set.
      * </p>
      * </li>
      * <li>
@@ -447,7 +487,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>dhcp-options-id</code> - The ID of a set of DHCP options.
+     *        <code>dhcp-options-id</code> - The ID of a DHCP options set.
      *        </p>
      *        </li>
      *        <li>
@@ -458,6 +498,11 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      *        <li>
      *        <p>
      *        <code>value</code> - The value for one of the options.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>owner-id</code> - The ID of the AWS account that owns the DHCP options set.
      *        </p>
      *        </li>
      *        <li>

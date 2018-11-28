@@ -27,18 +27,18 @@ public class SkipWaitTimeForInstanceTerminationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the blue/green deployment for which you want to skip the instance termination wait time.
+     * The unique ID of a blue/green deployment for which you want to skip the instance termination wait time.
      * </p>
      */
     private String deploymentId;
 
     /**
      * <p>
-     * The ID of the blue/green deployment for which you want to skip the instance termination wait time.
+     * The unique ID of a blue/green deployment for which you want to skip the instance termination wait time.
      * </p>
      * 
      * @param deploymentId
-     *        The ID of the blue/green deployment for which you want to skip the instance termination wait time.
+     *        The unique ID of a blue/green deployment for which you want to skip the instance termination wait time.
      */
 
     public void setDeploymentId(String deploymentId) {
@@ -47,10 +47,10 @@ public class SkipWaitTimeForInstanceTerminationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the blue/green deployment for which you want to skip the instance termination wait time.
+     * The unique ID of a blue/green deployment for which you want to skip the instance termination wait time.
      * </p>
      * 
-     * @return The ID of the blue/green deployment for which you want to skip the instance termination wait time.
+     * @return The unique ID of a blue/green deployment for which you want to skip the instance termination wait time.
      */
 
     public String getDeploymentId() {
@@ -59,11 +59,11 @@ public class SkipWaitTimeForInstanceTerminationRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the blue/green deployment for which you want to skip the instance termination wait time.
+     * The unique ID of a blue/green deployment for which you want to skip the instance termination wait time.
      * </p>
      * 
      * @param deploymentId
-     *        The ID of the blue/green deployment for which you want to skip the instance termination wait time.
+     *        The unique ID of a blue/green deployment for which you want to skip the instance termination wait time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

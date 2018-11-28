@@ -100,6 +100,10 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                     context.nextToken();
                     service.setDeploymentConfiguration(DeploymentConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("taskSets", targetDepth)) {
+                    context.nextToken();
+                    service.setTaskSets(new ListUnmarshaller<TaskSet>(TaskSetJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("deployments", targetDepth)) {
                     context.nextToken();
                     service.setDeployments(new ListUnmarshaller<Deployment>(DeploymentJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -136,6 +140,10 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                 if (context.testExpression("schedulingStrategy", targetDepth)) {
                     context.nextToken();
                     service.setSchedulingStrategy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("deploymentController", targetDepth)) {
+                    context.nextToken();
+                    service.setDeploymentController(DeploymentControllerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

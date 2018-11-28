@@ -40,6 +40,12 @@ public class DhcpOptions implements Serializable, Cloneable {
     private String dhcpOptionsId;
     /**
      * <p>
+     * The ID of the AWS account that owns the DHCP options set.
+     * </p>
+     */
+    private String ownerId;
+    /**
+     * <p>
      * Any tags assigned to the DHCP options set.
      * </p>
      */
@@ -160,6 +166,46 @@ public class DhcpOptions implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The ID of the AWS account that owns the DHCP options set.
+     * </p>
+     * 
+     * @param ownerId
+     *        The ID of the AWS account that owns the DHCP options set.
+     */
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the DHCP options set.
+     * </p>
+     * 
+     * @return The ID of the AWS account that owns the DHCP options set.
+     */
+
+    public String getOwnerId() {
+        return this.ownerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the DHCP options set.
+     * </p>
+     * 
+     * @param ownerId
+     *        The ID of the AWS account that owns the DHCP options set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DhcpOptions withOwnerId(String ownerId) {
+        setOwnerId(ownerId);
+        return this;
+    }
+
+    /**
+     * <p>
      * Any tags assigned to the DHCP options set.
      * </p>
      * 
@@ -246,6 +292,8 @@ public class DhcpOptions implements Serializable, Cloneable {
             sb.append("DhcpConfigurations: ").append(getDhcpConfigurations()).append(",");
         if (getDhcpOptionsId() != null)
             sb.append("DhcpOptionsId: ").append(getDhcpOptionsId()).append(",");
+        if (getOwnerId() != null)
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -270,6 +318,10 @@ public class DhcpOptions implements Serializable, Cloneable {
             return false;
         if (other.getDhcpOptionsId() != null && other.getDhcpOptionsId().equals(this.getDhcpOptionsId()) == false)
             return false;
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null)
+            return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -284,6 +336,7 @@ public class DhcpOptions implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getDhcpConfigurations() == null) ? 0 : getDhcpConfigurations().hashCode());
         hashCode = prime * hashCode + ((getDhcpOptionsId() == null) ? 0 : getDhcpOptionsId().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

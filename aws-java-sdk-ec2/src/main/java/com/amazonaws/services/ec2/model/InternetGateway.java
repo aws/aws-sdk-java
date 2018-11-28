@@ -40,6 +40,12 @@ public class InternetGateway implements Serializable, Cloneable {
     private String internetGatewayId;
     /**
      * <p>
+     * The ID of the AWS account that owns the internet gateway.
+     * </p>
+     */
+    private String ownerId;
+    /**
+     * <p>
      * Any tags assigned to the internet gateway.
      * </p>
      */
@@ -160,6 +166,46 @@ public class InternetGateway implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The ID of the AWS account that owns the internet gateway.
+     * </p>
+     * 
+     * @param ownerId
+     *        The ID of the AWS account that owns the internet gateway.
+     */
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the internet gateway.
+     * </p>
+     * 
+     * @return The ID of the AWS account that owns the internet gateway.
+     */
+
+    public String getOwnerId() {
+        return this.ownerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the internet gateway.
+     * </p>
+     * 
+     * @param ownerId
+     *        The ID of the AWS account that owns the internet gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InternetGateway withOwnerId(String ownerId) {
+        setOwnerId(ownerId);
+        return this;
+    }
+
+    /**
+     * <p>
      * Any tags assigned to the internet gateway.
      * </p>
      * 
@@ -246,6 +292,8 @@ public class InternetGateway implements Serializable, Cloneable {
             sb.append("Attachments: ").append(getAttachments()).append(",");
         if (getInternetGatewayId() != null)
             sb.append("InternetGatewayId: ").append(getInternetGatewayId()).append(",");
+        if (getOwnerId() != null)
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -270,6 +318,10 @@ public class InternetGateway implements Serializable, Cloneable {
             return false;
         if (other.getInternetGatewayId() != null && other.getInternetGatewayId().equals(this.getInternetGatewayId()) == false)
             return false;
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null)
+            return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -284,6 +336,7 @@ public class InternetGateway implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
         hashCode = prime * hashCode + ((getInternetGatewayId() == null) ? 0 : getInternetGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

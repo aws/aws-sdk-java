@@ -50,6 +50,11 @@ public class SubnetStaxUnmarshaller implements Unmarshaller<Subnet, StaxUnmarsha
                     continue;
                 }
 
+                if (context.testExpression("availabilityZoneId", targetDepth)) {
+                    subnet.setAvailabilityZoneId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("availableIpAddressCount", targetDepth)) {
                     subnet.setAvailableIpAddressCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -85,6 +90,11 @@ public class SubnetStaxUnmarshaller implements Unmarshaller<Subnet, StaxUnmarsha
                     continue;
                 }
 
+                if (context.testExpression("ownerId", targetDepth)) {
+                    subnet.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("assignIpv6AddressOnCreation", targetDepth)) {
                     subnet.setAssignIpv6AddressOnCreation(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -110,6 +120,10 @@ public class SubnetStaxUnmarshaller implements Unmarshaller<Subnet, StaxUnmarsha
                     continue;
                 }
 
+                if (context.testExpression("subnetArn", targetDepth)) {
+                    subnet.setSubnetArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return subnet;

@@ -131,6 +131,10 @@ public class DeploymentGroupInfoJsonUnmarshaller implements Unmarshaller<Deploym
                     context.nextToken();
                     deploymentGroupInfo.setComputePlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ecsServices", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setEcsServices(new ListUnmarshaller<ECSService>(ECSServiceJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

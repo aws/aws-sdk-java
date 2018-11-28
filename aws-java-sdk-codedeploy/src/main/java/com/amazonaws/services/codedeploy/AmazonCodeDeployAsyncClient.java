@@ -486,12 +486,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<BatchGetDeploymentInstancesResult> batchGetDeploymentInstancesAsync(BatchGetDeploymentInstancesRequest request) {
 
         return batchGetDeploymentInstancesAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<BatchGetDeploymentInstancesResult> batchGetDeploymentInstancesAsync(final BatchGetDeploymentInstancesRequest request,
             final com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentInstancesRequest, BatchGetDeploymentInstancesResult> asyncHandler) {
         final BatchGetDeploymentInstancesRequest finalRequest = beforeClientExecution(request);
@@ -503,6 +505,39 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
 
                 try {
                     result = executeBatchGetDeploymentInstances(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetDeploymentTargetsResult> batchGetDeploymentTargetsAsync(BatchGetDeploymentTargetsRequest request) {
+
+        return batchGetDeploymentTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetDeploymentTargetsResult> batchGetDeploymentTargetsAsync(final BatchGetDeploymentTargetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentTargetsRequest, BatchGetDeploymentTargetsResult> asyncHandler) {
+        final BatchGetDeploymentTargetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetDeploymentTargetsResult>() {
+            @Override
+            public BatchGetDeploymentTargetsResult call() throws Exception {
+                BatchGetDeploymentTargetsResult result = null;
+
+                try {
+                    result = executeBatchGetDeploymentTargets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1126,12 +1161,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(GetDeploymentInstanceRequest request) {
 
         return getDeploymentInstanceAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(final GetDeploymentInstanceRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDeploymentInstanceRequest, GetDeploymentInstanceResult> asyncHandler) {
         final GetDeploymentInstanceRequest finalRequest = beforeClientExecution(request);
@@ -1143,6 +1180,39 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
 
                 try {
                     result = executeGetDeploymentInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeploymentTargetResult> getDeploymentTargetAsync(GetDeploymentTargetRequest request) {
+
+        return getDeploymentTargetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeploymentTargetResult> getDeploymentTargetAsync(final GetDeploymentTargetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDeploymentTargetRequest, GetDeploymentTargetResult> asyncHandler) {
+        final GetDeploymentTargetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDeploymentTargetResult>() {
+            @Override
+            public GetDeploymentTargetResult call() throws Exception {
+                GetDeploymentTargetResult result = null;
+
+                try {
+                    result = executeGetDeploymentTarget(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1370,12 +1440,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListDeploymentInstancesResult> listDeploymentInstancesAsync(ListDeploymentInstancesRequest request) {
 
         return listDeploymentInstancesAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListDeploymentInstancesResult> listDeploymentInstancesAsync(final ListDeploymentInstancesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDeploymentInstancesRequest, ListDeploymentInstancesResult> asyncHandler) {
         final ListDeploymentInstancesRequest finalRequest = beforeClientExecution(request);
@@ -1387,6 +1459,39 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
 
                 try {
                     result = executeListDeploymentInstances(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeploymentTargetsResult> listDeploymentTargetsAsync(ListDeploymentTargetsRequest request) {
+
+        return listDeploymentTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeploymentTargetsResult> listDeploymentTargetsAsync(final ListDeploymentTargetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDeploymentTargetsRequest, ListDeploymentTargetsResult> asyncHandler) {
+        final ListDeploymentTargetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDeploymentTargetsResult>() {
+            @Override
+            public ListDeploymentTargetsResult call() throws Exception {
+                ListDeploymentTargetsResult result = null;
+
+                try {
+                    result = executeListDeploymentTargets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1684,6 +1789,7 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SkipWaitTimeForInstanceTerminationResult> skipWaitTimeForInstanceTerminationAsync(
             SkipWaitTimeForInstanceTerminationRequest request) {
 
@@ -1691,6 +1797,7 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SkipWaitTimeForInstanceTerminationResult> skipWaitTimeForInstanceTerminationAsync(
             final SkipWaitTimeForInstanceTerminationRequest request,
             final com.amazonaws.handlers.AsyncHandler<SkipWaitTimeForInstanceTerminationRequest, SkipWaitTimeForInstanceTerminationResult> asyncHandler) {

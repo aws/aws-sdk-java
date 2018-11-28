@@ -57,6 +57,11 @@ public class LoadBalancerInfoJsonUnmarshaller implements Unmarshaller<LoadBalanc
                     loadBalancerInfo.setTargetGroupInfoList(new ListUnmarshaller<TargetGroupInfo>(TargetGroupInfoJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("targetGroupPairInfoList", targetDepth)) {
+                    context.nextToken();
+                    loadBalancerInfo.setTargetGroupPairInfoList(new ListUnmarshaller<TargetGroupPairInfo>(TargetGroupPairInfoJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

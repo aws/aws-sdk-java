@@ -48,9 +48,10 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
     private Long firstEventTimestamp;
     /**
      * <p>
-     * the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the
-     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
-     * typically updates in less than an hour from ingestion, but may take longer in some rare situations.
+     * The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the
+     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code> value updates on an
+     * eventual consistency basis. It typically updates in less than an hour from ingestion, but may take longer in some
+     * rare situations.
      * </p>
      */
     private Long lastEventTimestamp;
@@ -201,16 +202,17 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the
-     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
-     * typically updates in less than an hour from ingestion, but may take longer in some rare situations.
+     * The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the
+     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code> value updates on an
+     * eventual consistency basis. It typically updates in less than an hour from ingestion, but may take longer in some
+     * rare situations.
      * </p>
      * 
      * @param lastEventTimestamp
-     *        the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as
-     *        the number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual
-     *        consistency basis. It typically updates in less than an hour from ingestion, but may take longer in some
-     *        rare situations.
+     *        The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as
+     *        the number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code> value updates on
+     *        an eventual consistency basis. It typically updates in less than an hour from ingestion, but may take
+     *        longer in some rare situations.
      */
 
     public void setLastEventTimestamp(Long lastEventTimestamp) {
@@ -219,15 +221,16 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the
-     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
-     * typically updates in less than an hour from ingestion, but may take longer in some rare situations.
+     * The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the
+     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code> value updates on an
+     * eventual consistency basis. It typically updates in less than an hour from ingestion, but may take longer in some
+     * rare situations.
      * </p>
      * 
-     * @return the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as
-     *         the number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual
-     *         consistency basis. It typically updates in less than an hour from ingestion, but may take longer in some
-     *         rare situations.
+     * @return The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as
+     *         the number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code> value updates
+     *         on an eventual consistency basis. It typically updates in less than an hour from ingestion, but may take
+     *         longer in some rare situations.
      */
 
     public Long getLastEventTimestamp() {
@@ -236,16 +239,17 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the
-     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
-     * typically updates in less than an hour from ingestion, but may take longer in some rare situations.
+     * The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the
+     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code> value updates on an
+     * eventual consistency basis. It typically updates in less than an hour from ingestion, but may take longer in some
+     * rare situations.
      * </p>
      * 
      * @param lastEventTimestamp
-     *        the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as
-     *        the number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual
-     *        consistency basis. It typically updates in less than an hour from ingestion, but may take longer in some
-     *        rare situations.
+     *        The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as
+     *        the number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code> value updates on
+     *        an eventual consistency basis. It typically updates in less than an hour from ingestion, but may take
+     *        longer in some rare situations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

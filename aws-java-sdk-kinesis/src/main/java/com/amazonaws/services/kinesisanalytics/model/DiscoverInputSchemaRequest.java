@@ -46,7 +46,7 @@ public class DiscoverInputSchemaRequest extends com.amazonaws.AmazonWebServiceRe
     private InputStartingPositionConfiguration inputStartingPositionConfiguration;
     /**
      * <p>
-     * Specify this parameter to discover a schema from data in an S3 object.
+     * Specify this parameter to discover a schema from data in an Amazon S3 object.
      * </p>
      */
     private S3Configuration s3Configuration;
@@ -186,11 +186,11 @@ public class DiscoverInputSchemaRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Specify this parameter to discover a schema from data in an S3 object.
+     * Specify this parameter to discover a schema from data in an Amazon S3 object.
      * </p>
      * 
      * @param s3Configuration
-     *        Specify this parameter to discover a schema from data in an S3 object.
+     *        Specify this parameter to discover a schema from data in an Amazon S3 object.
      */
 
     public void setS3Configuration(S3Configuration s3Configuration) {
@@ -199,10 +199,10 @@ public class DiscoverInputSchemaRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Specify this parameter to discover a schema from data in an S3 object.
+     * Specify this parameter to discover a schema from data in an Amazon S3 object.
      * </p>
      * 
-     * @return Specify this parameter to discover a schema from data in an S3 object.
+     * @return Specify this parameter to discover a schema from data in an Amazon S3 object.
      */
 
     public S3Configuration getS3Configuration() {
@@ -211,11 +211,11 @@ public class DiscoverInputSchemaRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Specify this parameter to discover a schema from data in an S3 object.
+     * Specify this parameter to discover a schema from data in an Amazon S3 object.
      * </p>
      * 
      * @param s3Configuration
-     *        Specify this parameter to discover a schema from data in an S3 object.
+     *        Specify this parameter to discover a schema from data in an Amazon S3 object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

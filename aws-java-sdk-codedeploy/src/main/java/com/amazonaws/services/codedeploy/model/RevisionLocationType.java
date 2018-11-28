@@ -22,7 +22,8 @@ public enum RevisionLocationType {
 
     S3("S3"),
     GitHub("GitHub"),
-    String("String");
+    String("String"),
+    AppSpecContent("AppSpecContent");
 
     private String value;
 

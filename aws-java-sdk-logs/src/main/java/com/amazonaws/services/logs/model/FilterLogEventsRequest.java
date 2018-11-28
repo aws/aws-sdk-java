@@ -36,9 +36,8 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * Filters the results to only logs from the log streams in this list.
      * </p>
      * <p>
-     * If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value
-     * for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>
-     * , the action returns an <code>InvalidParameterException</code> error.
+     * If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action
+     * returns an <code>InvalidParameterException</code> error.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> logStreamNames;
@@ -56,14 +55,14 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
-     * a time stamp before this time are not returned.
+     * a timestamp before this time are not returned.
      * </p>
      */
     private Long startTime;
     /**
      * <p>
      * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
-     * time stamp later than this time are not returned.
+     * timestamp later than this time are not returned.
      * </p>
      */
     private Long endTime;
@@ -145,16 +144,14 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * Filters the results to only logs from the log streams in this list.
      * </p>
      * <p>
-     * If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value
-     * for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>
-     * , the action returns an <code>InvalidParameterException</code> error.
+     * If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action
+     * returns an <code>InvalidParameterException</code> error.
      * </p>
      * 
      * @return Filters the results to only logs from the log streams in this list.</p>
      *         <p>
-     *         If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the
-     *         value for <code>logStreamNamePrefix</code> does not match any log stream names specified in
-     *         <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.
+     *         If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the
+     *         action returns an <code>InvalidParameterException</code> error.
      */
 
     public java.util.List<String> getLogStreamNames() {
@@ -169,17 +166,15 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * Filters the results to only logs from the log streams in this list.
      * </p>
      * <p>
-     * If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value
-     * for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>
-     * , the action returns an <code>InvalidParameterException</code> error.
+     * If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action
+     * returns an <code>InvalidParameterException</code> error.
      * </p>
      * 
      * @param logStreamNames
      *        Filters the results to only logs from the log streams in this list.</p>
      *        <p>
-     *        If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the
-     *        value for <code>logStreamNamePrefix</code> does not match any log stream names specified in
-     *        <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.
+     *        If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the
+     *        action returns an <code>InvalidParameterException</code> error.
      */
 
     public void setLogStreamNames(java.util.Collection<String> logStreamNames) {
@@ -196,9 +191,8 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * Filters the results to only logs from the log streams in this list.
      * </p>
      * <p>
-     * If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value
-     * for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>
-     * , the action returns an <code>InvalidParameterException</code> error.
+     * If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action
+     * returns an <code>InvalidParameterException</code> error.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -209,9 +203,8 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * @param logStreamNames
      *        Filters the results to only logs from the log streams in this list.</p>
      *        <p>
-     *        If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the
-     *        value for <code>logStreamNamePrefix</code> does not match any log stream names specified in
-     *        <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.
+     *        If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the
+     *        action returns an <code>InvalidParameterException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,17 +223,15 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * Filters the results to only logs from the log streams in this list.
      * </p>
      * <p>
-     * If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value
-     * for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>
-     * , the action returns an <code>InvalidParameterException</code> error.
+     * If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action
+     * returns an <code>InvalidParameterException</code> error.
      * </p>
      * 
      * @param logStreamNames
      *        Filters the results to only logs from the log streams in this list.</p>
      *        <p>
-     *        If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the
-     *        value for <code>logStreamNamePrefix</code> does not match any log stream names specified in
-     *        <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.
+     *        If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the
+     *        action returns an <code>InvalidParameterException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,12 +311,12 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
-     * a time stamp before this time are not returned.
+     * a timestamp before this time are not returned.
      * </p>
      * 
      * @param startTime
      *        The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
-     *        Events with a time stamp before this time are not returned.
+     *        Events with a timestamp before this time are not returned.
      */
 
     public void setStartTime(Long startTime) {
@@ -335,11 +326,11 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
-     * a time stamp before this time are not returned.
+     * a timestamp before this time are not returned.
      * </p>
      * 
      * @return The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
-     *         Events with a time stamp before this time are not returned.
+     *         Events with a timestamp before this time are not returned.
      */
 
     public Long getStartTime() {
@@ -349,12 +340,12 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
-     * a time stamp before this time are not returned.
+     * a timestamp before this time are not returned.
      * </p>
      * 
      * @param startTime
      *        The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
-     *        Events with a time stamp before this time are not returned.
+     *        Events with a timestamp before this time are not returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -366,12 +357,12 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
-     * time stamp later than this time are not returned.
+     * timestamp later than this time are not returned.
      * </p>
      * 
      * @param endTime
      *        The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events
-     *        with a time stamp later than this time are not returned.
+     *        with a timestamp later than this time are not returned.
      */
 
     public void setEndTime(Long endTime) {
@@ -381,11 +372,11 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
-     * time stamp later than this time are not returned.
+     * timestamp later than this time are not returned.
      * </p>
      * 
      * @return The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events
-     *         with a time stamp later than this time are not returned.
+     *         with a timestamp later than this time are not returned.
      */
 
     public Long getEndTime() {
@@ -395,12 +386,12 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
-     * time stamp later than this time are not returned.
+     * timestamp later than this time are not returned.
      * </p>
      * 
      * @param endTime
      *        The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events
-     *        with a time stamp later than this time are not returned.
+     *        with a timestamp later than this time are not returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

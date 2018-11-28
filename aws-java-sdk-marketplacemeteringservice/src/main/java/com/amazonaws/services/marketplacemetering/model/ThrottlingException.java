@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The calls to the MeterUsage API are throttled.
+ * The calls to the API are throttled.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

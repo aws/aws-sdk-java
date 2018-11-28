@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The number of requests exceeds the limit. Resubmit your request later.
+ * You have made too many requests within a short period of time. Wait for a short time and then try your request again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

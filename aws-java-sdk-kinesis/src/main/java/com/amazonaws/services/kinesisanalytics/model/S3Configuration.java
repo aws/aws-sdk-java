@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides a description of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket, the
- * ARN of the IAM role that is used to access the bucket, and the name of the S3 object that contains the data.
+ * ARN of the IAM role that is used to access the bucket, and the name of the Amazon S3 object that contains the data.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/S3Configuration" target="_top">AWS

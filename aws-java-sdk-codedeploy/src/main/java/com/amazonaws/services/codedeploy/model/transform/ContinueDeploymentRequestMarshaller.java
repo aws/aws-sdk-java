@@ -29,6 +29,8 @@ public class ContinueDeploymentRequestMarshaller {
 
     private static final MarshallingInfo<String> DEPLOYMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentId").build();
+    private static final MarshallingInfo<String> DEPLOYMENTWAITTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentWaitType").build();
 
     private static final ContinueDeploymentRequestMarshaller instance = new ContinueDeploymentRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class ContinueDeploymentRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(continueDeploymentRequest.getDeploymentId(), DEPLOYMENTID_BINDING);
+            protocolMarshaller.marshall(continueDeploymentRequest.getDeploymentWaitType(), DEPLOYMENTWAITTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

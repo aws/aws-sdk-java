@@ -27,6 +27,14 @@ public class CreateServiceResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * The full description of your service following the create call.
      * </p>
+     * <p>
+     * If a service is using the <code>ECS</code> deployment controller, the <code>deploymentController</code> and
+     * <code>taskSets</code> parameters will not be returned.
+     * </p>
+     * <p>
+     * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the <code>deploymentController</code>, <code>taskSets</code> and <code>deployments</code> parameters will be returned, however the
+     * <code>deployments</code> parameter will be an empty list.
+     * </p>
      */
     private Service service;
 
@@ -34,9 +42,25 @@ public class CreateServiceResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * The full description of your service following the create call.
      * </p>
+     * <p>
+     * If a service is using the <code>ECS</code> deployment controller, the <code>deploymentController</code> and
+     * <code>taskSets</code> parameters will not be returned.
+     * </p>
+     * <p>
+     * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the <code>deploymentController</code>, <code>taskSets</code> and <code>deployments</code> parameters will be returned, however the
+     * <code>deployments</code> parameter will be an empty list.
+     * </p>
      * 
      * @param service
-     *        The full description of your service following the create call.
+     *        The full description of your service following the create call.</p>
+     *        <p>
+     *        If a service is using the <code>ECS</code> deployment controller, the <code>deploymentController</code>
+     *        and <code>taskSets</code> parameters will not be returned.
+     *        </p>
+     *        <p>
+     *        If the service is using the <code>CODE_DEPLOY</code> deployment controller, the
+     *        <code>deploymentController</code>, <code>taskSets</code> and <code>deployments</code> parameters will be
+     *        returned, however the <code>deployments</code> parameter will be an empty list.
      */
 
     public void setService(Service service) {
@@ -47,8 +71,24 @@ public class CreateServiceResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * The full description of your service following the create call.
      * </p>
+     * <p>
+     * If a service is using the <code>ECS</code> deployment controller, the <code>deploymentController</code> and
+     * <code>taskSets</code> parameters will not be returned.
+     * </p>
+     * <p>
+     * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the <code>deploymentController</code>, <code>taskSets</code> and <code>deployments</code> parameters will be returned, however the
+     * <code>deployments</code> parameter will be an empty list.
+     * </p>
      * 
-     * @return The full description of your service following the create call.
+     * @return The full description of your service following the create call.</p>
+     *         <p>
+     *         If a service is using the <code>ECS</code> deployment controller, the <code>deploymentController</code>
+     *         and <code>taskSets</code> parameters will not be returned.
+     *         </p>
+     *         <p>
+     *         If the service is using the <code>CODE_DEPLOY</code> deployment controller, the
+     *         <code>deploymentController</code>, <code>taskSets</code> and <code>deployments</code> parameters will be
+     *         returned, however the <code>deployments</code> parameter will be an empty list.
      */
 
     public Service getService() {
@@ -59,9 +99,25 @@ public class CreateServiceResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * The full description of your service following the create call.
      * </p>
+     * <p>
+     * If a service is using the <code>ECS</code> deployment controller, the <code>deploymentController</code> and
+     * <code>taskSets</code> parameters will not be returned.
+     * </p>
+     * <p>
+     * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the <code>deploymentController</code>, <code>taskSets</code> and <code>deployments</code> parameters will be returned, however the
+     * <code>deployments</code> parameter will be an empty list.
+     * </p>
      * 
      * @param service
-     *        The full description of your service following the create call.
+     *        The full description of your service following the create call.</p>
+     *        <p>
+     *        If a service is using the <code>ECS</code> deployment controller, the <code>deploymentController</code>
+     *        and <code>taskSets</code> parameters will not be returned.
+     *        </p>
+     *        <p>
+     *        If the service is using the <code>CODE_DEPLOY</code> deployment controller, the
+     *        <code>deploymentController</code>, <code>taskSets</code> and <code>deployments</code> parameters will be
+     *        returned, however the <code>deployments</code> parameter will be an empty list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

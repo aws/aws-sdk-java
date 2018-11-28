@@ -50,9 +50,25 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String taskDefinition;
     /**
      * <p>
-     * A load balancer object representing the load balancer to use with your service. Currently, you are limited to one
-     * load balancer or target group per service. After you create a service, the load balancer name or target group
-     * ARN, container name, and container port specified in the service definition are immutable.
+     * A load balancer object representing the load balancer to use with your service.
+     * </p>
+     * <p>
+     * If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer or
+     * target group.
+     * </p>
+     * <p>
+     * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
+     * an Application Load Balancer or Network Load Balancer. When creating an AWS CodeDeploy deployment group, you
+     * specify two target groups (referred to as a <code>targetGroupPair</code>). During a deployment, AWS CodeDeploy
+     * determines which task set in your service has the status <code>PRIMARY</code> and associates one target group
+     * with it, and then associates the other target group with the replacement task set. The load balancer can also
+     * have up to two listeners: a required listener for production traffic and an optional listener that allows you
+     * perform validation tests with Lambda functions before routing production traffic to it.
+     * </p>
+     * <p>
+     * After you create a service using the <code>ECS</code> deployment controller, the load balancer name or target
+     * group ARN, container name, and container port specified in the service definition are immutable. If you are using
+     * the <code>CODE_DEPLOY</code> deployment controller, these values can be changed when updating the service.
      * </p>
      * <p>
      * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
@@ -103,14 +119,19 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String clientToken;
     /**
      * <p>
-     * The launch type on which to run your service.
+     * The launch type on which to run your service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String launchType;
     /**
      * <p>
-     * The platform version on which to run your service. If one is not specified, the latest version is used by
-     * default.
+     * The platform version on which your tasks in the service are running. A platform version is only specified for
+     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String platformVersion;
@@ -176,16 +197,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
      * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
-     * health checks, you can specify a health check grace period of up to 7,200 seconds during which the ECS service
-     * scheduler ignores health check status. This grace period can prevent the ECS service scheduler from marking tasks
-     * as unhealthy and stopping them before they have time to come up.
+     * health checks, you can specify a health check grace period of up to 7,200 seconds. During that time, the ECS
+     * service scheduler ignores health check status. This grace period can prevent the ECS service scheduler from
+     * marking tasks as unhealthy and stopping them before they have time to come up.
      * </p>
      */
     private Integer healthCheckGracePeriodSeconds;
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -195,7 +216,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your
      * cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement
-     * strategies and constraints to customize task placement decisions.
+     * strategies and constraints to customize task placement decisions. This scheduler strategy is required if using
+     * the <code>CODE_DEPLOY</code> deployment controller.
      * </p>
      * </li>
      * <li>
@@ -207,12 +229,19 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     * Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet controller do not support the
+     * <code>DAEMON</code> scheduling strategy.
      * </p>
      * </note></li>
      * </ul>
      */
     private String schedulingStrategy;
+    /**
+     * <p>
+     * The deployment controller to use for the service.
+     * </p>
+     */
+    private DeploymentController deploymentController;
     /**
      * <p>
      * The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key
@@ -391,9 +420,25 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A load balancer object representing the load balancer to use with your service. Currently, you are limited to one
-     * load balancer or target group per service. After you create a service, the load balancer name or target group
-     * ARN, container name, and container port specified in the service definition are immutable.
+     * A load balancer object representing the load balancer to use with your service.
+     * </p>
+     * <p>
+     * If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer or
+     * target group.
+     * </p>
+     * <p>
+     * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
+     * an Application Load Balancer or Network Load Balancer. When creating an AWS CodeDeploy deployment group, you
+     * specify two target groups (referred to as a <code>targetGroupPair</code>). During a deployment, AWS CodeDeploy
+     * determines which task set in your service has the status <code>PRIMARY</code> and associates one target group
+     * with it, and then associates the other target group with the replacement task set. The load balancer can also
+     * have up to two listeners: a required listener for production traffic and an optional listener that allows you
+     * perform validation tests with Lambda functions before routing production traffic to it.
+     * </p>
+     * <p>
+     * After you create a service using the <code>ECS</code> deployment controller, the load balancer name or target
+     * group ARN, container name, and container port specified in the service definition are immutable. If you are using
+     * the <code>CODE_DEPLOY</code> deployment controller, these values can be changed when updating the service.
      * </p>
      * <p>
      * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
@@ -414,10 +459,27 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * associated with an elastic network interface, not an Amazon EC2 instance.
      * </p>
      * 
-     * @return A load balancer object representing the load balancer to use with your service. Currently, you are
-     *         limited to one load balancer or target group per service. After you create a service, the load balancer
-     *         name or target group ARN, container name, and container port specified in the service definition are
-     *         immutable.</p>
+     * @return A load balancer object representing the load balancer to use with your service.</p>
+     *         <p>
+     *         If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer
+     *         or target group.
+     *         </p>
+     *         <p>
+     *         If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to
+     *         use either an Application Load Balancer or Network Load Balancer. When creating an AWS CodeDeploy
+     *         deployment group, you specify two target groups (referred to as a <code>targetGroupPair</code>). During a
+     *         deployment, AWS CodeDeploy determines which task set in your service has the status <code>PRIMARY</code>
+     *         and associates one target group with it, and then associates the other target group with the replacement
+     *         task set. The load balancer can also have up to two listeners: a required listener for production traffic
+     *         and an optional listener that allows you perform validation tests with Lambda functions before routing
+     *         production traffic to it.
+     *         </p>
+     *         <p>
+     *         After you create a service using the <code>ECS</code> deployment controller, the load balancer name or
+     *         target group ARN, container name, and container port specified in the service definition are immutable.
+     *         If you are using the <code>CODE_DEPLOY</code> deployment controller, these values can be changed when
+     *         updating the service.
+     *         </p>
      *         <p>
      *         For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
      *         appears in a container definition), and the container port to access from the load balancer. When a task
@@ -448,9 +510,25 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A load balancer object representing the load balancer to use with your service. Currently, you are limited to one
-     * load balancer or target group per service. After you create a service, the load balancer name or target group
-     * ARN, container name, and container port specified in the service definition are immutable.
+     * A load balancer object representing the load balancer to use with your service.
+     * </p>
+     * <p>
+     * If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer or
+     * target group.
+     * </p>
+     * <p>
+     * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
+     * an Application Load Balancer or Network Load Balancer. When creating an AWS CodeDeploy deployment group, you
+     * specify two target groups (referred to as a <code>targetGroupPair</code>). During a deployment, AWS CodeDeploy
+     * determines which task set in your service has the status <code>PRIMARY</code> and associates one target group
+     * with it, and then associates the other target group with the replacement task set. The load balancer can also
+     * have up to two listeners: a required listener for production traffic and an optional listener that allows you
+     * perform validation tests with Lambda functions before routing production traffic to it.
+     * </p>
+     * <p>
+     * After you create a service using the <code>ECS</code> deployment controller, the load balancer name or target
+     * group ARN, container name, and container port specified in the service definition are immutable. If you are using
+     * the <code>CODE_DEPLOY</code> deployment controller, these values can be changed when updating the service.
      * </p>
      * <p>
      * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
@@ -472,10 +550,27 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param loadBalancers
-     *        A load balancer object representing the load balancer to use with your service. Currently, you are limited
-     *        to one load balancer or target group per service. After you create a service, the load balancer name or
-     *        target group ARN, container name, and container port specified in the service definition are
-     *        immutable.</p>
+     *        A load balancer object representing the load balancer to use with your service.</p>
+     *        <p>
+     *        If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer
+     *        or target group.
+     *        </p>
+     *        <p>
+     *        If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use
+     *        either an Application Load Balancer or Network Load Balancer. When creating an AWS CodeDeploy deployment
+     *        group, you specify two target groups (referred to as a <code>targetGroupPair</code>). During a deployment,
+     *        AWS CodeDeploy determines which task set in your service has the status <code>PRIMARY</code> and
+     *        associates one target group with it, and then associates the other target group with the replacement task
+     *        set. The load balancer can also have up to two listeners: a required listener for production traffic and
+     *        an optional listener that allows you perform validation tests with Lambda functions before routing
+     *        production traffic to it.
+     *        </p>
+     *        <p>
+     *        After you create a service using the <code>ECS</code> deployment controller, the load balancer name or
+     *        target group ARN, container name, and container port specified in the service definition are immutable. If
+     *        you are using the <code>CODE_DEPLOY</code> deployment controller, these values can be changed when
+     *        updating the service.
+     *        </p>
      *        <p>
      *        For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
      *        appears in a container definition), and the container port to access from the load balancer. When a task
@@ -508,9 +603,25 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A load balancer object representing the load balancer to use with your service. Currently, you are limited to one
-     * load balancer or target group per service. After you create a service, the load balancer name or target group
-     * ARN, container name, and container port specified in the service definition are immutable.
+     * A load balancer object representing the load balancer to use with your service.
+     * </p>
+     * <p>
+     * If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer or
+     * target group.
+     * </p>
+     * <p>
+     * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
+     * an Application Load Balancer or Network Load Balancer. When creating an AWS CodeDeploy deployment group, you
+     * specify two target groups (referred to as a <code>targetGroupPair</code>). During a deployment, AWS CodeDeploy
+     * determines which task set in your service has the status <code>PRIMARY</code> and associates one target group
+     * with it, and then associates the other target group with the replacement task set. The load balancer can also
+     * have up to two listeners: a required listener for production traffic and an optional listener that allows you
+     * perform validation tests with Lambda functions before routing production traffic to it.
+     * </p>
+     * <p>
+     * After you create a service using the <code>ECS</code> deployment controller, the load balancer name or target
+     * group ARN, container name, and container port specified in the service definition are immutable. If you are using
+     * the <code>CODE_DEPLOY</code> deployment controller, these values can be changed when updating the service.
      * </p>
      * <p>
      * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
@@ -537,10 +648,27 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param loadBalancers
-     *        A load balancer object representing the load balancer to use with your service. Currently, you are limited
-     *        to one load balancer or target group per service. After you create a service, the load balancer name or
-     *        target group ARN, container name, and container port specified in the service definition are
-     *        immutable.</p>
+     *        A load balancer object representing the load balancer to use with your service.</p>
+     *        <p>
+     *        If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer
+     *        or target group.
+     *        </p>
+     *        <p>
+     *        If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use
+     *        either an Application Load Balancer or Network Load Balancer. When creating an AWS CodeDeploy deployment
+     *        group, you specify two target groups (referred to as a <code>targetGroupPair</code>). During a deployment,
+     *        AWS CodeDeploy determines which task set in your service has the status <code>PRIMARY</code> and
+     *        associates one target group with it, and then associates the other target group with the replacement task
+     *        set. The load balancer can also have up to two listeners: a required listener for production traffic and
+     *        an optional listener that allows you perform validation tests with Lambda functions before routing
+     *        production traffic to it.
+     *        </p>
+     *        <p>
+     *        After you create a service using the <code>ECS</code> deployment controller, the load balancer name or
+     *        target group ARN, container name, and container port specified in the service definition are immutable. If
+     *        you are using the <code>CODE_DEPLOY</code> deployment controller, these values can be changed when
+     *        updating the service.
+     *        </p>
      *        <p>
      *        For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
      *        appears in a container definition), and the container port to access from the load balancer. When a task
@@ -575,9 +703,25 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A load balancer object representing the load balancer to use with your service. Currently, you are limited to one
-     * load balancer or target group per service. After you create a service, the load balancer name or target group
-     * ARN, container name, and container port specified in the service definition are immutable.
+     * A load balancer object representing the load balancer to use with your service.
+     * </p>
+     * <p>
+     * If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer or
+     * target group.
+     * </p>
+     * <p>
+     * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
+     * an Application Load Balancer or Network Load Balancer. When creating an AWS CodeDeploy deployment group, you
+     * specify two target groups (referred to as a <code>targetGroupPair</code>). During a deployment, AWS CodeDeploy
+     * determines which task set in your service has the status <code>PRIMARY</code> and associates one target group
+     * with it, and then associates the other target group with the replacement task set. The load balancer can also
+     * have up to two listeners: a required listener for production traffic and an optional listener that allows you
+     * perform validation tests with Lambda functions before routing production traffic to it.
+     * </p>
+     * <p>
+     * After you create a service using the <code>ECS</code> deployment controller, the load balancer name or target
+     * group ARN, container name, and container port specified in the service definition are immutable. If you are using
+     * the <code>CODE_DEPLOY</code> deployment controller, these values can be changed when updating the service.
      * </p>
      * <p>
      * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
@@ -599,10 +743,27 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param loadBalancers
-     *        A load balancer object representing the load balancer to use with your service. Currently, you are limited
-     *        to one load balancer or target group per service. After you create a service, the load balancer name or
-     *        target group ARN, container name, and container port specified in the service definition are
-     *        immutable.</p>
+     *        A load balancer object representing the load balancer to use with your service.</p>
+     *        <p>
+     *        If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer
+     *        or target group.
+     *        </p>
+     *        <p>
+     *        If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use
+     *        either an Application Load Balancer or Network Load Balancer. When creating an AWS CodeDeploy deployment
+     *        group, you specify two target groups (referred to as a <code>targetGroupPair</code>). During a deployment,
+     *        AWS CodeDeploy determines which task set in your service has the status <code>PRIMARY</code> and
+     *        associates one target group with it, and then associates the other target group with the replacement task
+     *        set. The load balancer can also have up to two listeners: a required listener for production traffic and
+     *        an optional listener that allows you perform validation tests with Lambda functions before routing
+     *        production traffic to it.
+     *        </p>
+     *        <p>
+     *        After you create a service using the <code>ECS</code> deployment controller, the load balancer name or
+     *        target group ARN, container name, and container port specified in the service definition are immutable. If
+     *        you are using the <code>CODE_DEPLOY</code> deployment controller, these values can be changed when
+     *        updating the service.
+     *        </p>
      *        <p>
      *        For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
      *        appears in a container definition), and the container port to access from the load balancer. When a task
@@ -855,11 +1016,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The launch type on which to run your service.
+     * The launch type on which to run your service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which to run your service.
+     *        The launch type on which to run your service. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
 
@@ -869,10 +1034,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The launch type on which to run your service.
+     * The launch type on which to run your service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The launch type on which to run your service.
+     * @return The launch type on which to run your service. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *         Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
 
@@ -882,11 +1051,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The launch type on which to run your service.
+     * The launch type on which to run your service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which to run your service.
+     *        The launch type on which to run your service. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -898,11 +1071,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The launch type on which to run your service.
+     * The launch type on which to run your service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which to run your service.
+     *        The launch type on which to run your service. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -914,13 +1091,19 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The platform version on which to run your service. If one is not specified, the latest version is used by
-     * default.
+     * The platform version on which your tasks in the service are running. A platform version is only specified for
+     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which to run your service. If one is not specified, the latest version is used by
-     *        default.
+     *        The platform version on which your tasks in the service are running. A platform version is only specified
+     *        for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version
+     *        is used by default. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setPlatformVersion(String platformVersion) {
@@ -929,12 +1112,18 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The platform version on which to run your service. If one is not specified, the latest version is used by
-     * default.
+     * The platform version on which your tasks in the service are running. A platform version is only specified for
+     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The platform version on which to run your service. If one is not specified, the latest version is used by
-     *         default.
+     * @return The platform version on which your tasks in the service are running. A platform version is only specified
+     *         for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform
+     *         version is used by default. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *         Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public String getPlatformVersion() {
@@ -943,13 +1132,19 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The platform version on which to run your service. If one is not specified, the latest version is used by
-     * default.
+     * The platform version on which your tasks in the service are running. A platform version is only specified for
+     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which to run your service. If one is not specified, the latest version is used by
-     *        default.
+     *        The platform version on which your tasks in the service are running. A platform version is only specified
+     *        for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version
+     *        is used by default. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1399,18 +1594,18 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
      * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
-     * health checks, you can specify a health check grace period of up to 7,200 seconds during which the ECS service
-     * scheduler ignores health check status. This grace period can prevent the ECS service scheduler from marking tasks
-     * as unhealthy and stopping them before they have time to come up.
+     * health checks, you can specify a health check grace period of up to 7,200 seconds. During that time, the ECS
+     * service scheduler ignores health check status. This grace period can prevent the ECS service scheduler from
+     * marking tasks as unhealthy and stopping them before they have time to come up.
      * </p>
      * 
      * @param healthCheckGracePeriodSeconds
      *        The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      *        Balancing target health checks after a task has first started. This is only valid if your service is
      *        configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
-     *        Load Balancing health checks, you can specify a health check grace period of up to 7,200 seconds during
-     *        which the ECS service scheduler ignores health check status. This grace period can prevent the ECS service
-     *        scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
+     *        Load Balancing health checks, you can specify a health check grace period of up to 7,200 seconds. During
+     *        that time, the ECS service scheduler ignores health check status. This grace period can prevent the ECS
+     *        service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      */
 
     public void setHealthCheckGracePeriodSeconds(Integer healthCheckGracePeriodSeconds) {
@@ -1422,16 +1617,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
      * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
-     * health checks, you can specify a health check grace period of up to 7,200 seconds during which the ECS service
-     * scheduler ignores health check status. This grace period can prevent the ECS service scheduler from marking tasks
-     * as unhealthy and stopping them before they have time to come up.
+     * health checks, you can specify a health check grace period of up to 7,200 seconds. During that time, the ECS
+     * service scheduler ignores health check status. This grace period can prevent the ECS service scheduler from
+     * marking tasks as unhealthy and stopping them before they have time to come up.
      * </p>
      * 
      * @return The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic
      *         Load Balancing target health checks after a task has first started. This is only valid if your service is
      *         configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
-     *         Load Balancing health checks, you can specify a health check grace period of up to 7,200 seconds during
-     *         which the ECS service scheduler ignores health check status. This grace period can prevent the ECS
+     *         Load Balancing health checks, you can specify a health check grace period of up to 7,200 seconds. During
+     *         that time, the ECS service scheduler ignores health check status. This grace period can prevent the ECS
      *         service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      */
 
@@ -1444,18 +1639,18 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
      * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
-     * health checks, you can specify a health check grace period of up to 7,200 seconds during which the ECS service
-     * scheduler ignores health check status. This grace period can prevent the ECS service scheduler from marking tasks
-     * as unhealthy and stopping them before they have time to come up.
+     * health checks, you can specify a health check grace period of up to 7,200 seconds. During that time, the ECS
+     * service scheduler ignores health check status. This grace period can prevent the ECS service scheduler from
+     * marking tasks as unhealthy and stopping them before they have time to come up.
      * </p>
      * 
      * @param healthCheckGracePeriodSeconds
      *        The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      *        Balancing target health checks after a task has first started. This is only valid if your service is
      *        configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
-     *        Load Balancing health checks, you can specify a health check grace period of up to 7,200 seconds during
-     *        which the ECS service scheduler ignores health check status. This grace period can prevent the ECS service
-     *        scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
+     *        Load Balancing health checks, you can specify a health check grace period of up to 7,200 seconds. During
+     *        that time, the ECS service scheduler ignores health check status. This grace period can prevent the ECS
+     *        service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1467,7 +1662,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -1477,7 +1672,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your
      * cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement
-     * strategies and constraints to customize task placement decisions.
+     * strategies and constraints to customize task placement decisions. This scheduler strategy is required if using
+     * the <code>CODE_DEPLOY</code> deployment controller.
      * </p>
      * </li>
      * <li>
@@ -1489,14 +1685,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     * Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet controller do not support the
+     * <code>DAEMON</code> scheduling strategy.
      * </p>
      * </note></li>
      * </ul>
      * 
      * @param schedulingStrategy
      *        The scheduling strategy to use for the service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *        <p>
      *        There are two service scheduler strategies available:
      *        </p>
@@ -1505,7 +1702,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks
      *        across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can
-     *        use task placement strategies and constraints to customize task placement decisions.
+     *        use task placement strategies and constraints to customize task placement decisions. This scheduler
+     *        strategy is required if using the <code>CODE_DEPLOY</code> deployment controller.
      *        </p>
      *        </li>
      *        <li>
@@ -1517,7 +1715,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        <note>
      *        <p>
-     *        Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     *        Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet controller do not support
+     *        the <code>DAEMON</code> scheduling strategy.
      *        </p>
      *        </note></li>
      * @see SchedulingStrategy
@@ -1530,7 +1729,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -1540,7 +1739,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your
      * cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement
-     * strategies and constraints to customize task placement decisions.
+     * strategies and constraints to customize task placement decisions. This scheduler strategy is required if using
+     * the <code>CODE_DEPLOY</code> deployment controller.
      * </p>
      * </li>
      * <li>
@@ -1552,13 +1752,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     * Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet controller do not support the
+     * <code>DAEMON</code> scheduling strategy.
      * </p>
      * </note></li>
      * </ul>
      * 
      * @return The scheduling strategy to use for the service. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *         <p>
      *         There are two service scheduler strategies available:
      *         </p>
@@ -1567,7 +1768,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <p>
      *         <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks
      *         across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can
-     *         use task placement strategies and constraints to customize task placement decisions.
+     *         use task placement strategies and constraints to customize task placement decisions. This scheduler
+     *         strategy is required if using the <code>CODE_DEPLOY</code> deployment controller.
      *         </p>
      *         </li>
      *         <li>
@@ -1579,7 +1781,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </p>
      *         <note>
      *         <p>
-     *         Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     *         Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet controller do not support
+     *         the <code>DAEMON</code> scheduling strategy.
      *         </p>
      *         </note></li>
      * @see SchedulingStrategy
@@ -1592,7 +1795,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -1602,7 +1805,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your
      * cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement
-     * strategies and constraints to customize task placement decisions.
+     * strategies and constraints to customize task placement decisions. This scheduler strategy is required if using
+     * the <code>CODE_DEPLOY</code> deployment controller.
      * </p>
      * </li>
      * <li>
@@ -1614,14 +1818,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     * Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet controller do not support the
+     * <code>DAEMON</code> scheduling strategy.
      * </p>
      * </note></li>
      * </ul>
      * 
      * @param schedulingStrategy
      *        The scheduling strategy to use for the service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *        <p>
      *        There are two service scheduler strategies available:
      *        </p>
@@ -1630,7 +1835,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks
      *        across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can
-     *        use task placement strategies and constraints to customize task placement decisions.
+     *        use task placement strategies and constraints to customize task placement decisions. This scheduler
+     *        strategy is required if using the <code>CODE_DEPLOY</code> deployment controller.
      *        </p>
      *        </li>
      *        <li>
@@ -1642,7 +1848,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        <note>
      *        <p>
-     *        Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     *        Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet controller do not support
+     *        the <code>DAEMON</code> scheduling strategy.
      *        </p>
      *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1657,7 +1864,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -1667,7 +1874,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your
      * cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement
-     * strategies and constraints to customize task placement decisions.
+     * strategies and constraints to customize task placement decisions. This scheduler strategy is required if using
+     * the <code>CODE_DEPLOY</code> deployment controller.
      * </p>
      * </li>
      * <li>
@@ -1679,14 +1887,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     * Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet controller do not support the
+     * <code>DAEMON</code> scheduling strategy.
      * </p>
      * </note></li>
      * </ul>
      * 
      * @param schedulingStrategy
      *        The scheduling strategy to use for the service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *        <p>
      *        There are two service scheduler strategies available:
      *        </p>
@@ -1695,7 +1904,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks
      *        across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can
-     *        use task placement strategies and constraints to customize task placement decisions.
+     *        use task placement strategies and constraints to customize task placement decisions. This scheduler
+     *        strategy is required if using the <code>CODE_DEPLOY</code> deployment controller.
      *        </p>
      *        </li>
      *        <li>
@@ -1707,7 +1917,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        <note>
      *        <p>
-     *        Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     *        Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet controller do not support
+     *        the <code>DAEMON</code> scheduling strategy.
      *        </p>
      *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1716,6 +1927,46 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public CreateServiceRequest withSchedulingStrategy(SchedulingStrategy schedulingStrategy) {
         this.schedulingStrategy = schedulingStrategy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The deployment controller to use for the service.
+     * </p>
+     * 
+     * @param deploymentController
+     *        The deployment controller to use for the service.
+     */
+
+    public void setDeploymentController(DeploymentController deploymentController) {
+        this.deploymentController = deploymentController;
+    }
+
+    /**
+     * <p>
+     * The deployment controller to use for the service.
+     * </p>
+     * 
+     * @return The deployment controller to use for the service.
+     */
+
+    public DeploymentController getDeploymentController() {
+        return this.deploymentController;
+    }
+
+    /**
+     * <p>
+     * The deployment controller to use for the service.
+     * </p>
+     * 
+     * @param deploymentController
+     *        The deployment controller to use for the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateServiceRequest withDeploymentController(DeploymentController deploymentController) {
+        setDeploymentController(deploymentController);
         return this;
     }
 
@@ -2010,6 +2261,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("HealthCheckGracePeriodSeconds: ").append(getHealthCheckGracePeriodSeconds()).append(",");
         if (getSchedulingStrategy() != null)
             sb.append("SchedulingStrategy: ").append(getSchedulingStrategy()).append(",");
+        if (getDeploymentController() != null)
+            sb.append("DeploymentController: ").append(getDeploymentController()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getEnableECSManagedTags() != null)
@@ -2095,6 +2348,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getSchedulingStrategy() != null && other.getSchedulingStrategy().equals(this.getSchedulingStrategy()) == false)
             return false;
+        if (other.getDeploymentController() == null ^ this.getDeploymentController() == null)
+            return false;
+        if (other.getDeploymentController() != null && other.getDeploymentController().equals(this.getDeploymentController()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -2131,6 +2388,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckGracePeriodSeconds() == null) ? 0 : getHealthCheckGracePeriodSeconds().hashCode());
         hashCode = prime * hashCode + ((getSchedulingStrategy() == null) ? 0 : getSchedulingStrategy().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentController() == null) ? 0 : getDeploymentController().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getEnableECSManagedTags() == null) ? 0 : getEnableECSManagedTags().hashCode());
         hashCode = prime * hashCode + ((getPropagateTags() == null) ? 0 : getPropagateTags().hashCode());

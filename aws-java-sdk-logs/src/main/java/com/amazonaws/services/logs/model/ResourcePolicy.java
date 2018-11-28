@@ -42,7 +42,7 @@ public class ResourcePolicy implements Serializable, Cloneable, StructuredPojo {
     private String policyDocument;
     /**
      * <p>
-     * Time stamp showing when this policy was last updated, expressed as the number of milliseconds after Jan 1, 1970
+     * Timestamp showing when this policy was last updated, expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC.
      * </p>
      */
@@ -130,12 +130,12 @@ public class ResourcePolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time stamp showing when this policy was last updated, expressed as the number of milliseconds after Jan 1, 1970
+     * Timestamp showing when this policy was last updated, expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        Time stamp showing when this policy was last updated, expressed as the number of milliseconds after Jan 1,
+     *        Timestamp showing when this policy was last updated, expressed as the number of milliseconds after Jan 1,
      *        1970 00:00:00 UTC.
      */
 
@@ -145,12 +145,12 @@ public class ResourcePolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time stamp showing when this policy was last updated, expressed as the number of milliseconds after Jan 1, 1970
+     * Timestamp showing when this policy was last updated, expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC.
      * </p>
      * 
-     * @return Time stamp showing when this policy was last updated, expressed as the number of milliseconds after Jan
-     *         1, 1970 00:00:00 UTC.
+     * @return Timestamp showing when this policy was last updated, expressed as the number of milliseconds after Jan 1,
+     *         1970 00:00:00 UTC.
      */
 
     public Long getLastUpdatedTime() {
@@ -159,12 +159,12 @@ public class ResourcePolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time stamp showing when this policy was last updated, expressed as the number of milliseconds after Jan 1, 1970
+     * Timestamp showing when this policy was last updated, expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        Time stamp showing when this policy was last updated, expressed as the number of milliseconds after Jan 1,
+     *        Timestamp showing when this policy was last updated, expressed as the number of milliseconds after Jan 1,
      *        1970 00:00:00 UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

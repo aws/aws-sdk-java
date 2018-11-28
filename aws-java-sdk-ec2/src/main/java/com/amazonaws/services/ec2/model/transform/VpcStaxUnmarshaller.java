@@ -65,6 +65,11 @@ public class VpcStaxUnmarshaller implements Unmarshaller<Vpc, StaxUnmarshallerCo
                     continue;
                 }
 
+                if (context.testExpression("ownerId", targetDepth)) {
+                    vpc.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("instanceTenancy", targetDepth)) {
                     vpc.setInstanceTenancy(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

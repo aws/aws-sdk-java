@@ -17,6 +17,7 @@ import javax.annotation.Generated;
 /**
  * 
  */
+@Deprecated
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum InstanceStatus {
 

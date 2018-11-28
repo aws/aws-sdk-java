@@ -128,6 +128,14 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     private EC2TagSet ec2TagSet;
     /**
      * <p>
+     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
+     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ECSService> ecsServices;
+    /**
+     * <p>
      * Information about an on-premises instance tag set. The deployment group will include only on-premises instances
      * identified by all the tag groups.
      * </p>
@@ -931,6 +939,95 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
+     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * </p>
+     * 
+     * @return The target ECS services in the deployment group. This only applies to deployment groups that use the
+     *         Amazon ECS compute platform. A target ECS service is specified as an Amazon ECS cluster and service name
+     *         pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     */
+
+    public java.util.List<ECSService> getEcsServices() {
+        if (ecsServices == null) {
+            ecsServices = new com.amazonaws.internal.SdkInternalList<ECSService>();
+        }
+        return ecsServices;
+    }
+
+    /**
+     * <p>
+     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
+     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * </p>
+     * 
+     * @param ecsServices
+     *        The target ECS services in the deployment group. This only applies to deployment groups that use the
+     *        Amazon ECS compute platform. A target ECS service is specified as an Amazon ECS cluster and service name
+     *        pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     */
+
+    public void setEcsServices(java.util.Collection<ECSService> ecsServices) {
+        if (ecsServices == null) {
+            this.ecsServices = null;
+            return;
+        }
+
+        this.ecsServices = new com.amazonaws.internal.SdkInternalList<ECSService>(ecsServices);
+    }
+
+    /**
+     * <p>
+     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
+     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEcsServices(java.util.Collection)} or {@link #withEcsServices(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param ecsServices
+     *        The target ECS services in the deployment group. This only applies to deployment groups that use the
+     *        Amazon ECS compute platform. A target ECS service is specified as an Amazon ECS cluster and service name
+     *        pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDeploymentGroupRequest withEcsServices(ECSService... ecsServices) {
+        if (this.ecsServices == null) {
+            setEcsServices(new com.amazonaws.internal.SdkInternalList<ECSService>(ecsServices.length));
+        }
+        for (ECSService ele : ecsServices) {
+            this.ecsServices.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
+     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * </p>
+     * 
+     * @param ecsServices
+     *        The target ECS services in the deployment group. This only applies to deployment groups that use the
+     *        Amazon ECS compute platform. A target ECS service is specified as an Amazon ECS cluster and service name
+     *        pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDeploymentGroupRequest withEcsServices(java.util.Collection<ECSService> ecsServices) {
+        setEcsServices(ecsServices);
+        return this;
+    }
+
+    /**
+     * <p>
      * Information about an on-premises instance tag set. The deployment group will include only on-premises instances
      * identified by all the tag groups.
      * </p>
@@ -1016,6 +1113,8 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
             sb.append("LoadBalancerInfo: ").append(getLoadBalancerInfo()).append(",");
         if (getEc2TagSet() != null)
             sb.append("Ec2TagSet: ").append(getEc2TagSet()).append(",");
+        if (getEcsServices() != null)
+            sb.append("EcsServices: ").append(getEcsServices()).append(",");
         if (getOnPremisesTagSet() != null)
             sb.append("OnPremisesTagSet: ").append(getOnPremisesTagSet());
         sb.append("}");
@@ -1093,6 +1192,10 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getEc2TagSet() != null && other.getEc2TagSet().equals(this.getEc2TagSet()) == false)
             return false;
+        if (other.getEcsServices() == null ^ this.getEcsServices() == null)
+            return false;
+        if (other.getEcsServices() != null && other.getEcsServices().equals(this.getEcsServices()) == false)
+            return false;
         if (other.getOnPremisesTagSet() == null ^ this.getOnPremisesTagSet() == null)
             return false;
         if (other.getOnPremisesTagSet() != null && other.getOnPremisesTagSet().equals(this.getOnPremisesTagSet()) == false)
@@ -1120,6 +1223,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getBlueGreenDeploymentConfiguration() == null) ? 0 : getBlueGreenDeploymentConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLoadBalancerInfo() == null) ? 0 : getLoadBalancerInfo().hashCode());
         hashCode = prime * hashCode + ((getEc2TagSet() == null) ? 0 : getEc2TagSet().hashCode());
+        hashCode = prime * hashCode + ((getEcsServices() == null) ? 0 : getEcsServices().hashCode());
         hashCode = prime * hashCode + ((getOnPremisesTagSet() == null) ? 0 : getOnPremisesTagSet().hashCode());
         return hashCode;
     }

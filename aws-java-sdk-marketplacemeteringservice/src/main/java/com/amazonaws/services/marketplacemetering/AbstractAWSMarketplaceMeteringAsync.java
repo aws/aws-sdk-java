@@ -54,6 +54,19 @@ public class AbstractAWSMarketplaceMeteringAsync extends AbstractAWSMarketplaceM
     }
 
     @Override
+    public java.util.concurrent.Future<RegisterUsageResult> registerUsageAsync(RegisterUsageRequest request) {
+
+        return registerUsageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterUsageResult> registerUsageAsync(RegisterUsageRequest request,
+            com.amazonaws.handlers.AsyncHandler<RegisterUsageRequest, RegisterUsageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ResolveCustomerResult> resolveCustomerAsync(ResolveCustomerRequest request) {
 
         return resolveCustomerAsync(request, null);

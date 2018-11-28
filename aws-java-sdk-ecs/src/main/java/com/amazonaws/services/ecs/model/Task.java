@@ -181,14 +181,15 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the
      * version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch Events, you can
-     * compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch Events for
-     * the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.
+     * compare the version of a task reported by the Amazon ECS API actionss with the version reported in CloudWatch
+     * Events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is
+     * current.
      * </p>
      */
     private Long version;
     /**
      * <p>
-     * The reason the task was stopped.
+     * The reason that the task was stopped.
      * </p>
      */
     private String stoppedReason;
@@ -263,13 +264,17 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     private String group;
     /**
      * <p>
-     * The launch type on which your task is running.
+     * The launch type on which your task is running. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String launchType;
     /**
      * <p>
-     * The platform version on which your task is running. For more information, see <a
+     * The platform version on which your task is running. A platform version is only specified for tasks using the
+     * Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by default. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -1292,16 +1297,17 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the
      * version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch Events, you can
-     * compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch Events for
-     * the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.
+     * compare the version of a task reported by the Amazon ECS API actionss with the version reported in CloudWatch
+     * Events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is
+     * current.
      * </p>
      * 
      * @param version
      *        The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event,
      *        the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch
-     *        Events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in
-     *        CloudWatch Events for the task (inside the <code>detail</code> object) to verify that the version in your
-     *        event stream is current.
+     *        Events, you can compare the version of a task reported by the Amazon ECS API actionss with the version
+     *        reported in CloudWatch Events for the task (inside the <code>detail</code> object) to verify that the
+     *        version in your event stream is current.
      */
 
     public void setVersion(Long version) {
@@ -1312,15 +1318,16 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the
      * version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch Events, you can
-     * compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch Events for
-     * the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.
+     * compare the version of a task reported by the Amazon ECS API actionss with the version reported in CloudWatch
+     * Events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is
+     * current.
      * </p>
      * 
      * @return The version counter for the task. Every time a task experiences a change that triggers a CloudWatch
      *         event, the version counter is incremented. If you are replicating your Amazon ECS task state with
-     *         CloudWatch Events, you can compare the version of a task reported by the Amazon ECS APIs with the version
-     *         reported in CloudWatch Events for the task (inside the <code>detail</code> object) to verify that the
-     *         version in your event stream is current.
+     *         CloudWatch Events, you can compare the version of a task reported by the Amazon ECS API actionss with the
+     *         version reported in CloudWatch Events for the task (inside the <code>detail</code> object) to verify that
+     *         the version in your event stream is current.
      */
 
     public Long getVersion() {
@@ -1331,16 +1338,17 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the
      * version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch Events, you can
-     * compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch Events for
-     * the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.
+     * compare the version of a task reported by the Amazon ECS API actionss with the version reported in CloudWatch
+     * Events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is
+     * current.
      * </p>
      * 
      * @param version
      *        The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event,
      *        the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch
-     *        Events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in
-     *        CloudWatch Events for the task (inside the <code>detail</code> object) to verify that the version in your
-     *        event stream is current.
+     *        Events, you can compare the version of a task reported by the Amazon ECS API actionss with the version
+     *        reported in CloudWatch Events for the task (inside the <code>detail</code> object) to verify that the
+     *        version in your event stream is current.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1351,11 +1359,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reason the task was stopped.
+     * The reason that the task was stopped.
      * </p>
      * 
      * @param stoppedReason
-     *        The reason the task was stopped.
+     *        The reason that the task was stopped.
      */
 
     public void setStoppedReason(String stoppedReason) {
@@ -1364,10 +1372,10 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reason the task was stopped.
+     * The reason that the task was stopped.
      * </p>
      * 
-     * @return The reason the task was stopped.
+     * @return The reason that the task was stopped.
      */
 
     public String getStoppedReason() {
@@ -1376,11 +1384,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reason the task was stopped.
+     * The reason that the task was stopped.
      * </p>
      * 
      * @param stoppedReason
-     *        The reason the task was stopped.
+     *        The reason that the task was stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1891,11 +1899,15 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your task is running.
+     * The launch type on which your task is running. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which your task is running.
+     *        The launch type on which your task is running. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
 
@@ -1905,10 +1917,14 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your task is running.
+     * The launch type on which your task is running. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The launch type on which your task is running.
+     * @return The launch type on which your task is running. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *         Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
 
@@ -1918,11 +1934,15 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your task is running.
+     * The launch type on which your task is running. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which your task is running.
+     *        The launch type on which your task is running. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -1934,11 +1954,15 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your task is running.
+     * The launch type on which your task is running. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which your task is running.
+     *        The launch type on which your task is running. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -1950,13 +1974,17 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which your task is running. For more information, see <a
+     * The platform version on which your task is running. A platform version is only specified for tasks using the
+     * Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by default. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which your task is running. For more information, see <a
+     *        The platform version on which your task is running. A platform version is only specified for tasks using
+     *        the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     *        default. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -1967,12 +1995,16 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which your task is running. For more information, see <a
+     * The platform version on which your task is running. A platform version is only specified for tasks using the
+     * Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by default. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The platform version on which your task is running. For more information, see <a
+     * @return The platform version on which your task is running. A platform version is only specified for tasks using
+     *         the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     *         default. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *         Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -1983,13 +2015,17 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which your task is running. For more information, see <a
+     * The platform version on which your task is running. A platform version is only specified for tasks using the
+     * Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by default. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which your task is running. For more information, see <a
+     *        The platform version on which your task is running. A platform version is only specified for tasks using
+     *        the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     *        default. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

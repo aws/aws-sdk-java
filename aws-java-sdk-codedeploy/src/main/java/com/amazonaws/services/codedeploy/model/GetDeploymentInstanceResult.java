@@ -41,7 +41,7 @@ public class GetDeploymentInstanceResult extends com.amazonaws.AmazonWebServiceR
      * @param instanceSummary
      *        Information about the instance.
      */
-
+    @Deprecated
     public void setInstanceSummary(InstanceSummary instanceSummary) {
         this.instanceSummary = instanceSummary;
     }
@@ -53,7 +53,7 @@ public class GetDeploymentInstanceResult extends com.amazonaws.AmazonWebServiceR
      * 
      * @return Information about the instance.
      */
-
+    @Deprecated
     public InstanceSummary getInstanceSummary() {
         return this.instanceSummary;
     }
@@ -67,7 +67,7 @@ public class GetDeploymentInstanceResult extends com.amazonaws.AmazonWebServiceR
      *        Information about the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public GetDeploymentInstanceResult withInstanceSummary(InstanceSummary instanceSummary) {
         setInstanceSummary(instanceSummary);
         return this;

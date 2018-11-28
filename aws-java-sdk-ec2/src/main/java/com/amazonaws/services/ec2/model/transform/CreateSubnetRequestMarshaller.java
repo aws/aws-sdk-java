@@ -44,6 +44,10 @@ public class CreateSubnetRequestMarshaller implements Marshaller<Request<CreateS
             request.addParameter("AvailabilityZone", StringUtils.fromString(createSubnetRequest.getAvailabilityZone()));
         }
 
+        if (createSubnetRequest.getAvailabilityZoneId() != null) {
+            request.addParameter("AvailabilityZoneId", StringUtils.fromString(createSubnetRequest.getAvailabilityZoneId()));
+        }
+
         if (createSubnetRequest.getCidrBlock() != null) {
             request.addParameter("CidrBlock", StringUtils.fromString(createSubnetRequest.getCidrBlock()));
         }

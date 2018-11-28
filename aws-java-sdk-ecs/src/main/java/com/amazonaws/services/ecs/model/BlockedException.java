@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Your AWS account has been blocked. For more information, <a href="http://aws.amazon.com/contact-us/">Contact AWS
+ * Your AWS account has been blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">AWS
  * Support</a>.
  * </p>
  */

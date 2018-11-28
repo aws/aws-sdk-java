@@ -10,7 +10,6 @@
     "serviceId":"CodeDeploy",
     "signatureVersion":"v4",
     "targetPrefix":"CodeDeploy_20141006",
-    "timestampFormat":"unixTimestamp",
     "uid":"codedeploy-2014-10-06"
   },
   "operations":{
@@ -80,7 +79,8 @@
         {"shape":"ApplicationDoesNotExistException"},
         {"shape":"DeploymentGroupNameRequiredException"},
         {"shape":"InvalidDeploymentGroupNameException"},
-        {"shape":"BatchLimitExceededException"}
+        {"shape":"BatchLimitExceededException"},
+        {"shape":"DeploymentConfigDoesNotExistException"}
       ],
       "documentation":"<p>Gets information about one or more deployment groups.</p>"
     },
@@ -98,9 +98,31 @@
         {"shape":"InstanceIdRequiredException"},
         {"shape":"InvalidDeploymentIdException"},
         {"shape":"InvalidInstanceNameException"},
-        {"shape":"BatchLimitExceededException"}
+        {"shape":"BatchLimitExceededException"},
+        {"shape":"InvalidComputePlatformException"}
       ],
-      "documentation":"<p>Gets information about one or more instance that are part of a deployment group.</p>"
+      "documentation":"<note> <p> This method works, but is considered deprecated. Use <code>BatchGetDeploymentTargets</code> instead. </p> </note> <p> Returns an array of instances associated with a deployment. This method works with EC2/On-premises and AWS Lambda compute platforms. The newer <code>BatchGetDeploymentTargets</code> works with all compute platforms. </p>",
+      "deprecated":true,
+      "deprecatedMessage":"This operation is deprecated, use BatchGetDeploymentTargets instead."
+    },
+    "BatchGetDeploymentTargets":{
+      "name":"BatchGetDeploymentTargets",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"BatchGetDeploymentTargetsInput"},
+      "output":{"shape":"BatchGetDeploymentTargetsOutput"},
+      "errors":[
+        {"shape":"InvalidDeploymentIdException"},
+        {"shape":"DeploymentIdRequiredException"},
+        {"shape":"DeploymentDoesNotExistException"},
+        {"shape":"DeploymentTargetIdRequiredException"},
+        {"shape":"InvalidDeploymentTargetIdException"},
+        {"shape":"DeploymentTargetDoesNotExistException"},
+        {"shape":"DeploymentTargetListSizeExceededException"}
+      ],
+      "documentation":"<p> Returns an array of targets associated with a deployment. This method works with all compute types and should be used instead of the deprecated <code>BatchGetDeploymentInstances</code>. </p> <p> The type of targets returned depends on the deployment's compute platform: </p> <ul> <li> <p> <b>EC2/On-premises</b> - Information about EC2 instance targets. </p> </li> <li> <p> <b>AWS Lambda</b> - Information about Lambda functions targets. </p> </li> <li> <p> <b>Amazon ECS</b> - Information about ECS service targets. </p> </li> </ul>"
     },
     "BatchGetDeployments":{
       "name":"BatchGetDeployments",
@@ -145,7 +167,9 @@
         {"shape":"DeploymentAlreadyCompletedException"},
         {"shape":"InvalidDeploymentIdException"},
         {"shape":"DeploymentIsNotInReadyStateException"},
-        {"shape":"UnsupportedActionForDeploymentTypeException"}
+        {"shape":"UnsupportedActionForDeploymentTypeException"},
+        {"shape":"InvalidDeploymentWaitTypeException"},
+        {"shape":"InvalidDeploymentStatusException"}
       ],
       "documentation":"<p>For a blue/green deployment, starts the process of rerouting traffic from instances in the original environment to instances in the replacement environment without waiting for a specified wait time to elapse. (Traffic rerouting, which is achieved by registering instances in the replacement environment with the load balancer, can start as soon as all instances have a status of Ready.) </p>"
     },
@@ -218,7 +242,7 @@
         {"shape":"InvalidComputePlatformException"},
         {"shape":"InvalidTrafficRoutingConfigurationException"}
       ],
-      "documentation":"<p>Creates a deployment configuration.</p>"
+      "documentation":"<p> Creates a deployment configuration. </p>"
     },
     "CreateDeploymentGroup":{
       "name":"CreateDeploymentGroup",
@@ -255,7 +279,11 @@
         {"shape":"InvalidEC2TagCombinationException"},
         {"shape":"InvalidOnPremisesTagCombinationException"},
         {"shape":"TagSetListLimitExceededException"},
-        {"shape":"InvalidInputException"}
+        {"shape":"InvalidInputException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InvalidECSServiceException"},
+        {"shape":"InvalidTargetGroupPairException"},
+        {"shape":"ECSServiceMappingLimitExceededException"}
       ],
       "documentation":"<p>Creates a deployment group to which application revisions will be deployed.</p>"
     },
@@ -393,7 +421,8 @@
       "errors":[
         {"shape":"InvalidDeploymentConfigNameException"},
         {"shape":"DeploymentConfigNameRequiredException"},
-        {"shape":"DeploymentConfigDoesNotExistException"}
+        {"shape":"DeploymentConfigDoesNotExistException"},
+        {"shape":"InvalidComputePlatformException"}
       ],
       "documentation":"<p>Gets information about a deployment configuration.</p>"
     },
@@ -411,7 +440,8 @@
         {"shape":"ApplicationDoesNotExistException"},
         {"shape":"DeploymentGroupNameRequiredException"},
         {"shape":"InvalidDeploymentGroupNameException"},
-        {"shape":"DeploymentGroupDoesNotExistException"}
+        {"shape":"DeploymentGroupDoesNotExistException"},
+        {"shape":"DeploymentConfigDoesNotExistException"}
       ],
       "documentation":"<p>Gets information about a deployment group.</p>"
     },
@@ -429,9 +459,31 @@
         {"shape":"InstanceIdRequiredException"},
         {"shape":"InvalidDeploymentIdException"},
         {"shape":"InstanceDoesNotExistException"},
+        {"shape":"InvalidInstanceNameException"},
+        {"shape":"InvalidComputePlatformException"}
+      ],
+      "documentation":"<p>Gets information about an instance as part of a deployment.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This operation is deprecated, use GetDeploymentTarget instead."
+    },
+    "GetDeploymentTarget":{
+      "name":"GetDeploymentTarget",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetDeploymentTargetInput"},
+      "output":{"shape":"GetDeploymentTargetOutput"},
+      "errors":[
+        {"shape":"InvalidDeploymentIdException"},
+        {"shape":"DeploymentIdRequiredException"},
+        {"shape":"DeploymentDoesNotExistException"},
+        {"shape":"DeploymentTargetIdRequiredException"},
+        {"shape":"InvalidDeploymentTargetIdException"},
+        {"shape":"DeploymentTargetDoesNotExistException"},
         {"shape":"InvalidInstanceNameException"}
       ],
-      "documentation":"<p>Gets information about an instance as part of a deployment.</p>"
+      "documentation":"<p> Returns information about a deployment target. </p>"
     },
     "GetOnPremisesInstance":{
       "name":"GetOnPremisesInstance",
@@ -446,7 +498,7 @@
         {"shape":"InstanceNotRegisteredException"},
         {"shape":"InvalidInstanceNameException"}
       ],
-      "documentation":"<p>Gets information about an on-premises instance.</p>"
+      "documentation":"<p> Gets information about an on-premises instance. </p>"
     },
     "ListApplicationRevisions":{
       "name":"ListApplicationRevisions",
@@ -528,9 +580,33 @@
         {"shape":"InvalidDeploymentIdException"},
         {"shape":"InvalidInstanceStatusException"},
         {"shape":"InvalidInstanceTypeException"},
+        {"shape":"InvalidDeploymentInstanceTypeException"},
+        {"shape":"InvalidTargetFilterNameException"},
+        {"shape":"InvalidComputePlatformException"}
+      ],
+      "documentation":"<note> <p> The newer BatchGetDeploymentTargets should be used instead because it works with all compute types. <code>ListDeploymentInstances</code> throws an exception if it is used with a compute platform other than EC2/On-premises or AWS Lambda. </p> </note> <p> Lists the instance for a deployment associated with the applicable IAM user or AWS account. </p>",
+      "deprecated":true,
+      "deprecatedMessage":"This operation is deprecated, use ListDeploymentTargets instead."
+    },
+    "ListDeploymentTargets":{
+      "name":"ListDeploymentTargets",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListDeploymentTargetsInput"},
+      "output":{"shape":"ListDeploymentTargetsOutput"},
+      "errors":[
+        {"shape":"DeploymentIdRequiredException"},
+        {"shape":"DeploymentDoesNotExistException"},
+        {"shape":"DeploymentNotStartedException"},
+        {"shape":"InvalidNextTokenException"},
+        {"shape":"InvalidDeploymentIdException"},
+        {"shape":"InvalidInstanceStatusException"},
+        {"shape":"InvalidInstanceTypeException"},
         {"shape":"InvalidDeploymentInstanceTypeException"}
       ],
-      "documentation":"<p>Lists the instance for a deployment associated with the applicable IAM user or AWS account.</p>"
+      "documentation":"<p> Returns an array of target IDs that are associated a deployment. </p>"
     },
     "ListDeployments":{
       "name":"ListDeployments",
@@ -600,7 +676,7 @@
         {"shape":"InvalidDeploymentIdException"},
         {"shape":"UnsupportedActionForDeploymentTypeException"}
       ],
-      "documentation":"<p>Sets the result of a Lambda validation function. The function validates one or both lifecycle events (<code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>) and returns <code>Succeeded</code> or <code>Failed</code>.</p>"
+      "documentation":"<p> Sets the result of a Lambda validation function. The function validates one or both lifecycle events (<code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>) and returns <code>Succeeded</code> or <code>Failed</code>. </p>"
     },
     "RegisterApplicationRevision":{
       "name":"RegisterApplicationRevision",
@@ -673,7 +749,9 @@
         {"shape":"DeploymentNotStartedException"},
         {"shape":"UnsupportedActionForDeploymentTypeException"}
       ],
-      "documentation":"<p>In a blue/green deployment, overrides any specified wait time and starts terminating instances immediately after the traffic routing is completed.</p>"
+      "documentation":"<p>In a blue/green deployment, overrides any specified wait time and starts terminating instances immediately after the traffic routing is completed.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead."
     },
     "StopDeployment":{
       "name":"StopDeployment",
@@ -686,6 +764,7 @@
       "errors":[
         {"shape":"DeploymentIdRequiredException"},
         {"shape":"DeploymentDoesNotExistException"},
+        {"shape":"DeploymentGroupDoesNotExistException"},
         {"shape":"DeploymentAlreadyCompletedException"},
         {"shape":"InvalidDeploymentIdException"}
       ],
@@ -740,7 +819,11 @@
         {"shape":"InvalidEC2TagCombinationException"},
         {"shape":"InvalidOnPremisesTagCombinationException"},
         {"shape":"TagSetListLimitExceededException"},
-        {"shape":"InvalidInputException"}
+        {"shape":"InvalidInputException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InvalidECSServiceException"},
+        {"shape":"InvalidTargetGroupPairException"},
+        {"shape":"ECSServiceMappingLimitExceededException"}
       ],
       "documentation":"<p>Changes information about a deployment group.</p>"
     }
@@ -766,7 +849,8 @@
     },
     "AdditionalDeploymentStatusInfo":{
       "type":"string",
-      "deprecated":true
+      "deprecated":true,
+      "deprecatedMessage":"AdditionalDeploymentStatusInfo is deprecated, use DeploymentStatusMessageList instead."
     },
     "Alarm":{
       "type":"structure",
@@ -807,6 +891,20 @@
       },
       "documentation":"<p>The maximum number of alarms for a deployment group (10) was exceeded.</p>",
       "exception":true
+    },
+    "AppSpecContent":{
+      "type":"structure",
+      "members":{
+        "content":{
+          "shape":"RawStringContent",
+          "documentation":"<p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an AWS Lambda deployment the content includes a Lambda function name, the alias for its original version, and the alias for its replacement version. The deployment shifts traffic from the original version of the Lambda function to the replacement version. </p> <p> For an Amazon ECS deployment the content includes the task name, information about the load balancer that serves traffic to the container, and more. </p> <p> For both types of deployments, the content can specify Lambda functions that run at specified hooks, such as <code>BeforeInstall</code>, during a deployment. </p>"
+        },
+        "sha256":{
+          "shape":"RawStringSha256",
+          "documentation":"<p> The SHA256 hash value of the revision content. </p>"
+        }
+      },
+      "documentation":"<p> A revision for an AWS Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type. </p>"
     },
     "ApplicationAlreadyExistsException":{
       "type":"structure",
@@ -1036,14 +1134,14 @@
       "members":{
         "deploymentId":{
           "shape":"DeploymentId",
-          "documentation":"<p>The unique ID of a deployment.</p>"
+          "documentation":"<p> The unique ID of a deployment. </p>"
         },
         "instanceIds":{
           "shape":"InstancesList",
-          "documentation":"<p>The unique IDs of instances in the deployment group.</p>"
+          "documentation":"<p>The unique IDs of instances of the deployment.</p>"
         }
       },
-      "documentation":"<p>Represents the input of a BatchGetDeploymentInstances operation.</p>"
+      "documentation":"<p> Represents the input of a BatchGetDeploymentInstances operation. </p>"
     },
     "BatchGetDeploymentInstancesOutput":{
       "type":"structure",
@@ -1059,26 +1157,48 @@
       },
       "documentation":"<p>Represents the output of a BatchGetDeploymentInstances operation.</p>"
     },
+    "BatchGetDeploymentTargetsInput":{
+      "type":"structure",
+      "members":{
+        "deploymentId":{
+          "shape":"DeploymentId",
+          "documentation":"<p> The unique ID of a deployment. </p>"
+        },
+        "targetIds":{
+          "shape":"TargetIdList",
+          "documentation":"<p> The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. </p> <ul> <li> <p> For deployments that use the EC2/On-premises compute platform, the target IDs are EC2 or on-premises instances IDs and their target type is <code>instanceTarget</code>. </p> </li> <li> <p> For deployments that use the AWS Lambda compute platform, the target IDs are the names of Lambda functions and their target type is <code>instanceTarget</code>. </p> </li> <li> <p> For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. Their target type is <code>ecsTarget</code>. </p> </li> </ul>"
+        }
+      }
+    },
+    "BatchGetDeploymentTargetsOutput":{
+      "type":"structure",
+      "members":{
+        "deploymentTargets":{
+          "shape":"DeploymentTargetList",
+          "documentation":"<p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p> <ul> <li> <p> <b>EC2/On-premises</b> - Each target object is an EC2 or on-premises instance. </p> </li> <li> <p> <b>AWS Lambda</b> - The target object is a specific version of an AWS Lambda function. </p> </li> <li> <p> <b>Amazon ECS</b> - The target object is an Amazon ECS service. </p> </li> </ul>"
+        }
+      }
+    },
     "BatchGetDeploymentsInput":{
       "type":"structure",
       "required":["deploymentIds"],
       "members":{
         "deploymentIds":{
           "shape":"DeploymentsList",
-          "documentation":"<p>A list of deployment IDs, separated by spaces.</p>"
+          "documentation":"<p> A list of deployment IDs, separated by spaces. </p>"
         }
       },
-      "documentation":"<p>Represents the input of a BatchGetDeployments operation.</p>"
+      "documentation":"<p> Represents the input of a BatchGetDeployments operation. </p>"
     },
     "BatchGetDeploymentsOutput":{
       "type":"structure",
       "members":{
         "deploymentsInfo":{
           "shape":"DeploymentsInfoList",
-          "documentation":"<p>Information about the deployments.</p>"
+          "documentation":"<p> Information about the deployments. </p>"
         }
       },
-      "documentation":"<p>Represents the output of a BatchGetDeployments operation.</p>"
+      "documentation":"<p> Represents the output of a BatchGetDeployments operation. </p>"
     },
     "BatchGetOnPremisesInstancesInput":{
       "type":"structure",
@@ -1163,7 +1283,8 @@
       "type":"string",
       "enum":[
         "Server",
-        "Lambda"
+        "Lambda",
+        "ECS"
       ]
     },
     "ContinueDeploymentInput":{
@@ -1171,7 +1292,11 @@
       "members":{
         "deploymentId":{
           "shape":"DeploymentId",
-          "documentation":"<p>The deployment ID of the blue/green deployment for which you want to start rerouting traffic to the replacement environment.</p>"
+          "documentation":"<p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>"
+        },
+        "deploymentWaitType":{
+          "shape":"DeploymentWaitType",
+          "documentation":"<p> The status of the deployment's waiting period. READY_WAIT indicates the deployment is ready to start shifting traffic. TERMINATION_WAIT indicates the traffic is shifted, but the original target is not terminated. </p>"
         }
       }
     },
@@ -1297,6 +1422,10 @@
           "shape":"EC2TagSet",
           "documentation":"<p>Information about groups of tags applied to EC2 instances. The deployment group will include only EC2 instances identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.</p>"
         },
+        "ecsServices":{
+          "shape":"ECSServiceList",
+          "documentation":"<p> The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>"
+        },
         "onPremisesTagSet":{
           "shape":"OnPremisesTagSet",
           "documentation":"<p>Information about groups of tags applied to on-premises instances. The deployment group will include only on-premises instances identified by all the tag groups. Cannot be used in the same call as onPremisesInstanceTagFilters.</p>"
@@ -1328,7 +1457,7 @@
         },
         "revision":{
           "shape":"RevisionLocation",
-          "documentation":"<p>The type and location of the revision to deploy.</p>"
+          "documentation":"<p> The type and location of the revision to deploy. </p>"
         },
         "deploymentConfigName":{
           "shape":"DeploymentConfigName",
@@ -1340,11 +1469,11 @@
         },
         "ignoreApplicationStopFailures":{
           "shape":"Boolean",
-          "documentation":"<p>If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to fail, the deployment to that instance will not be considered to have failed at that point and will continue on to the BeforeInstall deployment lifecycle event.</p> <p>If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to fail to an instance, the deployment to that instance will stop, and the deployment to that instance will be considered to have failed.</p>"
+          "documentation":"<p> If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to fail, the deployment to that instance will not be considered to have failed at that point and will continue on to the BeforeInstall deployment lifecycle event. </p> <p> If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to fail to an instance, the deployment to that instance will stop, and the deployment to that instance will be considered to have failed. </p>"
         },
         "targetInstances":{
           "shape":"TargetInstances",
-          "documentation":"<p>Information about the instances that will belong to the replacement environment in a blue/green deployment.</p>"
+          "documentation":"<p> Information about the instances that will belong to the replacement environment in a blue/green deployment. </p>"
         },
         "autoRollbackConfiguration":{
           "shape":"AutoRollbackConfiguration",
@@ -1352,7 +1481,7 @@
         },
         "updateOutdatedInstancesOnly":{
           "shape":"Boolean",
-          "documentation":"<p>Indicates whether to deploy to all instances or only to instances that are not running the latest application revision.</p>"
+          "documentation":"<p> Indicates whether to deploy to all instances or only to instances that are not running the latest application revision. </p>"
         },
         "fileExistsBehavior":{
           "shape":"FileExistsBehavior",
@@ -1366,10 +1495,10 @@
       "members":{
         "deploymentId":{
           "shape":"DeploymentId",
-          "documentation":"<p>A unique deployment ID.</p>"
+          "documentation":"<p> The unique ID of a deployment. </p>"
         }
       },
-      "documentation":"<p>Represents the output of a CreateDeployment operation.</p>"
+      "documentation":"<p> Represents the output of a CreateDeployment operation. </p>"
     },
     "DeleteApplicationInput":{
       "type":"structure",
@@ -1446,6 +1575,13 @@
       "members":{
       },
       "documentation":"<p>The deployment is already complete.</p>",
+      "exception":true
+    },
+    "DeploymentAlreadyStartedException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p> A deployment to a target was attempted while another deployment was in process. </p>",
       "exception":true
     },
     "DeploymentConfigAlreadyExistsException":{
@@ -1635,6 +1771,10 @@
         "computePlatform":{
           "shape":"ComputePlatform",
           "documentation":"<p>The destination platform type for the deployment group (<code>Lambda</code> or <code>Server</code>).</p>"
+        },
+        "ecsServices":{
+          "shape":"ECSServiceList",
+          "documentation":"<p> The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>"
         }
       },
       "documentation":"<p>Information about a deployment group.</p>"
@@ -1683,15 +1823,15 @@
         },
         "deploymentGroupName":{
           "shape":"DeploymentGroupName",
-          "documentation":"<p>The deployment group name.</p>"
+          "documentation":"<p> The deployment group name. </p>"
         },
         "deploymentConfigName":{
           "shape":"DeploymentConfigName",
-          "documentation":"<p>The deployment configuration name.</p>"
+          "documentation":"<p> The deployment configuration name. </p>"
         },
         "deploymentId":{
           "shape":"DeploymentId",
-          "documentation":"<p>The deployment ID.</p>"
+          "documentation":"<p> The unique ID of a deployment. </p>"
         },
         "previousRevision":{
           "shape":"RevisionLocation",
@@ -1783,7 +1923,7 @@
         },
         "computePlatform":{
           "shape":"ComputePlatform",
-          "documentation":"<p>The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).</p>"
+          "documentation":"<p> The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>). </p>"
         }
       },
       "documentation":"<p>Information about a deployment.</p>"
@@ -1901,11 +2041,73 @@
       },
       "documentation":"<p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>"
     },
+    "DeploymentTarget":{
+      "type":"structure",
+      "members":{
+        "deploymentTargetType":{
+          "shape":"DeploymentTargetType",
+          "documentation":"<p> The deployment type which is specific to the deployment's compute platform. </p>"
+        },
+        "instanceTarget":{
+          "shape":"InstanceTarget",
+          "documentation":"<p> Information about the target for a deployment that uses the EC2/On-premises compute platform. </p>"
+        },
+        "lambdaTarget":{
+          "shape":"LambdaTarget",
+          "documentation":"<p> Information about the target for a deployment that uses the AWS Lambda compute platform. </p>"
+        },
+        "ecsTarget":{
+          "shape":"ECSTarget",
+          "documentation":"<p> Information about the target for a deployment that uses the Amazon ECS compute platform. </p>"
+        }
+      },
+      "documentation":"<p> Information about the deployment target. </p>"
+    },
+    "DeploymentTargetDoesNotExistException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p> The provided target ID does not belong to the attempted deployment. </p>",
+      "exception":true
+    },
+    "DeploymentTargetIdRequiredException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p> A deployment target ID was not provided. </p>",
+      "exception":true
+    },
+    "DeploymentTargetList":{
+      "type":"list",
+      "member":{"shape":"DeploymentTarget"}
+    },
+    "DeploymentTargetListSizeExceededException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p> The maximum number of targets that can be associated with an Amazon ECS or AWS Lambda deployment was exceeded. The target list of both types of deployments must have exactly one item. This exception does not apply to EC2/On-premises deployments. </p>",
+      "exception":true
+    },
+    "DeploymentTargetType":{
+      "type":"string",
+      "enum":[
+        "InstanceTarget",
+        "LambdaTarget",
+        "ECSTarget"
+      ]
+    },
     "DeploymentType":{
       "type":"string",
       "enum":[
         "IN_PLACE",
         "BLUE_GREEN"
+      ]
+    },
+    "DeploymentWaitType":{
+      "type":"string",
+      "enum":[
+        "READY_WAIT",
+        "TERMINATION_WAIT"
       ]
     },
     "DeploymentsInfoList":{
@@ -2002,6 +2204,112 @@
       "type":"list",
       "member":{"shape":"EC2TagFilterList"}
     },
+    "ECSClusterName":{"type":"string"},
+    "ECSService":{
+      "type":"structure",
+      "members":{
+        "serviceName":{
+          "shape":"ECSServiceName",
+          "documentation":"<p> The name of the target ECS service. </p>"
+        },
+        "clusterName":{
+          "shape":"ECSClusterName",
+          "documentation":"<p> The name of the cluster that the ECS service is associated with. </p>"
+        }
+      },
+      "documentation":"<p> Contains the service and cluster names used to identify an Amazon ECS deployment's target. </p>"
+    },
+    "ECSServiceList":{
+      "type":"list",
+      "member":{"shape":"ECSService"}
+    },
+    "ECSServiceMappingLimitExceededException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p> The Amazon ECS service is associated with more than one deployment groups. An ECS service can only be associated with one deployment group. </p>",
+      "exception":true
+    },
+    "ECSServiceName":{"type":"string"},
+    "ECSTarget":{
+      "type":"structure",
+      "members":{
+        "deploymentId":{
+          "shape":"DeploymentId",
+          "documentation":"<p> The unique ID of a deployment. </p>"
+        },
+        "targetId":{
+          "shape":"TargetId",
+          "documentation":"<p> The unique ID of a deployment target that has a type of <code>ecsTarget</code>. </p>"
+        },
+        "targetArn":{
+          "shape":"TargetArn",
+          "documentation":"<p> The ARN of the target. </p>"
+        },
+        "lastUpdatedAt":{
+          "shape":"Time",
+          "documentation":"<p> The date and time when the target Amazon ECS application was updated by a deployment. </p>"
+        },
+        "lifecycleEvents":{
+          "shape":"LifecycleEventList",
+          "documentation":"<p> The lifecycle events of the deployment to this target Amazon ECS application. </p>"
+        },
+        "status":{
+          "shape":"TargetStatus",
+          "documentation":"<p> The status an Amazon ECS deployment's target ECS application. </p>"
+        },
+        "taskSetsInfo":{
+          "shape":"ECSTaskSetList",
+          "documentation":"<p> The <code>ECSTaskSet</code> objects associated with the ECS target. </p>"
+        }
+      },
+      "documentation":"<p> Information about the target of an Amazon ECS deployment. </p>"
+    },
+    "ECSTaskSet":{
+      "type":"structure",
+      "members":{
+        "identifer":{
+          "shape":"ECSTaskSetIdentifier",
+          "documentation":"<p> A unique ID of an <code>ECSTaskSet</code>. </p>"
+        },
+        "desiredCount":{
+          "shape":"ECSTaskSetCount",
+          "documentation":"<p> The number of tasks in a task set. During a deployment that uses the Amazon ECS compute type, CodeDeploy asks Amazon ECS to create a new task set and uses this value to determine how many tasks to create. After the updated task set is created, CodeDeploy shifts traffic to the new task set. </p>"
+        },
+        "pendingCount":{
+          "shape":"ECSTaskSetCount",
+          "documentation":"<p> The number of tasks in the task set that are in the <code>PENDING</code> status during an Amazon ECS deployment. A task in the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set enters the <code>PENDING</code> status when it launches for the first time, or when it is restarted after being in the <code>STOPPED</code> state. </p>"
+        },
+        "runningCount":{
+          "shape":"ECSTaskSetCount",
+          "documentation":"<p> The number of tasks in the task set that are in the <code>RUNNING</code> status during an Amazon ECS deployment. A task in the <code>RUNNING</code> state is running and ready for use. </p>"
+        },
+        "status":{
+          "shape":"ECSTaskSetStatus",
+          "documentation":"<p> The status of the task set. There are three valid task set statuses: </p> <ul> <li> <p> <code>PRIMARY</code> - indicates the task set is serving production traffic. </p> </li> <li> <p> <code>ACTIVE</code> - indicates the task set is not serving production traffic. </p> </li> <li> <p> <code>DRAINING</code> - indicates the tasks in the task set are being stopped and their corresponding targets are being deregistered from their target group. </p> </li> </ul>"
+        },
+        "trafficWeight":{
+          "shape":"TrafficWeight",
+          "documentation":"<p> The percentage of traffic served by this task set. </p>"
+        },
+        "targetGroup":{
+          "shape":"TargetGroupInfo",
+          "documentation":"<p> The target group associated with the task set. The target group is used by AWS CodeDeploy to manage traffic to a task set. </p>"
+        },
+        "taskSetLabel":{
+          "shape":"TargetLabel",
+          "documentation":"<p> A label that identifies whether the ECS task set is an original target (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>"
+        }
+      },
+      "documentation":"<p> A set of Amazon ECS tasks. A task set runs a specified number of instances of a task definition simultaneously inside an Amazon ECS service. Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic or not. </p>"
+    },
+    "ECSTaskSetCount":{"type":"long"},
+    "ECSTaskSetIdentifier":{"type":"string"},
+    "ECSTaskSetList":{
+      "type":"list",
+      "member":{"shape":"ECSTaskSet"}
+    },
+    "ECSTaskSetStatus":{"type":"string"},
     "ELBInfo":{
       "type":"structure",
       "members":{
@@ -2046,7 +2354,11 @@
         "ELB_INVALID_INSTANCE",
         "INVALID_LAMBDA_CONFIGURATION",
         "INVALID_LAMBDA_FUNCTION",
-        "HOOK_EXECUTION_FAILURE"
+        "HOOK_EXECUTION_FAILURE",
+        "AUTOSCALING_VALIDATION_ERROR",
+        "INVALID_ECS_SERVICE",
+        "ECS_UPDATE_ERROR",
+        "INVALID_REVISION"
       ]
     },
     "ErrorInformation":{
@@ -2071,6 +2383,11 @@
         "OVERWRITE",
         "RETAIN"
       ]
+    },
+    "FilterValue":{"type":"string"},
+    "FilterValueList":{
+      "type":"list",
+      "member":{"shape":"FilterValue"}
     },
     "GenericRevisionInfo":{
       "type":"structure",
@@ -2210,7 +2527,7 @@
       "members":{
         "deploymentId":{
           "shape":"DeploymentId",
-          "documentation":"<p>A deployment ID associated with the applicable IAM user or AWS account.</p>"
+          "documentation":"<p> The unique ID of a deployment associated with the applicable IAM user or AWS account. </p>"
         }
       },
       "documentation":"<p>Represents the input of a GetDeployment operation.</p>"
@@ -2224,24 +2541,24 @@
       "members":{
         "deploymentId":{
           "shape":"DeploymentId",
-          "documentation":"<p>The unique ID of a deployment.</p>"
+          "documentation":"<p> The unique ID of a deployment. </p>"
         },
         "instanceId":{
           "shape":"InstanceId",
-          "documentation":"<p>The unique ID of an instance in the deployment group.</p>"
+          "documentation":"<p> The unique ID of an instance in the deployment group. </p>"
         }
       },
-      "documentation":"<p>Represents the input of a GetDeploymentInstance operation.</p>"
+      "documentation":"<p> Represents the input of a GetDeploymentInstance operation. </p>"
     },
     "GetDeploymentInstanceOutput":{
       "type":"structure",
       "members":{
         "instanceSummary":{
           "shape":"InstanceSummary",
-          "documentation":"<p>Information about the instance.</p>"
+          "documentation":"<p> Information about the instance. </p>"
         }
       },
-      "documentation":"<p>Represents the output of a GetDeploymentInstance operation.</p>"
+      "documentation":"<p> Represents the output of a GetDeploymentInstance operation. </p>"
     },
     "GetDeploymentOutput":{
       "type":"structure",
@@ -2253,26 +2570,48 @@
       },
       "documentation":"<p>Represents the output of a GetDeployment operation.</p>"
     },
+    "GetDeploymentTargetInput":{
+      "type":"structure",
+      "members":{
+        "deploymentId":{
+          "shape":"DeploymentId",
+          "documentation":"<p> The unique ID of a deployment. </p>"
+        },
+        "targetId":{
+          "shape":"TargetId",
+          "documentation":"<p> The unique ID of a deployment target. </p>"
+        }
+      }
+    },
+    "GetDeploymentTargetOutput":{
+      "type":"structure",
+      "members":{
+        "deploymentTarget":{
+          "shape":"DeploymentTarget",
+          "documentation":"<p> A deployment target that contains information about a deployment such as its status, lifecyle events, and when it was updated last. It also contains metadata about the deployment target. The deployment target metadata depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>"
+        }
+      }
+    },
     "GetOnPremisesInstanceInput":{
       "type":"structure",
       "required":["instanceName"],
       "members":{
         "instanceName":{
           "shape":"InstanceName",
-          "documentation":"<p>The name of the on-premises instance about which to get information.</p>"
+          "documentation":"<p> The name of the on-premises instance about which to get information. </p>"
         }
       },
-      "documentation":"<p>Represents the input of a GetOnPremisesInstance operation.</p>"
+      "documentation":"<p> Represents the input of a GetOnPremisesInstance operation. </p>"
     },
     "GetOnPremisesInstanceOutput":{
       "type":"structure",
       "members":{
         "instanceInfo":{
           "shape":"InstanceInfo",
-          "documentation":"<p>Information about the on-premises instance.</p>"
+          "documentation":"<p> Information about the on-premises instance. </p>"
         }
       },
-      "documentation":"<p>Represents the output of a GetOnPremisesInstance operation.</p>"
+      "documentation":"<p> Represents the output of a GetOnPremisesInstance operation. </p>"
     },
     "GitHubAccountTokenDoesNotExistException":{
       "type":"structure",
@@ -2368,6 +2707,8 @@
       "members":{
       },
       "documentation":"<p>The specified instance does not exist in the deployment group.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This exception is deprecated, use DeploymentTargetDoesNotExistException instead.",
       "exception":true
     },
     "InstanceId":{"type":"string"},
@@ -2376,6 +2717,8 @@
       "members":{
       },
       "documentation":"<p>The instance ID was not specified.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This exception is deprecated, use DeploymentTargetIdRequiredException instead.",
       "exception":true
     },
     "InstanceInfo":{
@@ -2451,6 +2794,8 @@
     },
     "InstanceStatus":{
       "type":"string",
+      "deprecated":true,
+      "deprecatedMessage":"InstanceStatus is deprecated, use TargetStatus instead.",
       "enum":[
         "Pending",
         "InProgress",
@@ -2470,7 +2815,7 @@
       "members":{
         "deploymentId":{
           "shape":"DeploymentId",
-          "documentation":"<p>The deployment ID.</p>"
+          "documentation":"<p> The unique ID of a deployment. </p>"
         },
         "instanceId":{
           "shape":"InstanceId",
@@ -2493,11 +2838,47 @@
           "documentation":"<p>Information about which environment an instance belongs to in a blue/green deployment.</p> <ul> <li> <p>BLUE: The instance is part of the original environment.</p> </li> <li> <p>GREEN: The instance is part of the replacement environment.</p> </li> </ul>"
         }
       },
-      "documentation":"<p>Information about an instance in a deployment.</p>"
+      "documentation":"<p>Information about an instance in a deployment.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"InstanceSummary is deprecated, use DeploymentTarget instead."
     },
     "InstanceSummaryList":{
       "type":"list",
       "member":{"shape":"InstanceSummary"}
+    },
+    "InstanceTarget":{
+      "type":"structure",
+      "members":{
+        "deploymentId":{
+          "shape":"DeploymentId",
+          "documentation":"<p> The unique ID of a deployment. </p>"
+        },
+        "targetId":{
+          "shape":"TargetId",
+          "documentation":"<p> The unique ID of a deployment target that has a type of <code>instanceTarget</code>. </p>"
+        },
+        "targetArn":{
+          "shape":"TargetArn",
+          "documentation":"<p> The ARN of the target. </p>"
+        },
+        "status":{
+          "shape":"TargetStatus",
+          "documentation":"<p> The status an EC2/On-premises deployment's target instance. </p>"
+        },
+        "lastUpdatedAt":{
+          "shape":"Time",
+          "documentation":"<p> The date and time when the target instance was updated by a deployment. </p>"
+        },
+        "lifecycleEvents":{
+          "shape":"LifecycleEventList",
+          "documentation":"<p> The lifecycle events of the deployment to this target instance. </p>"
+        },
+        "instanceLabel":{
+          "shape":"TargetLabel",
+          "documentation":"<p> A label that identifies whether the instance is an original target (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>"
+        }
+      },
+      "documentation":"<p> A target Amazon EC2 or on-premises instance during a deployment that uses the EC2/On-premises compute platform. </p>"
     },
     "InstanceType":{
       "type":"string",
@@ -2612,6 +2993,20 @@
       "documentation":"<p>An invalid deployment style was specified. Valid deployment types include \"IN_PLACE\" and \"BLUE_GREEN\". Valid deployment options include \"WITH_TRAFFIC_CONTROL\" and \"WITHOUT_TRAFFIC_CONTROL\".</p>",
       "exception":true
     },
+    "InvalidDeploymentTargetIdException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p> The target ID provide was not valid. </p>",
+      "exception":true
+    },
+    "InvalidDeploymentWaitTypeException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p> The wait type is invalid. </p>",
+      "exception":true
+    },
     "InvalidEC2TagCombinationException":{
       "type":"structure",
       "members":{
@@ -2624,6 +3019,13 @@
       "members":{
       },
       "documentation":"<p>The tag was specified in an invalid format.</p>",
+      "exception":true
+    },
+    "InvalidECSServiceException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p> The Amazon ECS service identifier is not valid. </p>",
       "exception":true
     },
     "InvalidFileExistsBehaviorException":{
@@ -2808,6 +3210,27 @@
       "documentation":"<p>The specified tag filter was specified in an invalid format.</p>",
       "exception":true
     },
+    "InvalidTargetException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p> A target is not valid. </p>",
+      "exception":true
+    },
+    "InvalidTargetFilterNameException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p> The target filter name is invalid. </p>",
+      "exception":true
+    },
+    "InvalidTargetGroupPairException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p> A target group pair associated with this deployment is not valid. </p>",
+      "exception":true
+    },
     "InvalidTargetInstancesException":{
       "type":"structure",
       "members":{
@@ -2844,12 +3267,42 @@
       "exception":true
     },
     "Key":{"type":"string"},
+    "LambdaTarget":{
+      "type":"structure",
+      "members":{
+        "deploymentId":{
+          "shape":"DeploymentId",
+          "documentation":"<p> The unique ID of a deployment. </p>"
+        },
+        "targetId":{
+          "shape":"TargetId",
+          "documentation":"<p> The unique ID of a deployment target that has a type of <code>lambdaTarget</code>. </p>"
+        },
+        "targetArn":{
+          "shape":"TargetArn",
+          "documentation":"<p> The ARN of the target. </p>"
+        },
+        "status":{
+          "shape":"TargetStatus",
+          "documentation":"<p> The status an AWS Lambda deployment's target Lambda function. </p>"
+        },
+        "lastUpdatedAt":{
+          "shape":"Time",
+          "documentation":"<p> The date and time when the target Lambda function was updated by a deployment. </p>"
+        },
+        "lifecycleEvents":{
+          "shape":"LifecycleEventList",
+          "documentation":"<p> The lifecycle events of the deployment to this target Lambda function. </p>"
+        }
+      },
+      "documentation":"<p> Information about the target AWS Lambda function during an AWS Lambda deployment. </p>"
+    },
     "LastDeploymentInfo":{
       "type":"structure",
       "members":{
         "deploymentId":{
           "shape":"DeploymentId",
-          "documentation":"<p>The deployment ID.</p>"
+          "documentation":"<p> The unique ID of a deployment. </p>"
         },
         "status":{
           "shape":"DeploymentStatus",
@@ -2941,34 +3394,34 @@
       "members":{
         "applicationName":{
           "shape":"ApplicationName",
-          "documentation":"<p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>"
+          "documentation":"<p> The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account. </p>"
         },
         "sortBy":{
           "shape":"ApplicationRevisionSortBy",
-          "documentation":"<p>The column name to use to sort the list results:</p> <ul> <li> <p>registerTime: Sort by the time the revisions were registered with AWS CodeDeploy.</p> </li> <li> <p>firstUsedTime: Sort by the time the revisions were first used in a deployment.</p> </li> <li> <p>lastUsedTime: Sort by the time the revisions were last used in a deployment.</p> </li> </ul> <p>If not specified or set to null, the results will be returned in an arbitrary order.</p>"
+          "documentation":"<p>The column name to use to sort the list results:</p> <ul> <li> <p>registerTime: Sort by the time the revisions were registered with AWS CodeDeploy.</p> </li> <li> <p>firstUsedTime: Sort by the time the revisions were first used in a deployment.</p> </li> <li> <p>lastUsedTime: Sort by the time the revisions were last used in a deployment.</p> </li> </ul> <p> If not specified or set to null, the results will be returned in an arbitrary order. </p>"
         },
         "sortOrder":{
           "shape":"SortOrder",
-          "documentation":"<p>The order in which to sort the list results:</p> <ul> <li> <p>ascending: ascending order.</p> </li> <li> <p>descending: descending order.</p> </li> </ul> <p>If not specified, the results will be sorted in ascending order.</p> <p>If set to null, the results will be sorted in an arbitrary order.</p>"
+          "documentation":"<p> The order in which to sort the list results: </p> <ul> <li> <p>ascending: ascending order.</p> </li> <li> <p>descending: descending order.</p> </li> </ul> <p>If not specified, the results will be sorted in ascending order.</p> <p>If set to null, the results will be sorted in an arbitrary order.</p>"
         },
         "s3Bucket":{
           "shape":"S3Bucket",
-          "documentation":"<p>An Amazon S3 bucket name to limit the search for revisions.</p> <p>If set to null, all of the user's buckets will be searched.</p>"
+          "documentation":"<p> An Amazon S3 bucket name to limit the search for revisions. </p> <p> If set to null, all of the user's buckets are searched. </p>"
         },
         "s3KeyPrefix":{
           "shape":"S3Key",
-          "documentation":"<p>A key prefix for the set of Amazon S3 objects to limit the search for revisions.</p>"
+          "documentation":"<p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>"
         },
         "deployed":{
           "shape":"ListStateFilterAction",
-          "documentation":"<p>Whether to list revisions based on whether the revision is the target revision of an deployment group:</p> <ul> <li> <p>include: List revisions that are target revisions of a deployment group.</p> </li> <li> <p>exclude: Do not list revisions that are target revisions of a deployment group.</p> </li> <li> <p>ignore: List all revisions.</p> </li> </ul>"
+          "documentation":"<p> Whether to list revisions based on whether the revision is the target revision of an deployment group: </p> <ul> <li> <p>include: List revisions that are target revisions of a deployment group.</p> </li> <li> <p>exclude: Do not list revisions that are target revisions of a deployment group.</p> </li> <li> <p>ignore: List all revisions.</p> </li> </ul>"
         },
         "nextToken":{
           "shape":"NextToken",
-          "documentation":"<p>An identifier returned from the previous list application revisions call. It can be used to return the next set of applications in the list.</p>"
+          "documentation":"<p>An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to return the next set of applications in the list.</p>"
         }
       },
-      "documentation":"<p>Represents the input of a ListApplicationRevisions operation.</p>"
+      "documentation":"<p> Represents the input of a ListApplicationRevisions operation. </p>"
     },
     "ListApplicationRevisionsOutput":{
       "type":"structure",
@@ -3013,7 +3466,7 @@
       "members":{
         "nextToken":{
           "shape":"NextToken",
-          "documentation":"<p>An identifier returned from the previous list deployment configurations call. It can be used to return the next set of deployment configurations in the list. </p>"
+          "documentation":"<p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to return the next set of deployment configurations in the list. </p>"
         }
       },
       "documentation":"<p>Represents the input of a ListDeploymentConfigs operation.</p>"
@@ -3071,7 +3524,7 @@
       "members":{
         "deploymentId":{
           "shape":"DeploymentId",
-          "documentation":"<p>The unique ID of a deployment.</p>"
+          "documentation":"<p> The unique ID of a deployment. </p>"
         },
         "nextToken":{
           "shape":"NextToken",
@@ -3086,7 +3539,7 @@
           "documentation":"<p>The set of instances in a blue/green deployment, either those in the original environment (\"BLUE\") or those in the replacement environment (\"GREEN\"), for which you want to view instance information.</p>"
         }
       },
-      "documentation":"<p>Represents the input of a ListDeploymentInstances operation.</p>"
+      "documentation":"<p> Represents the input of a ListDeploymentInstances operation. </p>"
     },
     "ListDeploymentInstancesOutput":{
       "type":"structure",
@@ -3101,6 +3554,36 @@
         }
       },
       "documentation":"<p>Represents the output of a ListDeploymentInstances operation.</p>"
+    },
+    "ListDeploymentTargetsInput":{
+      "type":"structure",
+      "members":{
+        "deploymentId":{
+          "shape":"DeploymentId",
+          "documentation":"<p> The unique ID of a deployment. </p>"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "documentation":"<p> A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list. </p>"
+        },
+        "targetFilters":{
+          "shape":"TargetFilters",
+          "documentation":"<p> A key used to filter the returned targets. </p>"
+        }
+      }
+    },
+    "ListDeploymentTargetsOutput":{
+      "type":"structure",
+      "members":{
+        "targetIds":{
+          "shape":"TargetIdList",
+          "documentation":"<p> The unique IDs of deployment targets. </p>"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "documentation":"<p> If a large amount of information is returned, a token identifier will also be returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>"
+        }
+      }
     },
     "ListDeploymentsInput":{
       "type":"structure",
@@ -3206,6 +3689,11 @@
         "ignore"
       ]
     },
+    "ListenerArn":{"type":"string"},
+    "ListenerArnList":{
+      "type":"list",
+      "member":{"shape":"ListenerArn"}
+    },
     "LoadBalancerInfo":{
       "type":"structure",
       "members":{
@@ -3216,6 +3704,10 @@
         "targetGroupInfoList":{
           "shape":"TargetGroupInfoList",
           "documentation":"<p>An array containing information about the target group to use for load balancing in a deployment. In Elastic Load Balancing, target groups are used with Application Load Balancers.</p> <note> <p> Adding more than one target group to the array is not supported. </p> </note>"
+        },
+        "targetGroupPairInfoList":{
+          "shape":"TargetGroupPairInfoList",
+          "documentation":"<p> The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a maximum size of one. </p>"
         }
       },
       "documentation":"<p>Information about the Elastic Load Balancing load balancer or target group used in a deployment.</p>"
@@ -3280,11 +3772,11 @@
       "members":{
         "deploymentId":{
           "shape":"DeploymentId",
-          "documentation":"<p>The ID of the deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event.</p>"
+          "documentation":"<p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>"
         },
         "lifecycleEventHookExecutionId":{
           "shape":"LifecycleEventHookExecutionId",
-          "documentation":"<p>The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file.</p>"
+          "documentation":"<p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>"
         },
         "status":{
           "shape":"LifecycleEventStatus",
@@ -3310,10 +3802,12 @@
         },
         "sha256":{
           "shape":"RawStringSha256",
-          "documentation":"<p>The SHA256 hash value of the revision that is specified as a RawString.</p>"
+          "documentation":"<p>The SHA256 hash value of the revision content.</p>"
         }
       },
-      "documentation":"<p>A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda deployments, the revision is the same as the AppSpec file.</p>"
+      "documentation":"<p>A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda deployments, the revision is the same as the AppSpec file.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"RawString and String revision type are deprecated, use AppSpecContent type instead."
     },
     "RawStringContent":{"type":"string"},
     "RawStringSha256":{"type":"string"},
@@ -3434,6 +3928,10 @@
         "string":{
           "shape":"RawString",
           "documentation":"<p>Information about the location of an AWS Lambda deployment revision stored as a RawString.</p>"
+        },
+        "appSpecContent":{
+          "shape":"AppSpecContent",
+          "documentation":"<p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. </p>"
         }
       },
       "documentation":"<p>Information about the location of an application revision.</p>"
@@ -3447,7 +3945,8 @@
       "enum":[
         "S3",
         "GitHub",
-        "String"
+        "String",
+        "AppSpecContent"
       ]
     },
     "RevisionRequiredException":{
@@ -3517,7 +4016,7 @@
       "members":{
         "deploymentId":{
           "shape":"DeploymentId",
-          "documentation":"<p>The ID of the blue/green deployment for which you want to skip the instance termination wait time.</p>"
+          "documentation":"<p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>"
         }
       }
     },
@@ -3534,14 +4033,14 @@
       "members":{
         "deploymentId":{
           "shape":"DeploymentId",
-          "documentation":"<p>The unique ID of a deployment.</p>"
+          "documentation":"<p> The unique ID of a deployment. </p>"
         },
         "autoRollbackEnabled":{
           "shape":"NullableBoolean",
-          "documentation":"<p>Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision.</p>"
+          "documentation":"<p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>"
         }
       },
-      "documentation":"<p>Represents the input of a StopDeployment operation.</p>"
+      "documentation":"<p> Represents the input of a StopDeployment operation. </p>"
     },
     "StopDeploymentOutput":{
       "type":"structure",
@@ -3555,7 +4054,7 @@
           "documentation":"<p>An accompanying status message.</p>"
         }
       },
-      "documentation":"<p>Represents the output of a StopDeployment operation.</p>"
+      "documentation":"<p> Represents the output of a StopDeployment operation. </p>"
     },
     "StopStatus":{
       "type":"string",
@@ -3633,6 +4132,19 @@
       "documentation":"<p>The number of tag groups included in the tag set list exceeded the maximum allowed limit of 3.</p>",
       "exception":true
     },
+    "TargetArn":{"type":"string"},
+    "TargetFilterName":{
+      "type":"string",
+      "enum":[
+        "TargetStatus",
+        "ServerInstanceLabel"
+      ]
+    },
+    "TargetFilters":{
+      "type":"map",
+      "key":{"shape":"TargetFilterName"},
+      "value":{"shape":"FilterValueList"}
+    },
     "TargetGroupInfo":{
       "type":"structure",
       "members":{
@@ -3648,6 +4160,33 @@
       "member":{"shape":"TargetGroupInfo"}
     },
     "TargetGroupName":{"type":"string"},
+    "TargetGroupPairInfo":{
+      "type":"structure",
+      "members":{
+        "targetGroups":{
+          "shape":"TargetGroupInfoList",
+          "documentation":"<p> One pair of target groups. One is associated with the original task set. The second target is associated with the task set that serves traffic after the deployment completes. </p>"
+        },
+        "prodTrafficRoute":{
+          "shape":"TrafficRoute",
+          "documentation":"<p> The path used by a load balancer to route production traffic when an Amazon ECS deployment is complete. </p>"
+        },
+        "testTrafficRoute":{
+          "shape":"TrafficRoute",
+          "documentation":"<p> An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation can happen while test traffic is served during a deployment. </p>"
+        }
+      },
+      "documentation":"<p> Information about two target groups and how traffic routes during an Amazon ECS deployment. An optional test traffic route can be specified. </p>"
+    },
+    "TargetGroupPairInfoList":{
+      "type":"list",
+      "member":{"shape":"TargetGroupPairInfo"}
+    },
+    "TargetId":{"type":"string"},
+    "TargetIdList":{
+      "type":"list",
+      "member":{"shape":"TargetId"}
+    },
     "TargetInstances":{
       "type":"structure",
       "members":{
@@ -3666,6 +4205,25 @@
       },
       "documentation":"<p>Information about the instances to be used in the replacement environment in a blue/green deployment.</p>"
     },
+    "TargetLabel":{
+      "type":"string",
+      "enum":[
+        "Blue",
+        "Green"
+      ]
+    },
+    "TargetStatus":{
+      "type":"string",
+      "enum":[
+        "Pending",
+        "InProgress",
+        "Succeeded",
+        "Failed",
+        "Skipped",
+        "Unknown",
+        "Ready"
+      ]
+    },
     "ThrottlingException":{
       "type":"structure",
       "members":{
@@ -3673,6 +4231,7 @@
       "documentation":"<p>An API function was called too frequently.</p>",
       "exception":true
     },
+    "Time":{"type":"timestamp"},
     "TimeBasedCanary":{
       "type":"structure",
       "members":{
@@ -3716,6 +4275,16 @@
       "documentation":"<p>Information about a time range.</p>"
     },
     "Timestamp":{"type":"timestamp"},
+    "TrafficRoute":{
+      "type":"structure",
+      "members":{
+        "listenerArns":{
+          "shape":"ListenerArnList",
+          "documentation":"<p> The ARN of one listener. The listener identifies the route between a target group and a load balancer. This is an array of strings with a maximum size of one. </p>"
+        }
+      },
+      "documentation":"<p> Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group. </p>"
+    },
     "TrafficRoutingConfig":{
       "type":"structure",
       "members":{
@@ -3742,6 +4311,7 @@
         "AllAtOnce"
       ]
     },
+    "TrafficWeight":{"type":"double"},
     "TriggerConfig":{
       "type":"structure",
       "members":{
@@ -3879,6 +4449,10 @@
         "ec2TagSet":{
           "shape":"EC2TagSet",
           "documentation":"<p>Information about groups of tags applied to on-premises instances. The deployment group will include only EC2 instances identified by all the tag groups.</p>"
+        },
+        "ecsServices":{
+          "shape":"ECSServiceList",
+          "documentation":"<p> The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>"
         },
         "onPremisesTagSet":{
           "shape":"OnPremisesTagSet",

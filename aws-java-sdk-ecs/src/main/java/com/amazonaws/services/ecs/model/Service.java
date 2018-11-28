@@ -58,8 +58,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
      * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
      * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
-     * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
-     * associated with an elastic network interface, not an Amazon EC2 instance.
+     * target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are associated with
+     * an elastic network interface, not an Amazon EC2 instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LoadBalancer> loadBalancers;
@@ -94,13 +94,17 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private Integer pendingCount;
     /**
      * <p>
-     * The launch type on which your service is running.
+     * The launch type on which your service is running. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String launchType;
     /**
      * <p>
-     * The platform version on which your task is running. For more information, see <a
+     * The platform version on which your tasks in the service are running. A platform version is only specified for
+     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -120,6 +124,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private DeploymentConfiguration deploymentConfiguration;
+    /**
+     * <p>
+     * Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes
+     * details such as the desired number of tasks, how many tasks are running, and whether the task set serves
+     * production traffic.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TaskSet> taskSets;
     /**
      * <p>
      * The current state of deployments for the service.
@@ -174,7 +186,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -201,6 +213,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      */
     private String schedulingStrategy;
+    /**
+     * <p>
+     * The deployment controller type the service is using.
+     * </p>
+     */
+    private DeploymentController deploymentController;
     /**
      * <p>
      * The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key
@@ -387,8 +405,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
      * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
      * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
-     * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
-     * associated with an elastic network interface, not an Amazon EC2 instance.
+     * target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are associated with
+     * an elastic network interface, not an Amazon EC2 instance.
      * </p>
      * 
      * @return A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container
@@ -398,9 +416,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *         Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
      *         launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
      *         are not supported. Also, when you create any target groups for these services, you must choose
-     *         <code>ip</code> as the target type, not <code>instance</code>, because tasks that use the
-     *         <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
-     *         instance.
+     *         <code>ip</code> as the target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code>
+     *         network mode are associated with an elastic network interface, not an Amazon EC2 instance.
      */
 
     public java.util.List<LoadBalancer> getLoadBalancers() {
@@ -419,8 +436,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
      * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
      * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
-     * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
-     * associated with an elastic network interface, not an Amazon EC2 instance.
+     * target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are associated with
+     * an elastic network interface, not an Amazon EC2 instance.
      * </p>
      * 
      * @param loadBalancers
@@ -431,9 +448,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
      *        launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
      *        are not supported. Also, when you create any target groups for these services, you must choose
-     *        <code>ip</code> as the target type, not <code>instance</code>, because tasks that use the
-     *        <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
-     *        instance.
+     *        <code>ip</code> as the target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code>
+     *        network mode are associated with an elastic network interface, not an Amazon EC2 instance.
      */
 
     public void setLoadBalancers(java.util.Collection<LoadBalancer> loadBalancers) {
@@ -454,8 +470,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
      * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
      * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
-     * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
-     * associated with an elastic network interface, not an Amazon EC2 instance.
+     * target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are associated with
+     * an elastic network interface, not an Amazon EC2 instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -471,9 +487,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
      *        launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
      *        are not supported. Also, when you create any target groups for these services, you must choose
-     *        <code>ip</code> as the target type, not <code>instance</code>, because tasks that use the
-     *        <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
-     *        instance.
+     *        <code>ip</code> as the target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code>
+     *        network mode are associated with an elastic network interface, not an Amazon EC2 instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -496,8 +511,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
      * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
      * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
-     * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
-     * associated with an elastic network interface, not an Amazon EC2 instance.
+     * target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are associated with
+     * an elastic network interface, not an Amazon EC2 instance.
      * </p>
      * 
      * @param loadBalancers
@@ -508,9 +523,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
      *        launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
      *        are not supported. Also, when you create any target groups for these services, you must choose
-     *        <code>ip</code> as the target type, not <code>instance</code>, because tasks that use the
-     *        <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
-     *        instance.
+     *        <code>ip</code> as the target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code>
+     *        network mode are associated with an elastic network interface, not an Amazon EC2 instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -761,11 +775,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your service is running.
+     * The launch type on which your service is running. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which your service is running.
+     *        The launch type on which your service is running. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
 
@@ -775,10 +793,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your service is running.
+     * The launch type on which your service is running. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The launch type on which your service is running.
+     * @return The launch type on which your service is running. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *         Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
 
@@ -788,11 +810,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your service is running.
+     * The launch type on which your service is running. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which your service is running.
+     *        The launch type on which your service is running. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -804,11 +830,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your service is running.
+     * The launch type on which your service is running. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which your service is running.
+     *        The launch type on which your service is running. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -820,13 +850,17 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which your task is running. For more information, see <a
+     * The platform version on which your tasks in the service are running. A platform version is only specified for
+     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which your task is running. For more information, see <a
+     *        The platform version on which your tasks in the service are running. A platform version is only specified
+     *        for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version
+     *        is used by default. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -837,12 +871,16 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which your task is running. For more information, see <a
+     * The platform version on which your tasks in the service are running. A platform version is only specified for
+     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The platform version on which your task is running. For more information, see <a
+     * @return The platform version on which your tasks in the service are running. A platform version is only specified
+     *         for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform
+     *         version is used by default. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *         Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -853,13 +891,17 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which your task is running. For more information, see <a
+     * The platform version on which your tasks in the service are running. A platform version is only specified for
+     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which your task is running. For more information, see <a
+     *        The platform version on which your tasks in the service are running. A platform version is only specified
+     *        for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version
+     *        is used by default. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -959,6 +1001,95 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     public Service withDeploymentConfiguration(DeploymentConfiguration deploymentConfiguration) {
         setDeploymentConfiguration(deploymentConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes
+     * details such as the desired number of tasks, how many tasks are running, and whether the task set serves
+     * production traffic.
+     * </p>
+     * 
+     * @return Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set
+     *         includes details such as the desired number of tasks, how many tasks are running, and whether the task
+     *         set serves production traffic.
+     */
+
+    public java.util.List<TaskSet> getTaskSets() {
+        if (taskSets == null) {
+            taskSets = new com.amazonaws.internal.SdkInternalList<TaskSet>();
+        }
+        return taskSets;
+    }
+
+    /**
+     * <p>
+     * Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes
+     * details such as the desired number of tasks, how many tasks are running, and whether the task set serves
+     * production traffic.
+     * </p>
+     * 
+     * @param taskSets
+     *        Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set
+     *        includes details such as the desired number of tasks, how many tasks are running, and whether the task set
+     *        serves production traffic.
+     */
+
+    public void setTaskSets(java.util.Collection<TaskSet> taskSets) {
+        if (taskSets == null) {
+            this.taskSets = null;
+            return;
+        }
+
+        this.taskSets = new com.amazonaws.internal.SdkInternalList<TaskSet>(taskSets);
+    }
+
+    /**
+     * <p>
+     * Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes
+     * details such as the desired number of tasks, how many tasks are running, and whether the task set serves
+     * production traffic.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTaskSets(java.util.Collection)} or {@link #withTaskSets(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param taskSets
+     *        Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set
+     *        includes details such as the desired number of tasks, how many tasks are running, and whether the task set
+     *        serves production traffic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withTaskSets(TaskSet... taskSets) {
+        if (this.taskSets == null) {
+            setTaskSets(new com.amazonaws.internal.SdkInternalList<TaskSet>(taskSets.length));
+        }
+        for (TaskSet ele : taskSets) {
+            this.taskSets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes
+     * details such as the desired number of tasks, how many tasks are running, and whether the task set serves
+     * production traffic.
+     * </p>
+     * 
+     * @param taskSets
+     *        Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set
+     *        includes details such as the desired number of tasks, how many tasks are running, and whether the task set
+     *        serves production traffic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withTaskSets(java.util.Collection<TaskSet> taskSets) {
+        setTaskSets(taskSets);
         return this;
     }
 
@@ -1435,7 +1566,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -1463,7 +1594,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param schedulingStrategy
      *        The scheduling strategy to use for the service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *        <p>
      *        There are two service scheduler strategies available:
      *        </p>
@@ -1496,7 +1627,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -1523,7 +1654,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @return The scheduling strategy to use for the service. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *         <p>
      *         There are two service scheduler strategies available:
      *         </p>
@@ -1556,7 +1687,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -1584,7 +1715,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param schedulingStrategy
      *        The scheduling strategy to use for the service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *        <p>
      *        There are two service scheduler strategies available:
      *        </p>
@@ -1619,7 +1750,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -1647,7 +1778,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param schedulingStrategy
      *        The scheduling strategy to use for the service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *        <p>
      *        There are two service scheduler strategies available:
      *        </p>
@@ -1676,6 +1807,46 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     public Service withSchedulingStrategy(SchedulingStrategy schedulingStrategy) {
         this.schedulingStrategy = schedulingStrategy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The deployment controller type the service is using.
+     * </p>
+     * 
+     * @param deploymentController
+     *        The deployment controller type the service is using.
+     */
+
+    public void setDeploymentController(DeploymentController deploymentController) {
+        this.deploymentController = deploymentController;
+    }
+
+    /**
+     * <p>
+     * The deployment controller type the service is using.
+     * </p>
+     * 
+     * @return The deployment controller type the service is using.
+     */
+
+    public DeploymentController getDeploymentController() {
+        return this.deploymentController;
+    }
+
+    /**
+     * <p>
+     * The deployment controller type the service is using.
+     * </p>
+     * 
+     * @param deploymentController
+     *        The deployment controller type the service is using.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withDeploymentController(DeploymentController deploymentController) {
+        setDeploymentController(deploymentController);
         return this;
     }
 
@@ -1980,6 +2151,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             sb.append("TaskDefinition: ").append(getTaskDefinition()).append(",");
         if (getDeploymentConfiguration() != null)
             sb.append("DeploymentConfiguration: ").append(getDeploymentConfiguration()).append(",");
+        if (getTaskSets() != null)
+            sb.append("TaskSets: ").append(getTaskSets()).append(",");
         if (getDeployments() != null)
             sb.append("Deployments: ").append(getDeployments()).append(",");
         if (getRoleArn() != null)
@@ -1998,6 +2171,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             sb.append("HealthCheckGracePeriodSeconds: ").append(getHealthCheckGracePeriodSeconds()).append(",");
         if (getSchedulingStrategy() != null)
             sb.append("SchedulingStrategy: ").append(getSchedulingStrategy()).append(",");
+        if (getDeploymentController() != null)
+            sb.append("DeploymentController: ").append(getDeploymentController()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getCreatedBy() != null)
@@ -2072,6 +2247,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDeploymentConfiguration() != null && other.getDeploymentConfiguration().equals(this.getDeploymentConfiguration()) == false)
             return false;
+        if (other.getTaskSets() == null ^ this.getTaskSets() == null)
+            return false;
+        if (other.getTaskSets() != null && other.getTaskSets().equals(this.getTaskSets()) == false)
+            return false;
         if (other.getDeployments() == null ^ this.getDeployments() == null)
             return false;
         if (other.getDeployments() != null && other.getDeployments().equals(this.getDeployments()) == false)
@@ -2108,6 +2287,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         if (other.getSchedulingStrategy() == null ^ this.getSchedulingStrategy() == null)
             return false;
         if (other.getSchedulingStrategy() != null && other.getSchedulingStrategy().equals(this.getSchedulingStrategy()) == false)
+            return false;
+        if (other.getDeploymentController() == null ^ this.getDeploymentController() == null)
+            return false;
+        if (other.getDeploymentController() != null && other.getDeploymentController().equals(this.getDeploymentController()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
@@ -2146,6 +2329,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPlatformVersion() == null) ? 0 : getPlatformVersion().hashCode());
         hashCode = prime * hashCode + ((getTaskDefinition() == null) ? 0 : getTaskDefinition().hashCode());
         hashCode = prime * hashCode + ((getDeploymentConfiguration() == null) ? 0 : getDeploymentConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getTaskSets() == null) ? 0 : getTaskSets().hashCode());
         hashCode = prime * hashCode + ((getDeployments() == null) ? 0 : getDeployments().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode());
@@ -2155,6 +2339,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckGracePeriodSeconds() == null) ? 0 : getHealthCheckGracePeriodSeconds().hashCode());
         hashCode = prime * hashCode + ((getSchedulingStrategy() == null) ? 0 : getSchedulingStrategy().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentController() == null) ? 0 : getDeploymentController().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
         hashCode = prime * hashCode + ((getEnableECSManagedTags() == null) ? 0 : getEnableECSManagedTags().hashCode());

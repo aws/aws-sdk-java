@@ -26,6 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RawString" target="_top">AWS API
  *      Documentation</a>
  */
+@Deprecated
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RawString implements Serializable, Cloneable, StructuredPojo {
 
@@ -38,7 +39,7 @@ public class RawString implements Serializable, Cloneable, StructuredPojo {
     private String content;
     /**
      * <p>
-     * The SHA256 hash value of the revision that is specified as a RawString.
+     * The SHA256 hash value of the revision content.
      * </p>
      */
     private String sha256;
@@ -91,11 +92,11 @@ public class RawString implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SHA256 hash value of the revision that is specified as a RawString.
+     * The SHA256 hash value of the revision content.
      * </p>
      * 
      * @param sha256
-     *        The SHA256 hash value of the revision that is specified as a RawString.
+     *        The SHA256 hash value of the revision content.
      */
 
     public void setSha256(String sha256) {
@@ -104,10 +105,10 @@ public class RawString implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SHA256 hash value of the revision that is specified as a RawString.
+     * The SHA256 hash value of the revision content.
      * </p>
      * 
-     * @return The SHA256 hash value of the revision that is specified as a RawString.
+     * @return The SHA256 hash value of the revision content.
      */
 
     public String getSha256() {
@@ -116,11 +117,11 @@ public class RawString implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SHA256 hash value of the revision that is specified as a RawString.
+     * The SHA256 hash value of the revision content.
      * </p>
      * 
      * @param sha256
-     *        The SHA256 hash value of the revision that is specified as a RawString.
+     *        The SHA256 hash value of the revision content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

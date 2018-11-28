@@ -28,6 +28,26 @@ public class AbstractAmazonTranslate implements AmazonTranslate {
     }
 
     @Override
+    public DeleteTerminologyResult deleteTerminology(DeleteTerminologyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetTerminologyResult getTerminology(GetTerminologyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ImportTerminologyResult importTerminology(ImportTerminologyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTerminologiesResult listTerminologies(ListTerminologiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TranslateTextResult translateText(TranslateTextRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

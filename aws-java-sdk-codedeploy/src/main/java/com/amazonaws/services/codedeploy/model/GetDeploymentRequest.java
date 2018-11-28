@@ -30,18 +30,18 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A deployment ID associated with the applicable IAM user or AWS account.
+     * The unique ID of a deployment associated with the applicable IAM user or AWS account.
      * </p>
      */
     private String deploymentId;
 
     /**
      * <p>
-     * A deployment ID associated with the applicable IAM user or AWS account.
+     * The unique ID of a deployment associated with the applicable IAM user or AWS account.
      * </p>
      * 
      * @param deploymentId
-     *        A deployment ID associated with the applicable IAM user or AWS account.
+     *        The unique ID of a deployment associated with the applicable IAM user or AWS account.
      */
 
     public void setDeploymentId(String deploymentId) {
@@ -50,10 +50,10 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A deployment ID associated with the applicable IAM user or AWS account.
+     * The unique ID of a deployment associated with the applicable IAM user or AWS account.
      * </p>
      * 
-     * @return A deployment ID associated with the applicable IAM user or AWS account.
+     * @return The unique ID of a deployment associated with the applicable IAM user or AWS account.
      */
 
     public String getDeploymentId() {
@@ -62,11 +62,11 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A deployment ID associated with the applicable IAM user or AWS account.
+     * The unique ID of a deployment associated with the applicable IAM user or AWS account.
      * </p>
      * 
      * @param deploymentId
-     *        A deployment ID associated with the applicable IAM user or AWS account.
+     *        The unique ID of a deployment associated with the applicable IAM user or AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

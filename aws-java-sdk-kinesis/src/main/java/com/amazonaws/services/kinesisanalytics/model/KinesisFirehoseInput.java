@@ -39,7 +39,7 @@ public class KinesisFirehoseInput implements Serializable, Cloneable, Structured
     /**
      * <p>
      * ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to
-     * make sure the role has necessary permissions to access the stream.
+     * make sure that the role has the necessary permissions to access the stream.
      * </p>
      */
     private String roleARN;
@@ -87,12 +87,12 @@ public class KinesisFirehoseInput implements Serializable, Cloneable, Structured
     /**
      * <p>
      * ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to
-     * make sure the role has necessary permissions to access the stream.
+     * make sure that the role has the necessary permissions to access the stream.
      * </p>
      * 
      * @param roleARN
      *        ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need
-     *        to make sure the role has necessary permissions to access the stream.
+     *        to make sure that the role has the necessary permissions to access the stream.
      */
 
     public void setRoleARN(String roleARN) {
@@ -102,11 +102,11 @@ public class KinesisFirehoseInput implements Serializable, Cloneable, Structured
     /**
      * <p>
      * ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to
-     * make sure the role has necessary permissions to access the stream.
+     * make sure that the role has the necessary permissions to access the stream.
      * </p>
      * 
      * @return ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You
-     *         need to make sure the role has necessary permissions to access the stream.
+     *         need to make sure that the role has the necessary permissions to access the stream.
      */
 
     public String getRoleARN() {
@@ -116,12 +116,12 @@ public class KinesisFirehoseInput implements Serializable, Cloneable, Structured
     /**
      * <p>
      * ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to
-     * make sure the role has necessary permissions to access the stream.
+     * make sure that the role has the necessary permissions to access the stream.
      * </p>
      * 
      * @param roleARN
      *        ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need
-     *        to make sure the role has necessary permissions to access the stream.
+     *        to make sure that the role has the necessary permissions to access the stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

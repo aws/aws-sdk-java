@@ -60,6 +60,11 @@ public class TranslateTextResultJsonUnmarshaller implements Unmarshaller<Transla
                     context.nextToken();
                     translateTextResult.setTargetLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AppliedTerminologies", targetDepth)) {
+                    context.nextToken();
+                    translateTextResult.setAppliedTerminologies(new ListUnmarshaller<AppliedTerminology>(AppliedTerminologyJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

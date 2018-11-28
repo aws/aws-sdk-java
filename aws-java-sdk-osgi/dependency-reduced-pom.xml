@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.457</version>
+    <version>1.11.458</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.457</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.458</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.457</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.458</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -131,6 +131,18 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>AWS MediaConnect</title>
+                      <packages>com.amazonaws.services.mediaconnect*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon Kinesis Analytics</title>
+                      <packages>com.amazonaws.services.kinesisanalyticsv2*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Comprehend Medical</title>
+                      <packages>com.amazonaws.services.comprehendmedical*</packages>
+                    </group>
                     <group>
                       <title>AWS Global Accelerator</title>
                       <packages>com.amazonaws.services.globalaccelerator*</packages>
@@ -850,10 +862,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.457</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.458</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.457</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.458</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -867,6 +879,18 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>AWS MediaConnect</title>
+                      <packages>com.amazonaws.services.mediaconnect*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon Kinesis Analytics</title>
+                      <packages>com.amazonaws.services.kinesisanalyticsv2*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Comprehend Medical</title>
+                      <packages>com.amazonaws.services.comprehendmedical*</packages>
+                    </group>
                     <group>
                       <title>AWS Global Accelerator</title>
                       <packages>com.amazonaws.services.globalaccelerator*</packages>
@@ -1582,10 +1606,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.457</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.458</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.457</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.458</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1599,6 +1623,18 @@
                 </taglet>
               </taglets>
               <groups>
+                <group>
+                  <title>AWS MediaConnect</title>
+                  <packages>com.amazonaws.services.mediaconnect*</packages>
+                </group>
+                <group>
+                  <title>Amazon Kinesis Analytics</title>
+                  <packages>com.amazonaws.services.kinesisanalyticsv2*</packages>
+                </group>
+                <group>
+                  <title>AWS Comprehend Medical</title>
+                  <packages>com.amazonaws.services.comprehendmedical*</packages>
+                </group>
                 <group>
                   <title>AWS Global Accelerator</title>
                   <packages>com.amazonaws.services.globalaccelerator*</packages>
@@ -2527,7 +2563,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.457-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.458-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>

@@ -64,6 +64,10 @@ public class RevisionLocationJsonUnmarshaller implements Unmarshaller<RevisionLo
                     context.nextToken();
                     revisionLocation.setString(RawStringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("appSpecContent", targetDepth)) {
+                    context.nextToken();
+                    revisionLocation.setAppSpecContent(AppSpecContentJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

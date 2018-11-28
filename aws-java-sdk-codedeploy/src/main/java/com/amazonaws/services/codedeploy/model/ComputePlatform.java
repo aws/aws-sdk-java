@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ComputePlatform {
 
     Server("Server"),
-    Lambda("Lambda");
+    Lambda("Lambda"),
+    ECS("ECS");
 
     private String value;
 

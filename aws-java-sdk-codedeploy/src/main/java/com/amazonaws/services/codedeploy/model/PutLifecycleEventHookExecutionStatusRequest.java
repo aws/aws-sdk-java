@@ -27,7 +27,7 @@ public class PutLifecycleEventHookExecutionStatusRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The ID of the deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event.
+     * The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event.
      * </p>
      */
     private String deploymentId;
@@ -48,11 +48,12 @@ public class PutLifecycleEventHookExecutionStatusRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The ID of the deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event.
+     * The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event.
      * </p>
      * 
      * @param deploymentId
-     *        The ID of the deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event.
+     *        The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle
+     *        event.
      */
 
     public void setDeploymentId(String deploymentId) {
@@ -61,10 +62,11 @@ public class PutLifecycleEventHookExecutionStatusRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The ID of the deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event.
+     * The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event.
      * </p>
      * 
-     * @return The ID of the deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event.
+     * @return The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle
+     *         event.
      */
 
     public String getDeploymentId() {
@@ -73,11 +75,12 @@ public class PutLifecycleEventHookExecutionStatusRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The ID of the deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event.
+     * The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event.
      * </p>
      * 
      * @param deploymentId
-     *        The ID of the deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event.
+     *        The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle
+     *        event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

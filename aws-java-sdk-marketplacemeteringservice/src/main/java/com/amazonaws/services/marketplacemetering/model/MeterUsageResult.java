@@ -23,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MeterUsageResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Metering record id.
+     * </p>
+     */
     private String meteringRecordId;
 
     /**
+     * <p>
+     * Metering record id.
+     * </p>
+     * 
      * @param meteringRecordId
+     *        Metering record id.
      */
 
     public void setMeteringRecordId(String meteringRecordId) {
@@ -34,7 +44,11 @@ public class MeterUsageResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * @return
+     * <p>
+     * Metering record id.
+     * </p>
+     * 
+     * @return Metering record id.
      */
 
     public String getMeteringRecordId() {
@@ -42,7 +56,12 @@ public class MeterUsageResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * Metering record id.
+     * </p>
+     * 
      * @param meteringRecordId
+     *        Metering record id.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

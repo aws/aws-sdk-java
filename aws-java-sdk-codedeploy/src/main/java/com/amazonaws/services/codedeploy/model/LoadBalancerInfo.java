@@ -52,6 +52,13 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
      * </note>
      */
     private com.amazonaws.internal.SdkInternalList<TargetGroupInfo> targetGroupInfoList;
+    /**
+     * <p>
+     * The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a maximum
+     * size of one.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TargetGroupPairInfo> targetGroupPairInfoList;
 
     /**
      * <p>
@@ -280,6 +287,87 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a maximum
+     * size of one.
+     * </p>
+     * 
+     * @return The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a
+     *         maximum size of one.
+     */
+
+    public java.util.List<TargetGroupPairInfo> getTargetGroupPairInfoList() {
+        if (targetGroupPairInfoList == null) {
+            targetGroupPairInfoList = new com.amazonaws.internal.SdkInternalList<TargetGroupPairInfo>();
+        }
+        return targetGroupPairInfoList;
+    }
+
+    /**
+     * <p>
+     * The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a maximum
+     * size of one.
+     * </p>
+     * 
+     * @param targetGroupPairInfoList
+     *        The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a
+     *        maximum size of one.
+     */
+
+    public void setTargetGroupPairInfoList(java.util.Collection<TargetGroupPairInfo> targetGroupPairInfoList) {
+        if (targetGroupPairInfoList == null) {
+            this.targetGroupPairInfoList = null;
+            return;
+        }
+
+        this.targetGroupPairInfoList = new com.amazonaws.internal.SdkInternalList<TargetGroupPairInfo>(targetGroupPairInfoList);
+    }
+
+    /**
+     * <p>
+     * The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a maximum
+     * size of one.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargetGroupPairInfoList(java.util.Collection)} or
+     * {@link #withTargetGroupPairInfoList(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param targetGroupPairInfoList
+     *        The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a
+     *        maximum size of one.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoadBalancerInfo withTargetGroupPairInfoList(TargetGroupPairInfo... targetGroupPairInfoList) {
+        if (this.targetGroupPairInfoList == null) {
+            setTargetGroupPairInfoList(new com.amazonaws.internal.SdkInternalList<TargetGroupPairInfo>(targetGroupPairInfoList.length));
+        }
+        for (TargetGroupPairInfo ele : targetGroupPairInfoList) {
+            this.targetGroupPairInfoList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a maximum
+     * size of one.
+     * </p>
+     * 
+     * @param targetGroupPairInfoList
+     *        The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a
+     *        maximum size of one.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoadBalancerInfo withTargetGroupPairInfoList(java.util.Collection<TargetGroupPairInfo> targetGroupPairInfoList) {
+        setTargetGroupPairInfoList(targetGroupPairInfoList);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -293,7 +381,9 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
         if (getElbInfoList() != null)
             sb.append("ElbInfoList: ").append(getElbInfoList()).append(",");
         if (getTargetGroupInfoList() != null)
-            sb.append("TargetGroupInfoList: ").append(getTargetGroupInfoList());
+            sb.append("TargetGroupInfoList: ").append(getTargetGroupInfoList()).append(",");
+        if (getTargetGroupPairInfoList() != null)
+            sb.append("TargetGroupPairInfoList: ").append(getTargetGroupPairInfoList());
         sb.append("}");
         return sb.toString();
     }
@@ -316,6 +406,10 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getTargetGroupInfoList() != null && other.getTargetGroupInfoList().equals(this.getTargetGroupInfoList()) == false)
             return false;
+        if (other.getTargetGroupPairInfoList() == null ^ this.getTargetGroupPairInfoList() == null)
+            return false;
+        if (other.getTargetGroupPairInfoList() != null && other.getTargetGroupPairInfoList().equals(this.getTargetGroupPairInfoList()) == false)
+            return false;
         return true;
     }
 
@@ -326,6 +420,7 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getElbInfoList() == null) ? 0 : getElbInfoList().hashCode());
         hashCode = prime * hashCode + ((getTargetGroupInfoList() == null) ? 0 : getTargetGroupInfoList().hashCode());
+        hashCode = prime * hashCode + ((getTargetGroupPairInfoList() == null) ? 0 : getTargetGroupPairInfoList().hashCode());
         return hashCode;
     }
 

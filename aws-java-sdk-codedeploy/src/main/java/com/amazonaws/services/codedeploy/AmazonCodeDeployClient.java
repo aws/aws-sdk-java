@@ -209,6 +209,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                             new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentGroupNameException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidDeploymentGroupNameException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentTargetDoesNotExistException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.DeploymentTargetDoesNotExistException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AlarmsLimitExceededException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.AlarmsLimitExceededException.class))
                     .addErrorMetadata(
@@ -257,8 +260,14 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                             new JsonErrorShapeMetadata().withErrorCode("InvalidDeployedStateFilterException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidDeployedStateFilterException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentTargetIdRequiredException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.DeploymentTargetIdRequiredException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InstanceDoesNotExistException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InstanceDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidECSServiceException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.InvalidECSServiceException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidAlarmConfigException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidAlarmConfigException.class))
@@ -280,6 +289,12 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DeploymentConfigNameRequiredException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.DeploymentConfigNameRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTargetGroupPairException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.InvalidTargetGroupPairException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTargetFilterNameException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.InvalidTargetFilterNameException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ApplicationLimitExceededException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.ApplicationLimitExceededException.class))
@@ -332,6 +347,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                             new JsonErrorShapeMetadata().withErrorCode("GitHubAccountTokenNameRequiredException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.GitHubAccountTokenNameRequiredException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ECSServiceMappingLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.ECSServiceMappingLimitExceededException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidBucketNameFilterException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidBucketNameFilterException.class))
                     .addErrorMetadata(
@@ -379,6 +397,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentIdException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidDeploymentIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentTargetListSizeExceededException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.DeploymentTargetListSizeExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentStatusException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidDeploymentStatusException.class))
@@ -443,8 +464,14 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                             new JsonErrorShapeMetadata().withErrorCode("InvalidFileExistsBehaviorException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidFileExistsBehaviorException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentTargetIdException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.InvalidDeploymentTargetIdException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TagLimitExceededException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.TagLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentWaitTypeException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.InvalidDeploymentWaitTypeException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidAutoScalingGroupException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidAutoScalingGroupException.class))
@@ -874,6 +901,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         The deployment group name was specified in an invalid format.
      * @throws BatchLimitExceededException
      *         The maximum number of names or IDs allowed for this request (100) was exceeded.
+     * @throws DeploymentConfigDoesNotExistException
+     *         The deployment configuration does not exist with the applicable IAM user or AWS account.
      * @sample AmazonCodeDeploy.BatchGetDeploymentGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups"
      *      target="_top">AWS API Documentation</a>
@@ -922,8 +951,14 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
     }
 
     /**
+     * <note>
      * <p>
-     * Gets information about one or more instance that are part of a deployment group.
+     * This method works, but is considered deprecated. Use <code>BatchGetDeploymentTargets</code> instead.
+     * </p>
+     * </note>
+     * <p>
+     * Returns an array of instances associated with a deployment. This method works with EC2/On-premises and AWS Lambda
+     * compute platforms. The newer <code>BatchGetDeploymentTargets</code> works with all compute platforms.
      * </p>
      * 
      * @param batchGetDeploymentInstancesRequest
@@ -941,11 +976,14 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         The specified on-premises instance name was specified in an invalid format.
      * @throws BatchLimitExceededException
      *         The maximum number of names or IDs allowed for this request (100) was exceeded.
+     * @throws InvalidComputePlatformException
+     *         The computePlatform is invalid. The computePlatform should be <code>Lambda</code> or <code>Server</code>.
      * @sample AmazonCodeDeploy.BatchGetDeploymentInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public BatchGetDeploymentInstancesResult batchGetDeploymentInstances(BatchGetDeploymentInstancesRequest request) {
         request = beforeClientExecution(request);
         return executeBatchGetDeploymentInstances(request);
@@ -978,6 +1016,97 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<BatchGetDeploymentInstancesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new BatchGetDeploymentInstancesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array of targets associated with a deployment. This method works with all compute types and should be
+     * used instead of the deprecated <code>BatchGetDeploymentInstances</code>.
+     * </p>
+     * <p>
+     * The type of targets returned depends on the deployment's compute platform:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>EC2/On-premises</b> - Information about EC2 instance targets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AWS Lambda</b> - Information about Lambda functions targets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon ECS</b> - Information about ECS service targets.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param batchGetDeploymentTargetsRequest
+     * @return Result of the BatchGetDeploymentTargets operation returned by the service.
+     * @throws InvalidDeploymentIdException
+     *         At least one of the deployment IDs was specified in an invalid format.
+     * @throws DeploymentIdRequiredException
+     *         At least one deployment ID must be specified.
+     * @throws DeploymentDoesNotExistException
+     *         The deployment does not exist with the applicable IAM user or AWS account.
+     * @throws DeploymentTargetIdRequiredException
+     *         A deployment target ID was not provided.
+     * @throws InvalidDeploymentTargetIdException
+     *         The target ID provide was not valid.
+     * @throws DeploymentTargetDoesNotExistException
+     *         The provided target ID does not belong to the attempted deployment.
+     * @throws DeploymentTargetListSizeExceededException
+     *         The maximum number of targets that can be associated with an Amazon ECS or AWS Lambda deployment was
+     *         exceeded. The target list of both types of deployments must have exactly one item. This exception does
+     *         not apply to EC2/On-premises deployments.
+     * @sample AmazonCodeDeploy.BatchGetDeploymentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchGetDeploymentTargetsResult batchGetDeploymentTargets(BatchGetDeploymentTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetDeploymentTargets(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetDeploymentTargetsResult executeBatchGetDeploymentTargets(BatchGetDeploymentTargetsRequest batchGetDeploymentTargetsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetDeploymentTargetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetDeploymentTargetsRequest> request = null;
+        Response<BatchGetDeploymentTargetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetDeploymentTargetsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchGetDeploymentTargetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetDeploymentTargets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetDeploymentTargetsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchGetDeploymentTargetsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1140,6 +1269,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         The deployment does not have a status of Ready and can't continue yet.
      * @throws UnsupportedActionForDeploymentTypeException
      *         A call was submitted that is not supported for the specified deployment type.
+     * @throws InvalidDeploymentWaitTypeException
+     *         The wait type is invalid.
+     * @throws InvalidDeploymentStatusException
+     *         The specified deployment status doesn't exist or cannot be determined.
      * @sample AmazonCodeDeploy.ContinueDeployment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ContinueDeployment" target="_top">AWS
      *      API Documentation</a>
@@ -1537,6 +1670,15 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         The number of tag groups included in the tag set list exceeded the maximum allowed limit of 3.
      * @throws InvalidInputException
      *         The specified input was specified in an invalid format.
+     * @throws ThrottlingException
+     *         An API function was called too frequently.
+     * @throws InvalidECSServiceException
+     *         The Amazon ECS service identifier is not valid.
+     * @throws InvalidTargetGroupPairException
+     *         A target group pair associated with this deployment is not valid.
+     * @throws ECSServiceMappingLimitExceededException
+     *         The Amazon ECS service is associated with more than one deployment groups. An ECS service can only be
+     *         associated with one deployment group.
      * @sample AmazonCodeDeploy.CreateDeploymentGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup"
      *      target="_top">AWS API Documentation</a>
@@ -2095,6 +2237,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         The deployment configuration name was not specified.
      * @throws DeploymentConfigDoesNotExistException
      *         The deployment configuration does not exist with the applicable IAM user or AWS account.
+     * @throws InvalidComputePlatformException
+     *         The computePlatform is invalid. The computePlatform should be <code>Lambda</code> or <code>Server</code>.
      * @sample AmazonCodeDeploy.GetDeploymentConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentConfig" target="_top">AWS
      *      API Documentation</a>
@@ -2160,6 +2304,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         The deployment group name was specified in an invalid format.
      * @throws DeploymentGroupDoesNotExistException
      *         The named deployment group does not exist with the applicable IAM user or AWS account.
+     * @throws DeploymentConfigDoesNotExistException
+     *         The deployment configuration does not exist with the applicable IAM user or AWS account.
      * @sample AmazonCodeDeploy.GetDeploymentGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentGroup" target="_top">AWS
      *      API Documentation</a>
@@ -2225,11 +2371,14 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         The specified instance does not exist in the deployment group.
      * @throws InvalidInstanceNameException
      *         The specified on-premises instance name was specified in an invalid format.
+     * @throws InvalidComputePlatformException
+     *         The computePlatform is invalid. The computePlatform should be <code>Lambda</code> or <code>Server</code>.
      * @sample AmazonCodeDeploy.GetDeploymentInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetDeploymentInstanceResult getDeploymentInstance(GetDeploymentInstanceRequest request) {
         request = beforeClientExecution(request);
         return executeGetDeploymentInstance(request);
@@ -2261,6 +2410,72 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<GetDeploymentInstanceResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new GetDeploymentInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about a deployment target.
+     * </p>
+     * 
+     * @param getDeploymentTargetRequest
+     * @return Result of the GetDeploymentTarget operation returned by the service.
+     * @throws InvalidDeploymentIdException
+     *         At least one of the deployment IDs was specified in an invalid format.
+     * @throws DeploymentIdRequiredException
+     *         At least one deployment ID must be specified.
+     * @throws DeploymentDoesNotExistException
+     *         The deployment does not exist with the applicable IAM user or AWS account.
+     * @throws DeploymentTargetIdRequiredException
+     *         A deployment target ID was not provided.
+     * @throws InvalidDeploymentTargetIdException
+     *         The target ID provide was not valid.
+     * @throws DeploymentTargetDoesNotExistException
+     *         The provided target ID does not belong to the attempted deployment.
+     * @throws InvalidInstanceNameException
+     *         The specified on-premises instance name was specified in an invalid format.
+     * @sample AmazonCodeDeploy.GetDeploymentTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentTarget" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetDeploymentTargetResult getDeploymentTarget(GetDeploymentTargetRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDeploymentTarget(request);
+    }
+
+    @SdkInternalApi
+    final GetDeploymentTargetResult executeGetDeploymentTarget(GetDeploymentTargetRequest getDeploymentTargetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDeploymentTargetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDeploymentTargetRequest> request = null;
+        Response<GetDeploymentTargetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDeploymentTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeploymentTargetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeploymentTarget");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDeploymentTargetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDeploymentTargetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2589,6 +2804,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
     }
 
     /**
+     * <note>
+     * <p>
+     * The newer BatchGetDeploymentTargets should be used instead because it works with all compute types.
+     * <code>ListDeploymentInstances</code> throws an exception if it is used with a compute platform other than
+     * EC2/On-premises or AWS Lambda.
+     * </p>
+     * </note>
      * <p>
      * Lists the instance for a deployment associated with the applicable IAM user or AWS account.
      * </p>
@@ -2614,11 +2836,16 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidDeploymentInstanceTypeException
      *         An instance type was specified for an in-place deployment. Instance types are supported for blue/green
      *         deployments only.
+     * @throws InvalidTargetFilterNameException
+     *         The target filter name is invalid.
+     * @throws InvalidComputePlatformException
+     *         The computePlatform is invalid. The computePlatform should be <code>Lambda</code> or <code>Server</code>.
      * @sample AmazonCodeDeploy.ListDeploymentInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListDeploymentInstancesResult listDeploymentInstances(ListDeploymentInstancesRequest request) {
         request = beforeClientExecution(request);
         return executeListDeploymentInstances(request);
@@ -2651,6 +2878,77 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<ListDeploymentInstancesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListDeploymentInstancesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array of target IDs that are associated a deployment.
+     * </p>
+     * 
+     * @param listDeploymentTargetsRequest
+     * @return Result of the ListDeploymentTargets operation returned by the service.
+     * @throws DeploymentIdRequiredException
+     *         At least one deployment ID must be specified.
+     * @throws DeploymentDoesNotExistException
+     *         The deployment does not exist with the applicable IAM user or AWS account.
+     * @throws DeploymentNotStartedException
+     *         The specified deployment has not started.
+     * @throws InvalidNextTokenException
+     *         The next token was specified in an invalid format.
+     * @throws InvalidDeploymentIdException
+     *         At least one of the deployment IDs was specified in an invalid format.
+     * @throws InvalidInstanceStatusException
+     *         The specified instance status does not exist.
+     * @throws InvalidInstanceTypeException
+     *         An invalid instance type was specified for instances in a blue/green deployment. Valid values include
+     *         "Blue" for an original environment and "Green" for a replacement environment.
+     * @throws InvalidDeploymentInstanceTypeException
+     *         An instance type was specified for an in-place deployment. Instance types are supported for blue/green
+     *         deployments only.
+     * @sample AmazonCodeDeploy.ListDeploymentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDeploymentTargetsResult listDeploymentTargets(ListDeploymentTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDeploymentTargets(request);
+    }
+
+    @SdkInternalApi
+    final ListDeploymentTargetsResult executeListDeploymentTargets(ListDeploymentTargetsRequest listDeploymentTargetsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDeploymentTargetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDeploymentTargetsRequest> request = null;
+        Response<ListDeploymentTargetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDeploymentTargetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDeploymentTargetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeploymentTargets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDeploymentTargetsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListDeploymentTargetsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3184,6 +3482,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public SkipWaitTimeForInstanceTerminationResult skipWaitTimeForInstanceTermination(SkipWaitTimeForInstanceTerminationRequest request) {
         request = beforeClientExecution(request);
         return executeSkipWaitTimeForInstanceTermination(request);
@@ -3239,6 +3538,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         At least one deployment ID must be specified.
      * @throws DeploymentDoesNotExistException
      *         The deployment does not exist with the applicable IAM user or AWS account.
+     * @throws DeploymentGroupDoesNotExistException
+     *         The named deployment group does not exist with the applicable IAM user or AWS account.
      * @throws DeploymentAlreadyCompletedException
      *         The deployment is already complete.
      * @throws InvalidDeploymentIdException
@@ -3446,6 +3747,15 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         The number of tag groups included in the tag set list exceeded the maximum allowed limit of 3.
      * @throws InvalidInputException
      *         The specified input was specified in an invalid format.
+     * @throws ThrottlingException
+     *         An API function was called too frequently.
+     * @throws InvalidECSServiceException
+     *         The Amazon ECS service identifier is not valid.
+     * @throws InvalidTargetGroupPairException
+     *         A target group pair associated with this deployment is not valid.
+     * @throws ECSServiceMappingLimitExceededException
+     *         The Amazon ECS service is associated with more than one deployment groups. An ECS service can only be
+     *         associated with one deployment group.
      * @sample AmazonCodeDeploy.UpdateDeploymentGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup"
      *      target="_top">AWS API Documentation</a>

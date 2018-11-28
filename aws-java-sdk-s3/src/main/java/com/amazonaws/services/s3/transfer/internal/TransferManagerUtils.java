@@ -133,11 +133,7 @@ public class TransferManagerUtils {
      */
     public static boolean shouldUseMultipartUpload(PutObjectRequest putObjectRequest, TransferManagerConfiguration configuration) {
         long contentLength = TransferManagerUtils.getContentLength(putObjectRequest);
-        return (contentLength > configuration.getMultipartUploadThreshold())
-                // TODO: enable multipart when these are set, requires calculating the MD5 of each part
-                && putObjectRequest.getObjectLockMode() == null
-                && putObjectRequest.getObjectLockLegalHoldStatus() == null
-                && putObjectRequest.getObjectLockRetainUntilDate() == null;
+        return contentLength > configuration.getMultipartUploadThreshold();
 
     }
 

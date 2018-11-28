@@ -30,21 +30,21 @@ public class ListDeploymentConfigsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An identifier returned from the previous list deployment configurations call. It can be used to return the next
-     * set of deployment configurations in the list.
+     * An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to return the
+     * next set of deployment configurations in the list.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An identifier returned from the previous list deployment configurations call. It can be used to return the next
-     * set of deployment configurations in the list.
+     * An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to return the
+     * next set of deployment configurations in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier returned from the previous list deployment configurations call. It can be used to return the
-     *        next set of deployment configurations in the list.
+     *        An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to return
+     *        the next set of deployment configurations in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -53,12 +53,12 @@ public class ListDeploymentConfigsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An identifier returned from the previous list deployment configurations call. It can be used to return the next
-     * set of deployment configurations in the list.
+     * An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to return the
+     * next set of deployment configurations in the list.
      * </p>
      * 
-     * @return An identifier returned from the previous list deployment configurations call. It can be used to return
-     *         the next set of deployment configurations in the list.
+     * @return An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to
+     *         return the next set of deployment configurations in the list.
      */
 
     public String getNextToken() {
@@ -67,13 +67,13 @@ public class ListDeploymentConfigsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An identifier returned from the previous list deployment configurations call. It can be used to return the next
-     * set of deployment configurations in the list.
+     * An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to return the
+     * next set of deployment configurations in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier returned from the previous list deployment configurations call. It can be used to return the
-     *        next set of deployment configurations in the list.
+     *        An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to return
+     *        the next set of deployment configurations in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -275,8 +275,14 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
             com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentGroupsRequest, BatchGetDeploymentGroupsResult> asyncHandler);
 
     /**
+     * <note>
      * <p>
-     * Gets information about one or more instance that are part of a deployment group.
+     * This method works, but is considered deprecated. Use <code>BatchGetDeploymentTargets</code> instead.
+     * </p>
+     * </note>
+     * <p>
+     * Returns an array of instances associated with a deployment. This method works with EC2/On-premises and AWS Lambda
+     * compute platforms. The newer <code>BatchGetDeploymentTargets</code> works with all compute platforms.
      * </p>
      * 
      * @param batchGetDeploymentInstancesRequest
@@ -286,12 +292,19 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<BatchGetDeploymentInstancesResult> batchGetDeploymentInstancesAsync(
             BatchGetDeploymentInstancesRequest batchGetDeploymentInstancesRequest);
 
     /**
+     * <note>
      * <p>
-     * Gets information about one or more instance that are part of a deployment group.
+     * This method works, but is considered deprecated. Use <code>BatchGetDeploymentTargets</code> instead.
+     * </p>
+     * </note>
+     * <p>
+     * Returns an array of instances associated with a deployment. This method works with EC2/On-premises and AWS Lambda
+     * compute platforms. The newer <code>BatchGetDeploymentTargets</code> works with all compute platforms.
      * </p>
      * 
      * @param batchGetDeploymentInstancesRequest
@@ -305,9 +318,85 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<BatchGetDeploymentInstancesResult> batchGetDeploymentInstancesAsync(
             BatchGetDeploymentInstancesRequest batchGetDeploymentInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentInstancesRequest, BatchGetDeploymentInstancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of targets associated with a deployment. This method works with all compute types and should be
+     * used instead of the deprecated <code>BatchGetDeploymentInstances</code>.
+     * </p>
+     * <p>
+     * The type of targets returned depends on the deployment's compute platform:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>EC2/On-premises</b> - Information about EC2 instance targets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AWS Lambda</b> - Information about Lambda functions targets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon ECS</b> - Information about ECS service targets.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param batchGetDeploymentTargetsRequest
+     * @return A Java Future containing the result of the BatchGetDeploymentTargets operation returned by the service.
+     * @sample AmazonCodeDeployAsync.BatchGetDeploymentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetDeploymentTargetsResult> batchGetDeploymentTargetsAsync(
+            BatchGetDeploymentTargetsRequest batchGetDeploymentTargetsRequest);
+
+    /**
+     * <p>
+     * Returns an array of targets associated with a deployment. This method works with all compute types and should be
+     * used instead of the deprecated <code>BatchGetDeploymentInstances</code>.
+     * </p>
+     * <p>
+     * The type of targets returned depends on the deployment's compute platform:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>EC2/On-premises</b> - Information about EC2 instance targets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AWS Lambda</b> - Information about Lambda functions targets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon ECS</b> - Information about ECS service targets.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param batchGetDeploymentTargetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchGetDeploymentTargets operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.BatchGetDeploymentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetDeploymentTargetsResult> batchGetDeploymentTargetsAsync(
+            BatchGetDeploymentTargetsRequest batchGetDeploymentTargetsRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentTargetsRequest, BatchGetDeploymentTargetsResult> asyncHandler);
 
     /**
      * <p>
@@ -934,6 +1023,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(GetDeploymentInstanceRequest getDeploymentInstanceRequest);
 
     /**
@@ -952,8 +1042,40 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(GetDeploymentInstanceRequest getDeploymentInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<GetDeploymentInstanceRequest, GetDeploymentInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a deployment target.
+     * </p>
+     * 
+     * @param getDeploymentTargetRequest
+     * @return A Java Future containing the result of the GetDeploymentTarget operation returned by the service.
+     * @sample AmazonCodeDeployAsync.GetDeploymentTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentTarget" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDeploymentTargetResult> getDeploymentTargetAsync(GetDeploymentTargetRequest getDeploymentTargetRequest);
+
+    /**
+     * <p>
+     * Returns information about a deployment target.
+     * </p>
+     * 
+     * @param getDeploymentTargetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDeploymentTarget operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.GetDeploymentTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentTarget" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDeploymentTargetResult> getDeploymentTargetAsync(GetDeploymentTargetRequest getDeploymentTargetRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDeploymentTargetRequest, GetDeploymentTargetResult> asyncHandler);
 
     /**
      * <p>
@@ -1151,6 +1273,13 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
             com.amazonaws.handlers.AsyncHandler<ListDeploymentGroupsRequest, ListDeploymentGroupsResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * The newer BatchGetDeploymentTargets should be used instead because it works with all compute types.
+     * <code>ListDeploymentInstances</code> throws an exception if it is used with a compute platform other than
+     * EC2/On-premises or AWS Lambda.
+     * </p>
+     * </note>
      * <p>
      * Lists the instance for a deployment associated with the applicable IAM user or AWS account.
      * </p>
@@ -1162,9 +1291,17 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListDeploymentInstancesResult> listDeploymentInstancesAsync(ListDeploymentInstancesRequest listDeploymentInstancesRequest);
 
     /**
+     * <note>
+     * <p>
+     * The newer BatchGetDeploymentTargets should be used instead because it works with all compute types.
+     * <code>ListDeploymentInstances</code> throws an exception if it is used with a compute platform other than
+     * EC2/On-premises or AWS Lambda.
+     * </p>
+     * </note>
      * <p>
      * Lists the instance for a deployment associated with the applicable IAM user or AWS account.
      * </p>
@@ -1180,8 +1317,40 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListDeploymentInstancesResult> listDeploymentInstancesAsync(ListDeploymentInstancesRequest listDeploymentInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<ListDeploymentInstancesRequest, ListDeploymentInstancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of target IDs that are associated a deployment.
+     * </p>
+     * 
+     * @param listDeploymentTargetsRequest
+     * @return A Java Future containing the result of the ListDeploymentTargets operation returned by the service.
+     * @sample AmazonCodeDeployAsync.ListDeploymentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDeploymentTargetsResult> listDeploymentTargetsAsync(ListDeploymentTargetsRequest listDeploymentTargetsRequest);
+
+    /**
+     * <p>
+     * Returns an array of target IDs that are associated a deployment.
+     * </p>
+     * 
+     * @param listDeploymentTargetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDeploymentTargets operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.ListDeploymentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDeploymentTargetsResult> listDeploymentTargetsAsync(ListDeploymentTargetsRequest listDeploymentTargetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDeploymentTargetsRequest, ListDeploymentTargetsResult> asyncHandler);
 
     /**
      * <p>
@@ -1493,6 +1662,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/SkipWaitTimeForInstanceTermination"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SkipWaitTimeForInstanceTerminationResult> skipWaitTimeForInstanceTerminationAsync(
             SkipWaitTimeForInstanceTerminationRequest skipWaitTimeForInstanceTerminationRequest);
 
@@ -1513,6 +1683,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/SkipWaitTimeForInstanceTermination"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SkipWaitTimeForInstanceTerminationResult> skipWaitTimeForInstanceTerminationAsync(
             SkipWaitTimeForInstanceTerminationRequest skipWaitTimeForInstanceTerminationRequest,
             com.amazonaws.handlers.AsyncHandler<SkipWaitTimeForInstanceTerminationRequest, SkipWaitTimeForInstanceTerminationResult> asyncHandler);

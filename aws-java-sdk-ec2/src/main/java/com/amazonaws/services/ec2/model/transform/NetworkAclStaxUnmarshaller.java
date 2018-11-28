@@ -89,6 +89,11 @@ public class NetworkAclStaxUnmarshaller implements Unmarshaller<NetworkAcl, Stax
                     networkAcl.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ownerId", targetDepth)) {
+                    networkAcl.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return networkAcl;

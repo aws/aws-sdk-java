@@ -38,7 +38,7 @@ public class KinesisFirehoseInputUpdate implements Serializable, Cloneable, Stru
     /**
      * <p>
      * ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to
-     * grant necessary permissions to this role.
+     * grant the necessary permissions to this role.
      * </p>
      */
     private String roleARNUpdate;
@@ -86,12 +86,12 @@ public class KinesisFirehoseInputUpdate implements Serializable, Cloneable, Stru
     /**
      * <p>
      * ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to
-     * grant necessary permissions to this role.
+     * grant the necessary permissions to this role.
      * </p>
      * 
      * @param roleARNUpdate
      *        ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need
-     *        to grant necessary permissions to this role.
+     *        to grant the necessary permissions to this role.
      */
 
     public void setRoleARNUpdate(String roleARNUpdate) {
@@ -101,11 +101,11 @@ public class KinesisFirehoseInputUpdate implements Serializable, Cloneable, Stru
     /**
      * <p>
      * ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to
-     * grant necessary permissions to this role.
+     * grant the necessary permissions to this role.
      * </p>
      * 
      * @return ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You
-     *         need to grant necessary permissions to this role.
+     *         need to grant the necessary permissions to this role.
      */
 
     public String getRoleARNUpdate() {
@@ -115,12 +115,12 @@ public class KinesisFirehoseInputUpdate implements Serializable, Cloneable, Stru
     /**
      * <p>
      * ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to
-     * grant necessary permissions to this role.
+     * grant the necessary permissions to this role.
      * </p>
      * 
      * @param roleARNUpdate
      *        ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need
-     *        to grant necessary permissions to this role.
+     *        to grant the necessary permissions to this role.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

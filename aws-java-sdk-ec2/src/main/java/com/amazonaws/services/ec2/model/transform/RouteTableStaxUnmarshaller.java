@@ -94,6 +94,11 @@ public class RouteTableStaxUnmarshaller implements Unmarshaller<RouteTable, Stax
                     routeTable.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ownerId", targetDepth)) {
+                    routeTable.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return routeTable;

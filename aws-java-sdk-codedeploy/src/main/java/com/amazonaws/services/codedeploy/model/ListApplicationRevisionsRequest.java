@@ -89,7 +89,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * An Amazon S3 bucket name to limit the search for revisions.
      * </p>
      * <p>
-     * If set to null, all of the user's buckets will be searched.
+     * If set to null, all of the user's buckets are searched.
      * </p>
      */
     private String s3Bucket;
@@ -124,8 +124,8 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
     private String deployed;
     /**
      * <p>
-     * An identifier returned from the previous list application revisions call. It can be used to return the next set
-     * of applications in the list.
+     * An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to return the
+     * next set of applications in the list.
      * </p>
      */
     private String nextToken;
@@ -462,7 +462,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param sortOrder
-     *        The order in which to sort the list results:</p>
+     *        The order in which to sort the list results: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -510,7 +510,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * If set to null, the results will be sorted in an arbitrary order.
      * </p>
      * 
-     * @return The order in which to sort the list results:</p>
+     * @return The order in which to sort the list results: </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -559,7 +559,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param sortOrder
-     *        The order in which to sort the list results:</p>
+     *        The order in which to sort the list results: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -610,7 +610,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param sortOrder
-     *        The order in which to sort the list results:</p>
+     *        The order in which to sort the list results: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -659,7 +659,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param sortOrder
-     *        The order in which to sort the list results:</p>
+     *        The order in which to sort the list results: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -691,13 +691,13 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * An Amazon S3 bucket name to limit the search for revisions.
      * </p>
      * <p>
-     * If set to null, all of the user's buckets will be searched.
+     * If set to null, all of the user's buckets are searched.
      * </p>
      * 
      * @param s3Bucket
-     *        An Amazon S3 bucket name to limit the search for revisions.</p>
+     *        An Amazon S3 bucket name to limit the search for revisions. </p>
      *        <p>
-     *        If set to null, all of the user's buckets will be searched.
+     *        If set to null, all of the user's buckets are searched.
      */
 
     public void setS3Bucket(String s3Bucket) {
@@ -709,12 +709,12 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * An Amazon S3 bucket name to limit the search for revisions.
      * </p>
      * <p>
-     * If set to null, all of the user's buckets will be searched.
+     * If set to null, all of the user's buckets are searched.
      * </p>
      * 
-     * @return An Amazon S3 bucket name to limit the search for revisions.</p>
+     * @return An Amazon S3 bucket name to limit the search for revisions. </p>
      *         <p>
-     *         If set to null, all of the user's buckets will be searched.
+     *         If set to null, all of the user's buckets are searched.
      */
 
     public String getS3Bucket() {
@@ -726,13 +726,13 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * An Amazon S3 bucket name to limit the search for revisions.
      * </p>
      * <p>
-     * If set to null, all of the user's buckets will be searched.
+     * If set to null, all of the user's buckets are searched.
      * </p>
      * 
      * @param s3Bucket
-     *        An Amazon S3 bucket name to limit the search for revisions.</p>
+     *        An Amazon S3 bucket name to limit the search for revisions. </p>
      *        <p>
-     *        If set to null, all of the user's buckets will be searched.
+     *        If set to null, all of the user's buckets are searched.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -804,7 +804,8 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param deployed
-     *        Whether to list revisions based on whether the revision is the target revision of an deployment group:</p>
+     *        Whether to list revisions based on whether the revision is the target revision of an deployment group:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -850,8 +851,8 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * 
-     * @return Whether to list revisions based on whether the revision is the target revision of an deployment
-     *         group:</p>
+     * @return Whether to list revisions based on whether the revision is the target revision of an deployment group:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -898,7 +899,8 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param deployed
-     *        Whether to list revisions based on whether the revision is the target revision of an deployment group:</p>
+     *        Whether to list revisions based on whether the revision is the target revision of an deployment group:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -947,7 +949,8 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param deployed
-     *        Whether to list revisions based on whether the revision is the target revision of an deployment group:</p>
+     *        Whether to list revisions based on whether the revision is the target revision of an deployment group:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -994,7 +997,8 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param deployed
-     *        Whether to list revisions based on whether the revision is the target revision of an deployment group:</p>
+     *        Whether to list revisions based on whether the revision is the target revision of an deployment group:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1022,13 +1026,13 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An identifier returned from the previous list application revisions call. It can be used to return the next set
-     * of applications in the list.
+     * An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to return the
+     * next set of applications in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier returned from the previous list application revisions call. It can be used to return the
-     *        next set of applications in the list.
+     *        An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to
+     *        return the next set of applications in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -1037,12 +1041,12 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An identifier returned from the previous list application revisions call. It can be used to return the next set
-     * of applications in the list.
+     * An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to return the
+     * next set of applications in the list.
      * </p>
      * 
-     * @return An identifier returned from the previous list application revisions call. It can be used to return the
-     *         next set of applications in the list.
+     * @return An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to
+     *         return the next set of applications in the list.
      */
 
     public String getNextToken() {
@@ -1051,13 +1055,13 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An identifier returned from the previous list application revisions call. It can be used to return the next set
-     * of applications in the list.
+     * An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to return the
+     * next set of applications in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier returned from the previous list application revisions call. It can be used to return the
-     *        next set of applications in the list.
+     *        An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to
+     *        return the next set of applications in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

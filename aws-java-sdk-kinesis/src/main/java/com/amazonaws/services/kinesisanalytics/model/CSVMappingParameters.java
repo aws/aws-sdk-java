@@ -24,10 +24,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * as the column delimiter:
  * </p>
  * <p>
- * <code>"name1", "address1" </code>
+ * <code>"name1", "address1"</code>
  * </p>
  * <p>
- * <code>"name2, "address2"</code>
+ * <code>"name2", "address2"</code>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/CSVMappingParameters"

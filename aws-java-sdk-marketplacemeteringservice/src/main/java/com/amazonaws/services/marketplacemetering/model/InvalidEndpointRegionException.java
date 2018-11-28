@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The endpoint being called is in a region different from your EC2 instance. The region of the Metering service
- * endpoint and the region of the EC2 instance must match.
+ * The endpoint being called is in a Region different from your EC2 instance. The Region of the Metering Service
+ * endpoint and the Region of the EC2 instance must match.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
