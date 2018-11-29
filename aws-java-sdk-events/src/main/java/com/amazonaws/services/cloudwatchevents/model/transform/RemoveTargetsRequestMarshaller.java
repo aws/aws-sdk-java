@@ -32,6 +32,8 @@ public class RemoveTargetsRequestMarshaller {
             .marshallLocationName("Rule").build();
     private static final MarshallingInfo<List> IDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Ids").build();
+    private static final MarshallingInfo<Boolean> FORCE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Force").build();
 
     private static final RemoveTargetsRequestMarshaller instance = new RemoveTargetsRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class RemoveTargetsRequestMarshaller {
         try {
             protocolMarshaller.marshall(removeTargetsRequest.getRule(), RULE_BINDING);
             protocolMarshaller.marshall(removeTargetsRequest.getIds(), IDS_BINDING);
+            protocolMarshaller.marshall(removeTargetsRequest.getForce(), FORCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

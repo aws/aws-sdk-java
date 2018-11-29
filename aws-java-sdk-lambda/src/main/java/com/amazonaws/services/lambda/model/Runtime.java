@@ -32,7 +32,9 @@ public enum Runtime {
     Dotnetcore20("dotnetcore2.0"),
     Dotnetcore21("dotnetcore2.1"),
     Nodejs43Edge("nodejs4.3-edge"),
-    Go1X("go1.x");
+    Go1X("go1.x"),
+    Ruby25("ruby2.5"),
+    Provided("provided");
 
     private String value;
 

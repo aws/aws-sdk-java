@@ -6,6 +6,7 @@
       "InputPath": "$.input",
       "OutputPath": "$.output",
       "ResultPath": "$.result",
+      "Parameters": "foo",
       "End": true
     }
   }

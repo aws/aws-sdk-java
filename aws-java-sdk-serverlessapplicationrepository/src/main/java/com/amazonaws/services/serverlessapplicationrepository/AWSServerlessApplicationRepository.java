@@ -260,6 +260,29 @@ public interface AWSServerlessApplicationRepository {
 
     /**
      * <p>
+     * Retrieves the list of applications nested in the containing application.
+     * </p>
+     * 
+     * @param listApplicationDependenciesRequest
+     * @return Result of the ListApplicationDependencies operation returned by the service.
+     * @throws NotFoundException
+     *         The resource (for example, an access policy statement) specified in the request doesn't exist.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @throws InternalServerErrorException
+     *         The AWS Serverless Application Repository service encountered an internal error.
+     * @throws ForbiddenException
+     *         The client is not authenticated.
+     * @sample AWSServerlessApplicationRepository.ListApplicationDependencies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationDependencies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListApplicationDependenciesResult listApplicationDependencies(ListApplicationDependenciesRequest listApplicationDependenciesRequest);
+
+    /**
+     * <p>
      * Lists versions for the specified application.
      * </p>
      * 

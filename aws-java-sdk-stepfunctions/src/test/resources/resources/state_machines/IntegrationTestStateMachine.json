@@ -1,0 +1,126 @@
+{
+  "StartAt":"ParallelState",
+  "States":{
+    "ParallelState":{
+      "InputPath":"$.parallel.input",
+      "OutputPath":"$.parallel.output",
+      "ResultPath":"$.parallel.result",
+      "Parameters":"foo",
+      "Next":"WaitForTimestamp",
+      "Comment":"This is a parallel state",
+      "Branches":[
+        {
+          "StartAt":"BranchOneStart",
+          "Comment":"Branch One",
+          "States":{
+            "BranchOneStart":{
+              "InputPath":"$.succeed.input",
+              "OutputPath":"$.succeed.output",
+              "Comment":"Succeed state",
+              "Type":"Succeed"
+            }
+          }
+        },
+        {
+          "StartAt":"BranchTwoStart",
+          "Comment":"Branch Two",
+          "States":{
+            "BranchTwoStart":{
+              "InputPath":"$.pass.input",
+              "OutputPath":"$.pass.output",
+              "Parameters":{
+                "foo":"bar"
+              },
+              "Next":"BranchTwoEnd",
+              "Comment":"Pass state",
+              "Result":{
+                "foo":"value"
+              },
+              "Type":"Pass"
+            },
+            "BranchTwoEnd":{
+              "End":true,
+              "Comment":"This is the final state of branch two",
+              "Type":"Pass"
+            }
+          }
+        }
+      ],
+      "Retry":[
+        {
+          "ErrorEquals":[
+            "States.ALL"
+          ],
+          "IntervalSeconds":5,
+          "MaxAttempts":3,
+          "BackoffRate":1.2
+        }
+      ],
+      "Catch":[
+        {
+          "ResultPath":"$.catcher.result",
+          "Next":"EndState",
+          "ErrorEquals":[
+            "States.ALL"
+          ]
+        }
+      ],
+      "Type":"Parallel"
+    },
+    "WaitForTimestamp":{
+      "Timestamp":"2100-07-07T06:43:30.000Z",
+      "InputPath":"$.wait.input",
+      "OutputPath":"$.wait.output",
+      "Next":"WaitForTimestampPath",
+      "Comment":"Wait for timestamp",
+      "Type":"Wait"
+    },
+    "WaitForTimestampPath":{
+      "TimestampPath":"$.timestamp",
+      "Next":"WaitForSeconds",
+      "Type":"Wait"
+    },
+    "WaitForSeconds":{
+      "Seconds":60,
+      "Next":"WaitForSecondsPath",
+      "Type":"Wait"
+    },
+    "WaitForSecondsPath":{
+      "SecondsPath":"$.seconds",
+      "Next":"ChoiceState",
+      "Type":"Wait"
+    },
+    "ChoiceState":{
+      "InputPath":"$.choice.input",
+      "OutputPath":"$.choice.output",
+      "Comment":"This is a choice state",
+      "Default":"EndState",
+      "Choices":[
+        {
+          "Variable":"$.foo",
+          "StringEquals":"bar",
+          "Next":"FailState"
+        },
+        {
+          "Variable":"$.bar",
+          "NumericGreaterThanEquals":42,
+          "Next":"PassState"
+        }
+      ],
+      "Type":"Choice"
+    },
+    "FailState":{
+      "Comment":"This is a fail state",
+      "Error":"FooError",
+      "Cause":"Some Cause",
+      "Type":"Fail"
+    },
+    "PassState":{
+      "Next":"EndState",
+      "Type":"Pass"
+    },
+    "EndState":{
+      "Type":"Succeed"
+    }
+  }
+}

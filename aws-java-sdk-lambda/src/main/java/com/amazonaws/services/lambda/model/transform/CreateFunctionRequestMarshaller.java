@@ -13,7 +13,7 @@
 package com.amazonaws.services.lambda.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -59,6 +59,8 @@ public class CreateFunctionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TracingConfig").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<List> LAYERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Layers").build();
 
     private static final CreateFunctionRequestMarshaller instance = new CreateFunctionRequestMarshaller();
 
@@ -91,6 +93,7 @@ public class CreateFunctionRequestMarshaller {
             protocolMarshaller.marshall(createFunctionRequest.getKMSKeyArn(), KMSKEYARN_BINDING);
             protocolMarshaller.marshall(createFunctionRequest.getTracingConfig(), TRACINGCONFIG_BINDING);
             protocolMarshaller.marshall(createFunctionRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createFunctionRequest.getLayers(), LAYERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

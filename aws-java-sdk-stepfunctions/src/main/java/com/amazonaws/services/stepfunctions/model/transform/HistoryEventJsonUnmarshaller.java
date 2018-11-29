@@ -88,6 +88,38 @@ public class HistoryEventJsonUnmarshaller implements Unmarshaller<HistoryEvent, 
                     context.nextToken();
                     historyEvent.setActivityTimedOutEventDetails(ActivityTimedOutEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("taskFailedEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setTaskFailedEventDetails(TaskFailedEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("taskScheduledEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setTaskScheduledEventDetails(TaskScheduledEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("taskStartFailedEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setTaskStartFailedEventDetails(TaskStartFailedEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("taskStartedEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setTaskStartedEventDetails(TaskStartedEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("taskSubmitFailedEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setTaskSubmitFailedEventDetails(TaskSubmitFailedEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("taskSubmittedEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setTaskSubmittedEventDetails(TaskSubmittedEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("taskSucceededEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setTaskSucceededEventDetails(TaskSucceededEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("taskTimedOutEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setTaskTimedOutEventDetails(TaskTimedOutEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("executionFailedEventDetails", targetDepth)) {
                     context.nextToken();
                     historyEvent.setExecutionFailedEventDetails(ExecutionFailedEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));

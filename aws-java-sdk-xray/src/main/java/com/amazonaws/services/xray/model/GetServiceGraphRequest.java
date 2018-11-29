@@ -33,7 +33,7 @@ public class GetServiceGraphRequest extends com.amazonaws.AmazonWebServiceReques
     private java.util.Date startTime;
     /**
      * <p>
-     * The end of the time frame for which to generate a graph.
+     * The end of the timeframe for which to generate a graph.
      * </p>
      */
     private java.util.Date endTime;
@@ -98,11 +98,11 @@ public class GetServiceGraphRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The end of the time frame for which to generate a graph.
+     * The end of the timeframe for which to generate a graph.
      * </p>
      * 
      * @param endTime
-     *        The end of the time frame for which to generate a graph.
+     *        The end of the timeframe for which to generate a graph.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -111,10 +111,10 @@ public class GetServiceGraphRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The end of the time frame for which to generate a graph.
+     * The end of the timeframe for which to generate a graph.
      * </p>
      * 
-     * @return The end of the time frame for which to generate a graph.
+     * @return The end of the timeframe for which to generate a graph.
      */
 
     public java.util.Date getEndTime() {
@@ -123,11 +123,11 @@ public class GetServiceGraphRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The end of the time frame for which to generate a graph.
+     * The end of the timeframe for which to generate a graph.
      * </p>
      * 
      * @param endTime
-     *        The end of the time frame for which to generate a graph.
+     *        The end of the timeframe for which to generate a graph.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

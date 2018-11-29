@@ -68,6 +68,11 @@ public class AbstractAWSServerlessApplicationRepository implements AWSServerless
     }
 
     @Override
+    public ListApplicationDependenciesResult listApplicationDependencies(ListApplicationDependenciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListApplicationVersionsResult listApplicationVersions(ListApplicationVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

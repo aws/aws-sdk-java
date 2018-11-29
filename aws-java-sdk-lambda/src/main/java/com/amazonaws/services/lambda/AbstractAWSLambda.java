@@ -38,6 +38,11 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
+    public AddLayerVersionPermissionResult addLayerVersionPermission(AddLayerVersionPermissionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AddPermissionResult addPermission(AddPermissionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -78,6 +83,11 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
+    public DeleteLayerVersionResult deleteLayerVersion(DeleteLayerVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAccountSettingsResult getAccountSettings(GetAccountSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +109,16 @@ public class AbstractAWSLambda implements AWSLambda {
 
     @Override
     public GetFunctionConfigurationResult getFunctionConfiguration(GetFunctionConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLayerVersionResult getLayerVersion(GetLayerVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLayerVersionPolicyResult getLayerVersionPolicy(GetLayerVersionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -144,6 +164,16 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
+    public ListLayerVersionsResult listLayerVersions(ListLayerVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListLayersResult listLayers(ListLayersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsResult listTags(ListTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -154,12 +184,22 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
+    public PublishLayerVersionResult publishLayerVersion(PublishLayerVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PublishVersionResult publishVersion(PublishVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public PutFunctionConcurrencyResult putFunctionConcurrency(PutFunctionConcurrencyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveLayerVersionPermissionResult removeLayerVersionPermission(RemoveLayerVersionPermissionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

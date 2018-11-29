@@ -83,7 +83,7 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601
-     * format</a> (YYYY-MM-DDThh:mm:ssTZD).
+     * format</a> (YYYY-MM-DDThh:mm:ss.sTZD).
      * </p>
      */
     private String lastModified;
@@ -142,6 +142,12 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private String revisionId;
+    /**
+     * <p>
+     * A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Layer> layers;
 
     /**
      * <p>
@@ -539,12 +545,12 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601
-     * format</a> (YYYY-MM-DDThh:mm:ssTZD).
+     * format</a> (YYYY-MM-DDThh:mm:ss.sTZD).
      * </p>
      * 
      * @param lastModified
      *        The date and time that the function was last updated, in <a
-     *        href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ssTZD).
+     *        href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).
      */
 
     public void setLastModified(String lastModified) {
@@ -554,11 +560,11 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601
-     * format</a> (YYYY-MM-DDThh:mm:ssTZD).
+     * format</a> (YYYY-MM-DDThh:mm:ss.sTZD).
      * </p>
      * 
      * @return The date and time that the function was last updated, in <a
-     *         href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ssTZD).
+     *         href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).
      */
 
     public String getLastModified() {
@@ -568,12 +574,12 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601
-     * format</a> (YYYY-MM-DDThh:mm:ssTZD).
+     * format</a> (YYYY-MM-DDThh:mm:ss.sTZD).
      * </p>
      * 
      * @param lastModified
      *        The date and time that the function was last updated, in <a
-     *        href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ssTZD).
+     *        href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -949,6 +955,83 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>.
+     * </p>
+     * 
+     * @return A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     *         layers</a>.
+     */
+
+    public java.util.List<Layer> getLayers() {
+        if (layers == null) {
+            layers = new com.amazonaws.internal.SdkInternalList<Layer>();
+        }
+        return layers;
+    }
+
+    /**
+     * <p>
+     * A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>.
+     * </p>
+     * 
+     * @param layers
+     *        A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     *        layers</a>.
+     */
+
+    public void setLayers(java.util.Collection<Layer> layers) {
+        if (layers == null) {
+            this.layers = null;
+            return;
+        }
+
+        this.layers = new com.amazonaws.internal.SdkInternalList<Layer>(layers);
+    }
+
+    /**
+     * <p>
+     * A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLayers(java.util.Collection)} or {@link #withLayers(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param layers
+     *        A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     *        layers</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PublishVersionResult withLayers(Layer... layers) {
+        if (this.layers == null) {
+            setLayers(new com.amazonaws.internal.SdkInternalList<Layer>(layers.length));
+        }
+        for (Layer ele : layers) {
+            this.layers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>.
+     * </p>
+     * 
+     * @param layers
+     *        A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     *        layers</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PublishVersionResult withLayers(java.util.Collection<Layer> layers) {
+        setLayers(layers);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -996,7 +1079,9 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getMasterArn() != null)
             sb.append("MasterArn: ").append(getMasterArn()).append(",");
         if (getRevisionId() != null)
-            sb.append("RevisionId: ").append(getRevisionId());
+            sb.append("RevisionId: ").append(getRevisionId()).append(",");
+        if (getLayers() != null)
+            sb.append("Layers: ").append(getLayers());
         sb.append("}");
         return sb.toString();
     }
@@ -1087,6 +1172,10 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getRevisionId() != null && other.getRevisionId().equals(this.getRevisionId()) == false)
             return false;
+        if (other.getLayers() == null ^ this.getLayers() == null)
+            return false;
+        if (other.getLayers() != null && other.getLayers().equals(this.getLayers()) == false)
+            return false;
         return true;
     }
 
@@ -1114,6 +1203,7 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getTracingConfig() == null) ? 0 : getTracingConfig().hashCode());
         hashCode = prime * hashCode + ((getMasterArn() == null) ? 0 : getMasterArn().hashCode());
         hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
+        hashCode = prime * hashCode + ((getLayers() == null) ? 0 : getLayers().hashCode());
         return hashCode;
     }
 

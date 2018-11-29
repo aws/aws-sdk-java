@@ -67,6 +67,13 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * If this is a managed rule, created by an AWS service on your behalf, this field displays the principal name of
+     * the AWS service that created the rule.
+     * </p>
+     */
+    private String managedBy;
 
     /**
      * <p>
@@ -394,6 +401,52 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * If this is a managed rule, created by an AWS service on your behalf, this field displays the principal name of
+     * the AWS service that created the rule.
+     * </p>
+     * 
+     * @param managedBy
+     *        If this is a managed rule, created by an AWS service on your behalf, this field displays the principal
+     *        name of the AWS service that created the rule.
+     */
+
+    public void setManagedBy(String managedBy) {
+        this.managedBy = managedBy;
+    }
+
+    /**
+     * <p>
+     * If this is a managed rule, created by an AWS service on your behalf, this field displays the principal name of
+     * the AWS service that created the rule.
+     * </p>
+     * 
+     * @return If this is a managed rule, created by an AWS service on your behalf, this field displays the principal
+     *         name of the AWS service that created the rule.
+     */
+
+    public String getManagedBy() {
+        return this.managedBy;
+    }
+
+    /**
+     * <p>
+     * If this is a managed rule, created by an AWS service on your behalf, this field displays the principal name of
+     * the AWS service that created the rule.
+     * </p>
+     * 
+     * @param managedBy
+     *        If this is a managed rule, created by an AWS service on your behalf, this field displays the principal
+     *        name of the AWS service that created the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRuleResult withManagedBy(String managedBy) {
+        setManagedBy(managedBy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -417,7 +470,9 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getManagedBy() != null)
+            sb.append("ManagedBy: ").append(getManagedBy());
         sb.append("}");
         return sb.toString();
     }
@@ -460,6 +515,10 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getManagedBy() == null ^ this.getManagedBy() == null)
+            return false;
+        if (other.getManagedBy() != null && other.getManagedBy().equals(this.getManagedBy()) == false)
+            return false;
         return true;
     }
 
@@ -475,6 +534,7 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getManagedBy() == null) ? 0 : getManagedBy().hashCode());
         return hashCode;
     }
 

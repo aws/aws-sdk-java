@@ -99,6 +99,7 @@ public final class SucceedState implements State {
         @JsonProperty(PropertyNames.COMMENT)
         private String comment;
 
+        @JsonUnwrapped
         private final PathContainer.Builder pathContainer = PathContainer.builder();
 
         private Builder() {

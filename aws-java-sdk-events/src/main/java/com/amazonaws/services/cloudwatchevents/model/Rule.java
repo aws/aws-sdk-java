@@ -71,6 +71,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * If the rule was created on behalf of your account by an AWS service, this field displays the principal name of
+     * the service that created the rule.
+     * </p>
+     */
+    private String managedBy;
 
     /**
      * <p>
@@ -398,6 +405,52 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * If the rule was created on behalf of your account by an AWS service, this field displays the principal name of
+     * the service that created the rule.
+     * </p>
+     * 
+     * @param managedBy
+     *        If the rule was created on behalf of your account by an AWS service, this field displays the principal
+     *        name of the service that created the rule.
+     */
+
+    public void setManagedBy(String managedBy) {
+        this.managedBy = managedBy;
+    }
+
+    /**
+     * <p>
+     * If the rule was created on behalf of your account by an AWS service, this field displays the principal name of
+     * the service that created the rule.
+     * </p>
+     * 
+     * @return If the rule was created on behalf of your account by an AWS service, this field displays the principal
+     *         name of the service that created the rule.
+     */
+
+    public String getManagedBy() {
+        return this.managedBy;
+    }
+
+    /**
+     * <p>
+     * If the rule was created on behalf of your account by an AWS service, this field displays the principal name of
+     * the service that created the rule.
+     * </p>
+     * 
+     * @param managedBy
+     *        If the rule was created on behalf of your account by an AWS service, this field displays the principal
+     *        name of the service that created the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Rule withManagedBy(String managedBy) {
+        setManagedBy(managedBy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -421,7 +474,9 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
         if (getScheduleExpression() != null)
             sb.append("ScheduleExpression: ").append(getScheduleExpression()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getManagedBy() != null)
+            sb.append("ManagedBy: ").append(getManagedBy());
         sb.append("}");
         return sb.toString();
     }
@@ -464,6 +519,10 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getManagedBy() == null ^ this.getManagedBy() == null)
+            return false;
+        if (other.getManagedBy() != null && other.getManagedBy().equals(this.getManagedBy()) == false)
+            return false;
         return true;
     }
 
@@ -479,6 +538,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getScheduleExpression() == null) ? 0 : getScheduleExpression().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getManagedBy() == null) ? 0 : getManagedBy().hashCode());
         return hashCode;
     }
 

@@ -56,6 +56,10 @@ public class ModifyTargetGroupRequestMarshaller implements Marshaller<Request<Mo
             request.addParameter("HealthCheckPath", StringUtils.fromString(modifyTargetGroupRequest.getHealthCheckPath()));
         }
 
+        if (modifyTargetGroupRequest.getHealthCheckEnabled() != null) {
+            request.addParameter("HealthCheckEnabled", StringUtils.fromBoolean(modifyTargetGroupRequest.getHealthCheckEnabled()));
+        }
+
         if (modifyTargetGroupRequest.getHealthCheckIntervalSeconds() != null) {
             request.addParameter("HealthCheckIntervalSeconds", StringUtils.fromInteger(modifyTargetGroupRequest.getHealthCheckIntervalSeconds()));
         }

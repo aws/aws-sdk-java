@@ -80,6 +80,11 @@ public class TargetGroupStaxUnmarshaller implements Unmarshaller<TargetGroup, St
                     continue;
                 }
 
+                if (context.testExpression("HealthCheckEnabled", targetDepth)) {
+                    targetGroup.setHealthCheckEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("HealthCheckIntervalSeconds", targetDepth)) {
                     targetGroup.setHealthCheckIntervalSeconds(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

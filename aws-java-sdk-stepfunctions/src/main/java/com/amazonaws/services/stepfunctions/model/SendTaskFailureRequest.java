@@ -34,7 +34,7 @@ public class SendTaskFailureRequest extends com.amazonaws.AmazonWebServiceReques
     private String taskToken;
     /**
      * <p>
-     * An arbitrary error code that identifies the cause of the failure.
+     * The error code of the failure.
      * </p>
      */
     private String error;
@@ -93,11 +93,11 @@ public class SendTaskFailureRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An arbitrary error code that identifies the cause of the failure.
+     * The error code of the failure.
      * </p>
      * 
      * @param error
-     *        An arbitrary error code that identifies the cause of the failure.
+     *        The error code of the failure.
      */
 
     public void setError(String error) {
@@ -106,10 +106,10 @@ public class SendTaskFailureRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An arbitrary error code that identifies the cause of the failure.
+     * The error code of the failure.
      * </p>
      * 
-     * @return An arbitrary error code that identifies the cause of the failure.
+     * @return The error code of the failure.
      */
 
     public String getError() {
@@ -118,11 +118,11 @@ public class SendTaskFailureRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An arbitrary error code that identifies the cause of the failure.
+     * The error code of the failure.
      * </p>
      * 
      * @param error
-     *        An arbitrary error code that identifies the cause of the failure.
+     *        The error code of the failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

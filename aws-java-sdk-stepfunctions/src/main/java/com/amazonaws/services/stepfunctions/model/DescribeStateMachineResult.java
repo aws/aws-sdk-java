@@ -73,7 +73,9 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     private String status;
     /**
      * <p>
-     * The Amazon States Language definition of the state machine.
+     * The Amazon States Language definition of the state machine. See <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * Language</a>.
      * </p>
      */
     private String definition;
@@ -423,11 +425,15 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon States Language definition of the state machine.
+     * The Amazon States Language definition of the state machine. See <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * Language</a>.
      * </p>
      * 
      * @param definition
-     *        The Amazon States Language definition of the state machine.
+     *        The Amazon States Language definition of the state machine. See <a
+     *        href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     *        States Language</a>.
      */
 
     public void setDefinition(String definition) {
@@ -436,10 +442,14 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon States Language definition of the state machine.
+     * The Amazon States Language definition of the state machine. See <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * Language</a>.
      * </p>
      * 
-     * @return The Amazon States Language definition of the state machine.
+     * @return The Amazon States Language definition of the state machine. See <a
+     *         href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     *         States Language</a>.
      */
 
     public String getDefinition() {
@@ -448,11 +458,15 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon States Language definition of the state machine.
+     * The Amazon States Language definition of the state machine. See <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * Language</a>.
      * </p>
      * 
      * @param definition
-     *        The Amazon States Language definition of the state machine.
+     *        The Amazon States Language definition of the state machine. See <a
+     *        href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     *        States Language</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -252,6 +252,39 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements AWSLambdaAs
     }
 
     @Override
+    public java.util.concurrent.Future<AddLayerVersionPermissionResult> addLayerVersionPermissionAsync(AddLayerVersionPermissionRequest request) {
+
+        return addLayerVersionPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddLayerVersionPermissionResult> addLayerVersionPermissionAsync(final AddLayerVersionPermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddLayerVersionPermissionRequest, AddLayerVersionPermissionResult> asyncHandler) {
+        final AddLayerVersionPermissionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddLayerVersionPermissionResult>() {
+            @Override
+            public AddLayerVersionPermissionResult call() throws Exception {
+                AddLayerVersionPermissionResult result = null;
+
+                try {
+                    result = executeAddLayerVersionPermission(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(AddPermissionRequest request) {
 
         return addPermissionAsync(request, null);
@@ -516,6 +549,39 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements AWSLambdaAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteLayerVersionResult> deleteLayerVersionAsync(DeleteLayerVersionRequest request) {
+
+        return deleteLayerVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLayerVersionResult> deleteLayerVersionAsync(final DeleteLayerVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLayerVersionRequest, DeleteLayerVersionResult> asyncHandler) {
+        final DeleteLayerVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLayerVersionResult>() {
+            @Override
+            public DeleteLayerVersionResult call() throws Exception {
+                DeleteLayerVersionResult result = null;
+
+                try {
+                    result = executeDeleteLayerVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAccountSettingsResult> getAccountSettingsAsync(GetAccountSettingsRequest request) {
 
         return getAccountSettingsAsync(request, null);
@@ -665,6 +731,72 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements AWSLambdaAs
 
                 try {
                     result = executeGetFunctionConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLayerVersionResult> getLayerVersionAsync(GetLayerVersionRequest request) {
+
+        return getLayerVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLayerVersionResult> getLayerVersionAsync(final GetLayerVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLayerVersionRequest, GetLayerVersionResult> asyncHandler) {
+        final GetLayerVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLayerVersionResult>() {
+            @Override
+            public GetLayerVersionResult call() throws Exception {
+                GetLayerVersionResult result = null;
+
+                try {
+                    result = executeGetLayerVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLayerVersionPolicyResult> getLayerVersionPolicyAsync(GetLayerVersionPolicyRequest request) {
+
+        return getLayerVersionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLayerVersionPolicyResult> getLayerVersionPolicyAsync(final GetLayerVersionPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLayerVersionPolicyRequest, GetLayerVersionPolicyResult> asyncHandler) {
+        final GetLayerVersionPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLayerVersionPolicyResult>() {
+            @Override
+            public GetLayerVersionPolicyResult call() throws Exception {
+                GetLayerVersionPolicyResult result = null;
+
+                try {
+                    result = executeGetLayerVersionPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -927,6 +1059,72 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements AWSLambdaAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListLayerVersionsResult> listLayerVersionsAsync(ListLayerVersionsRequest request) {
+
+        return listLayerVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLayerVersionsResult> listLayerVersionsAsync(final ListLayerVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListLayerVersionsRequest, ListLayerVersionsResult> asyncHandler) {
+        final ListLayerVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListLayerVersionsResult>() {
+            @Override
+            public ListLayerVersionsResult call() throws Exception {
+                ListLayerVersionsResult result = null;
+
+                try {
+                    result = executeListLayerVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLayersResult> listLayersAsync(ListLayersRequest request) {
+
+        return listLayersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLayersResult> listLayersAsync(final ListLayersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListLayersRequest, ListLayersResult> asyncHandler) {
+        final ListLayersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListLayersResult>() {
+            @Override
+            public ListLayersResult call() throws Exception {
+                ListLayersResult result = null;
+
+                try {
+                    result = executeListLayers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request) {
 
         return listTagsAsync(request, null);
@@ -993,6 +1191,39 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements AWSLambdaAs
     }
 
     @Override
+    public java.util.concurrent.Future<PublishLayerVersionResult> publishLayerVersionAsync(PublishLayerVersionRequest request) {
+
+        return publishLayerVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PublishLayerVersionResult> publishLayerVersionAsync(final PublishLayerVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PublishLayerVersionRequest, PublishLayerVersionResult> asyncHandler) {
+        final PublishLayerVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PublishLayerVersionResult>() {
+            @Override
+            public PublishLayerVersionResult call() throws Exception {
+                PublishLayerVersionResult result = null;
+
+                try {
+                    result = executePublishLayerVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PublishVersionResult> publishVersionAsync(PublishVersionRequest request) {
 
         return publishVersionAsync(request, null);
@@ -1043,6 +1274,39 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements AWSLambdaAs
 
                 try {
                     result = executePutFunctionConcurrency(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveLayerVersionPermissionResult> removeLayerVersionPermissionAsync(RemoveLayerVersionPermissionRequest request) {
+
+        return removeLayerVersionPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveLayerVersionPermissionResult> removeLayerVersionPermissionAsync(final RemoveLayerVersionPermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveLayerVersionPermissionRequest, RemoveLayerVersionPermissionResult> asyncHandler) {
+        final RemoveLayerVersionPermissionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemoveLayerVersionPermissionResult>() {
+            @Override
+            public RemoveLayerVersionPermissionResult call() throws Exception {
+                RemoveLayerVersionPermissionResult result = null;
+
+                try {
+                    result = executeRemoveLayerVersionPermission(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

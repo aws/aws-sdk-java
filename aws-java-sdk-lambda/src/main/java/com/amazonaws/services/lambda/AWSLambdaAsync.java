@@ -42,6 +42,51 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
+     * Adds permissions to the resource-based policy of a version of a function layer. Use this action to grant layer
+     * usage permission to other accounts. You can grant permission to a single account, all AWS accounts, or all
+     * accounts in an organization.
+     * </p>
+     * <p>
+     * To revoke permission, call <a>RemoveLayerVersionPermission</a> with the statement ID that you specified when you
+     * added it.
+     * </p>
+     * 
+     * @param addLayerVersionPermissionRequest
+     * @return A Java Future containing the result of the AddLayerVersionPermission operation returned by the service.
+     * @sample AWSLambdaAsync.AddLayerVersionPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AddLayerVersionPermissionResult> addLayerVersionPermissionAsync(
+            AddLayerVersionPermissionRequest addLayerVersionPermissionRequest);
+
+    /**
+     * <p>
+     * Adds permissions to the resource-based policy of a version of a function layer. Use this action to grant layer
+     * usage permission to other accounts. You can grant permission to a single account, all AWS accounts, or all
+     * accounts in an organization.
+     * </p>
+     * <p>
+     * To revoke permission, call <a>RemoveLayerVersionPermission</a> with the statement ID that you specified when you
+     * added it.
+     * </p>
+     * 
+     * @param addLayerVersionPermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddLayerVersionPermission operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.AddLayerVersionPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AddLayerVersionPermissionResult> addLayerVersionPermissionAsync(
+            AddLayerVersionPermissionRequest addLayerVersionPermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<AddLayerVersionPermissionRequest, AddLayerVersionPermissionResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds a permission to the resource policy associated with the specified AWS Lambda function. You use resource
      * policies to grant permissions to event sources that use the <i>push</i> model. In a <i>push</i> model, event
      * sources (such as Amazon S3 and custom applications) invoke your Lambda function. Each permission you add to the
@@ -396,6 +441,39 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
+     * Deletes a version of a function layer. Deleted versions can no longer be viewed or added to functions. However, a
+     * copy of the version remains in Lambda until no functions refer to it.
+     * </p>
+     * 
+     * @param deleteLayerVersionRequest
+     * @return A Java Future containing the result of the DeleteLayerVersion operation returned by the service.
+     * @sample AWSLambdaAsync.DeleteLayerVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLayerVersionResult> deleteLayerVersionAsync(DeleteLayerVersionRequest deleteLayerVersionRequest);
+
+    /**
+     * <p>
+     * Deletes a version of a function layer. Deleted versions can no longer be viewed or added to functions. However, a
+     * copy of the version remains in Lambda until no functions refer to it.
+     * </p>
+     * 
+     * @param deleteLayerVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLayerVersion operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.DeleteLayerVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLayerVersionResult> deleteLayerVersionAsync(DeleteLayerVersionRequest deleteLayerVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLayerVersionRequest, DeleteLayerVersionResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves details about your account's <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and usage in a region.
      * </p>
@@ -608,6 +686,70 @@ public interface AWSLambdaAsync extends AWSLambda {
      */
     java.util.concurrent.Future<GetFunctionConfigurationResult> getFunctionConfigurationAsync(GetFunctionConfigurationRequest getFunctionConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<GetFunctionConfigurationRequest, GetFunctionConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a version of a function layer, with a link to download the layer archive that's valid
+     * for 10 minutes.
+     * </p>
+     * 
+     * @param getLayerVersionRequest
+     * @return A Java Future containing the result of the GetLayerVersion operation returned by the service.
+     * @sample AWSLambdaAsync.GetLayerVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetLayerVersionResult> getLayerVersionAsync(GetLayerVersionRequest getLayerVersionRequest);
+
+    /**
+     * <p>
+     * Returns information about a version of a function layer, with a link to download the layer archive that's valid
+     * for 10 minutes.
+     * </p>
+     * 
+     * @param getLayerVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLayerVersion operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.GetLayerVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetLayerVersionResult> getLayerVersionAsync(GetLayerVersionRequest getLayerVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLayerVersionRequest, GetLayerVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the permission policy for a layer version. For more information, see <a>AddLayerVersionPermission</a>.
+     * </p>
+     * 
+     * @param getLayerVersionPolicyRequest
+     * @return A Java Future containing the result of the GetLayerVersionPolicy operation returned by the service.
+     * @sample AWSLambdaAsync.GetLayerVersionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLayerVersionPolicyResult> getLayerVersionPolicyAsync(GetLayerVersionPolicyRequest getLayerVersionPolicyRequest);
+
+    /**
+     * <p>
+     * Returns the permission policy for a layer version. For more information, see <a>AddLayerVersionPermission</a>.
+     * </p>
+     * 
+     * @param getLayerVersionPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLayerVersionPolicy operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.GetLayerVersionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLayerVersionPolicyResult> getLayerVersionPolicyAsync(GetLayerVersionPolicyRequest getLayerVersionPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLayerVersionPolicyRequest, GetLayerVersionPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -939,6 +1081,76 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
+     * Lists the versions of a function layer. Versions that have been deleted aren't listed. Specify a <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
+     * versions that indicate that they're compatible with that runtime.
+     * </p>
+     * 
+     * @param listLayerVersionsRequest
+     * @return A Java Future containing the result of the ListLayerVersions operation returned by the service.
+     * @sample AWSLambdaAsync.ListLayerVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListLayerVersionsResult> listLayerVersionsAsync(ListLayerVersionsRequest listLayerVersionsRequest);
+
+    /**
+     * <p>
+     * Lists the versions of a function layer. Versions that have been deleted aren't listed. Specify a <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
+     * versions that indicate that they're compatible with that runtime.
+     * </p>
+     * 
+     * @param listLayerVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLayerVersions operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.ListLayerVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListLayerVersionsResult> listLayerVersionsAsync(ListLayerVersionsRequest listLayerVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLayerVersionsRequest, ListLayerVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists function layers and shows information about the latest version of each. Specify a <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
+     * layers that indicate that they're compatible with that runtime.
+     * </p>
+     * 
+     * @param listLayersRequest
+     * @return A Java Future containing the result of the ListLayers operation returned by the service.
+     * @sample AWSLambdaAsync.ListLayers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListLayersResult> listLayersAsync(ListLayersRequest listLayersRequest);
+
+    /**
+     * <p>
+     * Lists function layers and shows information about the latest version of each. Specify a <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
+     * layers that indicate that they're compatible with that runtime.
+     * </p>
+     * 
+     * @param listLayersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLayers operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.ListLayers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListLayersResult> listLayersAsync(ListLayersRequest listLayersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLayersRequest, ListLayersResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of tags assigned to a function when supplied the function ARN (Amazon Resource Name). For more
      * information on Tagging, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
      * Functions</a> in the <b>AWS Lambda Developer Guide</b>.
@@ -1006,6 +1218,45 @@ public interface AWSLambdaAsync extends AWSLambda {
      */
     java.util.concurrent.Future<ListVersionsByFunctionResult> listVersionsByFunctionAsync(ListVersionsByFunctionRequest listVersionsByFunctionRequest,
             com.amazonaws.handlers.AsyncHandler<ListVersionsByFunctionRequest, ListVersionsByFunctionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a function layer from a ZIP archive. Each time you call <code>PublishLayerVersion</code> with the same
+     * version name, a new version is created.
+     * </p>
+     * <p>
+     * Add layers to your function with <a>CreateFunction</a> or <a>UpdateFunctionConfiguration</a>.
+     * </p>
+     * 
+     * @param publishLayerVersionRequest
+     * @return A Java Future containing the result of the PublishLayerVersion operation returned by the service.
+     * @sample AWSLambdaAsync.PublishLayerVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PublishLayerVersionResult> publishLayerVersionAsync(PublishLayerVersionRequest publishLayerVersionRequest);
+
+    /**
+     * <p>
+     * Creates a function layer from a ZIP archive. Each time you call <code>PublishLayerVersion</code> with the same
+     * version name, a new version is created.
+     * </p>
+     * <p>
+     * Add layers to your function with <a>CreateFunction</a> or <a>UpdateFunctionConfiguration</a>.
+     * </p>
+     * 
+     * @param publishLayerVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PublishLayerVersion operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.PublishLayerVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PublishLayerVersionResult> publishLayerVersionAsync(PublishLayerVersionRequest publishLayerVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<PublishLayerVersionRequest, PublishLayerVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -1084,6 +1335,43 @@ public interface AWSLambdaAsync extends AWSLambda {
      */
     java.util.concurrent.Future<PutFunctionConcurrencyResult> putFunctionConcurrencyAsync(PutFunctionConcurrencyRequest putFunctionConcurrencyRequest,
             com.amazonaws.handlers.AsyncHandler<PutFunctionConcurrencyRequest, PutFunctionConcurrencyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes a statement from the permissions policy for a layer version. For more information, see
+     * <a>AddLayerVersionPermission</a>.
+     * </p>
+     * 
+     * @param removeLayerVersionPermissionRequest
+     * @return A Java Future containing the result of the RemoveLayerVersionPermission operation returned by the
+     *         service.
+     * @sample AWSLambdaAsync.RemoveLayerVersionPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveLayerVersionPermissionResult> removeLayerVersionPermissionAsync(
+            RemoveLayerVersionPermissionRequest removeLayerVersionPermissionRequest);
+
+    /**
+     * <p>
+     * Removes a statement from the permissions policy for a layer version. For more information, see
+     * <a>AddLayerVersionPermission</a>.
+     * </p>
+     * 
+     * @param removeLayerVersionPermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveLayerVersionPermission operation returned by the
+     *         service.
+     * @sample AWSLambdaAsyncHandler.RemoveLayerVersionPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveLayerVersionPermissionResult> removeLayerVersionPermissionAsync(
+            RemoveLayerVersionPermissionRequest removeLayerVersionPermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveLayerVersionPermissionRequest, RemoveLayerVersionPermissionResult> asyncHandler);
 
     /**
      * <p>

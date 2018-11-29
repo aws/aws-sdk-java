@@ -119,6 +119,11 @@ public class AbstractAmazonElasticLoadBalancing implements AmazonElasticLoadBala
     }
 
     @Override
+    public DescribeProvisionedCapacityResult describeProvisionedCapacity(DescribeProvisionedCapacityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeRulesResult describeRules(DescribeRulesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -155,6 +160,11 @@ public class AbstractAmazonElasticLoadBalancing implements AmazonElasticLoadBala
 
     @Override
     public ModifyLoadBalancerAttributesResult modifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyProvisionedCapacityResult modifyProvisionedCapacity(ModifyProvisionedCapacityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

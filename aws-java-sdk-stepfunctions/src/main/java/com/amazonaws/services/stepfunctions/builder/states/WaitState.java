@@ -114,6 +114,7 @@ public final class WaitState extends TransitionState {
 
         private WaitFor.Builder waitFor = WaitFor.NULL_BUILDER;
 
+        @JsonUnwrapped
         private final PathContainer.Builder pathContainer = PathContainer.builder();
 
         @JsonProperty

@@ -15,9 +15,6 @@
 
 package com.amazonaws.services.stepfunctions.builder.states;
 
-import com.amazonaws.services.stepfunctions.builder.internal.PropertyNames;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 /**
  * Interface for all builders that expose both 'InputPath' and 'OutputPath'.
  *
@@ -36,7 +33,6 @@ public interface InputOutputPathBuilder<BuilderT> {
      * @param inputPath New path value.
      * @return This object for method chaining.
      */
-    @JsonProperty(PropertyNames.INPUT_PATH)
     BuilderT inputPath(String inputPath);
 
     /**
@@ -47,7 +43,6 @@ public interface InputOutputPathBuilder<BuilderT> {
      * @param outputPath New path value.
      * @return This object for method chaining.
      */
-    @JsonProperty(PropertyNames.OUTPUT_PATH)
     BuilderT outputPath(String outputPath);
 
 }

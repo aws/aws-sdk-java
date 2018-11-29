@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum TargetTypeEnum {
 
     Instance("instance"),
-    Ip("ip");
+    Ip("ip"),
+    Lambda("lambda");
 
     private String value;
 

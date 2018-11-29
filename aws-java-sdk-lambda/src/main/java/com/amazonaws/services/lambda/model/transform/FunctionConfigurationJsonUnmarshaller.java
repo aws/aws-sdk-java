@@ -124,6 +124,10 @@ public class FunctionConfigurationJsonUnmarshaller implements Unmarshaller<Funct
                     context.nextToken();
                     functionConfiguration.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Layers", targetDepth)) {
+                    context.nextToken();
+                    functionConfiguration.setLayers(new ListUnmarshaller<Layer>(LayerJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

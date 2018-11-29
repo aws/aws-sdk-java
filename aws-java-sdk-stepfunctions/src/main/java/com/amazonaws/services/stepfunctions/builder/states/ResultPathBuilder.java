@@ -15,9 +15,6 @@
 
 package com.amazonaws.services.stepfunctions.builder.states;
 
-import com.amazonaws.services.stepfunctions.builder.internal.PropertyNames;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 /**
  * Interface for all builders that expose 'ResultPath'.
  *
@@ -34,7 +31,6 @@ public interface ResultPathBuilder<BuilderT> {
      * @param resultPath New path value.
      * @return This object for method chaining.
      */
-    @JsonProperty(PropertyNames.RESULT_PATH)
     BuilderT resultPath(String resultPath);
 
 }

@@ -845,6 +845,39 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeProvisionedCapacityResult> describeProvisionedCapacityAsync(DescribeProvisionedCapacityRequest request) {
+
+        return describeProvisionedCapacityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeProvisionedCapacityResult> describeProvisionedCapacityAsync(final DescribeProvisionedCapacityRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeProvisionedCapacityRequest, DescribeProvisionedCapacityResult> asyncHandler) {
+        final DescribeProvisionedCapacityRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeProvisionedCapacityResult>() {
+            @Override
+            public DescribeProvisionedCapacityResult call() throws Exception {
+                DescribeProvisionedCapacityResult result = null;
+
+                try {
+                    result = executeDescribeProvisionedCapacity(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeRulesResult> describeRulesAsync(DescribeRulesRequest request) {
 
         return describeRulesAsync(request, null);
@@ -1094,6 +1127,39 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
                 try {
                     result = executeModifyLoadBalancerAttributes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyProvisionedCapacityResult> modifyProvisionedCapacityAsync(ModifyProvisionedCapacityRequest request) {
+
+        return modifyProvisionedCapacityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyProvisionedCapacityResult> modifyProvisionedCapacityAsync(final ModifyProvisionedCapacityRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyProvisionedCapacityRequest, ModifyProvisionedCapacityResult> asyncHandler) {
+        final ModifyProvisionedCapacityRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyProvisionedCapacityResult>() {
+            @Override
+            public ModifyProvisionedCapacityResult call() throws Exception {
+                ModifyProvisionedCapacityResult result = null;
+
+                try {
+                    result = executeModifyProvisionedCapacity(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

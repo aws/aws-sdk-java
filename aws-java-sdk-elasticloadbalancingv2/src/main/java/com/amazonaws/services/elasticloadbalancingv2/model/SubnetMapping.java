@@ -39,6 +39,8 @@ public class SubnetMapping implements Serializable, Cloneable {
      */
     private String allocationId;
 
+    private Boolean staticIp;
+
     /**
      * <p>
      * The ID of the subnet.
@@ -120,6 +122,40 @@ public class SubnetMapping implements Serializable, Cloneable {
     }
 
     /**
+     * @param staticIp
+     */
+
+    public void setStaticIp(Boolean staticIp) {
+        this.staticIp = staticIp;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getStaticIp() {
+        return this.staticIp;
+    }
+
+    /**
+     * @param staticIp
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubnetMapping withStaticIp(Boolean staticIp) {
+        setStaticIp(staticIp);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isStaticIp() {
+        return this.staticIp;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -133,7 +169,9 @@ public class SubnetMapping implements Serializable, Cloneable {
         if (getSubnetId() != null)
             sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getAllocationId() != null)
-            sb.append("AllocationId: ").append(getAllocationId());
+            sb.append("AllocationId: ").append(getAllocationId()).append(",");
+        if (getStaticIp() != null)
+            sb.append("StaticIp: ").append(getStaticIp());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +194,10 @@ public class SubnetMapping implements Serializable, Cloneable {
             return false;
         if (other.getAllocationId() != null && other.getAllocationId().equals(this.getAllocationId()) == false)
             return false;
+        if (other.getStaticIp() == null ^ this.getStaticIp() == null)
+            return false;
+        if (other.getStaticIp() != null && other.getStaticIp().equals(this.getStaticIp()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +208,7 @@ public class SubnetMapping implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getAllocationId() == null) ? 0 : getAllocationId().hashCode());
+        hashCode = prime * hashCode + ((getStaticIp() == null) ? 0 : getStaticIp().hashCode());
         return hashCode;
     }
 

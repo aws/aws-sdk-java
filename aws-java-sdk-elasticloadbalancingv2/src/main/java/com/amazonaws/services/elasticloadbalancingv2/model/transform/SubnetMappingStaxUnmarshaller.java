@@ -52,6 +52,11 @@ public class SubnetMappingStaxUnmarshaller implements Unmarshaller<SubnetMapping
                     subnetMapping.setAllocationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("StaticIp", targetDepth)) {
+                    subnetMapping.setStaticIp(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return subnetMapping;

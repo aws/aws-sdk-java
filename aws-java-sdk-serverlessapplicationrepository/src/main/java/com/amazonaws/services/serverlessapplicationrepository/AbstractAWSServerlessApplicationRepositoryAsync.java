@@ -133,6 +133,19 @@ public class AbstractAWSServerlessApplicationRepositoryAsync extends AbstractAWS
     }
 
     @Override
+    public java.util.concurrent.Future<ListApplicationDependenciesResult> listApplicationDependenciesAsync(ListApplicationDependenciesRequest request) {
+
+        return listApplicationDependenciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationDependenciesResult> listApplicationDependenciesAsync(ListApplicationDependenciesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationDependenciesRequest, ListApplicationDependenciesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListApplicationVersionsResult> listApplicationVersionsAsync(ListApplicationVersionsRequest request) {
 
         return listApplicationVersionsAsync(request, null);

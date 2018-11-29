@@ -133,6 +133,7 @@ public final class ChoiceState implements State {
         @JsonProperty(PropertyNames.CHOICES)
         private List<Choice.Builder> choices = new ArrayList<Choice.Builder>();
 
+        @JsonUnwrapped
         private final PathContainer.Builder pathContainer = PathContainer.builder();
 
         private Builder() {

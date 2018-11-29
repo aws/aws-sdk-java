@@ -102,6 +102,44 @@ public interface AWSLambda {
 
     /**
      * <p>
+     * Adds permissions to the resource-based policy of a version of a function layer. Use this action to grant layer
+     * usage permission to other accounts. You can grant permission to a single account, all AWS accounts, or all
+     * accounts in an organization.
+     * </p>
+     * <p>
+     * To revoke permission, call <a>RemoveLayerVersionPermission</a> with the statement ID that you specified when you
+     * added it.
+     * </p>
+     * 
+     * @param addLayerVersionPermissionRequest
+     * @return Result of the AddLayerVersionPermission operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy statement) specified in the request does
+     *         not exist.
+     * @throws ResourceConflictException
+     *         The resource already exists.
+     * @throws TooManyRequestsException
+     *         Request throughput limit exceeded
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
+     *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
+     *         AWS Lambda is unable to assume you will get this exception.
+     * @throws PolicyLengthExceededException
+     *         Lambda function access policy is limited to 20 KB.
+     * @throws PreconditionFailedException
+     *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
+     *         resource.
+     * @sample AWSLambda.AddLayerVersionPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AddLayerVersionPermissionResult addLayerVersionPermission(AddLayerVersionPermissionRequest addLayerVersionPermissionRequest);
+
+    /**
+     * <p>
      * Adds a permission to the resource policy associated with the specified AWS Lambda function. You use resource
      * policies to grant permissions to event sources that use the <i>push</i> model. In a <i>push</i> model, event
      * sources (such as Amazon S3 and custom applications) invoke your Lambda function. Each permission you add to the
@@ -365,6 +403,24 @@ public interface AWSLambda {
 
     /**
      * <p>
+     * Deletes a version of a function layer. Deleted versions can no longer be viewed or added to functions. However, a
+     * copy of the version remains in Lambda until no functions refer to it.
+     * </p>
+     * 
+     * @param deleteLayerVersionRequest
+     * @return Result of the DeleteLayerVersion operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws TooManyRequestsException
+     *         Request throughput limit exceeded
+     * @sample AWSLambda.DeleteLayerVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteLayerVersionResult deleteLayerVersion(DeleteLayerVersionRequest deleteLayerVersionRequest);
+
+    /**
+     * <p>
      * Retrieves details about your account's <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and usage in a region.
      * </p>
@@ -505,6 +561,55 @@ public interface AWSLambda {
      *      target="_top">AWS API Documentation</a>
      */
     GetFunctionConfigurationResult getFunctionConfiguration(GetFunctionConfigurationRequest getFunctionConfigurationRequest);
+
+    /**
+     * <p>
+     * Returns information about a version of a function layer, with a link to download the layer archive that's valid
+     * for 10 minutes.
+     * </p>
+     * 
+     * @param getLayerVersionRequest
+     * @return Result of the GetLayerVersion operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
+     *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
+     *         AWS Lambda is unable to assume you will get this exception.
+     * @throws TooManyRequestsException
+     *         Request throughput limit exceeded
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy statement) specified in the request does
+     *         not exist.
+     * @sample AWSLambda.GetLayerVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetLayerVersionResult getLayerVersion(GetLayerVersionRequest getLayerVersionRequest);
+
+    /**
+     * <p>
+     * Returns the permission policy for a layer version. For more information, see <a>AddLayerVersionPermission</a>.
+     * </p>
+     * 
+     * @param getLayerVersionPolicyRequest
+     * @return Result of the GetLayerVersionPolicy operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy statement) specified in the request does
+     *         not exist.
+     * @throws TooManyRequestsException
+     *         Request throughput limit exceeded
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
+     *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
+     *         AWS Lambda is unable to assume you will get this exception.
+     * @sample AWSLambda.GetLayerVersionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetLayerVersionPolicyResult getLayerVersionPolicy(GetLayerVersionPolicyRequest getLayerVersionPolicyRequest);
 
     /**
      * <p>
@@ -757,6 +862,55 @@ public interface AWSLambda {
 
     /**
      * <p>
+     * Lists the versions of a function layer. Versions that have been deleted aren't listed. Specify a <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
+     * versions that indicate that they're compatible with that runtime.
+     * </p>
+     * 
+     * @param listLayerVersionsRequest
+     * @return Result of the ListLayerVersions operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
+     *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
+     *         AWS Lambda is unable to assume you will get this exception.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy statement) specified in the request does
+     *         not exist.
+     * @throws TooManyRequestsException
+     *         Request throughput limit exceeded
+     * @sample AWSLambda.ListLayerVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListLayerVersionsResult listLayerVersions(ListLayerVersionsRequest listLayerVersionsRequest);
+
+    /**
+     * <p>
+     * Lists function layers and shows information about the latest version of each. Specify a <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
+     * layers that indicate that they're compatible with that runtime.
+     * </p>
+     * 
+     * @param listLayersRequest
+     * @return Result of the ListLayers operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
+     *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
+     *         AWS Lambda is unable to assume you will get this exception.
+     * @throws TooManyRequestsException
+     *         Request throughput limit exceeded
+     * @sample AWSLambda.ListLayers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListLayersResult listLayers(ListLayersRequest listLayersRequest);
+
+    /**
+     * <p>
      * Returns a list of tags assigned to a function when supplied the function ARN (Amazon Resource Name). For more
      * information on Tagging, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
      * Functions</a> in the <b>AWS Lambda Developer Guide</b>.
@@ -806,6 +960,37 @@ public interface AWSLambda {
      *      API Documentation</a>
      */
     ListVersionsByFunctionResult listVersionsByFunction(ListVersionsByFunctionRequest listVersionsByFunctionRequest);
+
+    /**
+     * <p>
+     * Creates a function layer from a ZIP archive. Each time you call <code>PublishLayerVersion</code> with the same
+     * version name, a new version is created.
+     * </p>
+     * <p>
+     * Add layers to your function with <a>CreateFunction</a> or <a>UpdateFunctionConfiguration</a>.
+     * </p>
+     * 
+     * @param publishLayerVersionRequest
+     * @return Result of the PublishLayerVersion operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy statement) specified in the request does
+     *         not exist.
+     * @throws TooManyRequestsException
+     *         Request throughput limit exceeded
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
+     *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
+     *         AWS Lambda is unable to assume you will get this exception.
+     * @throws CodeStorageExceededException
+     *         You have exceeded your maximum total code size per account. <a
+     *         href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+     * @sample AWSLambda.PublishLayerVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PublishLayerVersionResult publishLayerVersion(PublishLayerVersionRequest publishLayerVersionRequest);
 
     /**
      * <p>
@@ -869,6 +1054,35 @@ public interface AWSLambda {
      *      API Documentation</a>
      */
     PutFunctionConcurrencyResult putFunctionConcurrency(PutFunctionConcurrencyRequest putFunctionConcurrencyRequest);
+
+    /**
+     * <p>
+     * Removes a statement from the permissions policy for a layer version. For more information, see
+     * <a>AddLayerVersionPermission</a>.
+     * </p>
+     * 
+     * @param removeLayerVersionPermissionRequest
+     * @return Result of the RemoveLayerVersionPermission operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy statement) specified in the request does
+     *         not exist.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
+     *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
+     *         AWS Lambda is unable to assume you will get this exception.
+     * @throws TooManyRequestsException
+     *         Request throughput limit exceeded
+     * @throws PreconditionFailedException
+     *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
+     *         resource.
+     * @sample AWSLambda.RemoveLayerVersionPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RemoveLayerVersionPermissionResult removeLayerVersionPermission(RemoveLayerVersionPermissionRequest removeLayerVersionPermissionRequest);
 
     /**
      * <p>

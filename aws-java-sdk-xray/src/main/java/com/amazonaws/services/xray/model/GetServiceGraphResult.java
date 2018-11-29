@@ -43,8 +43,8 @@ public class GetServiceGraphResult extends com.amazonaws.AmazonWebServiceResult<
     private java.util.List<Service> services;
     /**
      * <p>
-     * A flag indicating whether or not the group's filter expression has been consistent, or if the returned service
-     * graph may show traces from an older version of the group's filter expression.
+     * A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may
+     * show traces from an older version of the group's filter expression.
      * </p>
      */
     private Boolean containsOldGroupVersions;
@@ -207,13 +207,13 @@ public class GetServiceGraphResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A flag indicating whether or not the group's filter expression has been consistent, or if the returned service
-     * graph may show traces from an older version of the group's filter expression.
+     * A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may
+     * show traces from an older version of the group's filter expression.
      * </p>
      * 
      * @param containsOldGroupVersions
-     *        A flag indicating whether or not the group's filter expression has been consistent, or if the returned
-     *        service graph may show traces from an older version of the group's filter expression.
+     *        A flag indicating whether the group's filter expression has been consistent, or if the returned service
+     *        graph may show traces from an older version of the group's filter expression.
      */
 
     public void setContainsOldGroupVersions(Boolean containsOldGroupVersions) {
@@ -222,12 +222,12 @@ public class GetServiceGraphResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A flag indicating whether or not the group's filter expression has been consistent, or if the returned service
-     * graph may show traces from an older version of the group's filter expression.
+     * A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may
+     * show traces from an older version of the group's filter expression.
      * </p>
      * 
-     * @return A flag indicating whether or not the group's filter expression has been consistent, or if the returned
-     *         service graph may show traces from an older version of the group's filter expression.
+     * @return A flag indicating whether the group's filter expression has been consistent, or if the returned service
+     *         graph may show traces from an older version of the group's filter expression.
      */
 
     public Boolean getContainsOldGroupVersions() {
@@ -236,13 +236,13 @@ public class GetServiceGraphResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A flag indicating whether or not the group's filter expression has been consistent, or if the returned service
-     * graph may show traces from an older version of the group's filter expression.
+     * A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may
+     * show traces from an older version of the group's filter expression.
      * </p>
      * 
      * @param containsOldGroupVersions
-     *        A flag indicating whether or not the group's filter expression has been consistent, or if the returned
-     *        service graph may show traces from an older version of the group's filter expression.
+     *        A flag indicating whether the group's filter expression has been consistent, or if the returned service
+     *        graph may show traces from an older version of the group's filter expression.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,12 +253,12 @@ public class GetServiceGraphResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A flag indicating whether or not the group's filter expression has been consistent, or if the returned service
-     * graph may show traces from an older version of the group's filter expression.
+     * A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may
+     * show traces from an older version of the group's filter expression.
      * </p>
      * 
-     * @return A flag indicating whether or not the group's filter expression has been consistent, or if the returned
-     *         service graph may show traces from an older version of the group's filter expression.
+     * @return A flag indicating whether the group's filter expression has been consistent, or if the returned service
+     *         graph may show traces from an older version of the group's filter expression.
      */
 
     public Boolean isContainsOldGroupVersions() {

@@ -118,6 +118,8 @@ public class AuthenticateOidcActionConfig implements Serializable, Cloneable {
      */
     private String onUnauthenticatedRequest;
 
+    private Boolean useExistingClientSecret;
+
     /**
      * <p>
      * The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the
@@ -773,6 +775,40 @@ public class AuthenticateOidcActionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * @param useExistingClientSecret
+     */
+
+    public void setUseExistingClientSecret(Boolean useExistingClientSecret) {
+        this.useExistingClientSecret = useExistingClientSecret;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getUseExistingClientSecret() {
+        return this.useExistingClientSecret;
+    }
+
+    /**
+     * @param useExistingClientSecret
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuthenticateOidcActionConfig withUseExistingClientSecret(Boolean useExistingClientSecret) {
+        setUseExistingClientSecret(useExistingClientSecret);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isUseExistingClientSecret() {
+        return this.useExistingClientSecret;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -804,7 +840,9 @@ public class AuthenticateOidcActionConfig implements Serializable, Cloneable {
         if (getAuthenticationRequestExtraParams() != null)
             sb.append("AuthenticationRequestExtraParams: ").append(getAuthenticationRequestExtraParams()).append(",");
         if (getOnUnauthenticatedRequest() != null)
-            sb.append("OnUnauthenticatedRequest: ").append(getOnUnauthenticatedRequest());
+            sb.append("OnUnauthenticatedRequest: ").append(getOnUnauthenticatedRequest()).append(",");
+        if (getUseExistingClientSecret() != null)
+            sb.append("UseExistingClientSecret: ").append(getUseExistingClientSecret());
         sb.append("}");
         return sb.toString();
     }
@@ -864,6 +902,10 @@ public class AuthenticateOidcActionConfig implements Serializable, Cloneable {
             return false;
         if (other.getOnUnauthenticatedRequest() != null && other.getOnUnauthenticatedRequest().equals(this.getOnUnauthenticatedRequest()) == false)
             return false;
+        if (other.getUseExistingClientSecret() == null ^ this.getUseExistingClientSecret() == null)
+            return false;
+        if (other.getUseExistingClientSecret() != null && other.getUseExistingClientSecret().equals(this.getUseExistingClientSecret()) == false)
+            return false;
         return true;
     }
 
@@ -883,6 +925,7 @@ public class AuthenticateOidcActionConfig implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSessionTimeout() == null) ? 0 : getSessionTimeout().hashCode());
         hashCode = prime * hashCode + ((getAuthenticationRequestExtraParams() == null) ? 0 : getAuthenticationRequestExtraParams().hashCode());
         hashCode = prime * hashCode + ((getOnUnauthenticatedRequest() == null) ? 0 : getOnUnauthenticatedRequest().hashCode());
+        hashCode = prime * hashCode + ((getUseExistingClientSecret() == null) ? 0 : getUseExistingClientSecret().hashCode());
         return hashCode;
     }
 

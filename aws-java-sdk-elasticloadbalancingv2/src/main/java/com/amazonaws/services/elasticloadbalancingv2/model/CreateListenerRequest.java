@@ -53,8 +53,11 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     private String sslPolicy;
     /**
      * <p>
-     * [HTTPS listeners] The default SSL server certificate. You must provide exactly one default certificate. To create
-     * a certificate list, use <a>AddListenerCertificates</a>.
+     * [HTTPS listeners] The default SSL server certificate. You must provide exactly one certificate. Set
+     * <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
+     * </p>
+     * <p>
+     * To create a certificate list, use <a>AddListenerCertificates</a>.
      * </p>
      */
     private java.util.List<Certificate> certificates;
@@ -63,24 +66,24 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * The actions for the default rule. The rule must include one forward action or one or more fixed-response actions.
      * </p>
      * <p>
-     * If the action type is <code>forward</code>, you can specify a single target group. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
+     * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
+     * HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use an identity provider that is
-     * OpenID Connect (OIDC) compliant to authenticate users as they access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate users through an identity
+     * provider that is OpenID Connect (OIDC) compliant.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to
-     * authenticate users as they access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate users through the user
+     * pools supported by Amazon Cognito.
      * </p>
      * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect HTTP and HTTPS
-     * requests.
+     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
+     * from one URL to another.
      * </p>
      * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you can return a custom HTTP
-     * response.
+     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
+     * and return a custom HTTP response.
      * </p>
      */
     private java.util.List<Action> defaultActions;
@@ -296,11 +299,16 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [HTTPS listeners] The default SSL server certificate. You must provide exactly one default certificate. To create
-     * a certificate list, use <a>AddListenerCertificates</a>.
+     * [HTTPS listeners] The default SSL server certificate. You must provide exactly one certificate. Set
+     * <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
+     * </p>
+     * <p>
+     * To create a certificate list, use <a>AddListenerCertificates</a>.
      * </p>
      * 
-     * @return [HTTPS listeners] The default SSL server certificate. You must provide exactly one default certificate.
+     * @return [HTTPS listeners] The default SSL server certificate. You must provide exactly one certificate. Set
+     *         <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+     *         <p>
      *         To create a certificate list, use <a>AddListenerCertificates</a>.
      */
 
@@ -310,13 +318,18 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [HTTPS listeners] The default SSL server certificate. You must provide exactly one default certificate. To create
-     * a certificate list, use <a>AddListenerCertificates</a>.
+     * [HTTPS listeners] The default SSL server certificate. You must provide exactly one certificate. Set
+     * <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
+     * </p>
+     * <p>
+     * To create a certificate list, use <a>AddListenerCertificates</a>.
      * </p>
      * 
      * @param certificates
-     *        [HTTPS listeners] The default SSL server certificate. You must provide exactly one default certificate. To
-     *        create a certificate list, use <a>AddListenerCertificates</a>.
+     *        [HTTPS listeners] The default SSL server certificate. You must provide exactly one certificate. Set
+     *        <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+     *        <p>
+     *        To create a certificate list, use <a>AddListenerCertificates</a>.
      */
 
     public void setCertificates(java.util.Collection<Certificate> certificates) {
@@ -330,8 +343,11 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [HTTPS listeners] The default SSL server certificate. You must provide exactly one default certificate. To create
-     * a certificate list, use <a>AddListenerCertificates</a>.
+     * [HTTPS listeners] The default SSL server certificate. You must provide exactly one certificate. Set
+     * <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
+     * </p>
+     * <p>
+     * To create a certificate list, use <a>AddListenerCertificates</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -340,8 +356,10 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param certificates
-     *        [HTTPS listeners] The default SSL server certificate. You must provide exactly one default certificate. To
-     *        create a certificate list, use <a>AddListenerCertificates</a>.
+     *        [HTTPS listeners] The default SSL server certificate. You must provide exactly one certificate. Set
+     *        <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+     *        <p>
+     *        To create a certificate list, use <a>AddListenerCertificates</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -357,13 +375,18 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [HTTPS listeners] The default SSL server certificate. You must provide exactly one default certificate. To create
-     * a certificate list, use <a>AddListenerCertificates</a>.
+     * [HTTPS listeners] The default SSL server certificate. You must provide exactly one certificate. Set
+     * <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
+     * </p>
+     * <p>
+     * To create a certificate list, use <a>AddListenerCertificates</a>.
      * </p>
      * 
      * @param certificates
-     *        [HTTPS listeners] The default SSL server certificate. You must provide exactly one default certificate. To
-     *        create a certificate list, use <a>AddListenerCertificates</a>.
+     *        [HTTPS listeners] The default SSL server certificate. You must provide exactly one certificate. Set
+     *        <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+     *        <p>
+     *        To create a certificate list, use <a>AddListenerCertificates</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,47 +400,47 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * The actions for the default rule. The rule must include one forward action or one or more fixed-response actions.
      * </p>
      * <p>
-     * If the action type is <code>forward</code>, you can specify a single target group. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
+     * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
+     * HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use an identity provider that is
-     * OpenID Connect (OIDC) compliant to authenticate users as they access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate users through an identity
+     * provider that is OpenID Connect (OIDC) compliant.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to
-     * authenticate users as they access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate users through the user
+     * pools supported by Amazon Cognito.
      * </p>
      * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect HTTP and HTTPS
-     * requests.
+     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
+     * from one URL to another.
      * </p>
      * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you can return a custom HTTP
-     * response.
+     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
+     * and return a custom HTTP response.
      * </p>
      * 
      * @return The actions for the default rule. The rule must include one forward action or one or more fixed-response
      *         actions.</p>
      *         <p>
-     *         If the action type is <code>forward</code>, you can specify a single target group. The protocol of the
-     *         target group must be HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
+     *         If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
+     *         must be HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
      *         </p>
      *         <p>
-     *         [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use an identity provider
-     *         that is OpenID Connect (OIDC) compliant to authenticate users as they access your application.
+     *         [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     *         identity provider that is OpenID Connect (OIDC) compliant.
      *         </p>
      *         <p>
-     *         [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to
-     *         authenticate users as they access your application.
+     *         [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate users through
+     *         the user pools supported by Amazon Cognito.
      *         </p>
      *         <p>
-     *         [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect HTTP and HTTPS
-     *         requests.
+     *         [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
+     *         requests from one URL to another.
      *         </p>
      *         <p>
-     *         [Application Load Balancer] If the action type is <code>fixed-response</code>, you can return a custom
-     *         HTTP response.
+     *         [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
+     *         requests and return a custom HTTP response.
      */
 
     public java.util.List<Action> getDefaultActions() {
@@ -429,48 +452,48 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * The actions for the default rule. The rule must include one forward action or one or more fixed-response actions.
      * </p>
      * <p>
-     * If the action type is <code>forward</code>, you can specify a single target group. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
+     * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
+     * HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use an identity provider that is
-     * OpenID Connect (OIDC) compliant to authenticate users as they access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate users through an identity
+     * provider that is OpenID Connect (OIDC) compliant.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to
-     * authenticate users as they access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate users through the user
+     * pools supported by Amazon Cognito.
      * </p>
      * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect HTTP and HTTPS
-     * requests.
+     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
+     * from one URL to another.
      * </p>
      * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you can return a custom HTTP
-     * response.
+     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
+     * and return a custom HTTP response.
      * </p>
      * 
      * @param defaultActions
      *        The actions for the default rule. The rule must include one forward action or one or more fixed-response
      *        actions.</p>
      *        <p>
-     *        If the action type is <code>forward</code>, you can specify a single target group. The protocol of the
-     *        target group must be HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
+     *        If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
+     *        must be HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
      *        </p>
      *        <p>
-     *        [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use an identity provider
-     *        that is OpenID Connect (OIDC) compliant to authenticate users as they access your application.
+     *        [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     *        identity provider that is OpenID Connect (OIDC) compliant.
      *        </p>
      *        <p>
-     *        [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to
-     *        authenticate users as they access your application.
+     *        [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate users through
+     *        the user pools supported by Amazon Cognito.
      *        </p>
      *        <p>
-     *        [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect HTTP and HTTPS
-     *        requests.
+     *        [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
+     *        requests from one URL to another.
      *        </p>
      *        <p>
-     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you can return a custom
-     *        HTTP response.
+     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
+     *        requests and return a custom HTTP response.
      */
 
     public void setDefaultActions(java.util.Collection<Action> defaultActions) {
@@ -487,24 +510,24 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * The actions for the default rule. The rule must include one forward action or one or more fixed-response actions.
      * </p>
      * <p>
-     * If the action type is <code>forward</code>, you can specify a single target group. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
+     * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
+     * HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use an identity provider that is
-     * OpenID Connect (OIDC) compliant to authenticate users as they access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate users through an identity
+     * provider that is OpenID Connect (OIDC) compliant.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to
-     * authenticate users as they access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate users through the user
+     * pools supported by Amazon Cognito.
      * </p>
      * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect HTTP and HTTPS
-     * requests.
+     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
+     * from one URL to another.
      * </p>
      * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you can return a custom HTTP
-     * response.
+     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
+     * and return a custom HTTP response.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -516,24 +539,24 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      *        The actions for the default rule. The rule must include one forward action or one or more fixed-response
      *        actions.</p>
      *        <p>
-     *        If the action type is <code>forward</code>, you can specify a single target group. The protocol of the
-     *        target group must be HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
+     *        If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
+     *        must be HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
      *        </p>
      *        <p>
-     *        [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use an identity provider
-     *        that is OpenID Connect (OIDC) compliant to authenticate users as they access your application.
+     *        [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     *        identity provider that is OpenID Connect (OIDC) compliant.
      *        </p>
      *        <p>
-     *        [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to
-     *        authenticate users as they access your application.
+     *        [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate users through
+     *        the user pools supported by Amazon Cognito.
      *        </p>
      *        <p>
-     *        [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect HTTP and HTTPS
-     *        requests.
+     *        [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
+     *        requests from one URL to another.
      *        </p>
      *        <p>
-     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you can return a custom
-     *        HTTP response.
+     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
+     *        requests and return a custom HTTP response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -552,48 +575,48 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * The actions for the default rule. The rule must include one forward action or one or more fixed-response actions.
      * </p>
      * <p>
-     * If the action type is <code>forward</code>, you can specify a single target group. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
+     * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
+     * HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use an identity provider that is
-     * OpenID Connect (OIDC) compliant to authenticate users as they access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate users through an identity
+     * provider that is OpenID Connect (OIDC) compliant.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to
-     * authenticate users as they access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate users through the user
+     * pools supported by Amazon Cognito.
      * </p>
      * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect HTTP and HTTPS
-     * requests.
+     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
+     * from one URL to another.
      * </p>
      * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you can return a custom HTTP
-     * response.
+     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
+     * and return a custom HTTP response.
      * </p>
      * 
      * @param defaultActions
      *        The actions for the default rule. The rule must include one forward action or one or more fixed-response
      *        actions.</p>
      *        <p>
-     *        If the action type is <code>forward</code>, you can specify a single target group. The protocol of the
-     *        target group must be HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
+     *        If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
+     *        must be HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
      *        </p>
      *        <p>
-     *        [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use an identity provider
-     *        that is OpenID Connect (OIDC) compliant to authenticate users as they access your application.
+     *        [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     *        identity provider that is OpenID Connect (OIDC) compliant.
      *        </p>
      *        <p>
-     *        [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to
-     *        authenticate users as they access your application.
+     *        [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate users through
+     *        the user pools supported by Amazon Cognito.
      *        </p>
      *        <p>
-     *        [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect HTTP and HTTPS
-     *        requests.
+     *        [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
+     *        requests from one URL to another.
      *        </p>
      *        <p>
-     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you can return a custom
-     *        HTTP response.
+     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
+     *        requests and return a custom HTTP response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

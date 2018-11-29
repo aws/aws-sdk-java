@@ -57,7 +57,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * >AWS::IAM::Group</a>, <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
      * >AWS::IAM::InstanceProfile</a>, <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
      * >AWS::IAM::Policy</a>, and <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"
      * >AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or
@@ -65,7 +65,11 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * CAPABILITY_NAMED_IAM.
      * </p>
      * <p>
-     * The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href=
+     * The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html"
+     * >AWS::Lambda::Permission</a>, <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
+     * >AWS::IAM:Policy</a>, <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html"
      * >AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html"
@@ -73,7 +77,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html"
      * >AWS::SQS::QueuePolicy</a>, and <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html"
-     * >AWS::SNS:TopicPolicy</a>.
+     * >AWS::SNS::TopicPolicy</a>.
      * </p>
      * <p>
      * If your application template contains any of the above resources, we recommend that you review all permissions
@@ -280,7 +284,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * >AWS::IAM::Group</a>, <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
      * >AWS::IAM::InstanceProfile</a>, <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
      * >AWS::IAM::Policy</a>, and <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"
      * >AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or
@@ -288,7 +292,11 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * CAPABILITY_NAMED_IAM.
      * </p>
      * <p>
-     * The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href=
+     * The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html"
+     * >AWS::Lambda::Permission</a>, <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
+     * >AWS::IAM:Policy</a>, <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html"
      * >AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html"
@@ -296,7 +304,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html"
      * >AWS::SQS::QueuePolicy</a>, and <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html"
-     * >AWS::SNS:TopicPolicy</a>.
+     * >AWS::SNS::TopicPolicy</a>.
      * </p>
      * <p>
      * If your application template contains any of the above resources, we recommend that you review all permissions
@@ -320,7 +328,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *         >AWS::IAM::Group</a>, <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
      *         >AWS::IAM::InstanceProfile</a>, <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
      *         >AWS::IAM::Policy</a>, and <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"
      *         >AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or
@@ -328,7 +336,11 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *         CAPABILITY_NAMED_IAM.
      *         </p>
      *         <p>
-     *         The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href=
+     *         The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html"
+     *         >AWS::Lambda::Permission</a>, <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
+     *         >AWS::IAM:Policy</a>, <a href=
      *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html"
      *         >AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html"
@@ -336,7 +348,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html"
      *         >AWS::SQS::QueuePolicy</a>, and <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html"
-     *         >AWS::SNS:TopicPolicy</a>.
+     *         >AWS::SNS::TopicPolicy</a>.
      *         </p>
      *         <p>
      *         If your application template contains any of the above resources, we recommend that you review all
@@ -368,7 +380,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * >AWS::IAM::Group</a>, <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
      * >AWS::IAM::InstanceProfile</a>, <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
      * >AWS::IAM::Policy</a>, and <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"
      * >AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or
@@ -376,7 +388,11 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * CAPABILITY_NAMED_IAM.
      * </p>
      * <p>
-     * The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href=
+     * The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html"
+     * >AWS::Lambda::Permission</a>, <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
+     * >AWS::IAM:Policy</a>, <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html"
      * >AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html"
@@ -384,7 +400,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html"
      * >AWS::SQS::QueuePolicy</a>, and <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html"
-     * >AWS::SNS:TopicPolicy</a>.
+     * >AWS::SNS::TopicPolicy</a>.
      * </p>
      * <p>
      * If your application template contains any of the above resources, we recommend that you review all permissions
@@ -409,7 +425,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        >AWS::IAM::Group</a>, <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
      *        >AWS::IAM::InstanceProfile</a>, <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
      *        >AWS::IAM::Policy</a>, and <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"
      *        >AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or
@@ -417,7 +433,11 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        CAPABILITY_NAMED_IAM.
      *        </p>
      *        <p>
-     *        The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href=
+     *        The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html"
+     *        >AWS::Lambda::Permission</a>, <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
+     *        >AWS::IAM:Policy</a>, <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html"
      *        >AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html"
@@ -425,7 +445,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html"
      *        >AWS::SQS::QueuePolicy</a>, and <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html"
-     *        >AWS::SNS:TopicPolicy</a>.
+     *        >AWS::SNS::TopicPolicy</a>.
      *        </p>
      *        <p>
      *        If your application template contains any of the above resources, we recommend that you review all
@@ -462,7 +482,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * >AWS::IAM::Group</a>, <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
      * >AWS::IAM::InstanceProfile</a>, <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
      * >AWS::IAM::Policy</a>, and <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"
      * >AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or
@@ -470,7 +490,11 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * CAPABILITY_NAMED_IAM.
      * </p>
      * <p>
-     * The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href=
+     * The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html"
+     * >AWS::Lambda::Permission</a>, <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
+     * >AWS::IAM:Policy</a>, <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html"
      * >AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html"
@@ -478,7 +502,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html"
      * >AWS::SQS::QueuePolicy</a>, and <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html"
-     * >AWS::SNS:TopicPolicy</a>.
+     * >AWS::SNS::TopicPolicy</a>.
      * </p>
      * <p>
      * If your application template contains any of the above resources, we recommend that you review all permissions
@@ -508,7 +532,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        >AWS::IAM::Group</a>, <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
      *        >AWS::IAM::InstanceProfile</a>, <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
      *        >AWS::IAM::Policy</a>, and <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"
      *        >AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or
@@ -516,7 +540,11 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        CAPABILITY_NAMED_IAM.
      *        </p>
      *        <p>
-     *        The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href=
+     *        The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html"
+     *        >AWS::Lambda::Permission</a>, <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
+     *        >AWS::IAM:Policy</a>, <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html"
      *        >AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html"
@@ -524,7 +552,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html"
      *        >AWS::SQS::QueuePolicy</a>, and <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html"
-     *        >AWS::SNS:TopicPolicy</a>.
+     *        >AWS::SNS::TopicPolicy</a>.
      *        </p>
      *        <p>
      *        If your application template contains any of the above resources, we recommend that you review all
@@ -563,7 +591,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * >AWS::IAM::Group</a>, <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
      * >AWS::IAM::InstanceProfile</a>, <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
      * >AWS::IAM::Policy</a>, and <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"
      * >AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or
@@ -571,7 +599,11 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * CAPABILITY_NAMED_IAM.
      * </p>
      * <p>
-     * The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href=
+     * The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html"
+     * >AWS::Lambda::Permission</a>, <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
+     * >AWS::IAM:Policy</a>, <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html"
      * >AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html"
@@ -579,7 +611,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html"
      * >AWS::SQS::QueuePolicy</a>, and <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html"
-     * >AWS::SNS:TopicPolicy</a>.
+     * >AWS::SNS::TopicPolicy</a>.
      * </p>
      * <p>
      * If your application template contains any of the above resources, we recommend that you review all permissions
@@ -604,7 +636,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        >AWS::IAM::Group</a>, <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
      *        >AWS::IAM::InstanceProfile</a>, <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
      *        >AWS::IAM::Policy</a>, and <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"
      *        >AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or
@@ -612,7 +644,11 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        CAPABILITY_NAMED_IAM.
      *        </p>
      *        <p>
-     *        The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href=
+     *        The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html"
+     *        >AWS::Lambda::Permission</a>, <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
+     *        >AWS::IAM:Policy</a>, <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html"
      *        >AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html"
@@ -620,7 +656,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html"
      *        >AWS::SQS::QueuePolicy</a>, and <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html"
-     *        >AWS::SNS:TopicPolicy</a>.
+     *        >AWS::SNS::TopicPolicy</a>.
      *        </p>
      *        <p>
      *        If your application template contains any of the above resources, we recommend that you review all
@@ -654,7 +690,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * >AWS::IAM::Group</a>, <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
      * >AWS::IAM::InstanceProfile</a>, <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
      * >AWS::IAM::Policy</a>, and <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"
      * >AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or
@@ -662,7 +698,11 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * CAPABILITY_NAMED_IAM.
      * </p>
      * <p>
-     * The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href=
+     * The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html"
+     * >AWS::Lambda::Permission</a>, <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
+     * >AWS::IAM:Policy</a>, <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html"
      * >AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html"
@@ -670,7 +710,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html"
      * >AWS::SQS::QueuePolicy</a>, and <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html"
-     * >AWS::SNS:TopicPolicy</a>.
+     * >AWS::SNS::TopicPolicy</a>.
      * </p>
      * <p>
      * If your application template contains any of the above resources, we recommend that you review all permissions
@@ -695,7 +735,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        >AWS::IAM::Group</a>, <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
      *        >AWS::IAM::InstanceProfile</a>, <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
      *        >AWS::IAM::Policy</a>, and <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"
      *        >AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or
@@ -703,7 +743,11 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        CAPABILITY_NAMED_IAM.
      *        </p>
      *        <p>
-     *        The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href=
+     *        The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html"
+     *        >AWS::Lambda::Permission</a>, <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html"
+     *        >AWS::IAM:Policy</a>, <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html"
      *        >AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html"
@@ -711,7 +755,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html"
      *        >AWS::SQS::QueuePolicy</a>, and <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html"
-     *        >AWS::SNS:TopicPolicy</a>.
+     *        >AWS::SNS::TopicPolicy</a>.
      *        </p>
      *        <p>
      *        If your application template contains any of the above resources, we recommend that you review all

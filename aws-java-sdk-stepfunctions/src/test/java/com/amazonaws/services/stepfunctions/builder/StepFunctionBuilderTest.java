@@ -74,7 +74,8 @@ public class StepFunctionBuilderTest {
                         .resource("resource-arn")
                         .inputPath("$.input")
                         .resultPath("$.result")
-                        .outputPath("$.output"))
+                        .outputPath("$.output")
+                        .parameters(new SimplePojo("value")))
                 .state("NextState", succeedState())
                 .build();
 
@@ -147,6 +148,7 @@ public class StepFunctionBuilderTest {
                         .inputPath("$.input")
                         .outputPath("$.output")
                         .resultPath("$.result")
+                        .parameters("true")
                         .transition(next("NextState"))
                         .result("{\"Foo\": \"Bar\"}"))
                 .state("NextState", succeedState())
@@ -414,6 +416,7 @@ public class StepFunctionBuilderTest {
                         .inputPath("$.input")
                         .outputPath("$.output")
                         .resultPath("$.result")
+                        .parameters("{\"foo.$\": \"$.val\"}")
                         .transition(next("NextState"))
                         .branches(
                                 branch()

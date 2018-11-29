@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * This property corresponds to the <i>AWS CloudFormation <a
- * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a></i> Data Type.
+ * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a></i> Data Type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/Tag" target="_top">AWS API
@@ -32,14 +32,14 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a></i> Data Type.
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a></i> Data Type.
      * </p>
      */
     private String key;
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a></i> Data Type.
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a> </i> Data Type.
      * </p>
      */
     private String value;
@@ -47,12 +47,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a></i> Data Type.
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a></i> Data Type.
      * </p>
      * 
      * @param key
      *        This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a></i> Data Type.
+     *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a></i> Data Type.
      */
 
     public void setKey(String key) {
@@ -62,11 +62,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a></i> Data Type.
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a></i> Data Type.
      * </p>
      * 
      * @return This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     *         href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a></i> Data Type.
+     *         href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a></i> Data Type.
      */
 
     public String getKey() {
@@ -76,12 +76,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a></i> Data Type.
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a></i> Data Type.
      * </p>
      * 
      * @param key
      *        This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a></i> Data Type.
+     *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a></i> Data Type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,12 +93,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a></i> Data Type.
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a> </i> Data Type.
      * </p>
      * 
      * @param value
      *        This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a></i> Data Type.
+     *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a> </i> Data Type.
      */
 
     public void setValue(String value) {
@@ -108,11 +108,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a></i> Data Type.
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a> </i> Data Type.
      * </p>
      * 
      * @return This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     *         href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a></i> Data Type.
+     *         href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a> </i> Data Type.
      */
 
     public String getValue() {
@@ -122,12 +122,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a></i> Data Type.
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a> </i> Data Type.
      * </p>
      * 
      * @param value
      *        This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a></i> Data Type.
+     *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag"> Tag</a> </i> Data Type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

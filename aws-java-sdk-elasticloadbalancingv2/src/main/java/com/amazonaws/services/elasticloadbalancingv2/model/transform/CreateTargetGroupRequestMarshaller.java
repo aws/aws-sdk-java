@@ -64,6 +64,10 @@ public class CreateTargetGroupRequestMarshaller implements Marshaller<Request<Cr
             request.addParameter("HealthCheckPort", StringUtils.fromString(createTargetGroupRequest.getHealthCheckPort()));
         }
 
+        if (createTargetGroupRequest.getHealthCheckEnabled() != null) {
+            request.addParameter("HealthCheckEnabled", StringUtils.fromBoolean(createTargetGroupRequest.getHealthCheckEnabled()));
+        }
+
         if (createTargetGroupRequest.getHealthCheckPath() != null) {
             request.addParameter("HealthCheckPath", StringUtils.fromString(createTargetGroupRequest.getHealthCheckPath()));
         }

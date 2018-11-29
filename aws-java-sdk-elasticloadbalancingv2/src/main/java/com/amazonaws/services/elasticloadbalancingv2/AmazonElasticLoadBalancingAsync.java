@@ -111,7 +111,8 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * To list the certificates for your listener, use <a>DescribeListenerCertificates</a>. To remove certificates from
-     * your listener, use <a>RemoveListenerCertificates</a>.
+     * your listener, use <a>RemoveListenerCertificates</a>. To specify the default SSL server certificate, use
+     * <a>ModifyListener</a>.
      * </p>
      * 
      * @param addListenerCertificatesRequest
@@ -131,7 +132,8 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * To list the certificates for your listener, use <a>DescribeListenerCertificates</a>. To remove certificates from
-     * your listener, use <a>RemoveListenerCertificates</a>.
+     * your listener, use <a>RemoveListenerCertificates</a>. To specify the default SSL server certificate, use
+     * <a>ModifyListener</a>.
      * </p>
      * 
      * @param addListenerCertificatesRequest
@@ -873,6 +875,33 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
             com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancersRequest, DescribeLoadBalancersResult> asyncHandler);
 
     /**
+     * @param describeProvisionedCapacityRequest
+     * @return A Java Future containing the result of the DescribeProvisionedCapacity operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsync.DescribeProvisionedCapacity
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeProvisionedCapacity"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeProvisionedCapacityResult> describeProvisionedCapacityAsync(
+            DescribeProvisionedCapacityRequest describeProvisionedCapacityRequest);
+
+    /**
+     * @param describeProvisionedCapacityRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeProvisionedCapacity operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsyncHandler.DescribeProvisionedCapacity
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeProvisionedCapacity"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeProvisionedCapacityResult> describeProvisionedCapacityAsync(
+            DescribeProvisionedCapacityRequest describeProvisionedCapacityRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeProvisionedCapacityRequest, DescribeProvisionedCapacityResult> asyncHandler);
+
+    /**
      * <p>
      * Describes the specified rules or the rules for the specified listener. You must specify either a listener or one
      * or more rules.
@@ -1191,6 +1220,31 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
             com.amazonaws.handlers.AsyncHandler<ModifyLoadBalancerAttributesRequest, ModifyLoadBalancerAttributesResult> asyncHandler);
 
     /**
+     * @param modifyProvisionedCapacityRequest
+     * @return A Java Future containing the result of the ModifyProvisionedCapacity operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsync.ModifyProvisionedCapacity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyProvisionedCapacity"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyProvisionedCapacityResult> modifyProvisionedCapacityAsync(
+            ModifyProvisionedCapacityRequest modifyProvisionedCapacityRequest);
+
+    /**
+     * @param modifyProvisionedCapacityRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyProvisionedCapacity operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsyncHandler.ModifyProvisionedCapacity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyProvisionedCapacity"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyProvisionedCapacityResult> modifyProvisionedCapacityAsync(
+            ModifyProvisionedCapacityRequest modifyProvisionedCapacityRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyProvisionedCapacityRequest, ModifyProvisionedCapacityResult> asyncHandler);
+
+    /**
      * <p>
      * Modifies the specified rule.
      * </p>
@@ -1310,8 +1364,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Registers the specified targets with the specified target group.
      * </p>
      * <p>
-     * You can register targets by instance ID or by IP address. If the target is an EC2 instance, it must be in the
-     * <code>running</code> state when you register it.
+     * If the target is an EC2 instance, it must be in the <code>running</code> state when you register it.
      * </p>
      * <p>
      * By default, the load balancer routes requests to registered targets using the protocol and port for the target
@@ -1340,8 +1393,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Registers the specified targets with the specified target group.
      * </p>
      * <p>
-     * You can register targets by instance ID or by IP address. If the target is an EC2 instance, it must be in the
-     * <code>running</code> state when you register it.
+     * If the target is an EC2 instance, it must be in the <code>running</code> state when you register it.
      * </p>
      * <p>
      * By default, the load balancer routes requests to registered targets using the protocol and port for the target

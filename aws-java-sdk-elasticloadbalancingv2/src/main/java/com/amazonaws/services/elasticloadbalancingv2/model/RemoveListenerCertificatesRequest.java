@@ -33,7 +33,8 @@ public class RemoveListenerCertificatesRequest extends com.amazonaws.AmazonWebSe
     private String listenerArn;
     /**
      * <p>
-     * The certificate to remove. You can specify one certificate per call.
+     * The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the
+     * certificate ARN but do not set <code>IsDefault</code>.
      * </p>
      */
     private java.util.List<Certificate> certificates;
@@ -80,10 +81,12 @@ public class RemoveListenerCertificatesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The certificate to remove. You can specify one certificate per call.
+     * The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the
+     * certificate ARN but do not set <code>IsDefault</code>.
      * </p>
      * 
-     * @return The certificate to remove. You can specify one certificate per call.
+     * @return The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to
+     *         the certificate ARN but do not set <code>IsDefault</code>.
      */
 
     public java.util.List<Certificate> getCertificates() {
@@ -92,11 +95,13 @@ public class RemoveListenerCertificatesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The certificate to remove. You can specify one certificate per call.
+     * The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the
+     * certificate ARN but do not set <code>IsDefault</code>.
      * </p>
      * 
      * @param certificates
-     *        The certificate to remove. You can specify one certificate per call.
+     *        The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to
+     *        the certificate ARN but do not set <code>IsDefault</code>.
      */
 
     public void setCertificates(java.util.Collection<Certificate> certificates) {
@@ -110,7 +115,8 @@ public class RemoveListenerCertificatesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The certificate to remove. You can specify one certificate per call.
+     * The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the
+     * certificate ARN but do not set <code>IsDefault</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +125,8 @@ public class RemoveListenerCertificatesRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param certificates
-     *        The certificate to remove. You can specify one certificate per call.
+     *        The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to
+     *        the certificate ARN but do not set <code>IsDefault</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +142,13 @@ public class RemoveListenerCertificatesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The certificate to remove. You can specify one certificate per call.
+     * The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the
+     * certificate ARN but do not set <code>IsDefault</code>.
      * </p>
      * 
      * @param certificates
-     *        The certificate to remove. You can specify one certificate per call.
+     *        The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to
+     *        the certificate ARN but do not set <code>IsDefault</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

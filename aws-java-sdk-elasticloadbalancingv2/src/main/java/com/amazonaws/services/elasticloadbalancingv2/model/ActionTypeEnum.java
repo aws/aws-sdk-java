@@ -22,8 +22,8 @@ public enum ActionTypeEnum {
 
     Forward("forward"),
     AuthenticateOidc("authenticate-oidc"),
-    AuthenticateCognito("authenticate-cognito"),
     Redirect("redirect"),
+    AuthenticateCognito("authenticate-cognito"),
     FixedResponse("fixed-response");
 
     private String value;

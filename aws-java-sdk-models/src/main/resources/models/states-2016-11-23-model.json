@@ -25,7 +25,7 @@
         {"shape":"ActivityLimitExceeded"},
         {"shape":"InvalidName"}
       ],
-      "documentation":"<p>Creates an activity. An activity is a task which you write in any programming language and host on any machine which has access to AWS Step Functions. Activities must poll Step Functions using the <code>GetActivityTask</code> API action and respond using <code>SendTask*</code> API actions. This function lets Step Functions know the existence of your activity and returns an identifier for use in a state machine and when polling from the activity.</p>",
+      "documentation":"<p>Creates an activity. An activity is a task that you write in any programming language and host on any machine that has access to AWS Step Functions. Activities must poll Step Functions using the <code>GetActivityTask</code> API action and respond using <code>SendTask*</code> API actions. This function lets Step Functions know the existence of your activity and returns an identifier for use in a state machine and when polling from the activity.</p>",
       "idempotent":true
     },
     "CreateStateMachine":{
@@ -85,7 +85,7 @@
         {"shape":"ActivityDoesNotExist"},
         {"shape":"InvalidArn"}
       ],
-      "documentation":"<p>Describes an activity.</p>"
+      "documentation":"<p>Describes an activity.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>"
     },
     "DescribeExecution":{
       "name":"DescribeExecution",
@@ -99,7 +99,7 @@
         {"shape":"ExecutionDoesNotExist"},
         {"shape":"InvalidArn"}
       ],
-      "documentation":"<p>Describes an execution.</p>"
+      "documentation":"<p>Describes an execution.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>"
     },
     "DescribeStateMachine":{
       "name":"DescribeStateMachine",
@@ -113,7 +113,7 @@
         {"shape":"InvalidArn"},
         {"shape":"StateMachineDoesNotExist"}
       ],
-      "documentation":"<p>Describes a state machine.</p>"
+      "documentation":"<p>Describes a state machine.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>"
     },
     "DescribeStateMachineForExecution":{
       "name":"DescribeStateMachineForExecution",
@@ -127,7 +127,7 @@
         {"shape":"ExecutionDoesNotExist"},
         {"shape":"InvalidArn"}
       ],
-      "documentation":"<p>Describes the state machine associated with a specific execution.</p>"
+      "documentation":"<p>Describes the state machine associated with a specific execution.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>"
     },
     "GetActivityTask":{
       "name":"GetActivityTask",
@@ -142,7 +142,7 @@
         {"shape":"ActivityWorkerLimitExceeded"},
         {"shape":"InvalidArn"}
       ],
-      "documentation":"<p>Used by workers to retrieve a task (with the specified activity ARN) which has been scheduled for execution by a running state machine. This initiates a long poll, where the service holds the HTTP connection open and responds as soon as a task becomes available (i.e. an execution of a task of this type is needed.) The maximum time the service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the poll returns a <code>taskToken</code> with a null string.</p> <important> <p>Workers should set their client side socket timeout to at least 65 seconds (5 seconds higher than the maximum time the service may hold the poll request).</p> </important>"
+      "documentation":"<p>Used by workers to retrieve a task (with the specified activity ARN) which has been scheduled for execution by a running state machine. This initiates a long poll, where the service holds the HTTP connection open and responds as soon as a task becomes available (i.e. an execution of a task of this type is needed.) The maximum time the service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the poll returns a <code>taskToken</code> with a null string.</p> <important> <p>Workers should set their client side socket timeout to at least 65 seconds (5 seconds higher than the maximum time the service may hold the poll request).</p> <p>Polling with <code>GetActivityTask</code> can cause latency in some implementations. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html\">Avoid Latency When Polling for Activity Tasks</a> in the Step Functions Developer Guide.</p> </important>"
     },
     "GetExecutionHistory":{
       "name":"GetExecutionHistory",
@@ -157,7 +157,7 @@
         {"shape":"InvalidArn"},
         {"shape":"InvalidToken"}
       ],
-      "documentation":"<p>Returns the history of the specified execution as a list of events. By default, the results are returned in ascending order of the <code>timeStamp</code> of the events. Use the <code>reverseOrder</code> parameter to get the latest events first.</p> <p>If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p>"
+      "documentation":"<p>Returns the history of the specified execution as a list of events. By default, the results are returned in ascending order of the <code>timeStamp</code> of the events. Use the <code>reverseOrder</code> parameter to get the latest events first.</p> <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
     },
     "ListActivities":{
       "name":"ListActivities",
@@ -170,7 +170,7 @@
       "errors":[
         {"shape":"InvalidToken"}
       ],
-      "documentation":"<p>Lists the existing activities.</p> <p>If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p>"
+      "documentation":"<p>Lists the existing activities.</p> <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>"
     },
     "ListExecutions":{
       "name":"ListExecutions",
@@ -185,7 +185,7 @@
         {"shape":"InvalidToken"},
         {"shape":"StateMachineDoesNotExist"}
       ],
-      "documentation":"<p>Lists the executions of a state machine that meet the filtering criteria.</p> <p>If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p>"
+      "documentation":"<p>Lists the executions of a state machine that meet the filtering criteria. Results are sorted by time, with the most recent execution first.</p> <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>"
     },
     "ListStateMachines":{
       "name":"ListStateMachines",
@@ -198,7 +198,7 @@
       "errors":[
         {"shape":"InvalidToken"}
       ],
-      "documentation":"<p>Lists the existing state machines.</p> <p>If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p>"
+      "documentation":"<p>Lists the existing state machines.</p> <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>"
     },
     "SendTaskFailure":{
       "name":"SendTaskFailure",
@@ -263,7 +263,7 @@
         {"shape":"StateMachineDoesNotExist"},
         {"shape":"StateMachineDeleting"}
       ],
-      "documentation":"<p>Starts a state machine execution.</p>",
+      "documentation":"<p>Starts a state machine execution.</p> <note> <p> <code>StartExecution</code> is idempotent. If <code>StartExecution</code> is called with the same name and input as a running execution, the call will succeed and return the same response as the original request. If the execution is closed or if the input is different, it will return a 400 <code>ExecutionAlreadyExists</code> error. Names can be reused after 90 days. </p> </note>",
       "idempotent":true
     },
     "StopExecution":{
@@ -295,7 +295,7 @@
         {"shape":"StateMachineDeleting"},
         {"shape":"StateMachineDoesNotExist"}
       ],
-      "documentation":"<p>Updates an existing state machine by modifying its <code>definition</code> and/or <code>roleArn</code>. Running executions will continue to use the previous <code>definition</code> and <code>roleArn</code>.</p> <note> <p>All <code>StartExecution</code> calls within a few seconds will use the updated <code>definition</code> and <code>roleArn</code>. Executions started immediately after calling <code>UpdateStateMachine</code> may use the previous state machine <code>definition</code> and <code>roleArn</code>. You must include at least one of <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code> error.</p> </note>",
+      "documentation":"<p>Updates an existing state machine by modifying its <code>definition</code> and/or <code>roleArn</code>. Running executions will continue to use the previous <code>definition</code> and <code>roleArn</code>. You must include at least one of <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code> error.</p> <note> <p>All <code>StartExecution</code> calls within a few seconds will use the updated <code>definition</code> and <code>roleArn</code>. Executions started immediately after calling <code>UpdateStateMachine</code> may use the previous state machine <code>definition</code> and <code>roleArn</code>. </p> </note>",
       "idempotent":true
     }
   },
@@ -312,15 +312,15 @@
       "type":"structure",
       "members":{
         "error":{
-          "shape":"Error",
+          "shape":"SensitiveError",
           "documentation":"<p>The error code of the failure.</p>"
         },
         "cause":{
-          "shape":"Cause",
+          "shape":"SensitiveCause",
           "documentation":"<p>A more detailed explanation of the cause of the failure.</p>"
         }
       },
-      "documentation":"<p>Contains details about an activity which failed during an execution.</p>"
+      "documentation":"<p>Contains details about an activity that failed during an execution.</p>"
     },
     "ActivityLimitExceeded":{
       "type":"structure",
@@ -361,15 +361,15 @@
       "type":"structure",
       "members":{
         "error":{
-          "shape":"Error",
+          "shape":"SensitiveError",
           "documentation":"<p>The error code of the failure.</p>"
         },
         "cause":{
-          "shape":"Cause",
+          "shape":"SensitiveCause",
           "documentation":"<p>A more detailed explanation of the cause of the failure.</p>"
         }
       },
-      "documentation":"<p>Contains details about an activity schedule failure which occurred during an execution.</p>"
+      "documentation":"<p>Contains details about an activity schedule failure that occurred during an execution.</p>"
     },
     "ActivityScheduledEventDetails":{
       "type":"structure",
@@ -380,7 +380,7 @@
           "documentation":"<p>The Amazon Resource Name (ARN) of the scheduled activity.</p>"
         },
         "input":{
-          "shape":"Data",
+          "shape":"SensitiveData",
           "documentation":"<p>The JSON data input to the activity task.</p>"
         },
         "timeoutInSeconds":{
@@ -410,25 +410,25 @@
       "type":"structure",
       "members":{
         "output":{
-          "shape":"Data",
+          "shape":"SensitiveData",
           "documentation":"<p>The JSON data output by the activity task.</p>"
         }
       },
-      "documentation":"<p>Contains details about an activity which successfully terminated during an execution.</p>"
+      "documentation":"<p>Contains details about an activity that successfully terminated during an execution.</p>"
     },
     "ActivityTimedOutEventDetails":{
       "type":"structure",
       "members":{
         "error":{
-          "shape":"Error",
+          "shape":"SensitiveError",
           "documentation":"<p>The error code of the failure.</p>"
         },
         "cause":{
-          "shape":"Cause",
+          "shape":"SensitiveCause",
           "documentation":"<p>A more detailed explanation of the cause of the timeout.</p>"
         }
       },
-      "documentation":"<p>Contains details about an activity timeout which occurred during an execution.</p>"
+      "documentation":"<p>Contains details about an activity timeout that occurred during an execution.</p>"
     },
     "ActivityWorkerLimitExceeded":{
       "type":"structure",
@@ -443,10 +443,11 @@
       "max":256,
       "min":1
     },
-    "Cause":{
+    "ConnectorParameters":{
       "type":"string",
       "max":32768,
-      "min":0
+      "min":0,
+      "sensitive":true
     },
     "CreateActivityInput":{
       "type":"structure",
@@ -485,11 +486,11 @@
       "members":{
         "name":{
           "shape":"Name",
-          "documentation":"<p>The name of the state machine. This name must be unique for your AWS account and region for 90 days. For more information, see <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions\"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>"
+          "documentation":"<p>The name of the state machine. </p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>"
         },
         "definition":{
           "shape":"Definition",
-          "documentation":"<p>The Amazon States Language definition of the state machine.</p>"
+          "documentation":"<p>The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.</p>"
         },
         "roleArn":{
           "shape":"Arn",
@@ -514,14 +515,11 @@
         }
       }
     },
-    "Data":{
-      "type":"string",
-      "max":32768
-    },
     "Definition":{
       "type":"string",
       "max":1048576,
-      "min":1
+      "min":1,
+      "sensitive":true
     },
     "DeleteActivityInput":{
       "type":"structure",
@@ -630,11 +628,11 @@
           "documentation":"<p>If the execution has already ended, the date the execution stopped.</p>"
         },
         "input":{
-          "shape":"Data",
+          "shape":"SensitiveData",
           "documentation":"<p>The string that contains the JSON input data of the execution.</p>"
         },
         "output":{
-          "shape":"Data",
+          "shape":"SensitiveData",
           "documentation":"<p>The JSON output data of the execution.</p> <note> <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p> </note>"
         }
       }
@@ -669,7 +667,7 @@
         },
         "definition":{
           "shape":"Definition",
-          "documentation":"<p>The Amazon States Language definition of the state machine.</p>"
+          "documentation":"<p>The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.</p>"
         },
         "roleArn":{
           "shape":"Arn",
@@ -715,7 +713,7 @@
         },
         "definition":{
           "shape":"Definition",
-          "documentation":"<p>The Amazon States Language definition of the state machine.</p>"
+          "documentation":"<p>The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.</p>"
         },
         "roleArn":{
           "shape":"Arn",
@@ -727,22 +725,17 @@
         }
       }
     },
-    "Error":{
-      "type":"string",
-      "max":256,
-      "min":0
-    },
     "ErrorMessage":{"type":"string"},
     "EventId":{"type":"long"},
     "ExecutionAbortedEventDetails":{
       "type":"structure",
       "members":{
         "error":{
-          "shape":"Error",
+          "shape":"SensitiveError",
           "documentation":"<p>The error code of the failure.</p>"
         },
         "cause":{
-          "shape":"Cause",
+          "shape":"SensitiveCause",
           "documentation":"<p>A more detailed explanation of the cause of the failure.</p>"
         }
       },
@@ -768,11 +761,11 @@
       "type":"structure",
       "members":{
         "error":{
-          "shape":"Error",
+          "shape":"SensitiveError",
           "documentation":"<p>The error code of the failure.</p>"
         },
         "cause":{
-          "shape":"Cause",
+          "shape":"SensitiveCause",
           "documentation":"<p>A more detailed explanation of the cause of the failure.</p>"
         }
       },
@@ -831,7 +824,7 @@
       "type":"structure",
       "members":{
         "input":{
-          "shape":"Data",
+          "shape":"SensitiveData",
           "documentation":"<p>The JSON data input to the execution.</p>"
         },
         "roleArn":{
@@ -855,7 +848,7 @@
       "type":"structure",
       "members":{
         "output":{
-          "shape":"Data",
+          "shape":"SensitiveData",
           "documentation":"<p>The JSON data output by the execution.</p>"
         }
       },
@@ -865,15 +858,15 @@
       "type":"structure",
       "members":{
         "error":{
-          "shape":"Error",
+          "shape":"SensitiveError",
           "documentation":"<p>The error code of the failure.</p>"
         },
         "cause":{
-          "shape":"Cause",
+          "shape":"SensitiveCause",
           "documentation":"<p>A more detailed explanation of the cause of the timeout.</p>"
         }
       },
-      "documentation":"<p>Contains details about the execution timeout which occurred during the execution.</p>"
+      "documentation":"<p>Contains details about the execution timeout that occurred during the execution.</p>"
     },
     "GetActivityTaskInput":{
       "type":"structure",
@@ -897,7 +890,7 @@
           "documentation":"<p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a> or <a>SendTaskFailure</a> in order to report the progress or completion of the task.</p>"
         },
         "input":{
-          "shape":"Data",
+          "shape":"SensitiveData",
           "documentation":"<p>The string that contains the JSON input data for the task.</p>"
         }
       }
@@ -912,7 +905,7 @@
         },
         "maxResults":{
           "shape":"PageSize",
-          "documentation":"<p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>"
+          "documentation":"<p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>"
         },
         "reverseOrder":{
           "shape":"ReverseOrder",
@@ -920,7 +913,7 @@
         },
         "nextToken":{
           "shape":"PageToken",
-          "documentation":"<p>If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>"
+          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
         }
       }
     },
@@ -934,7 +927,7 @@
         },
         "nextToken":{
           "shape":"PageToken",
-          "documentation":"<p>If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>"
+          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
         }
       }
     },
@@ -948,7 +941,7 @@
       "members":{
         "timestamp":{
           "shape":"Timestamp",
-          "documentation":"<p>The date the event occurred.</p>"
+          "documentation":"<p>The date and time the event occurred.</p>"
         },
         "type":{
           "shape":"HistoryEventType",
@@ -965,12 +958,20 @@
         "activityFailedEventDetails":{"shape":"ActivityFailedEventDetails"},
         "activityScheduleFailedEventDetails":{
           "shape":"ActivityScheduleFailedEventDetails",
-          "documentation":"<p>Contains details about an activity schedule event which failed during an execution.</p>"
+          "documentation":"<p>Contains details about an activity schedule event that failed during an execution.</p>"
         },
         "activityScheduledEventDetails":{"shape":"ActivityScheduledEventDetails"},
         "activityStartedEventDetails":{"shape":"ActivityStartedEventDetails"},
         "activitySucceededEventDetails":{"shape":"ActivitySucceededEventDetails"},
         "activityTimedOutEventDetails":{"shape":"ActivityTimedOutEventDetails"},
+        "taskFailedEventDetails":{"shape":"TaskFailedEventDetails"},
+        "taskScheduledEventDetails":{"shape":"TaskScheduledEventDetails"},
+        "taskStartFailedEventDetails":{"shape":"TaskStartFailedEventDetails"},
+        "taskStartedEventDetails":{"shape":"TaskStartedEventDetails"},
+        "taskSubmitFailedEventDetails":{"shape":"TaskSubmitFailedEventDetails"},
+        "taskSubmittedEventDetails":{"shape":"TaskSubmittedEventDetails"},
+        "taskSucceededEventDetails":{"shape":"TaskSucceededEventDetails"},
+        "taskTimedOutEventDetails":{"shape":"TaskTimedOutEventDetails"},
         "executionFailedEventDetails":{"shape":"ExecutionFailedEventDetails"},
         "executionStartedEventDetails":{"shape":"ExecutionStartedEventDetails"},
         "executionSucceededEventDetails":{"shape":"ExecutionSucceededEventDetails"},
@@ -981,11 +982,11 @@
         "lambdaFunctionScheduledEventDetails":{"shape":"LambdaFunctionScheduledEventDetails"},
         "lambdaFunctionStartFailedEventDetails":{
           "shape":"LambdaFunctionStartFailedEventDetails",
-          "documentation":"<p>Contains details about a lambda function which failed to start during an execution.</p>"
+          "documentation":"<p>Contains details about a lambda function that failed to start during an execution.</p>"
         },
         "lambdaFunctionSucceededEventDetails":{
           "shape":"LambdaFunctionSucceededEventDetails",
-          "documentation":"<p>Contains details about a lambda function which terminated successfully during an execution.</p>"
+          "documentation":"<p>Contains details about a lambda function that terminated successfully during an execution.</p>"
         },
         "lambdaFunctionTimedOutEventDetails":{"shape":"LambdaFunctionTimedOutEventDetails"},
         "stateEnteredEventDetails":{"shape":"StateEnteredEventDetails"},
@@ -996,7 +997,7 @@
     "HistoryEventList":{
       "type":"list",
       "member":{"shape":"HistoryEvent"},
-      "documentation":"<p>Contains details about the events which occurred during an execution.</p>"
+      "documentation":"<p>Contains details about the events that occurred during an execution.</p>"
     },
     "HistoryEventType":{
       "type":"string",
@@ -1009,6 +1010,14 @@
         "ActivityTimedOut",
         "ChoiceStateEntered",
         "ChoiceStateExited",
+        "TaskFailed",
+        "TaskScheduled",
+        "TaskStartFailed",
+        "TaskStarted",
+        "TaskSubmitFailed",
+        "TaskSubmitted",
+        "TaskSucceeded",
+        "TaskTimedOut",
         "ExecutionFailed",
         "ExecutionStarted",
         "ExecutionSucceeded",
@@ -1096,29 +1105,29 @@
       "type":"structure",
       "members":{
         "error":{
-          "shape":"Error",
+          "shape":"SensitiveError",
           "documentation":"<p>The error code of the failure.</p>"
         },
         "cause":{
-          "shape":"Cause",
+          "shape":"SensitiveCause",
           "documentation":"<p>A more detailed explanation of the cause of the failure.</p>"
         }
       },
-      "documentation":"<p>Contains details about a lambda function which failed during an execution.</p>"
+      "documentation":"<p>Contains details about a lambda function that failed during an execution.</p>"
     },
     "LambdaFunctionScheduleFailedEventDetails":{
       "type":"structure",
       "members":{
         "error":{
-          "shape":"Error",
+          "shape":"SensitiveError",
           "documentation":"<p>The error code of the failure.</p>"
         },
         "cause":{
-          "shape":"Cause",
+          "shape":"SensitiveCause",
           "documentation":"<p>A more detailed explanation of the cause of the failure.</p>"
         }
       },
-      "documentation":"<p>Contains details about a failed lambda function schedule event which occurred during an execution.</p>"
+      "documentation":"<p>Contains details about a failed lambda function schedule event that occurred during an execution.</p>"
     },
     "LambdaFunctionScheduledEventDetails":{
       "type":"structure",
@@ -1129,7 +1138,7 @@
           "documentation":"<p>The Amazon Resource Name (ARN) of the scheduled lambda function.</p>"
         },
         "input":{
-          "shape":"Data",
+          "shape":"SensitiveData",
           "documentation":"<p>The JSON data input to the lambda function.</p>"
         },
         "timeoutInSeconds":{
@@ -1144,50 +1153,50 @@
       "type":"structure",
       "members":{
         "error":{
-          "shape":"Error",
+          "shape":"SensitiveError",
           "documentation":"<p>The error code of the failure.</p>"
         },
         "cause":{
-          "shape":"Cause",
+          "shape":"SensitiveCause",
           "documentation":"<p>A more detailed explanation of the cause of the failure.</p>"
         }
       },
-      "documentation":"<p>Contains details about a lambda function which failed to start during an execution.</p>"
+      "documentation":"<p>Contains details about a lambda function that failed to start during an execution.</p>"
     },
     "LambdaFunctionSucceededEventDetails":{
       "type":"structure",
       "members":{
         "output":{
-          "shape":"Data",
+          "shape":"SensitiveData",
           "documentation":"<p>The JSON data output by the lambda function.</p>"
         }
       },
-      "documentation":"<p>Contains details about a lambda function which successfully terminated during an execution.</p>"
+      "documentation":"<p>Contains details about a lambda function that successfully terminated during an execution.</p>"
     },
     "LambdaFunctionTimedOutEventDetails":{
       "type":"structure",
       "members":{
         "error":{
-          "shape":"Error",
+          "shape":"SensitiveError",
           "documentation":"<p>The error code of the failure.</p>"
         },
         "cause":{
-          "shape":"Cause",
+          "shape":"SensitiveCause",
           "documentation":"<p>A more detailed explanation of the cause of the timeout.</p>"
         }
       },
-      "documentation":"<p>Contains details about a lambda function timeout which occurred during an execution.</p>"
+      "documentation":"<p>Contains details about a lambda function timeout that occurred during an execution.</p>"
     },
     "ListActivitiesInput":{
       "type":"structure",
       "members":{
         "maxResults":{
           "shape":"PageSize",
-          "documentation":"<p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>"
+          "documentation":"<p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>"
         },
         "nextToken":{
           "shape":"PageToken",
-          "documentation":"<p>If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>"
+          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
         }
       }
     },
@@ -1201,7 +1210,7 @@
         },
         "nextToken":{
           "shape":"PageToken",
-          "documentation":"<p>If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>"
+          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
         }
       }
     },
@@ -1219,11 +1228,11 @@
         },
         "maxResults":{
           "shape":"PageSize",
-          "documentation":"<p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>"
+          "documentation":"<p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>"
         },
         "nextToken":{
           "shape":"PageToken",
-          "documentation":"<p>If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>"
+          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
         }
       }
     },
@@ -1237,7 +1246,7 @@
         },
         "nextToken":{
           "shape":"PageToken",
-          "documentation":"<p>If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>"
+          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
         }
       }
     },
@@ -1246,11 +1255,11 @@
       "members":{
         "maxResults":{
           "shape":"PageSize",
-          "documentation":"<p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>"
+          "documentation":"<p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>"
         },
         "nextToken":{
           "shape":"PageToken",
-          "documentation":"<p>If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>"
+          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
         }
       }
     },
@@ -1261,7 +1270,7 @@
         "stateMachines":{"shape":"StateMachineList"},
         "nextToken":{
           "shape":"PageToken",
-          "documentation":"<p>If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>"
+          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
         }
       }
     },
@@ -1298,11 +1307,11 @@
           "documentation":"<p>The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see GetActivityTask::taskToken).</p>"
         },
         "error":{
-          "shape":"Error",
-          "documentation":"<p>An arbitrary error code that identifies the cause of the failure.</p>"
+          "shape":"SensitiveError",
+          "documentation":"<p>The error code of the failure.</p>"
         },
         "cause":{
-          "shape":"Cause",
+          "shape":"SensitiveCause",
           "documentation":"<p>A more detailed explanation of the cause of the failure.</p>"
         }
       }
@@ -1339,7 +1348,7 @@
           "documentation":"<p>The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see <a>GetActivityTaskOutput$taskToken</a>).</p>"
         },
         "output":{
-          "shape":"Data",
+          "shape":"SensitiveData",
           "documentation":"<p>The JSON output of the task.</p>"
         }
       }
@@ -1348,6 +1357,23 @@
       "type":"structure",
       "members":{
       }
+    },
+    "SensitiveCause":{
+      "type":"string",
+      "max":32768,
+      "min":0,
+      "sensitive":true
+    },
+    "SensitiveData":{
+      "type":"string",
+      "max":32768,
+      "sensitive":true
+    },
+    "SensitiveError":{
+      "type":"string",
+      "max":256,
+      "min":0,
+      "sensitive":true
     },
     "StartExecutionInput":{
       "type":"structure",
@@ -1359,10 +1385,10 @@
         },
         "name":{
           "shape":"Name",
-          "documentation":"<p>The name of the execution. This name must be unique for your AWS account and region for 90 days. For more information, see <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions\"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p> <important> <p>An execution can't use the name of another execution for 90 days.</p> <p>When you make multiple <code>StartExecution</code> calls with the same name, the new execution doesn't run and the following rules apply:</p> <ul> <li> <p>When the original execution is open and the execution input from the new call is <i>different</i>, the <code>ExecutionAlreadyExists</code> message is returned.</p> </li> <li> <p>When the original execution is open and the execution input from the new call is <i>identical</i>, the <code>Success</code> message is returned.</p> </li> <li> <p>When the original execution is closed, the <code>ExecutionAlreadyExists</code> message is returned regardless of input.</p> </li> </ul> </important> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>"
+          "documentation":"<p>The name of the execution. This name must be unique for your AWS account and region for 90 days. For more information, see <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions\"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>"
         },
         "input":{
-          "shape":"Data",
+          "shape":"SensitiveData",
           "documentation":"<p>The string that contains the JSON input data for the execution, for example:</p> <p> <code>\"input\": \"{\\\"first_name\\\" : \\\"test\\\"}\"</code> </p> <note> <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>\"input\": \"{}\"</code> </p> </note>"
         }
       }
@@ -1393,7 +1419,7 @@
           "documentation":"<p>The name of the state.</p>"
         },
         "input":{
-          "shape":"Data",
+          "shape":"SensitiveData",
           "documentation":"<p>The string that contains the JSON input data for the state.</p>"
         }
       },
@@ -1408,7 +1434,7 @@
           "documentation":"<p>The name of the state.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>"
         },
         "output":{
-          "shape":"Data",
+          "shape":"SensitiveData",
           "documentation":"<p>The JSON output data of the state.</p>"
         }
       },
@@ -1489,12 +1515,12 @@
           "documentation":"<p>The Amazon Resource Name (ARN) of the execution to stop.</p>"
         },
         "error":{
-          "shape":"Error",
-          "documentation":"<p>An arbitrary error code that identifies the cause of the termination.</p>"
+          "shape":"SensitiveError",
+          "documentation":"<p>The error code of the failure.</p>"
         },
         "cause":{
-          "shape":"Cause",
-          "documentation":"<p>A more detailed explanation of the cause of the termination.</p>"
+          "shape":"SensitiveCause",
+          "documentation":"<p>A more detailed explanation of the cause of the failure.</p>"
         }
       }
     },
@@ -1515,12 +1541,208 @@
       },
       "exception":true
     },
+    "TaskFailedEventDetails":{
+      "type":"structure",
+      "required":[
+        "resourceType",
+        "resource"
+      ],
+      "members":{
+        "resourceType":{
+          "shape":"Name",
+          "documentation":"<p>The action of the connected service called by a task state.</p>"
+        },
+        "resource":{
+          "shape":"Name",
+          "documentation":"<p>The service name of the connected service in a task state.</p>"
+        },
+        "error":{
+          "shape":"SensitiveError",
+          "documentation":"<p>The error code of the failure.</p>"
+        },
+        "cause":{
+          "shape":"SensitiveCause",
+          "documentation":"<p>A more detailed explanation of the cause of the failure.</p>"
+        }
+      },
+      "documentation":"<p>Contains details about a task failure event.</p>"
+    },
+    "TaskScheduledEventDetails":{
+      "type":"structure",
+      "required":[
+        "resourceType",
+        "resource",
+        "region",
+        "parameters"
+      ],
+      "members":{
+        "resourceType":{
+          "shape":"Name",
+          "documentation":"<p>The action of the connected service called by a task state.</p>"
+        },
+        "resource":{
+          "shape":"Name",
+          "documentation":"<p>The service name of the connected service in a task state.</p>"
+        },
+        "region":{"shape":"Name"},
+        "parameters":{
+          "shape":"ConnectorParameters",
+          "documentation":"<p>The JSON data passed to the connected service referenced in a task state.</p>"
+        },
+        "timeoutInSeconds":{
+          "shape":"TimeoutInSeconds",
+          "documentation":"<p>The maximum allowed duration of the task.</p>",
+          "box":true
+        }
+      },
+      "documentation":"<p>Contains details about a task scheduled during an execution.</p>"
+    },
+    "TaskStartFailedEventDetails":{
+      "type":"structure",
+      "required":[
+        "resourceType",
+        "resource"
+      ],
+      "members":{
+        "resourceType":{
+          "shape":"Name",
+          "documentation":"<p>The action of the connected service called by a task state.</p>"
+        },
+        "resource":{
+          "shape":"Name",
+          "documentation":"<p>The service name of the connected service in a task state.</p>"
+        },
+        "error":{
+          "shape":"SensitiveError",
+          "documentation":"<p>The error code of the failure.</p>"
+        },
+        "cause":{
+          "shape":"SensitiveCause",
+          "documentation":"<p>A more detailed explanation of the cause of the failure.</p>"
+        }
+      },
+      "documentation":"<p>Contains details about a task that failed to start during an execution.</p>"
+    },
+    "TaskStartedEventDetails":{
+      "type":"structure",
+      "required":[
+        "resourceType",
+        "resource"
+      ],
+      "members":{
+        "resourceType":{
+          "shape":"Name",
+          "documentation":"<p>The action of the connected service called by a task state.</p>"
+        },
+        "resource":{
+          "shape":"Name",
+          "documentation":"<p>The service name of the connected service in a task state.</p>"
+        }
+      },
+      "documentation":"<p>Contains details about the start of a task during an execution.</p>"
+    },
+    "TaskSubmitFailedEventDetails":{
+      "type":"structure",
+      "required":[
+        "resourceType",
+        "resource"
+      ],
+      "members":{
+        "resourceType":{
+          "shape":"Name",
+          "documentation":"<p>The action of the connected service called by a task state.</p>"
+        },
+        "resource":{
+          "shape":"Name",
+          "documentation":"<p>The service name of the connected service in a task state.</p>"
+        },
+        "error":{
+          "shape":"SensitiveError",
+          "documentation":"<p>The error code of the failure.</p>"
+        },
+        "cause":{
+          "shape":"SensitiveCause",
+          "documentation":"<p>A more detailed explanation of the cause of the failure.</p>"
+        }
+      },
+      "documentation":"<p/>"
+    },
+    "TaskSubmittedEventDetails":{
+      "type":"structure",
+      "required":[
+        "resourceType",
+        "resource"
+      ],
+      "members":{
+        "resourceType":{
+          "shape":"Name",
+          "documentation":"<p>The action of the connected service called by a task state.</p>"
+        },
+        "resource":{
+          "shape":"Name",
+          "documentation":"<p>The service name of the connected service in a task state.</p>"
+        },
+        "output":{
+          "shape":"SensitiveData",
+          "documentation":"<p>The response from a connected service when a task has started.</p>"
+        }
+      },
+      "documentation":"<p/>"
+    },
+    "TaskSucceededEventDetails":{
+      "type":"structure",
+      "required":[
+        "resourceType",
+        "resource"
+      ],
+      "members":{
+        "resourceType":{
+          "shape":"Name",
+          "documentation":"<p>The action of the connected service called by a task state.</p>"
+        },
+        "resource":{
+          "shape":"Name",
+          "documentation":"<p>The service name of the connected service in a task state.</p>"
+        },
+        "output":{
+          "shape":"SensitiveData",
+          "documentation":"<p>The full JSON response from a connected service when a task has succeeded. This response becomes the output of the related task.</p>"
+        }
+      },
+      "documentation":"<p>Contains details about the start of connected service by a task state.</p>"
+    },
     "TaskTimedOut":{
       "type":"structure",
       "members":{
         "message":{"shape":"ErrorMessage"}
       },
       "exception":true
+    },
+    "TaskTimedOutEventDetails":{
+      "type":"structure",
+      "required":[
+        "resourceType",
+        "resource"
+      ],
+      "members":{
+        "resourceType":{
+          "shape":"Name",
+          "documentation":"<p>The action of the connected service called by a task state.</p>"
+        },
+        "resource":{
+          "shape":"Name",
+          "documentation":"<p>The service name of the connected service in a task state.</p>"
+        },
+        "error":{
+          "shape":"SensitiveError",
+          "documentation":"<p>The error code of the failure.</p>"
+        },
+        "cause":{
+          "shape":"SensitiveCause",
+          "documentation":"<p>A more detailed explanation of the cause of the failure.</p>"
+        }
+      },
+      "documentation":"<p>Contains details about a connected service timeout that occured during an execution.</p>"
     },
     "TaskToken":{
       "type":"string",
@@ -1539,7 +1761,7 @@
         },
         "definition":{
           "shape":"Definition",
-          "documentation":"<p>The Amazon States Language definition of the state machine.</p>"
+          "documentation":"<p>The Amazon States Language definition of the state machine. See <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a>.</p>"
         },
         "roleArn":{
           "shape":"Arn",

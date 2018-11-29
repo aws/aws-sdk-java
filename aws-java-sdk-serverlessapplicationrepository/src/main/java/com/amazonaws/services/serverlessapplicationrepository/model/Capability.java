@@ -15,7 +15,9 @@ package com.amazonaws.services.serverlessapplicationrepository.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * Values that must be specified in order to deploy some applications.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Capability {

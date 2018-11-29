@@ -30,7 +30,7 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date the event occurred.
+     * The date and time the event occurred.
      * </p>
      */
     private java.util.Date timestamp;
@@ -56,7 +56,7 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     private ActivityFailedEventDetails activityFailedEventDetails;
     /**
      * <p>
-     * Contains details about an activity schedule event which failed during an execution.
+     * Contains details about an activity schedule event that failed during an execution.
      * </p>
      */
     private ActivityScheduleFailedEventDetails activityScheduleFailedEventDetails;
@@ -68,6 +68,22 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     private ActivitySucceededEventDetails activitySucceededEventDetails;
 
     private ActivityTimedOutEventDetails activityTimedOutEventDetails;
+
+    private TaskFailedEventDetails taskFailedEventDetails;
+
+    private TaskScheduledEventDetails taskScheduledEventDetails;
+
+    private TaskStartFailedEventDetails taskStartFailedEventDetails;
+
+    private TaskStartedEventDetails taskStartedEventDetails;
+
+    private TaskSubmitFailedEventDetails taskSubmitFailedEventDetails;
+
+    private TaskSubmittedEventDetails taskSubmittedEventDetails;
+
+    private TaskSucceededEventDetails taskSucceededEventDetails;
+
+    private TaskTimedOutEventDetails taskTimedOutEventDetails;
 
     private ExecutionFailedEventDetails executionFailedEventDetails;
 
@@ -86,13 +102,13 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     private LambdaFunctionScheduledEventDetails lambdaFunctionScheduledEventDetails;
     /**
      * <p>
-     * Contains details about a lambda function which failed to start during an execution.
+     * Contains details about a lambda function that failed to start during an execution.
      * </p>
      */
     private LambdaFunctionStartFailedEventDetails lambdaFunctionStartFailedEventDetails;
     /**
      * <p>
-     * Contains details about a lambda function which terminated successfully during an execution.
+     * Contains details about a lambda function that terminated successfully during an execution.
      * </p>
      */
     private LambdaFunctionSucceededEventDetails lambdaFunctionSucceededEventDetails;
@@ -105,11 +121,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date the event occurred.
+     * The date and time the event occurred.
      * </p>
      * 
      * @param timestamp
-     *        The date the event occurred.
+     *        The date and time the event occurred.
      */
 
     public void setTimestamp(java.util.Date timestamp) {
@@ -118,10 +134,10 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date the event occurred.
+     * The date and time the event occurred.
      * </p>
      * 
-     * @return The date the event occurred.
+     * @return The date and time the event occurred.
      */
 
     public java.util.Date getTimestamp() {
@@ -130,11 +146,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date the event occurred.
+     * The date and time the event occurred.
      * </p>
      * 
      * @param timestamp
-     *        The date the event occurred.
+     *        The date and time the event occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -324,11 +340,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains details about an activity schedule event which failed during an execution.
+     * Contains details about an activity schedule event that failed during an execution.
      * </p>
      * 
      * @param activityScheduleFailedEventDetails
-     *        Contains details about an activity schedule event which failed during an execution.
+     *        Contains details about an activity schedule event that failed during an execution.
      */
 
     public void setActivityScheduleFailedEventDetails(ActivityScheduleFailedEventDetails activityScheduleFailedEventDetails) {
@@ -337,10 +353,10 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains details about an activity schedule event which failed during an execution.
+     * Contains details about an activity schedule event that failed during an execution.
      * </p>
      * 
-     * @return Contains details about an activity schedule event which failed during an execution.
+     * @return Contains details about an activity schedule event that failed during an execution.
      */
 
     public ActivityScheduleFailedEventDetails getActivityScheduleFailedEventDetails() {
@@ -349,11 +365,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains details about an activity schedule event which failed during an execution.
+     * Contains details about an activity schedule event that failed during an execution.
      * </p>
      * 
      * @param activityScheduleFailedEventDetails
-     *        Contains details about an activity schedule event which failed during an execution.
+     *        Contains details about an activity schedule event that failed during an execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -463,6 +479,214 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     public HistoryEvent withActivityTimedOutEventDetails(ActivityTimedOutEventDetails activityTimedOutEventDetails) {
         setActivityTimedOutEventDetails(activityTimedOutEventDetails);
+        return this;
+    }
+
+    /**
+     * @param taskFailedEventDetails
+     */
+
+    public void setTaskFailedEventDetails(TaskFailedEventDetails taskFailedEventDetails) {
+        this.taskFailedEventDetails = taskFailedEventDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public TaskFailedEventDetails getTaskFailedEventDetails() {
+        return this.taskFailedEventDetails;
+    }
+
+    /**
+     * @param taskFailedEventDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withTaskFailedEventDetails(TaskFailedEventDetails taskFailedEventDetails) {
+        setTaskFailedEventDetails(taskFailedEventDetails);
+        return this;
+    }
+
+    /**
+     * @param taskScheduledEventDetails
+     */
+
+    public void setTaskScheduledEventDetails(TaskScheduledEventDetails taskScheduledEventDetails) {
+        this.taskScheduledEventDetails = taskScheduledEventDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public TaskScheduledEventDetails getTaskScheduledEventDetails() {
+        return this.taskScheduledEventDetails;
+    }
+
+    /**
+     * @param taskScheduledEventDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withTaskScheduledEventDetails(TaskScheduledEventDetails taskScheduledEventDetails) {
+        setTaskScheduledEventDetails(taskScheduledEventDetails);
+        return this;
+    }
+
+    /**
+     * @param taskStartFailedEventDetails
+     */
+
+    public void setTaskStartFailedEventDetails(TaskStartFailedEventDetails taskStartFailedEventDetails) {
+        this.taskStartFailedEventDetails = taskStartFailedEventDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public TaskStartFailedEventDetails getTaskStartFailedEventDetails() {
+        return this.taskStartFailedEventDetails;
+    }
+
+    /**
+     * @param taskStartFailedEventDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withTaskStartFailedEventDetails(TaskStartFailedEventDetails taskStartFailedEventDetails) {
+        setTaskStartFailedEventDetails(taskStartFailedEventDetails);
+        return this;
+    }
+
+    /**
+     * @param taskStartedEventDetails
+     */
+
+    public void setTaskStartedEventDetails(TaskStartedEventDetails taskStartedEventDetails) {
+        this.taskStartedEventDetails = taskStartedEventDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public TaskStartedEventDetails getTaskStartedEventDetails() {
+        return this.taskStartedEventDetails;
+    }
+
+    /**
+     * @param taskStartedEventDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withTaskStartedEventDetails(TaskStartedEventDetails taskStartedEventDetails) {
+        setTaskStartedEventDetails(taskStartedEventDetails);
+        return this;
+    }
+
+    /**
+     * @param taskSubmitFailedEventDetails
+     */
+
+    public void setTaskSubmitFailedEventDetails(TaskSubmitFailedEventDetails taskSubmitFailedEventDetails) {
+        this.taskSubmitFailedEventDetails = taskSubmitFailedEventDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public TaskSubmitFailedEventDetails getTaskSubmitFailedEventDetails() {
+        return this.taskSubmitFailedEventDetails;
+    }
+
+    /**
+     * @param taskSubmitFailedEventDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withTaskSubmitFailedEventDetails(TaskSubmitFailedEventDetails taskSubmitFailedEventDetails) {
+        setTaskSubmitFailedEventDetails(taskSubmitFailedEventDetails);
+        return this;
+    }
+
+    /**
+     * @param taskSubmittedEventDetails
+     */
+
+    public void setTaskSubmittedEventDetails(TaskSubmittedEventDetails taskSubmittedEventDetails) {
+        this.taskSubmittedEventDetails = taskSubmittedEventDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public TaskSubmittedEventDetails getTaskSubmittedEventDetails() {
+        return this.taskSubmittedEventDetails;
+    }
+
+    /**
+     * @param taskSubmittedEventDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withTaskSubmittedEventDetails(TaskSubmittedEventDetails taskSubmittedEventDetails) {
+        setTaskSubmittedEventDetails(taskSubmittedEventDetails);
+        return this;
+    }
+
+    /**
+     * @param taskSucceededEventDetails
+     */
+
+    public void setTaskSucceededEventDetails(TaskSucceededEventDetails taskSucceededEventDetails) {
+        this.taskSucceededEventDetails = taskSucceededEventDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public TaskSucceededEventDetails getTaskSucceededEventDetails() {
+        return this.taskSucceededEventDetails;
+    }
+
+    /**
+     * @param taskSucceededEventDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withTaskSucceededEventDetails(TaskSucceededEventDetails taskSucceededEventDetails) {
+        setTaskSucceededEventDetails(taskSucceededEventDetails);
+        return this;
+    }
+
+    /**
+     * @param taskTimedOutEventDetails
+     */
+
+    public void setTaskTimedOutEventDetails(TaskTimedOutEventDetails taskTimedOutEventDetails) {
+        this.taskTimedOutEventDetails = taskTimedOutEventDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public TaskTimedOutEventDetails getTaskTimedOutEventDetails() {
+        return this.taskTimedOutEventDetails;
+    }
+
+    /**
+     * @param taskTimedOutEventDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withTaskTimedOutEventDetails(TaskTimedOutEventDetails taskTimedOutEventDetails) {
+        setTaskTimedOutEventDetails(taskTimedOutEventDetails);
         return this;
     }
 
@@ -676,11 +900,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains details about a lambda function which failed to start during an execution.
+     * Contains details about a lambda function that failed to start during an execution.
      * </p>
      * 
      * @param lambdaFunctionStartFailedEventDetails
-     *        Contains details about a lambda function which failed to start during an execution.
+     *        Contains details about a lambda function that failed to start during an execution.
      */
 
     public void setLambdaFunctionStartFailedEventDetails(LambdaFunctionStartFailedEventDetails lambdaFunctionStartFailedEventDetails) {
@@ -689,10 +913,10 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains details about a lambda function which failed to start during an execution.
+     * Contains details about a lambda function that failed to start during an execution.
      * </p>
      * 
-     * @return Contains details about a lambda function which failed to start during an execution.
+     * @return Contains details about a lambda function that failed to start during an execution.
      */
 
     public LambdaFunctionStartFailedEventDetails getLambdaFunctionStartFailedEventDetails() {
@@ -701,11 +925,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains details about a lambda function which failed to start during an execution.
+     * Contains details about a lambda function that failed to start during an execution.
      * </p>
      * 
      * @param lambdaFunctionStartFailedEventDetails
-     *        Contains details about a lambda function which failed to start during an execution.
+     *        Contains details about a lambda function that failed to start during an execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -716,11 +940,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains details about a lambda function which terminated successfully during an execution.
+     * Contains details about a lambda function that terminated successfully during an execution.
      * </p>
      * 
      * @param lambdaFunctionSucceededEventDetails
-     *        Contains details about a lambda function which terminated successfully during an execution.
+     *        Contains details about a lambda function that terminated successfully during an execution.
      */
 
     public void setLambdaFunctionSucceededEventDetails(LambdaFunctionSucceededEventDetails lambdaFunctionSucceededEventDetails) {
@@ -729,10 +953,10 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains details about a lambda function which terminated successfully during an execution.
+     * Contains details about a lambda function that terminated successfully during an execution.
      * </p>
      * 
-     * @return Contains details about a lambda function which terminated successfully during an execution.
+     * @return Contains details about a lambda function that terminated successfully during an execution.
      */
 
     public LambdaFunctionSucceededEventDetails getLambdaFunctionSucceededEventDetails() {
@@ -741,11 +965,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains details about a lambda function which terminated successfully during an execution.
+     * Contains details about a lambda function that terminated successfully during an execution.
      * </p>
      * 
      * @param lambdaFunctionSucceededEventDetails
-     *        Contains details about a lambda function which terminated successfully during an execution.
+     *        Contains details about a lambda function that terminated successfully during an execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -863,6 +1087,22 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
             sb.append("ActivitySucceededEventDetails: ").append(getActivitySucceededEventDetails()).append(",");
         if (getActivityTimedOutEventDetails() != null)
             sb.append("ActivityTimedOutEventDetails: ").append(getActivityTimedOutEventDetails()).append(",");
+        if (getTaskFailedEventDetails() != null)
+            sb.append("TaskFailedEventDetails: ").append(getTaskFailedEventDetails()).append(",");
+        if (getTaskScheduledEventDetails() != null)
+            sb.append("TaskScheduledEventDetails: ").append(getTaskScheduledEventDetails()).append(",");
+        if (getTaskStartFailedEventDetails() != null)
+            sb.append("TaskStartFailedEventDetails: ").append(getTaskStartFailedEventDetails()).append(",");
+        if (getTaskStartedEventDetails() != null)
+            sb.append("TaskStartedEventDetails: ").append(getTaskStartedEventDetails()).append(",");
+        if (getTaskSubmitFailedEventDetails() != null)
+            sb.append("TaskSubmitFailedEventDetails: ").append(getTaskSubmitFailedEventDetails()).append(",");
+        if (getTaskSubmittedEventDetails() != null)
+            sb.append("TaskSubmittedEventDetails: ").append(getTaskSubmittedEventDetails()).append(",");
+        if (getTaskSucceededEventDetails() != null)
+            sb.append("TaskSucceededEventDetails: ").append(getTaskSucceededEventDetails()).append(",");
+        if (getTaskTimedOutEventDetails() != null)
+            sb.append("TaskTimedOutEventDetails: ").append(getTaskTimedOutEventDetails()).append(",");
         if (getExecutionFailedEventDetails() != null)
             sb.append("ExecutionFailedEventDetails: ").append(getExecutionFailedEventDetails()).append(",");
         if (getExecutionStartedEventDetails() != null)
@@ -946,6 +1186,38 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getActivityTimedOutEventDetails() != null && other.getActivityTimedOutEventDetails().equals(this.getActivityTimedOutEventDetails()) == false)
             return false;
+        if (other.getTaskFailedEventDetails() == null ^ this.getTaskFailedEventDetails() == null)
+            return false;
+        if (other.getTaskFailedEventDetails() != null && other.getTaskFailedEventDetails().equals(this.getTaskFailedEventDetails()) == false)
+            return false;
+        if (other.getTaskScheduledEventDetails() == null ^ this.getTaskScheduledEventDetails() == null)
+            return false;
+        if (other.getTaskScheduledEventDetails() != null && other.getTaskScheduledEventDetails().equals(this.getTaskScheduledEventDetails()) == false)
+            return false;
+        if (other.getTaskStartFailedEventDetails() == null ^ this.getTaskStartFailedEventDetails() == null)
+            return false;
+        if (other.getTaskStartFailedEventDetails() != null && other.getTaskStartFailedEventDetails().equals(this.getTaskStartFailedEventDetails()) == false)
+            return false;
+        if (other.getTaskStartedEventDetails() == null ^ this.getTaskStartedEventDetails() == null)
+            return false;
+        if (other.getTaskStartedEventDetails() != null && other.getTaskStartedEventDetails().equals(this.getTaskStartedEventDetails()) == false)
+            return false;
+        if (other.getTaskSubmitFailedEventDetails() == null ^ this.getTaskSubmitFailedEventDetails() == null)
+            return false;
+        if (other.getTaskSubmitFailedEventDetails() != null && other.getTaskSubmitFailedEventDetails().equals(this.getTaskSubmitFailedEventDetails()) == false)
+            return false;
+        if (other.getTaskSubmittedEventDetails() == null ^ this.getTaskSubmittedEventDetails() == null)
+            return false;
+        if (other.getTaskSubmittedEventDetails() != null && other.getTaskSubmittedEventDetails().equals(this.getTaskSubmittedEventDetails()) == false)
+            return false;
+        if (other.getTaskSucceededEventDetails() == null ^ this.getTaskSucceededEventDetails() == null)
+            return false;
+        if (other.getTaskSucceededEventDetails() != null && other.getTaskSucceededEventDetails().equals(this.getTaskSucceededEventDetails()) == false)
+            return false;
+        if (other.getTaskTimedOutEventDetails() == null ^ this.getTaskTimedOutEventDetails() == null)
+            return false;
+        if (other.getTaskTimedOutEventDetails() != null && other.getTaskTimedOutEventDetails().equals(this.getTaskTimedOutEventDetails()) == false)
+            return false;
         if (other.getExecutionFailedEventDetails() == null ^ this.getExecutionFailedEventDetails() == null)
             return false;
         if (other.getExecutionFailedEventDetails() != null && other.getExecutionFailedEventDetails().equals(this.getExecutionFailedEventDetails()) == false)
@@ -1024,6 +1296,14 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getActivityStartedEventDetails() == null) ? 0 : getActivityStartedEventDetails().hashCode());
         hashCode = prime * hashCode + ((getActivitySucceededEventDetails() == null) ? 0 : getActivitySucceededEventDetails().hashCode());
         hashCode = prime * hashCode + ((getActivityTimedOutEventDetails() == null) ? 0 : getActivityTimedOutEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getTaskFailedEventDetails() == null) ? 0 : getTaskFailedEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getTaskScheduledEventDetails() == null) ? 0 : getTaskScheduledEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getTaskStartFailedEventDetails() == null) ? 0 : getTaskStartFailedEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getTaskStartedEventDetails() == null) ? 0 : getTaskStartedEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getTaskSubmitFailedEventDetails() == null) ? 0 : getTaskSubmitFailedEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getTaskSubmittedEventDetails() == null) ? 0 : getTaskSubmittedEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getTaskSucceededEventDetails() == null) ? 0 : getTaskSucceededEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getTaskTimedOutEventDetails() == null) ? 0 : getTaskTimedOutEventDetails().hashCode());
         hashCode = prime * hashCode + ((getExecutionFailedEventDetails() == null) ? 0 : getExecutionFailedEventDetails().hashCode());
         hashCode = prime * hashCode + ((getExecutionStartedEventDetails() == null) ? 0 : getExecutionStartedEventDetails().hashCode());
         hashCode = prime * hashCode + ((getExecutionSucceededEventDetails() == null) ? 0 : getExecutionSucceededEventDetails().hashCode());

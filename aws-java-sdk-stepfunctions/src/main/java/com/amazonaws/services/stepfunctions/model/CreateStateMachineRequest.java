@@ -27,10 +27,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the state machine. This name must be unique for your AWS account and region for 90 days. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
+     * The name of the state machine.
      * </p>
      * <p>
      * A name must <i>not</i> contain:
@@ -66,7 +63,9 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
     private String name;
     /**
      * <p>
-     * The Amazon States Language definition of the state machine.
+     * The Amazon States Language definition of the state machine. See <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * Language</a>.
      * </p>
      */
     private String definition;
@@ -79,10 +78,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the state machine. This name must be unique for your AWS account and region for 90 days. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
+     * The name of the state machine.
      * </p>
      * <p>
      * A name must <i>not</i> contain:
@@ -116,10 +112,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param name
-     *        The name of the state machine. This name must be unique for your AWS account and region for 90 days. For
-     *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     *        Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+     *        The name of the state machine. </p>
      *        <p>
      *        A name must <i>not</i> contain:
      *        </p>
@@ -157,10 +150,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the state machine. This name must be unique for your AWS account and region for 90 days. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
+     * The name of the state machine.
      * </p>
      * <p>
      * A name must <i>not</i> contain:
@@ -193,10 +183,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * 
-     * @return The name of the state machine. This name must be unique for your AWS account and region for 90 days. For
-     *         more information, see <a href=
-     *         "http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
-     *         > Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+     * @return The name of the state machine. </p>
      *         <p>
      *         A name must <i>not</i> contain:
      *         </p>
@@ -234,10 +221,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the state machine. This name must be unique for your AWS account and region for 90 days. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
+     * The name of the state machine.
      * </p>
      * <p>
      * A name must <i>not</i> contain:
@@ -271,10 +255,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param name
-     *        The name of the state machine. This name must be unique for your AWS account and region for 90 days. For
-     *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     *        Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+     *        The name of the state machine. </p>
      *        <p>
      *        A name must <i>not</i> contain:
      *        </p>
@@ -314,11 +295,15 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon States Language definition of the state machine.
+     * The Amazon States Language definition of the state machine. See <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * Language</a>.
      * </p>
      * 
      * @param definition
-     *        The Amazon States Language definition of the state machine.
+     *        The Amazon States Language definition of the state machine. See <a
+     *        href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     *        States Language</a>.
      */
 
     public void setDefinition(String definition) {
@@ -327,10 +312,14 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon States Language definition of the state machine.
+     * The Amazon States Language definition of the state machine. See <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * Language</a>.
      * </p>
      * 
-     * @return The Amazon States Language definition of the state machine.
+     * @return The Amazon States Language definition of the state machine. See <a
+     *         href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     *         States Language</a>.
      */
 
     public String getDefinition() {
@@ -339,11 +328,15 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon States Language definition of the state machine.
+     * The Amazon States Language definition of the state machine. See <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * Language</a>.
      * </p>
      * 
      * @param definition
-     *        The Amazon States Language definition of the state machine.
+     *        The Amazon States Language definition of the state machine. See <a
+     *        href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     *        States Language</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -354,11 +347,15 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon States Language definition of the state machine.
+     * The Amazon States Language definition of the state machine. See <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * Language</a>.
      * </p>
      * 
      * @param definition
-     *        The Amazon States Language definition of the state machine.
+     *        The Amazon States Language definition of the state machine. See <a
+     *        href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     *        States Language</a>.
      */
     public void setDefinition(com.amazonaws.services.stepfunctions.builder.StateMachine definition) {
         setDefinition(new com.amazonaws.services.stepfunctions.builder.StateMachineAdapter().adapt(definition));
@@ -366,11 +363,15 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon States Language definition of the state machine.
+     * The Amazon States Language definition of the state machine. See <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * Language</a>.
      * </p>
      * 
      * @param definition
-     *        The Amazon States Language definition of the state machine.
+     *        The Amazon States Language definition of the state machine. See <a
+     *        href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     *        States Language</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     public CreateStateMachineRequest withDefinition(com.amazonaws.services.stepfunctions.builder.StateMachine definition) {

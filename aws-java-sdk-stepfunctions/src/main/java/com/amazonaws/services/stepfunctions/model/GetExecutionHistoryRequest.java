@@ -34,7 +34,7 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further
-     * pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 uses the default.
+     * pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.
      * </p>
      * <p>
      * This is only an upper limit. The actual number of results returned per call might be fewer than the specified
@@ -50,12 +50,10 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
     private Boolean reverseOrder;
     /**
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
-     * </p>
-     * <p>
-     * The configured <code>maxResults</code> determines how many results can be returned in a single call.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      */
     private String nextToken;
@@ -103,7 +101,7 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further
-     * pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 uses the default.
+     * pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.
      * </p>
      * <p>
      * This is only an upper limit. The actual number of results returned per call might be fewer than the specified
@@ -112,7 +110,7 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param maxResults
      *        The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain
-     *        further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 uses
+     *        further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses
      *        the default.</p>
      *        <p>
      *        This is only an upper limit. The actual number of results returned per call might be fewer than the
@@ -126,7 +124,7 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further
-     * pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 uses the default.
+     * pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.
      * </p>
      * <p>
      * This is only an upper limit. The actual number of results returned per call might be fewer than the specified
@@ -134,7 +132,7 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @return The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain
-     *         further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 uses
+     *         further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses
      *         the default.</p>
      *         <p>
      *         This is only an upper limit. The actual number of results returned per call might be fewer than the
@@ -148,7 +146,7 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further
-     * pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 uses the default.
+     * pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.
      * </p>
      * <p>
      * This is only an upper limit. The actual number of results returned per call might be fewer than the specified
@@ -157,7 +155,7 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param maxResults
      *        The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain
-     *        further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 uses
+     *        further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses
      *        the default.</p>
      *        <p>
      *        This is only an upper limit. The actual number of results returned per call might be fewer than the
@@ -224,20 +222,17 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
-     * </p>
-     * <p>
-     * The configured <code>maxResults</code> determines how many results can be returned in a single call.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * 
      * @param nextToken
-     *        If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve
-     *        the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all
-     *        other arguments unchanged.</p>
-     *        <p>
-     *        The configured <code>maxResults</code> determines how many results can be returned in a single call.
+     *        If <code>nextToken</code> is returned, there are more results available. The value of
+     *        <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *        token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after
+     *        60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.
      */
 
     public void setNextToken(String nextToken) {
@@ -246,19 +241,16 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
-     * </p>
-     * <p>
-     * The configured <code>maxResults</code> determines how many results can be returned in a single call.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * 
-     * @return If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve
-     *         the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep
-     *         all other arguments unchanged.</p>
-     *         <p>
-     *         The configured <code>maxResults</code> determines how many results can be returned in a single call.
+     * @return If <code>nextToken</code> is returned, there are more results available. The value of
+     *         <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *         token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after
+     *         60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.
      */
 
     public String getNextToken() {
@@ -267,20 +259,17 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
-     * </p>
-     * <p>
-     * The configured <code>maxResults</code> determines how many results can be returned in a single call.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * 
      * @param nextToken
-     *        If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve
-     *        the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all
-     *        other arguments unchanged.</p>
-     *        <p>
-     *        The configured <code>maxResults</code> determines how many results can be returned in a single call.
+     *        If <code>nextToken</code> is returned, there are more results available. The value of
+     *        <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *        token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after
+     *        60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

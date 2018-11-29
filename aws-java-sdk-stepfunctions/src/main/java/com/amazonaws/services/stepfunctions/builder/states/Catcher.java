@@ -87,6 +87,7 @@ public final class Catcher {
         @JsonProperty(PropertyNames.ERROR_EQUALS)
         private List<String> errorEquals = new ArrayList<String>();
 
+        @JsonUnwrapped
         private final PathContainer.Builder pathContainer = PathContainer.builder();
 
         private Transition.Builder transition = Transition.NULL_BUILDER;

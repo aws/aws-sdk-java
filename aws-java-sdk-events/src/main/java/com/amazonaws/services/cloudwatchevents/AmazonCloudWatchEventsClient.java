@@ -53,7 +53,7 @@ import com.amazonaws.services.cloudwatchevents.model.transform.*;
  * <p>
  * Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change
  * state, they automatically send events into an event stream. You can create rules that match selected events in the
- * stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule.
+ * stream and route them to targets to take action. You can also use rules to take action on a predetermined schedule.
  * For example, you can configure rules to:
  * </p>
  * <ul>
@@ -117,6 +117,9 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalException").withModeledClass(
                                     com.amazonaws.services.cloudwatchevents.model.InternalException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ManagedRuleException").withModeledClass(
+                                    com.amazonaws.services.cloudwatchevents.model.ManagedRuleException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
                                     com.amazonaws.services.cloudwatchevents.model.LimitExceededException.class))
@@ -333,11 +336,23 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * When you delete a rule, incoming events might continue to match to the deleted rule. Allow a short period of time
      * for changes to take effect.
      * </p>
+     * <p>
+     * Managed rules are rules created and managed by another AWS service on your behalf. These rules are created by
+     * those other AWS services to support functionality in those services. You can delete these rules using the
+     * <code>Force</code> option, but you should do so only if you are sure the other service is not still using that
+     * rule.
+     * </p>
      * 
      * @param deleteRuleRequest
      * @return Result of the DeleteRule operation returned by the service.
      * @throws ConcurrentModificationException
      *         There is concurrent modification on a rule or target.
+     * @throws ManagedRuleException
+     *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
+     *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
+     *         <code>Force</code> parameter in those calls to delete the rule or remove targets from the rule. You
+     *         cannot modify these managed rules by using <code>DisableRule</code>, <code>EnableRule</code>,
+     *         <code>PutTargets</code>, or <code>PutRule</code>.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.DeleteRule
@@ -519,6 +534,12 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
      *         There is concurrent modification on a rule or target.
+     * @throws ManagedRuleException
+     *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
+     *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
+     *         <code>Force</code> parameter in those calls to delete the rule or remove targets from the rule. You
+     *         cannot modify these managed rules by using <code>DisableRule</code>, <code>EnableRule</code>,
+     *         <code>PutTargets</code>, or <code>PutRule</code>.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.DisableRule
@@ -581,6 +602,12 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
      *         There is concurrent modification on a rule or target.
+     * @throws ManagedRuleException
+     *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
+     *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
+     *         <code>Force</code> parameter in those calls to delete the rule or remove targets from the rule. You
+     *         cannot modify these managed rules by using <code>DisableRule</code>, <code>EnableRule</code>,
+     *         <code>PutTargets</code>, or <code>PutRule</code>.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.EnableRule
@@ -985,6 +1012,12 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *         You tried to create more rules or add more targets to a rule than is allowed.
      * @throws ConcurrentModificationException
      *         There is concurrent modification on a rule or target.
+     * @throws ManagedRuleException
+     *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
+     *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
+     *         <code>Force</code> parameter in those calls to delete the rule or remove targets from the rule. You
+     *         cannot modify these managed rules by using <code>DisableRule</code>, <code>EnableRule</code>,
+     *         <code>PutTargets</code>, or <code>PutRule</code>.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.PutRule
@@ -1211,6 +1244,12 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *         There is concurrent modification on a rule or target.
      * @throws LimitExceededException
      *         You tried to create more rules or add more targets to a rule than is allowed.
+     * @throws ManagedRuleException
+     *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
+     *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
+     *         <code>Force</code> parameter in those calls to delete the rule or remove targets from the rule. You
+     *         cannot modify these managed rules by using <code>DisableRule</code>, <code>EnableRule</code>,
+     *         <code>PutTargets</code>, or <code>PutRule</code>.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.PutTargets
@@ -1340,6 +1379,12 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
      *         There is concurrent modification on a rule or target.
+     * @throws ManagedRuleException
+     *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
+     *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
+     *         <code>Force</code> parameter in those calls to delete the rule or remove targets from the rule. You
+     *         cannot modify these managed rules by using <code>DisableRule</code>, <code>EnableRule</code>,
+     *         <code>PutTargets</code>, or <code>PutRule</code>.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.RemoveTargets

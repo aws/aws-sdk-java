@@ -47,6 +47,22 @@ public class HistoryEventMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("activitySucceededEventDetails").build();
     private static final MarshallingInfo<StructuredPojo> ACTIVITYTIMEDOUTEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("activityTimedOutEventDetails").build();
+    private static final MarshallingInfo<StructuredPojo> TASKFAILEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskFailedEventDetails").build();
+    private static final MarshallingInfo<StructuredPojo> TASKSCHEDULEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskScheduledEventDetails").build();
+    private static final MarshallingInfo<StructuredPojo> TASKSTARTFAILEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskStartFailedEventDetails").build();
+    private static final MarshallingInfo<StructuredPojo> TASKSTARTEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskStartedEventDetails").build();
+    private static final MarshallingInfo<StructuredPojo> TASKSUBMITFAILEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskSubmitFailedEventDetails").build();
+    private static final MarshallingInfo<StructuredPojo> TASKSUBMITTEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskSubmittedEventDetails").build();
+    private static final MarshallingInfo<StructuredPojo> TASKSUCCEEDEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskSucceededEventDetails").build();
+    private static final MarshallingInfo<StructuredPojo> TASKTIMEDOUTEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskTimedOutEventDetails").build();
     private static final MarshallingInfo<StructuredPojo> EXECUTIONFAILEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionFailedEventDetails").build();
     private static final MarshallingInfo<StructuredPojo> EXECUTIONSTARTEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -100,6 +116,14 @@ public class HistoryEventMarshaller {
             protocolMarshaller.marshall(historyEvent.getActivityStartedEventDetails(), ACTIVITYSTARTEDEVENTDETAILS_BINDING);
             protocolMarshaller.marshall(historyEvent.getActivitySucceededEventDetails(), ACTIVITYSUCCEEDEDEVENTDETAILS_BINDING);
             protocolMarshaller.marshall(historyEvent.getActivityTimedOutEventDetails(), ACTIVITYTIMEDOUTEVENTDETAILS_BINDING);
+            protocolMarshaller.marshall(historyEvent.getTaskFailedEventDetails(), TASKFAILEDEVENTDETAILS_BINDING);
+            protocolMarshaller.marshall(historyEvent.getTaskScheduledEventDetails(), TASKSCHEDULEDEVENTDETAILS_BINDING);
+            protocolMarshaller.marshall(historyEvent.getTaskStartFailedEventDetails(), TASKSTARTFAILEDEVENTDETAILS_BINDING);
+            protocolMarshaller.marshall(historyEvent.getTaskStartedEventDetails(), TASKSTARTEDEVENTDETAILS_BINDING);
+            protocolMarshaller.marshall(historyEvent.getTaskSubmitFailedEventDetails(), TASKSUBMITFAILEDEVENTDETAILS_BINDING);
+            protocolMarshaller.marshall(historyEvent.getTaskSubmittedEventDetails(), TASKSUBMITTEDEVENTDETAILS_BINDING);
+            protocolMarshaller.marshall(historyEvent.getTaskSucceededEventDetails(), TASKSUCCEEDEDEVENTDETAILS_BINDING);
+            protocolMarshaller.marshall(historyEvent.getTaskTimedOutEventDetails(), TASKTIMEDOUTEVENTDETAILS_BINDING);
             protocolMarshaller.marshall(historyEvent.getExecutionFailedEventDetails(), EXECUTIONFAILEDEVENTDETAILS_BINDING);
             protocolMarshaller.marshall(historyEvent.getExecutionStartedEventDetails(), EXECUTIONSTARTEDEVENTDETAILS_BINDING);
             protocolMarshaller.marshall(historyEvent.getExecutionSucceededEventDetails(), EXECUTIONSUCCEEDEDEVENTDETAILS_BINDING);

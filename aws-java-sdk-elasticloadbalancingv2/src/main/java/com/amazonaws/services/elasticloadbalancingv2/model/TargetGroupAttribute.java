@@ -31,19 +31,20 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * The following attribute is supported by both Application Load Balancers and Network Load Balancers:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load Balancing to
      * wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The
-     * range is 0-3600 seconds. The default value is 300 seconds.
+     * range is 0-3600 seconds. The default value is 300 seconds. If the target is a Lambda function, this attribute is
+     * not supported.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The following attributes are supported by only Application Load Balancers:
+     * The following attributes are supported by Application Load Balancers if the target is not a Lambda function:
      * </p>
      * <ul>
      * <li>
@@ -74,7 +75,21 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attributes are supported by only Network Load Balancers:
+     * The following attribute is supported only if the target is a Lambda function.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers exchanged
+     * between the load balancer and the Lambda function include arrays of values or strings. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is <code>false</code>
+     * and the request contains a duplicate header field name or query parameter key, the load balancer uses the last
+     * value sent by the client.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attribute is supported only by Network Load Balancers:
      * </p>
      * <ul>
      * <li>
@@ -98,19 +113,20 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * The following attribute is supported by both Application Load Balancers and Network Load Balancers:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load Balancing to
      * wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The
-     * range is 0-3600 seconds. The default value is 300 seconds.
+     * range is 0-3600 seconds. The default value is 300 seconds. If the target is a Lambda function, this attribute is
+     * not supported.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The following attributes are supported by only Application Load Balancers:
+     * The following attributes are supported by Application Load Balancers if the target is not a Lambda function:
      * </p>
      * <ul>
      * <li>
@@ -141,7 +157,21 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attributes are supported by only Network Load Balancers:
+     * The following attribute is supported only if the target is a Lambda function.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers exchanged
+     * between the load balancer and the Lambda function include arrays of values or strings. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is <code>false</code>
+     * and the request contains a duplicate header field name or query parameter key, the load balancer uses the last
+     * value sent by the client.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attribute is supported only by Network Load Balancers:
      * </p>
      * <ul>
      * <li>
@@ -155,19 +185,21 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * @param key
      *        The name of the attribute.</p>
      *        <p>
-     *        The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *        The following attribute is supported by both Application Load Balancers and Network Load Balancers:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load
      *        Balancing to wait before changing the state of a deregistering target from <code>draining</code> to
-     *        <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds.
+     *        <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds. If the target is a
+     *        Lambda function, this attribute is not supported.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        The following attributes are supported by only Application Load Balancers:
+     *        The following attributes are supported by Application Load Balancers if the target is not a Lambda
+     *        function:
      *        </p>
      *        <ul>
      *        <li>
@@ -199,7 +231,21 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The following attributes are supported by only Network Load Balancers:
+     *        The following attribute is supported only if the target is a Lambda function.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers
+     *        exchanged between the load balancer and the Lambda function include arrays of values or strings. The value
+     *        is <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is
+     *        <code>false</code> and the request contains a duplicate header field name or query parameter key, the load
+     *        balancer uses the last value sent by the client.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attribute is supported only by Network Load Balancers:
      *        </p>
      *        <ul>
      *        <li>
@@ -219,19 +265,20 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * The following attribute is supported by both Application Load Balancers and Network Load Balancers:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load Balancing to
      * wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The
-     * range is 0-3600 seconds. The default value is 300 seconds.
+     * range is 0-3600 seconds. The default value is 300 seconds. If the target is a Lambda function, this attribute is
+     * not supported.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The following attributes are supported by only Application Load Balancers:
+     * The following attributes are supported by Application Load Balancers if the target is not a Lambda function:
      * </p>
      * <ul>
      * <li>
@@ -262,7 +309,21 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attributes are supported by only Network Load Balancers:
+     * The following attribute is supported only if the target is a Lambda function.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers exchanged
+     * between the load balancer and the Lambda function include arrays of values or strings. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is <code>false</code>
+     * and the request contains a duplicate header field name or query parameter key, the load balancer uses the last
+     * value sent by the client.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attribute is supported only by Network Load Balancers:
      * </p>
      * <ul>
      * <li>
@@ -275,19 +336,21 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * 
      * @return The name of the attribute.</p>
      *         <p>
-     *         The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *         The following attribute is supported by both Application Load Balancers and Network Load Balancers:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
      *         <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load
      *         Balancing to wait before changing the state of a deregistering target from <code>draining</code> to
-     *         <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds.
+     *         <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds. If the target is a
+     *         Lambda function, this attribute is not supported.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         The following attributes are supported by only Application Load Balancers:
+     *         The following attributes are supported by Application Load Balancers if the target is not a Lambda
+     *         function:
      *         </p>
      *         <ul>
      *         <li>
@@ -319,7 +382,21 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         The following attributes are supported by only Network Load Balancers:
+     *         The following attribute is supported only if the target is a Lambda function.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers
+     *         exchanged between the load balancer and the Lambda function include arrays of values or strings. The
+     *         value is <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is
+     *         <code>false</code> and the request contains a duplicate header field name or query parameter key, the
+     *         load balancer uses the last value sent by the client.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The following attribute is supported only by Network Load Balancers:
      *         </p>
      *         <ul>
      *         <li>
@@ -339,19 +416,20 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * The following attribute is supported by both Application Load Balancers and Network Load Balancers:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load Balancing to
      * wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The
-     * range is 0-3600 seconds. The default value is 300 seconds.
+     * range is 0-3600 seconds. The default value is 300 seconds. If the target is a Lambda function, this attribute is
+     * not supported.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The following attributes are supported by only Application Load Balancers:
+     * The following attributes are supported by Application Load Balancers if the target is not a Lambda function:
      * </p>
      * <ul>
      * <li>
@@ -382,7 +460,21 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attributes are supported by only Network Load Balancers:
+     * The following attribute is supported only if the target is a Lambda function.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers exchanged
+     * between the load balancer and the Lambda function include arrays of values or strings. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is <code>false</code>
+     * and the request contains a duplicate header field name or query parameter key, the load balancer uses the last
+     * value sent by the client.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attribute is supported only by Network Load Balancers:
      * </p>
      * <ul>
      * <li>
@@ -396,19 +488,21 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * @param key
      *        The name of the attribute.</p>
      *        <p>
-     *        The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *        The following attribute is supported by both Application Load Balancers and Network Load Balancers:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load
      *        Balancing to wait before changing the state of a deregistering target from <code>draining</code> to
-     *        <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds.
+     *        <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds. If the target is a
+     *        Lambda function, this attribute is not supported.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        The following attributes are supported by only Application Load Balancers:
+     *        The following attributes are supported by Application Load Balancers if the target is not a Lambda
+     *        function:
      *        </p>
      *        <ul>
      *        <li>
@@ -440,7 +534,21 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The following attributes are supported by only Network Load Balancers:
+     *        The following attribute is supported only if the target is a Lambda function.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers
+     *        exchanged between the load balancer and the Lambda function include arrays of values or strings. The value
+     *        is <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is
+     *        <code>false</code> and the request contains a duplicate header field name or query parameter key, the load
+     *        balancer uses the last value sent by the client.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attribute is supported only by Network Load Balancers:
      *        </p>
      *        <ul>
      *        <li>

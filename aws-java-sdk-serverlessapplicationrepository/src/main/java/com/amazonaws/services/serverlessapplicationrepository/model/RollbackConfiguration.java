@@ -20,8 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * This property corresponds to the <i>AWS CloudFormation <a
- * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">
- * RollbackConfiguration</a></i> Data Type.
+ * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration"
+ * >RollbackConfiguration</a></i> Data Type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/RollbackConfiguration"
@@ -33,16 +33,16 @@ public class RollbackConfiguration implements Serializable, Cloneable, Structure
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">
-     * RollbackConfiguration</a></i> Data Type.
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration"
+     * >RollbackConfiguration</a></i> Data Type.
      * </p>
      */
     private Integer monitoringTimeInMinutes;
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">
-     * RollbackConfiguration</a></i> Data Type.
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration"
+     * >RollbackConfiguration</a></i> Data Type.
      * </p>
      */
     private java.util.List<RollbackTrigger> rollbackTriggers;
@@ -50,14 +50,14 @@ public class RollbackConfiguration implements Serializable, Cloneable, Structure
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">
-     * RollbackConfiguration</a></i> Data Type.
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration"
+     * >RollbackConfiguration</a></i> Data Type.
      * </p>
      * 
      * @param monitoringTimeInMinutes
      *        This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">
-     *        RollbackConfiguration</a></i> Data Type.
+     *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration"
+     *        >RollbackConfiguration</a></i> Data Type.
      */
 
     public void setMonitoringTimeInMinutes(Integer monitoringTimeInMinutes) {
@@ -67,13 +67,13 @@ public class RollbackConfiguration implements Serializable, Cloneable, Structure
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">
-     * RollbackConfiguration</a></i> Data Type.
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration"
+     * >RollbackConfiguration</a></i> Data Type.
      * </p>
      * 
      * @return This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     *         href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">
-     *         RollbackConfiguration</a></i> Data Type.
+     *         href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration"
+     *         >RollbackConfiguration</a></i> Data Type.
      */
 
     public Integer getMonitoringTimeInMinutes() {
@@ -83,14 +83,14 @@ public class RollbackConfiguration implements Serializable, Cloneable, Structure
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">
-     * RollbackConfiguration</a></i> Data Type.
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration"
+     * >RollbackConfiguration</a></i> Data Type.
      * </p>
      * 
      * @param monitoringTimeInMinutes
      *        This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">
-     *        RollbackConfiguration</a></i> Data Type.
+     *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration"
+     *        >RollbackConfiguration</a></i> Data Type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,13 +102,13 @@ public class RollbackConfiguration implements Serializable, Cloneable, Structure
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">
-     * RollbackConfiguration</a></i> Data Type.
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration"
+     * >RollbackConfiguration</a></i> Data Type.
      * </p>
      * 
      * @return This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     *         href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">
-     *         RollbackConfiguration</a></i> Data Type.
+     *         href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration"
+     *         >RollbackConfiguration</a></i> Data Type.
      */
 
     public java.util.List<RollbackTrigger> getRollbackTriggers() {
@@ -118,14 +118,14 @@ public class RollbackConfiguration implements Serializable, Cloneable, Structure
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">
-     * RollbackConfiguration</a></i> Data Type.
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration"
+     * >RollbackConfiguration</a></i> Data Type.
      * </p>
      * 
      * @param rollbackTriggers
      *        This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">
-     *        RollbackConfiguration</a></i> Data Type.
+     *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration"
+     *        >RollbackConfiguration</a></i> Data Type.
      */
 
     public void setRollbackTriggers(java.util.Collection<RollbackTrigger> rollbackTriggers) {
@@ -140,8 +140,8 @@ public class RollbackConfiguration implements Serializable, Cloneable, Structure
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">
-     * RollbackConfiguration</a></i> Data Type.
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration"
+     * >RollbackConfiguration</a></i> Data Type.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -151,8 +151,8 @@ public class RollbackConfiguration implements Serializable, Cloneable, Structure
      * 
      * @param rollbackTriggers
      *        This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">
-     *        RollbackConfiguration</a></i> Data Type.
+     *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration"
+     *        >RollbackConfiguration</a></i> Data Type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,14 +169,14 @@ public class RollbackConfiguration implements Serializable, Cloneable, Structure
     /**
      * <p>
      * This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">
-     * RollbackConfiguration</a></i> Data Type.
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration"
+     * >RollbackConfiguration</a></i> Data Type.
      * </p>
      * 
      * @param rollbackTriggers
      *        This property corresponds to the content of the same name for the <i>AWS CloudFormation <a
-     *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">
-     *        RollbackConfiguration</a></i> Data Type.
+     *        href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration"
+     *        >RollbackConfiguration</a></i> Data Type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

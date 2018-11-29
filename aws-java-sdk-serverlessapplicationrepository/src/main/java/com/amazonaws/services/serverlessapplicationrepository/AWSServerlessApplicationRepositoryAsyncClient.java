@@ -360,6 +360,39 @@ public class AWSServerlessApplicationRepositoryAsyncClient extends AWSServerless
     }
 
     @Override
+    public java.util.concurrent.Future<ListApplicationDependenciesResult> listApplicationDependenciesAsync(ListApplicationDependenciesRequest request) {
+
+        return listApplicationDependenciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationDependenciesResult> listApplicationDependenciesAsync(final ListApplicationDependenciesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListApplicationDependenciesRequest, ListApplicationDependenciesResult> asyncHandler) {
+        final ListApplicationDependenciesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListApplicationDependenciesResult>() {
+            @Override
+            public ListApplicationDependenciesResult call() throws Exception {
+                ListApplicationDependenciesResult result = null;
+
+                try {
+                    result = executeListApplicationDependencies(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListApplicationVersionsResult> listApplicationVersionsAsync(ListApplicationVersionsRequest request) {
 
         return listApplicationVersionsAsync(request, null);

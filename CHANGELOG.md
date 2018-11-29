@@ -1,4 +1,37 @@
-# __1.11.460__ __2018-11-29__
+# __1.11.461__ __2018-11-29__
+## __AWS Lambda__
+  - ### Features
+    - AWS Lambda now supports Lambda Layers and Ruby as a runtime. Lambda Layers are a new type of artifact that contains arbitrary code and data, and may be referenced by zero, one, or more functions at the same time.  You can also now develop your AWS Lambda function code using the Ruby programming language.
+
+## __AWS Step Functions__
+  - ### Features
+    - AWS Step Functions is now integrated with eight additional AWS services: Amazon ECS, AWS Fargate, Amazon DynamoDB, Amazon SNS, Amazon SQS, AWS Batch, AWS Glue, and Amazon SageMaker. To learn more, please see https://docs.aws.amazon.com/step-functions/index.html
+
+## __AWS X-Ray__
+  - ### Features
+    - GetTraceSummaries - Now provides additional information regarding your application traces such as Availability Zone, Instance ID, Resource ARN details, Revision, Entry Point, Root Cause Exceptions and Root Causes for Fault, Error and Response Time.
+
+## __AWSServerlessApplicationRepository__
+  - ### Features
+    - AWS Serverless Application Repository now supports nested applications. You can nest individual applications as components of a larger application to make it easy to assemble and deploy new serverless architectures. 
+
+## __Amazon CloudWatch Events__
+  - ### Features
+    - Support for Managed Rules (rules that are created and maintained by the AWS services in your account) is added.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Fixed issue with ObjectLockRetainUntilDate in S3 PutObject
+
+## __Elastic Load Balancing__
+  - ### Features
+    - This release allows Application Load Balancers to route traffic to Lambda functions, in addition to instances and IP addresses.
+
+## __Managed Streaming for Kafka__
+  - ### Features
+    - This is the initial SDK release for Amazon Managed Streaming for Kafka (Amazon MSK). Amazon MSK is a service that you can use to easily build, monitor, and manage Apache Kafka clusters in the cloud.
+
+# __1.11.460__ __2018-11-28__
 ## __AWS App Mesh__
   - ### Features
     - AWS App Mesh is a service mesh that makes it easy to monitor and control communications between microservices of an application. AWS App Mesh APIs are available for preview in eu-west-1, us-east-1, us-east-2, and us-west-2 regions.

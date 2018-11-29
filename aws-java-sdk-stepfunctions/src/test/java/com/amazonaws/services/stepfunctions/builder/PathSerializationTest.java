@@ -53,6 +53,7 @@ public class PathSerializationTest {
                         .inputPath(null)
                         .outputPath(null)
                         .resultPath(null)
+                        .parameters(null)
                         .transition(end()))
                 .build();
         assertStateMachineMatches("TaskStateWithExplicitNullPaths.json", stateMachine);
@@ -67,6 +68,7 @@ public class PathSerializationTest {
                         .inputPath("$.input")
                         .outputPath("$.output")
                         .resultPath("$.result")
+                        .parameters("{\"foo\": 42}")
                         .transition(end()))
                 .build();
         assertStateMachineMatches("TaskStateWithNonNullPaths.json", stateMachine);
@@ -96,6 +98,7 @@ public class PathSerializationTest {
                         .inputPath(null)
                         .outputPath(null)
                         .resultPath(null)
+                        .parameters(null)
                         .transition(end()))
                 .build();
         assertStateMachineMatches("ParallelStateWithExplicitNullPaths.json", stateMachine);
@@ -112,6 +115,7 @@ public class PathSerializationTest {
                         .inputPath("$.input")
                         .outputPath("$.output")
                         .resultPath("$.result")
+                        .parameters("[42, \"foo\", {}]")
                         .transition(end()))
                 .build();
         assertStateMachineMatches("ParallelStateWithNonNullPaths.json", stateMachine);
@@ -135,6 +139,7 @@ public class PathSerializationTest {
                         .inputPath(null)
                         .outputPath(null)
                         .resultPath(null)
+                        .parameters(null)
                         .transition(end()))
                 .build();
         assertStateMachineMatches("PassStateWithExplicitNullPaths.json", stateMachine);
@@ -148,6 +153,7 @@ public class PathSerializationTest {
                         .inputPath("$.input")
                         .outputPath("$.output")
                         .resultPath("$.result")
+                        .parameters("\"foo\"")
                         .transition(end()))
                 .build();
         assertStateMachineMatches("PassStateWithNonNullPaths.json", stateMachine);

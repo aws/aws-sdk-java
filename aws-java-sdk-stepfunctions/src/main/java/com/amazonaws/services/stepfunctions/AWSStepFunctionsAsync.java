@@ -49,11 +49,11 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Creates an activity. An activity is a task which you write in any programming language and host on any machine
-     * which has access to AWS Step Functions. Activities must poll Step Functions using the
-     * <code>GetActivityTask</code> API action and respond using <code>SendTask*</code> API actions. This function lets
-     * Step Functions know the existence of your activity and returns an identifier for use in a state machine and when
-     * polling from the activity.
+     * Creates an activity. An activity is a task that you write in any programming language and host on any machine
+     * that has access to AWS Step Functions. Activities must poll Step Functions using the <code>GetActivityTask</code>
+     * API action and respond using <code>SendTask*</code> API actions. This function lets Step Functions know the
+     * existence of your activity and returns an identifier for use in a state machine and when polling from the
+     * activity.
      * </p>
      * 
      * @param createActivityRequest
@@ -66,11 +66,11 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Creates an activity. An activity is a task which you write in any programming language and host on any machine
-     * which has access to AWS Step Functions. Activities must poll Step Functions using the
-     * <code>GetActivityTask</code> API action and respond using <code>SendTask*</code> API actions. This function lets
-     * Step Functions know the existence of your activity and returns an identifier for use in a state machine and when
-     * polling from the activity.
+     * Creates an activity. An activity is a task that you write in any programming language and host on any machine
+     * that has access to AWS Step Functions. Activities must poll Step Functions using the <code>GetActivityTask</code>
+     * API action and respond using <code>SendTask*</code> API actions. This function lets Step Functions know the
+     * existence of your activity and returns an identifier for use in a state machine and when polling from the
+     * activity.
      * </p>
      * 
      * @param createActivityRequest
@@ -203,6 +203,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * Describes an activity.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param describeActivityRequest
      * @return A Java Future containing the result of the DescribeActivity operation returned by the service.
@@ -216,6 +222,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * Describes an activity.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param describeActivityRequest
      * @param asyncHandler
@@ -234,6 +246,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * Describes an execution.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param describeExecutionRequest
      * @return A Java Future containing the result of the DescribeExecution operation returned by the service.
@@ -247,6 +265,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * Describes an execution.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param describeExecutionRequest
      * @param asyncHandler
@@ -265,6 +289,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * Describes a state machine.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param describeStateMachineRequest
      * @return A Java Future containing the result of the DescribeStateMachine operation returned by the service.
@@ -278,6 +308,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * Describes a state machine.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param describeStateMachineRequest
      * @param asyncHandler
@@ -296,6 +332,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * Describes the state machine associated with a specific execution.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param describeStateMachineForExecutionRequest
      * @return A Java Future containing the result of the DescribeStateMachineForExecution operation returned by the
@@ -311,6 +353,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * Describes the state machine associated with a specific execution.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param describeStateMachineForExecutionRequest
      * @param asyncHandler
@@ -340,6 +388,11 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * Workers should set their client side socket timeout to at least 65 seconds (5 seconds higher than the maximum
      * time the service may hold the poll request).
      * </p>
+     * <p>
+     * Polling with <code>GetActivityTask</code> can cause latency in some implementations. See <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid Latency When Polling
+     * for Activity Tasks</a> in the Step Functions Developer Guide.
+     * </p>
      * </important>
      * 
      * @param getActivityTaskRequest
@@ -363,6 +416,11 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * Workers should set their client side socket timeout to at least 65 seconds (5 seconds higher than the maximum
      * time the service may hold the poll request).
      * </p>
+     * <p>
+     * Polling with <code>GetActivityTask</code> can cause latency in some implementations. See <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid Latency When Polling
+     * for Activity Tasks</a> in the Step Functions Developer Guide.
+     * </p>
      * </important>
      * 
      * @param getActivityTaskRequest
@@ -385,9 +443,10 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * the latest events first.
      * </p>
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * 
      * @param getExecutionHistoryRequest
@@ -405,9 +464,10 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * the latest events first.
      * </p>
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * 
      * @param getExecutionHistoryRequest
@@ -428,10 +488,17 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * Lists the existing activities.
      * </p>
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param listActivitiesRequest
      * @return A Java Future containing the result of the ListActivities operation returned by the service.
@@ -446,10 +513,17 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * Lists the existing activities.
      * </p>
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param listActivitiesRequest
      * @param asyncHandler
@@ -466,13 +540,21 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Lists the executions of a state machine that meet the filtering criteria.
+     * Lists the executions of a state machine that meet the filtering criteria. Results are sorted by time, with the
+     * most recent execution first.
      * </p>
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param listExecutionsRequest
      * @return A Java Future containing the result of the ListExecutions operation returned by the service.
@@ -484,13 +566,21 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Lists the executions of a state machine that meet the filtering criteria.
+     * Lists the executions of a state machine that meet the filtering criteria. Results are sorted by time, with the
+     * most recent execution first.
      * </p>
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param listExecutionsRequest
      * @param asyncHandler
@@ -510,10 +600,17 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * Lists the existing state machines.
      * </p>
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param listStateMachinesRequest
      * @return A Java Future containing the result of the ListStateMachines operation returned by the service.
@@ -528,10 +625,17 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * Lists the existing state machines.
      * </p>
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param listStateMachinesRequest
      * @param asyncHandler
@@ -671,6 +775,14 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * Starts a state machine execution.
      * </p>
+     * <note>
+     * <p>
+     * <code>StartExecution</code> is idempotent. If <code>StartExecution</code> is called with the same name and input
+     * as a running execution, the call will succeed and return the same response as the original request. If the
+     * execution is closed or if the input is different, it will return a 400 <code>ExecutionAlreadyExists</code> error.
+     * Names can be reused after 90 days.
+     * </p>
+     * </note>
      * 
      * @param startExecutionRequest
      * @return A Java Future containing the result of the StartExecution operation returned by the service.
@@ -684,6 +796,14 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * Starts a state machine execution.
      * </p>
+     * <note>
+     * <p>
+     * <code>StartExecution</code> is idempotent. If <code>StartExecution</code> is called with the same name and input
+     * as a running execution, the call will succeed and return the same response as the original request. If the
+     * execution is closed or if the input is different, it will return a 400 <code>ExecutionAlreadyExists</code> error.
+     * Names can be reused after 90 days.
+     * </p>
+     * </note>
      * 
      * @param startExecutionRequest
      * @param asyncHandler
@@ -732,15 +852,15 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
     /**
      * <p>
      * Updates an existing state machine by modifying its <code>definition</code> and/or <code>roleArn</code>. Running
-     * executions will continue to use the previous <code>definition</code> and <code>roleArn</code>.
+     * executions will continue to use the previous <code>definition</code> and <code>roleArn</code>. You must include
+     * at least one of <code>definition</code> or <code>roleArn</code> or you will receive a
+     * <code>MissingRequiredParameter</code> error.
      * </p>
      * <note>
      * <p>
      * All <code>StartExecution</code> calls within a few seconds will use the updated <code>definition</code> and
      * <code>roleArn</code>. Executions started immediately after calling <code>UpdateStateMachine</code> may use the
-     * previous state machine <code>definition</code> and <code>roleArn</code>. You must include at least one of
-     * <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code>
-     * error.
+     * previous state machine <code>definition</code> and <code>roleArn</code>.
      * </p>
      * </note>
      * 
@@ -755,15 +875,15 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
     /**
      * <p>
      * Updates an existing state machine by modifying its <code>definition</code> and/or <code>roleArn</code>. Running
-     * executions will continue to use the previous <code>definition</code> and <code>roleArn</code>.
+     * executions will continue to use the previous <code>definition</code> and <code>roleArn</code>. You must include
+     * at least one of <code>definition</code> or <code>roleArn</code> or you will receive a
+     * <code>MissingRequiredParameter</code> error.
      * </p>
      * <note>
      * <p>
      * All <code>StartExecution</code> calls within a few seconds will use the updated <code>definition</code> and
      * <code>roleArn</code>. Executions started immediately after calling <code>UpdateStateMachine</code> may use the
-     * previous state machine <code>definition</code> and <code>roleArn</code>. You must include at least one of
-     * <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code>
-     * error.
+     * previous state machine <code>definition</code> and <code>roleArn</code>.
      * </p>
      * </note>
      * 

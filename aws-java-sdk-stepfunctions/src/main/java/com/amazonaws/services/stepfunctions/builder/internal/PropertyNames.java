@@ -33,6 +33,7 @@ public class PropertyNames {
     public static final String RESULT_PATH = "ResultPath";
     public static final String INPUT_PATH = "InputPath";
     public static final String OUTPUT_PATH = "OutputPath";
+    public static final String PARAMETERS = "Parameters";
     public static final String END = "End";
 
     // TaskState property names

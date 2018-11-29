@@ -33,7 +33,7 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String groupName;
     /**
      * <p>
-     * The ARN that was generated upon create.
+     * The ARN that was generated upon creation.
      * </p>
      */
     private String groupARN;
@@ -86,11 +86,11 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN that was generated upon create.
+     * The ARN that was generated upon creation.
      * </p>
      * 
      * @param groupARN
-     *        The ARN that was generated upon create.
+     *        The ARN that was generated upon creation.
      */
 
     public void setGroupARN(String groupARN) {
@@ -99,10 +99,10 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN that was generated upon create.
+     * The ARN that was generated upon creation.
      * </p>
      * 
-     * @return The ARN that was generated upon create.
+     * @return The ARN that was generated upon creation.
      */
 
     public String getGroupARN() {
@@ -111,11 +111,11 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN that was generated upon create.
+     * The ARN that was generated upon creation.
      * </p>
      * 
      * @param groupARN
-     *        The ARN that was generated upon create.
+     *        The ARN that was generated upon creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

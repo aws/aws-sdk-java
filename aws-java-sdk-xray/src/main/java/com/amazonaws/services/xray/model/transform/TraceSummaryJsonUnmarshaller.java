@@ -93,6 +93,40 @@ public class TraceSummaryJsonUnmarshaller implements Unmarshaller<TraceSummary, 
                     context.nextToken();
                     traceSummary.setServiceIds(new ListUnmarshaller<ServiceId>(ServiceIdJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("ResourceARNs", targetDepth)) {
+                    context.nextToken();
+                    traceSummary.setResourceARNs(new ListUnmarshaller<ResourceARNDetail>(ResourceARNDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("InstanceIds", targetDepth)) {
+                    context.nextToken();
+                    traceSummary.setInstanceIds(new ListUnmarshaller<InstanceIdDetail>(InstanceIdDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("AvailabilityZones", targetDepth)) {
+                    context.nextToken();
+                    traceSummary.setAvailabilityZones(new ListUnmarshaller<AvailabilityZoneDetail>(AvailabilityZoneDetailJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
+                if (context.testExpression("EntryPoint", targetDepth)) {
+                    context.nextToken();
+                    traceSummary.setEntryPoint(ServiceIdJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("FaultRootCauses", targetDepth)) {
+                    context.nextToken();
+                    traceSummary.setFaultRootCauses(new ListUnmarshaller<FaultRootCause>(FaultRootCauseJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("ErrorRootCauses", targetDepth)) {
+                    context.nextToken();
+                    traceSummary.setErrorRootCauses(new ListUnmarshaller<ErrorRootCause>(ErrorRootCauseJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("ResponseTimeRootCauses", targetDepth)) {
+                    context.nextToken();
+                    traceSummary.setResponseTimeRootCauses(new ListUnmarshaller<ResponseTimeRootCause>(ResponseTimeRootCauseJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
+                if (context.testExpression("Revision", targetDepth)) {
+                    context.nextToken();
+                    traceSummary.setRevision(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

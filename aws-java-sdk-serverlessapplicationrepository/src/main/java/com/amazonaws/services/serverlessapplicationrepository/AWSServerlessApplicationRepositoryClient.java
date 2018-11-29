@@ -685,6 +685,70 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
 
     /**
      * <p>
+     * Retrieves the list of applications nested in the containing application.
+     * </p>
+     * 
+     * @param listApplicationDependenciesRequest
+     * @return Result of the ListApplicationDependencies operation returned by the service.
+     * @throws NotFoundException
+     *         The resource (for example, an access policy statement) specified in the request doesn't exist.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @throws InternalServerErrorException
+     *         The AWS Serverless Application Repository service encountered an internal error.
+     * @throws ForbiddenException
+     *         The client is not authenticated.
+     * @sample AWSServerlessApplicationRepository.ListApplicationDependencies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationDependencies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListApplicationDependenciesResult listApplicationDependencies(ListApplicationDependenciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListApplicationDependencies(request);
+    }
+
+    @SdkInternalApi
+    final ListApplicationDependenciesResult executeListApplicationDependencies(ListApplicationDependenciesRequest listApplicationDependenciesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listApplicationDependenciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListApplicationDependenciesRequest> request = null;
+        Response<ListApplicationDependenciesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListApplicationDependenciesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listApplicationDependenciesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplicationDependencies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListApplicationDependenciesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListApplicationDependenciesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists versions for the specified application.
      * </p>
      * 
