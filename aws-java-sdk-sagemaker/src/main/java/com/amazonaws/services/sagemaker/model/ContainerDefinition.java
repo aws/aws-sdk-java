@@ -56,7 +56,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * previously deactivated AWS STS for a region, you need to reactivate AWS STS for that region. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
+     * Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      */
     private String modelDataUrl;
@@ -67,6 +67,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private java.util.Map<String, String> environment;
+    /**
+     * <p>
+     * The name of the model package in this container.
+     * </p>
+     */
+    private String modelPackageName;
 
     /**
      * <p>
@@ -189,7 +195,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * previously deactivated AWS STS for a region, you need to reactivate AWS STS for that region. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
+     * Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * 
      * @param modelDataUrl
@@ -201,7 +207,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        you previously deactivated AWS STS for a region, you need to reactivate AWS STS for that region. For more
      *        information, see <a
      *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-     *        and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
+     *        and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
      */
 
     public void setModelDataUrl(String modelDataUrl) {
@@ -219,7 +225,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * previously deactivated AWS STS for a region, you need to reactivate AWS STS for that region. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
+     * Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * 
      * @return The S3 path where the model artifacts, which result from model training, are stored. This path must point
@@ -230,8 +236,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         If you previously deactivated AWS STS for a region, you need to reactivate AWS STS for that region. For
      *         more information, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-     *         and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User
-     *         Guide</i>.
+     *         and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
      */
 
     public String getModelDataUrl() {
@@ -249,7 +254,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * previously deactivated AWS STS for a region, you need to reactivate AWS STS for that region. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
+     * Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * 
      * @param modelDataUrl
@@ -261,7 +266,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        you previously deactivated AWS STS for a region, you need to reactivate AWS STS for that region. For more
      *        information, see <a
      *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-     *        and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
+     *        and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -341,6 +346,46 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The name of the model package in this container.
+     * </p>
+     * 
+     * @param modelPackageName
+     *        The name of the model package in this container.
+     */
+
+    public void setModelPackageName(String modelPackageName) {
+        this.modelPackageName = modelPackageName;
+    }
+
+    /**
+     * <p>
+     * The name of the model package in this container.
+     * </p>
+     * 
+     * @return The name of the model package in this container.
+     */
+
+    public String getModelPackageName() {
+        return this.modelPackageName;
+    }
+
+    /**
+     * <p>
+     * The name of the model package in this container.
+     * </p>
+     * 
+     * @param modelPackageName
+     *        The name of the model package in this container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withModelPackageName(String modelPackageName) {
+        setModelPackageName(modelPackageName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -358,7 +403,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         if (getModelDataUrl() != null)
             sb.append("ModelDataUrl: ").append(getModelDataUrl()).append(",");
         if (getEnvironment() != null)
-            sb.append("Environment: ").append(getEnvironment());
+            sb.append("Environment: ").append(getEnvironment()).append(",");
+        if (getModelPackageName() != null)
+            sb.append("ModelPackageName: ").append(getModelPackageName());
         sb.append("}");
         return sb.toString();
     }
@@ -389,6 +436,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
             return false;
+        if (other.getModelPackageName() == null ^ this.getModelPackageName() == null)
+            return false;
+        if (other.getModelPackageName() != null && other.getModelPackageName().equals(this.getModelPackageName()) == false)
+            return false;
         return true;
     }
 
@@ -401,6 +452,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
         hashCode = prime * hashCode + ((getModelDataUrl() == null) ? 0 : getModelDataUrl().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
+        hashCode = prime * hashCode + ((getModelPackageName() == null) ? 0 : getModelPackageName().hashCode());
         return hashCode;
     }
 

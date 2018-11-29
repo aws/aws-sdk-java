@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum NamespaceType {
 
     DNS_PUBLIC("DNS_PUBLIC"),
-    DNS_PRIVATE("DNS_PRIVATE");
+    DNS_PRIVATE("DNS_PRIVATE"),
+    HTTP("HTTP");
 
     private String value;
 

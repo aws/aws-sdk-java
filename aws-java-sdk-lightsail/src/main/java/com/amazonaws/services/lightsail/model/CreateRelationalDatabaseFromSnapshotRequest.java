@@ -138,6 +138,15 @@ public class CreateRelationalDatabaseFromSnapshotRequest extends com.amazonaws.A
      * </p>
      */
     private Boolean useLatestRestorableTime;
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -886,6 +895,96 @@ public class CreateRelationalDatabaseFromSnapshotRequest extends com.amazonaws.A
     }
 
     /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * 
+     * @return The tag keys and optional values to add to the resource during create.</p>
+     *         <p>
+     *         To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values to add to the resource during create.</p>
+     *        <p>
+     *        To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values to add to the resource during create.</p>
+     *        <p>
+     *        To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRelationalDatabaseFromSnapshotRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values to add to the resource during create.</p>
+     *        <p>
+     *        To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRelationalDatabaseFromSnapshotRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -911,7 +1010,9 @@ public class CreateRelationalDatabaseFromSnapshotRequest extends com.amazonaws.A
         if (getRestoreTime() != null)
             sb.append("RestoreTime: ").append(getRestoreTime()).append(",");
         if (getUseLatestRestorableTime() != null)
-            sb.append("UseLatestRestorableTime: ").append(getUseLatestRestorableTime());
+            sb.append("UseLatestRestorableTime: ").append(getUseLatestRestorableTime()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -959,6 +1060,10 @@ public class CreateRelationalDatabaseFromSnapshotRequest extends com.amazonaws.A
             return false;
         if (other.getUseLatestRestorableTime() != null && other.getUseLatestRestorableTime().equals(this.getUseLatestRestorableTime()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -975,6 +1080,7 @@ public class CreateRelationalDatabaseFromSnapshotRequest extends com.amazonaws.A
         hashCode = prime * hashCode + ((getSourceRelationalDatabaseName() == null) ? 0 : getSourceRelationalDatabaseName().hashCode());
         hashCode = prime * hashCode + ((getRestoreTime() == null) ? 0 : getRestoreTime().hashCode());
         hashCode = prime * hashCode + ((getUseLatestRestorableTime() == null) ? 0 : getUseLatestRestorableTime().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

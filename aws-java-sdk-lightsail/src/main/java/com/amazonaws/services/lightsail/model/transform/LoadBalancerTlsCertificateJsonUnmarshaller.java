@@ -72,6 +72,10 @@ public class LoadBalancerTlsCertificateJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     loadBalancerTlsCertificate.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    loadBalancerTlsCertificate.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("loadBalancerName", targetDepth)) {
                     context.nextToken();
                     loadBalancerTlsCertificate.setLoadBalancerName(context.getUnmarshaller(String.class).unmarshall(context));

@@ -68,6 +68,22 @@ public class ServiceSummaryJsonUnmarshaller implements Unmarshaller<ServiceSumma
                     context.nextToken();
                     serviceSummary.setInstanceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("DnsConfig", targetDepth)) {
+                    context.nextToken();
+                    serviceSummary.setDnsConfig(DnsConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("HealthCheckConfig", targetDepth)) {
+                    context.nextToken();
+                    serviceSummary.setHealthCheckConfig(HealthCheckConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("HealthCheckCustomConfig", targetDepth)) {
+                    context.nextToken();
+                    serviceSummary.setHealthCheckCustomConfig(HealthCheckCustomConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CreateDate", targetDepth)) {
+                    context.nextToken();
+                    serviceSummary.setCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

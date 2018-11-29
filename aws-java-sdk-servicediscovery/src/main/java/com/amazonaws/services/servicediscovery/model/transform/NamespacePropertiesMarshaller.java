@@ -29,6 +29,8 @@ public class NamespacePropertiesMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> DNSPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DnsProperties").build();
+    private static final MarshallingInfo<StructuredPojo> HTTPPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HttpProperties").build();
 
     private static final NamespacePropertiesMarshaller instance = new NamespacePropertiesMarshaller();
 
@@ -47,6 +49,7 @@ public class NamespacePropertiesMarshaller {
 
         try {
             protocolMarshaller.marshall(namespaceProperties.getDnsProperties(), DNSPROPERTIES_BINDING);
+            protocolMarshaller.marshall(namespaceProperties.getHttpProperties(), HTTPPROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

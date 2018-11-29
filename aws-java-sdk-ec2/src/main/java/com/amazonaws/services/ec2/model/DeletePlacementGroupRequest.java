@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeletePlacementGroupRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DeletePlacementGroup.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeletePlacementGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

@@ -40,6 +40,8 @@ public class InstanceSnapshotMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("location").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("state").build();
     private static final MarshallingInfo<String> PROGRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -79,6 +81,7 @@ public class InstanceSnapshotMarshaller {
             protocolMarshaller.marshall(instanceSnapshot.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(instanceSnapshot.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(instanceSnapshot.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(instanceSnapshot.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(instanceSnapshot.getState(), STATE_BINDING);
             protocolMarshaller.marshall(instanceSnapshot.getProgress(), PROGRESS_BINDING);
             protocolMarshaller.marshall(instanceSnapshot.getFromAttachedDisks(), FROMATTACHEDDISKS_BINDING);

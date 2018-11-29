@@ -114,6 +114,13 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.Date transformEndTime;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or
+     * training job.
+     * </p>
+     */
+    private String labelingJobArn;
 
     /**
      * <p>
@@ -804,6 +811,52 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or
+     * training job.
+     * </p>
+     * 
+     * @param labelingJobArn
+     *        The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the
+     *        transform or training job.
+     */
+
+    public void setLabelingJobArn(String labelingJobArn) {
+        this.labelingJobArn = labelingJobArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or
+     * training job.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the
+     *         transform or training job.
+     */
+
+    public String getLabelingJobArn() {
+        return this.labelingJobArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or
+     * training job.
+     * </p>
+     * 
+     * @param labelingJobArn
+     *        The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the
+     *        transform or training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTransformJobResult withLabelingJobArn(String labelingJobArn) {
+        setLabelingJobArn(labelingJobArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -843,7 +896,9 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
         if (getTransformStartTime() != null)
             sb.append("TransformStartTime: ").append(getTransformStartTime()).append(",");
         if (getTransformEndTime() != null)
-            sb.append("TransformEndTime: ").append(getTransformEndTime());
+            sb.append("TransformEndTime: ").append(getTransformEndTime()).append(",");
+        if (getLabelingJobArn() != null)
+            sb.append("LabelingJobArn: ").append(getLabelingJobArn());
         sb.append("}");
         return sb.toString();
     }
@@ -918,6 +973,10 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getTransformEndTime() != null && other.getTransformEndTime().equals(this.getTransformEndTime()) == false)
             return false;
+        if (other.getLabelingJobArn() == null ^ this.getLabelingJobArn() == null)
+            return false;
+        if (other.getLabelingJobArn() != null && other.getLabelingJobArn().equals(this.getLabelingJobArn()) == false)
+            return false;
         return true;
     }
 
@@ -941,6 +1000,7 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getTransformStartTime() == null) ? 0 : getTransformStartTime().hashCode());
         hashCode = prime * hashCode + ((getTransformEndTime() == null) ? 0 : getTransformEndTime().hashCode());
+        hashCode = prime * hashCode + ((getLabelingJobArn() == null) ? 0 : getLabelingJobArn().hashCode());
         return hashCode;
     }
 

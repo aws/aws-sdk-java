@@ -49,6 +49,10 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      * href="http://docs.aws.amazon.com/automatic-model-tuning-incremental">Using a Previous Hyperparameter Tuning Job
      * as a Starting Point</a>.
      * </p>
+     * <p>
+     * Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start tuning
+     * jobs.
+     * </p>
      */
     private java.util.List<ParentHyperParameterTuningJob> parentHyperParameterTuningJobs;
     /**
@@ -63,7 +67,9 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      * change the hyperparameter ranges to search and the maximum number of training jobs that the hyperparameter tuning
      * job launches. You cannot use a new version of the training algorithm, unless the changes in the new version do
      * not affect the algorithm itself. For example, changes that improve logging or adding support for a different data
-     * format are allowed. The objective metric for the new tuning job must be the same as for all parent jobs.
+     * format are allowed. You can also change hyperparameters from tunable to static, and from static to tunable, but
+     * the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The
+     * objective metric for the new tuning job must be the same as for all parent jobs.
      * </p>
      * </dd>
      * <dt>TRANSFER_LEARNING</dt>
@@ -71,10 +77,10 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      * <p>
      * The new hyperparameter tuning job can include input data, hyperparameter ranges, maximum number of concurrent
      * training jobs, and maximum number of training jobs that are different than those of its parent hyperparameter
-     * tuning jobs. The training image can also be a different versionfrom the version used in the parent hyperparameter
-     * tuning job. You can also change hyperparameters from tunable to static, and from static to tunable, but the total
-     * number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective
-     * metric for the new tuning job must be the same as for all parent jobs.
+     * tuning jobs. The training image can also be a different version from the version used in the parent
+     * hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from static to
+     * tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent
+     * jobs. The objective metric for the new tuning job must be the same as for all parent jobs.
      * </p>
      * </dd>
      * </dl>
@@ -88,11 +94,18 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      * href="http://docs.aws.amazon.com/automatic-model-tuning-incremental">Using a Previous Hyperparameter Tuning Job
      * as a Starting Point</a>.
      * </p>
+     * <p>
+     * Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start tuning
+     * jobs.
+     * </p>
      * 
      * @return An array of hyperparameter tuning jobs that are used as the starting point for the new hyperparameter
      *         tuning job. For more information about warm starting a hyperparameter tuning job, see <a
      *         href="http://docs.aws.amazon.com/automatic-model-tuning-incremental">Using a Previous Hyperparameter
-     *         Tuning Job as a Starting Point</a>.
+     *         Tuning Job as a Starting Point</a>.</p>
+     *         <p>
+     *         Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start
+     *         tuning jobs.
      */
 
     public java.util.List<ParentHyperParameterTuningJob> getParentHyperParameterTuningJobs() {
@@ -106,12 +119,19 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      * href="http://docs.aws.amazon.com/automatic-model-tuning-incremental">Using a Previous Hyperparameter Tuning Job
      * as a Starting Point</a>.
      * </p>
+     * <p>
+     * Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start tuning
+     * jobs.
+     * </p>
      * 
      * @param parentHyperParameterTuningJobs
      *        An array of hyperparameter tuning jobs that are used as the starting point for the new hyperparameter
      *        tuning job. For more information about warm starting a hyperparameter tuning job, see <a
      *        href="http://docs.aws.amazon.com/automatic-model-tuning-incremental">Using a Previous Hyperparameter
-     *        Tuning Job as a Starting Point</a>.
+     *        Tuning Job as a Starting Point</a>.</p>
+     *        <p>
+     *        Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start
+     *        tuning jobs.
      */
 
     public void setParentHyperParameterTuningJobs(java.util.Collection<ParentHyperParameterTuningJob> parentHyperParameterTuningJobs) {
@@ -131,6 +151,10 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      * as a Starting Point</a>.
      * </p>
      * <p>
+     * Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start tuning
+     * jobs.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setParentHyperParameterTuningJobs(java.util.Collection)} or
      * {@link #withParentHyperParameterTuningJobs(java.util.Collection)} if you want to override the existing values.
@@ -140,7 +164,10 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      *        An array of hyperparameter tuning jobs that are used as the starting point for the new hyperparameter
      *        tuning job. For more information about warm starting a hyperparameter tuning job, see <a
      *        href="http://docs.aws.amazon.com/automatic-model-tuning-incremental">Using a Previous Hyperparameter
-     *        Tuning Job as a Starting Point</a>.
+     *        Tuning Job as a Starting Point</a>.</p>
+     *        <p>
+     *        Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start
+     *        tuning jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,12 +188,19 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      * href="http://docs.aws.amazon.com/automatic-model-tuning-incremental">Using a Previous Hyperparameter Tuning Job
      * as a Starting Point</a>.
      * </p>
+     * <p>
+     * Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start tuning
+     * jobs.
+     * </p>
      * 
      * @param parentHyperParameterTuningJobs
      *        An array of hyperparameter tuning jobs that are used as the starting point for the new hyperparameter
      *        tuning job. For more information about warm starting a hyperparameter tuning job, see <a
      *        href="http://docs.aws.amazon.com/automatic-model-tuning-incremental">Using a Previous Hyperparameter
-     *        Tuning Job as a Starting Point</a>.
+     *        Tuning Job as a Starting Point</a>.</p>
+     *        <p>
+     *        Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start
+     *        tuning jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,7 +222,9 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      * change the hyperparameter ranges to search and the maximum number of training jobs that the hyperparameter tuning
      * job launches. You cannot use a new version of the training algorithm, unless the changes in the new version do
      * not affect the algorithm itself. For example, changes that improve logging or adding support for a different data
-     * format are allowed. The objective metric for the new tuning job must be the same as for all parent jobs.
+     * format are allowed. You can also change hyperparameters from tunable to static, and from static to tunable, but
+     * the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The
+     * objective metric for the new tuning job must be the same as for all parent jobs.
      * </p>
      * </dd>
      * <dt>TRANSFER_LEARNING</dt>
@@ -196,10 +232,10 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      * <p>
      * The new hyperparameter tuning job can include input data, hyperparameter ranges, maximum number of concurrent
      * training jobs, and maximum number of training jobs that are different than those of its parent hyperparameter
-     * tuning jobs. The training image can also be a different versionfrom the version used in the parent hyperparameter
-     * tuning job. You can also change hyperparameters from tunable to static, and from static to tunable, but the total
-     * number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective
-     * metric for the new tuning job must be the same as for all parent jobs.
+     * tuning jobs. The training image can also be a different version from the version used in the parent
+     * hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from static to
+     * tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent
+     * jobs. The objective metric for the new tuning job must be the same as for all parent jobs.
      * </p>
      * </dd>
      * </dl>
@@ -214,8 +250,10 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      *        You can change the hyperparameter ranges to search and the maximum number of training jobs that the
      *        hyperparameter tuning job launches. You cannot use a new version of the training algorithm, unless the
      *        changes in the new version do not affect the algorithm itself. For example, changes that improve logging
-     *        or adding support for a different data format are allowed. The objective metric for the new tuning job
-     *        must be the same as for all parent jobs.
+     *        or adding support for a different data format are allowed. You can also change hyperparameters from
+     *        tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters
+     *        must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the
+     *        same as for all parent jobs.
      *        </p>
      *        </dd>
      *        <dt>TRANSFER_LEARNING</dt>
@@ -223,8 +261,8 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      *        <p>
      *        The new hyperparameter tuning job can include input data, hyperparameter ranges, maximum number of
      *        concurrent training jobs, and maximum number of training jobs that are different than those of its parent
-     *        hyperparameter tuning jobs. The training image can also be a different versionfrom the version used in the
-     *        parent hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from
+     *        hyperparameter tuning jobs. The training image can also be a different version from the version used in
+     *        the parent hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from
      *        static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it
      *        is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent
      *        jobs.
@@ -249,7 +287,9 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      * change the hyperparameter ranges to search and the maximum number of training jobs that the hyperparameter tuning
      * job launches. You cannot use a new version of the training algorithm, unless the changes in the new version do
      * not affect the algorithm itself. For example, changes that improve logging or adding support for a different data
-     * format are allowed. The objective metric for the new tuning job must be the same as for all parent jobs.
+     * format are allowed. You can also change hyperparameters from tunable to static, and from static to tunable, but
+     * the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The
+     * objective metric for the new tuning job must be the same as for all parent jobs.
      * </p>
      * </dd>
      * <dt>TRANSFER_LEARNING</dt>
@@ -257,10 +297,10 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      * <p>
      * The new hyperparameter tuning job can include input data, hyperparameter ranges, maximum number of concurrent
      * training jobs, and maximum number of training jobs that are different than those of its parent hyperparameter
-     * tuning jobs. The training image can also be a different versionfrom the version used in the parent hyperparameter
-     * tuning job. You can also change hyperparameters from tunable to static, and from static to tunable, but the total
-     * number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective
-     * metric for the new tuning job must be the same as for all parent jobs.
+     * tuning jobs. The training image can also be a different version from the version used in the parent
+     * hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from static to
+     * tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent
+     * jobs. The objective metric for the new tuning job must be the same as for all parent jobs.
      * </p>
      * </dd>
      * </dl>
@@ -274,8 +314,10 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      *         You can change the hyperparameter ranges to search and the maximum number of training jobs that the
      *         hyperparameter tuning job launches. You cannot use a new version of the training algorithm, unless the
      *         changes in the new version do not affect the algorithm itself. For example, changes that improve logging
-     *         or adding support for a different data format are allowed. The objective metric for the new tuning job
-     *         must be the same as for all parent jobs.
+     *         or adding support for a different data format are allowed. You can also change hyperparameters from
+     *         tunable to static, and from static to tunable, but the total number of static plus tunable
+     *         hyperparameters must remain the same as it is in all parent jobs. The objective metric for the new tuning
+     *         job must be the same as for all parent jobs.
      *         </p>
      *         </dd>
      *         <dt>TRANSFER_LEARNING</dt>
@@ -283,7 +325,7 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      *         <p>
      *         The new hyperparameter tuning job can include input data, hyperparameter ranges, maximum number of
      *         concurrent training jobs, and maximum number of training jobs that are different than those of its parent
-     *         hyperparameter tuning jobs. The training image can also be a different versionfrom the version used in
+     *         hyperparameter tuning jobs. The training image can also be a different version from the version used in
      *         the parent hyperparameter tuning job. You can also change hyperparameters from tunable to static, and
      *         from static to tunable, but the total number of static plus tunable hyperparameters must remain the same
      *         as it is in all parent jobs. The objective metric for the new tuning job must be the same as for all
@@ -309,7 +351,9 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      * change the hyperparameter ranges to search and the maximum number of training jobs that the hyperparameter tuning
      * job launches. You cannot use a new version of the training algorithm, unless the changes in the new version do
      * not affect the algorithm itself. For example, changes that improve logging or adding support for a different data
-     * format are allowed. The objective metric for the new tuning job must be the same as for all parent jobs.
+     * format are allowed. You can also change hyperparameters from tunable to static, and from static to tunable, but
+     * the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The
+     * objective metric for the new tuning job must be the same as for all parent jobs.
      * </p>
      * </dd>
      * <dt>TRANSFER_LEARNING</dt>
@@ -317,10 +361,10 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      * <p>
      * The new hyperparameter tuning job can include input data, hyperparameter ranges, maximum number of concurrent
      * training jobs, and maximum number of training jobs that are different than those of its parent hyperparameter
-     * tuning jobs. The training image can also be a different versionfrom the version used in the parent hyperparameter
-     * tuning job. You can also change hyperparameters from tunable to static, and from static to tunable, but the total
-     * number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective
-     * metric for the new tuning job must be the same as for all parent jobs.
+     * tuning jobs. The training image can also be a different version from the version used in the parent
+     * hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from static to
+     * tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent
+     * jobs. The objective metric for the new tuning job must be the same as for all parent jobs.
      * </p>
      * </dd>
      * </dl>
@@ -335,8 +379,10 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      *        You can change the hyperparameter ranges to search and the maximum number of training jobs that the
      *        hyperparameter tuning job launches. You cannot use a new version of the training algorithm, unless the
      *        changes in the new version do not affect the algorithm itself. For example, changes that improve logging
-     *        or adding support for a different data format are allowed. The objective metric for the new tuning job
-     *        must be the same as for all parent jobs.
+     *        or adding support for a different data format are allowed. You can also change hyperparameters from
+     *        tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters
+     *        must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the
+     *        same as for all parent jobs.
      *        </p>
      *        </dd>
      *        <dt>TRANSFER_LEARNING</dt>
@@ -344,8 +390,8 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      *        <p>
      *        The new hyperparameter tuning job can include input data, hyperparameter ranges, maximum number of
      *        concurrent training jobs, and maximum number of training jobs that are different than those of its parent
-     *        hyperparameter tuning jobs. The training image can also be a different versionfrom the version used in the
-     *        parent hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from
+     *        hyperparameter tuning jobs. The training image can also be a different version from the version used in
+     *        the parent hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from
      *        static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it
      *        is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent
      *        jobs.
@@ -372,7 +418,9 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      * change the hyperparameter ranges to search and the maximum number of training jobs that the hyperparameter tuning
      * job launches. You cannot use a new version of the training algorithm, unless the changes in the new version do
      * not affect the algorithm itself. For example, changes that improve logging or adding support for a different data
-     * format are allowed. The objective metric for the new tuning job must be the same as for all parent jobs.
+     * format are allowed. You can also change hyperparameters from tunable to static, and from static to tunable, but
+     * the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The
+     * objective metric for the new tuning job must be the same as for all parent jobs.
      * </p>
      * </dd>
      * <dt>TRANSFER_LEARNING</dt>
@@ -380,10 +428,10 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      * <p>
      * The new hyperparameter tuning job can include input data, hyperparameter ranges, maximum number of concurrent
      * training jobs, and maximum number of training jobs that are different than those of its parent hyperparameter
-     * tuning jobs. The training image can also be a different versionfrom the version used in the parent hyperparameter
-     * tuning job. You can also change hyperparameters from tunable to static, and from static to tunable, but the total
-     * number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective
-     * metric for the new tuning job must be the same as for all parent jobs.
+     * tuning jobs. The training image can also be a different version from the version used in the parent
+     * hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from static to
+     * tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent
+     * jobs. The objective metric for the new tuning job must be the same as for all parent jobs.
      * </p>
      * </dd>
      * </dl>
@@ -398,8 +446,10 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      *        You can change the hyperparameter ranges to search and the maximum number of training jobs that the
      *        hyperparameter tuning job launches. You cannot use a new version of the training algorithm, unless the
      *        changes in the new version do not affect the algorithm itself. For example, changes that improve logging
-     *        or adding support for a different data format are allowed. The objective metric for the new tuning job
-     *        must be the same as for all parent jobs.
+     *        or adding support for a different data format are allowed. You can also change hyperparameters from
+     *        tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters
+     *        must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the
+     *        same as for all parent jobs.
      *        </p>
      *        </dd>
      *        <dt>TRANSFER_LEARNING</dt>
@@ -407,8 +457,8 @@ public class HyperParameterTuningJobWarmStartConfig implements Serializable, Clo
      *        <p>
      *        The new hyperparameter tuning job can include input data, hyperparameter ranges, maximum number of
      *        concurrent training jobs, and maximum number of training jobs that are different than those of its parent
-     *        hyperparameter tuning jobs. The training image can also be a different versionfrom the version used in the
-     *        parent hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from
+     *        hyperparameter tuning jobs. The training image can also be a different version from the version used in
+     *        the parent hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from
      *        static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it
      *        is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent
      *        jobs.

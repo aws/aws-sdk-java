@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ModifyInstanceAttributeRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for ModifyInstanceAttribute.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

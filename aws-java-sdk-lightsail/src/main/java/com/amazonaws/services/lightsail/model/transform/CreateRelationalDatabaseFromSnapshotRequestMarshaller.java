@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -43,6 +44,8 @@ public class CreateRelationalDatabaseFromSnapshotRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("restoreTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Boolean> USELATESTRESTORABLETIME_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("useLatestRestorableTime").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateRelationalDatabaseFromSnapshotRequestMarshaller instance = new CreateRelationalDatabaseFromSnapshotRequestMarshaller();
 
@@ -69,6 +72,7 @@ public class CreateRelationalDatabaseFromSnapshotRequestMarshaller {
             protocolMarshaller.marshall(createRelationalDatabaseFromSnapshotRequest.getSourceRelationalDatabaseName(), SOURCERELATIONALDATABASENAME_BINDING);
             protocolMarshaller.marshall(createRelationalDatabaseFromSnapshotRequest.getRestoreTime(), RESTORETIME_BINDING);
             protocolMarshaller.marshall(createRelationalDatabaseFromSnapshotRequest.getUseLatestRestorableTime(), USELATESTRESTORABLETIME_BINDING);
+            protocolMarshaller.marshall(createRelationalDatabaseFromSnapshotRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

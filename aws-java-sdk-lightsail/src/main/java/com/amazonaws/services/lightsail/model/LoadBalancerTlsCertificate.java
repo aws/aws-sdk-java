@@ -124,6 +124,13 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
     private String resourceType;
     /**
      * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
+    /**
+     * <p>
      * The load balancer name where your SSL/TLS certificate is attached.
      * </p>
      */
@@ -922,6 +929,88 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     public LoadBalancerTlsCertificate withResourceType(ResourceType resourceType) {
         this.resourceType = resourceType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @return The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *         <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *         Guide</a>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *        Guide</a>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *        Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoadBalancerTlsCertificate withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *        Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoadBalancerTlsCertificate withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -1825,6 +1914,8 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
             sb.append("Location: ").append(getLocation()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getLoadBalancerName() != null)
             sb.append("LoadBalancerName: ").append(getLoadBalancerName()).append(",");
         if (getIsAttached() != null)
@@ -1898,6 +1989,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getLoadBalancerName() == null ^ this.getLoadBalancerName() == null)
             return false;
@@ -1985,6 +2080,7 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName().hashCode());
         hashCode = prime * hashCode + ((getIsAttached() == null) ? 0 : getIsAttached().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class CreateRelationalDatabaseSnapshotRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("relationalDatabaseName").build();
     private static final MarshallingInfo<String> RELATIONALDATABASESNAPSHOTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("relationalDatabaseSnapshotName").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateRelationalDatabaseSnapshotRequestMarshaller instance = new CreateRelationalDatabaseSnapshotRequestMarshaller();
 
@@ -50,6 +53,7 @@ public class CreateRelationalDatabaseSnapshotRequestMarshaller {
         try {
             protocolMarshaller.marshall(createRelationalDatabaseSnapshotRequest.getRelationalDatabaseName(), RELATIONALDATABASENAME_BINDING);
             protocolMarshaller.marshall(createRelationalDatabaseSnapshotRequest.getRelationalDatabaseSnapshotName(), RELATIONALDATABASESNAPSHOTNAME_BINDING);
+            protocolMarshaller.marshall(createRelationalDatabaseSnapshotRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

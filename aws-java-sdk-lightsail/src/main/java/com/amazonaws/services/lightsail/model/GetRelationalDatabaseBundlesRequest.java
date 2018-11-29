@@ -27,18 +27,21 @@ public class GetRelationalDatabaseBundlesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A token used for advancing to a specific page of results for your get relational database bundles request.
+     * A token used for advancing to a specific page of results for your <code>get relational database bundles</code>
+     * request.
      * </p>
      */
     private String pageToken;
 
     /**
      * <p>
-     * A token used for advancing to a specific page of results for your get relational database bundles request.
+     * A token used for advancing to a specific page of results for your <code>get relational database bundles</code>
+     * request.
      * </p>
      * 
      * @param pageToken
-     *        A token used for advancing to a specific page of results for your get relational database bundles request.
+     *        A token used for advancing to a specific page of results for your
+     *        <code>get relational database bundles</code> request.
      */
 
     public void setPageToken(String pageToken) {
@@ -47,11 +50,12 @@ public class GetRelationalDatabaseBundlesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A token used for advancing to a specific page of results for your get relational database bundles request.
+     * A token used for advancing to a specific page of results for your <code>get relational database bundles</code>
+     * request.
      * </p>
      * 
-     * @return A token used for advancing to a specific page of results for your get relational database bundles
-     *         request.
+     * @return A token used for advancing to a specific page of results for your
+     *         <code>get relational database bundles</code> request.
      */
 
     public String getPageToken() {
@@ -60,11 +64,13 @@ public class GetRelationalDatabaseBundlesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A token used for advancing to a specific page of results for your get relational database bundles request.
+     * A token used for advancing to a specific page of results for your <code>get relational database bundles</code>
+     * request.
      * </p>
      * 
      * @param pageToken
-     *        A token used for advancing to a specific page of results for your get relational database bundles request.
+     *        A token used for advancing to a specific page of results for your
+     *        <code>get relational database bundles</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

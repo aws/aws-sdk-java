@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +40,8 @@ public class DiskSnapshotMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("location").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<Integer> SIZEINGB_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sizeInGb").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -72,6 +75,7 @@ public class DiskSnapshotMarshaller {
             protocolMarshaller.marshall(diskSnapshot.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(diskSnapshot.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(diskSnapshot.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(diskSnapshot.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(diskSnapshot.getSizeInGb(), SIZEINGB_BINDING);
             protocolMarshaller.marshall(diskSnapshot.getState(), STATE_BINDING);
             protocolMarshaller.marshall(diskSnapshot.getProgress(), PROGRESS_BINDING);

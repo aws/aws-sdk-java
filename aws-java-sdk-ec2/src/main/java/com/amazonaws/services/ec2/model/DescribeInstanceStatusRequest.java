@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeInstanceStatusRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeInstanceStatus.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

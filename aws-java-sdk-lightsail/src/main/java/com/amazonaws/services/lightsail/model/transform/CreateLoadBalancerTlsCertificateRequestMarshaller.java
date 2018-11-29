@@ -36,6 +36,8 @@ public class CreateLoadBalancerTlsCertificateRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateDomainName").build();
     private static final MarshallingInfo<List> CERTIFICATEALTERNATIVENAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateAlternativeNames").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateLoadBalancerTlsCertificateRequestMarshaller instance = new CreateLoadBalancerTlsCertificateRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class CreateLoadBalancerTlsCertificateRequestMarshaller {
             protocolMarshaller.marshall(createLoadBalancerTlsCertificateRequest.getCertificateName(), CERTIFICATENAME_BINDING);
             protocolMarshaller.marshall(createLoadBalancerTlsCertificateRequest.getCertificateDomainName(), CERTIFICATEDOMAINNAME_BINDING);
             protocolMarshaller.marshall(createLoadBalancerTlsCertificateRequest.getCertificateAlternativeNames(), CERTIFICATEALTERNATIVENAMES_BINDING);
+            protocolMarshaller.marshall(createLoadBalancerTlsCertificateRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

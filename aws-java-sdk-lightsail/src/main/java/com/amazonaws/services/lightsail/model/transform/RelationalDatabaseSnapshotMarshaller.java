@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +40,8 @@ public class RelationalDatabaseSnapshotMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("location").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> ENGINE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("engine").build();
     private static final MarshallingInfo<String> ENGINEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -78,6 +81,7 @@ public class RelationalDatabaseSnapshotMarshaller {
             protocolMarshaller.marshall(relationalDatabaseSnapshot.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(relationalDatabaseSnapshot.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(relationalDatabaseSnapshot.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(relationalDatabaseSnapshot.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(relationalDatabaseSnapshot.getEngine(), ENGINE_BINDING);
             protocolMarshaller.marshall(relationalDatabaseSnapshot.getEngineVersion(), ENGINEVERSION_BINDING);
             protocolMarshaller.marshall(relationalDatabaseSnapshot.getSizeInGb(), SIZEINGB_BINDING);

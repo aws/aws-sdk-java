@@ -31,7 +31,9 @@ public enum ResourceType {
     Disk("Disk"),
     DiskSnapshot("DiskSnapshot"),
     RelationalDatabase("RelationalDatabase"),
-    RelationalDatabaseSnapshot("RelationalDatabaseSnapshot");
+    RelationalDatabaseSnapshot("RelationalDatabaseSnapshot"),
+    ExportSnapshotRecord("ExportSnapshotRecord"),
+    CloudFormationStackRecord("CloudFormationStackRecord");
 
     private String value;
 

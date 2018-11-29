@@ -45,6 +45,8 @@ public class HyperParameterTrainingJobDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceConfig").build();
     private static final MarshallingInfo<StructuredPojo> STOPPINGCONDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StoppingCondition").build();
+    private static final MarshallingInfo<Boolean> ENABLENETWORKISOLATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableNetworkIsolation").build();
 
     private static final HyperParameterTrainingJobDefinitionMarshaller instance = new HyperParameterTrainingJobDefinitionMarshaller();
 
@@ -70,6 +72,7 @@ public class HyperParameterTrainingJobDefinitionMarshaller {
             protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getOutputDataConfig(), OUTPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getResourceConfig(), RESOURCECONFIG_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getStoppingCondition(), STOPPINGCONDITION_BINDING);
+            protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getEnableNetworkIsolation(), ENABLENETWORKISOLATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

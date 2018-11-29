@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreatePlacementGroupRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for CreatePlacementGroup.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreatePlacementGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

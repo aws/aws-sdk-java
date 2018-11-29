@@ -37,6 +37,15 @@ public class CreateInstanceSnapshotRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String instanceName;
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -119,6 +128,96 @@ public class CreateInstanceSnapshotRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * 
+     * @return The tag keys and optional values to add to the resource during create.</p>
+     *         <p>
+     *         To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values to add to the resource during create.</p>
+     *        <p>
+     *        To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values to add to the resource during create.</p>
+     *        <p>
+     *        To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInstanceSnapshotRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values to add to the resource during create.</p>
+     *        <p>
+     *        To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInstanceSnapshotRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -132,7 +231,9 @@ public class CreateInstanceSnapshotRequest extends com.amazonaws.AmazonWebServic
         if (getInstanceSnapshotName() != null)
             sb.append("InstanceSnapshotName: ").append(getInstanceSnapshotName()).append(",");
         if (getInstanceName() != null)
-            sb.append("InstanceName: ").append(getInstanceName());
+            sb.append("InstanceName: ").append(getInstanceName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -155,6 +256,10 @@ public class CreateInstanceSnapshotRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getInstanceName() != null && other.getInstanceName().equals(this.getInstanceName()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -165,6 +270,7 @@ public class CreateInstanceSnapshotRequest extends com.amazonaws.AmazonWebServic
 
         hashCode = prime * hashCode + ((getInstanceSnapshotName() == null) ? 0 : getInstanceSnapshotName().hashCode());
         hashCode = prime * hashCode + ((getInstanceName() == null) ? 0 : getInstanceName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

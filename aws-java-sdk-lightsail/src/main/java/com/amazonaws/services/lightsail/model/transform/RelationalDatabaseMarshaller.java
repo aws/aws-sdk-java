@@ -40,6 +40,8 @@ public class RelationalDatabaseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("location").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> RELATIONALDATABASEBLUEPRINTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("relationalDatabaseBlueprintId").build();
     private static final MarshallingInfo<String> RELATIONALDATABASEBUNDLEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -99,6 +101,7 @@ public class RelationalDatabaseMarshaller {
             protocolMarshaller.marshall(relationalDatabase.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(relationalDatabase.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(relationalDatabase.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(relationalDatabase.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(relationalDatabase.getRelationalDatabaseBlueprintId(), RELATIONALDATABASEBLUEPRINTID_BINDING);
             protocolMarshaller.marshall(relationalDatabase.getRelationalDatabaseBundleId(), RELATIONALDATABASEBUNDLEID_BINDING);
             protocolMarshaller.marshall(relationalDatabase.getMasterDatabaseName(), MASTERDATABASENAME_BINDING);

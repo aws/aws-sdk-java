@@ -52,7 +52,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b>: Route 53 is performing the operation.
+     * <b>PENDING</b>: AWS Cloud Map is performing the operation.
      * </p>
      * </li>
      * <li>
@@ -268,7 +268,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b>: Route 53 is performing the operation.
+     * <b>PENDING</b>: AWS Cloud Map is performing the operation.
      * </p>
      * </li>
      * <li>
@@ -293,7 +293,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PENDING</b>: Route 53 is performing the operation.
+     *        <b>PENDING</b>: AWS Cloud Map is performing the operation.
      *        </p>
      *        </li>
      *        <li>
@@ -325,7 +325,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b>: Route 53 is performing the operation.
+     * <b>PENDING</b>: AWS Cloud Map is performing the operation.
      * </p>
      * </li>
      * <li>
@@ -349,7 +349,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>PENDING</b>: Route 53 is performing the operation.
+     *         <b>PENDING</b>: AWS Cloud Map is performing the operation.
      *         </p>
      *         </li>
      *         <li>
@@ -381,7 +381,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b>: Route 53 is performing the operation.
+     * <b>PENDING</b>: AWS Cloud Map is performing the operation.
      * </p>
      * </li>
      * <li>
@@ -406,7 +406,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PENDING</b>: Route 53 is performing the operation.
+     *        <b>PENDING</b>: AWS Cloud Map is performing the operation.
      *        </p>
      *        </li>
      *        <li>
@@ -440,7 +440,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b>: Route 53 is performing the operation.
+     * <b>PENDING</b>: AWS Cloud Map is performing the operation.
      * </p>
      * </li>
      * <li>
@@ -465,7 +465,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PENDING</b>: Route 53 is performing the operation.
+     *        <b>PENDING</b>: AWS Cloud Map is performing the operation.
      *        </p>
      *        </li>
      *        <li>

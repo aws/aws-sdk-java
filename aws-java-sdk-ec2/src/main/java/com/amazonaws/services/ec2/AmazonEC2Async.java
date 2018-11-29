@@ -1711,7 +1711,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param confirmProductInstanceRequest
-     *        Contains the parameters for ConfirmProductInstance.
      * @return A Java Future containing the result of the ConfirmProductInstance operation returned by the service.
      * @sample AmazonEC2Async.ConfirmProductInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ConfirmProductInstance" target="_top">AWS API
@@ -1727,7 +1726,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param confirmProductInstanceRequest
-     *        Contains the parameters for ConfirmProductInstance.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -3029,7 +3027,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createPlacementGroupRequest
-     *        Contains the parameters for CreatePlacementGroup.
      * @return A Java Future containing the result of the CreatePlacementGroup operation returned by the service.
      * @sample AmazonEC2Async.CreatePlacementGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup" target="_top">AWS API
@@ -3054,7 +3051,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createPlacementGroupRequest
-     *        Contains the parameters for CreatePlacementGroup.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -4939,7 +4935,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deletePlacementGroupRequest
-     *        Contains the parameters for DeletePlacementGroup.
      * @return A Java Future containing the result of the DeletePlacementGroup operation returned by the service.
      * @sample AmazonEC2Async.DeletePlacementGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup" target="_top">AWS API
@@ -4956,7 +4951,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deletePlacementGroupRequest
-     *        Contains the parameters for DeletePlacementGroup.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -7378,7 +7372,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeInstanceAttributeRequest
-     *        Contains the parameters for DescribeInstanceAttribute.
      * @return A Java Future containing the result of the DescribeInstanceAttribute operation returned by the service.
      * @sample AmazonEC2Async.DescribeInstanceAttribute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceAttribute" target="_top">AWS
@@ -7397,7 +7390,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeInstanceAttributeRequest
-     *        Contains the parameters for DescribeInstanceAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -7534,7 +7526,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </ul>
      * 
      * @param describeInstanceStatusRequest
-     *        Contains the parameters for DescribeInstanceStatus.
      * @return A Java Future containing the result of the DescribeInstanceStatus operation returned by the service.
      * @sample AmazonEC2Async.DescribeInstanceStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus" target="_top">AWS API
@@ -7580,7 +7571,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </ul>
      * 
      * @param describeInstanceStatusRequest
-     *        Contains the parameters for DescribeInstanceStatus.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -7629,7 +7619,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeInstancesRequest
-     *        Contains the parameters for DescribeInstances.
      * @return A Java Future containing the result of the DescribeInstances operation returned by the service.
      * @sample AmazonEC2Async.DescribeInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances" target="_top">AWS API
@@ -7658,7 +7647,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeInstancesRequest
-     *        Contains the parameters for DescribeInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -8123,7 +8111,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describePlacementGroupsRequest
-     *        Contains the parameters for DescribePlacementGroups.
      * @return A Java Future containing the result of the DescribePlacementGroups operation returned by the service.
      * @sample AmazonEC2Async.DescribePlacementGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups" target="_top">AWS
@@ -8139,7 +8126,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describePlacementGroupsRequest
-     *        Contains the parameters for DescribePlacementGroups.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -11460,7 +11446,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param getConsoleOutputRequest
-     *        Contains the parameters for GetConsoleOutput.
      * @return A Java Future containing the result of the GetConsoleOutput operation returned by the service.
      * @sample AmazonEC2Async.GetConsoleOutput
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput" target="_top">AWS API
@@ -11490,7 +11475,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param getConsoleOutputRequest
-     *        Contains the parameters for GetConsoleOutput.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -11512,7 +11496,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param getConsoleScreenshotRequest
-     *        Contains the parameters for the request.
      * @return A Java Future containing the result of the GetConsoleScreenshot operation returned by the service.
      * @sample AmazonEC2Async.GetConsoleScreenshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleScreenshot" target="_top">AWS API
@@ -11529,7 +11512,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param getConsoleScreenshotRequest
-     *        Contains the parameters for the request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -11645,7 +11627,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param getPasswordDataRequest
-     *        Contains the parameters for GetPasswordData.
      * @return A Java Future containing the result of the GetPasswordData operation returned by the service.
      * @sample AmazonEC2Async.GetPasswordData
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetPasswordData" target="_top">AWS API
@@ -11680,7 +11661,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param getPasswordDataRequest
-     *        Contains the parameters for GetPasswordData.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -12459,7 +12439,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyInstanceAttributeRequest
-     *        Contains the parameters for ModifyInstanceAttribute.
      * @return A Java Future containing the result of the ModifyInstanceAttribute operation returned by the service.
      * @sample AmazonEC2Async.ModifyInstanceAttribute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute" target="_top">AWS
@@ -12484,7 +12463,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyInstanceAttributeRequest
-     *        Contains the parameters for ModifyInstanceAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -13509,7 +13487,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param monitorInstancesRequest
-     *        Contains the parameters for MonitorInstances.
      * @return A Java Future containing the result of the MonitorInstances operation returned by the service.
      * @sample AmazonEC2Async.MonitorInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances" target="_top">AWS API
@@ -13528,7 +13505,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param monitorInstancesRequest
-     *        Contains the parameters for MonitorInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -13808,7 +13784,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param rebootInstancesRequest
-     *        Contains the parameters for RebootInstances.
      * @return A Java Future containing the result of the RebootInstances operation returned by the service.
      * @sample AmazonEC2Async.RebootInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances" target="_top">AWS API
@@ -13832,7 +13807,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param rebootInstancesRequest
-     *        Contains the parameters for RebootInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -14449,7 +14423,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param reportInstanceStatusRequest
-     *        Contains the parameters for ReportInstanceStatus.
      * @return A Java Future containing the result of the ReportInstanceStatus operation returned by the service.
      * @sample AmazonEC2Async.ReportInstanceStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReportInstanceStatus" target="_top">AWS API
@@ -14469,7 +14442,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param reportInstanceStatusRequest
-     *        Contains the parameters for ReportInstanceStatus.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -14703,7 +14675,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param resetInstanceAttributeRequest
-     *        Contains the parameters for ResetInstanceAttribute.
      * @return A Java Future containing the result of the ResetInstanceAttribute operation returned by the service.
      * @sample AmazonEC2Async.ResetInstanceAttribute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetInstanceAttribute" target="_top">AWS API
@@ -14726,7 +14697,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param resetInstanceAttributeRequest
-     *        Contains the parameters for ResetInstanceAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -15076,7 +15046,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param runInstancesRequest
-     *        Contains the parameters for RunInstances.
      * @return A Java Future containing the result of the RunInstances operation returned by the service.
      * @sample AmazonEC2Async.RunInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances" target="_top">AWS API
@@ -15165,7 +15134,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param runInstancesRequest
-     *        Contains the parameters for RunInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -15293,7 +15261,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param startInstancesRequest
-     *        Contains the parameters for StartInstances.
      * @return A Java Future containing the result of the StartInstances operation returned by the service.
      * @sample AmazonEC2Async.StartInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances" target="_top">AWS API
@@ -15328,7 +15295,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param startInstancesRequest
-     *        Contains the parameters for StartInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -15346,6 +15312,15 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Stops an Amazon EBS-backed instance.
      * </p>
      * <p>
+     * You can use the Stop action to hibernate an instance if the instance is <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#enabling-hibernation">enabled for
+     * hibernation</a> and it meets the <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
+     * prerequisites</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
      * We don't charge usage for a stopped instance, or data transfer fees; however, your root partition Amazon EBS
      * volume remains and continues to persist your data, and you are charged for Amazon EBS volume usage. Every time
      * you start your Windows instance, Amazon EC2 charges you for a full instance hour. If you stop and restart your
@@ -15354,20 +15329,24 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter charges per second for instance usage.
      * </p>
      * <p>
-     * You can't start or stop Spot Instances, and you can't stop instance store-backed instances.
+     * You can't start, stop, or hibernate Spot Instances, and you can't stop or hibernate instance store-backed
+     * instances. For information about using hibernation for Spot Instances, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances"
+     * >Hibernating Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * When you stop an instance, we shut it down. You can restart your instance at any time. Before stopping an
-     * instance, make sure it is in a state from which it can be restarted. Stopping an instance does not preserve data
-     * stored in RAM.
+     * When you stop or hibernate an instance, we shut it down. You can restart your instance at any time. Before
+     * stopping or hibernating an instance, make sure it is in a state from which it can be restarted. Stopping an
+     * instance does not preserve data stored in RAM, but hibernating an instance does preserve data stored in RAM. If
+     * an instance cannot hibernate successfully, a normal shutdown occurs.
      * </p>
      * <p>
-     * Stopping an instance is different to rebooting or terminating it. For example, when you stop an instance, the
-     * root device and any other devices attached to the instance persist. When you terminate an instance, the root
-     * device and any other devices attached during the instance launch are automatically deleted. For more information
-     * about the differences between rebooting, stopping, and terminating instances, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance Lifecycle</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Stopping and hibernating an instance is different to rebooting or terminating it. For example, when you stop or
+     * hibernate an instance, the root device and any other devices attached to the instance persist. When you terminate
+     * an instance, the root device and any other devices attached during the instance launch are automatically deleted.
+     * For more information about the differences between rebooting, stopping, hibernating, and terminating instances,
+     * see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+     * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * When you stop an instance, we attempt to shut it down forcibly after a short while. If your instance appears
@@ -15378,7 +15357,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param stopInstancesRequest
-     *        Contains the parameters for StopInstances.
      * @return A Java Future containing the result of the StopInstances operation returned by the service.
      * @sample AmazonEC2Async.StopInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances" target="_top">AWS API
@@ -15391,6 +15369,15 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Stops an Amazon EBS-backed instance.
      * </p>
      * <p>
+     * You can use the Stop action to hibernate an instance if the instance is <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#enabling-hibernation">enabled for
+     * hibernation</a> and it meets the <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
+     * prerequisites</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
      * We don't charge usage for a stopped instance, or data transfer fees; however, your root partition Amazon EBS
      * volume remains and continues to persist your data, and you are charged for Amazon EBS volume usage. Every time
      * you start your Windows instance, Amazon EC2 charges you for a full instance hour. If you stop and restart your
@@ -15399,20 +15386,24 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter charges per second for instance usage.
      * </p>
      * <p>
-     * You can't start or stop Spot Instances, and you can't stop instance store-backed instances.
+     * You can't start, stop, or hibernate Spot Instances, and you can't stop or hibernate instance store-backed
+     * instances. For information about using hibernation for Spot Instances, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances"
+     * >Hibernating Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * When you stop an instance, we shut it down. You can restart your instance at any time. Before stopping an
-     * instance, make sure it is in a state from which it can be restarted. Stopping an instance does not preserve data
-     * stored in RAM.
+     * When you stop or hibernate an instance, we shut it down. You can restart your instance at any time. Before
+     * stopping or hibernating an instance, make sure it is in a state from which it can be restarted. Stopping an
+     * instance does not preserve data stored in RAM, but hibernating an instance does preserve data stored in RAM. If
+     * an instance cannot hibernate successfully, a normal shutdown occurs.
      * </p>
      * <p>
-     * Stopping an instance is different to rebooting or terminating it. For example, when you stop an instance, the
-     * root device and any other devices attached to the instance persist. When you terminate an instance, the root
-     * device and any other devices attached during the instance launch are automatically deleted. For more information
-     * about the differences between rebooting, stopping, and terminating instances, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance Lifecycle</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Stopping and hibernating an instance is different to rebooting or terminating it. For example, when you stop or
+     * hibernate an instance, the root device and any other devices attached to the instance persist. When you terminate
+     * an instance, the root device and any other devices attached during the instance launch are automatically deleted.
+     * For more information about the differences between rebooting, stopping, hibernating, and terminating instances,
+     * see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+     * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * When you stop an instance, we attempt to shut it down forcibly after a short while. If your instance appears
@@ -15423,7 +15414,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param stopInstancesRequest
-     *        Contains the parameters for StopInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -15468,7 +15458,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param terminateInstancesRequest
-     *        Contains the parameters for TerminateInstances.
      * @return A Java Future containing the result of the TerminateInstances operation returned by the service.
      * @sample AmazonEC2Async.TerminateInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances" target="_top">AWS API
@@ -15508,7 +15497,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param terminateInstancesRequest
-     *        Contains the parameters for TerminateInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -15595,7 +15583,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param unmonitorInstancesRequest
-     *        Contains the parameters for UnmonitorInstances.
      * @return A Java Future containing the result of the UnmonitorInstances operation returned by the service.
      * @sample AmazonEC2Async.UnmonitorInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances" target="_top">AWS API
@@ -15611,7 +15598,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param unmonitorInstancesRequest
-     *        Contains the parameters for UnmonitorInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

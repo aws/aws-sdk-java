@@ -103,7 +103,8 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
     private Boolean startFromHead;
     /**
      * <p>
-     * A token used for advancing to a specific page of results for your get relational database log events request.
+     * A token used for advancing to a specific page of results for your <code>get relational database log events</code>
+     * request.
      * </p>
      */
     private String pageToken;
@@ -596,12 +597,13 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A token used for advancing to a specific page of results for your get relational database log events request.
+     * A token used for advancing to a specific page of results for your <code>get relational database log events</code>
+     * request.
      * </p>
      * 
      * @param pageToken
-     *        A token used for advancing to a specific page of results for your get relational database log events
-     *        request.
+     *        A token used for advancing to a specific page of results for your
+     *        <code>get relational database log events</code> request.
      */
 
     public void setPageToken(String pageToken) {
@@ -610,11 +612,12 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A token used for advancing to a specific page of results for your get relational database log events request.
+     * A token used for advancing to a specific page of results for your <code>get relational database log events</code>
+     * request.
      * </p>
      * 
-     * @return A token used for advancing to a specific page of results for your get relational database log events
-     *         request.
+     * @return A token used for advancing to a specific page of results for your
+     *         <code>get relational database log events</code> request.
      */
 
     public String getPageToken() {
@@ -623,12 +626,13 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A token used for advancing to a specific page of results for your get relational database log events request.
+     * A token used for advancing to a specific page of results for your <code>get relational database log events</code>
+     * request.
      * </p>
      * 
      * @param pageToken
-     *        A token used for advancing to a specific page of results for your get relational database log events
-     *        request.
+     *        A token used for advancing to a specific page of results for your
+     *        <code>get relational database log events</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

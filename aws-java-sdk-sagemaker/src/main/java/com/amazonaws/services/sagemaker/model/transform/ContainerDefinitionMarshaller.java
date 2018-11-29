@@ -37,6 +37,8 @@ public class ContainerDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelDataUrl").build();
     private static final MarshallingInfo<Map> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Environment").build();
+    private static final MarshallingInfo<String> MODELPACKAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelPackageName").build();
 
     private static final ContainerDefinitionMarshaller instance = new ContainerDefinitionMarshaller();
 
@@ -58,6 +60,7 @@ public class ContainerDefinitionMarshaller {
             protocolMarshaller.marshall(containerDefinition.getImage(), IMAGE_BINDING);
             protocolMarshaller.marshall(containerDefinition.getModelDataUrl(), MODELDATAURL_BINDING);
             protocolMarshaller.marshall(containerDefinition.getEnvironment(), ENVIRONMENT_BINDING);
+            protocolMarshaller.marshall(containerDefinition.getModelPackageName(), MODELPACKAGENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

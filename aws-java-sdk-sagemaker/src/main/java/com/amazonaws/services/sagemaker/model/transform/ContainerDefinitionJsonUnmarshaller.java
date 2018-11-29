@@ -65,6 +65,10 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                     containerDefinition.setEnvironment(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("ModelPackageName", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setModelPackageName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

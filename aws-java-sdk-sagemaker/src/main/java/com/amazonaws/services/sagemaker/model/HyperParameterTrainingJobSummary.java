@@ -40,7 +40,11 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
      * </p>
      */
     private String trainingJobArn;
-
+    /**
+     * <p>
+     * The name of the hyperparameter tuning job that launched this training job.
+     * </p>
+     */
     private String tuningJobName;
     /**
      * <p>
@@ -196,7 +200,12 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
     }
 
     /**
+     * <p>
+     * The name of the hyperparameter tuning job that launched this training job.
+     * </p>
+     * 
      * @param tuningJobName
+     *        The name of the hyperparameter tuning job that launched this training job.
      */
 
     public void setTuningJobName(String tuningJobName) {
@@ -204,7 +213,11 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the hyperparameter tuning job that launched this training job.
+     * </p>
+     * 
+     * @return The name of the hyperparameter tuning job that launched this training job.
      */
 
     public String getTuningJobName() {
@@ -212,7 +225,12 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
     }
 
     /**
+     * <p>
+     * The name of the hyperparameter tuning job that launched this training job.
+     * </p>
+     * 
      * @param tuningJobName
+     *        The name of the hyperparameter tuning job that launched this training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -97,6 +97,20 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * </p>
      */
     private StoppingCondition stoppingCondition;
+    /**
+     * <p>
+     * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
+     * within a training cluster for distributed training. If network isolation is used for training jobs that are
+     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
+     * specifed VPC, but the training container does not have network access.
+     * </p>
+     * <note>
+     * <p>
+     * The Semantic Segmentation built-in algorithm does not support network isolation.
+     * </p>
+     * </note>
+     */
+    private Boolean enableNetworkIsolation;
 
     /**
      * <p>
@@ -600,6 +614,118 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
+     * within a training cluster for distributed training. If network isolation is used for training jobs that are
+     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
+     * specifed VPC, but the training container does not have network access.
+     * </p>
+     * <note>
+     * <p>
+     * The Semantic Segmentation built-in algorithm does not support network isolation.
+     * </p>
+     * </note>
+     * 
+     * @param enableNetworkIsolation
+     *        Isolates the training container. No inbound or outbound network calls can be made, except for calls
+     *        between peers within a training cluster for distributed training. If network isolation is used for
+     *        training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
+     *        model artifacts through the specifed VPC, but the training container does not have network access.</p>
+     *        <note>
+     *        <p>
+     *        The Semantic Segmentation built-in algorithm does not support network isolation.
+     *        </p>
+     */
+
+    public void setEnableNetworkIsolation(Boolean enableNetworkIsolation) {
+        this.enableNetworkIsolation = enableNetworkIsolation;
+    }
+
+    /**
+     * <p>
+     * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
+     * within a training cluster for distributed training. If network isolation is used for training jobs that are
+     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
+     * specifed VPC, but the training container does not have network access.
+     * </p>
+     * <note>
+     * <p>
+     * The Semantic Segmentation built-in algorithm does not support network isolation.
+     * </p>
+     * </note>
+     * 
+     * @return Isolates the training container. No inbound or outbound network calls can be made, except for calls
+     *         between peers within a training cluster for distributed training. If network isolation is used for
+     *         training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
+     *         model artifacts through the specifed VPC, but the training container does not have network access.</p>
+     *         <note>
+     *         <p>
+     *         The Semantic Segmentation built-in algorithm does not support network isolation.
+     *         </p>
+     */
+
+    public Boolean getEnableNetworkIsolation() {
+        return this.enableNetworkIsolation;
+    }
+
+    /**
+     * <p>
+     * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
+     * within a training cluster for distributed training. If network isolation is used for training jobs that are
+     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
+     * specifed VPC, but the training container does not have network access.
+     * </p>
+     * <note>
+     * <p>
+     * The Semantic Segmentation built-in algorithm does not support network isolation.
+     * </p>
+     * </note>
+     * 
+     * @param enableNetworkIsolation
+     *        Isolates the training container. No inbound or outbound network calls can be made, except for calls
+     *        between peers within a training cluster for distributed training. If network isolation is used for
+     *        training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
+     *        model artifacts through the specifed VPC, but the training container does not have network access.</p>
+     *        <note>
+     *        <p>
+     *        The Semantic Segmentation built-in algorithm does not support network isolation.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HyperParameterTrainingJobDefinition withEnableNetworkIsolation(Boolean enableNetworkIsolation) {
+        setEnableNetworkIsolation(enableNetworkIsolation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
+     * within a training cluster for distributed training. If network isolation is used for training jobs that are
+     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
+     * specifed VPC, but the training container does not have network access.
+     * </p>
+     * <note>
+     * <p>
+     * The Semantic Segmentation built-in algorithm does not support network isolation.
+     * </p>
+     * </note>
+     * 
+     * @return Isolates the training container. No inbound or outbound network calls can be made, except for calls
+     *         between peers within a training cluster for distributed training. If network isolation is used for
+     *         training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
+     *         model artifacts through the specifed VPC, but the training container does not have network access.</p>
+     *         <note>
+     *         <p>
+     *         The Semantic Segmentation built-in algorithm does not support network isolation.
+     *         </p>
+     */
+
+    public Boolean isEnableNetworkIsolation() {
+        return this.enableNetworkIsolation;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -625,7 +751,9 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
         if (getResourceConfig() != null)
             sb.append("ResourceConfig: ").append(getResourceConfig()).append(",");
         if (getStoppingCondition() != null)
-            sb.append("StoppingCondition: ").append(getStoppingCondition());
+            sb.append("StoppingCondition: ").append(getStoppingCondition()).append(",");
+        if (getEnableNetworkIsolation() != null)
+            sb.append("EnableNetworkIsolation: ").append(getEnableNetworkIsolation());
         sb.append("}");
         return sb.toString();
     }
@@ -672,6 +800,10 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
             return false;
         if (other.getStoppingCondition() != null && other.getStoppingCondition().equals(this.getStoppingCondition()) == false)
             return false;
+        if (other.getEnableNetworkIsolation() == null ^ this.getEnableNetworkIsolation() == null)
+            return false;
+        if (other.getEnableNetworkIsolation() != null && other.getEnableNetworkIsolation().equals(this.getEnableNetworkIsolation()) == false)
+            return false;
         return true;
     }
 
@@ -688,6 +820,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
         hashCode = prime * hashCode + ((getOutputDataConfig() == null) ? 0 : getOutputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getResourceConfig() == null) ? 0 : getResourceConfig().hashCode());
         hashCode = prime * hashCode + ((getStoppingCondition() == null) ? 0 : getStoppingCondition().hashCode());
+        hashCode = prime * hashCode + ((getEnableNetworkIsolation() == null) ? 0 : getEnableNetworkIsolation().hashCode());
         return hashCode;
     }
 

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -47,6 +48,8 @@ public class CreateRelationalDatabaseRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("preferredMaintenanceWindow").build();
     private static final MarshallingInfo<Boolean> PUBLICLYACCESSIBLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("publiclyAccessible").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateRelationalDatabaseRequestMarshaller instance = new CreateRelationalDatabaseRequestMarshaller();
 
@@ -74,6 +77,7 @@ public class CreateRelationalDatabaseRequestMarshaller {
             protocolMarshaller.marshall(createRelationalDatabaseRequest.getPreferredBackupWindow(), PREFERREDBACKUPWINDOW_BINDING);
             protocolMarshaller.marshall(createRelationalDatabaseRequest.getPreferredMaintenanceWindow(), PREFERREDMAINTENANCEWINDOW_BINDING);
             protocolMarshaller.marshall(createRelationalDatabaseRequest.getPubliclyAccessible(), PUBLICLYACCESSIBLE_BINDING);
+            protocolMarshaller.marshall(createRelationalDatabaseRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

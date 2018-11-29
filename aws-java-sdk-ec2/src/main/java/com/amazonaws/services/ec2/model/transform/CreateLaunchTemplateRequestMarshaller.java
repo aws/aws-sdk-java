@@ -365,6 +365,22 @@ public class CreateLaunchTemplateRequestMarshaller implements Marshaller<Request
                 }
             }
 
+            com.amazonaws.internal.SdkInternalList<LaunchTemplateElasticInferenceAccelerator> requestLaunchTemplateDataElasticInferenceAcceleratorsList = (com.amazonaws.internal.SdkInternalList<LaunchTemplateElasticInferenceAccelerator>) launchTemplateData
+                    .getElasticInferenceAccelerators();
+            if (!requestLaunchTemplateDataElasticInferenceAcceleratorsList.isEmpty()
+                    || !requestLaunchTemplateDataElasticInferenceAcceleratorsList.isAutoConstruct()) {
+                int elasticInferenceAcceleratorsListIndex = 1;
+
+                for (LaunchTemplateElasticInferenceAccelerator requestLaunchTemplateDataElasticInferenceAcceleratorsListValue : requestLaunchTemplateDataElasticInferenceAcceleratorsList) {
+
+                    if (requestLaunchTemplateDataElasticInferenceAcceleratorsListValue.getType() != null) {
+                        request.addParameter("LaunchTemplateData.ElasticInferenceAccelerator." + elasticInferenceAcceleratorsListIndex + ".Type",
+                                StringUtils.fromString(requestLaunchTemplateDataElasticInferenceAcceleratorsListValue.getType()));
+                    }
+                    elasticInferenceAcceleratorsListIndex++;
+                }
+            }
+
             com.amazonaws.internal.SdkInternalList<String> requestLaunchTemplateDataSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) launchTemplateData
                     .getSecurityGroupIds();
             if (!requestLaunchTemplateDataSecurityGroupIdsList.isEmpty() || !requestLaunchTemplateDataSecurityGroupIdsList.isAutoConstruct()) {
@@ -464,6 +480,29 @@ public class CreateLaunchTemplateRequestMarshaller implements Marshaller<Request
                         request.addParameter("LaunchTemplateData.CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationId",
                                 StringUtils.fromString(capacityReservationTarget.getCapacityReservationId()));
                     }
+                }
+            }
+
+            LaunchTemplateHibernationOptionsRequest hibernationOptions = launchTemplateData.getHibernationOptions();
+            if (hibernationOptions != null) {
+
+                if (hibernationOptions.getConfigured() != null) {
+                    request.addParameter("LaunchTemplateData.HibernationOptions.Configured", StringUtils.fromBoolean(hibernationOptions.getConfigured()));
+                }
+            }
+
+            com.amazonaws.internal.SdkInternalList<LaunchTemplateLicenseConfigurationRequest> requestLaunchTemplateDataLicenseSpecificationsList = (com.amazonaws.internal.SdkInternalList<LaunchTemplateLicenseConfigurationRequest>) launchTemplateData
+                    .getLicenseSpecifications();
+            if (!requestLaunchTemplateDataLicenseSpecificationsList.isEmpty() || !requestLaunchTemplateDataLicenseSpecificationsList.isAutoConstruct()) {
+                int licenseSpecificationsListIndex = 1;
+
+                for (LaunchTemplateLicenseConfigurationRequest requestLaunchTemplateDataLicenseSpecificationsListValue : requestLaunchTemplateDataLicenseSpecificationsList) {
+
+                    if (requestLaunchTemplateDataLicenseSpecificationsListValue.getLicenseConfigurationArn() != null) {
+                        request.addParameter("LaunchTemplateData.LicenseSpecification." + licenseSpecificationsListIndex + ".LicenseConfigurationArn",
+                                StringUtils.fromString(requestLaunchTemplateDataLicenseSpecificationsListValue.getLicenseConfigurationArn()));
+                    }
+                    licenseSpecificationsListIndex++;
                 }
             }
         }

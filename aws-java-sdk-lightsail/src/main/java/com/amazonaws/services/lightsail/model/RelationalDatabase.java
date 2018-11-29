@@ -67,6 +67,13 @@ public class RelationalDatabase implements Serializable, Cloneable, StructuredPo
     private String resourceType;
     /**
      * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
+    /**
+     * <p>
      * The blueprint ID for the database. A blueprint describes the major engine version of a database.
      * </p>
      */
@@ -446,6 +453,88 @@ public class RelationalDatabase implements Serializable, Cloneable, StructuredPo
 
     public RelationalDatabase withResourceType(ResourceType resourceType) {
         this.resourceType = resourceType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @return The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *         <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *         Guide</a>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *        Guide</a>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *        Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RelationalDatabase withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *        Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RelationalDatabase withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -1282,6 +1371,8 @@ public class RelationalDatabase implements Serializable, Cloneable, StructuredPo
             sb.append("Location: ").append(getLocation()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getRelationalDatabaseBlueprintId() != null)
             sb.append("RelationalDatabaseBlueprintId: ").append(getRelationalDatabaseBlueprintId()).append(",");
         if (getRelationalDatabaseBundleId() != null)
@@ -1355,6 +1446,10 @@ public class RelationalDatabase implements Serializable, Cloneable, StructuredPo
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getRelationalDatabaseBlueprintId() == null ^ this.getRelationalDatabaseBlueprintId() == null)
             return false;
@@ -1443,6 +1538,7 @@ public class RelationalDatabase implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getRelationalDatabaseBlueprintId() == null) ? 0 : getRelationalDatabaseBlueprintId().hashCode());
         hashCode = prime * hashCode + ((getRelationalDatabaseBundleId() == null) ? 0 : getRelationalDatabaseBundleId().hashCode());
         hashCode = prime * hashCode + ((getMasterDatabaseName() == null) ? 0 : getMasterDatabaseName().hashCode());

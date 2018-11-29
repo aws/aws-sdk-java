@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.sagemaker.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +40,18 @@ public class UpdateNotebookInstanceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisassociateLifecycleConfig").build();
     private static final MarshallingInfo<Integer> VOLUMESIZEINGB_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeSizeInGB").build();
+    private static final MarshallingInfo<String> DEFAULTCODEREPOSITORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultCodeRepository").build();
+    private static final MarshallingInfo<List> ADDITIONALCODEREPOSITORIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalCodeRepositories").build();
+    private static final MarshallingInfo<List> ACCELERATORTYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceleratorTypes").build();
+    private static final MarshallingInfo<Boolean> DISASSOCIATEACCELERATORTYPES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisassociateAcceleratorTypes").build();
+    private static final MarshallingInfo<Boolean> DISASSOCIATEDEFAULTCODEREPOSITORY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisassociateDefaultCodeRepository").build();
+    private static final MarshallingInfo<Boolean> DISASSOCIATEADDITIONALCODEREPOSITORIES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisassociateAdditionalCodeRepositories").build();
 
     private static final UpdateNotebookInstanceRequestMarshaller instance = new UpdateNotebookInstanceRequestMarshaller();
 
@@ -62,6 +75,13 @@ public class UpdateNotebookInstanceRequestMarshaller {
             protocolMarshaller.marshall(updateNotebookInstanceRequest.getLifecycleConfigName(), LIFECYCLECONFIGNAME_BINDING);
             protocolMarshaller.marshall(updateNotebookInstanceRequest.getDisassociateLifecycleConfig(), DISASSOCIATELIFECYCLECONFIG_BINDING);
             protocolMarshaller.marshall(updateNotebookInstanceRequest.getVolumeSizeInGB(), VOLUMESIZEINGB_BINDING);
+            protocolMarshaller.marshall(updateNotebookInstanceRequest.getDefaultCodeRepository(), DEFAULTCODEREPOSITORY_BINDING);
+            protocolMarshaller.marshall(updateNotebookInstanceRequest.getAdditionalCodeRepositories(), ADDITIONALCODEREPOSITORIES_BINDING);
+            protocolMarshaller.marshall(updateNotebookInstanceRequest.getAcceleratorTypes(), ACCELERATORTYPES_BINDING);
+            protocolMarshaller.marshall(updateNotebookInstanceRequest.getDisassociateAcceleratorTypes(), DISASSOCIATEACCELERATORTYPES_BINDING);
+            protocolMarshaller.marshall(updateNotebookInstanceRequest.getDisassociateDefaultCodeRepository(), DISASSOCIATEDEFAULTCODEREPOSITORY_BINDING);
+            protocolMarshaller.marshall(updateNotebookInstanceRequest.getDisassociateAdditionalCodeRepositories(),
+                    DISASSOCIATEADDITIONALCODEREPOSITORIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -72,6 +72,10 @@ public class DomainJsonUnmarshaller implements Unmarshaller<Domain, JsonUnmarsha
                     context.nextToken();
                     domain.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    domain.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("domainEntries", targetDepth)) {
                     context.nextToken();
                     domain.setDomainEntries(new ListUnmarshaller<DomainEntry>(DomainEntryJsonUnmarshaller.getInstance()).unmarshall(context));

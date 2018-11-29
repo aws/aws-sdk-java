@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeInstancesRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeInstances.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeInstancesRequest> {
@@ -95,6 +93,12 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>group-name</code> - The name of the security group for the instance. EC2-Classic only.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>hibernation-options.configured</code> - A Boolean that indicates whether the instance is enabled for
+     * hibernation. A value of <code>true</code> means that the instance is enabled for hibernation.
      * </p>
      * </li>
      * <li>
@@ -588,6 +592,12 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>hibernation-options.configured</code> - A Boolean that indicates whether the instance is enabled for
+     * hibernation. A value of <code>true</code> means that the instance is enabled for hibernation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>host-id</code> - The ID of the Dedicated Host on which the instance is running, if applicable.
      * </p>
      * </li>
@@ -1045,6 +1055,12 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>group-name</code> - The name of the security group for the instance. EC2-Classic only.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>hibernation-options.configured</code> - A Boolean that indicates whether the instance is enabled
+     *         for hibernation. A value of <code>true</code> means that the instance is enabled for hibernation.
      *         </p>
      *         </li>
      *         <li>
@@ -1528,6 +1544,12 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>hibernation-options.configured</code> - A Boolean that indicates whether the instance is enabled for
+     * hibernation. A value of <code>true</code> means that the instance is enabled for hibernation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>host-id</code> - The ID of the Dedicated Host on which the instance is running, if applicable.
      * </p>
      * </li>
@@ -1986,6 +2008,12 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>group-name</code> - The name of the security group for the instance. EC2-Classic only.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>hibernation-options.configured</code> - A Boolean that indicates whether the instance is enabled for
+     *        hibernation. A value of <code>true</code> means that the instance is enabled for hibernation.
      *        </p>
      *        </li>
      *        <li>
@@ -2470,6 +2498,12 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>hibernation-options.configured</code> - A Boolean that indicates whether the instance is enabled for
+     * hibernation. A value of <code>true</code> means that the instance is enabled for hibernation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>host-id</code> - The ID of the Dedicated Host on which the instance is running, if applicable.
      * </p>
      * </li>
@@ -2933,6 +2967,12 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>group-name</code> - The name of the security group for the instance. EC2-Classic only.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>hibernation-options.configured</code> - A Boolean that indicates whether the instance is enabled for
+     *        hibernation. A value of <code>true</code> means that the instance is enabled for hibernation.
      *        </p>
      *        </li>
      *        <li>
@@ -3419,6 +3459,12 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>hibernation-options.configured</code> - A Boolean that indicates whether the instance is enabled for
+     * hibernation. A value of <code>true</code> means that the instance is enabled for hibernation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>host-id</code> - The ID of the Dedicated Host on which the instance is running, if applicable.
      * </p>
      * </li>
@@ -3877,6 +3923,12 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>group-name</code> - The name of the security group for the instance. EC2-Classic only.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>hibernation-options.configured</code> - A Boolean that indicates whether the instance is enabled for
+     *        hibernation. A value of <code>true</code> means that the instance is enabled for hibernation.
      *        </p>
      *        </li>
      *        <li>

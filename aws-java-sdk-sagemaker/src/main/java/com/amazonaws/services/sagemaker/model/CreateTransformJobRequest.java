@@ -52,9 +52,13 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * The maximum payload size allowed, in MB. A payload is the data portion of a record (without metadata). The value
      * in <code>MaxPayloadInMB</code> must be greater or equal to the size of a single record. You can approximate the
      * size of a record by dividing the size of your dataset by the number of records. Then multiply this value by the
-     * number of records you want in a mini-batch. It is recommended to enter a value slightly larger than this to
-     * ensure the records fit within the maximum payload size. The default value is <code>6</code> MB. For an unlimited
-     * payload size, set the value to <code>0</code>.
+     * number of records you want in a mini-batch. We recommend to enter a slightly larger value than this to ensure the
+     * records fit within the maximum payload size. The default value is <code>6</code> MB.
+     * </p>
+     * <p>
+     * For cases where the payload might be arbitrarily large and is transmitted using HTTP chunked encoding, set the
+     * value to <code>0</code>. This feature only works in supported algorithms. Currently, Amazon SageMaker built-in
+     * algorithms do not support this feature.
      * </p>
      */
     private Integer maxPayloadInMB;
@@ -254,18 +258,26 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * The maximum payload size allowed, in MB. A payload is the data portion of a record (without metadata). The value
      * in <code>MaxPayloadInMB</code> must be greater or equal to the size of a single record. You can approximate the
      * size of a record by dividing the size of your dataset by the number of records. Then multiply this value by the
-     * number of records you want in a mini-batch. It is recommended to enter a value slightly larger than this to
-     * ensure the records fit within the maximum payload size. The default value is <code>6</code> MB. For an unlimited
-     * payload size, set the value to <code>0</code>.
+     * number of records you want in a mini-batch. We recommend to enter a slightly larger value than this to ensure the
+     * records fit within the maximum payload size. The default value is <code>6</code> MB.
+     * </p>
+     * <p>
+     * For cases where the payload might be arbitrarily large and is transmitted using HTTP chunked encoding, set the
+     * value to <code>0</code>. This feature only works in supported algorithms. Currently, Amazon SageMaker built-in
+     * algorithms do not support this feature.
      * </p>
      * 
      * @param maxPayloadInMB
      *        The maximum payload size allowed, in MB. A payload is the data portion of a record (without metadata). The
      *        value in <code>MaxPayloadInMB</code> must be greater or equal to the size of a single record. You can
      *        approximate the size of a record by dividing the size of your dataset by the number of records. Then
-     *        multiply this value by the number of records you want in a mini-batch. It is recommended to enter a value
-     *        slightly larger than this to ensure the records fit within the maximum payload size. The default value is
-     *        <code>6</code> MB. For an unlimited payload size, set the value to <code>0</code>.
+     *        multiply this value by the number of records you want in a mini-batch. We recommend to enter a slightly
+     *        larger value than this to ensure the records fit within the maximum payload size. The default value is
+     *        <code>6</code> MB. </p>
+     *        <p>
+     *        For cases where the payload might be arbitrarily large and is transmitted using HTTP chunked encoding, set
+     *        the value to <code>0</code>. This feature only works in supported algorithms. Currently, Amazon SageMaker
+     *        built-in algorithms do not support this feature.
      */
 
     public void setMaxPayloadInMB(Integer maxPayloadInMB) {
@@ -277,17 +289,25 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * The maximum payload size allowed, in MB. A payload is the data portion of a record (without metadata). The value
      * in <code>MaxPayloadInMB</code> must be greater or equal to the size of a single record. You can approximate the
      * size of a record by dividing the size of your dataset by the number of records. Then multiply this value by the
-     * number of records you want in a mini-batch. It is recommended to enter a value slightly larger than this to
-     * ensure the records fit within the maximum payload size. The default value is <code>6</code> MB. For an unlimited
-     * payload size, set the value to <code>0</code>.
+     * number of records you want in a mini-batch. We recommend to enter a slightly larger value than this to ensure the
+     * records fit within the maximum payload size. The default value is <code>6</code> MB.
+     * </p>
+     * <p>
+     * For cases where the payload might be arbitrarily large and is transmitted using HTTP chunked encoding, set the
+     * value to <code>0</code>. This feature only works in supported algorithms. Currently, Amazon SageMaker built-in
+     * algorithms do not support this feature.
      * </p>
      * 
      * @return The maximum payload size allowed, in MB. A payload is the data portion of a record (without metadata).
      *         The value in <code>MaxPayloadInMB</code> must be greater or equal to the size of a single record. You can
      *         approximate the size of a record by dividing the size of your dataset by the number of records. Then
-     *         multiply this value by the number of records you want in a mini-batch. It is recommended to enter a value
-     *         slightly larger than this to ensure the records fit within the maximum payload size. The default value is
-     *         <code>6</code> MB. For an unlimited payload size, set the value to <code>0</code>.
+     *         multiply this value by the number of records you want in a mini-batch. We recommend to enter a slightly
+     *         larger value than this to ensure the records fit within the maximum payload size. The default value is
+     *         <code>6</code> MB. </p>
+     *         <p>
+     *         For cases where the payload might be arbitrarily large and is transmitted using HTTP chunked encoding,
+     *         set the value to <code>0</code>. This feature only works in supported algorithms. Currently, Amazon
+     *         SageMaker built-in algorithms do not support this feature.
      */
 
     public Integer getMaxPayloadInMB() {
@@ -299,18 +319,26 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * The maximum payload size allowed, in MB. A payload is the data portion of a record (without metadata). The value
      * in <code>MaxPayloadInMB</code> must be greater or equal to the size of a single record. You can approximate the
      * size of a record by dividing the size of your dataset by the number of records. Then multiply this value by the
-     * number of records you want in a mini-batch. It is recommended to enter a value slightly larger than this to
-     * ensure the records fit within the maximum payload size. The default value is <code>6</code> MB. For an unlimited
-     * payload size, set the value to <code>0</code>.
+     * number of records you want in a mini-batch. We recommend to enter a slightly larger value than this to ensure the
+     * records fit within the maximum payload size. The default value is <code>6</code> MB.
+     * </p>
+     * <p>
+     * For cases where the payload might be arbitrarily large and is transmitted using HTTP chunked encoding, set the
+     * value to <code>0</code>. This feature only works in supported algorithms. Currently, Amazon SageMaker built-in
+     * algorithms do not support this feature.
      * </p>
      * 
      * @param maxPayloadInMB
      *        The maximum payload size allowed, in MB. A payload is the data portion of a record (without metadata). The
      *        value in <code>MaxPayloadInMB</code> must be greater or equal to the size of a single record. You can
      *        approximate the size of a record by dividing the size of your dataset by the number of records. Then
-     *        multiply this value by the number of records you want in a mini-batch. It is recommended to enter a value
-     *        slightly larger than this to ensure the records fit within the maximum payload size. The default value is
-     *        <code>6</code> MB. For an unlimited payload size, set the value to <code>0</code>.
+     *        multiply this value by the number of records you want in a mini-batch. We recommend to enter a slightly
+     *        larger value than this to ensure the records fit within the maximum payload size. The default value is
+     *        <code>6</code> MB. </p>
+     *        <p>
+     *        For cases where the payload might be arbitrarily large and is transmitted using HTTP chunked encoding, set
+     *        the value to <code>0</code>. This feature only works in supported algorithms. Currently, Amazon SageMaker
+     *        built-in algorithms do not support this feature.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

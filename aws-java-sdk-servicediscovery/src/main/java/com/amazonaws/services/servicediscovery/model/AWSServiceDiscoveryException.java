@@ -15,7 +15,7 @@ package com.amazonaws.services.servicediscovery.model;
 import javax.annotation.Generated;
 
 /**
- * Base exception for all service exceptions thrown by Amazon Route 53 Auto Naming
+ * Base exception for all service exceptions thrown by AWS Cloud Map
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSServiceDiscoveryException extends com.amazonaws.AmazonServiceException {

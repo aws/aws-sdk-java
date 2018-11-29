@@ -58,15 +58,14 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * <p/>
      * <p>
      * Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO
-     * format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data
-     * is already in RecordIO format, you don't need to set this attribute. For more information, see <a
+     * format. In this case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data is
+     * already in RecordIO format, you don't need to set this attribute. For more information, see <a
      * href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create a Dataset Using
      * RecordIO</a>.
      * </p>
      * <p>
-     * In FILE mode, leave this field unset or set it to None.
+     * In File mode, leave this field unset or set it to None.
      * </p>
-     * <p/>
      */
     private String recordWrapperType;
     /**
@@ -84,6 +83,23 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String inputMode;
+    /**
+     * <p>
+     * A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for
+     * <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches. If you use
+     * <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If
+     * you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code>
+     * is shuffled. The shuffling order is determined using the <code>Seed</code> value.
+     * </p>
+     * <p>
+     * For Pipe input mode, shuffling is done at the start of every epoch. With large datasets this ensures that the
+     * order of the training data is different for each epoch, it helps reduce bias and possible overfitting. In a
+     * multi-node training job when ShuffleConfig is combined with <code>S3DataDistributionType</code> of
+     * <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on
+     * the first epoch might be sent to a different node on the second epoch.
+     * </p>
+     */
+    private ShuffleConfig shuffleConfig;
 
     /**
      * <p>
@@ -284,27 +300,25 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * <p/>
      * <p>
      * Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO
-     * format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data
-     * is already in RecordIO format, you don't need to set this attribute. For more information, see <a
+     * format. In this case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data is
+     * already in RecordIO format, you don't need to set this attribute. For more information, see <a
      * href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create a Dataset Using
      * RecordIO</a>.
      * </p>
      * <p>
-     * In FILE mode, leave this field unset or set it to None.
+     * In File mode, leave this field unset or set it to None.
      * </p>
-     * <p/>
      * 
      * @param recordWrapperType
      *        <p>
      *        Specify RecordIO as the value when input data is in raw format but the training algorithm requires the
-     *        RecordIO format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If
+     *        RecordIO format. In this case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If
      *        the input data is already in RecordIO format, you don't need to set this attribute. For more information,
      *        see <a href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create a
      *        Dataset Using RecordIO</a>.
      *        </p>
      *        <p>
-     *        In FILE mode, leave this field unset or set it to None.
-     *        </p>
+     *        In File mode, leave this field unset or set it to None.
      * @see RecordWrapper
      */
 
@@ -316,26 +330,24 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * <p/>
      * <p>
      * Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO
-     * format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data
-     * is already in RecordIO format, you don't need to set this attribute. For more information, see <a
+     * format. In this case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data is
+     * already in RecordIO format, you don't need to set this attribute. For more information, see <a
      * href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create a Dataset Using
      * RecordIO</a>.
      * </p>
      * <p>
-     * In FILE mode, leave this field unset or set it to None.
+     * In File mode, leave this field unset or set it to None.
      * </p>
-     * <p/>
      * 
      * @return <p>
      *         Specify RecordIO as the value when input data is in raw format but the training algorithm requires the
-     *         RecordIO format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If
+     *         RecordIO format. In this case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If
      *         the input data is already in RecordIO format, you don't need to set this attribute. For more information,
      *         see <a href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create a
      *         Dataset Using RecordIO</a>.
      *         </p>
      *         <p>
-     *         In FILE mode, leave this field unset or set it to None.
-     *         </p>
+     *         In File mode, leave this field unset or set it to None.
      * @see RecordWrapper
      */
 
@@ -347,27 +359,25 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * <p/>
      * <p>
      * Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO
-     * format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data
-     * is already in RecordIO format, you don't need to set this attribute. For more information, see <a
+     * format. In this case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data is
+     * already in RecordIO format, you don't need to set this attribute. For more information, see <a
      * href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create a Dataset Using
      * RecordIO</a>.
      * </p>
      * <p>
-     * In FILE mode, leave this field unset or set it to None.
+     * In File mode, leave this field unset or set it to None.
      * </p>
-     * <p/>
      * 
      * @param recordWrapperType
      *        <p>
      *        Specify RecordIO as the value when input data is in raw format but the training algorithm requires the
-     *        RecordIO format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If
+     *        RecordIO format. In this case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If
      *        the input data is already in RecordIO format, you don't need to set this attribute. For more information,
      *        see <a href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create a
      *        Dataset Using RecordIO</a>.
      *        </p>
      *        <p>
-     *        In FILE mode, leave this field unset or set it to None.
-     *        </p>
+     *        In File mode, leave this field unset or set it to None.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecordWrapper
      */
@@ -381,27 +391,25 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * <p/>
      * <p>
      * Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO
-     * format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data
-     * is already in RecordIO format, you don't need to set this attribute. For more information, see <a
+     * format. In this case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data is
+     * already in RecordIO format, you don't need to set this attribute. For more information, see <a
      * href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create a Dataset Using
      * RecordIO</a>.
      * </p>
      * <p>
-     * In FILE mode, leave this field unset or set it to None.
+     * In File mode, leave this field unset or set it to None.
      * </p>
-     * <p/>
      * 
      * @param recordWrapperType
      *        <p>
      *        Specify RecordIO as the value when input data is in raw format but the training algorithm requires the
-     *        RecordIO format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If
+     *        RecordIO format. In this case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If
      *        the input data is already in RecordIO format, you don't need to set this attribute. For more information,
      *        see <a href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create a
      *        Dataset Using RecordIO</a>.
      *        </p>
      *        <p>
-     *        In FILE mode, leave this field unset or set it to None.
-     *        </p>
+     *        In File mode, leave this field unset or set it to None.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecordWrapper
      */
@@ -539,6 +547,113 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for
+     * <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches. If you use
+     * <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If
+     * you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code>
+     * is shuffled. The shuffling order is determined using the <code>Seed</code> value.
+     * </p>
+     * <p>
+     * For Pipe input mode, shuffling is done at the start of every epoch. With large datasets this ensures that the
+     * order of the training data is different for each epoch, it helps reduce bias and possible overfitting. In a
+     * multi-node training job when ShuffleConfig is combined with <code>S3DataDistributionType</code> of
+     * <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on
+     * the first epoch might be sent to a different node on the second epoch.
+     * </p>
+     * 
+     * @param shuffleConfig
+     *        A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for
+     *        <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches. If you use
+     *        <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is
+     *        shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the
+     *        <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the
+     *        <code>Seed</code> value.</p>
+     *        <p>
+     *        For Pipe input mode, shuffling is done at the start of every epoch. With large datasets this ensures that
+     *        the order of the training data is different for each epoch, it helps reduce bias and possible overfitting.
+     *        In a multi-node training job when ShuffleConfig is combined with <code>S3DataDistributionType</code> of
+     *        <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular
+     *        node on the first epoch might be sent to a different node on the second epoch.
+     */
+
+    public void setShuffleConfig(ShuffleConfig shuffleConfig) {
+        this.shuffleConfig = shuffleConfig;
+    }
+
+    /**
+     * <p>
+     * A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for
+     * <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches. If you use
+     * <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If
+     * you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code>
+     * is shuffled. The shuffling order is determined using the <code>Seed</code> value.
+     * </p>
+     * <p>
+     * For Pipe input mode, shuffling is done at the start of every epoch. With large datasets this ensures that the
+     * order of the training data is different for each epoch, it helps reduce bias and possible overfitting. In a
+     * multi-node training job when ShuffleConfig is combined with <code>S3DataDistributionType</code> of
+     * <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on
+     * the first epoch might be sent to a different node on the second epoch.
+     * </p>
+     * 
+     * @return A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for
+     *         <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches. If you use
+     *         <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is
+     *         shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the
+     *         <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the
+     *         <code>Seed</code> value.</p>
+     *         <p>
+     *         For Pipe input mode, shuffling is done at the start of every epoch. With large datasets this ensures that
+     *         the order of the training data is different for each epoch, it helps reduce bias and possible
+     *         overfitting. In a multi-node training job when ShuffleConfig is combined with
+     *         <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so
+     *         that the content sent to a particular node on the first epoch might be sent to a different node on the
+     *         second epoch.
+     */
+
+    public ShuffleConfig getShuffleConfig() {
+        return this.shuffleConfig;
+    }
+
+    /**
+     * <p>
+     * A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for
+     * <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches. If you use
+     * <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If
+     * you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code>
+     * is shuffled. The shuffling order is determined using the <code>Seed</code> value.
+     * </p>
+     * <p>
+     * For Pipe input mode, shuffling is done at the start of every epoch. With large datasets this ensures that the
+     * order of the training data is different for each epoch, it helps reduce bias and possible overfitting. In a
+     * multi-node training job when ShuffleConfig is combined with <code>S3DataDistributionType</code> of
+     * <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on
+     * the first epoch might be sent to a different node on the second epoch.
+     * </p>
+     * 
+     * @param shuffleConfig
+     *        A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for
+     *        <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches. If you use
+     *        <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is
+     *        shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the
+     *        <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the
+     *        <code>Seed</code> value.</p>
+     *        <p>
+     *        For Pipe input mode, shuffling is done at the start of every epoch. With large datasets this ensures that
+     *        the order of the training data is different for each epoch, it helps reduce bias and possible overfitting.
+     *        In a multi-node training job when ShuffleConfig is combined with <code>S3DataDistributionType</code> of
+     *        <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular
+     *        node on the first epoch might be sent to a different node on the second epoch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Channel withShuffleConfig(ShuffleConfig shuffleConfig) {
+        setShuffleConfig(shuffleConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -560,7 +675,9 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         if (getRecordWrapperType() != null)
             sb.append("RecordWrapperType: ").append(getRecordWrapperType()).append(",");
         if (getInputMode() != null)
-            sb.append("InputMode: ").append(getInputMode());
+            sb.append("InputMode: ").append(getInputMode()).append(",");
+        if (getShuffleConfig() != null)
+            sb.append("ShuffleConfig: ").append(getShuffleConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -599,6 +716,10 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInputMode() != null && other.getInputMode().equals(this.getInputMode()) == false)
             return false;
+        if (other.getShuffleConfig() == null ^ this.getShuffleConfig() == null)
+            return false;
+        if (other.getShuffleConfig() != null && other.getShuffleConfig().equals(this.getShuffleConfig()) == false)
+            return false;
         return true;
     }
 
@@ -613,6 +734,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCompressionType() == null) ? 0 : getCompressionType().hashCode());
         hashCode = prime * hashCode + ((getRecordWrapperType() == null) ? 0 : getRecordWrapperType().hashCode());
         hashCode = prime * hashCode + ((getInputMode() == null) ? 0 : getInputMode().hashCode());
+        hashCode = prime * hashCode + ((getShuffleConfig() == null) ? 0 : getShuffleConfig().hashCode());
         return hashCode;
     }
 

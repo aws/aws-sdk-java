@@ -30,6 +30,8 @@ public class AlgorithmSpecificationMarshaller {
 
     private static final MarshallingInfo<String> TRAININGIMAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingImage").build();
+    private static final MarshallingInfo<String> ALGORITHMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AlgorithmName").build();
     private static final MarshallingInfo<String> TRAININGINPUTMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingInputMode").build();
     private static final MarshallingInfo<List> METRICDEFINITIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -52,6 +54,7 @@ public class AlgorithmSpecificationMarshaller {
 
         try {
             protocolMarshaller.marshall(algorithmSpecification.getTrainingImage(), TRAININGIMAGE_BINDING);
+            protocolMarshaller.marshall(algorithmSpecification.getAlgorithmName(), ALGORITHMNAME_BINDING);
             protocolMarshaller.marshall(algorithmSpecification.getTrainingInputMode(), TRAININGINPUTMODE_BINDING);
             protocolMarshaller.marshall(algorithmSpecification.getMetricDefinitions(), METRICDEFINITIONS_BINDING);
         } catch (Exception e) {

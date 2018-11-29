@@ -52,6 +52,10 @@ public class NamespacePropertiesJsonUnmarshaller implements Unmarshaller<Namespa
                     context.nextToken();
                     namespaceProperties.setDnsProperties(DnsPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("HttpProperties", targetDepth)) {
+                    context.nextToken();
+                    namespaceProperties.setHttpProperties(HttpPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

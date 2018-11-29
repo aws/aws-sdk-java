@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.460-SNAPSHOT</version>
+    <version>1.11.460</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-bom</artifactId>
@@ -16,6 +16,18 @@
   <dependencyManagement>
     <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
     <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-appmesh</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-licensemanager</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-securityhub</artifactId>
         <groupId>com.amazonaws</groupId>

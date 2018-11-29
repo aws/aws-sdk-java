@@ -72,6 +72,10 @@ public class DiskSnapshotJsonUnmarshaller implements Unmarshaller<DiskSnapshot, 
                     context.nextToken();
                     diskSnapshot.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    diskSnapshot.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("sizeInGb", targetDepth)) {
                     context.nextToken();
                     diskSnapshot.setSizeInGb(context.getUnmarshaller(Integer.class).unmarshall(context));

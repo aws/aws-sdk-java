@@ -52,6 +52,10 @@ public class AlgorithmSpecificationJsonUnmarshaller implements Unmarshaller<Algo
                     context.nextToken();
                     algorithmSpecification.setTrainingImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AlgorithmName", targetDepth)) {
+                    context.nextToken();
+                    algorithmSpecification.setAlgorithmName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("TrainingInputMode", targetDepth)) {
                     context.nextToken();
                     algorithmSpecification.setTrainingInputMode(context.getUnmarshaller(String.class).unmarshall(context));

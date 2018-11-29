@@ -68,6 +68,10 @@ public class ProductionVariantJsonUnmarshaller implements Unmarshaller<Productio
                     context.nextToken();
                     productionVariant.setInitialVariantWeight(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
+                if (context.testExpression("AcceleratorType", targetDepth)) {
+                    context.nextToken();
+                    productionVariant.setAcceleratorType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

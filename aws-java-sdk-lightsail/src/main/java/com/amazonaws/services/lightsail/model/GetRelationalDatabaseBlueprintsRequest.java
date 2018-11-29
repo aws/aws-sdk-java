@@ -27,19 +27,21 @@ public class GetRelationalDatabaseBlueprintsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A token used for advancing to a specific page of results for your get relational database blueprints request.
+     * A token used for advancing to a specific page of results for your <code>get relational database blueprints</code>
+     * request.
      * </p>
      */
     private String pageToken;
 
     /**
      * <p>
-     * A token used for advancing to a specific page of results for your get relational database blueprints request.
+     * A token used for advancing to a specific page of results for your <code>get relational database blueprints</code>
+     * request.
      * </p>
      * 
      * @param pageToken
-     *        A token used for advancing to a specific page of results for your get relational database blueprints
-     *        request.
+     *        A token used for advancing to a specific page of results for your
+     *        <code>get relational database blueprints</code> request.
      */
 
     public void setPageToken(String pageToken) {
@@ -48,11 +50,12 @@ public class GetRelationalDatabaseBlueprintsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A token used for advancing to a specific page of results for your get relational database blueprints request.
+     * A token used for advancing to a specific page of results for your <code>get relational database blueprints</code>
+     * request.
      * </p>
      * 
-     * @return A token used for advancing to a specific page of results for your get relational database blueprints
-     *         request.
+     * @return A token used for advancing to a specific page of results for your
+     *         <code>get relational database blueprints</code> request.
      */
 
     public String getPageToken() {
@@ -61,12 +64,13 @@ public class GetRelationalDatabaseBlueprintsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A token used for advancing to a specific page of results for your get relational database blueprints request.
+     * A token used for advancing to a specific page of results for your <code>get relational database blueprints</code>
+     * request.
      * </p>
      * 
      * @param pageToken
-     *        A token used for advancing to a specific page of results for your get relational database blueprints
-     *        request.
+     *        A token used for advancing to a specific page of results for your
+     *        <code>get relational database blueprints</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

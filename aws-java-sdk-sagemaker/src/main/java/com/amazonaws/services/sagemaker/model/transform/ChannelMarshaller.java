@@ -39,6 +39,8 @@ public class ChannelMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecordWrapperType").build();
     private static final MarshallingInfo<String> INPUTMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("InputMode").build();
+    private static final MarshallingInfo<StructuredPojo> SHUFFLECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShuffleConfig").build();
 
     private static final ChannelMarshaller instance = new ChannelMarshaller();
 
@@ -62,6 +64,7 @@ public class ChannelMarshaller {
             protocolMarshaller.marshall(channel.getCompressionType(), COMPRESSIONTYPE_BINDING);
             protocolMarshaller.marshall(channel.getRecordWrapperType(), RECORDWRAPPERTYPE_BINDING);
             protocolMarshaller.marshall(channel.getInputMode(), INPUTMODE_BINDING);
+            protocolMarshaller.marshall(channel.getShuffleConfig(), SHUFFLECONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

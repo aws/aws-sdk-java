@@ -68,6 +68,16 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public CopySnapshotResult copySnapshot(CopySnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateCloudFormationStackResult createCloudFormationStack(CreateCloudFormationStackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDiskResult createDisk(CreateDiskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -213,6 +223,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public ExportSnapshotResult exportSnapshot(ExportSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetActiveNamesResult getActiveNames(GetActiveNamesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -224,6 +239,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
 
     @Override
     public GetBundlesResult getBundles(GetBundlesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCloudFormationStackRecordsResult getCloudFormationStackRecords(GetCloudFormationStackRecordsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -254,6 +274,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
 
     @Override
     public GetDomainsResult getDomains(GetDomainsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetExportSnapshotRecordsResult getExportSnapshotRecords(GetExportSnapshotRecordsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -478,7 +503,17 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UnpeerVpcResult unpeerVpc(UnpeerVpcRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

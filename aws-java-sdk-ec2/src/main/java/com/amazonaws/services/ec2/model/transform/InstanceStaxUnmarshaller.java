@@ -205,6 +205,17 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     continue;
                 }
 
+                if (context.testExpression("elasticInferenceAcceleratorAssociationSet", targetDepth)) {
+                    instance.withElasticInferenceAcceleratorAssociations(new ArrayList<ElasticInferenceAcceleratorAssociation>());
+                    continue;
+                }
+
+                if (context.testExpression("elasticInferenceAcceleratorAssociationSet/item", targetDepth)) {
+                    instance.withElasticInferenceAcceleratorAssociations(ElasticInferenceAcceleratorAssociationStaxUnmarshaller.getInstance().unmarshall(
+                            context));
+                    continue;
+                }
+
                 if (context.testExpression("networkInterfaceSet", targetDepth)) {
                     instance.withNetworkInterfaces(new ArrayList<InstanceNetworkInterface>());
                     continue;
@@ -284,6 +295,22 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     instance.setCapacityReservationSpecification(CapacityReservationSpecificationResponseStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("hibernationOptions", targetDepth)) {
+                    instance.setHibernationOptions(HibernationOptionsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("licenseSet", targetDepth)) {
+                    instance.withLicenses(new ArrayList<LicenseConfiguration>());
+                    continue;
+                }
+
+                if (context.testExpression("licenseSet/item", targetDepth)) {
+                    instance.withLicenses(LicenseConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instance;

@@ -60,6 +60,10 @@ public class DescribeTrainingJobResultJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     describeTrainingJobResult.setTuningJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("LabelingJobArn", targetDepth)) {
+                    context.nextToken();
+                    describeTrainingJobResult.setLabelingJobArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ModelArtifacts", targetDepth)) {
                     context.nextToken();
                     describeTrainingJobResult.setModelArtifacts(ModelArtifactsJsonUnmarshaller.getInstance().unmarshall(context));
@@ -134,6 +138,10 @@ public class DescribeTrainingJobResultJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     describeTrainingJobResult.setFinalMetricDataList(new ListUnmarshaller<MetricData>(MetricDataJsonUnmarshaller.getInstance())
                             .unmarshall(context));
+                }
+                if (context.testExpression("EnableNetworkIsolation", targetDepth)) {
+                    context.nextToken();
+                    describeTrainingJobResult.setEnableNetworkIsolation(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

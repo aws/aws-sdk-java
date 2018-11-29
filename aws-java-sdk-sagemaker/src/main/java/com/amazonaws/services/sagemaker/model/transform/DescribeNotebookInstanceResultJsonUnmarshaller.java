@@ -112,6 +112,19 @@ public class DescribeNotebookInstanceResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     describeNotebookInstanceResult.setVolumeSizeInGB(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("AcceleratorTypes", targetDepth)) {
+                    context.nextToken();
+                    describeNotebookInstanceResult.setAcceleratorTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("DefaultCodeRepository", targetDepth)) {
+                    context.nextToken();
+                    describeNotebookInstanceResult.setDefaultCodeRepository(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AdditionalCodeRepositories", targetDepth)) {
+                    context.nextToken();
+                    describeNotebookInstanceResult.setAdditionalCodeRepositories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

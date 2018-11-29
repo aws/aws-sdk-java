@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +40,8 @@ public class KeyPairMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("location").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> FINGERPRINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fingerprint").build();
 
@@ -64,6 +67,7 @@ public class KeyPairMarshaller {
             protocolMarshaller.marshall(keyPair.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(keyPair.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(keyPair.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(keyPair.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(keyPair.getFingerprint(), FINGERPRINT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

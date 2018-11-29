@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * One or more specified values aren't valid. For example, when you're creating a namespace, the value of
- * <code>Name</code> might not be a valid DNS name.
+ * One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be
+ * outside the allowed range, or a string value might exceed length constraints.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

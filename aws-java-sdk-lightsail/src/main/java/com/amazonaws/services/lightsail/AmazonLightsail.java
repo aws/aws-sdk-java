@@ -145,6 +145,12 @@ public interface AmazonLightsail {
      * Attaches a block storage disk to a running or stopped Lightsail instance and exposes it to the instance with the
      * specified disk name.
      * </p>
+     * <p>
+     * The <code>attach disk</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by diskName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param attachDiskRequest
      * @return Result of the AttachDisk operation returned by the service.
@@ -180,6 +186,12 @@ public interface AmazonLightsail {
      * </p>
      * <p>
      * After some time, the instances are attached to the load balancer and the health check status is available.
+     * </p>
+     * <p>
+     * The <code>attach instances to load balancer</code> operation supports tag-based access control via resource tags
+     * applied to the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param attachInstancesToLoadBalancerRequest
@@ -219,6 +231,12 @@ public interface AmazonLightsail {
      * Once you create and validate your certificate, you can attach it to your load balancer. You can also use this API
      * to rotate the certificates on your account. Use the <code>AttachLoadBalancerTlsCertificate</code> operation with
      * the non-attached certificate, and it will replace the existing one and become the attached certificate.
+     * </p>
+     * <p>
+     * The <code>attach load balancer tls certificate</code> operation supports tag-based access control via resource
+     * tags applied to the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param attachLoadBalancerTlsCertificateRequest
@@ -286,6 +304,12 @@ public interface AmazonLightsail {
      * <p>
      * Closes the public ports on a specific Amazon Lightsail instance.
      * </p>
+     * <p>
+     * The <code>close instance public ports</code> operation supports tag-based access control via resource tags
+     * applied to the resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param closeInstancePublicPortsRequest
      * @return Result of the CloseInstancePublicPorts operation returned by the service.
@@ -317,11 +341,92 @@ public interface AmazonLightsail {
 
     /**
      * <p>
+     * Copies an instance or disk snapshot from one AWS Region to another in Amazon Lightsail.
+     * </p>
+     * 
+     * @param copySnapshotRequest
+     * @return Result of the CopySnapshot operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CopySnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CopySnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CopySnapshotResult copySnapshot(CopySnapshotRequest copySnapshotRequest);
+
+    /**
+     * <p>
+     * Creates an AWS CloudFormation stack, which creates a new Amazon EC2 instance from an exported Amazon Lightsail
+     * snapshot. This operation results in a CloudFormation stack record that can be used to track the AWS
+     * CloudFormation stack created. Use the <code>get cloud formation stack records</code> operation to get a list of
+     * the CloudFormation stacks created.
+     * </p>
+     * <important>
+     * <p>
+     * Wait until after your new Amazon EC2 instance is created before running the
+     * <code>create cloud formation stack</code> operation again with the same export snapshot record.
+     * </p>
+     * </important>
+     * 
+     * @param createCloudFormationStackRequest
+     * @return Result of the CreateCloudFormationStack operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateCloudFormationStack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCloudFormationStack"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateCloudFormationStackResult createCloudFormationStack(CreateCloudFormationStackRequest createCloudFormationStackRequest);
+
+    /**
+     * <p>
      * Creates a block storage disk that can be attached to a Lightsail instance in the same Availability Zone (e.g.,
      * <code>us-east-2a</code>). The disk is created in the regional endpoint that you send the HTTP request to. For
      * more information, see <a href=
      * "https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail"
      * >Regions and Availability Zones in Lightsail</a>.
+     * </p>
+     * <p>
+     * The <code>create disk</code> operation supports tag-based access control via request tags. For more information,
+     * see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createDiskRequest
@@ -359,6 +464,12 @@ public interface AmazonLightsail {
      * HTTP request to. For more information, see <a href=
      * "https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail"
      * >Regions and Availability Zones in Lightsail</a>.
+     * </p>
+     * <p>
+     * The <code>create disk from snapshot</code> operation supports tag-based access control via request tags and
+     * resource tags applied to the resource identified by diskSnapshotName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createDiskFromSnapshotRequest
@@ -403,6 +514,12 @@ public interface AmazonLightsail {
      * remount the disk to ensure a consistent and complete snapshot. You may remount and use your disk while the
      * snapshot status is pending.
      * </p>
+     * <p>
+     * The <code>create disk snapshot</code> operation supports tag-based access control via request tags. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param createDiskSnapshotRequest
      * @return Result of the CreateDiskSnapshot operation returned by the service.
@@ -435,6 +552,12 @@ public interface AmazonLightsail {
     /**
      * <p>
      * Creates a domain resource for the specified domain (e.g., example.com).
+     * </p>
+     * <p>
+     * The <code>create domain</code> operation supports tag-based access control via request tags. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createDomainRequest
@@ -470,6 +593,12 @@ public interface AmazonLightsail {
      * Creates one of the following entry records associated with the domain: A record, CNAME record, TXT record, or MX
      * record.
      * </p>
+     * <p>
+     * The <code>create domain entry</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by domainName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param createDomainEntryRequest
      * @return Result of the CreateDomainEntry operation returned by the service.
@@ -503,6 +632,12 @@ public interface AmazonLightsail {
      * <p>
      * Creates a snapshot of a specific virtual private server, or <i>instance</i>. You can use a snapshot to create a
      * new instance that is based on that snapshot.
+     * </p>
+     * <p>
+     * The <code>create instance snapshot</code> operation supports tag-based access control via request tags. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createInstanceSnapshotRequest
@@ -541,6 +676,12 @@ public interface AmazonLightsail {
      * system updates or new application releases. Use the get blueprints operation to return a list of available
      * blueprints.
      * </p>
+     * <p>
+     * The <code>create instances</code> operation supports tag-based access control via request tags. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param createInstancesRequest
      * @return Result of the CreateInstances operation returned by the service.
@@ -575,6 +716,12 @@ public interface AmazonLightsail {
      * Uses a specific snapshot as a blueprint for creating one or more new instances that are based on that identical
      * configuration.
      * </p>
+     * <p>
+     * The <code>create instances from snapshot</code> operation supports tag-based access control via request tags and
+     * resource tags applied to the resource identified by instanceSnapshotName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param createInstancesFromSnapshotRequest
      * @return Result of the CreateInstancesFromSnapshot operation returned by the service.
@@ -607,6 +754,12 @@ public interface AmazonLightsail {
     /**
      * <p>
      * Creates an SSH key pair.
+     * </p>
+     * <p>
+     * The <code>create key pair</code> operation supports tag-based access control via request tags. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createKeyPairRequest
@@ -648,6 +801,12 @@ public interface AmazonLightsail {
      * When you create a load balancer, you can specify a unique name and port settings. To change additional load
      * balancer settings, use the <code>UpdateLoadBalancerAttribute</code> operation.
      * </p>
+     * <p>
+     * The <code>create load balancer</code> operation supports tag-based access control via request tags. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param createLoadBalancerRequest
      * @return Result of the CreateLoadBalancer operation returned by the service.
@@ -684,6 +843,12 @@ public interface AmazonLightsail {
      * <p>
      * TLS is just an updated, more secure version of Secure Socket Layer (SSL).
      * </p>
+     * <p>
+     * The <code>create load balancer tls certificate</code> operation supports tag-based access control via resource
+     * tags applied to the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param createLoadBalancerTlsCertificateRequest
      * @return Result of the CreateLoadBalancerTlsCertificate operation returned by the service.
@@ -716,6 +881,12 @@ public interface AmazonLightsail {
     /**
      * <p>
      * Creates a new database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * The <code>create relational database</code> operation supports tag-based access control via request tags. For
+     * more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createRelationalDatabaseRequest
@@ -754,6 +925,13 @@ public interface AmazonLightsail {
      * You can create a new database from a snapshot in if something goes wrong with your original database, or to
      * change it to a different plan, such as a high availability or standard plan.
      * </p>
+     * <p>
+     * The <code>create relational database from snapshot</code> operation supports tag-based access control via request
+     * tags and resource tags applied to the resource identified by relationalDatabaseSnapshotName. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param createRelationalDatabaseFromSnapshotRequest
      * @return Result of the CreateRelationalDatabaseFromSnapshot operation returned by the service.
@@ -788,6 +966,12 @@ public interface AmazonLightsail {
      * <p>
      * Creates a snapshot of your database in Amazon Lightsail. You can use snapshots for backups, to make copies of a
      * database, and to save data before deleting a database.
+     * </p>
+     * <p>
+     * The <code>create relational database snapshot</code> operation supports tag-based access control via request
+     * tags. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createRelationalDatabaseSnapshotRequest
@@ -828,6 +1012,12 @@ public interface AmazonLightsail {
      * The disk may remain in the <code>deleting</code> state for several minutes.
      * </p>
      * </note>
+     * <p>
+     * The <code>delete disk</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by diskName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param deleteDiskRequest
      * @return Result of the DeleteDisk operation returned by the service.
@@ -867,6 +1057,12 @@ public interface AmazonLightsail {
      * not needed for any other snapshot is removed. So regardless of which prior snapshots have been deleted, all
      * active snapshots will have access to all the information needed to restore the disk.
      * </p>
+     * <p>
+     * The <code>delete disk snapshot</code> operation supports tag-based access control via resource tags applied to
+     * the resource identified by diskSnapshotName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param deleteDiskSnapshotRequest
      * @return Result of the DeleteDiskSnapshot operation returned by the service.
@@ -899,6 +1095,12 @@ public interface AmazonLightsail {
     /**
      * <p>
      * Deletes the specified domain recordset and all of its domain records.
+     * </p>
+     * <p>
+     * The <code>delete domain</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by domainName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param deleteDomainRequest
@@ -933,6 +1135,12 @@ public interface AmazonLightsail {
      * <p>
      * Deletes a specific domain entry.
      * </p>
+     * <p>
+     * The <code>delete domain entry</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by domainName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param deleteDomainEntryRequest
      * @return Result of the DeleteDomainEntry operation returned by the service.
@@ -965,6 +1173,12 @@ public interface AmazonLightsail {
     /**
      * <p>
      * Deletes a specific Amazon Lightsail virtual private server, or <i>instance</i>.
+     * </p>
+     * <p>
+     * The <code>delete instance</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param deleteInstanceRequest
@@ -999,6 +1213,12 @@ public interface AmazonLightsail {
      * <p>
      * Deletes a specific snapshot of a virtual private server (or <i>instance</i>).
      * </p>
+     * <p>
+     * The <code>delete instance snapshot</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by instanceSnapshotName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param deleteInstanceSnapshotRequest
      * @return Result of the DeleteInstanceSnapshot operation returned by the service.
@@ -1031,6 +1251,12 @@ public interface AmazonLightsail {
     /**
      * <p>
      * Deletes a specific SSH key pair.
+     * </p>
+     * <p>
+     * The <code>delete key pair</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by keyPairName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param deleteKeyPairRequest
@@ -1066,6 +1292,12 @@ public interface AmazonLightsail {
      * Deletes a Lightsail load balancer and all its associated SSL/TLS certificates. Once the load balancer is deleted,
      * you will need to create a new load balancer, create a new certificate, and verify domain ownership again.
      * </p>
+     * <p>
+     * The <code>delete load balancer</code> operation supports tag-based access control via resource tags applied to
+     * the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param deleteLoadBalancerRequest
      * @return Result of the DeleteLoadBalancer operation returned by the service.
@@ -1098,6 +1330,12 @@ public interface AmazonLightsail {
     /**
      * <p>
      * Deletes an SSL/TLS certificate associated with a Lightsail load balancer.
+     * </p>
+     * <p>
+     * The <code>delete load balancer tls certificate</code> operation supports tag-based access control via resource
+     * tags applied to the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param deleteLoadBalancerTlsCertificateRequest
@@ -1132,6 +1370,12 @@ public interface AmazonLightsail {
      * <p>
      * Deletes a database in Amazon Lightsail.
      * </p>
+     * <p>
+     * The <code>delete relational database</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param deleteRelationalDatabaseRequest
      * @return Result of the DeleteRelationalDatabase operation returned by the service.
@@ -1164,6 +1408,12 @@ public interface AmazonLightsail {
     /**
      * <p>
      * Deletes a database snapshot in Amazon Lightsail.
+     * </p>
+     * <p>
+     * The <code>delete relational database snapshot</code> operation supports tag-based access control via resource
+     * tags applied to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param deleteRelationalDatabaseSnapshotRequest
@@ -1198,6 +1448,12 @@ public interface AmazonLightsail {
      * <p>
      * Detaches a stopped block storage disk from a Lightsail instance. Make sure to unmount any file systems on the
      * device within your operating system before stopping the instance and detaching the disk.
+     * </p>
+     * <p>
+     * The <code>detach disk</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by diskName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param detachDiskRequest
@@ -1234,6 +1490,12 @@ public interface AmazonLightsail {
      * </p>
      * <p>
      * This operation waits until the instances are no longer needed before they are detached from the load balancer.
+     * </p>
+     * <p>
+     * The <code>detach instances from load balancer</code> operation supports tag-based access control via resource
+     * tags applied to the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param detachInstancesFromLoadBalancerRequest
@@ -1329,6 +1591,60 @@ public interface AmazonLightsail {
      *      target="_top">AWS API Documentation</a>
      */
     DownloadDefaultKeyPairResult downloadDefaultKeyPair(DownloadDefaultKeyPairRequest downloadDefaultKeyPairRequest);
+
+    /**
+     * <p>
+     * Exports a Amazon Lightsail instance or block storage disk snapshot to Amazon Elastic Compute Cloud (Amazon EC2).
+     * This operation results in an export snapshot record that can be used with the
+     * <code>create cloud formation stack</code> operation to create new Amazon EC2 instances.
+     * </p>
+     * <p>
+     * Exported instance snapshots appear in Amazon EC2 as Amazon Machine Images (AMIs), and the instance system disk
+     * appears as an Amazon Elastic Block Store (Amazon EBS) volume. Exported disk snapshots appear in Amazon EC2 as
+     * Amazon EBS volumes. Snapshots are exported to the same Amazon Web Services Region in Amazon EC2 as the source
+     * Lightsail snapshot.
+     * </p>
+     * <p/>
+     * <p>
+     * The <code>export snapshot</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by sourceSnapshotName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Use the <code>get instance snapshots</code> or <code>get disk snapshots</code> operations to get a list of
+     * snapshots that you can export to Amazon EC2.
+     * </p>
+     * </note>
+     * 
+     * @param exportSnapshotRequest
+     * @return Result of the ExportSnapshot operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.ExportSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ExportSnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ExportSnapshotResult exportSnapshot(ExportSnapshotRequest exportSnapshotRequest);
 
     /**
      * <p>
@@ -1431,6 +1747,43 @@ public interface AmazonLightsail {
      *      Documentation</a>
      */
     GetBundlesResult getBundles(GetBundlesRequest getBundlesRequest);
+
+    /**
+     * <p>
+     * Returns the CloudFormation stack record created as a result of the <code>create cloud formation stack</code>
+     * operation.
+     * </p>
+     * <p>
+     * An AWS CloudFormation stack is used to create a new Amazon EC2 instance from an exported Lightsail snapshot.
+     * </p>
+     * 
+     * @param getCloudFormationStackRecordsRequest
+     * @return Result of the GetCloudFormationStackRecords operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetCloudFormationStackRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCloudFormationStackRecords"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetCloudFormationStackRecordsResult getCloudFormationStackRecords(GetCloudFormationStackRecordsRequest getCloudFormationStackRecordsRequest);
 
     /**
      * <p>
@@ -1640,6 +1993,43 @@ public interface AmazonLightsail {
 
     /**
      * <p>
+     * Returns the export snapshot record created as a result of the <code>export snapshot</code> operation.
+     * </p>
+     * <p>
+     * An export snapshot record can be used to create a new Amazon EC2 instance and its related resources with the
+     * <code>create cloud formation stack</code> operation.
+     * </p>
+     * 
+     * @param getExportSnapshotRecordsRequest
+     * @return Result of the GetExportSnapshotRecords operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetExportSnapshotRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetExportSnapshotRecords"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetExportSnapshotRecordsResult getExportSnapshotRecords(GetExportSnapshotRecordsRequest getExportSnapshotRecordsRequest);
+
+    /**
+     * <p>
      * Returns information about a specific Amazon Lightsail instance, which is a virtual private server.
      * </p>
      * 
@@ -1674,6 +2064,12 @@ public interface AmazonLightsail {
     /**
      * <p>
      * Returns temporary SSH keys you can use to connect to a specific virtual private server, or <i>instance</i>.
+     * </p>
+     * <p>
+     * The <code>get instance access details</code> operation supports tag-based access control via resource tags
+     * applied to the resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param getInstanceAccessDetailsRequest
@@ -2460,6 +2856,10 @@ public interface AmazonLightsail {
      * <p>
      * Returns the current, previous, or pending versions of the master user password for a Lightsail database.
      * </p>
+     * <p>
+     * The <code>asdf</code> operation GetRelationalDatabaseMasterUserPassword supports tag-based access control via
+     * resource tags applied to the resource identified by relationalDatabaseName.
+     * </p>
      * 
      * @param getRelationalDatabaseMasterUserPasswordRequest
      * @return Result of the GetRelationalDatabaseMasterUserPassword operation returned by the service.
@@ -2798,6 +3198,12 @@ public interface AmazonLightsail {
      * <p>
      * Adds public ports to an Amazon Lightsail instance.
      * </p>
+     * <p>
+     * The <code>open instance public ports</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param openInstancePublicPortsRequest
      * @return Result of the OpenInstancePublicPorts operation returned by the service.
@@ -2865,6 +3271,12 @@ public interface AmazonLightsail {
      * Sets the specified open ports for an Amazon Lightsail instance, and closes all ports for every protocol not
      * included in the current request.
      * </p>
+     * <p>
+     * The <code>put instance public ports</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param putInstancePublicPortsRequest
      * @return Result of the PutInstancePublicPorts operation returned by the service.
@@ -2900,6 +3312,12 @@ public interface AmazonLightsail {
      * public IP address. To use the same IP address after restarting, create a static IP address and attach it to the
      * instance.
      * </p>
+     * <p>
+     * The <code>reboot instance</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param rebootInstanceRequest
      * @return Result of the RebootInstance operation returned by the service.
@@ -2932,6 +3350,12 @@ public interface AmazonLightsail {
     /**
      * <p>
      * Restarts a specific database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * The <code>reboot relational database</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param rebootRelationalDatabaseRequest
@@ -3000,6 +3424,12 @@ public interface AmazonLightsail {
      * Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance, use the reboot instance
      * operation.
      * </p>
+     * <p>
+     * The <code>start instance</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param startInstanceRequest
      * @return Result of the StartInstance operation returned by the service.
@@ -3034,6 +3464,12 @@ public interface AmazonLightsail {
      * Starts a specific database from a stopped state in Amazon Lightsail. To restart a database, use the
      * <code>reboot relational database</code> operation.
      * </p>
+     * <p>
+     * The <code>start relational database</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param startRelationalDatabaseRequest
      * @return Result of the StartRelationalDatabase operation returned by the service.
@@ -3066,6 +3502,12 @@ public interface AmazonLightsail {
     /**
      * <p>
      * Stops a specific Amazon Lightsail instance that is currently running.
+     * </p>
+     * <p>
+     * The <code>stop instance</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param stopInstanceRequest
@@ -3100,6 +3542,12 @@ public interface AmazonLightsail {
      * <p>
      * Stops a specific database that is currently running in Amazon Lightsail.
      * </p>
+     * <p>
+     * The <code>stop relational database</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param stopRelationalDatabaseRequest
      * @return Result of the StopRelationalDatabase operation returned by the service.
@@ -3128,6 +3576,48 @@ public interface AmazonLightsail {
      *      target="_top">AWS API Documentation</a>
      */
     StopRelationalDatabaseResult stopRelationalDatabase(StopRelationalDatabaseRequest stopRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Adds one or more tags to the specified Amazon Lightsail resource. Each resource can have a maximum of 50 tags.
+     * Each tag consists of a key and an optional value. Tag keys must be unique per resource. For more information
+     * about tags, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * <p>
+     * The <code>tag resource</code> operation supports tag-based access control via request tags and resource tags
+     * applied to the resource identified by resourceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
 
     /**
      * <p>
@@ -3164,7 +3654,52 @@ public interface AmazonLightsail {
 
     /**
      * <p>
+     * Deletes the specified set of tag keys and their values from the specified Amazon Lightsail resource.
+     * </p>
+     * <p>
+     * The <code>untag resource</code> operation supports tag-based access control via request tags and resource tags
+     * applied to the resource identified by resourceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
      * Updates a domain recordset after it is created.
+     * </p>
+     * <p>
+     * The <code>update domain entry</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by domainName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param updateDomainEntryRequest
@@ -3198,6 +3733,12 @@ public interface AmazonLightsail {
     /**
      * <p>
      * Updates the specified attribute for a load balancer. You can only update one attribute at a time.
+     * </p>
+     * <p>
+     * The <code>update load balancer attribute</code> operation supports tag-based access control via resource tags
+     * applied to the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param updateLoadBalancerAttributeRequest
@@ -3235,6 +3776,12 @@ public interface AmazonLightsail {
      * <p>
      * Updates are applied immediately, or in cases where the updates could result in an outage, are applied during the
      * database's predefined maintenance window.
+     * </p>
+     * <p>
+     * The <code>update relational database</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param updateRelationalDatabaseRequest
@@ -3275,6 +3822,12 @@ public interface AmazonLightsail {
      * <code>pending-reboot</code>. Parameters marked with a <code>dynamic</code> apply type are applied immediately.
      * Parameters marked with a <code>pending-reboot</code> apply type are applied only after the database is rebooted
      * using the <code>reboot relational database</code> operation.
+     * </p>
+     * <p>
+     * The <code>update relational database parameters</code> operation supports tag-based access control via resource
+     * tags applied to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param updateRelationalDatabaseParametersRequest

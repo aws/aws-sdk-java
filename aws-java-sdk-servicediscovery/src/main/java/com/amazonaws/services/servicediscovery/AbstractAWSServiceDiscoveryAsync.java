@@ -28,6 +28,19 @@ public class AbstractAWSServiceDiscoveryAsync extends AbstractAWSServiceDiscover
     }
 
     @Override
+    public java.util.concurrent.Future<CreateHttpNamespaceResult> createHttpNamespaceAsync(CreateHttpNamespaceRequest request) {
+
+        return createHttpNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateHttpNamespaceResult> createHttpNamespaceAsync(CreateHttpNamespaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateHttpNamespaceRequest, CreateHttpNamespaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePrivateDnsNamespaceResult> createPrivateDnsNamespaceAsync(CreatePrivateDnsNamespaceRequest request) {
 
         return createPrivateDnsNamespaceAsync(request, null);
@@ -101,6 +114,19 @@ public class AbstractAWSServiceDiscoveryAsync extends AbstractAWSServiceDiscover
     @Override
     public java.util.concurrent.Future<DeregisterInstanceResult> deregisterInstanceAsync(DeregisterInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<DeregisterInstanceRequest, DeregisterInstanceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DiscoverInstancesResult> discoverInstancesAsync(DiscoverInstancesRequest request) {
+
+        return discoverInstancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DiscoverInstancesResult> discoverInstancesAsync(DiscoverInstancesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DiscoverInstancesRequest, DiscoverInstancesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

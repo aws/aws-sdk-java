@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ResetInstanceAttributeRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for ResetInstanceAttribute.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

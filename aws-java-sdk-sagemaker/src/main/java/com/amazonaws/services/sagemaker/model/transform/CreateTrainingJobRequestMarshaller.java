@@ -49,6 +49,8 @@ public class CreateTrainingJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StoppingCondition").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<Boolean> ENABLENETWORKISOLATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableNetworkIsolation").build();
 
     private static final CreateTrainingJobRequestMarshaller instance = new CreateTrainingJobRequestMarshaller();
 
@@ -76,6 +78,7 @@ public class CreateTrainingJobRequestMarshaller {
             protocolMarshaller.marshall(createTrainingJobRequest.getVpcConfig(), VPCCONFIG_BINDING);
             protocolMarshaller.marshall(createTrainingJobRequest.getStoppingCondition(), STOPPINGCONDITION_BINDING);
             protocolMarshaller.marshall(createTrainingJobRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createTrainingJobRequest.getEnableNetworkIsolation(), ENABLENETWORKISOLATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

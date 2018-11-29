@@ -108,6 +108,32 @@ public class AbstractAmazonLightsailAsync extends AbstractAmazonLightsail implem
     }
 
     @Override
+    public java.util.concurrent.Future<CopySnapshotResult> copySnapshotAsync(CopySnapshotRequest request) {
+
+        return copySnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CopySnapshotResult> copySnapshotAsync(CopySnapshotRequest request,
+            com.amazonaws.handlers.AsyncHandler<CopySnapshotRequest, CopySnapshotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCloudFormationStackResult> createCloudFormationStackAsync(CreateCloudFormationStackRequest request) {
+
+        return createCloudFormationStackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCloudFormationStackResult> createCloudFormationStackAsync(CreateCloudFormationStackRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCloudFormationStackRequest, CreateCloudFormationStackResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDiskResult> createDiskAsync(CreateDiskRequest request) {
 
         return createDiskAsync(request, null);
@@ -497,6 +523,19 @@ public class AbstractAmazonLightsailAsync extends AbstractAmazonLightsail implem
     }
 
     @Override
+    public java.util.concurrent.Future<ExportSnapshotResult> exportSnapshotAsync(ExportSnapshotRequest request) {
+
+        return exportSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportSnapshotResult> exportSnapshotAsync(ExportSnapshotRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExportSnapshotRequest, ExportSnapshotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetActiveNamesResult> getActiveNamesAsync(GetActiveNamesRequest request) {
 
         return getActiveNamesAsync(request, null);
@@ -531,6 +570,19 @@ public class AbstractAmazonLightsailAsync extends AbstractAmazonLightsail implem
     @Override
     public java.util.concurrent.Future<GetBundlesResult> getBundlesAsync(GetBundlesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetBundlesRequest, GetBundlesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudFormationStackRecordsResult> getCloudFormationStackRecordsAsync(GetCloudFormationStackRecordsRequest request) {
+
+        return getCloudFormationStackRecordsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudFormationStackRecordsResult> getCloudFormationStackRecordsAsync(GetCloudFormationStackRecordsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCloudFormationStackRecordsRequest, GetCloudFormationStackRecordsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -609,6 +661,19 @@ public class AbstractAmazonLightsailAsync extends AbstractAmazonLightsail implem
     @Override
     public java.util.concurrent.Future<GetDomainsResult> getDomainsAsync(GetDomainsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDomainsRequest, GetDomainsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExportSnapshotRecordsResult> getExportSnapshotRecordsAsync(GetExportSnapshotRecordsRequest request) {
+
+        return getExportSnapshotRecordsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExportSnapshotRecordsResult> getExportSnapshotRecordsAsync(GetExportSnapshotRecordsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetExportSnapshotRecordsRequest, GetExportSnapshotRecordsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1196,6 +1261,19 @@ public class AbstractAmazonLightsailAsync extends AbstractAmazonLightsail implem
     }
 
     @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UnpeerVpcResult> unpeerVpcAsync(UnpeerVpcRequest request) {
 
         return unpeerVpcAsync(request, null);
@@ -1204,6 +1282,19 @@ public class AbstractAmazonLightsailAsync extends AbstractAmazonLightsail implem
     @Override
     public java.util.concurrent.Future<UnpeerVpcResult> unpeerVpcAsync(UnpeerVpcRequest request,
             com.amazonaws.handlers.AsyncHandler<UnpeerVpcRequest, UnpeerVpcResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

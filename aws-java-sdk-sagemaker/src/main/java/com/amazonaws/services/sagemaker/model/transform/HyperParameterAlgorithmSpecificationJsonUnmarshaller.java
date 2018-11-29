@@ -56,6 +56,10 @@ public class HyperParameterAlgorithmSpecificationJsonUnmarshaller implements Unm
                     context.nextToken();
                     hyperParameterAlgorithmSpecification.setTrainingInputMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AlgorithmName", targetDepth)) {
+                    context.nextToken();
+                    hyperParameterAlgorithmSpecification.setAlgorithmName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("MetricDefinitions", targetDepth)) {
                     context.nextToken();
                     hyperParameterAlgorithmSpecification.setMetricDefinitions(new ListUnmarshaller<MetricDefinition>(MetricDefinitionJsonUnmarshaller

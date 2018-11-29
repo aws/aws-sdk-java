@@ -33,6 +33,8 @@ public class ServiceMarshaller {
             .marshallLocationName("Arn").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> NAMESPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NamespaceId").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<Integer> INSTANCECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -67,6 +69,7 @@ public class ServiceMarshaller {
             protocolMarshaller.marshall(service.getId(), ID_BINDING);
             protocolMarshaller.marshall(service.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(service.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(service.getNamespaceId(), NAMESPACEID_BINDING);
             protocolMarshaller.marshall(service.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(service.getInstanceCount(), INSTANCECOUNT_BINDING);
             protocolMarshaller.marshall(service.getDnsConfig(), DNSCONFIG_BINDING);

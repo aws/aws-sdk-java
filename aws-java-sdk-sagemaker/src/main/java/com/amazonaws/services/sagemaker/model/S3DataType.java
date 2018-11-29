@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum S3DataType {
 
     ManifestFile("ManifestFile"),
-    S3Prefix("S3Prefix");
+    S3Prefix("S3Prefix"),
+    AugmentedManifestFile("AugmentedManifestFile");
 
     private String value;
 

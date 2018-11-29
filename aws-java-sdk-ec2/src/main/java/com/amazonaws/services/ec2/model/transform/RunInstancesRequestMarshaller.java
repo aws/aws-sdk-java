@@ -374,6 +374,21 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             }
         }
 
+        com.amazonaws.internal.SdkInternalList<ElasticInferenceAccelerator> runInstancesRequestElasticInferenceAcceleratorsList = (com.amazonaws.internal.SdkInternalList<ElasticInferenceAccelerator>) runInstancesRequest
+                .getElasticInferenceAccelerators();
+        if (!runInstancesRequestElasticInferenceAcceleratorsList.isEmpty() || !runInstancesRequestElasticInferenceAcceleratorsList.isAutoConstruct()) {
+            int elasticInferenceAcceleratorsListIndex = 1;
+
+            for (ElasticInferenceAccelerator runInstancesRequestElasticInferenceAcceleratorsListValue : runInstancesRequestElasticInferenceAcceleratorsList) {
+
+                if (runInstancesRequestElasticInferenceAcceleratorsListValue.getType() != null) {
+                    request.addParameter("ElasticInferenceAccelerator." + elasticInferenceAcceleratorsListIndex + ".Type",
+                            StringUtils.fromString(runInstancesRequestElasticInferenceAcceleratorsListValue.getType()));
+                }
+                elasticInferenceAcceleratorsListIndex++;
+            }
+        }
+
         com.amazonaws.internal.SdkInternalList<TagSpecification> runInstancesRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) runInstancesRequest
                 .getTagSpecifications();
         if (!runInstancesRequestTagSpecificationsList.isEmpty() || !runInstancesRequestTagSpecificationsList.isAutoConstruct()) {
@@ -494,6 +509,29 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                     request.addParameter("CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationId",
                             StringUtils.fromString(capacityReservationTarget.getCapacityReservationId()));
                 }
+            }
+        }
+
+        HibernationOptionsRequest hibernationOptions = runInstancesRequest.getHibernationOptions();
+        if (hibernationOptions != null) {
+
+            if (hibernationOptions.getConfigured() != null) {
+                request.addParameter("HibernationOptions.Configured", StringUtils.fromBoolean(hibernationOptions.getConfigured()));
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<LicenseConfigurationRequest> runInstancesRequestLicenseSpecificationsList = (com.amazonaws.internal.SdkInternalList<LicenseConfigurationRequest>) runInstancesRequest
+                .getLicenseSpecifications();
+        if (!runInstancesRequestLicenseSpecificationsList.isEmpty() || !runInstancesRequestLicenseSpecificationsList.isAutoConstruct()) {
+            int licenseSpecificationsListIndex = 1;
+
+            for (LicenseConfigurationRequest runInstancesRequestLicenseSpecificationsListValue : runInstancesRequestLicenseSpecificationsList) {
+
+                if (runInstancesRequestLicenseSpecificationsListValue.getLicenseConfigurationArn() != null) {
+                    request.addParameter("LicenseSpecification." + licenseSpecificationsListIndex + ".LicenseConfigurationArn",
+                            StringUtils.fromString(runInstancesRequestLicenseSpecificationsListValue.getLicenseConfigurationArn()));
+                }
+                licenseSpecificationsListIndex++;
             }
         }
 

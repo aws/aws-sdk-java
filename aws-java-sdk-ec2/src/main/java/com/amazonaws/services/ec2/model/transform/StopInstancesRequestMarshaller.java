@@ -53,6 +53,10 @@ public class StopInstancesRequestMarshaller implements Marshaller<Request<StopIn
             }
         }
 
+        if (stopInstancesRequest.getHibernate() != null) {
+            request.addParameter("Hibernate", StringUtils.fromBoolean(stopInstancesRequest.getHibernate()));
+        }
+
         if (stopInstancesRequest.getForce() != null) {
             request.addParameter("Force", StringUtils.fromBoolean(stopInstancesRequest.getForce()));
         }

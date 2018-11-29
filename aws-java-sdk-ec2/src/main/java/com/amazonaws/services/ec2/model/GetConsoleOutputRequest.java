@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.GetConsoleOutputRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for GetConsoleOutput.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetConsoleOutputRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<GetConsoleOutputRequest> {

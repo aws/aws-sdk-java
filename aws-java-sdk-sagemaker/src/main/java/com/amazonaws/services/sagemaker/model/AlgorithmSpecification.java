@@ -46,6 +46,14 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     private String trainingImage;
     /**
      * <p>
+     * The name of the algorithm resource to use for the training job. This must be an algorithm resource that you
+     * created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't specify a value
+     * for <code>TrainingImage</code>.
+     * </p>
+     */
+    private String algorithmName;
+    /**
+     * <p>
      * The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
      * <code>File</code> input mode, Amazon SageMaker downloads the training data from S3 to the provisioned ML storage
@@ -128,6 +136,58 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
 
     public AlgorithmSpecification withTrainingImage(String trainingImage) {
         setTrainingImage(trainingImage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the algorithm resource to use for the training job. This must be an algorithm resource that you
+     * created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't specify a value
+     * for <code>TrainingImage</code>.
+     * </p>
+     * 
+     * @param algorithmName
+     *        The name of the algorithm resource to use for the training job. This must be an algorithm resource that
+     *        you created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't
+     *        specify a value for <code>TrainingImage</code>.
+     */
+
+    public void setAlgorithmName(String algorithmName) {
+        this.algorithmName = algorithmName;
+    }
+
+    /**
+     * <p>
+     * The name of the algorithm resource to use for the training job. This must be an algorithm resource that you
+     * created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't specify a value
+     * for <code>TrainingImage</code>.
+     * </p>
+     * 
+     * @return The name of the algorithm resource to use for the training job. This must be an algorithm resource that
+     *         you created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't
+     *         specify a value for <code>TrainingImage</code>.
+     */
+
+    public String getAlgorithmName() {
+        return this.algorithmName;
+    }
+
+    /**
+     * <p>
+     * The name of the algorithm resource to use for the training job. This must be an algorithm resource that you
+     * created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't specify a value
+     * for <code>TrainingImage</code>.
+     * </p>
+     * 
+     * @param algorithmName
+     *        The name of the algorithm resource to use for the training job. This must be an algorithm resource that
+     *        you created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't
+     *        specify a value for <code>TrainingImage</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AlgorithmSpecification withAlgorithmName(String algorithmName) {
+        setAlgorithmName(algorithmName);
         return this;
     }
 
@@ -405,6 +465,8 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
         sb.append("{");
         if (getTrainingImage() != null)
             sb.append("TrainingImage: ").append(getTrainingImage()).append(",");
+        if (getAlgorithmName() != null)
+            sb.append("AlgorithmName: ").append(getAlgorithmName()).append(",");
         if (getTrainingInputMode() != null)
             sb.append("TrainingInputMode: ").append(getTrainingInputMode()).append(",");
         if (getMetricDefinitions() != null)
@@ -427,6 +489,10 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
             return false;
         if (other.getTrainingImage() != null && other.getTrainingImage().equals(this.getTrainingImage()) == false)
             return false;
+        if (other.getAlgorithmName() == null ^ this.getAlgorithmName() == null)
+            return false;
+        if (other.getAlgorithmName() != null && other.getAlgorithmName().equals(this.getAlgorithmName()) == false)
+            return false;
         if (other.getTrainingInputMode() == null ^ this.getTrainingInputMode() == null)
             return false;
         if (other.getTrainingInputMode() != null && other.getTrainingInputMode().equals(this.getTrainingInputMode()) == false)
@@ -444,6 +510,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTrainingImage() == null) ? 0 : getTrainingImage().hashCode());
+        hashCode = prime * hashCode + ((getAlgorithmName() == null) ? 0 : getAlgorithmName().hashCode());
         hashCode = prime * hashCode + ((getTrainingInputMode() == null) ? 0 : getTrainingInputMode().hashCode());
         hashCode = prime * hashCode + ((getMetricDefinitions() == null) ? 0 : getMetricDefinitions().hashCode());
         return hashCode;

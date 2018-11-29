@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.RunInstancesRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for RunInstances.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RunInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<RunInstancesRequest> {
@@ -264,6 +262,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private com.amazonaws.internal.SdkInternalList<ElasticGpuSpecification> elasticGpuSpecification;
     /**
      * <p>
+     * An elastic inference accelerator.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ElasticInferenceAccelerator> elasticInferenceAccelerators;
+    /**
+     * <p>
      * The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The specified
      * tags are applied to all instances or volumes that are created during launch. To tag a resource after it has been
      * created, see <a>CreateTags</a>.
@@ -315,6 +319,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      */
     private CapacityReservationSpecification capacityReservationSpecification;
+    /**
+     * <p>
+     * Indicates whether an instance is enabled for hibernation. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     */
+    private HibernationOptionsRequest hibernationOptions;
+    /**
+     * <p>
+     * The license configurations.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<LicenseConfigurationRequest> licenseSpecifications;
 
     /**
      * Default constructor for RunInstancesRequest object. Callers should use the setter or fluent setter (with...)
@@ -2213,6 +2231,79 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
+     * An elastic inference accelerator.
+     * </p>
+     * 
+     * @return An elastic inference accelerator.
+     */
+
+    public java.util.List<ElasticInferenceAccelerator> getElasticInferenceAccelerators() {
+        if (elasticInferenceAccelerators == null) {
+            elasticInferenceAccelerators = new com.amazonaws.internal.SdkInternalList<ElasticInferenceAccelerator>();
+        }
+        return elasticInferenceAccelerators;
+    }
+
+    /**
+     * <p>
+     * An elastic inference accelerator.
+     * </p>
+     * 
+     * @param elasticInferenceAccelerators
+     *        An elastic inference accelerator.
+     */
+
+    public void setElasticInferenceAccelerators(java.util.Collection<ElasticInferenceAccelerator> elasticInferenceAccelerators) {
+        if (elasticInferenceAccelerators == null) {
+            this.elasticInferenceAccelerators = null;
+            return;
+        }
+
+        this.elasticInferenceAccelerators = new com.amazonaws.internal.SdkInternalList<ElasticInferenceAccelerator>(elasticInferenceAccelerators);
+    }
+
+    /**
+     * <p>
+     * An elastic inference accelerator.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setElasticInferenceAccelerators(java.util.Collection)} or
+     * {@link #withElasticInferenceAccelerators(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param elasticInferenceAccelerators
+     *        An elastic inference accelerator.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withElasticInferenceAccelerators(ElasticInferenceAccelerator... elasticInferenceAccelerators) {
+        if (this.elasticInferenceAccelerators == null) {
+            setElasticInferenceAccelerators(new com.amazonaws.internal.SdkInternalList<ElasticInferenceAccelerator>(elasticInferenceAccelerators.length));
+        }
+        for (ElasticInferenceAccelerator ele : elasticInferenceAccelerators) {
+            this.elasticInferenceAccelerators.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An elastic inference accelerator.
+     * </p>
+     * 
+     * @param elasticInferenceAccelerators
+     *        An elastic inference accelerator.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withElasticInferenceAccelerators(java.util.Collection<ElasticInferenceAccelerator> elasticInferenceAccelerators) {
+        setElasticInferenceAccelerators(elasticInferenceAccelerators);
+        return this;
+    }
+
+    /**
+     * <p>
      * The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The specified
      * tags are applied to all instances or volumes that are created during launch. To tag a resource after it has been
      * created, see <a>CreateTags</a>.
@@ -2585,6 +2676,131 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * <p>
+     * Indicates whether an instance is enabled for hibernation. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param hibernationOptions
+     *        Indicates whether an instance is enabled for hibernation. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public void setHibernationOptions(HibernationOptionsRequest hibernationOptions) {
+        this.hibernationOptions = hibernationOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates whether an instance is enabled for hibernation. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether an instance is enabled for hibernation. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public HibernationOptionsRequest getHibernationOptions() {
+        return this.hibernationOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates whether an instance is enabled for hibernation. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param hibernationOptions
+     *        Indicates whether an instance is enabled for hibernation. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withHibernationOptions(HibernationOptionsRequest hibernationOptions) {
+        setHibernationOptions(hibernationOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The license configurations.
+     * </p>
+     * 
+     * @return The license configurations.
+     */
+
+    public java.util.List<LicenseConfigurationRequest> getLicenseSpecifications() {
+        if (licenseSpecifications == null) {
+            licenseSpecifications = new com.amazonaws.internal.SdkInternalList<LicenseConfigurationRequest>();
+        }
+        return licenseSpecifications;
+    }
+
+    /**
+     * <p>
+     * The license configurations.
+     * </p>
+     * 
+     * @param licenseSpecifications
+     *        The license configurations.
+     */
+
+    public void setLicenseSpecifications(java.util.Collection<LicenseConfigurationRequest> licenseSpecifications) {
+        if (licenseSpecifications == null) {
+            this.licenseSpecifications = null;
+            return;
+        }
+
+        this.licenseSpecifications = new com.amazonaws.internal.SdkInternalList<LicenseConfigurationRequest>(licenseSpecifications);
+    }
+
+    /**
+     * <p>
+     * The license configurations.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLicenseSpecifications(java.util.Collection)} or
+     * {@link #withLicenseSpecifications(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param licenseSpecifications
+     *        The license configurations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withLicenseSpecifications(LicenseConfigurationRequest... licenseSpecifications) {
+        if (this.licenseSpecifications == null) {
+            setLicenseSpecifications(new com.amazonaws.internal.SdkInternalList<LicenseConfigurationRequest>(licenseSpecifications.length));
+        }
+        for (LicenseConfigurationRequest ele : licenseSpecifications) {
+            this.licenseSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The license configurations.
+     * </p>
+     * 
+     * @param licenseSpecifications
+     *        The license configurations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withLicenseSpecifications(java.util.Collection<LicenseConfigurationRequest> licenseSpecifications) {
+        setLicenseSpecifications(licenseSpecifications);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -2656,6 +2872,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
             sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
         if (getElasticGpuSpecification() != null)
             sb.append("ElasticGpuSpecification: ").append(getElasticGpuSpecification()).append(",");
+        if (getElasticInferenceAccelerators() != null)
+            sb.append("ElasticInferenceAccelerators: ").append(getElasticInferenceAccelerators()).append(",");
         if (getTagSpecifications() != null)
             sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
         if (getLaunchTemplate() != null)
@@ -2667,7 +2885,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         if (getCpuOptions() != null)
             sb.append("CpuOptions: ").append(getCpuOptions()).append(",");
         if (getCapacityReservationSpecification() != null)
-            sb.append("CapacityReservationSpecification: ").append(getCapacityReservationSpecification());
+            sb.append("CapacityReservationSpecification: ").append(getCapacityReservationSpecification()).append(",");
+        if (getHibernationOptions() != null)
+            sb.append("HibernationOptions: ").append(getHibernationOptions()).append(",");
+        if (getLicenseSpecifications() != null)
+            sb.append("LicenseSpecifications: ").append(getLicenseSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -2783,6 +3005,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getElasticGpuSpecification() != null && other.getElasticGpuSpecification().equals(this.getElasticGpuSpecification()) == false)
             return false;
+        if (other.getElasticInferenceAccelerators() == null ^ this.getElasticInferenceAccelerators() == null)
+            return false;
+        if (other.getElasticInferenceAccelerators() != null && other.getElasticInferenceAccelerators().equals(this.getElasticInferenceAccelerators()) == false)
+            return false;
         if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
             return false;
         if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
@@ -2807,6 +3033,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getCapacityReservationSpecification() != null
                 && other.getCapacityReservationSpecification().equals(this.getCapacityReservationSpecification()) == false)
+            return false;
+        if (other.getHibernationOptions() == null ^ this.getHibernationOptions() == null)
+            return false;
+        if (other.getHibernationOptions() != null && other.getHibernationOptions().equals(this.getHibernationOptions()) == false)
+            return false;
+        if (other.getLicenseSpecifications() == null ^ this.getLicenseSpecifications() == null)
+            return false;
+        if (other.getLicenseSpecifications() != null && other.getLicenseSpecifications().equals(this.getLicenseSpecifications()) == false)
             return false;
         return true;
     }
@@ -2841,12 +3075,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
         hashCode = prime * hashCode + ((getElasticGpuSpecification() == null) ? 0 : getElasticGpuSpecification().hashCode());
+        hashCode = prime * hashCode + ((getElasticInferenceAccelerators() == null) ? 0 : getElasticInferenceAccelerators().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
         hashCode = prime * hashCode + ((getInstanceMarketOptions() == null) ? 0 : getInstanceMarketOptions().hashCode());
         hashCode = prime * hashCode + ((getCreditSpecification() == null) ? 0 : getCreditSpecification().hashCode());
         hashCode = prime * hashCode + ((getCpuOptions() == null) ? 0 : getCpuOptions().hashCode());
         hashCode = prime * hashCode + ((getCapacityReservationSpecification() == null) ? 0 : getCapacityReservationSpecification().hashCode());
+        hashCode = prime * hashCode + ((getHibernationOptions() == null) ? 0 : getHibernationOptions().hashCode());
+        hashCode = prime * hashCode + ((getLicenseSpecifications() == null) ? 0 : getLicenseSpecifications().hashCode());
         return hashCode;
     }
 

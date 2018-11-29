@@ -59,6 +59,13 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
     private String trainingInputMode;
     /**
      * <p>
+     * The name of the resource algorithm to use for the hyperparameter tuning job. If you specify a value for this
+     * parameter, do not specify a value for <code>TrainingImage</code>.
+     * </p>
+     */
+    private String algorithmName;
+    /**
+     * <p>
      * An array of <a>MetricDefinition</a> objects that specify the metrics that the algorithm emits.
      * </p>
      */
@@ -283,6 +290,52 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
 
     /**
      * <p>
+     * The name of the resource algorithm to use for the hyperparameter tuning job. If you specify a value for this
+     * parameter, do not specify a value for <code>TrainingImage</code>.
+     * </p>
+     * 
+     * @param algorithmName
+     *        The name of the resource algorithm to use for the hyperparameter tuning job. If you specify a value for
+     *        this parameter, do not specify a value for <code>TrainingImage</code>.
+     */
+
+    public void setAlgorithmName(String algorithmName) {
+        this.algorithmName = algorithmName;
+    }
+
+    /**
+     * <p>
+     * The name of the resource algorithm to use for the hyperparameter tuning job. If you specify a value for this
+     * parameter, do not specify a value for <code>TrainingImage</code>.
+     * </p>
+     * 
+     * @return The name of the resource algorithm to use for the hyperparameter tuning job. If you specify a value for
+     *         this parameter, do not specify a value for <code>TrainingImage</code>.
+     */
+
+    public String getAlgorithmName() {
+        return this.algorithmName;
+    }
+
+    /**
+     * <p>
+     * The name of the resource algorithm to use for the hyperparameter tuning job. If you specify a value for this
+     * parameter, do not specify a value for <code>TrainingImage</code>.
+     * </p>
+     * 
+     * @param algorithmName
+     *        The name of the resource algorithm to use for the hyperparameter tuning job. If you specify a value for
+     *        this parameter, do not specify a value for <code>TrainingImage</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HyperParameterAlgorithmSpecification withAlgorithmName(String algorithmName) {
+        setAlgorithmName(algorithmName);
+        return this;
+    }
+
+    /**
+     * <p>
      * An array of <a>MetricDefinition</a> objects that specify the metrics that the algorithm emits.
      * </p>
      * 
@@ -366,6 +419,8 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
             sb.append("TrainingImage: ").append(getTrainingImage()).append(",");
         if (getTrainingInputMode() != null)
             sb.append("TrainingInputMode: ").append(getTrainingInputMode()).append(",");
+        if (getAlgorithmName() != null)
+            sb.append("AlgorithmName: ").append(getAlgorithmName()).append(",");
         if (getMetricDefinitions() != null)
             sb.append("MetricDefinitions: ").append(getMetricDefinitions());
         sb.append("}");
@@ -390,6 +445,10 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
             return false;
         if (other.getTrainingInputMode() != null && other.getTrainingInputMode().equals(this.getTrainingInputMode()) == false)
             return false;
+        if (other.getAlgorithmName() == null ^ this.getAlgorithmName() == null)
+            return false;
+        if (other.getAlgorithmName() != null && other.getAlgorithmName().equals(this.getAlgorithmName()) == false)
+            return false;
         if (other.getMetricDefinitions() == null ^ this.getMetricDefinitions() == null)
             return false;
         if (other.getMetricDefinitions() != null && other.getMetricDefinitions().equals(this.getMetricDefinitions()) == false)
@@ -404,6 +463,7 @@ public class HyperParameterAlgorithmSpecification implements Serializable, Clone
 
         hashCode = prime * hashCode + ((getTrainingImage() == null) ? 0 : getTrainingImage().hashCode());
         hashCode = prime * hashCode + ((getTrainingInputMode() == null) ? 0 : getTrainingInputMode().hashCode());
+        hashCode = prime * hashCode + ((getAlgorithmName() == null) ? 0 : getAlgorithmName().hashCode());
         hashCode = prime * hashCode + ((getMetricDefinitions() == null) ? 0 : getMetricDefinitions().hashCode());
         return hashCode;
     }

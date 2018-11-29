@@ -126,6 +126,12 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<ElasticGpuSpecificationResponse> elasticGpuSpecifications;
     /**
      * <p>
+     * The elastic inference accelerator for the instance.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<LaunchTemplateElasticInferenceAcceleratorResponse> elasticInferenceAccelerators;
+    /**
+     * <p>
      * The security group IDs.
      * </p>
      */
@@ -162,6 +168,20 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
      * </p>
      */
     private LaunchTemplateCapacityReservationSpecificationResponse capacityReservationSpecification;
+    /**
+     * <p>
+     * Indicates whether an instance is configured for hibernation. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     */
+    private LaunchTemplateHibernationOptions hibernationOptions;
+    /**
+     * <p>
+     * The license configurations.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<LaunchTemplateLicenseConfiguration> licenseSpecifications;
 
     /**
      * <p>
@@ -1015,6 +1035,82 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The elastic inference accelerator for the instance.
+     * </p>
+     * 
+     * @return The elastic inference accelerator for the instance.
+     */
+
+    public java.util.List<LaunchTemplateElasticInferenceAcceleratorResponse> getElasticInferenceAccelerators() {
+        if (elasticInferenceAccelerators == null) {
+            elasticInferenceAccelerators = new com.amazonaws.internal.SdkInternalList<LaunchTemplateElasticInferenceAcceleratorResponse>();
+        }
+        return elasticInferenceAccelerators;
+    }
+
+    /**
+     * <p>
+     * The elastic inference accelerator for the instance.
+     * </p>
+     * 
+     * @param elasticInferenceAccelerators
+     *        The elastic inference accelerator for the instance.
+     */
+
+    public void setElasticInferenceAccelerators(java.util.Collection<LaunchTemplateElasticInferenceAcceleratorResponse> elasticInferenceAccelerators) {
+        if (elasticInferenceAccelerators == null) {
+            this.elasticInferenceAccelerators = null;
+            return;
+        }
+
+        this.elasticInferenceAccelerators = new com.amazonaws.internal.SdkInternalList<LaunchTemplateElasticInferenceAcceleratorResponse>(
+                elasticInferenceAccelerators);
+    }
+
+    /**
+     * <p>
+     * The elastic inference accelerator for the instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setElasticInferenceAccelerators(java.util.Collection)} or
+     * {@link #withElasticInferenceAccelerators(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param elasticInferenceAccelerators
+     *        The elastic inference accelerator for the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResponseLaunchTemplateData withElasticInferenceAccelerators(LaunchTemplateElasticInferenceAcceleratorResponse... elasticInferenceAccelerators) {
+        if (this.elasticInferenceAccelerators == null) {
+            setElasticInferenceAccelerators(new com.amazonaws.internal.SdkInternalList<LaunchTemplateElasticInferenceAcceleratorResponse>(
+                    elasticInferenceAccelerators.length));
+        }
+        for (LaunchTemplateElasticInferenceAcceleratorResponse ele : elasticInferenceAccelerators) {
+            this.elasticInferenceAccelerators.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The elastic inference accelerator for the instance.
+     * </p>
+     * 
+     * @param elasticInferenceAccelerators
+     *        The elastic inference accelerator for the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResponseLaunchTemplateData withElasticInferenceAccelerators(
+            java.util.Collection<LaunchTemplateElasticInferenceAcceleratorResponse> elasticInferenceAccelerators) {
+        setElasticInferenceAccelerators(elasticInferenceAccelerators);
+        return this;
+    }
+
+    /**
+     * <p>
      * The security group IDs.
      * </p>
      * 
@@ -1333,6 +1429,131 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether an instance is configured for hibernation. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param hibernationOptions
+     *        Indicates whether an instance is configured for hibernation. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public void setHibernationOptions(LaunchTemplateHibernationOptions hibernationOptions) {
+        this.hibernationOptions = hibernationOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates whether an instance is configured for hibernation. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether an instance is configured for hibernation. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public LaunchTemplateHibernationOptions getHibernationOptions() {
+        return this.hibernationOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates whether an instance is configured for hibernation. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param hibernationOptions
+     *        Indicates whether an instance is configured for hibernation. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResponseLaunchTemplateData withHibernationOptions(LaunchTemplateHibernationOptions hibernationOptions) {
+        setHibernationOptions(hibernationOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The license configurations.
+     * </p>
+     * 
+     * @return The license configurations.
+     */
+
+    public java.util.List<LaunchTemplateLicenseConfiguration> getLicenseSpecifications() {
+        if (licenseSpecifications == null) {
+            licenseSpecifications = new com.amazonaws.internal.SdkInternalList<LaunchTemplateLicenseConfiguration>();
+        }
+        return licenseSpecifications;
+    }
+
+    /**
+     * <p>
+     * The license configurations.
+     * </p>
+     * 
+     * @param licenseSpecifications
+     *        The license configurations.
+     */
+
+    public void setLicenseSpecifications(java.util.Collection<LaunchTemplateLicenseConfiguration> licenseSpecifications) {
+        if (licenseSpecifications == null) {
+            this.licenseSpecifications = null;
+            return;
+        }
+
+        this.licenseSpecifications = new com.amazonaws.internal.SdkInternalList<LaunchTemplateLicenseConfiguration>(licenseSpecifications);
+    }
+
+    /**
+     * <p>
+     * The license configurations.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLicenseSpecifications(java.util.Collection)} or
+     * {@link #withLicenseSpecifications(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param licenseSpecifications
+     *        The license configurations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResponseLaunchTemplateData withLicenseSpecifications(LaunchTemplateLicenseConfiguration... licenseSpecifications) {
+        if (this.licenseSpecifications == null) {
+            setLicenseSpecifications(new com.amazonaws.internal.SdkInternalList<LaunchTemplateLicenseConfiguration>(licenseSpecifications.length));
+        }
+        for (LaunchTemplateLicenseConfiguration ele : licenseSpecifications) {
+            this.licenseSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The license configurations.
+     * </p>
+     * 
+     * @param licenseSpecifications
+     *        The license configurations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResponseLaunchTemplateData withLicenseSpecifications(java.util.Collection<LaunchTemplateLicenseConfiguration> licenseSpecifications) {
+        setLicenseSpecifications(licenseSpecifications);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1375,6 +1596,8 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
             sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
         if (getElasticGpuSpecifications() != null)
             sb.append("ElasticGpuSpecifications: ").append(getElasticGpuSpecifications()).append(",");
+        if (getElasticInferenceAccelerators() != null)
+            sb.append("ElasticInferenceAccelerators: ").append(getElasticInferenceAccelerators()).append(",");
         if (getSecurityGroupIds() != null)
             sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
         if (getSecurityGroups() != null)
@@ -1386,7 +1609,11 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
         if (getCpuOptions() != null)
             sb.append("CpuOptions: ").append(getCpuOptions()).append(",");
         if (getCapacityReservationSpecification() != null)
-            sb.append("CapacityReservationSpecification: ").append(getCapacityReservationSpecification());
+            sb.append("CapacityReservationSpecification: ").append(getCapacityReservationSpecification()).append(",");
+        if (getHibernationOptions() != null)
+            sb.append("HibernationOptions: ").append(getHibernationOptions()).append(",");
+        if (getLicenseSpecifications() != null)
+            sb.append("LicenseSpecifications: ").append(getLicenseSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -1466,6 +1693,10 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
             return false;
         if (other.getElasticGpuSpecifications() != null && other.getElasticGpuSpecifications().equals(this.getElasticGpuSpecifications()) == false)
             return false;
+        if (other.getElasticInferenceAccelerators() == null ^ this.getElasticInferenceAccelerators() == null)
+            return false;
+        if (other.getElasticInferenceAccelerators() != null && other.getElasticInferenceAccelerators().equals(this.getElasticInferenceAccelerators()) == false)
+            return false;
         if (other.getSecurityGroupIds() == null ^ this.getSecurityGroupIds() == null)
             return false;
         if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false)
@@ -1491,6 +1722,14 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
         if (other.getCapacityReservationSpecification() != null
                 && other.getCapacityReservationSpecification().equals(this.getCapacityReservationSpecification()) == false)
             return false;
+        if (other.getHibernationOptions() == null ^ this.getHibernationOptions() == null)
+            return false;
+        if (other.getHibernationOptions() != null && other.getHibernationOptions().equals(this.getHibernationOptions()) == false)
+            return false;
+        if (other.getLicenseSpecifications() == null ^ this.getLicenseSpecifications() == null)
+            return false;
+        if (other.getLicenseSpecifications() != null && other.getLicenseSpecifications().equals(this.getLicenseSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -1515,12 +1754,15 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getElasticGpuSpecifications() == null) ? 0 : getElasticGpuSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getElasticInferenceAccelerators() == null) ? 0 : getElasticInferenceAccelerators().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getInstanceMarketOptions() == null) ? 0 : getInstanceMarketOptions().hashCode());
         hashCode = prime * hashCode + ((getCreditSpecification() == null) ? 0 : getCreditSpecification().hashCode());
         hashCode = prime * hashCode + ((getCpuOptions() == null) ? 0 : getCpuOptions().hashCode());
         hashCode = prime * hashCode + ((getCapacityReservationSpecification() == null) ? 0 : getCapacityReservationSpecification().hashCode());
+        hashCode = prime * hashCode + ((getHibernationOptions() == null) ? 0 : getHibernationOptions().hashCode());
+        hashCode = prime * hashCode + ((getLicenseSpecifications() == null) ? 0 : getLicenseSpecifications().hashCode());
         return hashCode;
     }
 

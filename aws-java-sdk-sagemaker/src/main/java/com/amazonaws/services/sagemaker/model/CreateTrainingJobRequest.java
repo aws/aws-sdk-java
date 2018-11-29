@@ -55,7 +55,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     private AlgorithmSpecification algorithmSpecification;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform tasks on your behalf.
      * </p>
      * <p>
      * During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket, download a
@@ -138,6 +138,20 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
+     * within a training cluster for distributed training. If network isolation is used for training jobs that are
+     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
+     * specifed VPC, but the training container does not have network access.
+     * </p>
+     * <note>
+     * <p>
+     * The Semantic Segmentation built-in algorithm does not support network isolation.
+     * </p>
+     * </note>
+     */
+    private Boolean enableNetworkIsolation;
 
     /**
      * <p>
@@ -342,7 +356,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform tasks on your behalf.
      * </p>
      * <p>
      * During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket, download a
@@ -359,7 +373,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </note>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your
+     *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform tasks on your
      *        behalf. </p>
      *        <p>
      *        During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket,
@@ -381,7 +395,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform tasks on your behalf.
      * </p>
      * <p>
      * During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket, download a
@@ -397,7 +411,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </note>
      * 
-     * @return The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your
+     * @return The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform tasks on your
      *         behalf. </p>
      *         <p>
      *         During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket,
@@ -419,7 +433,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform tasks on your behalf.
      * </p>
      * <p>
      * During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket, download a
@@ -436,7 +450,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </note>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your
+     *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform tasks on your
      *        behalf. </p>
      *        <p>
      *        During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket,
@@ -956,6 +970,118 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
+     * within a training cluster for distributed training. If network isolation is used for training jobs that are
+     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
+     * specifed VPC, but the training container does not have network access.
+     * </p>
+     * <note>
+     * <p>
+     * The Semantic Segmentation built-in algorithm does not support network isolation.
+     * </p>
+     * </note>
+     * 
+     * @param enableNetworkIsolation
+     *        Isolates the training container. No inbound or outbound network calls can be made, except for calls
+     *        between peers within a training cluster for distributed training. If network isolation is used for
+     *        training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
+     *        model artifacts through the specifed VPC, but the training container does not have network access.</p>
+     *        <note>
+     *        <p>
+     *        The Semantic Segmentation built-in algorithm does not support network isolation.
+     *        </p>
+     */
+
+    public void setEnableNetworkIsolation(Boolean enableNetworkIsolation) {
+        this.enableNetworkIsolation = enableNetworkIsolation;
+    }
+
+    /**
+     * <p>
+     * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
+     * within a training cluster for distributed training. If network isolation is used for training jobs that are
+     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
+     * specifed VPC, but the training container does not have network access.
+     * </p>
+     * <note>
+     * <p>
+     * The Semantic Segmentation built-in algorithm does not support network isolation.
+     * </p>
+     * </note>
+     * 
+     * @return Isolates the training container. No inbound or outbound network calls can be made, except for calls
+     *         between peers within a training cluster for distributed training. If network isolation is used for
+     *         training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
+     *         model artifacts through the specifed VPC, but the training container does not have network access.</p>
+     *         <note>
+     *         <p>
+     *         The Semantic Segmentation built-in algorithm does not support network isolation.
+     *         </p>
+     */
+
+    public Boolean getEnableNetworkIsolation() {
+        return this.enableNetworkIsolation;
+    }
+
+    /**
+     * <p>
+     * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
+     * within a training cluster for distributed training. If network isolation is used for training jobs that are
+     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
+     * specifed VPC, but the training container does not have network access.
+     * </p>
+     * <note>
+     * <p>
+     * The Semantic Segmentation built-in algorithm does not support network isolation.
+     * </p>
+     * </note>
+     * 
+     * @param enableNetworkIsolation
+     *        Isolates the training container. No inbound or outbound network calls can be made, except for calls
+     *        between peers within a training cluster for distributed training. If network isolation is used for
+     *        training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
+     *        model artifacts through the specifed VPC, but the training container does not have network access.</p>
+     *        <note>
+     *        <p>
+     *        The Semantic Segmentation built-in algorithm does not support network isolation.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTrainingJobRequest withEnableNetworkIsolation(Boolean enableNetworkIsolation) {
+        setEnableNetworkIsolation(enableNetworkIsolation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
+     * within a training cluster for distributed training. If network isolation is used for training jobs that are
+     * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
+     * specifed VPC, but the training container does not have network access.
+     * </p>
+     * <note>
+     * <p>
+     * The Semantic Segmentation built-in algorithm does not support network isolation.
+     * </p>
+     * </note>
+     * 
+     * @return Isolates the training container. No inbound or outbound network calls can be made, except for calls
+     *         between peers within a training cluster for distributed training. If network isolation is used for
+     *         training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
+     *         model artifacts through the specifed VPC, but the training container does not have network access.</p>
+     *         <note>
+     *         <p>
+     *         The Semantic Segmentation built-in algorithm does not support network isolation.
+     *         </p>
+     */
+
+    public Boolean isEnableNetworkIsolation() {
+        return this.enableNetworkIsolation;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -985,7 +1111,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getStoppingCondition() != null)
             sb.append("StoppingCondition: ").append(getStoppingCondition()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getEnableNetworkIsolation() != null)
+            sb.append("EnableNetworkIsolation: ").append(getEnableNetworkIsolation());
         sb.append("}");
         return sb.toString();
     }
@@ -1040,6 +1168,10 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getEnableNetworkIsolation() == null ^ this.getEnableNetworkIsolation() == null)
+            return false;
+        if (other.getEnableNetworkIsolation() != null && other.getEnableNetworkIsolation().equals(this.getEnableNetworkIsolation()) == false)
+            return false;
         return true;
     }
 
@@ -1058,6 +1190,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getStoppingCondition() == null) ? 0 : getStoppingCondition().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getEnableNetworkIsolation() == null) ? 0 : getEnableNetworkIsolation().hashCode());
         return hashCode;
     }
 

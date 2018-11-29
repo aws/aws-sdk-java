@@ -41,6 +41,8 @@ public class LoadBalancerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("location").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> DNSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("dnsName").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -82,6 +84,7 @@ public class LoadBalancerMarshaller {
             protocolMarshaller.marshall(loadBalancer.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(loadBalancer.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(loadBalancer.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(loadBalancer.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(loadBalancer.getDnsName(), DNSNAME_BINDING);
             protocolMarshaller.marshall(loadBalancer.getState(), STATE_BINDING);
             protocolMarshaller.marshall(loadBalancer.getProtocol(), PROTOCOL_BINDING);

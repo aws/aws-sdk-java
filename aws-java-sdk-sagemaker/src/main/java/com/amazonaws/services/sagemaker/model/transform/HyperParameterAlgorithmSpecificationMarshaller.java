@@ -32,6 +32,8 @@ public class HyperParameterAlgorithmSpecificationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingImage").build();
     private static final MarshallingInfo<String> TRAININGINPUTMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingInputMode").build();
+    private static final MarshallingInfo<String> ALGORITHMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AlgorithmName").build();
     private static final MarshallingInfo<List> METRICDEFINITIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetricDefinitions").build();
 
@@ -53,6 +55,7 @@ public class HyperParameterAlgorithmSpecificationMarshaller {
         try {
             protocolMarshaller.marshall(hyperParameterAlgorithmSpecification.getTrainingImage(), TRAININGIMAGE_BINDING);
             protocolMarshaller.marshall(hyperParameterAlgorithmSpecification.getTrainingInputMode(), TRAININGINPUTMODE_BINDING);
+            protocolMarshaller.marshall(hyperParameterAlgorithmSpecification.getAlgorithmName(), ALGORITHMNAME_BINDING);
             protocolMarshaller.marshall(hyperParameterAlgorithmSpecification.getMetricDefinitions(), METRICDEFINITIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

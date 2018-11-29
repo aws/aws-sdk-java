@@ -90,6 +90,11 @@ public class StateReason implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>Client.UserInitiatedHibernate</code>: Hibernation was initiated on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the Amazon EC2 API.
      * </p>
      * </li>
@@ -201,6 +206,11 @@ public class StateReason implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>Client.UserInitiatedHibernate</code>: Hibernation was initiated on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the Amazon EC2 API.
      * </p>
      * </li>
@@ -264,6 +274,11 @@ public class StateReason implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>Client.InvalidSnapshot.NotFound</code>: The specified snapshot was not found.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Client.UserInitiatedHibernate</code>: Hibernation was initiated on the instance.
      *        </p>
      *        </li>
      *        <li>
@@ -341,6 +356,11 @@ public class StateReason implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>Client.UserInitiatedHibernate</code>: Hibernation was initiated on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the Amazon EC2 API.
      * </p>
      * </li>
@@ -403,6 +423,11 @@ public class StateReason implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>Client.InvalidSnapshot.NotFound</code>: The specified snapshot was not found.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Client.UserInitiatedHibernate</code>: Hibernation was initiated on the instance.
      *         </p>
      *         </li>
      *         <li>
@@ -480,6 +505,11 @@ public class StateReason implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>Client.UserInitiatedHibernate</code>: Hibernation was initiated on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the Amazon EC2 API.
      * </p>
      * </li>
@@ -543,6 +573,11 @@ public class StateReason implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>Client.InvalidSnapshot.NotFound</code>: The specified snapshot was not found.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Client.UserInitiatedHibernate</code>: Hibernation was initiated on the instance.
      *        </p>
      *        </li>
      *        <li>

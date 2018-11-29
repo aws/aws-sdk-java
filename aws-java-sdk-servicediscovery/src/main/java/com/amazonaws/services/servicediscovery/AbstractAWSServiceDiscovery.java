@@ -28,6 +28,11 @@ public class AbstractAWSServiceDiscovery implements AWSServiceDiscovery {
     }
 
     @Override
+    public CreateHttpNamespaceResult createHttpNamespace(CreateHttpNamespaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreatePrivateDnsNamespaceResult createPrivateDnsNamespace(CreatePrivateDnsNamespaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -54,6 +59,11 @@ public class AbstractAWSServiceDiscovery implements AWSServiceDiscovery {
 
     @Override
     public DeregisterInstanceResult deregisterInstance(DeregisterInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DiscoverInstancesResult discoverInstances(DiscoverInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

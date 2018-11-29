@@ -64,6 +64,22 @@ public class NamespaceSummaryJsonUnmarshaller implements Unmarshaller<NamespaceS
                     context.nextToken();
                     namespaceSummary.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Description", targetDepth)) {
+                    context.nextToken();
+                    namespaceSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ServiceCount", targetDepth)) {
+                    context.nextToken();
+                    namespaceSummary.setServiceCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("Properties", targetDepth)) {
+                    context.nextToken();
+                    namespaceSummary.setProperties(NamespacePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CreateDate", targetDepth)) {
+                    context.nextToken();
+                    namespaceSummary.setCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

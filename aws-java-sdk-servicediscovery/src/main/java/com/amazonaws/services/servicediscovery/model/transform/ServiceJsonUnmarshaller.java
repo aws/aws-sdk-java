@@ -60,6 +60,10 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                     context.nextToken();
                     service.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("NamespaceId", targetDepth)) {
+                    context.nextToken();
+                    service.setNamespaceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
                     service.setDescription(context.getUnmarshaller(String.class).unmarshall(context));

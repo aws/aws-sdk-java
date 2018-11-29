@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +40,8 @@ public class InstanceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("location").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> BLUEPRINTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("blueprintId").build();
     private static final MarshallingInfo<String> BLUEPRINTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -86,6 +89,7 @@ public class InstanceMarshaller {
             protocolMarshaller.marshall(instance.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(instance.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(instance.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(instance.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(instance.getBlueprintId(), BLUEPRINTID_BINDING);
             protocolMarshaller.marshall(instance.getBlueprintName(), BLUEPRINTNAME_BINDING);
             protocolMarshaller.marshall(instance.getBundleId(), BUNDLEID_BINDING);

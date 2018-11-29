@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.sagemaker.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -43,6 +44,10 @@ public class NotebookInstanceSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> NOTEBOOKINSTANCELIFECYCLECONFIGNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotebookInstanceLifecycleConfigName").build();
+    private static final MarshallingInfo<String> DEFAULTCODEREPOSITORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultCodeRepository").build();
+    private static final MarshallingInfo<List> ADDITIONALCODEREPOSITORIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalCodeRepositories").build();
 
     private static final NotebookInstanceSummaryMarshaller instance = new NotebookInstanceSummaryMarshaller();
 
@@ -68,6 +73,8 @@ public class NotebookInstanceSummaryMarshaller {
             protocolMarshaller.marshall(notebookInstanceSummary.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(notebookInstanceSummary.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
             protocolMarshaller.marshall(notebookInstanceSummary.getNotebookInstanceLifecycleConfigName(), NOTEBOOKINSTANCELIFECYCLECONFIGNAME_BINDING);
+            protocolMarshaller.marshall(notebookInstanceSummary.getDefaultCodeRepository(), DEFAULTCODEREPOSITORY_BINDING);
+            protocolMarshaller.marshall(notebookInstanceSummary.getAdditionalCodeRepositories(), ADDITIONALCODEREPOSITORIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

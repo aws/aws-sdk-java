@@ -61,6 +61,16 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private Float initialVariantWeight;
+    /**
+     * <p>
+     * The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide on-demand
+     * GPU computing for inference. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.
+     * </p>
+     */
+    private String acceleratorType;
 
     /**
      * <p>
@@ -297,6 +307,101 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide on-demand
+     * GPU computing for inference. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.
+     * </p>
+     * 
+     * @param acceleratorType
+     *        The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide
+     *        on-demand GPU computing for inference. For more information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+     *        SageMaker</a>. For more information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+     *        SageMaker</a>.
+     * @see ProductionVariantAcceleratorType
+     */
+
+    public void setAcceleratorType(String acceleratorType) {
+        this.acceleratorType = acceleratorType;
+    }
+
+    /**
+     * <p>
+     * The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide on-demand
+     * GPU computing for inference. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.
+     * </p>
+     * 
+     * @return The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide
+     *         on-demand GPU computing for inference. For more information, see <a
+     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+     *         SageMaker</a>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+     *         SageMaker</a>.
+     * @see ProductionVariantAcceleratorType
+     */
+
+    public String getAcceleratorType() {
+        return this.acceleratorType;
+    }
+
+    /**
+     * <p>
+     * The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide on-demand
+     * GPU computing for inference. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.
+     * </p>
+     * 
+     * @param acceleratorType
+     *        The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide
+     *        on-demand GPU computing for inference. For more information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+     *        SageMaker</a>. For more information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+     *        SageMaker</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProductionVariantAcceleratorType
+     */
+
+    public ProductionVariant withAcceleratorType(String acceleratorType) {
+        setAcceleratorType(acceleratorType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide on-demand
+     * GPU computing for inference. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.
+     * </p>
+     * 
+     * @param acceleratorType
+     *        The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide
+     *        on-demand GPU computing for inference. For more information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+     *        SageMaker</a>. For more information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+     *        SageMaker</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProductionVariantAcceleratorType
+     */
+
+    public ProductionVariant withAcceleratorType(ProductionVariantAcceleratorType acceleratorType) {
+        this.acceleratorType = acceleratorType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -316,7 +421,9 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getInitialVariantWeight() != null)
-            sb.append("InitialVariantWeight: ").append(getInitialVariantWeight());
+            sb.append("InitialVariantWeight: ").append(getInitialVariantWeight()).append(",");
+        if (getAcceleratorType() != null)
+            sb.append("AcceleratorType: ").append(getAcceleratorType());
         sb.append("}");
         return sb.toString();
     }
@@ -351,6 +458,10 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getInitialVariantWeight() != null && other.getInitialVariantWeight().equals(this.getInitialVariantWeight()) == false)
             return false;
+        if (other.getAcceleratorType() == null ^ this.getAcceleratorType() == null)
+            return false;
+        if (other.getAcceleratorType() != null && other.getAcceleratorType().equals(this.getAcceleratorType()) == false)
+            return false;
         return true;
     }
 
@@ -364,6 +475,7 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getInitialInstanceCount() == null) ? 0 : getInitialInstanceCount().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getInitialVariantWeight() == null) ? 0 : getInitialVariantWeight().hashCode());
+        hashCode = prime * hashCode + ((getAcceleratorType() == null) ? 0 : getAcceleratorType().hashCode());
         return hashCode;
     }
 

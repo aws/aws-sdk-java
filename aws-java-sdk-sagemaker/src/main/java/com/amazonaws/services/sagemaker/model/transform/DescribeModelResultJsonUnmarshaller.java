@@ -56,6 +56,11 @@ public class DescribeModelResultJsonUnmarshaller implements Unmarshaller<Describ
                     context.nextToken();
                     describeModelResult.setPrimaryContainer(ContainerDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Containers", targetDepth)) {
+                    context.nextToken();
+                    describeModelResult.setContainers(new ListUnmarshaller<ContainerDefinition>(ContainerDefinitionJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
                 if (context.testExpression("ExecutionRoleArn", targetDepth)) {
                     context.nextToken();
                     describeModelResult.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
@@ -71,6 +76,10 @@ public class DescribeModelResultJsonUnmarshaller implements Unmarshaller<Describ
                 if (context.testExpression("ModelArn", targetDepth)) {
                     context.nextToken();
                     describeModelResult.setModelArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EnableNetworkIsolation", targetDepth)) {
+                    context.nextToken();
+                    describeModelResult.setEnableNetworkIsolation(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

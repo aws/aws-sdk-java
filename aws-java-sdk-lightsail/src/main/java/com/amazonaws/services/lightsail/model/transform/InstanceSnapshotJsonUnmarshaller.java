@@ -72,6 +72,10 @@ public class InstanceSnapshotJsonUnmarshaller implements Unmarshaller<InstanceSn
                     context.nextToken();
                     instanceSnapshot.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    instanceSnapshot.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("state", targetDepth)) {
                     context.nextToken();
                     instanceSnapshot.setState(context.getUnmarshaller(String.class).unmarshall(context));

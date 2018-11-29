@@ -44,6 +44,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private String tuningJobArn;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or
+     * training job.
+     * </p>
+     */
+    private String labelingJobArn;
+    /**
+     * <p>
      * Information about the Amazon S3 location that is configured for storing model artifacts.
      * </p>
      */
@@ -297,6 +304,20 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private java.util.List<MetricData> finalMetricDataList;
+    /**
+     * <p>
+     * If <code>True</code>, inbound or outbound network calls can be made, except for calls between peers within a
+     * training cluster for distributed training. If network isolation is used for training jobs that are configured to
+     * use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specifed VPC, but
+     * the training container does not have network access.
+     * </p>
+     * <note>
+     * <p>
+     * The Semantic Segmentation built-in algorithm does not support network isolation.
+     * </p>
+     * </note>
+     */
+    private Boolean enableNetworkIsolation;
 
     /**
      * <p>
@@ -421,6 +442,52 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     public DescribeTrainingJobResult withTuningJobArn(String tuningJobArn) {
         setTuningJobArn(tuningJobArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or
+     * training job.
+     * </p>
+     * 
+     * @param labelingJobArn
+     *        The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the
+     *        transform or training job.
+     */
+
+    public void setLabelingJobArn(String labelingJobArn) {
+        this.labelingJobArn = labelingJobArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or
+     * training job.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the
+     *         transform or training job.
+     */
+
+    public String getLabelingJobArn() {
+        return this.labelingJobArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or
+     * training job.
+     * </p>
+     * 
+     * @param labelingJobArn
+     *        The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the
+     *        transform or training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withLabelingJobArn(String labelingJobArn) {
+        setLabelingJobArn(labelingJobArn);
         return this;
     }
 
@@ -2452,6 +2519,114 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * If <code>True</code>, inbound or outbound network calls can be made, except for calls between peers within a
+     * training cluster for distributed training. If network isolation is used for training jobs that are configured to
+     * use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specifed VPC, but
+     * the training container does not have network access.
+     * </p>
+     * <note>
+     * <p>
+     * The Semantic Segmentation built-in algorithm does not support network isolation.
+     * </p>
+     * </note>
+     * 
+     * @param enableNetworkIsolation
+     *        If <code>True</code>, inbound or outbound network calls can be made, except for calls between peers within
+     *        a training cluster for distributed training. If network isolation is used for training jobs that are
+     *        configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through
+     *        the specifed VPC, but the training container does not have network access.</p> <note>
+     *        <p>
+     *        The Semantic Segmentation built-in algorithm does not support network isolation.
+     *        </p>
+     */
+
+    public void setEnableNetworkIsolation(Boolean enableNetworkIsolation) {
+        this.enableNetworkIsolation = enableNetworkIsolation;
+    }
+
+    /**
+     * <p>
+     * If <code>True</code>, inbound or outbound network calls can be made, except for calls between peers within a
+     * training cluster for distributed training. If network isolation is used for training jobs that are configured to
+     * use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specifed VPC, but
+     * the training container does not have network access.
+     * </p>
+     * <note>
+     * <p>
+     * The Semantic Segmentation built-in algorithm does not support network isolation.
+     * </p>
+     * </note>
+     * 
+     * @return If <code>True</code>, inbound or outbound network calls can be made, except for calls between peers
+     *         within a training cluster for distributed training. If network isolation is used for training jobs that
+     *         are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts
+     *         through the specifed VPC, but the training container does not have network access.</p> <note>
+     *         <p>
+     *         The Semantic Segmentation built-in algorithm does not support network isolation.
+     *         </p>
+     */
+
+    public Boolean getEnableNetworkIsolation() {
+        return this.enableNetworkIsolation;
+    }
+
+    /**
+     * <p>
+     * If <code>True</code>, inbound or outbound network calls can be made, except for calls between peers within a
+     * training cluster for distributed training. If network isolation is used for training jobs that are configured to
+     * use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specifed VPC, but
+     * the training container does not have network access.
+     * </p>
+     * <note>
+     * <p>
+     * The Semantic Segmentation built-in algorithm does not support network isolation.
+     * </p>
+     * </note>
+     * 
+     * @param enableNetworkIsolation
+     *        If <code>True</code>, inbound or outbound network calls can be made, except for calls between peers within
+     *        a training cluster for distributed training. If network isolation is used for training jobs that are
+     *        configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through
+     *        the specifed VPC, but the training container does not have network access.</p> <note>
+     *        <p>
+     *        The Semantic Segmentation built-in algorithm does not support network isolation.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withEnableNetworkIsolation(Boolean enableNetworkIsolation) {
+        setEnableNetworkIsolation(enableNetworkIsolation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>True</code>, inbound or outbound network calls can be made, except for calls between peers within a
+     * training cluster for distributed training. If network isolation is used for training jobs that are configured to
+     * use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specifed VPC, but
+     * the training container does not have network access.
+     * </p>
+     * <note>
+     * <p>
+     * The Semantic Segmentation built-in algorithm does not support network isolation.
+     * </p>
+     * </note>
+     * 
+     * @return If <code>True</code>, inbound or outbound network calls can be made, except for calls between peers
+     *         within a training cluster for distributed training. If network isolation is used for training jobs that
+     *         are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts
+     *         through the specifed VPC, but the training container does not have network access.</p> <note>
+     *         <p>
+     *         The Semantic Segmentation built-in algorithm does not support network isolation.
+     *         </p>
+     */
+
+    public Boolean isEnableNetworkIsolation() {
+        return this.enableNetworkIsolation;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2468,6 +2643,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("TrainingJobArn: ").append(getTrainingJobArn()).append(",");
         if (getTuningJobArn() != null)
             sb.append("TuningJobArn: ").append(getTuningJobArn()).append(",");
+        if (getLabelingJobArn() != null)
+            sb.append("LabelingJobArn: ").append(getLabelingJobArn()).append(",");
         if (getModelArtifacts() != null)
             sb.append("ModelArtifacts: ").append(getModelArtifacts()).append(",");
         if (getTrainingJobStatus() != null)
@@ -2503,7 +2680,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         if (getSecondaryStatusTransitions() != null)
             sb.append("SecondaryStatusTransitions: ").append(getSecondaryStatusTransitions()).append(",");
         if (getFinalMetricDataList() != null)
-            sb.append("FinalMetricDataList: ").append(getFinalMetricDataList());
+            sb.append("FinalMetricDataList: ").append(getFinalMetricDataList()).append(",");
+        if (getEnableNetworkIsolation() != null)
+            sb.append("EnableNetworkIsolation: ").append(getEnableNetworkIsolation());
         sb.append("}");
         return sb.toString();
     }
@@ -2529,6 +2708,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         if (other.getTuningJobArn() == null ^ this.getTuningJobArn() == null)
             return false;
         if (other.getTuningJobArn() != null && other.getTuningJobArn().equals(this.getTuningJobArn()) == false)
+            return false;
+        if (other.getLabelingJobArn() == null ^ this.getLabelingJobArn() == null)
+            return false;
+        if (other.getLabelingJobArn() != null && other.getLabelingJobArn().equals(this.getLabelingJobArn()) == false)
             return false;
         if (other.getModelArtifacts() == null ^ this.getModelArtifacts() == null)
             return false;
@@ -2602,6 +2785,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getFinalMetricDataList() != null && other.getFinalMetricDataList().equals(this.getFinalMetricDataList()) == false)
             return false;
+        if (other.getEnableNetworkIsolation() == null ^ this.getEnableNetworkIsolation() == null)
+            return false;
+        if (other.getEnableNetworkIsolation() != null && other.getEnableNetworkIsolation().equals(this.getEnableNetworkIsolation()) == false)
+            return false;
         return true;
     }
 
@@ -2613,6 +2800,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getTrainingJobName() == null) ? 0 : getTrainingJobName().hashCode());
         hashCode = prime * hashCode + ((getTrainingJobArn() == null) ? 0 : getTrainingJobArn().hashCode());
         hashCode = prime * hashCode + ((getTuningJobArn() == null) ? 0 : getTuningJobArn().hashCode());
+        hashCode = prime * hashCode + ((getLabelingJobArn() == null) ? 0 : getLabelingJobArn().hashCode());
         hashCode = prime * hashCode + ((getModelArtifacts() == null) ? 0 : getModelArtifacts().hashCode());
         hashCode = prime * hashCode + ((getTrainingJobStatus() == null) ? 0 : getTrainingJobStatus().hashCode());
         hashCode = prime * hashCode + ((getSecondaryStatus() == null) ? 0 : getSecondaryStatus().hashCode());
@@ -2631,6 +2819,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getSecondaryStatusTransitions() == null) ? 0 : getSecondaryStatusTransitions().hashCode());
         hashCode = prime * hashCode + ((getFinalMetricDataList() == null) ? 0 : getFinalMetricDataList().hashCode());
+        hashCode = prime * hashCode + ((getEnableNetworkIsolation() == null) ? 0 : getEnableNetworkIsolation().hashCode());
         return hashCode;
     }
 

@@ -48,6 +48,12 @@ public class CreateNotebookInstanceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DirectInternetAccess").build();
     private static final MarshallingInfo<Integer> VOLUMESIZEINGB_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeSizeInGB").build();
+    private static final MarshallingInfo<List> ACCELERATORTYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceleratorTypes").build();
+    private static final MarshallingInfo<String> DEFAULTCODEREPOSITORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultCodeRepository").build();
+    private static final MarshallingInfo<List> ADDITIONALCODEREPOSITORIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalCodeRepositories").build();
 
     private static final CreateNotebookInstanceRequestMarshaller instance = new CreateNotebookInstanceRequestMarshaller();
 
@@ -75,6 +81,9 @@ public class CreateNotebookInstanceRequestMarshaller {
             protocolMarshaller.marshall(createNotebookInstanceRequest.getLifecycleConfigName(), LIFECYCLECONFIGNAME_BINDING);
             protocolMarshaller.marshall(createNotebookInstanceRequest.getDirectInternetAccess(), DIRECTINTERNETACCESS_BINDING);
             protocolMarshaller.marshall(createNotebookInstanceRequest.getVolumeSizeInGB(), VOLUMESIZEINGB_BINDING);
+            protocolMarshaller.marshall(createNotebookInstanceRequest.getAcceleratorTypes(), ACCELERATORTYPES_BINDING);
+            protocolMarshaller.marshall(createNotebookInstanceRequest.getDefaultCodeRepository(), DEFAULTCODEREPOSITORY_BINDING);
+            protocolMarshaller.marshall(createNotebookInstanceRequest.getAdditionalCodeRepositories(), ADDITIONALCODEREPOSITORIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

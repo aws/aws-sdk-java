@@ -72,6 +72,54 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private Integer volumeSizeInGB;
+    /**
+     * <p>
+     * The git repository to associate with the notebook instance as its default code repository. This can be either the
+     * name of a git repository stored as a resource in your account, or the URL of a git repository in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other git
+     * repository. When you open a notebook instance, it opens in the directory that contains this repository. For more
+     * information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
+     * Repositories with Amazon SageMaker Notebook Instances</a>.
+     * </p>
+     */
+    private String defaultCodeRepository;
+    /**
+     * <p>
+     * An array of up to 3 git repositories to associate with the notebook instance. These can be either the names of
+     * git repositories stored as resources in your account, or the URL of git repositories in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other git
+     * repository.. These repositories are cloned at the same level as the default repository of your notebook instance.
+     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.
+     * </p>
+     */
+    private java.util.List<String> additionalCodeRepositories;
+    /**
+     * <p>
+     * A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one
+     * EI instance type can be associated with a notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     * </p>
+     */
+    private java.util.List<String> acceleratorTypes;
+    /**
+     * <p>
+     * A list of the Elastic Inference (EI) instance types to remove from this notebook instance.
+     * </p>
+     */
+    private Boolean disassociateAcceleratorTypes;
+    /**
+     * <p>
+     * The name or URL of the default git repository to remove from this notebook instance.
+     * </p>
+     */
+    private Boolean disassociateDefaultCodeRepository;
+    /**
+     * <p>
+     * A list of names or URLs of the default git repositories to remove from this notebook instance.
+     * </p>
+     */
+    private Boolean disassociateAdditionalCodeRepositories;
 
     /**
      * <p>
@@ -413,6 +461,472 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The git repository to associate with the notebook instance as its default code repository. This can be either the
+     * name of a git repository stored as a resource in your account, or the URL of a git repository in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other git
+     * repository. When you open a notebook instance, it opens in the directory that contains this repository. For more
+     * information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
+     * Repositories with Amazon SageMaker Notebook Instances</a>.
+     * </p>
+     * 
+     * @param defaultCodeRepository
+     *        The git repository to associate with the notebook instance as its default code repository. This can be
+     *        either the name of a git repository stored as a resource in your account, or the URL of a git repository
+     *        in <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in
+     *        any other git repository. When you open a notebook instance, it opens in the directory that contains this
+     *        repository. For more information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
+     *        Amazon SageMaker Notebook Instances</a>.
+     */
+
+    public void setDefaultCodeRepository(String defaultCodeRepository) {
+        this.defaultCodeRepository = defaultCodeRepository;
+    }
+
+    /**
+     * <p>
+     * The git repository to associate with the notebook instance as its default code repository. This can be either the
+     * name of a git repository stored as a resource in your account, or the URL of a git repository in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other git
+     * repository. When you open a notebook instance, it opens in the directory that contains this repository. For more
+     * information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
+     * Repositories with Amazon SageMaker Notebook Instances</a>.
+     * </p>
+     * 
+     * @return The git repository to associate with the notebook instance as its default code repository. This can be
+     *         either the name of a git repository stored as a resource in your account, or the URL of a git repository
+     *         in <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in
+     *         any other git repository. When you open a notebook instance, it opens in the directory that contains this
+     *         repository. For more information, see <a
+     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
+     *         Amazon SageMaker Notebook Instances</a>.
+     */
+
+    public String getDefaultCodeRepository() {
+        return this.defaultCodeRepository;
+    }
+
+    /**
+     * <p>
+     * The git repository to associate with the notebook instance as its default code repository. This can be either the
+     * name of a git repository stored as a resource in your account, or the URL of a git repository in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other git
+     * repository. When you open a notebook instance, it opens in the directory that contains this repository. For more
+     * information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
+     * Repositories with Amazon SageMaker Notebook Instances</a>.
+     * </p>
+     * 
+     * @param defaultCodeRepository
+     *        The git repository to associate with the notebook instance as its default code repository. This can be
+     *        either the name of a git repository stored as a resource in your account, or the URL of a git repository
+     *        in <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in
+     *        any other git repository. When you open a notebook instance, it opens in the directory that contains this
+     *        repository. For more information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
+     *        Amazon SageMaker Notebook Instances</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNotebookInstanceRequest withDefaultCodeRepository(String defaultCodeRepository) {
+        setDefaultCodeRepository(defaultCodeRepository);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of up to 3 git repositories to associate with the notebook instance. These can be either the names of
+     * git repositories stored as resources in your account, or the URL of git repositories in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other git
+     * repository.. These repositories are cloned at the same level as the default repository of your notebook instance.
+     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.
+     * </p>
+     * 
+     * @return An array of up to 3 git repositories to associate with the notebook instance. These can be either the
+     *         names of git repositories stored as resources in your account, or the URL of git repositories in <a
+     *         href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+     *         other git repository.. These repositories are cloned at the same level as the default repository of your
+     *         notebook instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
+     *         Amazon SageMaker Notebook Instances</a>.
+     */
+
+    public java.util.List<String> getAdditionalCodeRepositories() {
+        return additionalCodeRepositories;
+    }
+
+    /**
+     * <p>
+     * An array of up to 3 git repositories to associate with the notebook instance. These can be either the names of
+     * git repositories stored as resources in your account, or the URL of git repositories in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other git
+     * repository.. These repositories are cloned at the same level as the default repository of your notebook instance.
+     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.
+     * </p>
+     * 
+     * @param additionalCodeRepositories
+     *        An array of up to 3 git repositories to associate with the notebook instance. These can be either the
+     *        names of git repositories stored as resources in your account, or the URL of git repositories in <a
+     *        href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+     *        other git repository.. These repositories are cloned at the same level as the default repository of your
+     *        notebook instance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
+     *        Amazon SageMaker Notebook Instances</a>.
+     */
+
+    public void setAdditionalCodeRepositories(java.util.Collection<String> additionalCodeRepositories) {
+        if (additionalCodeRepositories == null) {
+            this.additionalCodeRepositories = null;
+            return;
+        }
+
+        this.additionalCodeRepositories = new java.util.ArrayList<String>(additionalCodeRepositories);
+    }
+
+    /**
+     * <p>
+     * An array of up to 3 git repositories to associate with the notebook instance. These can be either the names of
+     * git repositories stored as resources in your account, or the URL of git repositories in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other git
+     * repository.. These repositories are cloned at the same level as the default repository of your notebook instance.
+     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdditionalCodeRepositories(java.util.Collection)} or
+     * {@link #withAdditionalCodeRepositories(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param additionalCodeRepositories
+     *        An array of up to 3 git repositories to associate with the notebook instance. These can be either the
+     *        names of git repositories stored as resources in your account, or the URL of git repositories in <a
+     *        href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+     *        other git repository.. These repositories are cloned at the same level as the default repository of your
+     *        notebook instance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
+     *        Amazon SageMaker Notebook Instances</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNotebookInstanceRequest withAdditionalCodeRepositories(String... additionalCodeRepositories) {
+        if (this.additionalCodeRepositories == null) {
+            setAdditionalCodeRepositories(new java.util.ArrayList<String>(additionalCodeRepositories.length));
+        }
+        for (String ele : additionalCodeRepositories) {
+            this.additionalCodeRepositories.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of up to 3 git repositories to associate with the notebook instance. These can be either the names of
+     * git repositories stored as resources in your account, or the URL of git repositories in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other git
+     * repository.. These repositories are cloned at the same level as the default repository of your notebook instance.
+     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.
+     * </p>
+     * 
+     * @param additionalCodeRepositories
+     *        An array of up to 3 git repositories to associate with the notebook instance. These can be either the
+     *        names of git repositories stored as resources in your account, or the URL of git repositories in <a
+     *        href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+     *        other git repository.. These repositories are cloned at the same level as the default repository of your
+     *        notebook instance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
+     *        Amazon SageMaker Notebook Instances</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNotebookInstanceRequest withAdditionalCodeRepositories(java.util.Collection<String> additionalCodeRepositories) {
+        setAdditionalCodeRepositories(additionalCodeRepositories);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one
+     * EI instance type can be associated with a notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     * </p>
+     * 
+     * @return A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently
+     *         only one EI instance type can be associated with a notebook instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+     *         SageMaker</a>.
+     * @see NotebookInstanceAcceleratorType
+     */
+
+    public java.util.List<String> getAcceleratorTypes() {
+        return acceleratorTypes;
+    }
+
+    /**
+     * <p>
+     * A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one
+     * EI instance type can be associated with a notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     * </p>
+     * 
+     * @param acceleratorTypes
+     *        A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently
+     *        only one EI instance type can be associated with a notebook instance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+     *        SageMaker</a>.
+     * @see NotebookInstanceAcceleratorType
+     */
+
+    public void setAcceleratorTypes(java.util.Collection<String> acceleratorTypes) {
+        if (acceleratorTypes == null) {
+            this.acceleratorTypes = null;
+            return;
+        }
+
+        this.acceleratorTypes = new java.util.ArrayList<String>(acceleratorTypes);
+    }
+
+    /**
+     * <p>
+     * A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one
+     * EI instance type can be associated with a notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAcceleratorTypes(java.util.Collection)} or {@link #withAcceleratorTypes(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param acceleratorTypes
+     *        A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently
+     *        only one EI instance type can be associated with a notebook instance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+     *        SageMaker</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NotebookInstanceAcceleratorType
+     */
+
+    public UpdateNotebookInstanceRequest withAcceleratorTypes(String... acceleratorTypes) {
+        if (this.acceleratorTypes == null) {
+            setAcceleratorTypes(new java.util.ArrayList<String>(acceleratorTypes.length));
+        }
+        for (String ele : acceleratorTypes) {
+            this.acceleratorTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one
+     * EI instance type can be associated with a notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     * </p>
+     * 
+     * @param acceleratorTypes
+     *        A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently
+     *        only one EI instance type can be associated with a notebook instance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+     *        SageMaker</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NotebookInstanceAcceleratorType
+     */
+
+    public UpdateNotebookInstanceRequest withAcceleratorTypes(java.util.Collection<String> acceleratorTypes) {
+        setAcceleratorTypes(acceleratorTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one
+     * EI instance type can be associated with a notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     * </p>
+     * 
+     * @param acceleratorTypes
+     *        A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently
+     *        only one EI instance type can be associated with a notebook instance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+     *        SageMaker</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NotebookInstanceAcceleratorType
+     */
+
+    public UpdateNotebookInstanceRequest withAcceleratorTypes(NotebookInstanceAcceleratorType... acceleratorTypes) {
+        java.util.ArrayList<String> acceleratorTypesCopy = new java.util.ArrayList<String>(acceleratorTypes.length);
+        for (NotebookInstanceAcceleratorType value : acceleratorTypes) {
+            acceleratorTypesCopy.add(value.toString());
+        }
+        if (getAcceleratorTypes() == null) {
+            setAcceleratorTypes(acceleratorTypesCopy);
+        } else {
+            getAcceleratorTypes().addAll(acceleratorTypesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the Elastic Inference (EI) instance types to remove from this notebook instance.
+     * </p>
+     * 
+     * @param disassociateAcceleratorTypes
+     *        A list of the Elastic Inference (EI) instance types to remove from this notebook instance.
+     */
+
+    public void setDisassociateAcceleratorTypes(Boolean disassociateAcceleratorTypes) {
+        this.disassociateAcceleratorTypes = disassociateAcceleratorTypes;
+    }
+
+    /**
+     * <p>
+     * A list of the Elastic Inference (EI) instance types to remove from this notebook instance.
+     * </p>
+     * 
+     * @return A list of the Elastic Inference (EI) instance types to remove from this notebook instance.
+     */
+
+    public Boolean getDisassociateAcceleratorTypes() {
+        return this.disassociateAcceleratorTypes;
+    }
+
+    /**
+     * <p>
+     * A list of the Elastic Inference (EI) instance types to remove from this notebook instance.
+     * </p>
+     * 
+     * @param disassociateAcceleratorTypes
+     *        A list of the Elastic Inference (EI) instance types to remove from this notebook instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNotebookInstanceRequest withDisassociateAcceleratorTypes(Boolean disassociateAcceleratorTypes) {
+        setDisassociateAcceleratorTypes(disassociateAcceleratorTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the Elastic Inference (EI) instance types to remove from this notebook instance.
+     * </p>
+     * 
+     * @return A list of the Elastic Inference (EI) instance types to remove from this notebook instance.
+     */
+
+    public Boolean isDisassociateAcceleratorTypes() {
+        return this.disassociateAcceleratorTypes;
+    }
+
+    /**
+     * <p>
+     * The name or URL of the default git repository to remove from this notebook instance.
+     * </p>
+     * 
+     * @param disassociateDefaultCodeRepository
+     *        The name or URL of the default git repository to remove from this notebook instance.
+     */
+
+    public void setDisassociateDefaultCodeRepository(Boolean disassociateDefaultCodeRepository) {
+        this.disassociateDefaultCodeRepository = disassociateDefaultCodeRepository;
+    }
+
+    /**
+     * <p>
+     * The name or URL of the default git repository to remove from this notebook instance.
+     * </p>
+     * 
+     * @return The name or URL of the default git repository to remove from this notebook instance.
+     */
+
+    public Boolean getDisassociateDefaultCodeRepository() {
+        return this.disassociateDefaultCodeRepository;
+    }
+
+    /**
+     * <p>
+     * The name or URL of the default git repository to remove from this notebook instance.
+     * </p>
+     * 
+     * @param disassociateDefaultCodeRepository
+     *        The name or URL of the default git repository to remove from this notebook instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNotebookInstanceRequest withDisassociateDefaultCodeRepository(Boolean disassociateDefaultCodeRepository) {
+        setDisassociateDefaultCodeRepository(disassociateDefaultCodeRepository);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name or URL of the default git repository to remove from this notebook instance.
+     * </p>
+     * 
+     * @return The name or URL of the default git repository to remove from this notebook instance.
+     */
+
+    public Boolean isDisassociateDefaultCodeRepository() {
+        return this.disassociateDefaultCodeRepository;
+    }
+
+    /**
+     * <p>
+     * A list of names or URLs of the default git repositories to remove from this notebook instance.
+     * </p>
+     * 
+     * @param disassociateAdditionalCodeRepositories
+     *        A list of names or URLs of the default git repositories to remove from this notebook instance.
+     */
+
+    public void setDisassociateAdditionalCodeRepositories(Boolean disassociateAdditionalCodeRepositories) {
+        this.disassociateAdditionalCodeRepositories = disassociateAdditionalCodeRepositories;
+    }
+
+    /**
+     * <p>
+     * A list of names or URLs of the default git repositories to remove from this notebook instance.
+     * </p>
+     * 
+     * @return A list of names or URLs of the default git repositories to remove from this notebook instance.
+     */
+
+    public Boolean getDisassociateAdditionalCodeRepositories() {
+        return this.disassociateAdditionalCodeRepositories;
+    }
+
+    /**
+     * <p>
+     * A list of names or URLs of the default git repositories to remove from this notebook instance.
+     * </p>
+     * 
+     * @param disassociateAdditionalCodeRepositories
+     *        A list of names or URLs of the default git repositories to remove from this notebook instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNotebookInstanceRequest withDisassociateAdditionalCodeRepositories(Boolean disassociateAdditionalCodeRepositories) {
+        setDisassociateAdditionalCodeRepositories(disassociateAdditionalCodeRepositories);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of names or URLs of the default git repositories to remove from this notebook instance.
+     * </p>
+     * 
+     * @return A list of names or URLs of the default git repositories to remove from this notebook instance.
+     */
+
+    public Boolean isDisassociateAdditionalCodeRepositories() {
+        return this.disassociateAdditionalCodeRepositories;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -434,7 +948,19 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
         if (getDisassociateLifecycleConfig() != null)
             sb.append("DisassociateLifecycleConfig: ").append(getDisassociateLifecycleConfig()).append(",");
         if (getVolumeSizeInGB() != null)
-            sb.append("VolumeSizeInGB: ").append(getVolumeSizeInGB());
+            sb.append("VolumeSizeInGB: ").append(getVolumeSizeInGB()).append(",");
+        if (getDefaultCodeRepository() != null)
+            sb.append("DefaultCodeRepository: ").append(getDefaultCodeRepository()).append(",");
+        if (getAdditionalCodeRepositories() != null)
+            sb.append("AdditionalCodeRepositories: ").append(getAdditionalCodeRepositories()).append(",");
+        if (getAcceleratorTypes() != null)
+            sb.append("AcceleratorTypes: ").append(getAcceleratorTypes()).append(",");
+        if (getDisassociateAcceleratorTypes() != null)
+            sb.append("DisassociateAcceleratorTypes: ").append(getDisassociateAcceleratorTypes()).append(",");
+        if (getDisassociateDefaultCodeRepository() != null)
+            sb.append("DisassociateDefaultCodeRepository: ").append(getDisassociateDefaultCodeRepository()).append(",");
+        if (getDisassociateAdditionalCodeRepositories() != null)
+            sb.append("DisassociateAdditionalCodeRepositories: ").append(getDisassociateAdditionalCodeRepositories());
         sb.append("}");
         return sb.toString();
     }
@@ -473,6 +999,32 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getVolumeSizeInGB() != null && other.getVolumeSizeInGB().equals(this.getVolumeSizeInGB()) == false)
             return false;
+        if (other.getDefaultCodeRepository() == null ^ this.getDefaultCodeRepository() == null)
+            return false;
+        if (other.getDefaultCodeRepository() != null && other.getDefaultCodeRepository().equals(this.getDefaultCodeRepository()) == false)
+            return false;
+        if (other.getAdditionalCodeRepositories() == null ^ this.getAdditionalCodeRepositories() == null)
+            return false;
+        if (other.getAdditionalCodeRepositories() != null && other.getAdditionalCodeRepositories().equals(this.getAdditionalCodeRepositories()) == false)
+            return false;
+        if (other.getAcceleratorTypes() == null ^ this.getAcceleratorTypes() == null)
+            return false;
+        if (other.getAcceleratorTypes() != null && other.getAcceleratorTypes().equals(this.getAcceleratorTypes()) == false)
+            return false;
+        if (other.getDisassociateAcceleratorTypes() == null ^ this.getDisassociateAcceleratorTypes() == null)
+            return false;
+        if (other.getDisassociateAcceleratorTypes() != null && other.getDisassociateAcceleratorTypes().equals(this.getDisassociateAcceleratorTypes()) == false)
+            return false;
+        if (other.getDisassociateDefaultCodeRepository() == null ^ this.getDisassociateDefaultCodeRepository() == null)
+            return false;
+        if (other.getDisassociateDefaultCodeRepository() != null
+                && other.getDisassociateDefaultCodeRepository().equals(this.getDisassociateDefaultCodeRepository()) == false)
+            return false;
+        if (other.getDisassociateAdditionalCodeRepositories() == null ^ this.getDisassociateAdditionalCodeRepositories() == null)
+            return false;
+        if (other.getDisassociateAdditionalCodeRepositories() != null
+                && other.getDisassociateAdditionalCodeRepositories().equals(this.getDisassociateAdditionalCodeRepositories()) == false)
+            return false;
         return true;
     }
 
@@ -487,6 +1039,12 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getLifecycleConfigName() == null) ? 0 : getLifecycleConfigName().hashCode());
         hashCode = prime * hashCode + ((getDisassociateLifecycleConfig() == null) ? 0 : getDisassociateLifecycleConfig().hashCode());
         hashCode = prime * hashCode + ((getVolumeSizeInGB() == null) ? 0 : getVolumeSizeInGB().hashCode());
+        hashCode = prime * hashCode + ((getDefaultCodeRepository() == null) ? 0 : getDefaultCodeRepository().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalCodeRepositories() == null) ? 0 : getAdditionalCodeRepositories().hashCode());
+        hashCode = prime * hashCode + ((getAcceleratorTypes() == null) ? 0 : getAcceleratorTypes().hashCode());
+        hashCode = prime * hashCode + ((getDisassociateAcceleratorTypes() == null) ? 0 : getDisassociateAcceleratorTypes().hashCode());
+        hashCode = prime * hashCode + ((getDisassociateDefaultCodeRepository() == null) ? 0 : getDisassociateDefaultCodeRepository().hashCode());
+        hashCode = prime * hashCode + ((getDisassociateAdditionalCodeRepositories() == null) ? 0 : getDisassociateAdditionalCodeRepositories().hashCode());
         return hashCode;
     }
 

@@ -31,6 +31,8 @@ public class CreateServiceRequestMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> NAMESPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NamespaceId").build();
     private static final MarshallingInfo<String> CREATORREQUESTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatorRequestId")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -60,6 +62,7 @@ public class CreateServiceRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createServiceRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createServiceRequest.getNamespaceId(), NAMESPACEID_BINDING);
             protocolMarshaller.marshall(createServiceRequest.getCreatorRequestId(), CREATORREQUESTID_BINDING);
             protocolMarshaller.marshall(createServiceRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createServiceRequest.getDnsConfig(), DNSCONFIG_BINDING);

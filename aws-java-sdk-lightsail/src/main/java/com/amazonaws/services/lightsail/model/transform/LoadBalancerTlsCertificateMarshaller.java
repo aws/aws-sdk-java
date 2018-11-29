@@ -40,6 +40,8 @@ public class LoadBalancerTlsCertificateMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("location").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> LOADBALANCERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("loadBalancerName").build();
     private static final MarshallingInfo<Boolean> ISATTACHED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -99,6 +101,7 @@ public class LoadBalancerTlsCertificateMarshaller {
             protocolMarshaller.marshall(loadBalancerTlsCertificate.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(loadBalancerTlsCertificate.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(loadBalancerTlsCertificate.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(loadBalancerTlsCertificate.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(loadBalancerTlsCertificate.getLoadBalancerName(), LOADBALANCERNAME_BINDING);
             protocolMarshaller.marshall(loadBalancerTlsCertificate.getIsAttached(), ISATTACHED_BINDING);
             protocolMarshaller.marshall(loadBalancerTlsCertificate.getStatus(), STATUS_BINDING);

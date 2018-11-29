@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class CreateDiskSnapshotRequestMarshaller {
             .marshallLocationName("diskName").build();
     private static final MarshallingInfo<String> DISKSNAPSHOTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("diskSnapshotName").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateDiskSnapshotRequestMarshaller instance = new CreateDiskSnapshotRequestMarshaller();
 
@@ -50,6 +53,7 @@ public class CreateDiskSnapshotRequestMarshaller {
         try {
             protocolMarshaller.marshall(createDiskSnapshotRequest.getDiskName(), DISKNAME_BINDING);
             protocolMarshaller.marshall(createDiskSnapshotRequest.getDiskSnapshotName(), DISKSNAPSHOTNAME_BINDING);
+            protocolMarshaller.marshall(createDiskSnapshotRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

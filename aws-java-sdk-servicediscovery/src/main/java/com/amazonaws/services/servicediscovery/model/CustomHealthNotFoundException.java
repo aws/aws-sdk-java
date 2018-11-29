@@ -15,7 +15,10 @@ package com.amazonaws.services.servicediscovery.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The health check for the instance that is specified by <code>ServiceId</code> and <code>InstanceId</code> is not a
+ * custom health check.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CustomHealthNotFoundException extends com.amazonaws.services.servicediscovery.model.AWSServiceDiscoveryException {

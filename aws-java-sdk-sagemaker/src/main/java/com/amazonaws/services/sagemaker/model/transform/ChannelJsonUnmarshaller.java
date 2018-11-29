@@ -72,6 +72,10 @@ public class ChannelJsonUnmarshaller implements Unmarshaller<Channel, JsonUnmars
                     context.nextToken();
                     channel.setInputMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ShuffleConfig", targetDepth)) {
+                    context.nextToken();
+                    channel.setShuffleConfig(ShuffleConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

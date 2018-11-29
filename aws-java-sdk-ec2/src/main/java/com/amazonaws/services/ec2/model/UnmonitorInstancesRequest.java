@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.UnmonitorInstancesRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for UnmonitorInstances.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnmonitorInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<UnmonitorInstancesRequest> {

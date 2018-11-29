@@ -72,6 +72,10 @@ public class LoadBalancerJsonUnmarshaller implements Unmarshaller<LoadBalancer, 
                     context.nextToken();
                     loadBalancer.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    loadBalancer.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("dnsName", targetDepth)) {
                     context.nextToken();
                     loadBalancer.setDnsName(context.getUnmarshaller(String.class).unmarshall(context));

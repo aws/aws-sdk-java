@@ -96,10 +96,10 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
     private HyperParameterTrainingJobSummary bestTrainingJob;
     /**
      * <p>
-     * If the hyperparameter tuning job is an incremental tuning job with a <code>WarmStartType</code> of
+     * If the hyperparameter tuning job is an warm start tuning job with a <code>WarmStartType</code> of
      * <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is the <a>TrainingJobSummary</a> for the training job with the
      * best objective metric value of all training jobs launched by this tuning job and all parent jobs specified for
-     * the incremental tuning job.
+     * the warm start tuning job.
      * </p>
      */
     private HyperParameterTrainingJobSummary overallBestTrainingJob;
@@ -603,17 +603,17 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * If the hyperparameter tuning job is an incremental tuning job with a <code>WarmStartType</code> of
+     * If the hyperparameter tuning job is an warm start tuning job with a <code>WarmStartType</code> of
      * <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is the <a>TrainingJobSummary</a> for the training job with the
      * best objective metric value of all training jobs launched by this tuning job and all parent jobs specified for
-     * the incremental tuning job.
+     * the warm start tuning job.
      * </p>
      * 
      * @param overallBestTrainingJob
-     *        If the hyperparameter tuning job is an incremental tuning job with a <code>WarmStartType</code> of
+     *        If the hyperparameter tuning job is an warm start tuning job with a <code>WarmStartType</code> of
      *        <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is the <a>TrainingJobSummary</a> for the training job with
      *        the best objective metric value of all training jobs launched by this tuning job and all parent jobs
-     *        specified for the incremental tuning job.
+     *        specified for the warm start tuning job.
      */
 
     public void setOverallBestTrainingJob(HyperParameterTrainingJobSummary overallBestTrainingJob) {
@@ -622,16 +622,16 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * If the hyperparameter tuning job is an incremental tuning job with a <code>WarmStartType</code> of
+     * If the hyperparameter tuning job is an warm start tuning job with a <code>WarmStartType</code> of
      * <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is the <a>TrainingJobSummary</a> for the training job with the
      * best objective metric value of all training jobs launched by this tuning job and all parent jobs specified for
-     * the incremental tuning job.
+     * the warm start tuning job.
      * </p>
      * 
-     * @return If the hyperparameter tuning job is an incremental tuning job with a <code>WarmStartType</code> of
+     * @return If the hyperparameter tuning job is an warm start tuning job with a <code>WarmStartType</code> of
      *         <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is the <a>TrainingJobSummary</a> for the training job
      *         with the best objective metric value of all training jobs launched by this tuning job and all parent jobs
-     *         specified for the incremental tuning job.
+     *         specified for the warm start tuning job.
      */
 
     public HyperParameterTrainingJobSummary getOverallBestTrainingJob() {
@@ -640,17 +640,17 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * If the hyperparameter tuning job is an incremental tuning job with a <code>WarmStartType</code> of
+     * If the hyperparameter tuning job is an warm start tuning job with a <code>WarmStartType</code> of
      * <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is the <a>TrainingJobSummary</a> for the training job with the
      * best objective metric value of all training jobs launched by this tuning job and all parent jobs specified for
-     * the incremental tuning job.
+     * the warm start tuning job.
      * </p>
      * 
      * @param overallBestTrainingJob
-     *        If the hyperparameter tuning job is an incremental tuning job with a <code>WarmStartType</code> of
+     *        If the hyperparameter tuning job is an warm start tuning job with a <code>WarmStartType</code> of
      *        <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is the <a>TrainingJobSummary</a> for the training job with
      *        the best objective metric value of all training jobs launched by this tuning job and all parent jobs
-     *        specified for the incremental tuning job.
+     *        specified for the warm start tuning job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -49,6 +49,10 @@ public class ListNotebookInstancesRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusEquals").build();
     private static final MarshallingInfo<String> NOTEBOOKINSTANCELIFECYCLECONFIGNAMECONTAINS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotebookInstanceLifecycleConfigNameContains").build();
+    private static final MarshallingInfo<String> DEFAULTCODEREPOSITORYCONTAINS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultCodeRepositoryContains").build();
+    private static final MarshallingInfo<String> ADDITIONALCODEREPOSITORYEQUALS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalCodeRepositoryEquals").build();
 
     private static final ListNotebookInstancesRequestMarshaller instance = new ListNotebookInstancesRequestMarshaller();
 
@@ -78,6 +82,8 @@ public class ListNotebookInstancesRequestMarshaller {
             protocolMarshaller.marshall(listNotebookInstancesRequest.getStatusEquals(), STATUSEQUALS_BINDING);
             protocolMarshaller.marshall(listNotebookInstancesRequest.getNotebookInstanceLifecycleConfigNameContains(),
                     NOTEBOOKINSTANCELIFECYCLECONFIGNAMECONTAINS_BINDING);
+            protocolMarshaller.marshall(listNotebookInstancesRequest.getDefaultCodeRepositoryContains(), DEFAULTCODEREPOSITORYCONTAINS_BINDING);
+            protocolMarshaller.marshall(listNotebookInstancesRequest.getAdditionalCodeRepositoryEquals(), ADDITIONALCODEREPOSITORYEQUALS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

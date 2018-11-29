@@ -147,6 +147,17 @@ public class ResponseLaunchTemplateDataStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
+                if (context.testExpression("elasticInferenceAcceleratorSet", targetDepth)) {
+                    responseLaunchTemplateData.withElasticInferenceAccelerators(new ArrayList<LaunchTemplateElasticInferenceAcceleratorResponse>());
+                    continue;
+                }
+
+                if (context.testExpression("elasticInferenceAcceleratorSet/item", targetDepth)) {
+                    responseLaunchTemplateData.withElasticInferenceAccelerators(LaunchTemplateElasticInferenceAcceleratorResponseStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("securityGroupIdSet", targetDepth)) {
                     responseLaunchTemplateData.withSecurityGroupIds(new ArrayList<String>());
                     continue;
@@ -187,6 +198,22 @@ public class ResponseLaunchTemplateDataStaxUnmarshaller implements Unmarshaller<
                             .getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("hibernationOptions", targetDepth)) {
+                    responseLaunchTemplateData.setHibernationOptions(LaunchTemplateHibernationOptionsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("licenseSet", targetDepth)) {
+                    responseLaunchTemplateData.withLicenseSpecifications(new ArrayList<LaunchTemplateLicenseConfiguration>());
+                    continue;
+                }
+
+                if (context.testExpression("licenseSet/item", targetDepth)) {
+                    responseLaunchTemplateData.withLicenseSpecifications(LaunchTemplateLicenseConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return responseLaunchTemplateData;
