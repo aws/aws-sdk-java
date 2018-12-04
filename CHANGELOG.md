@@ -1,3 +1,12 @@
+# __1.11.463__ __2018-12-04__
+## __AWS Health APIs and Notifications__
+  - ### Features
+    - AWS Health API DescribeAffectedEntities operation now includes a field that returns the URL of the affected entity.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - S3 Inventory reports can now be generated in Parquet format by setting the Destination Format to be 'Parquet'.
+
 # __1.11.462__ __2018-12-03__
 ## __AWS Device Farm__
   - ### Features

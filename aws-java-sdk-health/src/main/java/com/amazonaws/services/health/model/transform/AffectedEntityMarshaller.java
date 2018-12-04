@@ -35,6 +35,8 @@ public class AffectedEntityMarshaller {
             .marshallLocationName("eventArn").build();
     private static final MarshallingInfo<String> ENTITYVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("entityValue").build();
+    private static final MarshallingInfo<String> ENTITYURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("entityUrl").build();
     private static final MarshallingInfo<String> AWSACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsAccountId").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -63,6 +65,7 @@ public class AffectedEntityMarshaller {
             protocolMarshaller.marshall(affectedEntity.getEntityArn(), ENTITYARN_BINDING);
             protocolMarshaller.marshall(affectedEntity.getEventArn(), EVENTARN_BINDING);
             protocolMarshaller.marshall(affectedEntity.getEntityValue(), ENTITYVALUE_BINDING);
+            protocolMarshaller.marshall(affectedEntity.getEntityUrl(), ENTITYURL_BINDING);
             protocolMarshaller.marshall(affectedEntity.getAwsAccountId(), AWSACCOUNTID_BINDING);
             protocolMarshaller.marshall(affectedEntity.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
             protocolMarshaller.marshall(affectedEntity.getStatusCode(), STATUSCODE_BINDING);

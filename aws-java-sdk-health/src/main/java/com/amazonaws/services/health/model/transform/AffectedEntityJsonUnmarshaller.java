@@ -60,6 +60,10 @@ public class AffectedEntityJsonUnmarshaller implements Unmarshaller<AffectedEnti
                     context.nextToken();
                     affectedEntity.setEntityValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("entityUrl", targetDepth)) {
+                    context.nextToken();
+                    affectedEntity.setEntityUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("awsAccountId", targetDepth)) {
                     context.nextToken();
                     affectedEntity.setAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));
